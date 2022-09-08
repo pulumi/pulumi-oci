@@ -13,21 +13,14 @@ public final class GetListingSupportLink {
      * @return Text that describes the resource.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The URL of the resource.
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetListingSupportLink(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("url") String url) {
-        this.name = name;
-        this.url = url;
-    }
-
+    private GetListingSupportLink() {}
     /**
      * @return Text that describes the resource.
      * 
@@ -50,30 +43,32 @@ public final class GetListingSupportLink {
     public static Builder builder(GetListingSupportLink defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingSupportLink defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetListingSupportLink build() {
-            return new GetListingSupportLink(name, url);
+        }
+        public GetListingSupportLink build() {
+            final var o = new GetListingSupportLink();
+            o.name = name;
+            o.url = url;
+            return o;
         }
     }
 }

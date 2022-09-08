@@ -13,42 +13,29 @@ public final class GetSubscriptionsSubscriptionCollectionItemTaxInfo {
      * @return Tax exemption reason code.
      * 
      */
-    private final String noTaxReasonCode;
+    private String noTaxReasonCode;
     /**
      * @return Tax exemption reason description.
      * 
      */
-    private final String noTaxReasonCodeDetails;
+    private String noTaxReasonCodeDetails;
     /**
      * @return Brazilian companies&#39; CNPJ number.
      * 
      */
-    private final String taxCnpj;
+    private String taxCnpj;
     /**
      * @return Tay payer identifier.
      * 
      */
-    private final String taxPayerId;
+    private String taxPayerId;
     /**
      * @return Tax registration number.
      * 
      */
-    private final String taxRegNumber;
+    private String taxRegNumber;
 
-    @CustomType.Constructor
-    private GetSubscriptionsSubscriptionCollectionItemTaxInfo(
-        @CustomType.Parameter("noTaxReasonCode") String noTaxReasonCode,
-        @CustomType.Parameter("noTaxReasonCodeDetails") String noTaxReasonCodeDetails,
-        @CustomType.Parameter("taxCnpj") String taxCnpj,
-        @CustomType.Parameter("taxPayerId") String taxPayerId,
-        @CustomType.Parameter("taxRegNumber") String taxRegNumber) {
-        this.noTaxReasonCode = noTaxReasonCode;
-        this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
-        this.taxCnpj = taxCnpj;
-        this.taxPayerId = taxPayerId;
-        this.taxRegNumber = taxRegNumber;
-    }
-
+    private GetSubscriptionsSubscriptionCollectionItemTaxInfo() {}
     /**
      * @return Tax exemption reason code.
      * 
@@ -92,18 +79,14 @@ public final class GetSubscriptionsSubscriptionCollectionItemTaxInfo {
     public static Builder builder(GetSubscriptionsSubscriptionCollectionItemTaxInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String noTaxReasonCode;
         private String noTaxReasonCodeDetails;
         private String taxCnpj;
         private String taxPayerId;
         private String taxRegNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsSubscriptionCollectionItemTaxInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.noTaxReasonCode = defaults.noTaxReasonCode;
@@ -113,27 +96,39 @@ public final class GetSubscriptionsSubscriptionCollectionItemTaxInfo {
     	      this.taxRegNumber = defaults.taxRegNumber;
         }
 
+        @CustomType.Setter
         public Builder noTaxReasonCode(String noTaxReasonCode) {
             this.noTaxReasonCode = Objects.requireNonNull(noTaxReasonCode);
             return this;
         }
+        @CustomType.Setter
         public Builder noTaxReasonCodeDetails(String noTaxReasonCodeDetails) {
             this.noTaxReasonCodeDetails = Objects.requireNonNull(noTaxReasonCodeDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder taxCnpj(String taxCnpj) {
             this.taxCnpj = Objects.requireNonNull(taxCnpj);
             return this;
         }
+        @CustomType.Setter
         public Builder taxPayerId(String taxPayerId) {
             this.taxPayerId = Objects.requireNonNull(taxPayerId);
             return this;
         }
+        @CustomType.Setter
         public Builder taxRegNumber(String taxRegNumber) {
             this.taxRegNumber = Objects.requireNonNull(taxRegNumber);
             return this;
-        }        public GetSubscriptionsSubscriptionCollectionItemTaxInfo build() {
-            return new GetSubscriptionsSubscriptionCollectionItemTaxInfo(noTaxReasonCode, noTaxReasonCodeDetails, taxCnpj, taxPayerId, taxRegNumber);
+        }
+        public GetSubscriptionsSubscriptionCollectionItemTaxInfo build() {
+            final var o = new GetSubscriptionsSubscriptionCollectionItemTaxInfo();
+            o.noTaxReasonCode = noTaxReasonCode;
+            o.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
+            o.taxCnpj = taxCnpj;
+            o.taxPayerId = taxPayerId;
+            o.taxRegNumber = taxRegNumber;
+            return o;
         }
     }
 }

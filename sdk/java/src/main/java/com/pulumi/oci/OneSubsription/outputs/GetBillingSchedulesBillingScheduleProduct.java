@@ -13,21 +13,14 @@ public final class GetBillingSchedulesBillingScheduleProduct {
      * @return Product name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Indicates the associated AR Invoice Number
      * 
      */
-    private final String partNumber;
+    private String partNumber;
 
-    @CustomType.Constructor
-    private GetBillingSchedulesBillingScheduleProduct(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("partNumber") String partNumber) {
-        this.name = name;
-        this.partNumber = partNumber;
-    }
-
+    private GetBillingSchedulesBillingScheduleProduct() {}
     /**
      * @return Product name
      * 
@@ -50,30 +43,32 @@ public final class GetBillingSchedulesBillingScheduleProduct {
     public static Builder builder(GetBillingSchedulesBillingScheduleProduct defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String partNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBillingSchedulesBillingScheduleProduct defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.partNumber = defaults.partNumber;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder partNumber(String partNumber) {
             this.partNumber = Objects.requireNonNull(partNumber);
             return this;
-        }        public GetBillingSchedulesBillingScheduleProduct build() {
-            return new GetBillingSchedulesBillingScheduleProduct(name, partNumber);
+        }
+        public GetBillingSchedulesBillingScheduleProduct build() {
+            final var o = new GetBillingSchedulesBillingScheduleProduct();
+            o.name = name;
+            o.partNumber = partNumber;
+            return o;
         }
     }
 }

@@ -14,21 +14,14 @@ public final class GetTargetDatabasesSchemasSchema {
      * @return A filter to return only items related to specific type of schema.
      * 
      */
-    private final Boolean isOracleMaintained;
+    private Boolean isOracleMaintained;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private final String schemaName;
+    private String schemaName;
 
-    @CustomType.Constructor
-    private GetTargetDatabasesSchemasSchema(
-        @CustomType.Parameter("isOracleMaintained") Boolean isOracleMaintained,
-        @CustomType.Parameter("schemaName") String schemaName) {
-        this.isOracleMaintained = isOracleMaintained;
-        this.schemaName = schemaName;
-    }
-
+    private GetTargetDatabasesSchemasSchema() {}
     /**
      * @return A filter to return only items related to specific type of schema.
      * 
@@ -51,30 +44,32 @@ public final class GetTargetDatabasesSchemasSchema {
     public static Builder builder(GetTargetDatabasesSchemasSchema defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isOracleMaintained;
         private String schemaName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabasesSchemasSchema defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isOracleMaintained = defaults.isOracleMaintained;
     	      this.schemaName = defaults.schemaName;
         }
 
+        @CustomType.Setter
         public Builder isOracleMaintained(Boolean isOracleMaintained) {
             this.isOracleMaintained = Objects.requireNonNull(isOracleMaintained);
             return this;
         }
+        @CustomType.Setter
         public Builder schemaName(String schemaName) {
             this.schemaName = Objects.requireNonNull(schemaName);
             return this;
-        }        public GetTargetDatabasesSchemasSchema build() {
-            return new GetTargetDatabasesSchemasSchema(isOracleMaintained, schemaName);
+        }
+        public GetTargetDatabasesSchemasSchema build() {
+            final var o = new GetTargetDatabasesSchemasSchema();
+            o.isOracleMaintained = isOracleMaintained;
+            o.schemaName = schemaName;
+            return o;
         }
     }
 }

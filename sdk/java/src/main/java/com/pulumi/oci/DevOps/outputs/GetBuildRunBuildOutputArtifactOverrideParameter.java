@@ -14,13 +14,9 @@ public final class GetBuildRunBuildOutputArtifactOverrideParameter {
      * @return List of exported variables.
      * 
      */
-    private final List<GetBuildRunBuildOutputArtifactOverrideParameterItem> items;
+    private List<GetBuildRunBuildOutputArtifactOverrideParameterItem> items;
 
-    @CustomType.Constructor
-    private GetBuildRunBuildOutputArtifactOverrideParameter(@CustomType.Parameter("items") List<GetBuildRunBuildOutputArtifactOverrideParameterItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildRunBuildOutputArtifactOverrideParameter() {}
     /**
      * @return List of exported variables.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildRunBuildOutputArtifactOverrideParameter {
     public static Builder builder(GetBuildRunBuildOutputArtifactOverrideParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildRunBuildOutputArtifactOverrideParameterItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunBuildOutputArtifactOverrideParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildRunBuildOutputArtifactOverrideParameterItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildRunBuildOutputArtifactOverrideParameterItem... items) {
             return items(List.of(items));
-        }        public GetBuildRunBuildOutputArtifactOverrideParameter build() {
-            return new GetBuildRunBuildOutputArtifactOverrideParameter(items);
+        }
+        public GetBuildRunBuildOutputArtifactOverrideParameter build() {
+            final var o = new GetBuildRunBuildOutputArtifactOverrideParameter();
+            o.items = items;
+            return o;
         }
     }
 }

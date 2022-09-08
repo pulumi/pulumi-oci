@@ -16,35 +16,24 @@ public final class IntegrationInstanceCustomEndpoint {
      * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
      * 
      */
-    private final @Nullable String alias;
+    private @Nullable String alias;
     /**
      * @return (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
      * 
      */
-    private final @Nullable String certificateSecretId;
+    private @Nullable String certificateSecretId;
     /**
      * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
      * 
      */
-    private final @Nullable Integer certificateSecretVersion;
+    private @Nullable Integer certificateSecretVersion;
     /**
      * @return (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
      * 
      */
-    private final String hostname;
+    private String hostname;
 
-    @CustomType.Constructor
-    private IntegrationInstanceCustomEndpoint(
-        @CustomType.Parameter("alias") @Nullable String alias,
-        @CustomType.Parameter("certificateSecretId") @Nullable String certificateSecretId,
-        @CustomType.Parameter("certificateSecretVersion") @Nullable Integer certificateSecretVersion,
-        @CustomType.Parameter("hostname") String hostname) {
-        this.alias = alias;
-        this.certificateSecretId = certificateSecretId;
-        this.certificateSecretVersion = certificateSecretVersion;
-        this.hostname = hostname;
-    }
-
+    private IntegrationInstanceCustomEndpoint() {}
     /**
      * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
      * 
@@ -81,17 +70,13 @@ public final class IntegrationInstanceCustomEndpoint {
     public static Builder builder(IntegrationInstanceCustomEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String alias;
         private @Nullable String certificateSecretId;
         private @Nullable Integer certificateSecretVersion;
         private String hostname;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IntegrationInstanceCustomEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alias = defaults.alias;
@@ -100,23 +85,33 @@ public final class IntegrationInstanceCustomEndpoint {
     	      this.hostname = defaults.hostname;
         }
 
+        @CustomType.Setter
         public Builder alias(@Nullable String alias) {
             this.alias = alias;
             return this;
         }
+        @CustomType.Setter
         public Builder certificateSecretId(@Nullable String certificateSecretId) {
             this.certificateSecretId = certificateSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder certificateSecretVersion(@Nullable Integer certificateSecretVersion) {
             this.certificateSecretVersion = certificateSecretVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
-        }        public IntegrationInstanceCustomEndpoint build() {
-            return new IntegrationInstanceCustomEndpoint(alias, certificateSecretId, certificateSecretVersion, hostname);
+        }
+        public IntegrationInstanceCustomEndpoint build() {
+            final var o = new IntegrationInstanceCustomEndpoint();
+            o.alias = alias;
+            o.certificateSecretId = certificateSecretId;
+            o.certificateSecretVersion = certificateSecretVersion;
+            o.hostname = hostname;
+            return o;
         }
     }
 }

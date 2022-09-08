@@ -11,27 +11,16 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryObjectContentResult {
-    private final @Nullable String filePath;
+    private @Nullable String filePath;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String repositoryId;
-    private final String sha;
+    private String id;
+    private String repositoryId;
+    private String sha;
 
-    @CustomType.Constructor
-    private GetRepositoryObjectContentResult(
-        @CustomType.Parameter("filePath") @Nullable String filePath,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("sha") String sha) {
-        this.filePath = filePath;
-        this.id = id;
-        this.repositoryId = repositoryId;
-        this.sha = sha;
-    }
-
+    private GetRepositoryObjectContentResult() {}
     public Optional<String> filePath() {
         return Optional.ofNullable(this.filePath);
     }
@@ -56,17 +45,13 @@ public final class GetRepositoryObjectContentResult {
     public static Builder builder(GetRepositoryObjectContentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String filePath;
         private String id;
         private String repositoryId;
         private String sha;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryObjectContentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filePath = defaults.filePath;
@@ -75,23 +60,33 @@ public final class GetRepositoryObjectContentResult {
     	      this.sha = defaults.sha;
         }
 
+        @CustomType.Setter
         public Builder filePath(@Nullable String filePath) {
             this.filePath = filePath;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder sha(String sha) {
             this.sha = Objects.requireNonNull(sha);
             return this;
-        }        public GetRepositoryObjectContentResult build() {
-            return new GetRepositoryObjectContentResult(filePath, id, repositoryId, sha);
+        }
+        public GetRepositoryObjectContentResult build() {
+            final var o = new GetRepositoryObjectContentResult();
+            o.filePath = filePath;
+            o.id = id;
+            o.repositoryId = repositoryId;
+            o.sha = sha;
+            return o;
         }
     }
 }

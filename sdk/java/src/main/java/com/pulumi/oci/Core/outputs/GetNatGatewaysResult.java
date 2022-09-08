@@ -18,52 +18,35 @@ public final class GetNatGatewaysResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the NAT gateway.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetNatGatewaysFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetNatGatewaysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of nat_gateways.
      * 
      */
-    private final List<GetNatGatewaysNatGateway> natGateways;
+    private List<GetNatGatewaysNatGateway> natGateways;
     /**
      * @return The NAT gateway&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the NAT gateway belongs to.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetNatGatewaysResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetNatGatewaysFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("natGateways") List<GetNatGatewaysNatGateway> natGateways,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.natGateways = natGateways;
-        this.state = state;
-        this.vcnId = vcnId;
-    }
-
+    private GetNatGatewaysResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the NAT gateway.
      * 
@@ -117,7 +100,7 @@ public final class GetNatGatewaysResult {
     public static Builder builder(GetNatGatewaysResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetNatGatewaysResult {
         private List<GetNatGatewaysNatGateway> natGateways;
         private @Nullable String state;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNatGatewaysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetNatGatewaysResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNatGatewaysFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,10 +139,12 @@ public final class GetNatGatewaysResult {
         public Builder filters(GetNatGatewaysFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder natGateways(List<GetNatGatewaysNatGateway> natGateways) {
             this.natGateways = Objects.requireNonNull(natGateways);
             return this;
@@ -168,15 +152,26 @@ public final class GetNatGatewaysResult {
         public Builder natGateways(GetNatGatewaysNatGateway... natGateways) {
             return natGateways(List.of(natGateways));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetNatGatewaysResult build() {
-            return new GetNatGatewaysResult(compartmentId, displayName, filters, id, natGateways, state, vcnId);
+        }
+        public GetNatGatewaysResult build() {
+            final var o = new GetNatGatewaysResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.natGateways = natGateways;
+            o.state = state;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

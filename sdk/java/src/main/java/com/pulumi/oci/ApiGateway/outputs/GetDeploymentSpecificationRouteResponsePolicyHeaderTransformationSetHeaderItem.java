@@ -14,28 +14,19 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
      * @return If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
      * 
      */
-    private final String ifExists;
+    private String ifExists;
     /**
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
      * 
      */
-    private final List<String> values;
+    private List<String> values;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem(
-        @CustomType.Parameter("ifExists") String ifExists,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("values") List<String> values) {
-        this.ifExists = ifExists;
-        this.name = name;
-        this.values = values;
-    }
-
+    private GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem() {}
     /**
      * @return If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
      * 
@@ -65,16 +56,12 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
     public static Builder builder(GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ifExists;
         private String name;
         private List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ifExists = defaults.ifExists;
@@ -82,22 +69,30 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder ifExists(String ifExists) {
             this.ifExists = Objects.requireNonNull(ifExists);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<String> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem build() {
-            return new GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem(ifExists, name, values);
+        }
+        public GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem build() {
+            final var o = new GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem();
+            o.ifExists = ifExists;
+            o.name = name;
+            o.values = values;
+            return o;
         }
     }
 }

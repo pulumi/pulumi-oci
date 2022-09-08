@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetResolverArgs extends com.pulumi.resources.InvokeArgs {
@@ -32,15 +34,15 @@ public final class GetResolverArgs extends com.pulumi.resources.InvokeArgs {
      * Value must be `PRIVATE` when listing private name resolvers.
      * 
      */
-    @Import(name="scope", required=true)
-    private Output<String> scope;
+    @Import(name="scope")
+    private @Nullable Output<String> scope;
 
     /**
      * @return Value must be `PRIVATE` when listing private name resolvers.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Optional<Output<String>> scope() {
+        return Optional.ofNullable(this.scope);
     }
 
     private GetResolverArgs() {}
@@ -95,7 +97,7 @@ public final class GetResolverArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          */
-        public Builder scope(Output<String> scope) {
+        public Builder scope(@Nullable Output<String> scope) {
             $.scope = scope;
             return this;
         }
@@ -112,7 +114,6 @@ public final class GetResolverArgs extends com.pulumi.resources.InvokeArgs {
 
         public GetResolverArgs build() {
             $.resolverId = Objects.requireNonNull($.resolverId, "expected parameter 'resolverId' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
             return $;
         }
     }

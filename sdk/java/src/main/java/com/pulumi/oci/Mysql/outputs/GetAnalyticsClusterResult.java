@@ -16,66 +16,45 @@ public final class GetAnalyticsClusterResult {
      * @return An Analytics Cluster Node is a compute host that is part of an Analytics Cluster.
      * 
      */
-    private final List<GetAnalyticsClusterClusterNode> clusterNodes;
+    private List<GetAnalyticsClusterClusterNode> clusterNodes;
     /**
      * @return The number of analytics-processing compute instances, of the specified shape, in the Analytics Cluster.
      * 
      */
-    private final Integer clusterSize;
+    private Integer clusterSize;
     /**
      * @return The OCID of the parent DB System this Analytics Cluster is attached to.
      * 
      */
-    private final String dbSystemId;
-    private final String id;
+    private String dbSystemId;
+    private String id;
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The shape determines resources to allocate to the Analytics Cluster nodes - CPU cores, memory.
      * 
      */
-    private final String shapeName;
+    private String shapeName;
     /**
      * @return The current state of the Analytics Cluster.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetAnalyticsClusterResult(
-        @CustomType.Parameter("clusterNodes") List<GetAnalyticsClusterClusterNode> clusterNodes,
-        @CustomType.Parameter("clusterSize") Integer clusterSize,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("shapeName") String shapeName,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.clusterNodes = clusterNodes;
-        this.clusterSize = clusterSize;
-        this.dbSystemId = dbSystemId;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.shapeName = shapeName;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetAnalyticsClusterResult() {}
     /**
      * @return An Analytics Cluster Node is a compute host that is part of an Analytics Cluster.
      * 
@@ -143,7 +122,7 @@ public final class GetAnalyticsClusterResult {
     public static Builder builder(GetAnalyticsClusterResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAnalyticsClusterClusterNode> clusterNodes;
         private Integer clusterSize;
@@ -154,11 +133,7 @@ public final class GetAnalyticsClusterResult {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnalyticsClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterNodes = defaults.clusterNodes;
@@ -172,6 +147,7 @@ public final class GetAnalyticsClusterResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder clusterNodes(List<GetAnalyticsClusterClusterNode> clusterNodes) {
             this.clusterNodes = Objects.requireNonNull(clusterNodes);
             return this;
@@ -179,39 +155,58 @@ public final class GetAnalyticsClusterResult {
         public Builder clusterNodes(GetAnalyticsClusterClusterNode... clusterNodes) {
             return clusterNodes(List.of(clusterNodes));
         }
+        @CustomType.Setter
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = Objects.requireNonNull(clusterSize);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetAnalyticsClusterResult build() {
-            return new GetAnalyticsClusterResult(clusterNodes, clusterSize, dbSystemId, id, lifecycleDetails, shapeName, state, timeCreated, timeUpdated);
+        }
+        public GetAnalyticsClusterResult build() {
+            final var o = new GetAnalyticsClusterResult();
+            o.clusterNodes = clusterNodes;
+            o.clusterSize = clusterSize;
+            o.dbSystemId = dbSystemId;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.shapeName = shapeName;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

@@ -11,45 +11,30 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem {
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
      * 
      */
-    private final String mirrorStatus;
-    private final String timeCompleted;
+    private String mirrorStatus;
+    private String timeCompleted;
     /**
      * @return The time to enqueue a mirror operation.
      * 
      */
-    private final String timeEnqueued;
+    private String timeEnqueued;
     /**
      * @return The time to start a mirror operation.
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
     /**
      * @return Workrequest ID to track current mirror operation.
      * 
      */
-    private final String workRequestId;
+    private String workRequestId;
 
-    @CustomType.Constructor
-    private GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem(
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("mirrorStatus") String mirrorStatus,
-        @CustomType.Parameter("timeCompleted") String timeCompleted,
-        @CustomType.Parameter("timeEnqueued") String timeEnqueued,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("workRequestId") String workRequestId) {
-        this.freeformTags = freeformTags;
-        this.mirrorStatus = mirrorStatus;
-        this.timeCompleted = timeCompleted;
-        this.timeEnqueued = timeEnqueued;
-        this.timeStarted = timeStarted;
-        this.workRequestId = workRequestId;
-    }
-
+    private GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem() {}
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
@@ -92,7 +77,7 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionIte
     public static Builder builder(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> freeformTags;
         private String mirrorStatus;
@@ -100,11 +85,7 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionIte
         private String timeEnqueued;
         private String timeStarted;
         private String workRequestId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.freeformTags = defaults.freeformTags;
@@ -115,31 +96,45 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionIte
     	      this.workRequestId = defaults.workRequestId;
         }
 
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder mirrorStatus(String mirrorStatus) {
             this.mirrorStatus = Objects.requireNonNull(mirrorStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCompleted(String timeCompleted) {
             this.timeCompleted = Objects.requireNonNull(timeCompleted);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnqueued(String timeEnqueued) {
             this.timeEnqueued = Objects.requireNonNull(timeEnqueued);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = Objects.requireNonNull(workRequestId);
             return this;
-        }        public GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem build() {
-            return new GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem(freeformTags, mirrorStatus, timeCompleted, timeEnqueued, timeStarted, workRequestId);
+        }
+        public GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem build() {
+            final var o = new GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem();
+            o.freeformTags = freeformTags;
+            o.mirrorStatus = mirrorStatus;
+            o.timeCompleted = timeCompleted;
+            o.timeEnqueued = timeEnqueued;
+            o.timeStarted = timeStarted;
+            o.workRequestId = workRequestId;
+            return o;
         }
     }
 }

@@ -16,35 +16,24 @@ public final class TableSchemaColumn {
      * @return The column default value.
      * 
      */
-    private final @Nullable String defaultValue;
+    private @Nullable String defaultValue;
     /**
      * @return The column nullable flag.
      * 
      */
-    private final @Nullable Boolean isNullable;
+    private @Nullable Boolean isNullable;
     /**
      * @return Table name.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The column type.
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private TableSchemaColumn(
-        @CustomType.Parameter("defaultValue") @Nullable String defaultValue,
-        @CustomType.Parameter("isNullable") @Nullable Boolean isNullable,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.defaultValue = defaultValue;
-        this.isNullable = isNullable;
-        this.name = name;
-        this.type = type;
-    }
-
+    private TableSchemaColumn() {}
     /**
      * @return The column default value.
      * 
@@ -81,17 +70,13 @@ public final class TableSchemaColumn {
     public static Builder builder(TableSchemaColumn defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String defaultValue;
         private @Nullable Boolean isNullable;
         private @Nullable String name;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TableSchemaColumn defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultValue = defaults.defaultValue;
@@ -100,23 +85,33 @@ public final class TableSchemaColumn {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder defaultValue(@Nullable String defaultValue) {
             this.defaultValue = defaultValue;
             return this;
         }
+        @CustomType.Setter
         public Builder isNullable(@Nullable Boolean isNullable) {
             this.isNullable = isNullable;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public TableSchemaColumn build() {
-            return new TableSchemaColumn(defaultValue, isNullable, name, type);
+        }
+        public TableSchemaColumn build() {
+            final var o = new TableSchemaColumn();
+            o.defaultValue = defaultValue;
+            o.isNullable = isNullable;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

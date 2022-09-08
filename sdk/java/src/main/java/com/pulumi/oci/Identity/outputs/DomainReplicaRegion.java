@@ -15,28 +15,19 @@ public final class DomainReplicaRegion {
      * @return A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.
      * 
      */
-    private final @Nullable String region;
+    private @Nullable String region;
     /**
      * @return The current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return Region agnostic domain URL.
      * 
      */
-    private final @Nullable String url;
+    private @Nullable String url;
 
-    @CustomType.Constructor
-    private DomainReplicaRegion(
-        @CustomType.Parameter("region") @Nullable String region,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("url") @Nullable String url) {
-        this.region = region;
-        this.state = state;
-        this.url = url;
-    }
-
+    private DomainReplicaRegion() {}
     /**
      * @return A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.
      * 
@@ -66,16 +57,12 @@ public final class DomainReplicaRegion {
     public static Builder builder(DomainReplicaRegion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String region;
         private @Nullable String state;
         private @Nullable String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DomainReplicaRegion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.region = defaults.region;
@@ -83,19 +70,27 @@ public final class DomainReplicaRegion {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder region(@Nullable String region) {
             this.region = region;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder url(@Nullable String url) {
             this.url = url;
             return this;
-        }        public DomainReplicaRegion build() {
-            return new DomainReplicaRegion(region, state, url);
+        }
+        public DomainReplicaRegion build() {
+            final var o = new DomainReplicaRegion();
+            o.region = region;
+            o.state = state;
+            o.url = url;
+            return o;
         }
     }
 }

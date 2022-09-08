@@ -16,21 +16,14 @@ public final class MigrationDataTransferMediumDetails {
      * @return (Updatable) Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
      * 
      */
-    private final @Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetails databaseLinkDetails;
+    private @Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetails databaseLinkDetails;
     /**
      * @return (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
      * 
      */
-    private final @Nullable MigrationDataTransferMediumDetailsObjectStorageDetails objectStorageDetails;
+    private @Nullable MigrationDataTransferMediumDetailsObjectStorageDetails objectStorageDetails;
 
-    @CustomType.Constructor
-    private MigrationDataTransferMediumDetails(
-        @CustomType.Parameter("databaseLinkDetails") @Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetails databaseLinkDetails,
-        @CustomType.Parameter("objectStorageDetails") @Nullable MigrationDataTransferMediumDetailsObjectStorageDetails objectStorageDetails) {
-        this.databaseLinkDetails = databaseLinkDetails;
-        this.objectStorageDetails = objectStorageDetails;
-    }
-
+    private MigrationDataTransferMediumDetails() {}
     /**
      * @return (Updatable) Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
      * 
@@ -53,30 +46,32 @@ public final class MigrationDataTransferMediumDetails {
     public static Builder builder(MigrationDataTransferMediumDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetails databaseLinkDetails;
         private @Nullable MigrationDataTransferMediumDetailsObjectStorageDetails objectStorageDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationDataTransferMediumDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.databaseLinkDetails = defaults.databaseLinkDetails;
     	      this.objectStorageDetails = defaults.objectStorageDetails;
         }
 
+        @CustomType.Setter
         public Builder databaseLinkDetails(@Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetails databaseLinkDetails) {
             this.databaseLinkDetails = databaseLinkDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder objectStorageDetails(@Nullable MigrationDataTransferMediumDetailsObjectStorageDetails objectStorageDetails) {
             this.objectStorageDetails = objectStorageDetails;
             return this;
-        }        public MigrationDataTransferMediumDetails build() {
-            return new MigrationDataTransferMediumDetails(databaseLinkDetails, objectStorageDetails);
+        }
+        public MigrationDataTransferMediumDetails build() {
+            final var o = new MigrationDataTransferMediumDetails();
+            o.databaseLinkDetails = databaseLinkDetails;
+            o.objectStorageDetails = objectStorageDetails;
+            return o;
         }
     }
 }

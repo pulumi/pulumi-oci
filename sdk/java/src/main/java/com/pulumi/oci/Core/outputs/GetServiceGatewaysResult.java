@@ -18,45 +18,30 @@ public final class GetServiceGatewaysResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the service gateway.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetServiceGatewaysFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetServiceGatewaysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of service_gateways.
      * 
      */
-    private final List<GetServiceGatewaysServiceGateway> serviceGateways;
+    private List<GetServiceGatewaysServiceGateway> serviceGateways;
     /**
      * @return The service gateway&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the service gateway belongs to.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetServiceGatewaysResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetServiceGatewaysFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("serviceGateways") List<GetServiceGatewaysServiceGateway> serviceGateways,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.serviceGateways = serviceGateways;
-        this.state = state;
-        this.vcnId = vcnId;
-    }
-
+    private GetServiceGatewaysResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the service gateway.
      * 
@@ -103,7 +88,7 @@ public final class GetServiceGatewaysResult {
     public static Builder builder(GetServiceGatewaysResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetServiceGatewaysFilter> filters;
@@ -111,11 +96,7 @@ public final class GetServiceGatewaysResult {
         private List<GetServiceGatewaysServiceGateway> serviceGateways;
         private @Nullable String state;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceGatewaysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetServiceGatewaysResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetServiceGatewaysFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,10 +120,12 @@ public final class GetServiceGatewaysResult {
         public Builder filters(GetServiceGatewaysFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceGateways(List<GetServiceGatewaysServiceGateway> serviceGateways) {
             this.serviceGateways = Objects.requireNonNull(serviceGateways);
             return this;
@@ -148,15 +133,25 @@ public final class GetServiceGatewaysResult {
         public Builder serviceGateways(GetServiceGatewaysServiceGateway... serviceGateways) {
             return serviceGateways(List.of(serviceGateways));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetServiceGatewaysResult build() {
-            return new GetServiceGatewaysResult(compartmentId, filters, id, serviceGateways, state, vcnId);
+        }
+        public GetServiceGatewaysResult build() {
+            final var o = new GetServiceGatewaysResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.serviceGateways = serviceGateways;
+            o.state = state;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

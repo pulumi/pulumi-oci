@@ -13,43 +13,30 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    private final String actionName;
+    private String actionName;
     /**
      * @return An expression that determines whether or not the rule action should be executed.
      * 
      */
-    private final String condition;
+    private String condition;
     /**
      * @return The language used to parse condition from field `condition`. Available languages:
      * * **JMESPATH** an extended JMESPath language syntax.
      * 
      */
-    private final String conditionLanguage;
+    private String conditionLanguage;
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule(
-        @CustomType.Parameter("actionName") String actionName,
-        @CustomType.Parameter("condition") String condition,
-        @CustomType.Parameter("conditionLanguage") String conditionLanguage,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.actionName = actionName;
-        this.condition = condition;
-        this.conditionLanguage = conditionLanguage;
-        this.name = name;
-        this.type = type;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule() {}
     /**
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
@@ -94,18 +81,14 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String actionName;
         private String condition;
         private String conditionLanguage;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionName = defaults.actionName;
@@ -115,27 +98,39 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder actionName(String actionName) {
             this.actionName = Objects.requireNonNull(actionName);
             return this;
         }
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
         }
+        @CustomType.Setter
         public Builder conditionLanguage(String conditionLanguage) {
             this.conditionLanguage = Objects.requireNonNull(conditionLanguage);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule(actionName, condition, conditionLanguage, name, type);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule();
+            o.actionName = actionName;
+            o.condition = condition;
+            o.conditionLanguage = conditionLanguage;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

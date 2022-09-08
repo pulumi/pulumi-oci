@@ -13,21 +13,14 @@ public final class FleetInventoryLog {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * 
      */
-    private final String logGroupId;
+    private String logGroupId;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
      * 
      */
-    private final String logId;
+    private String logId;
 
-    @CustomType.Constructor
-    private FleetInventoryLog(
-        @CustomType.Parameter("logGroupId") String logGroupId,
-        @CustomType.Parameter("logId") String logId) {
-        this.logGroupId = logGroupId;
-        this.logId = logId;
-    }
-
+    private FleetInventoryLog() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * 
@@ -50,30 +43,32 @@ public final class FleetInventoryLog {
     public static Builder builder(FleetInventoryLog defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String logGroupId;
         private String logId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(FleetInventoryLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.logGroupId = defaults.logGroupId;
     	      this.logId = defaults.logId;
         }
 
+        @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder logId(String logId) {
             this.logId = Objects.requireNonNull(logId);
             return this;
-        }        public FleetInventoryLog build() {
-            return new FleetInventoryLog(logGroupId, logId);
+        }
+        public FleetInventoryLog build() {
+            final var o = new FleetInventoryLog();
+            o.logGroupId = logGroupId;
+            o.logId = logId;
+            return o;
         }
     }
 }

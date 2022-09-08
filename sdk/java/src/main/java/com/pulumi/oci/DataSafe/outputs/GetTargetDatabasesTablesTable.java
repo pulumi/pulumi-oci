@@ -13,21 +13,14 @@ public final class GetTargetDatabasesTablesTable {
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private final String schemaName;
+    private String schemaName;
     /**
      * @return A filter to return only items related to specific table name.
      * 
      */
-    private final String tableName;
+    private String tableName;
 
-    @CustomType.Constructor
-    private GetTargetDatabasesTablesTable(
-        @CustomType.Parameter("schemaName") String schemaName,
-        @CustomType.Parameter("tableName") String tableName) {
-        this.schemaName = schemaName;
-        this.tableName = tableName;
-    }
-
+    private GetTargetDatabasesTablesTable() {}
     /**
      * @return A filter to return only items related to specific schema name.
      * 
@@ -50,30 +43,32 @@ public final class GetTargetDatabasesTablesTable {
     public static Builder builder(GetTargetDatabasesTablesTable defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String schemaName;
         private String tableName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabasesTablesTable defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.schemaName = defaults.schemaName;
     	      this.tableName = defaults.tableName;
         }
 
+        @CustomType.Setter
         public Builder schemaName(String schemaName) {
             this.schemaName = Objects.requireNonNull(schemaName);
             return this;
         }
+        @CustomType.Setter
         public Builder tableName(String tableName) {
             this.tableName = Objects.requireNonNull(tableName);
             return this;
-        }        public GetTargetDatabasesTablesTable build() {
-            return new GetTargetDatabasesTablesTable(schemaName, tableName);
+        }
+        public GetTargetDatabasesTablesTable build() {
+            final var o = new GetTargetDatabasesTablesTable();
+            o.schemaName = schemaName;
+            o.tableName = tableName;
+            return o;
         }
     }
 }

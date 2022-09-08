@@ -18,59 +18,40 @@ public final class GetModelsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
      * 
      */
-    private final @Nullable String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetModelsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetModelsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of models.
      * 
      */
-    private final List<GetModelsModel> models;
+    private List<GetModelsModel> models;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The state of the model.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetModelsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") @Nullable String createdBy,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetModelsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("models") List<GetModelsModel> models,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.models = models;
-        this.projectId = projectId;
-        this.state = state;
-    }
-
+    private GetModelsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model&#39;s compartment.
      * 
@@ -131,7 +112,7 @@ public final class GetModelsResult {
     public static Builder builder(GetModelsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String createdBy;
@@ -141,11 +122,7 @@ public final class GetModelsResult {
         private List<GetModelsModel> models;
         private @Nullable String projectId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -158,18 +135,22 @@ public final class GetModelsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
             this.createdBy = createdBy;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetModelsFilter> filters) {
             this.filters = filters;
             return this;
@@ -177,10 +158,12 @@ public final class GetModelsResult {
         public Builder filters(GetModelsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder models(List<GetModelsModel> models) {
             this.models = Objects.requireNonNull(models);
             return this;
@@ -188,15 +171,27 @@ public final class GetModelsResult {
         public Builder models(GetModelsModel... models) {
             return models(List.of(models));
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetModelsResult build() {
-            return new GetModelsResult(compartmentId, createdBy, displayName, filters, id, models, projectId, state);
+        }
+        public GetModelsResult build() {
+            final var o = new GetModelsResult();
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.models = models;
+            o.projectId = projectId;
+            o.state = state;
+            return o;
         }
     }
 }

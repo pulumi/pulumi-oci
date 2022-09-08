@@ -13,21 +13,14 @@ public final class GetShapesShapeOcpuOption {
      * @return The maximum allowed percentage of cores enabled.
      * 
      */
-    private final Double max;
+    private Double max;
     /**
      * @return The minimum allowed percentage of cores enabled.
      * 
      */
-    private final Double min;
+    private Double min;
 
-    @CustomType.Constructor
-    private GetShapesShapeOcpuOption(
-        @CustomType.Parameter("max") Double max,
-        @CustomType.Parameter("min") Double min) {
-        this.max = max;
-        this.min = min;
-    }
-
+    private GetShapesShapeOcpuOption() {}
     /**
      * @return The maximum allowed percentage of cores enabled.
      * 
@@ -50,30 +43,32 @@ public final class GetShapesShapeOcpuOption {
     public static Builder builder(GetShapesShapeOcpuOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double max;
         private Double min;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapesShapeOcpuOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.max = defaults.max;
     	      this.min = defaults.min;
         }
 
+        @CustomType.Setter
         public Builder max(Double max) {
             this.max = Objects.requireNonNull(max);
             return this;
         }
+        @CustomType.Setter
         public Builder min(Double min) {
             this.min = Objects.requireNonNull(min);
             return this;
-        }        public GetShapesShapeOcpuOption build() {
-            return new GetShapesShapeOcpuOption(max, min);
+        }
+        public GetShapesShapeOcpuOption build() {
+            final var o = new GetShapesShapeOcpuOption();
+            o.max = max;
+            o.min = min;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetServiceConnectorsServiceConnectorCollection {
-    private final List<GetServiceConnectorsServiceConnectorCollectionItem> items;
+    private List<GetServiceConnectorsServiceConnectorCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetServiceConnectorsServiceConnectorCollection(@CustomType.Parameter("items") List<GetServiceConnectorsServiceConnectorCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetServiceConnectorsServiceConnectorCollection() {}
     public List<GetServiceConnectorsServiceConnectorCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetServiceConnectorsServiceConnectorCollection {
     public static Builder builder(GetServiceConnectorsServiceConnectorCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetServiceConnectorsServiceConnectorCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetServiceConnectorsServiceConnectorCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetServiceConnectorsServiceConnectorCollectionItem... items) {
             return items(List.of(items));
-        }        public GetServiceConnectorsServiceConnectorCollection build() {
-            return new GetServiceConnectorsServiceConnectorCollection(items);
+        }
+        public GetServiceConnectorsServiceConnectorCollection build() {
+            final var o = new GetServiceConnectorsServiceConnectorCollection();
+            o.items = items;
+            return o;
         }
     }
 }

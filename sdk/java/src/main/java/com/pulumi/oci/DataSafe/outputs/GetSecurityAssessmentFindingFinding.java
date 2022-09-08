@@ -11,38 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSecurityAssessmentFindingFinding {
-    private final String assessmentId;
-    private final List<String> details;
-    private final String key;
-    private final List<GetSecurityAssessmentFindingFindingReference> references;
-    private final String remarks;
-    private final String severity;
-    private final String summary;
-    private final String targetId;
-    private final String title;
+    private String assessmentId;
+    private List<String> details;
+    private String key;
+    private List<GetSecurityAssessmentFindingFindingReference> references;
+    private String remarks;
+    private String severity;
+    private String summary;
+    private String targetId;
+    private String title;
 
-    @CustomType.Constructor
-    private GetSecurityAssessmentFindingFinding(
-        @CustomType.Parameter("assessmentId") String assessmentId,
-        @CustomType.Parameter("details") List<String> details,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("references") List<GetSecurityAssessmentFindingFindingReference> references,
-        @CustomType.Parameter("remarks") String remarks,
-        @CustomType.Parameter("severity") String severity,
-        @CustomType.Parameter("summary") String summary,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("title") String title) {
-        this.assessmentId = assessmentId;
-        this.details = details;
-        this.key = key;
-        this.references = references;
-        this.remarks = remarks;
-        this.severity = severity;
-        this.summary = summary;
-        this.targetId = targetId;
-        this.title = title;
-    }
-
+    private GetSecurityAssessmentFindingFinding() {}
     public String assessmentId() {
         return this.assessmentId;
     }
@@ -78,7 +57,7 @@ public final class GetSecurityAssessmentFindingFinding {
     public static Builder builder(GetSecurityAssessmentFindingFinding defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String assessmentId;
         private List<String> details;
@@ -89,11 +68,7 @@ public final class GetSecurityAssessmentFindingFinding {
         private String summary;
         private String targetId;
         private String title;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityAssessmentFindingFinding defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assessmentId = defaults.assessmentId;
@@ -107,10 +82,12 @@ public final class GetSecurityAssessmentFindingFinding {
     	      this.title = defaults.title;
         }
 
+        @CustomType.Setter
         public Builder assessmentId(String assessmentId) {
             this.assessmentId = Objects.requireNonNull(assessmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder details(List<String> details) {
             this.details = Objects.requireNonNull(details);
             return this;
@@ -118,10 +95,12 @@ public final class GetSecurityAssessmentFindingFinding {
         public Builder details(String... details) {
             return details(List.of(details));
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder references(List<GetSecurityAssessmentFindingFindingReference> references) {
             this.references = Objects.requireNonNull(references);
             return this;
@@ -129,27 +108,43 @@ public final class GetSecurityAssessmentFindingFinding {
         public Builder references(GetSecurityAssessmentFindingFindingReference... references) {
             return references(List.of(references));
         }
+        @CustomType.Setter
         public Builder remarks(String remarks) {
             this.remarks = Objects.requireNonNull(remarks);
             return this;
         }
+        @CustomType.Setter
         public Builder severity(String severity) {
             this.severity = Objects.requireNonNull(severity);
             return this;
         }
+        @CustomType.Setter
         public Builder summary(String summary) {
             this.summary = Objects.requireNonNull(summary);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder title(String title) {
             this.title = Objects.requireNonNull(title);
             return this;
-        }        public GetSecurityAssessmentFindingFinding build() {
-            return new GetSecurityAssessmentFindingFinding(assessmentId, details, key, references, remarks, severity, summary, targetId, title);
+        }
+        public GetSecurityAssessmentFindingFinding build() {
+            final var o = new GetSecurityAssessmentFindingFinding();
+            o.assessmentId = assessmentId;
+            o.details = details;
+            o.key = key;
+            o.references = references;
+            o.remarks = remarks;
+            o.severity = severity;
+            o.summary = summary;
+            o.targetId = targetId;
+            o.title = title;
+            return o;
         }
     }
 }

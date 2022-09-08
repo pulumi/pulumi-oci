@@ -16,69 +16,46 @@ public final class GetIndexesIndexCollection {
      * @return The ID of a table&#39;s compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
      * 
      */
-    private final String compartmentId;
-    private final String id;
-    private final Boolean isIfNotExists;
+    private String compartmentId;
+    private String id;
+    private Boolean isIfNotExists;
     /**
      * @return A set of keys for a secondary index.
      * 
      */
-    private final List<GetIndexesIndexCollectionKey> keys;
+    private List<GetIndexesIndexCollectionKey> keys;
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A shell-globbing-style (*?[]) filter for names.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Filter list by the lifecycle state of the item.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return the OCID of the table to which this index belongs.
      * 
      */
-    private final String tableId;
+    private String tableId;
     /**
      * @return The name of the table to which this index belongs.
      * 
      */
-    private final String tableName;
+    private String tableName;
     /**
      * @return A table name within the compartment, or a table OCID.
      * 
      */
-    private final String tableNameOrId;
+    private String tableNameOrId;
 
-    @CustomType.Constructor
-    private GetIndexesIndexCollection(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isIfNotExists") Boolean isIfNotExists,
-        @CustomType.Parameter("keys") List<GetIndexesIndexCollectionKey> keys,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("tableId") String tableId,
-        @CustomType.Parameter("tableName") String tableName,
-        @CustomType.Parameter("tableNameOrId") String tableNameOrId) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.isIfNotExists = isIfNotExists;
-        this.keys = keys;
-        this.lifecycleDetails = lifecycleDetails;
-        this.name = name;
-        this.state = state;
-        this.tableId = tableId;
-        this.tableName = tableName;
-        this.tableNameOrId = tableNameOrId;
-    }
-
+    private GetIndexesIndexCollection() {}
     /**
      * @return The ID of a table&#39;s compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
      * 
@@ -149,7 +126,7 @@ public final class GetIndexesIndexCollection {
     public static Builder builder(GetIndexesIndexCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
@@ -161,11 +138,7 @@ public final class GetIndexesIndexCollection {
         private String tableId;
         private String tableName;
         private String tableNameOrId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIndexesIndexCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -180,18 +153,22 @@ public final class GetIndexesIndexCollection {
     	      this.tableNameOrId = defaults.tableNameOrId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isIfNotExists(Boolean isIfNotExists) {
             this.isIfNotExists = Objects.requireNonNull(isIfNotExists);
             return this;
         }
+        @CustomType.Setter
         public Builder keys(List<GetIndexesIndexCollectionKey> keys) {
             this.keys = Objects.requireNonNull(keys);
             return this;
@@ -199,31 +176,49 @@ public final class GetIndexesIndexCollection {
         public Builder keys(GetIndexesIndexCollectionKey... keys) {
             return keys(List.of(keys));
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder tableId(String tableId) {
             this.tableId = Objects.requireNonNull(tableId);
             return this;
         }
+        @CustomType.Setter
         public Builder tableName(String tableName) {
             this.tableName = Objects.requireNonNull(tableName);
             return this;
         }
+        @CustomType.Setter
         public Builder tableNameOrId(String tableNameOrId) {
             this.tableNameOrId = Objects.requireNonNull(tableNameOrId);
             return this;
-        }        public GetIndexesIndexCollection build() {
-            return new GetIndexesIndexCollection(compartmentId, id, isIfNotExists, keys, lifecycleDetails, name, state, tableId, tableName, tableNameOrId);
+        }
+        public GetIndexesIndexCollection build() {
+            final var o = new GetIndexesIndexCollection();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.isIfNotExists = isIfNotExists;
+            o.keys = keys;
+            o.lifecycleDetails = lifecycleDetails;
+            o.name = name;
+            o.state = state;
+            o.tableId = tableId;
+            o.tableName = tableName;
+            o.tableNameOrId = tableNameOrId;
+            return o;
         }
     }
 }

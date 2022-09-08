@@ -16,35 +16,24 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItem {
      * @return (Updatable) Compute instance OCID identifiers that are members of this group.
      * 
      */
-    private final @Nullable List<String> computeInstanceIds;
+    private @Nullable List<String> computeInstanceIds;
     /**
      * @return (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
      * 
      */
-    private final @Nullable String query;
+    private @Nullable String query;
     /**
      * @return (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
      * 
      */
-    private final @Nullable String region;
+    private @Nullable String region;
     /**
      * @return (Updatable) Defines the type of the instance selector for the group.
      * 
      */
-    private final String selectorType;
+    private String selectorType;
 
-    @CustomType.Constructor
-    private DeployEnvironmentComputeInstanceGroupSelectorsItem(
-        @CustomType.Parameter("computeInstanceIds") @Nullable List<String> computeInstanceIds,
-        @CustomType.Parameter("query") @Nullable String query,
-        @CustomType.Parameter("region") @Nullable String region,
-        @CustomType.Parameter("selectorType") String selectorType) {
-        this.computeInstanceIds = computeInstanceIds;
-        this.query = query;
-        this.region = region;
-        this.selectorType = selectorType;
-    }
-
+    private DeployEnvironmentComputeInstanceGroupSelectorsItem() {}
     /**
      * @return (Updatable) Compute instance OCID identifiers that are members of this group.
      * 
@@ -81,17 +70,13 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItem {
     public static Builder builder(DeployEnvironmentComputeInstanceGroupSelectorsItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> computeInstanceIds;
         private @Nullable String query;
         private @Nullable String region;
         private String selectorType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeployEnvironmentComputeInstanceGroupSelectorsItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.computeInstanceIds = defaults.computeInstanceIds;
@@ -100,6 +85,7 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItem {
     	      this.selectorType = defaults.selectorType;
         }
 
+        @CustomType.Setter
         public Builder computeInstanceIds(@Nullable List<String> computeInstanceIds) {
             this.computeInstanceIds = computeInstanceIds;
             return this;
@@ -107,19 +93,28 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItem {
         public Builder computeInstanceIds(String... computeInstanceIds) {
             return computeInstanceIds(List.of(computeInstanceIds));
         }
+        @CustomType.Setter
         public Builder query(@Nullable String query) {
             this.query = query;
             return this;
         }
+        @CustomType.Setter
         public Builder region(@Nullable String region) {
             this.region = region;
             return this;
         }
+        @CustomType.Setter
         public Builder selectorType(String selectorType) {
             this.selectorType = Objects.requireNonNull(selectorType);
             return this;
-        }        public DeployEnvironmentComputeInstanceGroupSelectorsItem build() {
-            return new DeployEnvironmentComputeInstanceGroupSelectorsItem(computeInstanceIds, query, region, selectorType);
+        }
+        public DeployEnvironmentComputeInstanceGroupSelectorsItem build() {
+            final var o = new DeployEnvironmentComputeInstanceGroupSelectorsItem();
+            o.computeInstanceIds = computeInstanceIds;
+            o.query = query;
+            o.region = region;
+            o.selectorType = selectorType;
+            return o;
         }
     }
 }

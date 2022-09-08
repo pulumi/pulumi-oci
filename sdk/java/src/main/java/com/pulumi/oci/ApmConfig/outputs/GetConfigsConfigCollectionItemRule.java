@@ -15,56 +15,39 @@ public final class GetConfigsConfigCollectionItemRule {
      * @return A filter to return resources that match the given display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The string that defines the Span Filter expression.
      * 
      */
-    private final String filterText;
+    private String filterText;
     /**
      * @return Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
      * 
      */
-    private final Boolean isApplyToErrorSpans;
+    private Boolean isApplyToErrorSpans;
     /**
      * @return Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
      * 
      */
-    private final Integer priority;
+    private Integer priority;
     /**
      * @return The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
      * 
      */
-    private final Integer satisfiedResponseTime;
+    private Integer satisfiedResponseTime;
     /**
      * @return The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
      */
-    private final Integer toleratingResponseTime;
+    private Integer toleratingResponseTime;
 
-    @CustomType.Constructor
-    private GetConfigsConfigCollectionItemRule(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("filterText") String filterText,
-        @CustomType.Parameter("isApplyToErrorSpans") Boolean isApplyToErrorSpans,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("priority") Integer priority,
-        @CustomType.Parameter("satisfiedResponseTime") Integer satisfiedResponseTime,
-        @CustomType.Parameter("toleratingResponseTime") Integer toleratingResponseTime) {
-        this.displayName = displayName;
-        this.filterText = filterText;
-        this.isApplyToErrorSpans = isApplyToErrorSpans;
-        this.isEnabled = isEnabled;
-        this.priority = priority;
-        this.satisfiedResponseTime = satisfiedResponseTime;
-        this.toleratingResponseTime = toleratingResponseTime;
-    }
-
+    private GetConfigsConfigCollectionItemRule() {}
     /**
      * @return A filter to return resources that match the given display name.
      * 
@@ -122,7 +105,7 @@ public final class GetConfigsConfigCollectionItemRule {
     public static Builder builder(GetConfigsConfigCollectionItemRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String filterText;
@@ -131,11 +114,7 @@ public final class GetConfigsConfigCollectionItemRule {
         private Integer priority;
         private Integer satisfiedResponseTime;
         private Integer toleratingResponseTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConfigsConfigCollectionItemRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -147,35 +126,51 @@ public final class GetConfigsConfigCollectionItemRule {
     	      this.toleratingResponseTime = defaults.toleratingResponseTime;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder filterText(String filterText) {
             this.filterText = Objects.requireNonNull(filterText);
             return this;
         }
+        @CustomType.Setter
         public Builder isApplyToErrorSpans(Boolean isApplyToErrorSpans) {
             this.isApplyToErrorSpans = Objects.requireNonNull(isApplyToErrorSpans);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder priority(Integer priority) {
             this.priority = Objects.requireNonNull(priority);
             return this;
         }
+        @CustomType.Setter
         public Builder satisfiedResponseTime(Integer satisfiedResponseTime) {
             this.satisfiedResponseTime = Objects.requireNonNull(satisfiedResponseTime);
             return this;
         }
+        @CustomType.Setter
         public Builder toleratingResponseTime(Integer toleratingResponseTime) {
             this.toleratingResponseTime = Objects.requireNonNull(toleratingResponseTime);
             return this;
-        }        public GetConfigsConfigCollectionItemRule build() {
-            return new GetConfigsConfigCollectionItemRule(displayName, filterText, isApplyToErrorSpans, isEnabled, priority, satisfiedResponseTime, toleratingResponseTime);
+        }
+        public GetConfigsConfigCollectionItemRule build() {
+            final var o = new GetConfigsConfigCollectionItemRule();
+            o.displayName = displayName;
+            o.filterText = filterText;
+            o.isApplyToErrorSpans = isApplyToErrorSpans;
+            o.isEnabled = isEnabled;
+            o.priority = priority;
+            o.satisfiedResponseTime = satisfiedResponseTime;
+            o.toleratingResponseTime = toleratingResponseTime;
+            return o;
         }
     }
 }

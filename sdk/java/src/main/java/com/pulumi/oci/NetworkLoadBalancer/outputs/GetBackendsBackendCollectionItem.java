@@ -15,80 +15,55 @@ public final class GetBackendsBackendCollectionItem {
      * @return The name of the backend set associated with the backend servers.  Example: `example_backend_set`
      * 
      */
-    private final String backendSetName;
-    private final String id;
+    private String backendSetName;
+    private String id;
     /**
      * @return The IP address of the backend server. Example: `10.0.0.3`
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;isBackup&#34; fail the health check policy.  Example: `false`
      * 
      */
-    private final Boolean isBackup;
+    private Boolean isBackup;
     /**
      * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
      * 
      */
-    private final Boolean isDrain;
+    private Boolean isDrain;
     /**
      * @return Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
-    private final Boolean isOffline;
+    private Boolean isOffline;
     /**
      * @return A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;:443` or `10.0.0.3:0`
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      * 
      */
-    private final String networkLoadBalancerId;
+    private String networkLoadBalancerId;
     /**
      * @return The communication port for the backend server.  Example: `8080`
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
      */
-    private final Integer weight;
+    private Integer weight;
 
-    @CustomType.Constructor
-    private GetBackendsBackendCollectionItem(
-        @CustomType.Parameter("backendSetName") String backendSetName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("isBackup") Boolean isBackup,
-        @CustomType.Parameter("isDrain") Boolean isDrain,
-        @CustomType.Parameter("isOffline") Boolean isOffline,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("networkLoadBalancerId") String networkLoadBalancerId,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("weight") Integer weight) {
-        this.backendSetName = backendSetName;
-        this.id = id;
-        this.ipAddress = ipAddress;
-        this.isBackup = isBackup;
-        this.isDrain = isDrain;
-        this.isOffline = isOffline;
-        this.name = name;
-        this.networkLoadBalancerId = networkLoadBalancerId;
-        this.port = port;
-        this.targetId = targetId;
-        this.weight = weight;
-    }
-
+    private GetBackendsBackendCollectionItem() {}
     /**
      * @return The name of the backend set associated with the backend servers.  Example: `example_backend_set`
      * 
@@ -170,7 +145,7 @@ public final class GetBackendsBackendCollectionItem {
     public static Builder builder(GetBackendsBackendCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backendSetName;
         private String id;
@@ -183,11 +158,7 @@ public final class GetBackendsBackendCollectionItem {
         private Integer port;
         private String targetId;
         private Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendsBackendCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendSetName = defaults.backendSetName;
@@ -203,51 +174,75 @@ public final class GetBackendsBackendCollectionItem {
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder isBackup(Boolean isBackup) {
             this.isBackup = Objects.requireNonNull(isBackup);
             return this;
         }
+        @CustomType.Setter
         public Builder isDrain(Boolean isDrain) {
             this.isDrain = Objects.requireNonNull(isDrain);
             return this;
         }
+        @CustomType.Setter
         public Builder isOffline(Boolean isOffline) {
             this.isOffline = Objects.requireNonNull(isOffline);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
             this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(Integer weight) {
             this.weight = Objects.requireNonNull(weight);
             return this;
-        }        public GetBackendsBackendCollectionItem build() {
-            return new GetBackendsBackendCollectionItem(backendSetName, id, ipAddress, isBackup, isDrain, isOffline, name, networkLoadBalancerId, port, targetId, weight);
+        }
+        public GetBackendsBackendCollectionItem build() {
+            final var o = new GetBackendsBackendCollectionItem();
+            o.backendSetName = backendSetName;
+            o.id = id;
+            o.ipAddress = ipAddress;
+            o.isBackup = isBackup;
+            o.isDrain = isDrain;
+            o.isOffline = isOffline;
+            o.name = name;
+            o.networkLoadBalancerId = networkLoadBalancerId;
+            o.port = port;
+            o.targetId = targetId;
+            o.weight = weight;
+            return o;
         }
     }
 }

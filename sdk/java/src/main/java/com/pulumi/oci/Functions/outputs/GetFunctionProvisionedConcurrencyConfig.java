@@ -10,21 +10,14 @@ import java.util.Objects;
 
 @CustomType
 public final class GetFunctionProvisionedConcurrencyConfig {
-    private final Integer count;
+    private Integer count;
     /**
      * @return The strategy for provisioned concurrency to be used.
      * 
      */
-    private final String strategy;
+    private String strategy;
 
-    @CustomType.Constructor
-    private GetFunctionProvisionedConcurrencyConfig(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("strategy") String strategy) {
-        this.count = count;
-        this.strategy = strategy;
-    }
-
+    private GetFunctionProvisionedConcurrencyConfig() {}
     public Integer count() {
         return this.count;
     }
@@ -43,30 +36,32 @@ public final class GetFunctionProvisionedConcurrencyConfig {
     public static Builder builder(GetFunctionProvisionedConcurrencyConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private String strategy;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFunctionProvisionedConcurrencyConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.strategy = defaults.strategy;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder strategy(String strategy) {
             this.strategy = Objects.requireNonNull(strategy);
             return this;
-        }        public GetFunctionProvisionedConcurrencyConfig build() {
-            return new GetFunctionProvisionedConcurrencyConfig(count, strategy);
+        }
+        public GetFunctionProvisionedConcurrencyConfig build() {
+            final var o = new GetFunctionProvisionedConcurrencyConfig();
+            o.count = count;
+            o.strategy = strategy;
+            return o;
         }
     }
 }

@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetQueryQuickPicksResult {
-    private final String apmDomainId;
-    private final @Nullable List<GetQueryQuickPicksFilter> filters;
+    private String apmDomainId;
+    private @Nullable List<GetQueryQuickPicksFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of quick_picks.
      * 
      */
-    private final List<GetQueryQuickPicksQuickPick> quickPicks;
+    private List<GetQueryQuickPicksQuickPick> quickPicks;
 
-    @CustomType.Constructor
-    private GetQueryQuickPicksResult(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("filters") @Nullable List<GetQueryQuickPicksFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("quickPicks") List<GetQueryQuickPicksQuickPick> quickPicks) {
-        this.apmDomainId = apmDomainId;
-        this.filters = filters;
-        this.id = id;
-        this.quickPicks = quickPicks;
-    }
-
+    private GetQueryQuickPicksResult() {}
     public String apmDomainId() {
         return this.apmDomainId;
     }
@@ -66,17 +55,13 @@ public final class GetQueryQuickPicksResult {
     public static Builder builder(GetQueryQuickPicksResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private @Nullable List<GetQueryQuickPicksFilter> filters;
         private String id;
         private List<GetQueryQuickPicksQuickPick> quickPicks;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQueryQuickPicksResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -85,10 +70,12 @@ public final class GetQueryQuickPicksResult {
     	      this.quickPicks = defaults.quickPicks;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetQueryQuickPicksFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetQueryQuickPicksResult {
         public Builder filters(GetQueryQuickPicksFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder quickPicks(List<GetQueryQuickPicksQuickPick> quickPicks) {
             this.quickPicks = Objects.requireNonNull(quickPicks);
             return this;
         }
         public Builder quickPicks(GetQueryQuickPicksQuickPick... quickPicks) {
             return quickPicks(List.of(quickPicks));
-        }        public GetQueryQuickPicksResult build() {
-            return new GetQueryQuickPicksResult(apmDomainId, filters, id, quickPicks);
+        }
+        public GetQueryQuickPicksResult build() {
+            final var o = new GetQueryQuickPicksResult();
+            o.apmDomainId = apmDomainId;
+            o.filters = filters;
+            o.id = id;
+            o.quickPicks = quickPicks;
+            return o;
         }
     }
 }

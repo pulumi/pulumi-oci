@@ -18,49 +18,34 @@ public final class GetApiDeploymentSpecificationRoute {
      * @return The backend to forward requests to.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteBackend> backends;
+    private List<GetApiDeploymentSpecificationRouteBackend> backends;
     /**
      * @return Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteLoggingPolicy> loggingPolicies;
+    private List<GetApiDeploymentSpecificationRouteLoggingPolicy> loggingPolicies;
     /**
      * @return A list of allowed methods on this route.
      * 
      */
-    private final List<String> methods;
+    private List<String> methods;
     /**
      * @return A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return Behavior applied to any requests received by the API on this route.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicy> requestPolicies;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicy> requestPolicies;
     /**
      * @return Behavior applied to any responses sent by the API for requests on this route.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteResponsePolicy> responsePolicies;
+    private List<GetApiDeploymentSpecificationRouteResponsePolicy> responsePolicies;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRoute(
-        @CustomType.Parameter("backends") List<GetApiDeploymentSpecificationRouteBackend> backends,
-        @CustomType.Parameter("loggingPolicies") List<GetApiDeploymentSpecificationRouteLoggingPolicy> loggingPolicies,
-        @CustomType.Parameter("methods") List<String> methods,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("requestPolicies") List<GetApiDeploymentSpecificationRouteRequestPolicy> requestPolicies,
-        @CustomType.Parameter("responsePolicies") List<GetApiDeploymentSpecificationRouteResponsePolicy> responsePolicies) {
-        this.backends = backends;
-        this.loggingPolicies = loggingPolicies;
-        this.methods = methods;
-        this.path = path;
-        this.requestPolicies = requestPolicies;
-        this.responsePolicies = responsePolicies;
-    }
-
+    private GetApiDeploymentSpecificationRoute() {}
     /**
      * @return The backend to forward requests to.
      * 
@@ -111,7 +96,7 @@ public final class GetApiDeploymentSpecificationRoute {
     public static Builder builder(GetApiDeploymentSpecificationRoute defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiDeploymentSpecificationRouteBackend> backends;
         private List<GetApiDeploymentSpecificationRouteLoggingPolicy> loggingPolicies;
@@ -119,11 +104,7 @@ public final class GetApiDeploymentSpecificationRoute {
         private String path;
         private List<GetApiDeploymentSpecificationRouteRequestPolicy> requestPolicies;
         private List<GetApiDeploymentSpecificationRouteResponsePolicy> responsePolicies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRoute defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backends = defaults.backends;
@@ -134,6 +115,7 @@ public final class GetApiDeploymentSpecificationRoute {
     	      this.responsePolicies = defaults.responsePolicies;
         }
 
+        @CustomType.Setter
         public Builder backends(List<GetApiDeploymentSpecificationRouteBackend> backends) {
             this.backends = Objects.requireNonNull(backends);
             return this;
@@ -141,6 +123,7 @@ public final class GetApiDeploymentSpecificationRoute {
         public Builder backends(GetApiDeploymentSpecificationRouteBackend... backends) {
             return backends(List.of(backends));
         }
+        @CustomType.Setter
         public Builder loggingPolicies(List<GetApiDeploymentSpecificationRouteLoggingPolicy> loggingPolicies) {
             this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
             return this;
@@ -148,6 +131,7 @@ public final class GetApiDeploymentSpecificationRoute {
         public Builder loggingPolicies(GetApiDeploymentSpecificationRouteLoggingPolicy... loggingPolicies) {
             return loggingPolicies(List.of(loggingPolicies));
         }
+        @CustomType.Setter
         public Builder methods(List<String> methods) {
             this.methods = Objects.requireNonNull(methods);
             return this;
@@ -155,10 +139,12 @@ public final class GetApiDeploymentSpecificationRoute {
         public Builder methods(String... methods) {
             return methods(List.of(methods));
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder requestPolicies(List<GetApiDeploymentSpecificationRouteRequestPolicy> requestPolicies) {
             this.requestPolicies = Objects.requireNonNull(requestPolicies);
             return this;
@@ -166,14 +152,23 @@ public final class GetApiDeploymentSpecificationRoute {
         public Builder requestPolicies(GetApiDeploymentSpecificationRouteRequestPolicy... requestPolicies) {
             return requestPolicies(List.of(requestPolicies));
         }
+        @CustomType.Setter
         public Builder responsePolicies(List<GetApiDeploymentSpecificationRouteResponsePolicy> responsePolicies) {
             this.responsePolicies = Objects.requireNonNull(responsePolicies);
             return this;
         }
         public Builder responsePolicies(GetApiDeploymentSpecificationRouteResponsePolicy... responsePolicies) {
             return responsePolicies(List.of(responsePolicies));
-        }        public GetApiDeploymentSpecificationRoute build() {
-            return new GetApiDeploymentSpecificationRoute(backends, loggingPolicies, methods, path, requestPolicies, responsePolicies);
+        }
+        public GetApiDeploymentSpecificationRoute build() {
+            final var o = new GetApiDeploymentSpecificationRoute();
+            o.backends = backends;
+            o.loggingPolicies = loggingPolicies;
+            o.methods = methods;
+            o.path = path;
+            o.requestPolicies = requestPolicies;
+            o.responsePolicies = responsePolicies;
+            return o;
         }
     }
 }

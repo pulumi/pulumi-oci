@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetTriggersTriggerCollection {
-    private final List<GetTriggersTriggerCollectionItem> items;
+    private List<GetTriggersTriggerCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetTriggersTriggerCollection(@CustomType.Parameter("items") List<GetTriggersTriggerCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetTriggersTriggerCollection() {}
     public List<GetTriggersTriggerCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetTriggersTriggerCollection {
     public static Builder builder(GetTriggersTriggerCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetTriggersTriggerCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTriggersTriggerCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetTriggersTriggerCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetTriggersTriggerCollectionItem... items) {
             return items(List.of(items));
-        }        public GetTriggersTriggerCollection build() {
-            return new GetTriggersTriggerCollection(items);
+        }
+        public GetTriggersTriggerCollection build() {
+            final var o = new GetTriggersTriggerCollection();
+            o.items = items;
+            return o;
         }
     }
 }

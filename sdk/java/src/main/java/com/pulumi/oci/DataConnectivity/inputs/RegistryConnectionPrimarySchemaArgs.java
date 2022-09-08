@@ -50,14 +50,14 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) The external key for the object.
+     * (Updatable) The external key of the object.
      * 
      */
     @Import(name="externalKey")
     private @Nullable Output<String> externalKey;
 
     /**
-     * @return (Updatable) The external key for the object.
+     * @return (Updatable) The external key of the object.
      * 
      */
     public Optional<Output<String>> externalKey() {
@@ -110,14 +110,14 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     @Import(name="metadata")
     private @Nullable Output<RegistryConnectionPrimarySchemaMetadataArgs> metadata;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public Optional<Output<RegistryConnectionPrimarySchemaMetadataArgs>> metadata() {
@@ -125,14 +125,14 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) The object&#39;s type.
+     * (Updatable) The object type.
      * 
      */
     @Import(name="modelType", required=true)
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The object&#39;s type.
+     * @return (Updatable) The object type.
      * 
      */
     public Output<String> modelType() {
@@ -140,14 +140,14 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) The object&#39;s model version.
+     * (Updatable) The model version of the object.
      * 
      */
     @Import(name="modelVersion")
     private @Nullable Output<String> modelVersion;
 
     /**
-     * @return (Updatable) The object&#39;s model version.
+     * @return (Updatable) The model version of the object.
      * 
      */
     public Optional<Output<String>> modelVersion() {
@@ -155,14 +155,14 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Output<String> name() {
@@ -200,14 +200,14 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) A reference to the object&#39;s parent.
+     * (Updatable) A reference to the parent object.
      * 
      */
     @Import(name="parentRef")
     private @Nullable Output<RegistryConnectionPrimarySchemaParentRefArgs> parentRef;
 
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<Output<RegistryConnectionPrimarySchemaParentRefArgs>> parentRef() {
@@ -309,7 +309,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param externalKey (Updatable) The external key for the object.
+         * @param externalKey (Updatable) The external key of the object.
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param externalKey (Updatable) The external key for the object.
+         * @param externalKey (Updatable) The external key of the object.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param metadata (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadata (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param metadata (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadata (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param modelType (Updatable) The object&#39;s type.
+         * @param modelType (Updatable) The object type.
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param modelType (Updatable) The object&#39;s type.
+         * @param modelType (Updatable) The object type.
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param modelVersion (Updatable) The object&#39;s model version.
+         * @param modelVersion (Updatable) The model version of the object.
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param modelVersion (Updatable) The object&#39;s model version.
+         * @param modelVersion (Updatable) The model version of the object.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class RegistryConnectionPrimarySchemaArgs extends com.pulumi.resour
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 

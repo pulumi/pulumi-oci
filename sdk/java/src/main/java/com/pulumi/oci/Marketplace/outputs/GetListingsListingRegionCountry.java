@@ -13,21 +13,14 @@ public final class GetListingsListingRegionCountry {
      * @return A code assigned to the item.
      * 
      */
-    private final String code;
+    private String code;
     /**
      * @return The name of the listing.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetListingsListingRegionCountry(
-        @CustomType.Parameter("code") String code,
-        @CustomType.Parameter("name") String name) {
-        this.code = code;
-        this.name = name;
-    }
-
+    private GetListingsListingRegionCountry() {}
     /**
      * @return A code assigned to the item.
      * 
@@ -50,30 +43,32 @@ public final class GetListingsListingRegionCountry {
     public static Builder builder(GetListingsListingRegionCountry defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String code;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingsListingRegionCountry defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder code(String code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetListingsListingRegionCountry build() {
-            return new GetListingsListingRegionCountry(code, name);
+        }
+        public GetListingsListingRegionCountry build() {
+            final var o = new GetListingsListingRegionCountry();
+            o.code = code;
+            o.name = name;
+            return o;
         }
     }
 }

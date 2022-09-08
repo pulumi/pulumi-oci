@@ -14,13 +14,9 @@ public final class GetDeploymentDeployArtifactOverrideArgument {
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private final List<GetDeploymentDeployArtifactOverrideArgumentItem> items;
+    private List<GetDeploymentDeployArtifactOverrideArgumentItem> items;
 
-    @CustomType.Constructor
-    private GetDeploymentDeployArtifactOverrideArgument(@CustomType.Parameter("items") List<GetDeploymentDeployArtifactOverrideArgumentItem> items) {
-        this.items = items;
-    }
-
+    private GetDeploymentDeployArtifactOverrideArgument() {}
     /**
      * @return A list of stage predecessors for a stage.
      * 
@@ -36,27 +32,27 @@ public final class GetDeploymentDeployArtifactOverrideArgument {
     public static Builder builder(GetDeploymentDeployArtifactOverrideArgument defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentDeployArtifactOverrideArgumentItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentDeployArtifactOverrideArgument defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeploymentDeployArtifactOverrideArgumentItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeploymentDeployArtifactOverrideArgumentItem... items) {
             return items(List.of(items));
-        }        public GetDeploymentDeployArtifactOverrideArgument build() {
-            return new GetDeploymentDeployArtifactOverrideArgument(items);
+        }
+        public GetDeploymentDeployArtifactOverrideArgument build() {
+            final var o = new GetDeploymentDeployArtifactOverrideArgument();
+            o.items = items;
+            return o;
         }
     }
 }

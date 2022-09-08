@@ -15,28 +15,19 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
      * @return The list of actions that are to be performed for this Trigger
      * 
      */
-    private final List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions;
+    private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The trigger that invoked the build run.
      * 
      */
-    private final String triggerId;
+    private String triggerId;
 
-    @CustomType.Constructor
-    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo(
-        @CustomType.Parameter("actions") List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("triggerId") String triggerId) {
-        this.actions = actions;
-        this.displayName = displayName;
-        this.triggerId = triggerId;
-    }
-
+    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo() {}
     /**
      * @return The list of actions that are to be performed for this Trigger
      * 
@@ -66,16 +57,12 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
     public static Builder builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions;
         private String displayName;
         private String triggerId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actions = defaults.actions;
@@ -83,6 +70,7 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
     	      this.triggerId = defaults.triggerId;
         }
 
+        @CustomType.Setter
         public Builder actions(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions) {
             this.actions = Objects.requireNonNull(actions);
             return this;
@@ -90,15 +78,22 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         public Builder actions(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction... actions) {
             return actions(List.of(actions));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder triggerId(String triggerId) {
             this.triggerId = Objects.requireNonNull(triggerId);
             return this;
-        }        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo build() {
-            return new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo(actions, displayName, triggerId);
+        }
+        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo build() {
+            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo();
+            o.actions = actions;
+            o.displayName = displayName;
+            o.triggerId = triggerId;
+            return o;
         }
     }
 }

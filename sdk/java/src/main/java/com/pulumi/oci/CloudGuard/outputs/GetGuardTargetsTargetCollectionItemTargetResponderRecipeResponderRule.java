@@ -15,91 +15,64 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeRespo
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return ResponderRule description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Details of ResponderRule.
      * 
      */
-    private final List<GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail> details;
+    private List<GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail> details;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return List of Policy
      * 
      */
-    private final List<String> policies;
+    private List<String> policies;
     /**
      * @return Unique ResponderRule identifier.
      * 
      */
-    private final String responderRuleId;
+    private String responderRuleId;
     /**
      * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Supported Execution Modes
      * 
      */
-    private final List<String> supportedModes;
+    private List<String> supportedModes;
     /**
      * @return The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Type of Responder
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("details") List<GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail> details,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("policies") List<String> policies,
-        @CustomType.Parameter("responderRuleId") String responderRuleId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("supportedModes") List<String> supportedModes,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("type") String type) {
-        this.compartmentId = compartmentId;
-        this.description = description;
-        this.details = details;
-        this.displayName = displayName;
-        this.lifecycleDetails = lifecycleDetails;
-        this.policies = policies;
-        this.responderRuleId = responderRuleId;
-        this.state = state;
-        this.supportedModes = supportedModes;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.type = type;
-    }
-
+    private GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -192,7 +165,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeRespo
     public static Builder builder(GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String description;
@@ -206,11 +179,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeRespo
         private String timeCreated;
         private String timeUpdated;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -227,14 +196,17 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeRespo
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder details(List<GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail> details) {
             this.details = Objects.requireNonNull(details);
             return this;
@@ -242,14 +214,17 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeRespo
         public Builder details(GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail... details) {
             return details(List.of(details));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder policies(List<String> policies) {
             this.policies = Objects.requireNonNull(policies);
             return this;
@@ -257,14 +232,17 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeRespo
         public Builder policies(String... policies) {
             return policies(List.of(policies));
         }
+        @CustomType.Setter
         public Builder responderRuleId(String responderRuleId) {
             this.responderRuleId = Objects.requireNonNull(responderRuleId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder supportedModes(List<String> supportedModes) {
             this.supportedModes = Objects.requireNonNull(supportedModes);
             return this;
@@ -272,19 +250,36 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeRespo
         public Builder supportedModes(String... supportedModes) {
             return supportedModes(List.of(supportedModes));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule build() {
-            return new GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule(compartmentId, description, details, displayName, lifecycleDetails, policies, responderRuleId, state, supportedModes, timeCreated, timeUpdated, type);
+        }
+        public GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule build() {
+            final var o = new GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule();
+            o.compartmentId = compartmentId;
+            o.description = description;
+            o.details = details;
+            o.displayName = displayName;
+            o.lifecycleDetails = lifecycleDetails;
+            o.policies = policies;
+            o.responderRuleId = responderRuleId;
+            o.state = state;
+            o.supportedModes = supportedModes;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -15,13 +15,9 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItemProperty {
      * @return Key/Value pair of Property
      * 
      */
-    private final Map<String,Object> propertiesMap;
+    private Map<String,Object> propertiesMap;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobDiscoveryDetailCredentialItemProperty(@CustomType.Parameter("propertiesMap") Map<String,Object> propertiesMap) {
-        this.propertiesMap = propertiesMap;
-    }
-
+    private GetDiscoveryJobDiscoveryDetailCredentialItemProperty() {}
     /**
      * @return Key/Value pair of Property
      * 
@@ -37,24 +33,24 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItemProperty {
     public static Builder builder(GetDiscoveryJobDiscoveryDetailCredentialItemProperty defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> propertiesMap;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobDiscoveryDetailCredentialItemProperty defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.propertiesMap = defaults.propertiesMap;
         }
 
+        @CustomType.Setter
         public Builder propertiesMap(Map<String,Object> propertiesMap) {
             this.propertiesMap = Objects.requireNonNull(propertiesMap);
             return this;
-        }        public GetDiscoveryJobDiscoveryDetailCredentialItemProperty build() {
-            return new GetDiscoveryJobDiscoveryDetailCredentialItemProperty(propertiesMap);
+        }
+        public GetDiscoveryJobDiscoveryDetailCredentialItemProperty build() {
+            final var o = new GetDiscoveryJobDiscoveryDetailCredentialItemProperty();
+            o.propertiesMap = propertiesMap;
+            return o;
         }
     }
 }

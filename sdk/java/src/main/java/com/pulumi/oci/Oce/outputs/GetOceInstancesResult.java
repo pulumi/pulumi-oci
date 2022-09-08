@@ -18,48 +18,31 @@ public final class GetOceInstancesResult {
      * @return Compartment Identifier
      * 
      */
-    private final String compartmentId;
-    private final @Nullable String displayName;
-    private final @Nullable List<GetOceInstancesFilter> filters;
+    private String compartmentId;
+    private @Nullable String displayName;
+    private @Nullable List<GetOceInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of oce_instances.
      * 
      */
-    private final List<GetOceInstancesOceInstance> oceInstances;
+    private List<GetOceInstancesOceInstance> oceInstances;
     /**
      * @return The current state of the instance lifecycle.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return Tenancy Identifier
      * 
      */
-    private final @Nullable String tenancyId;
+    private @Nullable String tenancyId;
 
-    @CustomType.Constructor
-    private GetOceInstancesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetOceInstancesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("oceInstances") List<GetOceInstancesOceInstance> oceInstances,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("tenancyId") @Nullable String tenancyId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.oceInstances = oceInstances;
-        this.state = state;
-        this.tenancyId = tenancyId;
-    }
-
+    private GetOceInstancesResult() {}
     /**
      * @return Compartment Identifier
      * 
@@ -109,7 +92,7 @@ public final class GetOceInstancesResult {
     public static Builder builder(GetOceInstancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -118,11 +101,7 @@ public final class GetOceInstancesResult {
         private List<GetOceInstancesOceInstance> oceInstances;
         private @Nullable String state;
         private @Nullable String tenancyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOceInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,14 +113,17 @@ public final class GetOceInstancesResult {
     	      this.tenancyId = defaults.tenancyId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOceInstancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -149,10 +131,12 @@ public final class GetOceInstancesResult {
         public Builder filters(GetOceInstancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder oceInstances(List<GetOceInstancesOceInstance> oceInstances) {
             this.oceInstances = Objects.requireNonNull(oceInstances);
             return this;
@@ -160,15 +144,26 @@ public final class GetOceInstancesResult {
         public Builder oceInstances(GetOceInstancesOceInstance... oceInstances) {
             return oceInstances(List.of(oceInstances));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyId(@Nullable String tenancyId) {
             this.tenancyId = tenancyId;
             return this;
-        }        public GetOceInstancesResult build() {
-            return new GetOceInstancesResult(compartmentId, displayName, filters, id, oceInstances, state, tenancyId);
+        }
+        public GetOceInstancesResult build() {
+            final var o = new GetOceInstancesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.oceInstances = oceInstances;
+            o.state = state;
+            o.tenancyId = tenancyId;
+            return o;
         }
     }
 }

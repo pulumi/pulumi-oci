@@ -15,128 +15,79 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetObjectResult {
-    private final @Nullable Boolean base64EncodeContent;
+    private @Nullable Boolean base64EncodeContent;
     /**
      * @return The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
-    private final String bucket;
-    private final String cacheControl;
+    private String bucket;
+    private String cacheControl;
     /**
      * @return The object to upload to the object store.
      * 
      */
-    private final String content;
-    private final String contentDisposition;
+    private String content;
+    private String contentDisposition;
     /**
      * @return The content encoding of the object.
      * 
      */
-    private final String contentEncoding;
+    private String contentEncoding;
     /**
      * @return The content language of the object.
      * 
      */
-    private final String contentLanguage;
+    private String contentLanguage;
     /**
      * @return The content length of the body.
      * 
      */
-    private final String contentLength;
-    private final @Nullable Integer contentLengthLimit;
+    private String contentLength;
+    private @Nullable Integer contentLengthLimit;
     /**
      * @return The base-64 encoded MD5 hash of the body.
      * 
      */
-    private final String contentMd5;
+    private String contentMd5;
     /**
      * @return The content type of the object.  Defaults to &#39;application/octet-stream&#39; if not overridden during the PutObject call.
      * 
      */
-    private final String contentType;
-    private final @Nullable String httpResponseCacheControl;
-    private final @Nullable String httpResponseContentDisposition;
-    private final @Nullable String httpResponseContentEncoding;
-    private final @Nullable String httpResponseContentLanguage;
-    private final @Nullable String httpResponseContentType;
-    private final @Nullable String httpResponseExpires;
+    private String contentType;
+    private @Nullable String httpResponseCacheControl;
+    private @Nullable String httpResponseContentDisposition;
+    private @Nullable String httpResponseContentEncoding;
+    private @Nullable String httpResponseContentLanguage;
+    private @Nullable String httpResponseContentType;
+    private @Nullable String httpResponseExpires;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
      * 
      */
-    private final Map<String,Object> metadata;
+    private Map<String,Object> metadata;
     /**
      * @return The top-level namespace used for the request.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return The name of the object. Avoid entering confidential information. Example: `test/object1.log`
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return The storage tier that the object is stored in.
      * 
      */
-    private final String storageTier;
-    private final String versionId;
+    private String storageTier;
+    private String versionId;
 
-    @CustomType.Constructor
-    private GetObjectResult(
-        @CustomType.Parameter("base64EncodeContent") @Nullable Boolean base64EncodeContent,
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("cacheControl") String cacheControl,
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("contentDisposition") String contentDisposition,
-        @CustomType.Parameter("contentEncoding") String contentEncoding,
-        @CustomType.Parameter("contentLanguage") String contentLanguage,
-        @CustomType.Parameter("contentLength") String contentLength,
-        @CustomType.Parameter("contentLengthLimit") @Nullable Integer contentLengthLimit,
-        @CustomType.Parameter("contentMd5") String contentMd5,
-        @CustomType.Parameter("contentType") String contentType,
-        @CustomType.Parameter("httpResponseCacheControl") @Nullable String httpResponseCacheControl,
-        @CustomType.Parameter("httpResponseContentDisposition") @Nullable String httpResponseContentDisposition,
-        @CustomType.Parameter("httpResponseContentEncoding") @Nullable String httpResponseContentEncoding,
-        @CustomType.Parameter("httpResponseContentLanguage") @Nullable String httpResponseContentLanguage,
-        @CustomType.Parameter("httpResponseContentType") @Nullable String httpResponseContentType,
-        @CustomType.Parameter("httpResponseExpires") @Nullable String httpResponseExpires,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metadata") Map<String,Object> metadata,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("storageTier") String storageTier,
-        @CustomType.Parameter("versionId") String versionId) {
-        this.base64EncodeContent = base64EncodeContent;
-        this.bucket = bucket;
-        this.cacheControl = cacheControl;
-        this.content = content;
-        this.contentDisposition = contentDisposition;
-        this.contentEncoding = contentEncoding;
-        this.contentLanguage = contentLanguage;
-        this.contentLength = contentLength;
-        this.contentLengthLimit = contentLengthLimit;
-        this.contentMd5 = contentMd5;
-        this.contentType = contentType;
-        this.httpResponseCacheControl = httpResponseCacheControl;
-        this.httpResponseContentDisposition = httpResponseContentDisposition;
-        this.httpResponseContentEncoding = httpResponseContentEncoding;
-        this.httpResponseContentLanguage = httpResponseContentLanguage;
-        this.httpResponseContentType = httpResponseContentType;
-        this.httpResponseExpires = httpResponseExpires;
-        this.id = id;
-        this.metadata = metadata;
-        this.namespace = namespace;
-        this.object = object;
-        this.storageTier = storageTier;
-        this.versionId = versionId;
-    }
-
+    private GetObjectResult() {}
     public Optional<Boolean> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -262,7 +213,7 @@ public final class GetObjectResult {
     public static Builder builder(GetObjectResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean base64EncodeContent;
         private String bucket;
@@ -287,11 +238,7 @@ public final class GetObjectResult {
         private String object;
         private String storageTier;
         private String versionId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetObjectResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.base64EncodeContent = defaults.base64EncodeContent;
@@ -319,99 +266,147 @@ public final class GetObjectResult {
     	      this.versionId = defaults.versionId;
         }
 
+        @CustomType.Setter
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
             this.base64EncodeContent = base64EncodeContent;
             return this;
         }
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder cacheControl(String cacheControl) {
             this.cacheControl = Objects.requireNonNull(cacheControl);
             return this;
         }
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder contentDisposition(String contentDisposition) {
             this.contentDisposition = Objects.requireNonNull(contentDisposition);
             return this;
         }
+        @CustomType.Setter
         public Builder contentEncoding(String contentEncoding) {
             this.contentEncoding = Objects.requireNonNull(contentEncoding);
             return this;
         }
+        @CustomType.Setter
         public Builder contentLanguage(String contentLanguage) {
             this.contentLanguage = Objects.requireNonNull(contentLanguage);
             return this;
         }
+        @CustomType.Setter
         public Builder contentLength(String contentLength) {
             this.contentLength = Objects.requireNonNull(contentLength);
             return this;
         }
+        @CustomType.Setter
         public Builder contentLengthLimit(@Nullable Integer contentLengthLimit) {
             this.contentLengthLimit = contentLengthLimit;
             return this;
         }
+        @CustomType.Setter
         public Builder contentMd5(String contentMd5) {
             this.contentMd5 = Objects.requireNonNull(contentMd5);
             return this;
         }
+        @CustomType.Setter
         public Builder contentType(String contentType) {
             this.contentType = Objects.requireNonNull(contentType);
             return this;
         }
+        @CustomType.Setter
         public Builder httpResponseCacheControl(@Nullable String httpResponseCacheControl) {
             this.httpResponseCacheControl = httpResponseCacheControl;
             return this;
         }
+        @CustomType.Setter
         public Builder httpResponseContentDisposition(@Nullable String httpResponseContentDisposition) {
             this.httpResponseContentDisposition = httpResponseContentDisposition;
             return this;
         }
+        @CustomType.Setter
         public Builder httpResponseContentEncoding(@Nullable String httpResponseContentEncoding) {
             this.httpResponseContentEncoding = httpResponseContentEncoding;
             return this;
         }
+        @CustomType.Setter
         public Builder httpResponseContentLanguage(@Nullable String httpResponseContentLanguage) {
             this.httpResponseContentLanguage = httpResponseContentLanguage;
             return this;
         }
+        @CustomType.Setter
         public Builder httpResponseContentType(@Nullable String httpResponseContentType) {
             this.httpResponseContentType = httpResponseContentType;
             return this;
         }
+        @CustomType.Setter
         public Builder httpResponseExpires(@Nullable String httpResponseExpires) {
             this.httpResponseExpires = httpResponseExpires;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
             this.metadata = Objects.requireNonNull(metadata);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder storageTier(String storageTier) {
             this.storageTier = Objects.requireNonNull(storageTier);
             return this;
         }
+        @CustomType.Setter
         public Builder versionId(String versionId) {
             this.versionId = Objects.requireNonNull(versionId);
             return this;
-        }        public GetObjectResult build() {
-            return new GetObjectResult(base64EncodeContent, bucket, cacheControl, content, contentDisposition, contentEncoding, contentLanguage, contentLength, contentLengthLimit, contentMd5, contentType, httpResponseCacheControl, httpResponseContentDisposition, httpResponseContentEncoding, httpResponseContentLanguage, httpResponseContentType, httpResponseExpires, id, metadata, namespace, object, storageTier, versionId);
+        }
+        public GetObjectResult build() {
+            final var o = new GetObjectResult();
+            o.base64EncodeContent = base64EncodeContent;
+            o.bucket = bucket;
+            o.cacheControl = cacheControl;
+            o.content = content;
+            o.contentDisposition = contentDisposition;
+            o.contentEncoding = contentEncoding;
+            o.contentLanguage = contentLanguage;
+            o.contentLength = contentLength;
+            o.contentLengthLimit = contentLengthLimit;
+            o.contentMd5 = contentMd5;
+            o.contentType = contentType;
+            o.httpResponseCacheControl = httpResponseCacheControl;
+            o.httpResponseContentDisposition = httpResponseContentDisposition;
+            o.httpResponseContentEncoding = httpResponseContentEncoding;
+            o.httpResponseContentLanguage = httpResponseContentLanguage;
+            o.httpResponseContentType = httpResponseContentType;
+            o.httpResponseExpires = httpResponseExpires;
+            o.id = id;
+            o.metadata = metadata;
+            o.namespace = namespace;
+            o.object = object;
+            o.storageTier = storageTier;
+            o.versionId = versionId;
+            return o;
         }
     }
 }

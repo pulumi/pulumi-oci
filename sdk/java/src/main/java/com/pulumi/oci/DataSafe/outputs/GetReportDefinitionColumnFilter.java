@@ -15,42 +15,29 @@ public final class GetReportDefinitionColumnFilter {
      * @return An array of expressions based on the operator type. A filter may have one or more expressions.
      * 
      */
-    private final List<String> expressions;
+    private List<String> expressions;
     /**
      * @return Name of the column that must be sorted.
      * 
      */
-    private final String fieldName;
+    private String fieldName;
     /**
      * @return Indicates if the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private final Boolean isHidden;
+    private Boolean isHidden;
     /**
      * @return Specifies the type of operator that must be applied for example in, eq etc.
      * 
      */
-    private final String operator;
+    private String operator;
 
-    @CustomType.Constructor
-    private GetReportDefinitionColumnFilter(
-        @CustomType.Parameter("expressions") List<String> expressions,
-        @CustomType.Parameter("fieldName") String fieldName,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("isHidden") Boolean isHidden,
-        @CustomType.Parameter("operator") String operator) {
-        this.expressions = expressions;
-        this.fieldName = fieldName;
-        this.isEnabled = isEnabled;
-        this.isHidden = isHidden;
-        this.operator = operator;
-    }
-
+    private GetReportDefinitionColumnFilter() {}
     /**
      * @return An array of expressions based on the operator type. A filter may have one or more expressions.
      * 
@@ -94,18 +81,14 @@ public final class GetReportDefinitionColumnFilter {
     public static Builder builder(GetReportDefinitionColumnFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> expressions;
         private String fieldName;
         private Boolean isEnabled;
         private Boolean isHidden;
         private String operator;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportDefinitionColumnFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.expressions = defaults.expressions;
@@ -115,6 +98,7 @@ public final class GetReportDefinitionColumnFilter {
     	      this.operator = defaults.operator;
         }
 
+        @CustomType.Setter
         public Builder expressions(List<String> expressions) {
             this.expressions = Objects.requireNonNull(expressions);
             return this;
@@ -122,23 +106,34 @@ public final class GetReportDefinitionColumnFilter {
         public Builder expressions(String... expressions) {
             return expressions(List.of(expressions));
         }
+        @CustomType.Setter
         public Builder fieldName(String fieldName) {
             this.fieldName = Objects.requireNonNull(fieldName);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = Objects.requireNonNull(isHidden);
             return this;
         }
+        @CustomType.Setter
         public Builder operator(String operator) {
             this.operator = Objects.requireNonNull(operator);
             return this;
-        }        public GetReportDefinitionColumnFilter build() {
-            return new GetReportDefinitionColumnFilter(expressions, fieldName, isEnabled, isHidden, operator);
+        }
+        public GetReportDefinitionColumnFilter build() {
+            final var o = new GetReportDefinitionColumnFilter();
+            o.expressions = expressions;
+            o.fieldName = fieldName;
+            o.isEnabled = isEnabled;
+            o.isHidden = isHidden;
+            o.operator = operator;
+            return o;
         }
     }
 }

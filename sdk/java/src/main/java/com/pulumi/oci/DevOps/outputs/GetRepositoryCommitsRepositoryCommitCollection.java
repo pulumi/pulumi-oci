@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRepositoryCommitsRepositoryCommitCollection {
-    private final List<GetRepositoryCommitsRepositoryCommitCollectionItem> items;
+    private List<GetRepositoryCommitsRepositoryCommitCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRepositoryCommitsRepositoryCommitCollection(@CustomType.Parameter("items") List<GetRepositoryCommitsRepositoryCommitCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRepositoryCommitsRepositoryCommitCollection() {}
     public List<GetRepositoryCommitsRepositoryCommitCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetRepositoryCommitsRepositoryCommitCollection {
     public static Builder builder(GetRepositoryCommitsRepositoryCommitCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRepositoryCommitsRepositoryCommitCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryCommitsRepositoryCommitCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRepositoryCommitsRepositoryCommitCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRepositoryCommitsRepositoryCommitCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRepositoryCommitsRepositoryCommitCollection build() {
-            return new GetRepositoryCommitsRepositoryCommitCollection(items);
+        }
+        public GetRepositoryCommitsRepositoryCommitCollection build() {
+            final var o = new GetRepositoryCommitsRepositoryCommitCollection();
+            o.items = items;
+            return o;
         }
     }
 }

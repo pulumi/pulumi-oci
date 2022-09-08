@@ -21,140 +21,99 @@ public final class SubscriptionSubscription {
      * @return (Updatable) Bill to customer Account id.
      * 
      */
-    private final @Nullable String billToCustAccountId;
+    private @Nullable String billToCustAccountId;
     /**
      * @return (Updatable) Billing address details model.
      * 
      */
-    private final @Nullable List<SubscriptionSubscriptionBillingAddress> billingAddresses;
+    private @Nullable List<SubscriptionSubscriptionBillingAddress> billingAddresses;
     /**
      * @return (Updatable) Currency code
      * 
      */
-    private final @Nullable String currencyCode;
+    private @Nullable String currencyCode;
     /**
      * @return (Updatable) GSI Subscription external code.
      * 
      */
-    private final @Nullable String gsiOrgCode;
+    private @Nullable String gsiOrgCode;
     /**
      * @return (Updatable) Subscription id identifier (OCID).
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return (Updatable) Payment intension.
      * 
      */
-    private final @Nullable Boolean isIntentToPay;
+    private @Nullable Boolean isIntentToPay;
     /**
      * @return (Updatable) Language short code (en, de, hu, etc)
      * 
      */
-    private final @Nullable String languageCode;
+    private @Nullable String languageCode;
     /**
      * @return (Updatable) GSI organization external identifier.
      * 
      */
-    private final @Nullable String organizationId;
+    private @Nullable String organizationId;
     /**
      * @return (Updatable) Payment gateway details.
      * 
      */
-    private final @Nullable SubscriptionSubscriptionPaymentGateway paymentGateway;
+    private @Nullable SubscriptionSubscriptionPaymentGateway paymentGateway;
     /**
      * @return (Updatable) Payment option list of a subscription.
      * 
      */
-    private final @Nullable List<SubscriptionSubscriptionPaymentOption> paymentOptions;
+    private @Nullable List<SubscriptionSubscriptionPaymentOption> paymentOptions;
     /**
      * @return (Updatable) Subscription plan type.
      * 
      */
-    private final @Nullable String planType;
+    private @Nullable String planType;
     /**
      * @return (Updatable) Ship to customer account role.
      * 
      */
-    private final @Nullable String shipToCustAcctRoleId;
+    private @Nullable String shipToCustAcctRoleId;
     /**
      * @return (Updatable) Ship to customer account site address id.
      * 
      */
-    private final @Nullable String shipToCustAcctSiteId;
+    private @Nullable String shipToCustAcctSiteId;
     /**
      * @return (Updatable) Subscription plan number.
      * 
      */
-    private final String subscriptionPlanNumber;
+    private String subscriptionPlanNumber;
     /**
      * @return (Updatable) Tax details.
      * 
      */
-    private final @Nullable SubscriptionSubscriptionTaxInfo taxInfo;
+    private @Nullable SubscriptionSubscriptionTaxInfo taxInfo;
     /**
      * @return (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
-    private final @Nullable String timePlanUpgrade;
+    private @Nullable String timePlanUpgrade;
     /**
      * @return (Updatable) Start date of the subscription.
      * 
      */
-    private final @Nullable String timeStart;
+    private @Nullable String timeStart;
     /**
      * @return (Updatable) Status of the upgrade.
      * 
      */
-    private final @Nullable String upgradeState;
+    private @Nullable String upgradeState;
     /**
      * @return (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
-    private final @Nullable String upgradeStateDetails;
+    private @Nullable String upgradeStateDetails;
 
-    @CustomType.Constructor
-    private SubscriptionSubscription(
-        @CustomType.Parameter("billToCustAccountId") @Nullable String billToCustAccountId,
-        @CustomType.Parameter("billingAddresses") @Nullable List<SubscriptionSubscriptionBillingAddress> billingAddresses,
-        @CustomType.Parameter("currencyCode") @Nullable String currencyCode,
-        @CustomType.Parameter("gsiOrgCode") @Nullable String gsiOrgCode,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("isIntentToPay") @Nullable Boolean isIntentToPay,
-        @CustomType.Parameter("languageCode") @Nullable String languageCode,
-        @CustomType.Parameter("organizationId") @Nullable String organizationId,
-        @CustomType.Parameter("paymentGateway") @Nullable SubscriptionSubscriptionPaymentGateway paymentGateway,
-        @CustomType.Parameter("paymentOptions") @Nullable List<SubscriptionSubscriptionPaymentOption> paymentOptions,
-        @CustomType.Parameter("planType") @Nullable String planType,
-        @CustomType.Parameter("shipToCustAcctRoleId") @Nullable String shipToCustAcctRoleId,
-        @CustomType.Parameter("shipToCustAcctSiteId") @Nullable String shipToCustAcctSiteId,
-        @CustomType.Parameter("subscriptionPlanNumber") String subscriptionPlanNumber,
-        @CustomType.Parameter("taxInfo") @Nullable SubscriptionSubscriptionTaxInfo taxInfo,
-        @CustomType.Parameter("timePlanUpgrade") @Nullable String timePlanUpgrade,
-        @CustomType.Parameter("timeStart") @Nullable String timeStart,
-        @CustomType.Parameter("upgradeState") @Nullable String upgradeState,
-        @CustomType.Parameter("upgradeStateDetails") @Nullable String upgradeStateDetails) {
-        this.billToCustAccountId = billToCustAccountId;
-        this.billingAddresses = billingAddresses;
-        this.currencyCode = currencyCode;
-        this.gsiOrgCode = gsiOrgCode;
-        this.id = id;
-        this.isIntentToPay = isIntentToPay;
-        this.languageCode = languageCode;
-        this.organizationId = organizationId;
-        this.paymentGateway = paymentGateway;
-        this.paymentOptions = paymentOptions;
-        this.planType = planType;
-        this.shipToCustAcctRoleId = shipToCustAcctRoleId;
-        this.shipToCustAcctSiteId = shipToCustAcctSiteId;
-        this.subscriptionPlanNumber = subscriptionPlanNumber;
-        this.taxInfo = taxInfo;
-        this.timePlanUpgrade = timePlanUpgrade;
-        this.timeStart = timeStart;
-        this.upgradeState = upgradeState;
-        this.upgradeStateDetails = upgradeStateDetails;
-    }
-
+    private SubscriptionSubscription() {}
     /**
      * @return (Updatable) Bill to customer Account id.
      * 
@@ -296,7 +255,7 @@ public final class SubscriptionSubscription {
     public static Builder builder(SubscriptionSubscription defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String billToCustAccountId;
         private @Nullable List<SubscriptionSubscriptionBillingAddress> billingAddresses;
@@ -317,11 +276,7 @@ public final class SubscriptionSubscription {
         private @Nullable String timeStart;
         private @Nullable String upgradeState;
         private @Nullable String upgradeStateDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SubscriptionSubscription defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billToCustAccountId = defaults.billToCustAccountId;
@@ -345,10 +300,12 @@ public final class SubscriptionSubscription {
     	      this.upgradeStateDetails = defaults.upgradeStateDetails;
         }
 
+        @CustomType.Setter
         public Builder billToCustAccountId(@Nullable String billToCustAccountId) {
             this.billToCustAccountId = billToCustAccountId;
             return this;
         }
+        @CustomType.Setter
         public Builder billingAddresses(@Nullable List<SubscriptionSubscriptionBillingAddress> billingAddresses) {
             this.billingAddresses = billingAddresses;
             return this;
@@ -356,34 +313,42 @@ public final class SubscriptionSubscription {
         public Builder billingAddresses(SubscriptionSubscriptionBillingAddress... billingAddresses) {
             return billingAddresses(List.of(billingAddresses));
         }
+        @CustomType.Setter
         public Builder currencyCode(@Nullable String currencyCode) {
             this.currencyCode = currencyCode;
             return this;
         }
+        @CustomType.Setter
         public Builder gsiOrgCode(@Nullable String gsiOrgCode) {
             this.gsiOrgCode = gsiOrgCode;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder isIntentToPay(@Nullable Boolean isIntentToPay) {
             this.isIntentToPay = isIntentToPay;
             return this;
         }
+        @CustomType.Setter
         public Builder languageCode(@Nullable String languageCode) {
             this.languageCode = languageCode;
             return this;
         }
+        @CustomType.Setter
         public Builder organizationId(@Nullable String organizationId) {
             this.organizationId = organizationId;
             return this;
         }
+        @CustomType.Setter
         public Builder paymentGateway(@Nullable SubscriptionSubscriptionPaymentGateway paymentGateway) {
             this.paymentGateway = paymentGateway;
             return this;
         }
+        @CustomType.Setter
         public Builder paymentOptions(@Nullable List<SubscriptionSubscriptionPaymentOption> paymentOptions) {
             this.paymentOptions = paymentOptions;
             return this;
@@ -391,43 +356,73 @@ public final class SubscriptionSubscription {
         public Builder paymentOptions(SubscriptionSubscriptionPaymentOption... paymentOptions) {
             return paymentOptions(List.of(paymentOptions));
         }
+        @CustomType.Setter
         public Builder planType(@Nullable String planType) {
             this.planType = planType;
             return this;
         }
+        @CustomType.Setter
         public Builder shipToCustAcctRoleId(@Nullable String shipToCustAcctRoleId) {
             this.shipToCustAcctRoleId = shipToCustAcctRoleId;
             return this;
         }
+        @CustomType.Setter
         public Builder shipToCustAcctSiteId(@Nullable String shipToCustAcctSiteId) {
             this.shipToCustAcctSiteId = shipToCustAcctSiteId;
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionPlanNumber(String subscriptionPlanNumber) {
             this.subscriptionPlanNumber = Objects.requireNonNull(subscriptionPlanNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder taxInfo(@Nullable SubscriptionSubscriptionTaxInfo taxInfo) {
             this.taxInfo = taxInfo;
             return this;
         }
+        @CustomType.Setter
         public Builder timePlanUpgrade(@Nullable String timePlanUpgrade) {
             this.timePlanUpgrade = timePlanUpgrade;
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
             this.timeStart = timeStart;
             return this;
         }
+        @CustomType.Setter
         public Builder upgradeState(@Nullable String upgradeState) {
             this.upgradeState = upgradeState;
             return this;
         }
+        @CustomType.Setter
         public Builder upgradeStateDetails(@Nullable String upgradeStateDetails) {
             this.upgradeStateDetails = upgradeStateDetails;
             return this;
-        }        public SubscriptionSubscription build() {
-            return new SubscriptionSubscription(billToCustAccountId, billingAddresses, currencyCode, gsiOrgCode, id, isIntentToPay, languageCode, organizationId, paymentGateway, paymentOptions, planType, shipToCustAcctRoleId, shipToCustAcctSiteId, subscriptionPlanNumber, taxInfo, timePlanUpgrade, timeStart, upgradeState, upgradeStateDetails);
+        }
+        public SubscriptionSubscription build() {
+            final var o = new SubscriptionSubscription();
+            o.billToCustAccountId = billToCustAccountId;
+            o.billingAddresses = billingAddresses;
+            o.currencyCode = currencyCode;
+            o.gsiOrgCode = gsiOrgCode;
+            o.id = id;
+            o.isIntentToPay = isIntentToPay;
+            o.languageCode = languageCode;
+            o.organizationId = organizationId;
+            o.paymentGateway = paymentGateway;
+            o.paymentOptions = paymentOptions;
+            o.planType = planType;
+            o.shipToCustAcctRoleId = shipToCustAcctRoleId;
+            o.shipToCustAcctSiteId = shipToCustAcctSiteId;
+            o.subscriptionPlanNumber = subscriptionPlanNumber;
+            o.taxInfo = taxInfo;
+            o.timePlanUpgrade = timePlanUpgrade;
+            o.timeStart = timeStart;
+            o.upgradeState = upgradeState;
+            o.upgradeStateDetails = upgradeStateDetails;
+            return o;
         }
     }
 }

@@ -18,55 +18,36 @@ public final class GetApplicationsResult {
      * @return The list of applications.
      * 
      */
-    private final List<GetApplicationsApplication> applications;
+    private List<GetApplicationsApplication> applications;
     /**
      * @return The OCID of a compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. This name is not necessarily unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable String displayNameStartsWith;
-    private final @Nullable List<GetApplicationsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable String displayNameStartsWith;
+    private @Nullable List<GetApplicationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    private final @Nullable String ownerPrincipalId;
+    private @Nullable String ownerPrincipalId;
     /**
      * @return The Spark version utilized to run the application.
      * 
      */
-    private final @Nullable String sparkVersion;
+    private @Nullable String sparkVersion;
 
-    @CustomType.Constructor
-    private GetApplicationsResult(
-        @CustomType.Parameter("applications") List<GetApplicationsApplication> applications,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("displayNameStartsWith") @Nullable String displayNameStartsWith,
-        @CustomType.Parameter("filters") @Nullable List<GetApplicationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ownerPrincipalId") @Nullable String ownerPrincipalId,
-        @CustomType.Parameter("sparkVersion") @Nullable String sparkVersion) {
-        this.applications = applications;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.displayNameStartsWith = displayNameStartsWith;
-        this.filters = filters;
-        this.id = id;
-        this.ownerPrincipalId = ownerPrincipalId;
-        this.sparkVersion = sparkVersion;
-    }
-
+    private GetApplicationsResult() {}
     /**
      * @return The list of applications.
      * 
@@ -123,7 +104,7 @@ public final class GetApplicationsResult {
     public static Builder builder(GetApplicationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApplicationsApplication> applications;
         private String compartmentId;
@@ -133,11 +114,7 @@ public final class GetApplicationsResult {
         private String id;
         private @Nullable String ownerPrincipalId;
         private @Nullable String sparkVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApplicationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applications = defaults.applications;
@@ -150,6 +127,7 @@ public final class GetApplicationsResult {
     	      this.sparkVersion = defaults.sparkVersion;
         }
 
+        @CustomType.Setter
         public Builder applications(List<GetApplicationsApplication> applications) {
             this.applications = Objects.requireNonNull(applications);
             return this;
@@ -157,18 +135,22 @@ public final class GetApplicationsResult {
         public Builder applications(GetApplicationsApplication... applications) {
             return applications(List.of(applications));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder displayNameStartsWith(@Nullable String displayNameStartsWith) {
             this.displayNameStartsWith = displayNameStartsWith;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetApplicationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -176,19 +158,32 @@ public final class GetApplicationsResult {
         public Builder filters(GetApplicationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ownerPrincipalId(@Nullable String ownerPrincipalId) {
             this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
+        @CustomType.Setter
         public Builder sparkVersion(@Nullable String sparkVersion) {
             this.sparkVersion = sparkVersion;
             return this;
-        }        public GetApplicationsResult build() {
-            return new GetApplicationsResult(applications, compartmentId, displayName, displayNameStartsWith, filters, id, ownerPrincipalId, sparkVersion);
+        }
+        public GetApplicationsResult build() {
+            final var o = new GetApplicationsResult();
+            o.applications = applications;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.displayNameStartsWith = displayNameStartsWith;
+            o.filters = filters;
+            o.id = id;
+            o.ownerPrincipalId = ownerPrincipalId;
+            o.sparkVersion = sparkVersion;
+            return o;
         }
     }
 }

@@ -54,23 +54,31 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
     }
 
     /**
-     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     @Import(name="dataCollectionOptions")
     private @Nullable Output<List<VmClusterAddVirtualNetworkDataCollectionOptionArgs>> dataCollectionOptions;
 
     /**
-     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     public Optional<Output<List<VmClusterAddVirtualNetworkDataCollectionOptionArgs>>> dataCollectionOptions() {
         return Optional.ofNullable(this.dataCollectionOptions);
     }
 
+    /**
+     * Size of the DATA disk group in GBs.
+     * 
+     */
     @Import(name="dataStorageSizeInGb")
     private @Nullable Output<Double> dataStorageSizeInGb;
 
+    /**
+     * @return Size of the DATA disk group in GBs.
+     * 
+     */
     public Optional<Output<Double>> dataStorageSizeInGb() {
         return Optional.ofNullable(this.dataStorageSizeInGb);
     }
@@ -505,7 +513,7 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
         }
 
         /**
-         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
          * 
          * @return builder
          * 
@@ -516,7 +524,7 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
         }
 
         /**
-         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
          * 
          * @return builder
          * 
@@ -526,7 +534,7 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
         }
 
         /**
-         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
          * 
          * @return builder
          * 
@@ -535,11 +543,23 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
             return dataCollectionOptions(List.of(dataCollectionOptions));
         }
 
+        /**
+         * @param dataStorageSizeInGb Size of the DATA disk group in GBs.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataStorageSizeInGb(@Nullable Output<Double> dataStorageSizeInGb) {
             $.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
 
+        /**
+         * @param dataStorageSizeInGb Size of the DATA disk group in GBs.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
             return dataStorageSizeInGb(Output.of(dataStorageSizeInGb));
         }

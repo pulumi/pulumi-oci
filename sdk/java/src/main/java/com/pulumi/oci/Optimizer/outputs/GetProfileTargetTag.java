@@ -14,13 +14,9 @@ public final class GetProfileTargetTag {
      * @return The list of tags specified in the current profile override.
      * 
      */
-    private final List<GetProfileTargetTagItem> items;
+    private List<GetProfileTargetTagItem> items;
 
-    @CustomType.Constructor
-    private GetProfileTargetTag(@CustomType.Parameter("items") List<GetProfileTargetTagItem> items) {
-        this.items = items;
-    }
-
+    private GetProfileTargetTag() {}
     /**
      * @return The list of tags specified in the current profile override.
      * 
@@ -36,27 +32,27 @@ public final class GetProfileTargetTag {
     public static Builder builder(GetProfileTargetTag defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetProfileTargetTagItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfileTargetTag defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetProfileTargetTagItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetProfileTargetTagItem... items) {
             return items(List.of(items));
-        }        public GetProfileTargetTag build() {
-            return new GetProfileTargetTag(items);
+        }
+        public GetProfileTargetTag build() {
+            final var o = new GetProfileTargetTag();
+            o.items = items;
+            return o;
         }
     }
 }

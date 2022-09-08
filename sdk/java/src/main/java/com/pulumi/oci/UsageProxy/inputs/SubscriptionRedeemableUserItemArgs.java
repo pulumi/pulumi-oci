@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class SubscriptionRedeemableUserItemArgs extends com.pulumi.resources.ResourceArgs {
@@ -28,10 +30,42 @@ public final class SubscriptionRedeemableUserItemArgs extends com.pulumi.resourc
         return this.emailId;
     }
 
+    /**
+     * The first name of the user that can redeem rewards.
+     * 
+     */
+    @Import(name="firstName")
+    private @Nullable Output<String> firstName;
+
+    /**
+     * @return The first name of the user that can redeem rewards.
+     * 
+     */
+    public Optional<Output<String>> firstName() {
+        return Optional.ofNullable(this.firstName);
+    }
+
+    /**
+     * The last name of the user that can redeem rewards.
+     * 
+     */
+    @Import(name="lastName")
+    private @Nullable Output<String> lastName;
+
+    /**
+     * @return The last name of the user that can redeem rewards.
+     * 
+     */
+    public Optional<Output<String>> lastName() {
+        return Optional.ofNullable(this.lastName);
+    }
+
     private SubscriptionRedeemableUserItemArgs() {}
 
     private SubscriptionRedeemableUserItemArgs(SubscriptionRedeemableUserItemArgs $) {
         this.emailId = $.emailId;
+        this.firstName = $.firstName;
+        this.lastName = $.lastName;
     }
 
     public static Builder builder() {
@@ -71,6 +105,48 @@ public final class SubscriptionRedeemableUserItemArgs extends com.pulumi.resourc
          */
         public Builder emailId(String emailId) {
             return emailId(Output.of(emailId));
+        }
+
+        /**
+         * @param firstName The first name of the user that can redeem rewards.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder firstName(@Nullable Output<String> firstName) {
+            $.firstName = firstName;
+            return this;
+        }
+
+        /**
+         * @param firstName The first name of the user that can redeem rewards.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder firstName(String firstName) {
+            return firstName(Output.of(firstName));
+        }
+
+        /**
+         * @param lastName The last name of the user that can redeem rewards.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastName(@Nullable Output<String> lastName) {
+            $.lastName = lastName;
+            return this;
+        }
+
+        /**
+         * @param lastName The last name of the user that can redeem rewards.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastName(String lastName) {
+            return lastName(Output.of(lastName));
         }
 
         public SubscriptionRedeemableUserItemArgs build() {

@@ -15,87 +15,60 @@ public final class GetSubscriptionResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The time when this suscription was created.
      * 
      */
-    private final String createdTime;
+    private String createdTime;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The delivery policy of the subscription. Stored as a JSON string.
      * 
      */
-    private final String deliveryPolicy;
+    private String deliveryPolicy;
     /**
      * @return A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
      * 
      */
-    private final String endpoint;
+    private String endpoint;
     /**
      * @return For optimistic concurrency control. See `if-match`.
      * 
      */
-    private final String etag;
+    private String etag;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The protocol used for the subscription.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
      * 
      */
-    private final String state;
-    private final String subscriptionId;
+    private String state;
+    private String subscriptionId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
      * 
      */
-    private final String topicId;
+    private String topicId;
 
-    @CustomType.Constructor
-    private GetSubscriptionResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdTime") String createdTime,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("deliveryPolicy") String deliveryPolicy,
-        @CustomType.Parameter("endpoint") String endpoint,
-        @CustomType.Parameter("etag") String etag,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("topicId") String topicId) {
-        this.compartmentId = compartmentId;
-        this.createdTime = createdTime;
-        this.definedTags = definedTags;
-        this.deliveryPolicy = deliveryPolicy;
-        this.endpoint = endpoint;
-        this.etag = etag;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.protocol = protocol;
-        this.state = state;
-        this.subscriptionId = subscriptionId;
-        this.topicId = topicId;
-    }
-
+    private GetSubscriptionResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
      * 
@@ -184,7 +157,7 @@ public final class GetSubscriptionResult {
     public static Builder builder(GetSubscriptionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String createdTime;
@@ -198,11 +171,7 @@ public final class GetSubscriptionResult {
         private String state;
         private String subscriptionId;
         private String topicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -219,55 +188,81 @@ public final class GetSubscriptionResult {
     	      this.topicId = defaults.topicId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdTime(String createdTime) {
             this.createdTime = Objects.requireNonNull(createdTime);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder deliveryPolicy(String deliveryPolicy) {
             this.deliveryPolicy = Objects.requireNonNull(deliveryPolicy);
             return this;
         }
+        @CustomType.Setter
         public Builder endpoint(String endpoint) {
             this.endpoint = Objects.requireNonNull(endpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder etag(String etag) {
             this.etag = Objects.requireNonNull(etag);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder topicId(String topicId) {
             this.topicId = Objects.requireNonNull(topicId);
             return this;
-        }        public GetSubscriptionResult build() {
-            return new GetSubscriptionResult(compartmentId, createdTime, definedTags, deliveryPolicy, endpoint, etag, freeformTags, id, protocol, state, subscriptionId, topicId);
+        }
+        public GetSubscriptionResult build() {
+            final var o = new GetSubscriptionResult();
+            o.compartmentId = compartmentId;
+            o.createdTime = createdTime;
+            o.definedTags = definedTags;
+            o.deliveryPolicy = deliveryPolicy;
+            o.endpoint = endpoint;
+            o.etag = etag;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.protocol = protocol;
+            o.state = state;
+            o.subscriptionId = subscriptionId;
+            o.topicId = topicId;
+            return o;
         }
     }
 }

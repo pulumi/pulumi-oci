@@ -18,42 +18,29 @@ public final class DatabaseInsightConnectionDetails {
      * @return Name of the listener host that will be used to create the connect string to the database.
      * 
      */
-    private final @Nullable String hostName;
+    private @Nullable String hostName;
     /**
      * @return List of hosts and port for private endpoint accessed database resource.
      * 
      */
-    private final @Nullable List<DatabaseInsightConnectionDetailsHost> hosts;
+    private @Nullable List<DatabaseInsightConnectionDetailsHost> hosts;
     /**
      * @return Listener port number used for connection requests.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
     /**
      * @return Protocol used for connection requests for private endpoint accssed database resource.
      * 
      */
-    private final @Nullable String protocol;
+    private @Nullable String protocol;
     /**
      * @return Database service name used for connection requests.
      * 
      */
-    private final @Nullable String serviceName;
+    private @Nullable String serviceName;
 
-    @CustomType.Constructor
-    private DatabaseInsightConnectionDetails(
-        @CustomType.Parameter("hostName") @Nullable String hostName,
-        @CustomType.Parameter("hosts") @Nullable List<DatabaseInsightConnectionDetailsHost> hosts,
-        @CustomType.Parameter("port") @Nullable Integer port,
-        @CustomType.Parameter("protocol") @Nullable String protocol,
-        @CustomType.Parameter("serviceName") @Nullable String serviceName) {
-        this.hostName = hostName;
-        this.hosts = hosts;
-        this.port = port;
-        this.protocol = protocol;
-        this.serviceName = serviceName;
-    }
-
+    private DatabaseInsightConnectionDetails() {}
     /**
      * @return Name of the listener host that will be used to create the connect string to the database.
      * 
@@ -97,18 +84,14 @@ public final class DatabaseInsightConnectionDetails {
     public static Builder builder(DatabaseInsightConnectionDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String hostName;
         private @Nullable List<DatabaseInsightConnectionDetailsHost> hosts;
         private @Nullable Integer port;
         private @Nullable String protocol;
         private @Nullable String serviceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseInsightConnectionDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostName = defaults.hostName;
@@ -118,10 +101,12 @@ public final class DatabaseInsightConnectionDetails {
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
         public Builder hostName(@Nullable String hostName) {
             this.hostName = hostName;
             return this;
         }
+        @CustomType.Setter
         public Builder hosts(@Nullable List<DatabaseInsightConnectionDetailsHost> hosts) {
             this.hosts = hosts;
             return this;
@@ -129,19 +114,29 @@ public final class DatabaseInsightConnectionDetails {
         public Builder hosts(DatabaseInsightConnectionDetailsHost... hosts) {
             return hosts(List.of(hosts));
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
             this.protocol = protocol;
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(@Nullable String serviceName) {
             this.serviceName = serviceName;
             return this;
-        }        public DatabaseInsightConnectionDetails build() {
-            return new DatabaseInsightConnectionDetails(hostName, hosts, port, protocol, serviceName);
+        }
+        public DatabaseInsightConnectionDetails build() {
+            final var o = new DatabaseInsightConnectionDetails();
+            o.hostName = hostName;
+            o.hosts = hosts;
+            o.port = port;
+            o.protocol = protocol;
+            o.serviceName = serviceName;
+            return o;
         }
     }
 }

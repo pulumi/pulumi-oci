@@ -20,105 +20,74 @@ public final class GetWaasPoliciesWaasPolicy {
      * @return An array of additional domains for this web application.
      * 
      */
-    private final List<String> additionalDomains;
+    private List<String> additionalDomains;
     /**
      * @return The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
      * 
      */
-    private final String cname;
+    private String cname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The domain for which the cookie is set, defaults to WAAS policy domain.
      * 
      */
-    private final String domain;
+    private String domain;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups;
+    private List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups;
     /**
      * @return A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyOrigin> origins;
+    private List<GetWaasPoliciesWaasPolicyOrigin> origins;
     /**
      * @return The configuration details for the WAAS policy.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs;
+    private List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs;
     /**
      * @return The current lifecycle state of the WAAS policy.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the policy was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The Web Application Firewall configuration for the WAAS policy.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs;
+    private List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesWaasPolicy(
-        @CustomType.Parameter("additionalDomains") List<String> additionalDomains,
-        @CustomType.Parameter("cname") String cname,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("domain") String domain,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("originGroups") List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups,
-        @CustomType.Parameter("origins") List<GetWaasPoliciesWaasPolicyOrigin> origins,
-        @CustomType.Parameter("policyConfigs") List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("wafConfigs") List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs) {
-        this.additionalDomains = additionalDomains;
-        this.cname = cname;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.domain = domain;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.originGroups = originGroups;
-        this.origins = origins;
-        this.policyConfigs = policyConfigs;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.wafConfigs = wafConfigs;
-    }
-
+    private GetWaasPoliciesWaasPolicy() {}
     /**
      * @return An array of additional domains for this web application.
      * 
@@ -225,7 +194,7 @@ public final class GetWaasPoliciesWaasPolicy {
     public static Builder builder(GetWaasPoliciesWaasPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> additionalDomains;
         private String cname;
@@ -241,11 +210,7 @@ public final class GetWaasPoliciesWaasPolicy {
         private String state;
         private String timeCreated;
         private List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalDomains = defaults.additionalDomains;
@@ -264,6 +229,7 @@ public final class GetWaasPoliciesWaasPolicy {
     	      this.wafConfigs = defaults.wafConfigs;
         }
 
+        @CustomType.Setter
         public Builder additionalDomains(List<String> additionalDomains) {
             this.additionalDomains = Objects.requireNonNull(additionalDomains);
             return this;
@@ -271,34 +237,42 @@ public final class GetWaasPoliciesWaasPolicy {
         public Builder additionalDomains(String... additionalDomains) {
             return additionalDomains(List.of(additionalDomains));
         }
+        @CustomType.Setter
         public Builder cname(String cname) {
             this.cname = Objects.requireNonNull(cname);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder domain(String domain) {
             this.domain = Objects.requireNonNull(domain);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder originGroups(List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups) {
             this.originGroups = Objects.requireNonNull(originGroups);
             return this;
@@ -306,6 +280,7 @@ public final class GetWaasPoliciesWaasPolicy {
         public Builder originGroups(GetWaasPoliciesWaasPolicyOriginGroup... originGroups) {
             return originGroups(List.of(originGroups));
         }
+        @CustomType.Setter
         public Builder origins(List<GetWaasPoliciesWaasPolicyOrigin> origins) {
             this.origins = Objects.requireNonNull(origins);
             return this;
@@ -313,6 +288,7 @@ public final class GetWaasPoliciesWaasPolicy {
         public Builder origins(GetWaasPoliciesWaasPolicyOrigin... origins) {
             return origins(List.of(origins));
         }
+        @CustomType.Setter
         public Builder policyConfigs(List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs) {
             this.policyConfigs = Objects.requireNonNull(policyConfigs);
             return this;
@@ -320,22 +296,41 @@ public final class GetWaasPoliciesWaasPolicy {
         public Builder policyConfigs(GetWaasPoliciesWaasPolicyPolicyConfig... policyConfigs) {
             return policyConfigs(List.of(policyConfigs));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder wafConfigs(List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs) {
             this.wafConfigs = Objects.requireNonNull(wafConfigs);
             return this;
         }
         public Builder wafConfigs(GetWaasPoliciesWaasPolicyWafConfig... wafConfigs) {
             return wafConfigs(List.of(wafConfigs));
-        }        public GetWaasPoliciesWaasPolicy build() {
-            return new GetWaasPoliciesWaasPolicy(additionalDomains, cname, compartmentId, definedTags, displayName, domain, freeformTags, id, originGroups, origins, policyConfigs, state, timeCreated, wafConfigs);
+        }
+        public GetWaasPoliciesWaasPolicy build() {
+            final var o = new GetWaasPoliciesWaasPolicy();
+            o.additionalDomains = additionalDomains;
+            o.cname = cname;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.domain = domain;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.originGroups = originGroups;
+            o.origins = origins;
+            o.policyConfigs = policyConfigs;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.wafConfigs = wafConfigs;
+            return o;
         }
     }
 }

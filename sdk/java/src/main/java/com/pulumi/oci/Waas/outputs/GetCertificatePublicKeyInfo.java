@@ -14,28 +14,19 @@ public final class GetCertificatePublicKeyInfo {
      * @return The algorithm identifier and parameters for the public key.
      * 
      */
-    private final String algorithm;
+    private String algorithm;
     /**
      * @return The private key exponent.
      * 
      */
-    private final Integer exponent;
+    private Integer exponent;
     /**
      * @return The number of bits in a key used by a cryptographic algorithm.
      * 
      */
-    private final Integer keySize;
+    private Integer keySize;
 
-    @CustomType.Constructor
-    private GetCertificatePublicKeyInfo(
-        @CustomType.Parameter("algorithm") String algorithm,
-        @CustomType.Parameter("exponent") Integer exponent,
-        @CustomType.Parameter("keySize") Integer keySize) {
-        this.algorithm = algorithm;
-        this.exponent = exponent;
-        this.keySize = keySize;
-    }
-
+    private GetCertificatePublicKeyInfo() {}
     /**
      * @return The algorithm identifier and parameters for the public key.
      * 
@@ -65,16 +56,12 @@ public final class GetCertificatePublicKeyInfo {
     public static Builder builder(GetCertificatePublicKeyInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String algorithm;
         private Integer exponent;
         private Integer keySize;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificatePublicKeyInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.algorithm = defaults.algorithm;
@@ -82,19 +69,27 @@ public final class GetCertificatePublicKeyInfo {
     	      this.keySize = defaults.keySize;
         }
 
+        @CustomType.Setter
         public Builder algorithm(String algorithm) {
             this.algorithm = Objects.requireNonNull(algorithm);
             return this;
         }
+        @CustomType.Setter
         public Builder exponent(Integer exponent) {
             this.exponent = Objects.requireNonNull(exponent);
             return this;
         }
+        @CustomType.Setter
         public Builder keySize(Integer keySize) {
             this.keySize = Objects.requireNonNull(keySize);
             return this;
-        }        public GetCertificatePublicKeyInfo build() {
-            return new GetCertificatePublicKeyInfo(algorithm, exponent, keySize);
+        }
+        public GetCertificatePublicKeyInfo build() {
+            final var o = new GetCertificatePublicKeyInfo();
+            o.algorithm = algorithm;
+            o.exponent = exponent;
+            o.keySize = keySize;
+            return o;
         }
     }
 }

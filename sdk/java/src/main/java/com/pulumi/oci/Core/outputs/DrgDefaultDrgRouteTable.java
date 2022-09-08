@@ -15,35 +15,24 @@ public final class DrgDefaultDrgRouteTable {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on creation.
      * 
      */
-    private final @Nullable String ipsecTunnel;
+    private @Nullable String ipsecTunnel;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type REMOTE_PEERING_CONNECTION on creation.
      * 
      */
-    private final @Nullable String remotePeeringConnection;
+    private @Nullable String remotePeeringConnection;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VCN on creation.
      * 
      */
-    private final @Nullable String vcn;
+    private @Nullable String vcn;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT on creation.
      * 
      */
-    private final @Nullable String virtualCircuit;
+    private @Nullable String virtualCircuit;
 
-    @CustomType.Constructor
-    private DrgDefaultDrgRouteTable(
-        @CustomType.Parameter("ipsecTunnel") @Nullable String ipsecTunnel,
-        @CustomType.Parameter("remotePeeringConnection") @Nullable String remotePeeringConnection,
-        @CustomType.Parameter("vcn") @Nullable String vcn,
-        @CustomType.Parameter("virtualCircuit") @Nullable String virtualCircuit) {
-        this.ipsecTunnel = ipsecTunnel;
-        this.remotePeeringConnection = remotePeeringConnection;
-        this.vcn = vcn;
-        this.virtualCircuit = virtualCircuit;
-    }
-
+    private DrgDefaultDrgRouteTable() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on creation.
      * 
@@ -80,17 +69,13 @@ public final class DrgDefaultDrgRouteTable {
     public static Builder builder(DrgDefaultDrgRouteTable defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String ipsecTunnel;
         private @Nullable String remotePeeringConnection;
         private @Nullable String vcn;
         private @Nullable String virtualCircuit;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DrgDefaultDrgRouteTable defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipsecTunnel = defaults.ipsecTunnel;
@@ -99,23 +84,33 @@ public final class DrgDefaultDrgRouteTable {
     	      this.virtualCircuit = defaults.virtualCircuit;
         }
 
+        @CustomType.Setter
         public Builder ipsecTunnel(@Nullable String ipsecTunnel) {
             this.ipsecTunnel = ipsecTunnel;
             return this;
         }
+        @CustomType.Setter
         public Builder remotePeeringConnection(@Nullable String remotePeeringConnection) {
             this.remotePeeringConnection = remotePeeringConnection;
             return this;
         }
+        @CustomType.Setter
         public Builder vcn(@Nullable String vcn) {
             this.vcn = vcn;
             return this;
         }
+        @CustomType.Setter
         public Builder virtualCircuit(@Nullable String virtualCircuit) {
             this.virtualCircuit = virtualCircuit;
             return this;
-        }        public DrgDefaultDrgRouteTable build() {
-            return new DrgDefaultDrgRouteTable(ipsecTunnel, remotePeeringConnection, vcn, virtualCircuit);
+        }
+        public DrgDefaultDrgRouteTable build() {
+            final var o = new DrgDefaultDrgRouteTable();
+            o.ipsecTunnel = ipsecTunnel;
+            o.remotePeeringConnection = remotePeeringConnection;
+            o.vcn = vcn;
+            o.virtualCircuit = virtualCircuit;
+            return o;
         }
     }
 }

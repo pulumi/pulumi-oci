@@ -16,35 +16,24 @@ public final class InstancePoolPlacementConfiguration {
      * @return (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return (Updatable) The fault domains to place instances.
      * 
      */
-    private final @Nullable List<String> faultDomains;
+    private @Nullable List<String> faultDomains;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
      * 
      */
-    private final String primarySubnetId;
+    private String primarySubnetId;
     /**
      * @return (Updatable) The set of secondary VNIC data for instances in the pool.
      * 
      */
-    private final @Nullable List<InstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
+    private @Nullable List<InstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
 
-    @CustomType.Constructor
-    private InstancePoolPlacementConfiguration(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("faultDomains") @Nullable List<String> faultDomains,
-        @CustomType.Parameter("primarySubnetId") String primarySubnetId,
-        @CustomType.Parameter("secondaryVnicSubnets") @Nullable List<InstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
-        this.availabilityDomain = availabilityDomain;
-        this.faultDomains = faultDomains;
-        this.primarySubnetId = primarySubnetId;
-        this.secondaryVnicSubnets = secondaryVnicSubnets;
-    }
-
+    private InstancePoolPlacementConfiguration() {}
     /**
      * @return (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
      * 
@@ -81,17 +70,13 @@ public final class InstancePoolPlacementConfiguration {
     public static Builder builder(InstancePoolPlacementConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private @Nullable List<String> faultDomains;
         private String primarySubnetId;
         private @Nullable List<InstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstancePoolPlacementConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -100,10 +85,12 @@ public final class InstancePoolPlacementConfiguration {
     	      this.secondaryVnicSubnets = defaults.secondaryVnicSubnets;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder faultDomains(@Nullable List<String> faultDomains) {
             this.faultDomains = faultDomains;
             return this;
@@ -111,18 +98,26 @@ public final class InstancePoolPlacementConfiguration {
         public Builder faultDomains(String... faultDomains) {
             return faultDomains(List.of(faultDomains));
         }
+        @CustomType.Setter
         public Builder primarySubnetId(String primarySubnetId) {
             this.primarySubnetId = Objects.requireNonNull(primarySubnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder secondaryVnicSubnets(@Nullable List<InstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
             this.secondaryVnicSubnets = secondaryVnicSubnets;
             return this;
         }
         public Builder secondaryVnicSubnets(InstancePoolPlacementConfigurationSecondaryVnicSubnet... secondaryVnicSubnets) {
             return secondaryVnicSubnets(List.of(secondaryVnicSubnets));
-        }        public InstancePoolPlacementConfiguration build() {
-            return new InstancePoolPlacementConfiguration(availabilityDomain, faultDomains, primarySubnetId, secondaryVnicSubnets);
+        }
+        public InstancePoolPlacementConfiguration build() {
+            final var o = new InstancePoolPlacementConfiguration();
+            o.availabilityDomain = availabilityDomain;
+            o.faultDomains = faultDomains;
+            o.primarySubnetId = primarySubnetId;
+            o.secondaryVnicSubnets = secondaryVnicSubnets;
+            return o;
         }
     }
 }

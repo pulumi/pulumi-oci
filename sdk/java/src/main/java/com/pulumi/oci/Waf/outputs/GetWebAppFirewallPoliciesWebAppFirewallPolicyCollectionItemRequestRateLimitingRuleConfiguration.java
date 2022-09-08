@@ -13,28 +13,19 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
      * 
      */
-    private final Integer actionDurationInSeconds;
+    private Integer actionDurationInSeconds;
     /**
      * @return Evaluation period in seconds.
      * 
      */
-    private final Integer periodInSeconds;
+    private Integer periodInSeconds;
     /**
      * @return Requests allowed per evaluation period.
      * 
      */
-    private final Integer requestsLimit;
+    private Integer requestsLimit;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration(
-        @CustomType.Parameter("actionDurationInSeconds") Integer actionDurationInSeconds,
-        @CustomType.Parameter("periodInSeconds") Integer periodInSeconds,
-        @CustomType.Parameter("requestsLimit") Integer requestsLimit) {
-        this.actionDurationInSeconds = actionDurationInSeconds;
-        this.periodInSeconds = periodInSeconds;
-        this.requestsLimit = requestsLimit;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration() {}
     /**
      * @return Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
      * 
@@ -64,16 +55,12 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer actionDurationInSeconds;
         private Integer periodInSeconds;
         private Integer requestsLimit;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionDurationInSeconds = defaults.actionDurationInSeconds;
@@ -81,19 +68,27 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     	      this.requestsLimit = defaults.requestsLimit;
         }
 
+        @CustomType.Setter
         public Builder actionDurationInSeconds(Integer actionDurationInSeconds) {
             this.actionDurationInSeconds = Objects.requireNonNull(actionDurationInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder periodInSeconds(Integer periodInSeconds) {
             this.periodInSeconds = Objects.requireNonNull(periodInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder requestsLimit(Integer requestsLimit) {
             this.requestsLimit = Objects.requireNonNull(requestsLimit);
             return this;
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration(actionDurationInSeconds, periodInSeconds, requestsLimit);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration();
+            o.actionDurationInSeconds = actionDurationInSeconds;
+            o.periodInSeconds = periodInSeconds;
+            o.requestsLimit = requestsLimit;
+            return o;
         }
     }
 }

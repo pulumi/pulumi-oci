@@ -14,7 +14,7 @@ public final class GetPathRouteSetsPathRouteSetPathRoute {
      * @return The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
      * 
      */
-    private final String backendSetName;
+    private String backendSetName;
     /**
      * @return The path string to match against the incoming URI path.
      * *  Path strings are case-insensitive.
@@ -22,23 +22,14 @@ public final class GetPathRouteSetsPathRouteSetPathRoute {
      * *  Regular expressions are not supported.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return The type of matching to apply to incoming URIs.
      * 
      */
-    private final GetPathRouteSetsPathRouteSetPathRoutePathMatchType pathMatchType;
+    private GetPathRouteSetsPathRouteSetPathRoutePathMatchType pathMatchType;
 
-    @CustomType.Constructor
-    private GetPathRouteSetsPathRouteSetPathRoute(
-        @CustomType.Parameter("backendSetName") String backendSetName,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("pathMatchType") GetPathRouteSetsPathRouteSetPathRoutePathMatchType pathMatchType) {
-        this.backendSetName = backendSetName;
-        this.path = path;
-        this.pathMatchType = pathMatchType;
-    }
-
+    private GetPathRouteSetsPathRouteSetPathRoute() {}
     /**
      * @return The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
      * 
@@ -71,16 +62,12 @@ public final class GetPathRouteSetsPathRouteSetPathRoute {
     public static Builder builder(GetPathRouteSetsPathRouteSetPathRoute defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backendSetName;
         private String path;
         private GetPathRouteSetsPathRouteSetPathRoutePathMatchType pathMatchType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPathRouteSetsPathRouteSetPathRoute defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendSetName = defaults.backendSetName;
@@ -88,19 +75,27 @@ public final class GetPathRouteSetsPathRouteSetPathRoute {
     	      this.pathMatchType = defaults.pathMatchType;
         }
 
+        @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder pathMatchType(GetPathRouteSetsPathRouteSetPathRoutePathMatchType pathMatchType) {
             this.pathMatchType = Objects.requireNonNull(pathMatchType);
             return this;
-        }        public GetPathRouteSetsPathRouteSetPathRoute build() {
-            return new GetPathRouteSetsPathRouteSetPathRoute(backendSetName, path, pathMatchType);
+        }
+        public GetPathRouteSetsPathRouteSetPathRoute build() {
+            final var o = new GetPathRouteSetsPathRouteSetPathRoute();
+            o.backendSetName = backendSetName;
+            o.path = path;
+            o.pathMatchType = pathMatchType;
+            return o;
         }
     }
 }

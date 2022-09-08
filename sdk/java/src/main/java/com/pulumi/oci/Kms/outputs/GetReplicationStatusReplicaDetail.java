@@ -13,21 +13,14 @@ public final class GetReplicationStatusReplicaDetail {
      * @return The replica region
      * 
      */
-    private final String region;
+    private String region;
     /**
      * @return Replication status associated with a replicationId
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetReplicationStatusReplicaDetail(
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("status") String status) {
-        this.region = region;
-        this.status = status;
-    }
-
+    private GetReplicationStatusReplicaDetail() {}
     /**
      * @return The replica region
      * 
@@ -50,30 +43,32 @@ public final class GetReplicationStatusReplicaDetail {
     public static Builder builder(GetReplicationStatusReplicaDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String region;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReplicationStatusReplicaDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.region = defaults.region;
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetReplicationStatusReplicaDetail build() {
-            return new GetReplicationStatusReplicaDetail(region, status);
+        }
+        public GetReplicationStatusReplicaDetail build() {
+            final var o = new GetReplicationStatusReplicaDetail();
+            o.region = region;
+            o.status = status;
+            return o;
         }
     }
 }

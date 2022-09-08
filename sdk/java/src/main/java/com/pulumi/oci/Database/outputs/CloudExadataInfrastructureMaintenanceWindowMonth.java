@@ -13,13 +13,9 @@ public final class CloudExadataInfrastructureMaintenanceWindowMonth {
      * @return (Updatable) Name of the month of the year.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private CloudExadataInfrastructureMaintenanceWindowMonth(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private CloudExadataInfrastructureMaintenanceWindowMonth() {}
     /**
      * @return (Updatable) Name of the month of the year.
      * 
@@ -35,24 +31,24 @@ public final class CloudExadataInfrastructureMaintenanceWindowMonth {
     public static Builder builder(CloudExadataInfrastructureMaintenanceWindowMonth defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CloudExadataInfrastructureMaintenanceWindowMonth defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public CloudExadataInfrastructureMaintenanceWindowMonth build() {
-            return new CloudExadataInfrastructureMaintenanceWindowMonth(name);
+        }
+        public CloudExadataInfrastructureMaintenanceWindowMonth build() {
+            final var o = new CloudExadataInfrastructureMaintenanceWindowMonth();
+            o.name = name;
+            return o;
         }
     }
 }

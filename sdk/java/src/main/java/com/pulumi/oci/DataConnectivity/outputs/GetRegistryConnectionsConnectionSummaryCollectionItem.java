@@ -19,124 +19,89 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryConnectionsConnectionSummaryCollectionItem {
     /**
-     * @return The properties for the connection.
+     * @return The properties of the connection.
      * 
      */
-    private final List<GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty> connectionProperties;
+    private List<GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty> connectionProperties;
     /**
      * @return The description of the aggregator.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The identifier of the aggregator.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
-     * @return The default property for the connection.
+     * @return The default property of the connection.
      * 
      */
-    private final Boolean isDefault;
+    private Boolean isDefault;
     /**
      * @return The identifying key for the object.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
-    private final GetRegistryConnectionsConnectionSummaryCollectionItemMetadata metadata;
+    private GetRegistryConnectionsConnectionSummaryCollectionItemMetadata metadata;
     /**
-     * @return The object&#39;s type.
+     * @return The object type.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
-     * @return The object&#39;s model version.
+     * @return The model version of the object.
      * 
      */
-    private final String modelVersion;
+    private String modelVersion;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final Integer objectStatus;
+    private Integer objectStatus;
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final Integer objectVersion;
+    private Integer objectVersion;
     /**
      * @return The schema object.
      * 
      */
-    private final GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema primarySchema;
+    private GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema primarySchema;
     /**
-     * @return All the properties for the connection in a key-value map format.
+     * @return All the properties of the connection in a key-value map format.
      * 
      */
-    private final Map<String,Object> properties;
+    private Map<String,Object> properties;
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
-    private final String registryId;
+    private String registryId;
     /**
      * @return Information about the object and its parent.
      * 
      */
-    private final GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata registryMetadata;
+    private GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata registryMetadata;
     /**
      * @return Type of the object to filter the results with.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetRegistryConnectionsConnectionSummaryCollectionItem(
-        @CustomType.Parameter("connectionProperties") List<GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty> connectionProperties,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("isDefault") Boolean isDefault,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("metadata") GetRegistryConnectionsConnectionSummaryCollectionItemMetadata metadata,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStatus") Integer objectStatus,
-        @CustomType.Parameter("objectVersion") Integer objectVersion,
-        @CustomType.Parameter("primarySchema") GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema primarySchema,
-        @CustomType.Parameter("properties") Map<String,Object> properties,
-        @CustomType.Parameter("registryId") String registryId,
-        @CustomType.Parameter("registryMetadata") GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata registryMetadata,
-        @CustomType.Parameter("type") String type) {
-        this.connectionProperties = connectionProperties;
-        this.description = description;
-        this.identifier = identifier;
-        this.isDefault = isDefault;
-        this.key = key;
-        this.metadata = metadata;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.primarySchema = primarySchema;
-        this.properties = properties;
-        this.registryId = registryId;
-        this.registryMetadata = registryMetadata;
-        this.type = type;
-    }
-
+    private GetRegistryConnectionsConnectionSummaryCollectionItem() {}
     /**
-     * @return The properties for the connection.
+     * @return The properties of the connection.
      * 
      */
     public List<GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty> connectionProperties() {
@@ -157,7 +122,7 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItem {
         return this.identifier;
     }
     /**
-     * @return The default property for the connection.
+     * @return The default property of the connection.
      * 
      */
     public Boolean isDefault() {
@@ -171,21 +136,21 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItem {
         return this.key;
     }
     /**
-     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public GetRegistryConnectionsConnectionSummaryCollectionItemMetadata metadata() {
         return this.metadata;
     }
     /**
-     * @return The object&#39;s type.
+     * @return The object type.
      * 
      */
     public String modelType() {
         return this.modelType;
     }
     /**
-     * @return The object&#39;s model version.
+     * @return The model version of the object.
      * 
      */
     public String modelVersion() {
@@ -220,14 +185,14 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItem {
         return this.primarySchema;
     }
     /**
-     * @return All the properties for the connection in a key-value map format.
+     * @return All the properties of the connection in a key-value map format.
      * 
      */
     public Map<String,Object> properties() {
         return this.properties;
     }
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public String registryId() {
@@ -255,7 +220,7 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItem {
     public static Builder builder(GetRegistryConnectionsConnectionSummaryCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty> connectionProperties;
         private String description;
@@ -273,11 +238,7 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItem {
         private String registryId;
         private GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata registryMetadata;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryConnectionsConnectionSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectionProperties = defaults.connectionProperties;
@@ -298,6 +259,7 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItem {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder connectionProperties(List<GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty> connectionProperties) {
             this.connectionProperties = Objects.requireNonNull(connectionProperties);
             return this;
@@ -305,67 +267,100 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItem {
         public Builder connectionProperties(GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty... connectionProperties) {
             return connectionProperties(List.of(connectionProperties));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = Objects.requireNonNull(isDefault);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(GetRegistryConnectionsConnectionSummaryCollectionItemMetadata metadata) {
             this.metadata = Objects.requireNonNull(metadata);
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = Objects.requireNonNull(modelVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = Objects.requireNonNull(objectStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = Objects.requireNonNull(objectVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder primarySchema(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema primarySchema) {
             this.primarySchema = Objects.requireNonNull(primarySchema);
             return this;
         }
+        @CustomType.Setter
         public Builder properties(Map<String,Object> properties) {
             this.properties = Objects.requireNonNull(properties);
             return this;
         }
+        @CustomType.Setter
         public Builder registryId(String registryId) {
             this.registryId = Objects.requireNonNull(registryId);
             return this;
         }
+        @CustomType.Setter
         public Builder registryMetadata(GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata registryMetadata) {
             this.registryMetadata = Objects.requireNonNull(registryMetadata);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetRegistryConnectionsConnectionSummaryCollectionItem build() {
-            return new GetRegistryConnectionsConnectionSummaryCollectionItem(connectionProperties, description, identifier, isDefault, key, metadata, modelType, modelVersion, name, objectStatus, objectVersion, primarySchema, properties, registryId, registryMetadata, type);
+        }
+        public GetRegistryConnectionsConnectionSummaryCollectionItem build() {
+            final var o = new GetRegistryConnectionsConnectionSummaryCollectionItem();
+            o.connectionProperties = connectionProperties;
+            o.description = description;
+            o.identifier = identifier;
+            o.isDefault = isDefault;
+            o.key = key;
+            o.metadata = metadata;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.primarySchema = primarySchema;
+            o.properties = properties;
+            o.registryId = registryId;
+            o.registryMetadata = registryMetadata;
+            o.type = type;
+            return o;
         }
     }
 }

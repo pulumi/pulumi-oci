@@ -13,52 +13,35 @@ public final class GetDbNodeConsoleConnectionResult {
      * @return The OCID of the compartment to contain the console connection.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The SSH connection string for the console connection.
      * 
      */
-    private final String connectionString;
+    private String connectionString;
     /**
      * @return The OCID of the database node.
      * 
      */
-    private final String dbNodeId;
+    private String dbNodeId;
     /**
      * @return The SSH public key fingerprint for the console connection.
      * 
      */
-    private final String fingerprint;
+    private String fingerprint;
     /**
      * @return The OCID of the console connection.
      * 
      */
-    private final String id;
-    private final String publicKey;
+    private String id;
+    private String publicKey;
     /**
      * @return The current state of the console connection.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetDbNodeConsoleConnectionResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectionString") String connectionString,
-        @CustomType.Parameter("dbNodeId") String dbNodeId,
-        @CustomType.Parameter("fingerprint") String fingerprint,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("publicKey") String publicKey,
-        @CustomType.Parameter("state") String state) {
-        this.compartmentId = compartmentId;
-        this.connectionString = connectionString;
-        this.dbNodeId = dbNodeId;
-        this.fingerprint = fingerprint;
-        this.id = id;
-        this.publicKey = publicKey;
-        this.state = state;
-    }
-
+    private GetDbNodeConsoleConnectionResult() {}
     /**
      * @return The OCID of the compartment to contain the console connection.
      * 
@@ -112,7 +95,7 @@ public final class GetDbNodeConsoleConnectionResult {
     public static Builder builder(GetDbNodeConsoleConnectionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String connectionString;
@@ -121,11 +104,7 @@ public final class GetDbNodeConsoleConnectionResult {
         private String id;
         private String publicKey;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbNodeConsoleConnectionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -137,35 +116,51 @@ public final class GetDbNodeConsoleConnectionResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionString(String connectionString) {
             this.connectionString = Objects.requireNonNull(connectionString);
             return this;
         }
+        @CustomType.Setter
         public Builder dbNodeId(String dbNodeId) {
             this.dbNodeId = Objects.requireNonNull(dbNodeId);
             return this;
         }
+        @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = Objects.requireNonNull(fingerprint);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder publicKey(String publicKey) {
             this.publicKey = Objects.requireNonNull(publicKey);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetDbNodeConsoleConnectionResult build() {
-            return new GetDbNodeConsoleConnectionResult(compartmentId, connectionString, dbNodeId, fingerprint, id, publicKey, state);
+        }
+        public GetDbNodeConsoleConnectionResult build() {
+            final var o = new GetDbNodeConsoleConnectionResult();
+            o.compartmentId = compartmentId;
+            o.connectionString = connectionString;
+            o.dbNodeId = dbNodeId;
+            o.fingerprint = fingerprint;
+            o.id = id;
+            o.publicKey = publicKey;
+            o.state = state;
+            return o;
         }
     }
 }

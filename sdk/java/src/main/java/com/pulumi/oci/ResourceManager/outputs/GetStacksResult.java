@@ -18,45 +18,30 @@ public final class GetStacksResult {
      * @return Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Human-readable display name for the stack.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetStacksFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetStacksFilter> filters;
     /**
      * @return Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the stack.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of stacks.
      * 
      */
-    private final List<GetStacksStack> stacks;
+    private List<GetStacksStack> stacks;
     /**
      * @return The current lifecycle state of the stack.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetStacksResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetStacksFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("stacks") List<GetStacksStack> stacks,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.stacks = stacks;
-        this.state = state;
-    }
-
+    private GetStacksResult() {}
     /**
      * @return Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
      * 
@@ -103,7 +88,7 @@ public final class GetStacksResult {
     public static Builder builder(GetStacksResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetStacksResult {
         private @Nullable String id;
         private List<GetStacksStack> stacks;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetStacksResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetStacksResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetStacksFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetStacksResult {
         public Builder filters(GetStacksFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder stacks(List<GetStacksStack> stacks) {
             this.stacks = Objects.requireNonNull(stacks);
             return this;
@@ -152,11 +138,20 @@ public final class GetStacksResult {
         public Builder stacks(GetStacksStack... stacks) {
             return stacks(List.of(stacks));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetStacksResult build() {
-            return new GetStacksResult(compartmentId, displayName, filters, id, stacks, state);
+        }
+        public GetStacksResult build() {
+            final var o = new GetStacksResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.stacks = stacks;
+            o.state = state;
+            return o;
         }
     }
 }

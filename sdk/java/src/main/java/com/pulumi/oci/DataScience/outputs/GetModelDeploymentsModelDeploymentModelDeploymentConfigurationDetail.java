@@ -15,21 +15,14 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * @return The type of the model deployment.
      * 
      */
-    private final String deploymentType;
+    private String deploymentType;
     /**
      * @return The model configuration details.
      * 
      */
-    private final List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails;
+    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails;
 
-    @CustomType.Constructor
-    private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail(
-        @CustomType.Parameter("deploymentType") String deploymentType,
-        @CustomType.Parameter("modelConfigurationDetails") List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails) {
-        this.deploymentType = deploymentType;
-        this.modelConfigurationDetails = modelConfigurationDetails;
-    }
-
+    private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail() {}
     /**
      * @return The type of the model deployment.
      * 
@@ -52,33 +45,35 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     public static Builder builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String deploymentType;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deploymentType = defaults.deploymentType;
     	      this.modelConfigurationDetails = defaults.modelConfigurationDetails;
         }
 
+        @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
             this.deploymentType = Objects.requireNonNull(deploymentType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelConfigurationDetails(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails) {
             this.modelConfigurationDetails = Objects.requireNonNull(modelConfigurationDetails);
             return this;
         }
         public Builder modelConfigurationDetails(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail... modelConfigurationDetails) {
             return modelConfigurationDetails(List.of(modelConfigurationDetails));
-        }        public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail build() {
-            return new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail(deploymentType, modelConfigurationDetails);
+        }
+        public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail build() {
+            final var o = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail();
+            o.deploymentType = deploymentType;
+            o.modelConfigurationDetails = modelConfigurationDetails;
+            return o;
         }
     }
 }

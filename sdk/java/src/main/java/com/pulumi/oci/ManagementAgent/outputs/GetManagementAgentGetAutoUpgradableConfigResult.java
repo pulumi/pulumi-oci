@@ -10,28 +10,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetManagementAgentGetAutoUpgradableConfigResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return true if the agents can be upgraded automatically; false if they must be upgraded manually.
      * 
      */
-    private final Boolean isAgentAutoUpgradable;
+    private Boolean isAgentAutoUpgradable;
 
-    @CustomType.Constructor
-    private GetManagementAgentGetAutoUpgradableConfigResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAgentAutoUpgradable") Boolean isAgentAutoUpgradable) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.isAgentAutoUpgradable = isAgentAutoUpgradable;
-    }
-
+    private GetManagementAgentGetAutoUpgradableConfigResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -57,16 +48,12 @@ public final class GetManagementAgentGetAutoUpgradableConfigResult {
     public static Builder builder(GetManagementAgentGetAutoUpgradableConfigResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private Boolean isAgentAutoUpgradable;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentGetAutoUpgradableConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -74,19 +61,27 @@ public final class GetManagementAgentGetAutoUpgradableConfigResult {
     	      this.isAgentAutoUpgradable = defaults.isAgentAutoUpgradable;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
             this.isAgentAutoUpgradable = Objects.requireNonNull(isAgentAutoUpgradable);
             return this;
-        }        public GetManagementAgentGetAutoUpgradableConfigResult build() {
-            return new GetManagementAgentGetAutoUpgradableConfigResult(compartmentId, id, isAgentAutoUpgradable);
+        }
+        public GetManagementAgentGetAutoUpgradableConfigResult build() {
+            final var o = new GetManagementAgentGetAutoUpgradableConfigResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.isAgentAutoUpgradable = isAgentAutoUpgradable;
+            return o;
         }
     }
 }

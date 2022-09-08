@@ -15,77 +15,54 @@ public final class GetLogSavedSearchesLogSavedSearchSummaryCollectionItem {
      * @return Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description for this resource.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Resource name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The search query that is saved.
      * 
      */
-    private final String query;
+    private String query;
     /**
      * @return The state of the LogSavedSearch
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Time the resource was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Time the resource was last modified.
      * 
      */
-    private final String timeLastModified;
+    private String timeLastModified;
 
-    @CustomType.Constructor
-    private GetLogSavedSearchesLogSavedSearchSummaryCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("query") String query,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastModified") String timeLastModified) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.name = name;
-        this.query = query;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeLastModified = timeLastModified;
-    }
-
+    private GetLogSavedSearchesLogSavedSearchSummaryCollectionItem() {}
     /**
      * @return Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
      * 
@@ -164,7 +141,7 @@ public final class GetLogSavedSearchesLogSavedSearchSummaryCollectionItem {
     public static Builder builder(GetLogSavedSearchesLogSavedSearchSummaryCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -176,11 +153,7 @@ public final class GetLogSavedSearchesLogSavedSearchSummaryCollectionItem {
         private String state;
         private String timeCreated;
         private String timeLastModified;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogSavedSearchesLogSavedSearchSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -195,47 +168,69 @@ public final class GetLogSavedSearchesLogSavedSearchSummaryCollectionItem {
     	      this.timeLastModified = defaults.timeLastModified;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder query(String query) {
             this.query = Objects.requireNonNull(query);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastModified(String timeLastModified) {
             this.timeLastModified = Objects.requireNonNull(timeLastModified);
             return this;
-        }        public GetLogSavedSearchesLogSavedSearchSummaryCollectionItem build() {
-            return new GetLogSavedSearchesLogSavedSearchSummaryCollectionItem(compartmentId, definedTags, description, freeformTags, id, name, query, state, timeCreated, timeLastModified);
+        }
+        public GetLogSavedSearchesLogSavedSearchSummaryCollectionItem build() {
+            final var o = new GetLogSavedSearchesLogSavedSearchSummaryCollectionItem();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.name = name;
+            o.query = query;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeLastModified = timeLastModified;
+            return o;
         }
     }
 }

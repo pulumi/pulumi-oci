@@ -14,13 +14,9 @@ public final class GetOpensearchVersionsOpensearchVersionsCollection {
      * @return A list of OpenSearch versions.
      * 
      */
-    private final List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items;
+    private List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetOpensearchVersionsOpensearchVersionsCollection(@CustomType.Parameter("items") List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetOpensearchVersionsOpensearchVersionsCollection() {}
     /**
      * @return A list of OpenSearch versions.
      * 
@@ -36,27 +32,27 @@ public final class GetOpensearchVersionsOpensearchVersionsCollection {
     public static Builder builder(GetOpensearchVersionsOpensearchVersionsCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOpensearchVersionsOpensearchVersionsCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetOpensearchVersionsOpensearchVersionsCollectionItem... items) {
             return items(List.of(items));
-        }        public GetOpensearchVersionsOpensearchVersionsCollection build() {
-            return new GetOpensearchVersionsOpensearchVersionsCollection(items);
+        }
+        public GetOpensearchVersionsOpensearchVersionsCollection build() {
+            final var o = new GetOpensearchVersionsOpensearchVersionsCollection();
+            o.items = items;
+            return o;
         }
     }
 }

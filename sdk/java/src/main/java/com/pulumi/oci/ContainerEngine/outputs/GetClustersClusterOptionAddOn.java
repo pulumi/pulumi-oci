@@ -13,21 +13,14 @@ public final class GetClustersClusterOptionAddOn {
      * @return Whether or not to enable the Kubernetes Dashboard add-on.
      * 
      */
-    private final Boolean isKubernetesDashboardEnabled;
+    private Boolean isKubernetesDashboardEnabled;
     /**
      * @return Whether or not to enable the Tiller add-on.
      * 
      */
-    private final Boolean isTillerEnabled;
+    private Boolean isTillerEnabled;
 
-    @CustomType.Constructor
-    private GetClustersClusterOptionAddOn(
-        @CustomType.Parameter("isKubernetesDashboardEnabled") Boolean isKubernetesDashboardEnabled,
-        @CustomType.Parameter("isTillerEnabled") Boolean isTillerEnabled) {
-        this.isKubernetesDashboardEnabled = isKubernetesDashboardEnabled;
-        this.isTillerEnabled = isTillerEnabled;
-    }
-
+    private GetClustersClusterOptionAddOn() {}
     /**
      * @return Whether or not to enable the Kubernetes Dashboard add-on.
      * 
@@ -50,30 +43,32 @@ public final class GetClustersClusterOptionAddOn {
     public static Builder builder(GetClustersClusterOptionAddOn defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isKubernetesDashboardEnabled;
         private Boolean isTillerEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClustersClusterOptionAddOn defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isKubernetesDashboardEnabled = defaults.isKubernetesDashboardEnabled;
     	      this.isTillerEnabled = defaults.isTillerEnabled;
         }
 
+        @CustomType.Setter
         public Builder isKubernetesDashboardEnabled(Boolean isKubernetesDashboardEnabled) {
             this.isKubernetesDashboardEnabled = Objects.requireNonNull(isKubernetesDashboardEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isTillerEnabled(Boolean isTillerEnabled) {
             this.isTillerEnabled = Objects.requireNonNull(isTillerEnabled);
             return this;
-        }        public GetClustersClusterOptionAddOn build() {
-            return new GetClustersClusterOptionAddOn(isKubernetesDashboardEnabled, isTillerEnabled);
+        }
+        public GetClustersClusterOptionAddOn build() {
+            final var o = new GetClustersClusterOptionAddOn();
+            o.isKubernetesDashboardEnabled = isKubernetesDashboardEnabled;
+            o.isTillerEnabled = isTillerEnabled;
+            return o;
         }
     }
 }

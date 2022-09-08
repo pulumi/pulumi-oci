@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPrivateEndpointsPrivateEndpointCollection {
-    private final List<GetPrivateEndpointsPrivateEndpointCollectionItem> items;
+    private List<GetPrivateEndpointsPrivateEndpointCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetPrivateEndpointsPrivateEndpointCollection(@CustomType.Parameter("items") List<GetPrivateEndpointsPrivateEndpointCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetPrivateEndpointsPrivateEndpointCollection() {}
     public List<GetPrivateEndpointsPrivateEndpointCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetPrivateEndpointsPrivateEndpointCollection {
     public static Builder builder(GetPrivateEndpointsPrivateEndpointCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetPrivateEndpointsPrivateEndpointCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateEndpointsPrivateEndpointCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetPrivateEndpointsPrivateEndpointCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetPrivateEndpointsPrivateEndpointCollectionItem... items) {
             return items(List.of(items));
-        }        public GetPrivateEndpointsPrivateEndpointCollection build() {
-            return new GetPrivateEndpointsPrivateEndpointCollection(items);
+        }
+        public GetPrivateEndpointsPrivateEndpointCollection build() {
+            final var o = new GetPrivateEndpointsPrivateEndpointCollection();
+            o.items = items;
+            return o;
         }
     }
 }

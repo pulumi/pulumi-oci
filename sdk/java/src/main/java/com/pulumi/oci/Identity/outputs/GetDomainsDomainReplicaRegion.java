@@ -13,28 +13,19 @@ public final class GetDomainsDomainReplicaRegion {
      * @return A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.
      * 
      */
-    private final String region;
+    private String region;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The region agnostic domain URL
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetDomainsDomainReplicaRegion(
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("url") String url) {
-        this.region = region;
-        this.state = state;
-        this.url = url;
-    }
-
+    private GetDomainsDomainReplicaRegion() {}
     /**
      * @return A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.
      * 
@@ -64,16 +55,12 @@ public final class GetDomainsDomainReplicaRegion {
     public static Builder builder(GetDomainsDomainReplicaRegion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String region;
         private String state;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDomainsDomainReplicaRegion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.region = defaults.region;
@@ -81,19 +68,27 @@ public final class GetDomainsDomainReplicaRegion {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetDomainsDomainReplicaRegion build() {
-            return new GetDomainsDomainReplicaRegion(region, state, url);
+        }
+        public GetDomainsDomainReplicaRegion build() {
+            final var o = new GetDomainsDomainReplicaRegion();
+            o.region = region;
+            o.state = state;
+            o.url = url;
+            return o;
         }
     }
 }

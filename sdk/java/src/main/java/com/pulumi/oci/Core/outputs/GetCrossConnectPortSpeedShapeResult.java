@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCrossConnectPortSpeedShapeResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of cross_connect_port_speed_shapes.
      * 
      */
-    private final List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes;
-    private final @Nullable List<GetCrossConnectPortSpeedShapeFilter> filters;
+    private List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes;
+    private @Nullable List<GetCrossConnectPortSpeedShapeFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetCrossConnectPortSpeedShapeResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("crossConnectPortSpeedShapes") List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes,
-        @CustomType.Parameter("filters") @Nullable List<GetCrossConnectPortSpeedShapeFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.compartmentId = compartmentId;
-        this.crossConnectPortSpeedShapes = crossConnectPortSpeedShapes;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetCrossConnectPortSpeedShapeResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetCrossConnectPortSpeedShapeResult {
     public static Builder builder(GetCrossConnectPortSpeedShapeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes;
         private @Nullable List<GetCrossConnectPortSpeedShapeFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCrossConnectPortSpeedShapeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetCrossConnectPortSpeedShapeResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder crossConnectPortSpeedShapes(List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes) {
             this.crossConnectPortSpeedShapes = Objects.requireNonNull(crossConnectPortSpeedShapes);
             return this;
@@ -96,6 +83,7 @@ public final class GetCrossConnectPortSpeedShapeResult {
         public Builder crossConnectPortSpeedShapes(GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape... crossConnectPortSpeedShapes) {
             return crossConnectPortSpeedShapes(List.of(crossConnectPortSpeedShapes));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCrossConnectPortSpeedShapeFilter> filters) {
             this.filters = filters;
             return this;
@@ -103,11 +91,18 @@ public final class GetCrossConnectPortSpeedShapeResult {
         public Builder filters(GetCrossConnectPortSpeedShapeFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetCrossConnectPortSpeedShapeResult build() {
-            return new GetCrossConnectPortSpeedShapeResult(compartmentId, crossConnectPortSpeedShapes, filters, id);
+        }
+        public GetCrossConnectPortSpeedShapeResult build() {
+            final var o = new GetCrossConnectPortSpeedShapeResult();
+            o.compartmentId = compartmentId;
+            o.crossConnectPortSpeedShapes = crossConnectPortSpeedShapes;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

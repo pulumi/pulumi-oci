@@ -14,13 +14,9 @@ public final class GetBuildRunsBuildRunSummaryCollection {
      * @return List of exported variables.
      * 
      */
-    private final List<GetBuildRunsBuildRunSummaryCollectionItem> items;
+    private List<GetBuildRunsBuildRunSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetBuildRunsBuildRunSummaryCollection(@CustomType.Parameter("items") List<GetBuildRunsBuildRunSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildRunsBuildRunSummaryCollection() {}
     /**
      * @return List of exported variables.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildRunsBuildRunSummaryCollection {
     public static Builder builder(GetBuildRunsBuildRunSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildRunsBuildRunSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildRunsBuildRunSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildRunsBuildRunSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetBuildRunsBuildRunSummaryCollection build() {
-            return new GetBuildRunsBuildRunSummaryCollection(items);
+        }
+        public GetBuildRunsBuildRunSummaryCollection build() {
+            final var o = new GetBuildRunsBuildRunSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

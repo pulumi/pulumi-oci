@@ -14,35 +14,24 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
      * @return List of users or roles that the policy must be enabled for.
      * 
      */
-    private final List<String> entityNames;
+    private List<String> entityNames;
     /**
      * @return The entity include or exclude selection.
      * 
      */
-    private final String entitySelection;
+    private String entitySelection;
     /**
      * @return The entity type that the policy must be enabled for.
      * 
      */
-    private final String entityType;
+    private String entityType;
     /**
      * @return The operation status that the policy must be enabled for.
      * 
      */
-    private final String operationStatus;
+    private String operationStatus;
 
-    @CustomType.Constructor
-    private GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition(
-        @CustomType.Parameter("entityNames") List<String> entityNames,
-        @CustomType.Parameter("entitySelection") String entitySelection,
-        @CustomType.Parameter("entityType") String entityType,
-        @CustomType.Parameter("operationStatus") String operationStatus) {
-        this.entityNames = entityNames;
-        this.entitySelection = entitySelection;
-        this.entityType = entityType;
-        this.operationStatus = operationStatus;
-    }
-
+    private GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition() {}
     /**
      * @return List of users or roles that the policy must be enabled for.
      * 
@@ -79,17 +68,13 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
     public static Builder builder(GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> entityNames;
         private String entitySelection;
         private String entityType;
         private String operationStatus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.entityNames = defaults.entityNames;
@@ -98,6 +83,7 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
     	      this.operationStatus = defaults.operationStatus;
         }
 
+        @CustomType.Setter
         public Builder entityNames(List<String> entityNames) {
             this.entityNames = Objects.requireNonNull(entityNames);
             return this;
@@ -105,19 +91,28 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
         public Builder entityNames(String... entityNames) {
             return entityNames(List.of(entityNames));
         }
+        @CustomType.Setter
         public Builder entitySelection(String entitySelection) {
             this.entitySelection = Objects.requireNonNull(entitySelection);
             return this;
         }
+        @CustomType.Setter
         public Builder entityType(String entityType) {
             this.entityType = Objects.requireNonNull(entityType);
             return this;
         }
+        @CustomType.Setter
         public Builder operationStatus(String operationStatus) {
             this.operationStatus = Objects.requireNonNull(operationStatus);
             return this;
-        }        public GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition build() {
-            return new GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition(entityNames, entitySelection, entityType, operationStatus);
+        }
+        public GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition build() {
+            final var o = new GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition();
+            o.entityNames = entityNames;
+            o.entitySelection = entitySelection;
+            o.entityType = entityType;
+            o.operationStatus = operationStatus;
+            return o;
         }
     }
 }

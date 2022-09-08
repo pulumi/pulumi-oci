@@ -17,56 +17,39 @@ public final class BlockchainPlatformComponentDetailPeer {
      * @return Availability Domain of peer
      * 
      */
-    private final @Nullable String ad;
+    private @Nullable String ad;
     /**
      * @return peer alias
      * 
      */
-    private final @Nullable String alias;
+    private @Nullable String alias;
     /**
      * @return Host name of VM
      * 
      */
-    private final @Nullable String host;
+    private @Nullable String host;
     /**
      * @return OCPU allocation parameter
      * 
      */
-    private final @Nullable List<BlockchainPlatformComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams;
+    private @Nullable List<BlockchainPlatformComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams;
     /**
      * @return peer identifier
      * 
      */
-    private final @Nullable String peerKey;
+    private @Nullable String peerKey;
     /**
      * @return Peer role
      * 
      */
-    private final @Nullable String role;
+    private @Nullable String role;
     /**
      * @return The current state of the Platform Instance.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private BlockchainPlatformComponentDetailPeer(
-        @CustomType.Parameter("ad") @Nullable String ad,
-        @CustomType.Parameter("alias") @Nullable String alias,
-        @CustomType.Parameter("host") @Nullable String host,
-        @CustomType.Parameter("ocpuAllocationParams") @Nullable List<BlockchainPlatformComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams,
-        @CustomType.Parameter("peerKey") @Nullable String peerKey,
-        @CustomType.Parameter("role") @Nullable String role,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.ad = ad;
-        this.alias = alias;
-        this.host = host;
-        this.ocpuAllocationParams = ocpuAllocationParams;
-        this.peerKey = peerKey;
-        this.role = role;
-        this.state = state;
-    }
-
+    private BlockchainPlatformComponentDetailPeer() {}
     /**
      * @return Availability Domain of peer
      * 
@@ -124,7 +107,7 @@ public final class BlockchainPlatformComponentDetailPeer {
     public static Builder builder(BlockchainPlatformComponentDetailPeer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String ad;
         private @Nullable String alias;
@@ -133,11 +116,7 @@ public final class BlockchainPlatformComponentDetailPeer {
         private @Nullable String peerKey;
         private @Nullable String role;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BlockchainPlatformComponentDetailPeer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ad = defaults.ad;
@@ -149,18 +128,22 @@ public final class BlockchainPlatformComponentDetailPeer {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder ad(@Nullable String ad) {
             this.ad = ad;
             return this;
         }
+        @CustomType.Setter
         public Builder alias(@Nullable String alias) {
             this.alias = alias;
             return this;
         }
+        @CustomType.Setter
         public Builder host(@Nullable String host) {
             this.host = host;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuAllocationParams(@Nullable List<BlockchainPlatformComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams) {
             this.ocpuAllocationParams = ocpuAllocationParams;
             return this;
@@ -168,19 +151,31 @@ public final class BlockchainPlatformComponentDetailPeer {
         public Builder ocpuAllocationParams(BlockchainPlatformComponentDetailPeerOcpuAllocationParam... ocpuAllocationParams) {
             return ocpuAllocationParams(List.of(ocpuAllocationParams));
         }
+        @CustomType.Setter
         public Builder peerKey(@Nullable String peerKey) {
             this.peerKey = peerKey;
             return this;
         }
+        @CustomType.Setter
         public Builder role(@Nullable String role) {
             this.role = role;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public BlockchainPlatformComponentDetailPeer build() {
-            return new BlockchainPlatformComponentDetailPeer(ad, alias, host, ocpuAllocationParams, peerKey, role, state);
+        }
+        public BlockchainPlatformComponentDetailPeer build() {
+            final var o = new BlockchainPlatformComponentDetailPeer();
+            o.ad = ad;
+            o.alias = alias;
+            o.host = host;
+            o.ocpuAllocationParams = ocpuAllocationParams;
+            o.peerKey = peerKey;
+            o.role = role;
+            o.state = state;
+            return o;
         }
     }
 }

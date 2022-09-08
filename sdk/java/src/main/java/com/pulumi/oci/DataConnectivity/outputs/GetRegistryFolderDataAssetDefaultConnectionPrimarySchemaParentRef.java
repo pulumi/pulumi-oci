@@ -13,13 +13,9 @@ public final class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParen
      * @return Key of the parent object.
      * 
      */
-    private final String parent;
+    private String parent;
 
-    @CustomType.Constructor
-    private GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef(@CustomType.Parameter("parent") String parent) {
-        this.parent = parent;
-    }
-
+    private GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef() {}
     /**
      * @return Key of the parent object.
      * 
@@ -35,24 +31,24 @@ public final class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParen
     public static Builder builder(GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String parent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parent = defaults.parent;
         }
 
+        @CustomType.Setter
         public Builder parent(String parent) {
             this.parent = Objects.requireNonNull(parent);
             return this;
-        }        public GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef build() {
-            return new GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef(parent);
+        }
+        public GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef build() {
+            final var o = new GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef();
+            o.parent = parent;
+            return o;
         }
     }
 }

@@ -16,56 +16,39 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails 
      * @return The device name.
      * 
      */
-    private final @Nullable String device;
+    private @Nullable String device;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
      * 
      */
-    private final @Nullable Boolean isPvEncryptionInTransitEnabled;
+    private @Nullable Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return Whether the attachment should be created in read-only mode.
      * 
      */
-    private final @Nullable Boolean isReadOnly;
+    private @Nullable Boolean isReadOnly;
     /**
      * @return Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
      * 
      */
-    private final @Nullable Boolean isShareable;
+    private @Nullable Boolean isShareable;
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return Whether to use CHAP authentication for the volume attachment. Defaults to false.
      * 
      */
-    private final @Nullable Boolean useChap;
+    private @Nullable Boolean useChap;
 
-    @CustomType.Constructor
-    private InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails(
-        @CustomType.Parameter("device") @Nullable String device,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("isPvEncryptionInTransitEnabled") @Nullable Boolean isPvEncryptionInTransitEnabled,
-        @CustomType.Parameter("isReadOnly") @Nullable Boolean isReadOnly,
-        @CustomType.Parameter("isShareable") @Nullable Boolean isShareable,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("useChap") @Nullable Boolean useChap) {
-        this.device = device;
-        this.displayName = displayName;
-        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-        this.isReadOnly = isReadOnly;
-        this.isShareable = isShareable;
-        this.type = type;
-        this.useChap = useChap;
-    }
-
+    private InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails() {}
     /**
      * @return The device name.
      * 
@@ -123,7 +106,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails 
     public static Builder builder(InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String device;
         private @Nullable String displayName;
@@ -132,11 +115,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails 
         private @Nullable Boolean isShareable;
         private String type;
         private @Nullable Boolean useChap;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.device = defaults.device;
@@ -148,35 +127,51 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails 
     	      this.useChap = defaults.useChap;
         }
 
+        @CustomType.Setter
         public Builder device(@Nullable String device) {
             this.device = device;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isReadOnly(@Nullable Boolean isReadOnly) {
             this.isReadOnly = isReadOnly;
             return this;
         }
+        @CustomType.Setter
         public Builder isShareable(@Nullable Boolean isShareable) {
             this.isShareable = isShareable;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder useChap(@Nullable Boolean useChap) {
             this.useChap = useChap;
             return this;
-        }        public InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails build() {
-            return new InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails(device, displayName, isPvEncryptionInTransitEnabled, isReadOnly, isShareable, type, useChap);
+        }
+        public InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails build() {
+            final var o = new InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails();
+            o.device = device;
+            o.displayName = displayName;
+            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            o.isReadOnly = isReadOnly;
+            o.isShareable = isShareable;
+            o.type = type;
+            o.useChap = useChap;
+            return o;
         }
     }
 }

@@ -16,42 +16,29 @@ public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
      * @return Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
      * 
      */
-    private final String advertiser;
+    private String advertiser;
     /**
      * @return The age of the route.
      * 
      */
-    private final String age;
+    private String age;
     /**
      * @return A list of ASNs in AS_Path.
      * 
      */
-    private final List<Integer> asPaths;
+    private List<Integer> asPaths;
     /**
      * @return Indicates this is the best route.
      * 
      */
-    private final Boolean isBestPath;
+    private Boolean isBestPath;
     /**
      * @return The BGP network layer reachability information.
      * 
      */
-    private final String prefix;
+    private String prefix;
 
-    @CustomType.Constructor
-    private GetIpsecConnectionTunnelRoutesTunnelRoute(
-        @CustomType.Parameter("advertiser") String advertiser,
-        @CustomType.Parameter("age") String age,
-        @CustomType.Parameter("asPaths") List<Integer> asPaths,
-        @CustomType.Parameter("isBestPath") Boolean isBestPath,
-        @CustomType.Parameter("prefix") String prefix) {
-        this.advertiser = advertiser;
-        this.age = age;
-        this.asPaths = asPaths;
-        this.isBestPath = isBestPath;
-        this.prefix = prefix;
-    }
-
+    private GetIpsecConnectionTunnelRoutesTunnelRoute() {}
     /**
      * @return Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
      * 
@@ -95,18 +82,14 @@ public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
     public static Builder builder(GetIpsecConnectionTunnelRoutesTunnelRoute defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String advertiser;
         private String age;
         private List<Integer> asPaths;
         private Boolean isBestPath;
         private String prefix;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecConnectionTunnelRoutesTunnelRoute defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advertiser = defaults.advertiser;
@@ -116,14 +99,17 @@ public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
     	      this.prefix = defaults.prefix;
         }
 
+        @CustomType.Setter
         public Builder advertiser(String advertiser) {
             this.advertiser = Objects.requireNonNull(advertiser);
             return this;
         }
+        @CustomType.Setter
         public Builder age(String age) {
             this.age = Objects.requireNonNull(age);
             return this;
         }
+        @CustomType.Setter
         public Builder asPaths(List<Integer> asPaths) {
             this.asPaths = Objects.requireNonNull(asPaths);
             return this;
@@ -131,15 +117,24 @@ public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
         public Builder asPaths(Integer... asPaths) {
             return asPaths(List.of(asPaths));
         }
+        @CustomType.Setter
         public Builder isBestPath(Boolean isBestPath) {
             this.isBestPath = Objects.requireNonNull(isBestPath);
             return this;
         }
+        @CustomType.Setter
         public Builder prefix(String prefix) {
             this.prefix = Objects.requireNonNull(prefix);
             return this;
-        }        public GetIpsecConnectionTunnelRoutesTunnelRoute build() {
-            return new GetIpsecConnectionTunnelRoutesTunnelRoute(advertiser, age, asPaths, isBestPath, prefix);
+        }
+        public GetIpsecConnectionTunnelRoutesTunnelRoute build() {
+            final var o = new GetIpsecConnectionTunnelRoutesTunnelRoute();
+            o.advertiser = advertiser;
+            o.age = age;
+            o.asPaths = asPaths;
+            o.isBestPath = isBestPath;
+            o.prefix = prefix;
+            return o;
         }
     }
 }

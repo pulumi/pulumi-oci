@@ -13,42 +13,29 @@ import java.util.Objects;
 
 @CustomType
 public final class GetApiDeploymentSpecificationResult {
-    private final String apiId;
+    private String apiId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
      */
-    private final List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies;
+    private List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies;
     /**
      * @return Behavior applied to any requests received by the API on this route.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies;
+    private List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies;
     /**
      * @return A list of routes that this API exposes.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRoute> routes;
+    private List<GetApiDeploymentSpecificationRoute> routes;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationResult(
-        @CustomType.Parameter("apiId") String apiId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loggingPolicies") List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies,
-        @CustomType.Parameter("requestPolicies") List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies,
-        @CustomType.Parameter("routes") List<GetApiDeploymentSpecificationRoute> routes) {
-        this.apiId = apiId;
-        this.id = id;
-        this.loggingPolicies = loggingPolicies;
-        this.requestPolicies = requestPolicies;
-        this.routes = routes;
-    }
-
+    private GetApiDeploymentSpecificationResult() {}
     public String apiId() {
         return this.apiId;
     }
@@ -88,18 +75,14 @@ public final class GetApiDeploymentSpecificationResult {
     public static Builder builder(GetApiDeploymentSpecificationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apiId;
         private String id;
         private List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies;
         private List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies;
         private List<GetApiDeploymentSpecificationRoute> routes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apiId = defaults.apiId;
@@ -109,14 +92,17 @@ public final class GetApiDeploymentSpecificationResult {
     	      this.routes = defaults.routes;
         }
 
+        @CustomType.Setter
         public Builder apiId(String apiId) {
             this.apiId = Objects.requireNonNull(apiId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loggingPolicies(List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies) {
             this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
             return this;
@@ -124,6 +110,7 @@ public final class GetApiDeploymentSpecificationResult {
         public Builder loggingPolicies(GetApiDeploymentSpecificationLoggingPolicy... loggingPolicies) {
             return loggingPolicies(List.of(loggingPolicies));
         }
+        @CustomType.Setter
         public Builder requestPolicies(List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies) {
             this.requestPolicies = Objects.requireNonNull(requestPolicies);
             return this;
@@ -131,14 +118,22 @@ public final class GetApiDeploymentSpecificationResult {
         public Builder requestPolicies(GetApiDeploymentSpecificationRequestPolicy... requestPolicies) {
             return requestPolicies(List.of(requestPolicies));
         }
+        @CustomType.Setter
         public Builder routes(List<GetApiDeploymentSpecificationRoute> routes) {
             this.routes = Objects.requireNonNull(routes);
             return this;
         }
         public Builder routes(GetApiDeploymentSpecificationRoute... routes) {
             return routes(List.of(routes));
-        }        public GetApiDeploymentSpecificationResult build() {
-            return new GetApiDeploymentSpecificationResult(apiId, id, loggingPolicies, requestPolicies, routes);
+        }
+        public GetApiDeploymentSpecificationResult build() {
+            final var o = new GetApiDeploymentSpecificationResult();
+            o.apiId = apiId;
+            o.id = id;
+            o.loggingPolicies = loggingPolicies;
+            o.requestPolicies = requestPolicies;
+            o.routes = routes;
+            return o;
         }
     }
 }

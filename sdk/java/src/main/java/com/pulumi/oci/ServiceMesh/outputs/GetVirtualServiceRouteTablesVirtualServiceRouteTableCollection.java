@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection {
-    private final List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem> items;
+    private List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection(@CustomType.Parameter("items") List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection() {}
     public List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
     public static Builder builder(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem... items) {
             return items(List.of(items));
-        }        public GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection build() {
-            return new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection(items);
+        }
+        public GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection build() {
+            final var o = new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection();
+            o.items = items;
+            return o;
         }
     }
 }

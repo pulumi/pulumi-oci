@@ -14,21 +14,14 @@ public final class GetDiscoveryJobsResultModifiedAttribute {
      * @return Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      * 
      */
-    private final List<String> appDefinedChildColumnKeys;
+    private List<String> appDefinedChildColumnKeys;
     /**
      * @return Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      * 
      */
-    private final List<String> dbDefinedChildColumnKeys;
+    private List<String> dbDefinedChildColumnKeys;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobsResultModifiedAttribute(
-        @CustomType.Parameter("appDefinedChildColumnKeys") List<String> appDefinedChildColumnKeys,
-        @CustomType.Parameter("dbDefinedChildColumnKeys") List<String> dbDefinedChildColumnKeys) {
-        this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
-        this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
-    }
-
+    private GetDiscoveryJobsResultModifiedAttribute() {}
     /**
      * @return Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      * 
@@ -51,21 +44,18 @@ public final class GetDiscoveryJobsResultModifiedAttribute {
     public static Builder builder(GetDiscoveryJobsResultModifiedAttribute defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> appDefinedChildColumnKeys;
         private List<String> dbDefinedChildColumnKeys;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobsResultModifiedAttribute defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.appDefinedChildColumnKeys = defaults.appDefinedChildColumnKeys;
     	      this.dbDefinedChildColumnKeys = defaults.dbDefinedChildColumnKeys;
         }
 
+        @CustomType.Setter
         public Builder appDefinedChildColumnKeys(List<String> appDefinedChildColumnKeys) {
             this.appDefinedChildColumnKeys = Objects.requireNonNull(appDefinedChildColumnKeys);
             return this;
@@ -73,14 +63,19 @@ public final class GetDiscoveryJobsResultModifiedAttribute {
         public Builder appDefinedChildColumnKeys(String... appDefinedChildColumnKeys) {
             return appDefinedChildColumnKeys(List.of(appDefinedChildColumnKeys));
         }
+        @CustomType.Setter
         public Builder dbDefinedChildColumnKeys(List<String> dbDefinedChildColumnKeys) {
             this.dbDefinedChildColumnKeys = Objects.requireNonNull(dbDefinedChildColumnKeys);
             return this;
         }
         public Builder dbDefinedChildColumnKeys(String... dbDefinedChildColumnKeys) {
             return dbDefinedChildColumnKeys(List.of(dbDefinedChildColumnKeys));
-        }        public GetDiscoveryJobsResultModifiedAttribute build() {
-            return new GetDiscoveryJobsResultModifiedAttribute(appDefinedChildColumnKeys, dbDefinedChildColumnKeys);
+        }
+        public GetDiscoveryJobsResultModifiedAttribute build() {
+            final var o = new GetDiscoveryJobsResultModifiedAttribute();
+            o.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
+            o.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
+            return o;
         }
     }
 }

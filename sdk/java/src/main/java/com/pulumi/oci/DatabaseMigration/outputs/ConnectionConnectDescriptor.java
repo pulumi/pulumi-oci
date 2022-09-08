@@ -16,35 +16,24 @@ public final class ConnectionConnectDescriptor {
      * @return (Updatable) Connect String. Required if no host, port nor databaseServiceName were specified. If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address. Supported formats: Easy connect: &lt;host&gt;:&lt;port&gt;/&lt;db_service_name&gt; Long format: (description= (address=(port=&lt;port&gt;)(host=&lt;host&gt;))(connect_data=(service_name=&lt;db_service_name&gt;)))
      * 
      */
-    private final @Nullable String connectString;
+    private @Nullable String connectString;
     /**
      * @return (Updatable) Database service name. Required if no connectString was specified.
      * 
      */
-    private final @Nullable String databaseServiceName;
+    private @Nullable String databaseServiceName;
     /**
      * @return (Updatable) Name of the host the SSH key is valid for.
      * 
      */
-    private final @Nullable String host;
+    private @Nullable String host;
     /**
      * @return (Updatable) Port of the connect descriptor. Required if no connectString was specified.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
 
-    @CustomType.Constructor
-    private ConnectionConnectDescriptor(
-        @CustomType.Parameter("connectString") @Nullable String connectString,
-        @CustomType.Parameter("databaseServiceName") @Nullable String databaseServiceName,
-        @CustomType.Parameter("host") @Nullable String host,
-        @CustomType.Parameter("port") @Nullable Integer port) {
-        this.connectString = connectString;
-        this.databaseServiceName = databaseServiceName;
-        this.host = host;
-        this.port = port;
-    }
-
+    private ConnectionConnectDescriptor() {}
     /**
      * @return (Updatable) Connect String. Required if no host, port nor databaseServiceName were specified. If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address. Supported formats: Easy connect: &lt;host&gt;:&lt;port&gt;/&lt;db_service_name&gt; Long format: (description= (address=(port=&lt;port&gt;)(host=&lt;host&gt;))(connect_data=(service_name=&lt;db_service_name&gt;)))
      * 
@@ -81,17 +70,13 @@ public final class ConnectionConnectDescriptor {
     public static Builder builder(ConnectionConnectDescriptor defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String connectString;
         private @Nullable String databaseServiceName;
         private @Nullable String host;
         private @Nullable Integer port;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectionConnectDescriptor defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectString = defaults.connectString;
@@ -100,23 +85,33 @@ public final class ConnectionConnectDescriptor {
     	      this.port = defaults.port;
         }
 
+        @CustomType.Setter
         public Builder connectString(@Nullable String connectString) {
             this.connectString = connectString;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseServiceName(@Nullable String databaseServiceName) {
             this.databaseServiceName = databaseServiceName;
             return this;
         }
+        @CustomType.Setter
         public Builder host(@Nullable String host) {
             this.host = host;
             return this;
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
-        }        public ConnectionConnectDescriptor build() {
-            return new ConnectionConnectDescriptor(connectString, databaseServiceName, host, port);
+        }
+        public ConnectionConnectDescriptor build() {
+            final var o = new ConnectionConnectDescriptor();
+            o.connectString = connectString;
+            o.databaseServiceName = databaseServiceName;
+            o.host = host;
+            o.port = port;
+            return o;
         }
     }
 }

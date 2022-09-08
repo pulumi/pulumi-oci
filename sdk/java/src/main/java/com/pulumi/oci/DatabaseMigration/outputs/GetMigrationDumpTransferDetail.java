@@ -15,21 +15,14 @@ public final class GetMigrationDumpTransferDetail {
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
      */
-    private final List<GetMigrationDumpTransferDetailSource> sources;
+    private List<GetMigrationDumpTransferDetailSource> sources;
     /**
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
      */
-    private final List<GetMigrationDumpTransferDetailTarget> targets;
+    private List<GetMigrationDumpTransferDetailTarget> targets;
 
-    @CustomType.Constructor
-    private GetMigrationDumpTransferDetail(
-        @CustomType.Parameter("sources") List<GetMigrationDumpTransferDetailSource> sources,
-        @CustomType.Parameter("targets") List<GetMigrationDumpTransferDetailTarget> targets) {
-        this.sources = sources;
-        this.targets = targets;
-    }
-
+    private GetMigrationDumpTransferDetail() {}
     /**
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
@@ -52,21 +45,18 @@ public final class GetMigrationDumpTransferDetail {
     public static Builder builder(GetMigrationDumpTransferDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMigrationDumpTransferDetailSource> sources;
         private List<GetMigrationDumpTransferDetailTarget> targets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationDumpTransferDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.sources = defaults.sources;
     	      this.targets = defaults.targets;
         }
 
+        @CustomType.Setter
         public Builder sources(List<GetMigrationDumpTransferDetailSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
@@ -74,14 +64,19 @@ public final class GetMigrationDumpTransferDetail {
         public Builder sources(GetMigrationDumpTransferDetailSource... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
         public Builder targets(List<GetMigrationDumpTransferDetailTarget> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
         }
         public Builder targets(GetMigrationDumpTransferDetailTarget... targets) {
             return targets(List.of(targets));
-        }        public GetMigrationDumpTransferDetail build() {
-            return new GetMigrationDumpTransferDetail(sources, targets);
+        }
+        public GetMigrationDumpTransferDetail build() {
+            final var o = new GetMigrationDumpTransferDetail();
+            o.sources = sources;
+            o.targets = targets;
+            return o;
         }
     }
 }

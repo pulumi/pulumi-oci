@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.VolumeArgs;
 import com.pulumi.oci.Core.inputs.VolumeState;
+import com.pulumi.oci.Core.outputs.VolumeAutotunePolicy;
 import com.pulumi.oci.Core.outputs.VolumeBlockVolumeReplica;
 import com.pulumi.oci.Core.outputs.VolumeSourceDetails;
 import com.pulumi.oci.Utilities;
@@ -47,6 +48,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Core.Volume;
  * import com.pulumi.oci.Core.VolumeArgs;
+ * import com.pulumi.oci.Core.inputs.VolumeAutotunePolicyArgs;
  * import com.pulumi.oci.Core.inputs.VolumeBlockVolumeReplicaArgs;
  * import com.pulumi.oci.Core.inputs.VolumeSourceDetailsArgs;
  * import java.util.List;
@@ -64,6 +66,10 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testVolume = new Volume(&#34;testVolume&#34;, VolumeArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .autotunePolicies(VolumeAutotunePolicyArgs.builder()
+ *                 .autotuneType(var_.volume_autotune_policies_autotune_type())
+ *                 .maxVpusPerGb(var_.volume_autotune_policies_max_vpus_per_gb())
+ *                 .build())
  *             .availabilityDomain(var_.volume_availability_domain())
  *             .backupPolicyId(data.oci_core_volume_backup_policies().test_volume_backup_policies().volume_backup_policies()[0].id())
  *             .blockVolumeReplicas(VolumeBlockVolumeReplicaArgs.builder()
@@ -101,18 +107,32 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/volume:Volume")
 public class Volume extends com.pulumi.resources.CustomResource {
     /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+     * The number of Volume Performance Units per GB that this volume is effectively tuned to.
      * 
      */
     @Export(name="autoTunedVpusPerGb", type=String.class, parameters={})
     private Output<String> autoTunedVpusPerGb;
 
     /**
-     * @return The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+     * @return The number of Volume Performance Units per GB that this volume is effectively tuned to.
      * 
      */
     public Output<String> autoTunedVpusPerGb() {
         return this.autoTunedVpusPerGb;
+    }
+    /**
+     * (Updatable) The list of autotune policies to be enabled for this volume.
+     * 
+     */
+    @Export(name="autotunePolicies", type=List.class, parameters={VolumeAutotunePolicy.class})
+    private Output<List<VolumeAutotunePolicy>> autotunePolicies;
+
+    /**
+     * @return (Updatable) The list of autotune policies to be enabled for this volume.
+     * 
+     */
+    public Output<List<VolumeAutotunePolicy>> autotunePolicies() {
+        return this.autotunePolicies;
     }
     /**
      * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
@@ -223,14 +243,14 @@ public class Volume extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     @Export(name="isAutoTuneEnabled", type=Boolean.class, parameters={})
     private Output<Boolean> isAutoTuneEnabled;
 
     /**
-     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     public Output<Boolean> isAutoTuneEnabled() {

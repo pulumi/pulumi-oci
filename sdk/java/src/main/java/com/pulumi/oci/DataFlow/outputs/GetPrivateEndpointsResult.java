@@ -18,55 +18,36 @@ public final class GetPrivateEndpointsResult {
      * @return The OCID of a compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable String displayNameStartsWith;
-    private final @Nullable List<GetPrivateEndpointsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable String displayNameStartsWith;
+    private @Nullable List<GetPrivateEndpointsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    private final @Nullable String ownerPrincipalId;
+    private @Nullable String ownerPrincipalId;
     /**
      * @return The list of private_endpoint_collection.
      * 
      */
-    private final List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections;
+    private List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections;
     /**
      * @return The current state of this private endpoint.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetPrivateEndpointsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("displayNameStartsWith") @Nullable String displayNameStartsWith,
-        @CustomType.Parameter("filters") @Nullable List<GetPrivateEndpointsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ownerPrincipalId") @Nullable String ownerPrincipalId,
-        @CustomType.Parameter("privateEndpointCollections") List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.displayNameStartsWith = displayNameStartsWith;
-        this.filters = filters;
-        this.id = id;
-        this.ownerPrincipalId = ownerPrincipalId;
-        this.privateEndpointCollections = privateEndpointCollections;
-        this.state = state;
-    }
-
+    private GetPrivateEndpointsResult() {}
     /**
      * @return The OCID of a compartment.
      * 
@@ -123,7 +104,7 @@ public final class GetPrivateEndpointsResult {
     public static Builder builder(GetPrivateEndpointsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -133,11 +114,7 @@ public final class GetPrivateEndpointsResult {
         private @Nullable String ownerPrincipalId;
         private List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateEndpointsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -150,18 +127,22 @@ public final class GetPrivateEndpointsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder displayNameStartsWith(@Nullable String displayNameStartsWith) {
             this.displayNameStartsWith = displayNameStartsWith;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPrivateEndpointsFilter> filters) {
             this.filters = filters;
             return this;
@@ -169,14 +150,17 @@ public final class GetPrivateEndpointsResult {
         public Builder filters(GetPrivateEndpointsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ownerPrincipalId(@Nullable String ownerPrincipalId) {
             this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpointCollections(List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections) {
             this.privateEndpointCollections = Objects.requireNonNull(privateEndpointCollections);
             return this;
@@ -184,11 +168,22 @@ public final class GetPrivateEndpointsResult {
         public Builder privateEndpointCollections(GetPrivateEndpointsPrivateEndpointCollection... privateEndpointCollections) {
             return privateEndpointCollections(List.of(privateEndpointCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetPrivateEndpointsResult build() {
-            return new GetPrivateEndpointsResult(compartmentId, displayName, displayNameStartsWith, filters, id, ownerPrincipalId, privateEndpointCollections, state);
+        }
+        public GetPrivateEndpointsResult build() {
+            final var o = new GetPrivateEndpointsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.displayNameStartsWith = displayNameStartsWith;
+            o.filters = filters;
+            o.id = id;
+            o.ownerPrincipalId = ownerPrincipalId;
+            o.privateEndpointCollections = privateEndpointCollections;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -18,73 +18,50 @@ public final class GetGenericArtifactsResult {
      * @return A user-defined path to describe the location of an artifact. Slashes do not create a directory structure, but you can use slashes to organize the repository. An artifact path does not include an artifact version.  Example: `project01/my-web-app/artifact-abc`
      * 
      */
-    private final @Nullable String artifactPath;
+    private @Nullable String artifactPath;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The artifact name with the format of `&lt;artifact-path&gt;:&lt;artifact-version&gt;`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetGenericArtifactsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetGenericArtifactsFilter> filters;
     /**
      * @return The list of generic_artifact_collection.
      * 
      */
-    private final List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections;
+    private List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      * 
      */
-    private final String repositoryId;
+    private String repositoryId;
     /**
      * @return The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
      * 
      */
-    private final @Nullable String sha256;
+    private @Nullable String sha256;
     /**
      * @return The current state of the artifact.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return A user-defined string to describe the artifact version.  Example: `1.1.0` or `1.2-beta-2`
      * 
      */
-    private final @Nullable String version;
+    private @Nullable String version;
 
-    @CustomType.Constructor
-    private GetGenericArtifactsResult(
-        @CustomType.Parameter("artifactPath") @Nullable String artifactPath,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetGenericArtifactsFilter> filters,
-        @CustomType.Parameter("genericArtifactCollections") List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("sha256") @Nullable String sha256,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("version") @Nullable String version) {
-        this.artifactPath = artifactPath;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.genericArtifactCollections = genericArtifactCollections;
-        this.id = id;
-        this.repositoryId = repositoryId;
-        this.sha256 = sha256;
-        this.state = state;
-        this.version = version;
-    }
-
+    private GetGenericArtifactsResult() {}
     /**
      * @return A user-defined path to describe the location of an artifact. Slashes do not create a directory structure, but you can use slashes to organize the repository. An artifact path does not include an artifact version.  Example: `project01/my-web-app/artifact-abc`
      * 
@@ -159,7 +136,7 @@ public final class GetGenericArtifactsResult {
     public static Builder builder(GetGenericArtifactsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String artifactPath;
         private String compartmentId;
@@ -171,11 +148,7 @@ public final class GetGenericArtifactsResult {
         private @Nullable String sha256;
         private @Nullable String state;
         private @Nullable String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGenericArtifactsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.artifactPath = defaults.artifactPath;
@@ -190,18 +163,22 @@ public final class GetGenericArtifactsResult {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder artifactPath(@Nullable String artifactPath) {
             this.artifactPath = artifactPath;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetGenericArtifactsFilter> filters) {
             this.filters = filters;
             return this;
@@ -209,6 +186,7 @@ public final class GetGenericArtifactsResult {
         public Builder filters(GetGenericArtifactsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder genericArtifactCollections(List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections) {
             this.genericArtifactCollections = Objects.requireNonNull(genericArtifactCollections);
             return this;
@@ -216,27 +194,44 @@ public final class GetGenericArtifactsResult {
         public Builder genericArtifactCollections(GetGenericArtifactsGenericArtifactCollection... genericArtifactCollections) {
             return genericArtifactCollections(List.of(genericArtifactCollections));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder sha256(@Nullable String sha256) {
             this.sha256 = sha256;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder version(@Nullable String version) {
             this.version = version;
             return this;
-        }        public GetGenericArtifactsResult build() {
-            return new GetGenericArtifactsResult(artifactPath, compartmentId, displayName, filters, genericArtifactCollections, id, repositoryId, sha256, state, version);
+        }
+        public GetGenericArtifactsResult build() {
+            final var o = new GetGenericArtifactsResult();
+            o.artifactPath = artifactPath;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.genericArtifactCollections = genericArtifactCollections;
+            o.id = id;
+            o.repositoryId = repositoryId;
+            o.sha256 = sha256;
+            o.state = state;
+            o.version = version;
+            return o;
         }
     }
 }

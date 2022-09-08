@@ -21,70 +21,49 @@ public final class AutoScalingConfigurationPolicyDetails {
      * @return The type of autoscaling action to take.
      * 
      */
-    private final @Nullable String actionType;
+    private @Nullable String actionType;
     /**
      * @return Type of autoscaling policy.
      * 
      */
-    private final String policyType;
+    private String policyType;
     /**
      * @return (Updatable) Configration for a metric based vertical scale-down policy.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfig scaleDownConfig;
+    private @Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfig scaleDownConfig;
     /**
      * @return (Updatable) Configration for a metric based horizontal scale-in policy.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyDetailsScaleInConfig scaleInConfig;
+    private @Nullable AutoScalingConfigurationPolicyDetailsScaleInConfig scaleInConfig;
     /**
      * @return (Updatable) Configration for a metric based horizontal scale-out policy.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfig scaleOutConfig;
+    private @Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfig scaleOutConfig;
     /**
      * @return (Updatable) Configration for a metric based vertical scale-up policy.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfig scaleUpConfig;
+    private @Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfig scaleUpConfig;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetail> scheduleDetails;
+    private @Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetail> scheduleDetails;
     /**
      * @return (Updatable) The time zone of the execution schedule, in IANA time zone database name format
      * 
      */
-    private final @Nullable String timezone;
+    private @Nullable String timezone;
     /**
      * @return The type of autoscaling trigger.
      * 
      */
-    private final @Nullable String triggerType;
+    private @Nullable String triggerType;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyDetails(
-        @CustomType.Parameter("actionType") @Nullable String actionType,
-        @CustomType.Parameter("policyType") String policyType,
-        @CustomType.Parameter("scaleDownConfig") @Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfig scaleDownConfig,
-        @CustomType.Parameter("scaleInConfig") @Nullable AutoScalingConfigurationPolicyDetailsScaleInConfig scaleInConfig,
-        @CustomType.Parameter("scaleOutConfig") @Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfig scaleOutConfig,
-        @CustomType.Parameter("scaleUpConfig") @Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfig scaleUpConfig,
-        @CustomType.Parameter("scheduleDetails") @Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetail> scheduleDetails,
-        @CustomType.Parameter("timezone") @Nullable String timezone,
-        @CustomType.Parameter("triggerType") @Nullable String triggerType) {
-        this.actionType = actionType;
-        this.policyType = policyType;
-        this.scaleDownConfig = scaleDownConfig;
-        this.scaleInConfig = scaleInConfig;
-        this.scaleOutConfig = scaleOutConfig;
-        this.scaleUpConfig = scaleUpConfig;
-        this.scheduleDetails = scheduleDetails;
-        this.timezone = timezone;
-        this.triggerType = triggerType;
-    }
-
+    private AutoScalingConfigurationPolicyDetails() {}
     /**
      * @return The type of autoscaling action to take.
      * 
@@ -156,7 +135,7 @@ public final class AutoScalingConfigurationPolicyDetails {
     public static Builder builder(AutoScalingConfigurationPolicyDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String actionType;
         private String policyType;
@@ -167,11 +146,7 @@ public final class AutoScalingConfigurationPolicyDetails {
         private @Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetail> scheduleDetails;
         private @Nullable String timezone;
         private @Nullable String triggerType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionType = defaults.actionType;
@@ -185,30 +160,37 @@ public final class AutoScalingConfigurationPolicyDetails {
     	      this.triggerType = defaults.triggerType;
         }
 
+        @CustomType.Setter
         public Builder actionType(@Nullable String actionType) {
             this.actionType = actionType;
             return this;
         }
+        @CustomType.Setter
         public Builder policyType(String policyType) {
             this.policyType = Objects.requireNonNull(policyType);
             return this;
         }
+        @CustomType.Setter
         public Builder scaleDownConfig(@Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfig scaleDownConfig) {
             this.scaleDownConfig = scaleDownConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder scaleInConfig(@Nullable AutoScalingConfigurationPolicyDetailsScaleInConfig scaleInConfig) {
             this.scaleInConfig = scaleInConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder scaleOutConfig(@Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfig scaleOutConfig) {
             this.scaleOutConfig = scaleOutConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder scaleUpConfig(@Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfig scaleUpConfig) {
             this.scaleUpConfig = scaleUpConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder scheduleDetails(@Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetail> scheduleDetails) {
             this.scheduleDetails = scheduleDetails;
             return this;
@@ -216,15 +198,28 @@ public final class AutoScalingConfigurationPolicyDetails {
         public Builder scheduleDetails(AutoScalingConfigurationPolicyDetailsScheduleDetail... scheduleDetails) {
             return scheduleDetails(List.of(scheduleDetails));
         }
+        @CustomType.Setter
         public Builder timezone(@Nullable String timezone) {
             this.timezone = timezone;
             return this;
         }
+        @CustomType.Setter
         public Builder triggerType(@Nullable String triggerType) {
             this.triggerType = triggerType;
             return this;
-        }        public AutoScalingConfigurationPolicyDetails build() {
-            return new AutoScalingConfigurationPolicyDetails(actionType, policyType, scaleDownConfig, scaleInConfig, scaleOutConfig, scaleUpConfig, scheduleDetails, timezone, triggerType);
+        }
+        public AutoScalingConfigurationPolicyDetails build() {
+            final var o = new AutoScalingConfigurationPolicyDetails();
+            o.actionType = actionType;
+            o.policyType = policyType;
+            o.scaleDownConfig = scaleDownConfig;
+            o.scaleInConfig = scaleInConfig;
+            o.scaleOutConfig = scaleOutConfig;
+            o.scaleUpConfig = scaleUpConfig;
+            o.scheduleDetails = scheduleDetails;
+            o.timezone = timezone;
+            o.triggerType = triggerType;
+            return o;
         }
     }
 }

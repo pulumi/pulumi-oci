@@ -14,13 +14,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
      * @return (Updatable) The list of headers.
      * 
      */
-    private final List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem> items;
+    private List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem> items;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters(@CustomType.Parameter("items") List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem> items) {
-        this.items = items;
-    }
-
+    private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters() {}
     /**
      * @return (Updatable) The list of headers.
      * 
@@ -36,27 +32,27 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
     public static Builder builder(DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem... items) {
             return items(List.of(items));
-        }        public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters build() {
-            return new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters(items);
+        }
+        public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters build() {
+            final var o = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters();
+            o.items = items;
+            return o;
         }
     }
 }

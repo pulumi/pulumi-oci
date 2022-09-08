@@ -14,21 +14,14 @@ public final class GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOpti
      * @return Whether virtualization instructions can be enabled.
      * 
      */
-    private final List<Boolean> allowedValues;
+    private List<Boolean> allowedValues;
     /**
      * @return Whether virtualization instructions are enabled by default.
      * 
      */
-    private final Boolean isDefaultEnabled;
+    private Boolean isDefaultEnabled;
 
-    @CustomType.Constructor
-    private GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption(
-        @CustomType.Parameter("allowedValues") List<Boolean> allowedValues,
-        @CustomType.Parameter("isDefaultEnabled") Boolean isDefaultEnabled) {
-        this.allowedValues = allowedValues;
-        this.isDefaultEnabled = isDefaultEnabled;
-    }
-
+    private GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption() {}
     /**
      * @return Whether virtualization instructions can be enabled.
      * 
@@ -51,21 +44,18 @@ public final class GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOpti
     public static Builder builder(GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<Boolean> allowedValues;
         private Boolean isDefaultEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedValues = defaults.allowedValues;
     	      this.isDefaultEnabled = defaults.isDefaultEnabled;
         }
 
+        @CustomType.Setter
         public Builder allowedValues(List<Boolean> allowedValues) {
             this.allowedValues = Objects.requireNonNull(allowedValues);
             return this;
@@ -73,11 +63,16 @@ public final class GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOpti
         public Builder allowedValues(Boolean... allowedValues) {
             return allowedValues(List.of(allowedValues));
         }
+        @CustomType.Setter
         public Builder isDefaultEnabled(Boolean isDefaultEnabled) {
             this.isDefaultEnabled = Objects.requireNonNull(isDefaultEnabled);
             return this;
-        }        public GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption build() {
-            return new GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption(allowedValues, isDefaultEnabled);
+        }
+        public GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption build() {
+            final var o = new GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption();
+            o.allowedValues = allowedValues;
+            o.isDefaultEnabled = isDefaultEnabled;
+            return o;
         }
     }
 }

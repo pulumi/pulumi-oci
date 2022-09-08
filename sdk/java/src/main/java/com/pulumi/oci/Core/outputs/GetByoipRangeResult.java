@@ -17,119 +17,84 @@ public final class GetByoipRangeResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
      * 
      */
-    private final String byoipRangeId;
+    private String byoipRangeId;
     /**
      * @return A list of `ByoipRangeVcnIpv6AllocationSummary` objects.
      * 
      */
-    private final List<GetByoipRangeByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations;
+    private List<GetByoipRangeByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations;
     /**
      * @return The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
      * 
      */
-    private final String cidrBlock;
+    private String cidrBlock;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      * 
      */
-    private final String ipv6cidrBlock;
+    private String ipv6cidrBlock;
     /**
      * @return The `ByoipRange` resource&#39;s current status.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The `ByoipRange` resource&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeAdvertised;
+    private String timeAdvertised;
     /**
      * @return The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the `ByoipRange` resource was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeValidated;
+    private String timeValidated;
     /**
      * @return The date and time the `ByoipRange` resource was withdrawn from advertisement by BGP to the internet, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeWithdrawn;
+    private String timeWithdrawn;
     /**
      * @return The validation token is an internally-generated ASCII string used in the validation process. See [Importing a CIDR block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
      * 
      */
-    private final String validationToken;
+    private String validationToken;
 
-    @CustomType.Constructor
-    private GetByoipRangeResult(
-        @CustomType.Parameter("byoipRangeId") String byoipRangeId,
-        @CustomType.Parameter("byoipRangeVcnIpv6allocations") List<GetByoipRangeByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations,
-        @CustomType.Parameter("cidrBlock") String cidrBlock,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipv6cidrBlock") String ipv6cidrBlock,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeAdvertised") String timeAdvertised,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeValidated") String timeValidated,
-        @CustomType.Parameter("timeWithdrawn") String timeWithdrawn,
-        @CustomType.Parameter("validationToken") String validationToken) {
-        this.byoipRangeId = byoipRangeId;
-        this.byoipRangeVcnIpv6allocations = byoipRangeVcnIpv6allocations;
-        this.cidrBlock = cidrBlock;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.ipv6cidrBlock = ipv6cidrBlock;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeAdvertised = timeAdvertised;
-        this.timeCreated = timeCreated;
-        this.timeValidated = timeValidated;
-        this.timeWithdrawn = timeWithdrawn;
-        this.validationToken = validationToken;
-    }
-
+    private GetByoipRangeResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
      * 
@@ -250,7 +215,7 @@ public final class GetByoipRangeResult {
     public static Builder builder(GetByoipRangeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String byoipRangeId;
         private List<GetByoipRangeByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations;
@@ -268,11 +233,7 @@ public final class GetByoipRangeResult {
         private String timeValidated;
         private String timeWithdrawn;
         private String validationToken;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetByoipRangeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.byoipRangeId = defaults.byoipRangeId;
@@ -293,10 +254,12 @@ public final class GetByoipRangeResult {
     	      this.validationToken = defaults.validationToken;
         }
 
+        @CustomType.Setter
         public Builder byoipRangeId(String byoipRangeId) {
             this.byoipRangeId = Objects.requireNonNull(byoipRangeId);
             return this;
         }
+        @CustomType.Setter
         public Builder byoipRangeVcnIpv6allocations(List<GetByoipRangeByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations) {
             this.byoipRangeVcnIpv6allocations = Objects.requireNonNull(byoipRangeVcnIpv6allocations);
             return this;
@@ -304,63 +267,95 @@ public final class GetByoipRangeResult {
         public Builder byoipRangeVcnIpv6allocations(GetByoipRangeByoipRangeVcnIpv6allocation... byoipRangeVcnIpv6allocations) {
             return byoipRangeVcnIpv6allocations(List.of(byoipRangeVcnIpv6allocations));
         }
+        @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = Objects.requireNonNull(cidrBlock);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
             this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAdvertised(String timeAdvertised) {
             this.timeAdvertised = Objects.requireNonNull(timeAdvertised);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeValidated(String timeValidated) {
             this.timeValidated = Objects.requireNonNull(timeValidated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeWithdrawn(String timeWithdrawn) {
             this.timeWithdrawn = Objects.requireNonNull(timeWithdrawn);
             return this;
         }
+        @CustomType.Setter
         public Builder validationToken(String validationToken) {
             this.validationToken = Objects.requireNonNull(validationToken);
             return this;
-        }        public GetByoipRangeResult build() {
-            return new GetByoipRangeResult(byoipRangeId, byoipRangeVcnIpv6allocations, cidrBlock, compartmentId, definedTags, displayName, freeformTags, id, ipv6cidrBlock, lifecycleDetails, state, timeAdvertised, timeCreated, timeValidated, timeWithdrawn, validationToken);
+        }
+        public GetByoipRangeResult build() {
+            final var o = new GetByoipRangeResult();
+            o.byoipRangeId = byoipRangeId;
+            o.byoipRangeVcnIpv6allocations = byoipRangeVcnIpv6allocations;
+            o.cidrBlock = cidrBlock;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.ipv6cidrBlock = ipv6cidrBlock;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeAdvertised = timeAdvertised;
+            o.timeCreated = timeCreated;
+            o.timeValidated = timeValidated;
+            o.timeWithdrawn = timeWithdrawn;
+            o.validationToken = validationToken;
+            return o;
         }
     }
 }

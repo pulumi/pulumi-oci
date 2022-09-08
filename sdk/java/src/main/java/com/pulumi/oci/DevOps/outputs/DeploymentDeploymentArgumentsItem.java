@@ -15,21 +15,14 @@ public final class DeploymentDeploymentArgumentsItem {
      * @return Name of the parameter (case-sensitive).
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return value of the argument.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private DeploymentDeploymentArgumentsItem(
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private DeploymentDeploymentArgumentsItem() {}
     /**
      * @return Name of the parameter (case-sensitive).
      * 
@@ -52,30 +45,32 @@ public final class DeploymentDeploymentArgumentsItem {
     public static Builder builder(DeploymentDeploymentArgumentsItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentDeploymentArgumentsItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public DeploymentDeploymentArgumentsItem build() {
-            return new DeploymentDeploymentArgumentsItem(name, value);
+        }
+        public DeploymentDeploymentArgumentsItem build() {
+            final var o = new DeploymentDeploymentArgumentsItem();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

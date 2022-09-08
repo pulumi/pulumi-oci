@@ -139,14 +139,14 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
      */
     @Import(name="failedEsxiHostId")
     private @Nullable Output<String> failedEsxiHostId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
      */
     public Optional<Output<String>> failedEsxiHostId() {
@@ -229,6 +229,21 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * 
+     */
+    @Import(name="nonUpgradedEsxiHostId")
+    private @Nullable Output<String> nonUpgradedEsxiHostId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * 
+     */
+    public Optional<Output<String>> nonUpgradedEsxiHostId() {
+        return Optional.ofNullable(this.nonUpgradedEsxiHostId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      * 
      */
@@ -303,6 +318,36 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.timeUpdated);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+     * 
+     */
+    @Import(name="upgradedReplacementEsxiHostId")
+    private @Nullable Output<String> upgradedReplacementEsxiHostId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+     * 
+     */
+    public Optional<Output<String>> upgradedReplacementEsxiHostId() {
+        return Optional.ofNullable(this.upgradedReplacementEsxiHostId);
+    }
+
+    /**
+     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * 
+     */
+    @Import(name="vmwareSoftwareVersion")
+    private @Nullable Output<String> vmwareSoftwareVersion;
+
+    /**
+     * @return The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * 
+     */
+    public Optional<Output<String>> vmwareSoftwareVersion() {
+        return Optional.ofNullable(this.vmwareSoftwareVersion);
+    }
+
     private EsxiHostState() {}
 
     private EsxiHostState(EsxiHostState $) {
@@ -320,11 +365,14 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         this.hostOcpuCount = $.hostOcpuCount;
         this.hostShapeName = $.hostShapeName;
         this.nextSku = $.nextSku;
+        this.nonUpgradedEsxiHostId = $.nonUpgradedEsxiHostId;
         this.replacementEsxiHostId = $.replacementEsxiHostId;
         this.sddcId = $.sddcId;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.upgradedReplacementEsxiHostId = $.upgradedReplacementEsxiHostId;
+        this.vmwareSoftwareVersion = $.vmwareSoftwareVersion;
     }
 
     public static Builder builder() {
@@ -514,7 +562,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
          * 
          * @return builder
          * 
@@ -525,7 +573,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
          * 
          * @return builder
          * 
@@ -640,6 +688,27 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param nonUpgradedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nonUpgradedEsxiHostId(@Nullable Output<String> nonUpgradedEsxiHostId) {
+            $.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
+            return this;
+        }
+
+        /**
+         * @param nonUpgradedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
+            return nonUpgradedEsxiHostId(Output.of(nonUpgradedEsxiHostId));
+        }
+
+        /**
          * @param replacementEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
          * 
          * @return builder
@@ -742,6 +811,48 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
+        }
+
+        /**
+         * @param upgradedReplacementEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradedReplacementEsxiHostId(@Nullable Output<String> upgradedReplacementEsxiHostId) {
+            $.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
+            return this;
+        }
+
+        /**
+         * @param upgradedReplacementEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradedReplacementEsxiHostId(String upgradedReplacementEsxiHostId) {
+            return upgradedReplacementEsxiHostId(Output.of(upgradedReplacementEsxiHostId));
+        }
+
+        /**
+         * @param vmwareSoftwareVersion The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmwareSoftwareVersion(@Nullable Output<String> vmwareSoftwareVersion) {
+            $.vmwareSoftwareVersion = vmwareSoftwareVersion;
+            return this;
+        }
+
+        /**
+         * @param vmwareSoftwareVersion The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
+            return vmwareSoftwareVersion(Output.of(vmwareSoftwareVersion));
         }
 
         public EsxiHostState build() {

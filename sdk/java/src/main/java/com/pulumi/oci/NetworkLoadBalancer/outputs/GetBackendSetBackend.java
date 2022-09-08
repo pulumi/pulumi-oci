@@ -15,63 +15,44 @@ public final class GetBackendSetBackend {
      * @return The IP address of the backend server. Example: `10.0.0.3`
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;isBackup&#34; fail the health check policy.  Example: `false`
      * 
      */
-    private final Boolean isBackup;
+    private Boolean isBackup;
     /**
      * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no  incoming traffic.  Example: `false`
      * 
      */
-    private final Boolean isDrain;
+    private Boolean isDrain;
     /**
      * @return Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
-    private final Boolean isOffline;
+    private Boolean isOffline;
     /**
      * @return A user-friendly name for the backend set that must be unique and cannot be changed.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
      */
-    private final Integer weight;
+    private Integer weight;
 
-    @CustomType.Constructor
-    private GetBackendSetBackend(
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("isBackup") Boolean isBackup,
-        @CustomType.Parameter("isDrain") Boolean isDrain,
-        @CustomType.Parameter("isOffline") Boolean isOffline,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("weight") Integer weight) {
-        this.ipAddress = ipAddress;
-        this.isBackup = isBackup;
-        this.isDrain = isDrain;
-        this.isOffline = isOffline;
-        this.name = name;
-        this.port = port;
-        this.targetId = targetId;
-        this.weight = weight;
-    }
-
+    private GetBackendSetBackend() {}
     /**
      * @return The IP address of the backend server. Example: `10.0.0.3`
      * 
@@ -136,7 +117,7 @@ public final class GetBackendSetBackend {
     public static Builder builder(GetBackendSetBackend defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ipAddress;
         private Boolean isBackup;
@@ -146,11 +127,7 @@ public final class GetBackendSetBackend {
         private Integer port;
         private String targetId;
         private Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendSetBackend defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipAddress = defaults.ipAddress;
@@ -163,39 +140,57 @@ public final class GetBackendSetBackend {
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder isBackup(Boolean isBackup) {
             this.isBackup = Objects.requireNonNull(isBackup);
             return this;
         }
+        @CustomType.Setter
         public Builder isDrain(Boolean isDrain) {
             this.isDrain = Objects.requireNonNull(isDrain);
             return this;
         }
+        @CustomType.Setter
         public Builder isOffline(Boolean isOffline) {
             this.isOffline = Objects.requireNonNull(isOffline);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(Integer weight) {
             this.weight = Objects.requireNonNull(weight);
             return this;
-        }        public GetBackendSetBackend build() {
-            return new GetBackendSetBackend(ipAddress, isBackup, isDrain, isOffline, name, port, targetId, weight);
+        }
+        public GetBackendSetBackend build() {
+            final var o = new GetBackendSetBackend();
+            o.ipAddress = ipAddress;
+            o.isBackup = isBackup;
+            o.isDrain = isDrain;
+            o.isOffline = isOffline;
+            o.name = name;
+            o.port = port;
+            o.targetId = targetId;
+            o.weight = weight;
+            return o;
         }
     }
 }

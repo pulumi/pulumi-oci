@@ -13,28 +13,19 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItemService
      * @return Description of the environment link
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Service environment endpoint type.
      * 
      */
-    private final String environmentType;
+    private String environmentType;
     /**
      * @return Service environment instance URL.
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("environmentType") String environmentType,
-        @CustomType.Parameter("url") String url) {
-        this.description = description;
-        this.environmentType = environmentType;
-        this.url = url;
-    }
-
+    private GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint() {}
     /**
      * @return Description of the environment link
      * 
@@ -64,16 +55,12 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItemService
     public static Builder builder(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String environmentType;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -81,19 +68,27 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItemService
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder environmentType(String environmentType) {
             this.environmentType = Objects.requireNonNull(environmentType);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint build() {
-            return new GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint(description, environmentType, url);
+        }
+        public GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint build() {
+            final var o = new GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint();
+            o.description = description;
+            o.environmentType = environmentType;
+            o.url = url;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetGuardTargetsTargetCollection {
-    private final List<GetGuardTargetsTargetCollectionItem> items;
+    private List<GetGuardTargetsTargetCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetGuardTargetsTargetCollection(@CustomType.Parameter("items") List<GetGuardTargetsTargetCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetGuardTargetsTargetCollection() {}
     public List<GetGuardTargetsTargetCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetGuardTargetsTargetCollection {
     public static Builder builder(GetGuardTargetsTargetCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetGuardTargetsTargetCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetsTargetCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetGuardTargetsTargetCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetGuardTargetsTargetCollectionItem... items) {
             return items(List.of(items));
-        }        public GetGuardTargetsTargetCollection build() {
-            return new GetGuardTargetsTargetCollection(items);
+        }
+        public GetGuardTargetsTargetCollection build() {
+            final var o = new GetGuardTargetsTargetCollection();
+            o.items = items;
+            return o;
         }
     }
 }

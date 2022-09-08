@@ -18,38 +18,25 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
      * @return The OCID of the compartment containing the compute global image capability schema
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The list of compute_global_image_capability_schemas.
      * 
      */
-    private final List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas;
+    private List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetComputeGlobalImageCapabilitySchemasFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetComputeGlobalImageCapabilitySchemasFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetComputeGlobalImageCapabilitySchemasResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("computeGlobalImageCapabilitySchemas") List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetComputeGlobalImageCapabilitySchemasFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.compartmentId = compartmentId;
-        this.computeGlobalImageCapabilitySchemas = computeGlobalImageCapabilitySchemas;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetComputeGlobalImageCapabilitySchemasResult() {}
     /**
      * @return The OCID of the compartment containing the compute global image capability schema
      * 
@@ -89,18 +76,14 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
     public static Builder builder(GetComputeGlobalImageCapabilitySchemasResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas;
         private @Nullable String displayName;
         private @Nullable List<GetComputeGlobalImageCapabilitySchemasFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeGlobalImageCapabilitySchemasResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -110,10 +93,12 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemas(List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas) {
             this.computeGlobalImageCapabilitySchemas = Objects.requireNonNull(computeGlobalImageCapabilitySchemas);
             return this;
@@ -121,10 +106,12 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
         public Builder computeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema... computeGlobalImageCapabilitySchemas) {
             return computeGlobalImageCapabilitySchemas(List.of(computeGlobalImageCapabilitySchemas));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeGlobalImageCapabilitySchemasFilter> filters) {
             this.filters = filters;
             return this;
@@ -132,11 +119,19 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
         public Builder filters(GetComputeGlobalImageCapabilitySchemasFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetComputeGlobalImageCapabilitySchemasResult build() {
-            return new GetComputeGlobalImageCapabilitySchemasResult(compartmentId, computeGlobalImageCapabilitySchemas, displayName, filters, id);
+        }
+        public GetComputeGlobalImageCapabilitySchemasResult build() {
+            final var o = new GetComputeGlobalImageCapabilitySchemasResult();
+            o.compartmentId = compartmentId;
+            o.computeGlobalImageCapabilitySchemas = computeGlobalImageCapabilitySchemas;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

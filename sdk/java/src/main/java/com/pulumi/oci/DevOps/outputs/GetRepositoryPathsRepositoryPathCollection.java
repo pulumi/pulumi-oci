@@ -14,13 +14,9 @@ public final class GetRepositoryPathsRepositoryPathCollection {
      * @return List of objects describing files or directories in a repository.
      * 
      */
-    private final List<GetRepositoryPathsRepositoryPathCollectionItem> items;
+    private List<GetRepositoryPathsRepositoryPathCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRepositoryPathsRepositoryPathCollection(@CustomType.Parameter("items") List<GetRepositoryPathsRepositoryPathCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRepositoryPathsRepositoryPathCollection() {}
     /**
      * @return List of objects describing files or directories in a repository.
      * 
@@ -36,27 +32,27 @@ public final class GetRepositoryPathsRepositoryPathCollection {
     public static Builder builder(GetRepositoryPathsRepositoryPathCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRepositoryPathsRepositoryPathCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryPathsRepositoryPathCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRepositoryPathsRepositoryPathCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRepositoryPathsRepositoryPathCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRepositoryPathsRepositoryPathCollection build() {
-            return new GetRepositoryPathsRepositoryPathCollection(items);
+        }
+        public GetRepositoryPathsRepositoryPathCollection build() {
+            final var o = new GetRepositoryPathsRepositoryPathCollection();
+            o.items = items;
+            return o;
         }
     }
 }

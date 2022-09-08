@@ -15,21 +15,14 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport {
      * @return The list of rules that were not adhered to by the Optimizer Statistics Collection.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule> rules;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule> rules;
     /**
      * @return A summary of the Optimizer Statistics Advisor execution.
      * 
      */
-    private final String summary;
+    private String summary;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport(
-        @CustomType.Parameter("rules") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule> rules,
-        @CustomType.Parameter("summary") String summary) {
-        this.rules = rules;
-        this.summary = summary;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport() {}
     /**
      * @return The list of rules that were not adhered to by the Optimizer Statistics Collection.
      * 
@@ -52,21 +45,18 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport {
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule> rules;
         private String summary;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.rules = defaults.rules;
     	      this.summary = defaults.summary;
         }
 
+        @CustomType.Setter
         public Builder rules(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
@@ -74,11 +64,16 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport {
         public Builder rules(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule... rules) {
             return rules(List.of(rules));
         }
+        @CustomType.Setter
         public Builder summary(String summary) {
             this.summary = Objects.requireNonNull(summary);
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport(rules, summary);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport();
+            o.rules = rules;
+            o.summary = summary;
+            return o;
         }
     }
 }

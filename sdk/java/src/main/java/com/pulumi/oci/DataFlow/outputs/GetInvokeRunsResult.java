@@ -18,65 +18,42 @@ public final class GetInvokeRunsResult {
      * @return The application ID.
      * 
      */
-    private final @Nullable String applicationId;
+    private @Nullable String applicationId;
     /**
      * @return The OCID of a compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. This name is not necessarily unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable String displayNameStartsWith;
-    private final @Nullable List<GetInvokeRunsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable String displayNameStartsWith;
+    private @Nullable List<GetInvokeRunsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    private final @Nullable String ownerPrincipalId;
+    private @Nullable String ownerPrincipalId;
     /**
      * @return The list of runs.
      * 
      */
-    private final List<GetInvokeRunsRun> runs;
+    private List<GetInvokeRunsRun> runs;
     /**
      * @return The current state of this run.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String timeCreatedGreaterThan;
+    private @Nullable String state;
+    private @Nullable String timeCreatedGreaterThan;
 
-    @CustomType.Constructor
-    private GetInvokeRunsResult(
-        @CustomType.Parameter("applicationId") @Nullable String applicationId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("displayNameStartsWith") @Nullable String displayNameStartsWith,
-        @CustomType.Parameter("filters") @Nullable List<GetInvokeRunsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ownerPrincipalId") @Nullable String ownerPrincipalId,
-        @CustomType.Parameter("runs") List<GetInvokeRunsRun> runs,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreatedGreaterThan") @Nullable String timeCreatedGreaterThan) {
-        this.applicationId = applicationId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.displayNameStartsWith = displayNameStartsWith;
-        this.filters = filters;
-        this.id = id;
-        this.ownerPrincipalId = ownerPrincipalId;
-        this.runs = runs;
-        this.state = state;
-        this.timeCreatedGreaterThan = timeCreatedGreaterThan;
-    }
-
+    private GetInvokeRunsResult() {}
     /**
      * @return The application ID.
      * 
@@ -143,7 +120,7 @@ public final class GetInvokeRunsResult {
     public static Builder builder(GetInvokeRunsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String applicationId;
         private String compartmentId;
@@ -155,11 +132,7 @@ public final class GetInvokeRunsResult {
         private List<GetInvokeRunsRun> runs;
         private @Nullable String state;
         private @Nullable String timeCreatedGreaterThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvokeRunsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationId = defaults.applicationId;
@@ -174,22 +147,27 @@ public final class GetInvokeRunsResult {
     	      this.timeCreatedGreaterThan = defaults.timeCreatedGreaterThan;
         }
 
+        @CustomType.Setter
         public Builder applicationId(@Nullable String applicationId) {
             this.applicationId = applicationId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder displayNameStartsWith(@Nullable String displayNameStartsWith) {
             this.displayNameStartsWith = displayNameStartsWith;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInvokeRunsFilter> filters) {
             this.filters = filters;
             return this;
@@ -197,14 +175,17 @@ public final class GetInvokeRunsResult {
         public Builder filters(GetInvokeRunsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ownerPrincipalId(@Nullable String ownerPrincipalId) {
             this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
+        @CustomType.Setter
         public Builder runs(List<GetInvokeRunsRun> runs) {
             this.runs = Objects.requireNonNull(runs);
             return this;
@@ -212,15 +193,29 @@ public final class GetInvokeRunsResult {
         public Builder runs(GetInvokeRunsRun... runs) {
             return runs(List.of(runs));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThan(@Nullable String timeCreatedGreaterThan) {
             this.timeCreatedGreaterThan = timeCreatedGreaterThan;
             return this;
-        }        public GetInvokeRunsResult build() {
-            return new GetInvokeRunsResult(applicationId, compartmentId, displayName, displayNameStartsWith, filters, id, ownerPrincipalId, runs, state, timeCreatedGreaterThan);
+        }
+        public GetInvokeRunsResult build() {
+            final var o = new GetInvokeRunsResult();
+            o.applicationId = applicationId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.displayNameStartsWith = displayNameStartsWith;
+            o.filters = filters;
+            o.id = id;
+            o.ownerPrincipalId = ownerPrincipalId;
+            o.runs = runs;
+            o.state = state;
+            o.timeCreatedGreaterThan = timeCreatedGreaterThan;
+            return o;
         }
     }
 }

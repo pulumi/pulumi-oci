@@ -14,42 +14,29 @@ public final class GetVolumeGroupsVolumeGroupSourceDetail {
      * @return The type can be one of these values: `volumeGroupBackupId`, `volumeGroupId`, `volumeIds`
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The OCID of the volume group backup to restore from, if the type is `volumeGroupBackup`
      * 
      */
-    private final String volumeGroupBackupId;
+    private String volumeGroupBackupId;
     /**
      * @return The OCID of the volume group to clone from, if the type is `volumeGroup`
      * 
      */
-    private final String volumeGroupId;
+    private String volumeGroupId;
     /**
      * @return The volume group replica&#39;s Oracle ID (OCID).
      * 
      */
-    private final String volumeGroupReplicaId;
+    private String volumeGroupReplicaId;
     /**
      * @return OCIDs for the volumes in this volume group.
      * 
      */
-    private final List<String> volumeIds;
+    private List<String> volumeIds;
 
-    @CustomType.Constructor
-    private GetVolumeGroupsVolumeGroupSourceDetail(
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("volumeGroupBackupId") String volumeGroupBackupId,
-        @CustomType.Parameter("volumeGroupId") String volumeGroupId,
-        @CustomType.Parameter("volumeGroupReplicaId") String volumeGroupReplicaId,
-        @CustomType.Parameter("volumeIds") List<String> volumeIds) {
-        this.type = type;
-        this.volumeGroupBackupId = volumeGroupBackupId;
-        this.volumeGroupId = volumeGroupId;
-        this.volumeGroupReplicaId = volumeGroupReplicaId;
-        this.volumeIds = volumeIds;
-    }
-
+    private GetVolumeGroupsVolumeGroupSourceDetail() {}
     /**
      * @return The type can be one of these values: `volumeGroupBackupId`, `volumeGroupId`, `volumeIds`
      * 
@@ -93,18 +80,14 @@ public final class GetVolumeGroupsVolumeGroupSourceDetail {
     public static Builder builder(GetVolumeGroupsVolumeGroupSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String type;
         private String volumeGroupBackupId;
         private String volumeGroupId;
         private String volumeGroupReplicaId;
         private List<String> volumeIds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeGroupsVolumeGroupSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
@@ -114,30 +97,42 @@ public final class GetVolumeGroupsVolumeGroupSourceDetail {
     	      this.volumeIds = defaults.volumeIds;
         }
 
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupBackupId(String volumeGroupBackupId) {
             this.volumeGroupBackupId = Objects.requireNonNull(volumeGroupBackupId);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupId(String volumeGroupId) {
             this.volumeGroupId = Objects.requireNonNull(volumeGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
             this.volumeGroupReplicaId = Objects.requireNonNull(volumeGroupReplicaId);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeIds(List<String> volumeIds) {
             this.volumeIds = Objects.requireNonNull(volumeIds);
             return this;
         }
         public Builder volumeIds(String... volumeIds) {
             return volumeIds(List.of(volumeIds));
-        }        public GetVolumeGroupsVolumeGroupSourceDetail build() {
-            return new GetVolumeGroupsVolumeGroupSourceDetail(type, volumeGroupBackupId, volumeGroupId, volumeGroupReplicaId, volumeIds);
+        }
+        public GetVolumeGroupsVolumeGroupSourceDetail build() {
+            final var o = new GetVolumeGroupsVolumeGroupSourceDetail();
+            o.type = type;
+            o.volumeGroupBackupId = volumeGroupBackupId;
+            o.volumeGroupId = volumeGroupId;
+            o.volumeGroupReplicaId = volumeGroupReplicaId;
+            o.volumeIds = volumeIds;
+            return o;
         }
     }
 }

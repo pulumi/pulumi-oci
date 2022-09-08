@@ -18,37 +18,22 @@ public final class GetListingPackageAgreementsResult {
      * @return The list of agreements.
      * 
      */
-    private final List<GetListingPackageAgreementsAgreement> agreements;
+    private List<GetListingPackageAgreementsAgreement> agreements;
     /**
      * @return The unique identifier for the compartment.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetListingPackageAgreementsFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetListingPackageAgreementsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String listingId;
-    private final String packageVersion;
+    private String id;
+    private String listingId;
+    private String packageVersion;
 
-    @CustomType.Constructor
-    private GetListingPackageAgreementsResult(
-        @CustomType.Parameter("agreements") List<GetListingPackageAgreementsAgreement> agreements,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetListingPackageAgreementsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("packageVersion") String packageVersion) {
-        this.agreements = agreements;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.listingId = listingId;
-        this.packageVersion = packageVersion;
-    }
-
+    private GetListingPackageAgreementsResult() {}
     /**
      * @return The list of agreements.
      * 
@@ -87,7 +72,7 @@ public final class GetListingPackageAgreementsResult {
     public static Builder builder(GetListingPackageAgreementsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetListingPackageAgreementsAgreement> agreements;
         private @Nullable String compartmentId;
@@ -95,11 +80,7 @@ public final class GetListingPackageAgreementsResult {
         private String id;
         private String listingId;
         private String packageVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPackageAgreementsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.agreements = defaults.agreements;
@@ -110,6 +91,7 @@ public final class GetListingPackageAgreementsResult {
     	      this.packageVersion = defaults.packageVersion;
         }
 
+        @CustomType.Setter
         public Builder agreements(List<GetListingPackageAgreementsAgreement> agreements) {
             this.agreements = Objects.requireNonNull(agreements);
             return this;
@@ -117,10 +99,12 @@ public final class GetListingPackageAgreementsResult {
         public Builder agreements(GetListingPackageAgreementsAgreement... agreements) {
             return agreements(List.of(agreements));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetListingPackageAgreementsFilter> filters) {
             this.filters = filters;
             return this;
@@ -128,19 +112,30 @@ public final class GetListingPackageAgreementsResult {
         public Builder filters(GetListingPackageAgreementsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = Objects.requireNonNull(packageVersion);
             return this;
-        }        public GetListingPackageAgreementsResult build() {
-            return new GetListingPackageAgreementsResult(agreements, compartmentId, filters, id, listingId, packageVersion);
+        }
+        public GetListingPackageAgreementsResult build() {
+            final var o = new GetListingPackageAgreementsResult();
+            o.agreements = agreements;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.listingId = listingId;
+            o.packageVersion = packageVersion;
+            return o;
         }
     }
 }

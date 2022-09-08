@@ -15,13 +15,9 @@ public final class DeployStageRollbackPolicy {
      * @return (Updatable) The type of policy used for rolling out a deployment stage.
      * 
      */
-    private final @Nullable String policyType;
+    private @Nullable String policyType;
 
-    @CustomType.Constructor
-    private DeployStageRollbackPolicy(@CustomType.Parameter("policyType") @Nullable String policyType) {
-        this.policyType = policyType;
-    }
-
+    private DeployStageRollbackPolicy() {}
     /**
      * @return (Updatable) The type of policy used for rolling out a deployment stage.
      * 
@@ -37,24 +33,24 @@ public final class DeployStageRollbackPolicy {
     public static Builder builder(DeployStageRollbackPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String policyType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeployStageRollbackPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.policyType = defaults.policyType;
         }
 
+        @CustomType.Setter
         public Builder policyType(@Nullable String policyType) {
             this.policyType = policyType;
             return this;
-        }        public DeployStageRollbackPolicy build() {
-            return new DeployStageRollbackPolicy(policyType);
+        }
+        public DeployStageRollbackPolicy build() {
+            final var o = new DeployStageRollbackPolicy();
+            o.policyType = policyType;
+            return o;
         }
     }
 }

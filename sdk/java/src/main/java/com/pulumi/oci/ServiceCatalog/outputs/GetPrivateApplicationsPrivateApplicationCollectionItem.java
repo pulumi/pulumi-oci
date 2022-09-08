@@ -18,97 +18,66 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItem {
      * @return The unique identifier for the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Exact match name filter.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The unique identifier for the private application in Marketplace.
      * 
      */
-    private final String id;
-    private final String logoFileBase64encoded;
+    private String id;
+    private String logoFileBase64encoded;
     /**
      * @return The model for uploaded binary data, like logos and images.
      * 
      */
-    private final List<GetPrivateApplicationsPrivateApplicationCollectionItemLogo> logos;
+    private List<GetPrivateApplicationsPrivateApplicationCollectionItemLogo> logos;
     /**
      * @return A long description of the private application.
      * 
      */
-    private final String longDescription;
-    private final List<GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail> packageDetails;
+    private String longDescription;
+    private List<GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail> packageDetails;
     /**
      * @return Type of packages within this private application.
      * 
      */
-    private final String packageType;
+    private String packageType;
     /**
      * @return A short description of the private application.
      * 
      */
-    private final String shortDescription;
+    private String shortDescription;
     /**
      * @return The lifecycle state of the private application.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetPrivateApplicationsPrivateApplicationCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("logoFileBase64encoded") String logoFileBase64encoded,
-        @CustomType.Parameter("logos") List<GetPrivateApplicationsPrivateApplicationCollectionItemLogo> logos,
-        @CustomType.Parameter("longDescription") String longDescription,
-        @CustomType.Parameter("packageDetails") List<GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail> packageDetails,
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("shortDescription") String shortDescription,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.logoFileBase64encoded = logoFileBase64encoded;
-        this.logos = logos;
-        this.longDescription = longDescription;
-        this.packageDetails = packageDetails;
-        this.packageType = packageType;
-        this.shortDescription = shortDescription;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetPrivateApplicationsPrivateApplicationCollectionItem() {}
     /**
      * @return The unique identifier for the compartment.
      * 
@@ -207,7 +176,7 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItem {
     public static Builder builder(GetPrivateApplicationsPrivateApplicationCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -223,11 +192,7 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItem {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateApplicationsPrivateApplicationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -246,30 +211,37 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder logoFileBase64encoded(String logoFileBase64encoded) {
             this.logoFileBase64encoded = Objects.requireNonNull(logoFileBase64encoded);
             return this;
         }
+        @CustomType.Setter
         public Builder logos(List<GetPrivateApplicationsPrivateApplicationCollectionItemLogo> logos) {
             this.logos = Objects.requireNonNull(logos);
             return this;
@@ -277,10 +249,12 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItem {
         public Builder logos(GetPrivateApplicationsPrivateApplicationCollectionItemLogo... logos) {
             return logos(List.of(logos));
         }
+        @CustomType.Setter
         public Builder longDescription(String longDescription) {
             this.longDescription = Objects.requireNonNull(longDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder packageDetails(List<GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail> packageDetails) {
             this.packageDetails = Objects.requireNonNull(packageDetails);
             return this;
@@ -288,27 +262,48 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItem {
         public Builder packageDetails(GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail... packageDetails) {
             return packageDetails(List.of(packageDetails));
         }
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder shortDescription(String shortDescription) {
             this.shortDescription = Objects.requireNonNull(shortDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetPrivateApplicationsPrivateApplicationCollectionItem build() {
-            return new GetPrivateApplicationsPrivateApplicationCollectionItem(compartmentId, definedTags, displayName, freeformTags, id, logoFileBase64encoded, logos, longDescription, packageDetails, packageType, shortDescription, state, timeCreated, timeUpdated);
+        }
+        public GetPrivateApplicationsPrivateApplicationCollectionItem build() {
+            final var o = new GetPrivateApplicationsPrivateApplicationCollectionItem();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.logoFileBase64encoded = logoFileBase64encoded;
+            o.logos = logos;
+            o.longDescription = longDescription;
+            o.packageDetails = packageDetails;
+            o.packageType = packageType;
+            o.shortDescription = shortDescription;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

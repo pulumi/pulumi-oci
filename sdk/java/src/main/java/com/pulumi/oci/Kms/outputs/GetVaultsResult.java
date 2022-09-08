@@ -17,31 +17,20 @@ public final class GetVaultsResult {
      * @return The OCID of the compartment that contains a particular vault.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetVaultsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetVaultsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of vaults.
      * 
      */
-    private final List<GetVaultsVault> vaults;
+    private List<GetVaultsVault> vaults;
 
-    @CustomType.Constructor
-    private GetVaultsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetVaultsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("vaults") List<GetVaultsVault> vaults) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.vaults = vaults;
-    }
-
+    private GetVaultsResult() {}
     /**
      * @return The OCID of the compartment that contains a particular vault.
      * 
@@ -74,17 +63,13 @@ public final class GetVaultsResult {
     public static Builder builder(GetVaultsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetVaultsFilter> filters;
         private String id;
         private List<GetVaultsVault> vaults;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVaultsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -93,10 +78,12 @@ public final class GetVaultsResult {
     	      this.vaults = defaults.vaults;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVaultsFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,18 +91,26 @@ public final class GetVaultsResult {
         public Builder filters(GetVaultsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder vaults(List<GetVaultsVault> vaults) {
             this.vaults = Objects.requireNonNull(vaults);
             return this;
         }
         public Builder vaults(GetVaultsVault... vaults) {
             return vaults(List.of(vaults));
-        }        public GetVaultsResult build() {
-            return new GetVaultsResult(compartmentId, filters, id, vaults);
+        }
+        public GetVaultsResult build() {
+            final var o = new GetVaultsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.vaults = vaults;
+            return o;
         }
     }
 }

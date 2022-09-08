@@ -18,59 +18,40 @@ public final class GetUsersResult {
      * @return The OCID of the tenancy containing the user.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Identifier of the user in the identity provider
      * 
      */
-    private final @Nullable String externalIdentifier;
-    private final @Nullable List<GetUsersFilter> filters;
+    private @Nullable String externalIdentifier;
+    private @Nullable List<GetUsersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the `IdentityProvider` this user belongs to.
      * 
      */
-    private final @Nullable String identityProviderId;
+    private @Nullable String identityProviderId;
     /**
      * @return The name you assign to the user during creation. This is the user&#39;s login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The user&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of users.
      * 
      */
-    private final List<GetUsersUser> users;
+    private List<GetUsersUser> users;
 
-    @CustomType.Constructor
-    private GetUsersResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("externalIdentifier") @Nullable String externalIdentifier,
-        @CustomType.Parameter("filters") @Nullable List<GetUsersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("identityProviderId") @Nullable String identityProviderId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("users") List<GetUsersUser> users) {
-        this.compartmentId = compartmentId;
-        this.externalIdentifier = externalIdentifier;
-        this.filters = filters;
-        this.id = id;
-        this.identityProviderId = identityProviderId;
-        this.name = name;
-        this.state = state;
-        this.users = users;
-    }
-
+    private GetUsersResult() {}
     /**
      * @return The OCID of the tenancy containing the user.
      * 
@@ -131,7 +112,7 @@ public final class GetUsersResult {
     public static Builder builder(GetUsersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String externalIdentifier;
@@ -141,11 +122,7 @@ public final class GetUsersResult {
         private @Nullable String name;
         private @Nullable String state;
         private List<GetUsersUser> users;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -158,14 +135,17 @@ public final class GetUsersResult {
     	      this.users = defaults.users;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder externalIdentifier(@Nullable String externalIdentifier) {
             this.externalIdentifier = externalIdentifier;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetUsersFilter> filters) {
             this.filters = filters;
             return this;
@@ -173,30 +153,45 @@ public final class GetUsersResult {
         public Builder filters(GetUsersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder identityProviderId(@Nullable String identityProviderId) {
             this.identityProviderId = identityProviderId;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder users(List<GetUsersUser> users) {
             this.users = Objects.requireNonNull(users);
             return this;
         }
         public Builder users(GetUsersUser... users) {
             return users(List.of(users));
-        }        public GetUsersResult build() {
-            return new GetUsersResult(compartmentId, externalIdentifier, filters, id, identityProviderId, name, state, users);
+        }
+        public GetUsersResult build() {
+            final var o = new GetUsersResult();
+            o.compartmentId = compartmentId;
+            o.externalIdentifier = externalIdentifier;
+            o.filters = filters;
+            o.id = id;
+            o.identityProviderId = identityProviderId;
+            o.name = name;
+            o.state = state;
+            o.users = users;
+            return o;
         }
     }
 }

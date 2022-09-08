@@ -18,37 +18,22 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
      * @return The shape&#39;s availability domain.
      * 
      */
-    private final @Nullable String availabilityDomain;
-    private final String compartmentId;
+    private @Nullable String availabilityDomain;
+    private String compartmentId;
     /**
      * @return The list of compute_capacity_reservation_instance_shapes.
      * 
      */
-    private final List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes;
-    private final @Nullable String displayName;
-    private final @Nullable List<GetComputeCapacityReservationInstanceShapesFilter> filters;
+    private List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes;
+    private @Nullable String displayName;
+    private @Nullable List<GetComputeCapacityReservationInstanceShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetComputeCapacityReservationInstanceShapesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computeCapacityReservationInstanceShapes") List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetComputeCapacityReservationInstanceShapesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.computeCapacityReservationInstanceShapes = computeCapacityReservationInstanceShapes;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetComputeCapacityReservationInstanceShapesResult() {}
     /**
      * @return The shape&#39;s availability domain.
      * 
@@ -87,7 +72,7 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
     public static Builder builder(GetComputeCapacityReservationInstanceShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -95,11 +80,7 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
         private @Nullable String displayName;
         private @Nullable List<GetComputeCapacityReservationInstanceShapesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeCapacityReservationInstanceShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -110,14 +91,17 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeCapacityReservationInstanceShapes(List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes) {
             this.computeCapacityReservationInstanceShapes = Objects.requireNonNull(computeCapacityReservationInstanceShapes);
             return this;
@@ -125,10 +109,12 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
         public Builder computeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape... computeCapacityReservationInstanceShapes) {
             return computeCapacityReservationInstanceShapes(List.of(computeCapacityReservationInstanceShapes));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeCapacityReservationInstanceShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -136,11 +122,20 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
         public Builder filters(GetComputeCapacityReservationInstanceShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetComputeCapacityReservationInstanceShapesResult build() {
-            return new GetComputeCapacityReservationInstanceShapesResult(availabilityDomain, compartmentId, computeCapacityReservationInstanceShapes, displayName, filters, id);
+        }
+        public GetComputeCapacityReservationInstanceShapesResult build() {
+            final var o = new GetComputeCapacityReservationInstanceShapesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.computeCapacityReservationInstanceShapes = computeCapacityReservationInstanceShapes;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

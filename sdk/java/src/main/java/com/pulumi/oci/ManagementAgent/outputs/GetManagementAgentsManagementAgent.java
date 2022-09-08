@@ -18,181 +18,126 @@ public final class GetManagementAgentsManagementAgent {
      * @return Filter to return only Management Agents in the particular availability status.
      * 
      */
-    private final String availabilityStatus;
+    private String availabilityStatus;
     /**
      * @return The OCID of the compartment to which a request will be scoped.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
-    private final List<String> deployPluginsIds;
+    private Map<String,Object> definedTags;
+    private List<String> deployPluginsIds;
     /**
      * @return Filter to return only Management Agents having the particular display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Management Agent host machine name
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return Filter to return only Management Agents having the particular agent host id.
      * 
      */
-    private final String hostId;
+    private String hostId;
     /**
      * @return agent identifier
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return agent install key identifier
      * 
      */
-    private final String installKeyId;
+    private String installKeyId;
     /**
      * @return Path where Management Agent is installed
      * 
      */
-    private final String installPath;
+    private String installPath;
     /**
      * @return A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
      * 
      */
-    private final String installType;
+    private String installType;
     /**
      * @return true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      * 
      */
-    private final Boolean isAgentAutoUpgradable;
+    private Boolean isAgentAutoUpgradable;
     /**
      * @return true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      * 
      */
-    private final Boolean isCustomerDeployed;
+    private Boolean isCustomerDeployed;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
-    private final String managedAgentId;
+    private String lifecycleDetails;
+    private String managedAgentId;
     /**
      * @return Platform Name
      * 
      */
-    private final String platformName;
+    private String platformName;
     /**
      * @return Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
      * 
      */
-    private final String platformType;
+    private String platformType;
     /**
      * @return Platform Version
      * 
      */
-    private final String platformVersion;
+    private String platformVersion;
     /**
      * @return list of managementAgentPlugins associated with the agent
      * 
      */
-    private final List<GetManagementAgentsManagementAgentPluginList> pluginLists;
+    private List<GetManagementAgentsManagementAgentPluginList> pluginLists;
     /**
      * @return Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
      * 
      */
-    private final String resourceArtifactVersion;
+    private String resourceArtifactVersion;
     /**
      * @return Filter to return only Management Agents in the particular lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time the Management Agent was created. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeLastHeartbeat;
+    private String timeLastHeartbeat;
     /**
      * @return The time the Management Agent was last updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Array of versions to return only Management Agents having the particular agent versions. Example: [&#34;202020.0101&#34;,&#34;210201.0513&#34;]
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetManagementAgentsManagementAgent(
-        @CustomType.Parameter("availabilityStatus") String availabilityStatus,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("deployPluginsIds") List<String> deployPluginsIds,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("hostId") String hostId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("installKeyId") String installKeyId,
-        @CustomType.Parameter("installPath") String installPath,
-        @CustomType.Parameter("installType") String installType,
-        @CustomType.Parameter("isAgentAutoUpgradable") Boolean isAgentAutoUpgradable,
-        @CustomType.Parameter("isCustomerDeployed") Boolean isCustomerDeployed,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("managedAgentId") String managedAgentId,
-        @CustomType.Parameter("platformName") String platformName,
-        @CustomType.Parameter("platformType") String platformType,
-        @CustomType.Parameter("platformVersion") String platformVersion,
-        @CustomType.Parameter("pluginLists") List<GetManagementAgentsManagementAgentPluginList> pluginLists,
-        @CustomType.Parameter("resourceArtifactVersion") String resourceArtifactVersion,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastHeartbeat") String timeLastHeartbeat,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("version") String version) {
-        this.availabilityStatus = availabilityStatus;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.deployPluginsIds = deployPluginsIds;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.host = host;
-        this.hostId = hostId;
-        this.id = id;
-        this.installKeyId = installKeyId;
-        this.installPath = installPath;
-        this.installType = installType;
-        this.isAgentAutoUpgradable = isAgentAutoUpgradable;
-        this.isCustomerDeployed = isCustomerDeployed;
-        this.lifecycleDetails = lifecycleDetails;
-        this.managedAgentId = managedAgentId;
-        this.platformName = platformName;
-        this.platformType = platformType;
-        this.platformVersion = platformVersion;
-        this.pluginLists = pluginLists;
-        this.resourceArtifactVersion = resourceArtifactVersion;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeLastHeartbeat = timeLastHeartbeat;
-        this.timeUpdated = timeUpdated;
-        this.version = version;
-    }
-
+    private GetManagementAgentsManagementAgent() {}
     /**
      * @return Filter to return only Management Agents in the particular availability status.
      * 
@@ -375,7 +320,7 @@ public final class GetManagementAgentsManagementAgent {
     public static Builder builder(GetManagementAgentsManagementAgent defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityStatus;
         private String compartmentId;
@@ -403,11 +348,7 @@ public final class GetManagementAgentsManagementAgent {
         private String timeLastHeartbeat;
         private String timeUpdated;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentsManagementAgent defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityStatus = defaults.availabilityStatus;
@@ -438,18 +379,22 @@ public final class GetManagementAgentsManagementAgent {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder availabilityStatus(String availabilityStatus) {
             this.availabilityStatus = Objects.requireNonNull(availabilityStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder deployPluginsIds(List<String> deployPluginsIds) {
             this.deployPluginsIds = Objects.requireNonNull(deployPluginsIds);
             return this;
@@ -457,66 +402,82 @@ public final class GetManagementAgentsManagementAgent {
         public Builder deployPluginsIds(String... deployPluginsIds) {
             return deployPluginsIds(List.of(deployPluginsIds));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder hostId(String hostId) {
             this.hostId = Objects.requireNonNull(hostId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder installKeyId(String installKeyId) {
             this.installKeyId = Objects.requireNonNull(installKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder installPath(String installPath) {
             this.installPath = Objects.requireNonNull(installPath);
             return this;
         }
+        @CustomType.Setter
         public Builder installType(String installType) {
             this.installType = Objects.requireNonNull(installType);
             return this;
         }
+        @CustomType.Setter
         public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
             this.isAgentAutoUpgradable = Objects.requireNonNull(isAgentAutoUpgradable);
             return this;
         }
+        @CustomType.Setter
         public Builder isCustomerDeployed(Boolean isCustomerDeployed) {
             this.isCustomerDeployed = Objects.requireNonNull(isCustomerDeployed);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder managedAgentId(String managedAgentId) {
             this.managedAgentId = Objects.requireNonNull(managedAgentId);
             return this;
         }
+        @CustomType.Setter
         public Builder platformName(String platformName) {
             this.platformName = Objects.requireNonNull(platformName);
             return this;
         }
+        @CustomType.Setter
         public Builder platformType(String platformType) {
             this.platformType = Objects.requireNonNull(platformType);
             return this;
         }
+        @CustomType.Setter
         public Builder platformVersion(String platformVersion) {
             this.platformVersion = Objects.requireNonNull(platformVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder pluginLists(List<GetManagementAgentsManagementAgentPluginList> pluginLists) {
             this.pluginLists = Objects.requireNonNull(pluginLists);
             return this;
@@ -524,31 +485,65 @@ public final class GetManagementAgentsManagementAgent {
         public Builder pluginLists(GetManagementAgentsManagementAgentPluginList... pluginLists) {
             return pluginLists(List.of(pluginLists));
         }
+        @CustomType.Setter
         public Builder resourceArtifactVersion(String resourceArtifactVersion) {
             this.resourceArtifactVersion = Objects.requireNonNull(resourceArtifactVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastHeartbeat(String timeLastHeartbeat) {
             this.timeLastHeartbeat = Objects.requireNonNull(timeLastHeartbeat);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetManagementAgentsManagementAgent build() {
-            return new GetManagementAgentsManagementAgent(availabilityStatus, compartmentId, definedTags, deployPluginsIds, displayName, freeformTags, host, hostId, id, installKeyId, installPath, installType, isAgentAutoUpgradable, isCustomerDeployed, lifecycleDetails, managedAgentId, platformName, platformType, platformVersion, pluginLists, resourceArtifactVersion, state, timeCreated, timeLastHeartbeat, timeUpdated, version);
+        }
+        public GetManagementAgentsManagementAgent build() {
+            final var o = new GetManagementAgentsManagementAgent();
+            o.availabilityStatus = availabilityStatus;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.deployPluginsIds = deployPluginsIds;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.host = host;
+            o.hostId = hostId;
+            o.id = id;
+            o.installKeyId = installKeyId;
+            o.installPath = installPath;
+            o.installType = installType;
+            o.isAgentAutoUpgradable = isAgentAutoUpgradable;
+            o.isCustomerDeployed = isCustomerDeployed;
+            o.lifecycleDetails = lifecycleDetails;
+            o.managedAgentId = managedAgentId;
+            o.platformName = platformName;
+            o.platformType = platformType;
+            o.platformVersion = platformVersion;
+            o.pluginLists = pluginLists;
+            o.resourceArtifactVersion = resourceArtifactVersion;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeLastHeartbeat = timeLastHeartbeat;
+            o.timeUpdated = timeUpdated;
+            o.version = version;
+            return o;
         }
     }
 }

@@ -15,108 +15,75 @@ import java.util.Objects;
 
 @CustomType
 public final class GetScriptResult {
-    private final String apmDomainId;
+    private String apmDomainId;
     /**
      * @return The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;OV&gt;param value&lt;/OV&gt;&lt;OS&gt;isParamValueSecret(true/false)&lt;/OS&gt;&lt;/ORAP&gt;`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;/ORAP&gt;` With parameter name and value : `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;OV&gt;param value&lt;/OV&gt;&lt;/ORAP&gt;` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
      * 
      */
-    private final String content;
+    private String content;
     /**
      * @return File name of the uploaded script content.
      * 
      */
-    private final String contentFileName;
+    private String contentFileName;
     /**
      * @return Size of the script content.
      * 
      */
-    private final Integer contentSizeInBytes;
+    private Integer contentSizeInBytes;
     /**
      * @return Content type of the script.
      * 
      */
-    private final String contentType;
+    private String contentType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Details of the monitor count per state. Example: `{ &#34;total&#34; : 5, &#34;enabled&#34; : 3 , &#34;disabled&#34; : 2, &#34;invalid&#34; : 0 }`
      * 
      */
-    private final List<GetScriptMonitorStatusCountMap> monitorStatusCountMaps;
+    private List<GetScriptMonitorStatusCountMap> monitorStatusCountMaps;
     /**
      * @return List of script parameters. Example: `[{&#34;scriptParameter&#34;: {&#34;paramName&#34;: &#34;userid&#34;, &#34;paramValue&#34;:&#34;testuser&#34;, &#34;isSecret&#34;: false}, &#34;isOverwritten&#34;: false}]`
      * 
      */
-    private final List<GetScriptParameter> parameters;
-    private final String scriptId;
+    private List<GetScriptParameter> parameters;
+    private String scriptId;
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The time the script was uploaded.
      * 
      */
-    private final String timeUploaded;
+    private String timeUploaded;
 
-    @CustomType.Constructor
-    private GetScriptResult(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("contentFileName") String contentFileName,
-        @CustomType.Parameter("contentSizeInBytes") Integer contentSizeInBytes,
-        @CustomType.Parameter("contentType") String contentType,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("monitorStatusCountMaps") List<GetScriptMonitorStatusCountMap> monitorStatusCountMaps,
-        @CustomType.Parameter("parameters") List<GetScriptParameter> parameters,
-        @CustomType.Parameter("scriptId") String scriptId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("timeUploaded") String timeUploaded) {
-        this.apmDomainId = apmDomainId;
-        this.content = content;
-        this.contentFileName = contentFileName;
-        this.contentSizeInBytes = contentSizeInBytes;
-        this.contentType = contentType;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.monitorStatusCountMaps = monitorStatusCountMaps;
-        this.parameters = parameters;
-        this.scriptId = scriptId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.timeUploaded = timeUploaded;
-    }
-
+    private GetScriptResult() {}
     public String apmDomainId() {
         return this.apmDomainId;
     }
@@ -222,7 +189,7 @@ public final class GetScriptResult {
     public static Builder builder(GetScriptResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private String content;
@@ -239,11 +206,7 @@ public final class GetScriptResult {
         private String timeCreated;
         private String timeUpdated;
         private String timeUploaded;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetScriptResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -263,42 +226,52 @@ public final class GetScriptResult {
     	      this.timeUploaded = defaults.timeUploaded;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder contentFileName(String contentFileName) {
             this.contentFileName = Objects.requireNonNull(contentFileName);
             return this;
         }
+        @CustomType.Setter
         public Builder contentSizeInBytes(Integer contentSizeInBytes) {
             this.contentSizeInBytes = Objects.requireNonNull(contentSizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder contentType(String contentType) {
             this.contentType = Objects.requireNonNull(contentType);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder monitorStatusCountMaps(List<GetScriptMonitorStatusCountMap> monitorStatusCountMaps) {
             this.monitorStatusCountMaps = Objects.requireNonNull(monitorStatusCountMaps);
             return this;
@@ -306,6 +279,7 @@ public final class GetScriptResult {
         public Builder monitorStatusCountMaps(GetScriptMonitorStatusCountMap... monitorStatusCountMaps) {
             return monitorStatusCountMaps(List.of(monitorStatusCountMaps));
         }
+        @CustomType.Setter
         public Builder parameters(List<GetScriptParameter> parameters) {
             this.parameters = Objects.requireNonNull(parameters);
             return this;
@@ -313,23 +287,44 @@ public final class GetScriptResult {
         public Builder parameters(GetScriptParameter... parameters) {
             return parameters(List.of(parameters));
         }
+        @CustomType.Setter
         public Builder scriptId(String scriptId) {
             this.scriptId = Objects.requireNonNull(scriptId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUploaded(String timeUploaded) {
             this.timeUploaded = Objects.requireNonNull(timeUploaded);
             return this;
-        }        public GetScriptResult build() {
-            return new GetScriptResult(apmDomainId, content, contentFileName, contentSizeInBytes, contentType, definedTags, displayName, freeformTags, id, monitorStatusCountMaps, parameters, scriptId, timeCreated, timeUpdated, timeUploaded);
+        }
+        public GetScriptResult build() {
+            final var o = new GetScriptResult();
+            o.apmDomainId = apmDomainId;
+            o.content = content;
+            o.contentFileName = contentFileName;
+            o.contentSizeInBytes = contentSizeInBytes;
+            o.contentType = contentType;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.monitorStatusCountMaps = monitorStatusCountMaps;
+            o.parameters = parameters;
+            o.scriptId = scriptId;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.timeUploaded = timeUploaded;
+            return o;
         }
     }
 }

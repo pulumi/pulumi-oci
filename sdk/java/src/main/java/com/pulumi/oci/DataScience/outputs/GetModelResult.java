@@ -15,130 +15,85 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelResult {
-    private final String artifactContentDisposition;
-    private final String artifactContentLength;
-    private final String artifactContentMd5;
-    private final String artifactLastModified;
+    private String artifactContentDisposition;
+    private String artifactContentLength;
+    private String artifactContentMd5;
+    private String artifactLastModified;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return An array of custom metadata details for the model.
      * 
      */
-    private final List<GetModelCustomMetadataList> customMetadataLists;
+    private List<GetModelCustomMetadataList> customMetadataLists;
     /**
      * @return An array of defined metadata details for the model.
      * 
      */
-    private final List<GetModelDefinedMetadataList> definedMetadataLists;
+    private List<GetModelDefinedMetadataList> definedMetadataLists;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A short description of the model.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
-    private final Boolean emptyModel;
+    private String displayName;
+    private Boolean emptyModel;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Input schema file content in String format
      * 
      */
-    private final String inputSchema;
-    private final String modelArtifact;
-    private final String modelId;
+    private String inputSchema;
+    private String modelArtifact;
+    private String modelId;
     /**
      * @return Output schema file content in String format
      * 
      */
-    private final String outputSchema;
+    private String outputSchema;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
      * 
      */
-    private final String projectId;
+    private String projectId;
     /**
      * @return The state of the model.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetModelResult(
-        @CustomType.Parameter("artifactContentDisposition") String artifactContentDisposition,
-        @CustomType.Parameter("artifactContentLength") String artifactContentLength,
-        @CustomType.Parameter("artifactContentMd5") String artifactContentMd5,
-        @CustomType.Parameter("artifactLastModified") String artifactLastModified,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("customMetadataLists") List<GetModelCustomMetadataList> customMetadataLists,
-        @CustomType.Parameter("definedMetadataLists") List<GetModelDefinedMetadataList> definedMetadataLists,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("emptyModel") Boolean emptyModel,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inputSchema") String inputSchema,
-        @CustomType.Parameter("modelArtifact") String modelArtifact,
-        @CustomType.Parameter("modelId") String modelId,
-        @CustomType.Parameter("outputSchema") String outputSchema,
-        @CustomType.Parameter("projectId") String projectId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.artifactContentDisposition = artifactContentDisposition;
-        this.artifactContentLength = artifactContentLength;
-        this.artifactContentMd5 = artifactContentMd5;
-        this.artifactLastModified = artifactLastModified;
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.customMetadataLists = customMetadataLists;
-        this.definedMetadataLists = definedMetadataLists;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.emptyModel = emptyModel;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.inputSchema = inputSchema;
-        this.modelArtifact = modelArtifact;
-        this.modelId = modelId;
-        this.outputSchema = outputSchema;
-        this.projectId = projectId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetModelResult() {}
     public String artifactContentDisposition() {
         return this.artifactContentDisposition;
     }
@@ -266,7 +221,7 @@ public final class GetModelResult {
     public static Builder builder(GetModelResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String artifactContentDisposition;
         private String artifactContentLength;
@@ -289,11 +244,7 @@ public final class GetModelResult {
         private String projectId;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.artifactContentDisposition = defaults.artifactContentDisposition;
@@ -319,30 +270,37 @@ public final class GetModelResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder artifactContentDisposition(String artifactContentDisposition) {
             this.artifactContentDisposition = Objects.requireNonNull(artifactContentDisposition);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactContentLength(String artifactContentLength) {
             this.artifactContentLength = Objects.requireNonNull(artifactContentLength);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactContentMd5(String artifactContentMd5) {
             this.artifactContentMd5 = Objects.requireNonNull(artifactContentMd5);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactLastModified(String artifactLastModified) {
             this.artifactLastModified = Objects.requireNonNull(artifactLastModified);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder customMetadataLists(List<GetModelCustomMetadataList> customMetadataLists) {
             this.customMetadataLists = Objects.requireNonNull(customMetadataLists);
             return this;
@@ -350,6 +308,7 @@ public final class GetModelResult {
         public Builder customMetadataLists(GetModelCustomMetadataList... customMetadataLists) {
             return customMetadataLists(List.of(customMetadataLists));
         }
+        @CustomType.Setter
         public Builder definedMetadataLists(List<GetModelDefinedMetadataList> definedMetadataLists) {
             this.definedMetadataLists = Objects.requireNonNull(definedMetadataLists);
             return this;
@@ -357,59 +316,95 @@ public final class GetModelResult {
         public Builder definedMetadataLists(GetModelDefinedMetadataList... definedMetadataLists) {
             return definedMetadataLists(List.of(definedMetadataLists));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder emptyModel(Boolean emptyModel) {
             this.emptyModel = Objects.requireNonNull(emptyModel);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inputSchema(String inputSchema) {
             this.inputSchema = Objects.requireNonNull(inputSchema);
             return this;
         }
+        @CustomType.Setter
         public Builder modelArtifact(String modelArtifact) {
             this.modelArtifact = Objects.requireNonNull(modelArtifact);
             return this;
         }
+        @CustomType.Setter
         public Builder modelId(String modelId) {
             this.modelId = Objects.requireNonNull(modelId);
             return this;
         }
+        @CustomType.Setter
         public Builder outputSchema(String outputSchema) {
             this.outputSchema = Objects.requireNonNull(outputSchema);
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetModelResult build() {
-            return new GetModelResult(artifactContentDisposition, artifactContentLength, artifactContentMd5, artifactLastModified, compartmentId, createdBy, customMetadataLists, definedMetadataLists, definedTags, description, displayName, emptyModel, freeformTags, id, inputSchema, modelArtifact, modelId, outputSchema, projectId, state, timeCreated);
+        }
+        public GetModelResult build() {
+            final var o = new GetModelResult();
+            o.artifactContentDisposition = artifactContentDisposition;
+            o.artifactContentLength = artifactContentLength;
+            o.artifactContentMd5 = artifactContentMd5;
+            o.artifactLastModified = artifactLastModified;
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.customMetadataLists = customMetadataLists;
+            o.definedMetadataLists = definedMetadataLists;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.emptyModel = emptyModel;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.inputSchema = inputSchema;
+            o.modelArtifact = modelArtifact;
+            o.modelId = modelId;
+            o.outputSchema = outputSchema;
+            o.projectId = projectId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

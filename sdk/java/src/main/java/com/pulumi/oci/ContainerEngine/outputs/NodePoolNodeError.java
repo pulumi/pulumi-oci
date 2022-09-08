@@ -15,28 +15,19 @@ public final class NodePoolNodeError {
      * @return A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
      * 
      */
-    private final @Nullable String code;
+    private @Nullable String code;
     /**
      * @return A human-readable error string of the upstream error.
      * 
      */
-    private final @Nullable String message;
+    private @Nullable String message;
     /**
      * @return The status of the HTTP response encountered in the upstream error.
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
 
-    @CustomType.Constructor
-    private NodePoolNodeError(
-        @CustomType.Parameter("code") @Nullable String code,
-        @CustomType.Parameter("message") @Nullable String message,
-        @CustomType.Parameter("status") @Nullable String status) {
-        this.code = code;
-        this.message = message;
-        this.status = status;
-    }
-
+    private NodePoolNodeError() {}
     /**
      * @return A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
      * 
@@ -66,16 +57,12 @@ public final class NodePoolNodeError {
     public static Builder builder(NodePoolNodeError defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String code;
         private @Nullable String message;
         private @Nullable String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NodePoolNodeError defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
@@ -83,19 +70,27 @@ public final class NodePoolNodeError {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder code(@Nullable String code) {
             this.code = code;
             return this;
         }
+        @CustomType.Setter
         public Builder message(@Nullable String message) {
             this.message = message;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
-        }        public NodePoolNodeError build() {
-            return new NodePoolNodeError(code, message, status);
+        }
+        public NodePoolNodeError build() {
+            final var o = new NodePoolNodeError();
+            o.code = code;
+            o.message = message;
+            o.status = status;
+            return o;
         }
     }
 }

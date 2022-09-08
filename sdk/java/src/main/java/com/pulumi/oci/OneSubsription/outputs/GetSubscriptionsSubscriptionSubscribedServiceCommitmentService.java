@@ -13,49 +13,34 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServic
      * @return Commitment available amount
      * 
      */
-    private final String availableAmount;
+    private String availableAmount;
     /**
      * @return Funded Allocation line value example: 12000.00
      * 
      */
-    private final String fundedAllocationValue;
+    private String fundedAllocationValue;
     /**
      * @return Commitment line net amount
      * 
      */
-    private final String lineNetAmount;
+    private String lineNetAmount;
     /**
      * @return Subscribed service quantity
      * 
      */
-    private final String quantity;
+    private String quantity;
     /**
      * @return Represents the date when the last service of the subscription ends
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Represents the date when the first service of the subscription was activated
      * 
      */
-    private final String timeStart;
+    private String timeStart;
 
-    @CustomType.Constructor
-    private GetSubscriptionsSubscriptionSubscribedServiceCommitmentService(
-        @CustomType.Parameter("availableAmount") String availableAmount,
-        @CustomType.Parameter("fundedAllocationValue") String fundedAllocationValue,
-        @CustomType.Parameter("lineNetAmount") String lineNetAmount,
-        @CustomType.Parameter("quantity") String quantity,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart) {
-        this.availableAmount = availableAmount;
-        this.fundedAllocationValue = fundedAllocationValue;
-        this.lineNetAmount = lineNetAmount;
-        this.quantity = quantity;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetSubscriptionsSubscriptionSubscribedServiceCommitmentService() {}
     /**
      * @return Commitment available amount
      * 
@@ -106,7 +91,7 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServic
     public static Builder builder(GetSubscriptionsSubscriptionSubscribedServiceCommitmentService defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availableAmount;
         private String fundedAllocationValue;
@@ -114,11 +99,7 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServic
         private String quantity;
         private String timeEnd;
         private String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsSubscriptionSubscribedServiceCommitmentService defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableAmount = defaults.availableAmount;
@@ -129,31 +110,45 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServic
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder availableAmount(String availableAmount) {
             this.availableAmount = Objects.requireNonNull(availableAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder fundedAllocationValue(String fundedAllocationValue) {
             this.fundedAllocationValue = Objects.requireNonNull(fundedAllocationValue);
             return this;
         }
+        @CustomType.Setter
         public Builder lineNetAmount(String lineNetAmount) {
             this.lineNetAmount = Objects.requireNonNull(lineNetAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder quantity(String quantity) {
             this.quantity = Objects.requireNonNull(quantity);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
-        }        public GetSubscriptionsSubscriptionSubscribedServiceCommitmentService build() {
-            return new GetSubscriptionsSubscriptionSubscribedServiceCommitmentService(availableAmount, fundedAllocationValue, lineNetAmount, quantity, timeEnd, timeStart);
+        }
+        public GetSubscriptionsSubscriptionSubscribedServiceCommitmentService build() {
+            final var o = new GetSubscriptionsSubscriptionSubscribedServiceCommitmentService();
+            o.availableAmount = availableAmount;
+            o.fundedAllocationValue = fundedAllocationValue;
+            o.lineNetAmount = lineNetAmount;
+            o.quantity = quantity;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

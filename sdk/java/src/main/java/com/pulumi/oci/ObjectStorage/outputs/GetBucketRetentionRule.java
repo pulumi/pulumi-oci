@@ -15,45 +15,30 @@ public final class GetBucketRetentionRule {
      * @return User specified name for the retention rule.
      * 
      */
-    private final String displayName;
-    private final List<GetBucketRetentionRuleDuration> durations;
+    private String displayName;
+    private List<GetBucketRetentionRuleDuration> durations;
     /**
      * @return Unique identifier for the retention rule.
      * 
      */
-    private final String retentionRuleId;
+    private String retentionRuleId;
     /**
      * @return The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeModified;
+    private String timeModified;
     /**
      * @return The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked. and can only be deleted by deleting the bucket.
      * 
      */
-    private final String timeRuleLocked;
+    private String timeRuleLocked;
 
-    @CustomType.Constructor
-    private GetBucketRetentionRule(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("durations") List<GetBucketRetentionRuleDuration> durations,
-        @CustomType.Parameter("retentionRuleId") String retentionRuleId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeModified") String timeModified,
-        @CustomType.Parameter("timeRuleLocked") String timeRuleLocked) {
-        this.displayName = displayName;
-        this.durations = durations;
-        this.retentionRuleId = retentionRuleId;
-        this.timeCreated = timeCreated;
-        this.timeModified = timeModified;
-        this.timeRuleLocked = timeRuleLocked;
-    }
-
+    private GetBucketRetentionRule() {}
     /**
      * @return User specified name for the retention rule.
      * 
@@ -100,7 +85,7 @@ public final class GetBucketRetentionRule {
     public static Builder builder(GetBucketRetentionRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private List<GetBucketRetentionRuleDuration> durations;
@@ -108,11 +93,7 @@ public final class GetBucketRetentionRule {
         private String timeCreated;
         private String timeModified;
         private String timeRuleLocked;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBucketRetentionRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -123,10 +104,12 @@ public final class GetBucketRetentionRule {
     	      this.timeRuleLocked = defaults.timeRuleLocked;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder durations(List<GetBucketRetentionRuleDuration> durations) {
             this.durations = Objects.requireNonNull(durations);
             return this;
@@ -134,23 +117,35 @@ public final class GetBucketRetentionRule {
         public Builder durations(GetBucketRetentionRuleDuration... durations) {
             return durations(List.of(durations));
         }
+        @CustomType.Setter
         public Builder retentionRuleId(String retentionRuleId) {
             this.retentionRuleId = Objects.requireNonNull(retentionRuleId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeModified(String timeModified) {
             this.timeModified = Objects.requireNonNull(timeModified);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRuleLocked(String timeRuleLocked) {
             this.timeRuleLocked = Objects.requireNonNull(timeRuleLocked);
             return this;
-        }        public GetBucketRetentionRule build() {
-            return new GetBucketRetentionRule(displayName, durations, retentionRuleId, timeCreated, timeModified, timeRuleLocked);
+        }
+        public GetBucketRetentionRule build() {
+            final var o = new GetBucketRetentionRule();
+            o.displayName = displayName;
+            o.durations = durations;
+            o.retentionRuleId = retentionRuleId;
+            o.timeCreated = timeCreated;
+            o.timeModified = timeModified;
+            o.timeRuleLocked = timeRuleLocked;
+            return o;
         }
     }
 }

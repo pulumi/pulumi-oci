@@ -13,28 +13,19 @@ public final class GetReplicationSourcesReplicationSource {
      * @return The name of the policy.
      * 
      */
-    private final String policyName;
+    private String policyName;
     /**
      * @return The source bucket replicating data from.
      * 
      */
-    private final String sourceBucketName;
+    private String sourceBucketName;
     /**
      * @return The source region replicating data from, for example &#34;us-ashburn-1&#34;.
      * 
      */
-    private final String sourceRegionName;
+    private String sourceRegionName;
 
-    @CustomType.Constructor
-    private GetReplicationSourcesReplicationSource(
-        @CustomType.Parameter("policyName") String policyName,
-        @CustomType.Parameter("sourceBucketName") String sourceBucketName,
-        @CustomType.Parameter("sourceRegionName") String sourceRegionName) {
-        this.policyName = policyName;
-        this.sourceBucketName = sourceBucketName;
-        this.sourceRegionName = sourceRegionName;
-    }
-
+    private GetReplicationSourcesReplicationSource() {}
     /**
      * @return The name of the policy.
      * 
@@ -64,16 +55,12 @@ public final class GetReplicationSourcesReplicationSource {
     public static Builder builder(GetReplicationSourcesReplicationSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String policyName;
         private String sourceBucketName;
         private String sourceRegionName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReplicationSourcesReplicationSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.policyName = defaults.policyName;
@@ -81,19 +68,27 @@ public final class GetReplicationSourcesReplicationSource {
     	      this.sourceRegionName = defaults.sourceRegionName;
         }
 
+        @CustomType.Setter
         public Builder policyName(String policyName) {
             this.policyName = Objects.requireNonNull(policyName);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceBucketName(String sourceBucketName) {
             this.sourceBucketName = Objects.requireNonNull(sourceBucketName);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceRegionName(String sourceRegionName) {
             this.sourceRegionName = Objects.requireNonNull(sourceRegionName);
             return this;
-        }        public GetReplicationSourcesReplicationSource build() {
-            return new GetReplicationSourcesReplicationSource(policyName, sourceBucketName, sourceRegionName);
+        }
+        public GetReplicationSourcesReplicationSource build() {
+            final var o = new GetReplicationSourcesReplicationSource();
+            o.policyName = policyName;
+            o.sourceBucketName = sourceBucketName;
+            o.sourceRegionName = sourceRegionName;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class LoadBalancerShapeDetails {
      * @return (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
      * 
      */
-    private final Integer maximumBandwidthInMbps;
+    private Integer maximumBandwidthInMbps;
     /**
      * @return (Updatable) Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
      * 
      */
-    private final Integer minimumBandwidthInMbps;
+    private Integer minimumBandwidthInMbps;
 
-    @CustomType.Constructor
-    private LoadBalancerShapeDetails(
-        @CustomType.Parameter("maximumBandwidthInMbps") Integer maximumBandwidthInMbps,
-        @CustomType.Parameter("minimumBandwidthInMbps") Integer minimumBandwidthInMbps) {
-        this.maximumBandwidthInMbps = maximumBandwidthInMbps;
-        this.minimumBandwidthInMbps = minimumBandwidthInMbps;
-    }
-
+    private LoadBalancerShapeDetails() {}
     /**
      * @return (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
      * 
@@ -50,30 +43,32 @@ public final class LoadBalancerShapeDetails {
     public static Builder builder(LoadBalancerShapeDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer maximumBandwidthInMbps;
         private Integer minimumBandwidthInMbps;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(LoadBalancerShapeDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.maximumBandwidthInMbps = defaults.maximumBandwidthInMbps;
     	      this.minimumBandwidthInMbps = defaults.minimumBandwidthInMbps;
         }
 
+        @CustomType.Setter
         public Builder maximumBandwidthInMbps(Integer maximumBandwidthInMbps) {
             this.maximumBandwidthInMbps = Objects.requireNonNull(maximumBandwidthInMbps);
             return this;
         }
+        @CustomType.Setter
         public Builder minimumBandwidthInMbps(Integer minimumBandwidthInMbps) {
             this.minimumBandwidthInMbps = Objects.requireNonNull(minimumBandwidthInMbps);
             return this;
-        }        public LoadBalancerShapeDetails build() {
-            return new LoadBalancerShapeDetails(maximumBandwidthInMbps, minimumBandwidthInMbps);
+        }
+        public LoadBalancerShapeDetails build() {
+            final var o = new LoadBalancerShapeDetails();
+            o.maximumBandwidthInMbps = maximumBandwidthInMbps;
+            o.minimumBandwidthInMbps = minimumBandwidthInMbps;
+            return o;
         }
     }
 }

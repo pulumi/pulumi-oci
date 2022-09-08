@@ -18,52 +18,35 @@ public final class GetDeployArtifactsResult {
      * @return The OCID of a compartment.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The list of deploy_artifact_collection.
      * 
      */
-    private final List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections;
+    private List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections;
     /**
      * @return Deployment artifact identifier, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDeployArtifactsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDeployArtifactsFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of a project.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return Current state of the deployment artifact.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDeployArtifactsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("deployArtifactCollections") List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDeployArtifactsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.deployArtifactCollections = deployArtifactCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.projectId = projectId;
-        this.state = state;
-    }
-
+    private GetDeployArtifactsResult() {}
     /**
      * @return The OCID of a compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetDeployArtifactsResult {
     public static Builder builder(GetDeployArtifactsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections;
@@ -126,11 +109,7 @@ public final class GetDeployArtifactsResult {
         private @Nullable String id;
         private @Nullable String projectId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployArtifactsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetDeployArtifactsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder deployArtifactCollections(List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections) {
             this.deployArtifactCollections = Objects.requireNonNull(deployArtifactCollections);
             return this;
@@ -153,10 +134,12 @@ public final class GetDeployArtifactsResult {
         public Builder deployArtifactCollections(GetDeployArtifactsDeployArtifactCollection... deployArtifactCollections) {
             return deployArtifactCollections(List.of(deployArtifactCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDeployArtifactsFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,19 +147,31 @@ public final class GetDeployArtifactsResult {
         public Builder filters(GetDeployArtifactsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDeployArtifactsResult build() {
-            return new GetDeployArtifactsResult(compartmentId, deployArtifactCollections, displayName, filters, id, projectId, state);
+        }
+        public GetDeployArtifactsResult build() {
+            final var o = new GetDeployArtifactsResult();
+            o.compartmentId = compartmentId;
+            o.deployArtifactCollections = deployArtifactCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.projectId = projectId;
+            o.state = state;
+            return o;
         }
     }
 }

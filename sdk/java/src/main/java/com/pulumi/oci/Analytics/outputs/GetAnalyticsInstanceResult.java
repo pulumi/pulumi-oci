@@ -14,129 +14,90 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAnalyticsInstanceResult {
-    private final String analyticsInstanceId;
+    private String analyticsInstanceId;
     /**
      * @return Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      * 
      */
-    private final List<GetAnalyticsInstanceCapacity> capacities;
+    private List<GetAnalyticsInstanceCapacity> capacities;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description of the vanity url.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Email address receiving notifications.
      * 
      */
-    private final String emailNotification;
+    private String emailNotification;
     /**
      * @return Analytics feature set.
      * 
      */
-    private final String featureSet;
+    private String featureSet;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    private final String id;
-    private final String idcsAccessToken;
+    private String id;
+    private String idcsAccessToken;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The license used for the service.
      * 
      */
-    private final String licenseType;
+    private String licenseType;
     /**
      * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Base representation of a network endpoint.
      * 
      */
-    private final List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
+    private List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
     /**
      * @return URL of the Analytics service.
      * 
      */
-    private final String serviceUrl;
+    private String serviceUrl;
     /**
      * @return The current state of an instance.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetAnalyticsInstanceResult(
-        @CustomType.Parameter("analyticsInstanceId") String analyticsInstanceId,
-        @CustomType.Parameter("capacities") List<GetAnalyticsInstanceCapacity> capacities,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("emailNotification") String emailNotification,
-        @CustomType.Parameter("featureSet") String featureSet,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("idcsAccessToken") String idcsAccessToken,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("licenseType") String licenseType,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("networkEndpointDetails") List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails,
-        @CustomType.Parameter("serviceUrl") String serviceUrl,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.analyticsInstanceId = analyticsInstanceId;
-        this.capacities = capacities;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.emailNotification = emailNotification;
-        this.featureSet = featureSet;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.idcsAccessToken = idcsAccessToken;
-        this.kmsKeyId = kmsKeyId;
-        this.licenseType = licenseType;
-        this.name = name;
-        this.networkEndpointDetails = networkEndpointDetails;
-        this.serviceUrl = serviceUrl;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetAnalyticsInstanceResult() {}
     public String analyticsInstanceId() {
         return this.analyticsInstanceId;
     }
@@ -263,7 +224,7 @@ public final class GetAnalyticsInstanceResult {
     public static Builder builder(GetAnalyticsInstanceResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String analyticsInstanceId;
         private List<GetAnalyticsInstanceCapacity> capacities;
@@ -283,11 +244,7 @@ public final class GetAnalyticsInstanceResult {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnalyticsInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.analyticsInstanceId = defaults.analyticsInstanceId;
@@ -310,10 +267,12 @@ public final class GetAnalyticsInstanceResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder analyticsInstanceId(String analyticsInstanceId) {
             this.analyticsInstanceId = Objects.requireNonNull(analyticsInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder capacities(List<GetAnalyticsInstanceCapacity> capacities) {
             this.capacities = Objects.requireNonNull(capacities);
             return this;
@@ -321,50 +280,62 @@ public final class GetAnalyticsInstanceResult {
         public Builder capacities(GetAnalyticsInstanceCapacity... capacities) {
             return capacities(List.of(capacities));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder emailNotification(String emailNotification) {
             this.emailNotification = Objects.requireNonNull(emailNotification);
             return this;
         }
+        @CustomType.Setter
         public Builder featureSet(String featureSet) {
             this.featureSet = Objects.requireNonNull(featureSet);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder idcsAccessToken(String idcsAccessToken) {
             this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseType(String licenseType) {
             this.licenseType = Objects.requireNonNull(licenseType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder networkEndpointDetails(List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails) {
             this.networkEndpointDetails = Objects.requireNonNull(networkEndpointDetails);
             return this;
@@ -372,23 +343,47 @@ public final class GetAnalyticsInstanceResult {
         public Builder networkEndpointDetails(GetAnalyticsInstanceNetworkEndpointDetail... networkEndpointDetails) {
             return networkEndpointDetails(List.of(networkEndpointDetails));
         }
+        @CustomType.Setter
         public Builder serviceUrl(String serviceUrl) {
             this.serviceUrl = Objects.requireNonNull(serviceUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetAnalyticsInstanceResult build() {
-            return new GetAnalyticsInstanceResult(analyticsInstanceId, capacities, compartmentId, definedTags, description, emailNotification, featureSet, freeformTags, id, idcsAccessToken, kmsKeyId, licenseType, name, networkEndpointDetails, serviceUrl, state, timeCreated, timeUpdated);
+        }
+        public GetAnalyticsInstanceResult build() {
+            final var o = new GetAnalyticsInstanceResult();
+            o.analyticsInstanceId = analyticsInstanceId;
+            o.capacities = capacities;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.emailNotification = emailNotification;
+            o.featureSet = featureSet;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.idcsAccessToken = idcsAccessToken;
+            o.kmsKeyId = kmsKeyId;
+            o.licenseType = licenseType;
+            o.name = name;
+            o.networkEndpointDetails = networkEndpointDetails;
+            o.serviceUrl = serviceUrl;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

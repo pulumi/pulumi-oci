@@ -16,70 +16,49 @@ public final class GetSendersSender {
      * @return The OCID for the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The email address of the approved sender.
      * 
      */
-    private final String emailAddress;
+    private String emailAddress;
     /**
      * @return The email domain used to assert responsibility for emails sent from this sender.
      * 
      */
-    private final String emailDomainId;
+    private String emailDomainId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The unique OCID of the sender.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
-    private final Boolean isSpf;
+    private Boolean isSpf;
     /**
      * @return The current state of a sender.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetSendersSender(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("emailAddress") String emailAddress,
-        @CustomType.Parameter("emailDomainId") String emailDomainId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isSpf") Boolean isSpf,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.emailAddress = emailAddress;
-        this.emailDomainId = emailDomainId;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isSpf = isSpf;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetSendersSender() {}
     /**
      * @return The OCID for the compartment.
      * 
@@ -151,7 +130,7 @@ public final class GetSendersSender {
     public static Builder builder(GetSendersSender defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -162,11 +141,7 @@ public final class GetSendersSender {
         private Boolean isSpf;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSendersSender defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -180,43 +155,63 @@ public final class GetSendersSender {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = Objects.requireNonNull(emailAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder emailDomainId(String emailDomainId) {
             this.emailDomainId = Objects.requireNonNull(emailDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isSpf(Boolean isSpf) {
             this.isSpf = Objects.requireNonNull(isSpf);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetSendersSender build() {
-            return new GetSendersSender(compartmentId, definedTags, emailAddress, emailDomainId, freeformTags, id, isSpf, state, timeCreated);
+        }
+        public GetSendersSender build() {
+            final var o = new GetSendersSender();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.emailAddress = emailAddress;
+            o.emailDomainId = emailDomainId;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isSpf = isSpf;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

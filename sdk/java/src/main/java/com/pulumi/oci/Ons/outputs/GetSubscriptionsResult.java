@@ -18,38 +18,25 @@ public final class GetSubscriptionsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetSubscriptionsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetSubscriptionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of subscriptions.
      * 
      */
-    private final List<GetSubscriptionsSubscription> subscriptions;
+    private List<GetSubscriptionsSubscription> subscriptions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
      * 
      */
-    private final @Nullable String topicId;
+    private @Nullable String topicId;
 
-    @CustomType.Constructor
-    private GetSubscriptionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetSubscriptionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("subscriptions") List<GetSubscriptionsSubscription> subscriptions,
-        @CustomType.Parameter("topicId") @Nullable String topicId) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.subscriptions = subscriptions;
-        this.topicId = topicId;
-    }
-
+    private GetSubscriptionsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
      * 
@@ -89,18 +76,14 @@ public final class GetSubscriptionsResult {
     public static Builder builder(GetSubscriptionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSubscriptionsFilter> filters;
         private String id;
         private List<GetSubscriptionsSubscription> subscriptions;
         private @Nullable String topicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -110,10 +93,12 @@ public final class GetSubscriptionsResult {
     	      this.topicId = defaults.topicId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscriptionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -121,10 +106,12 @@ public final class GetSubscriptionsResult {
         public Builder filters(GetSubscriptionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptions(List<GetSubscriptionsSubscription> subscriptions) {
             this.subscriptions = Objects.requireNonNull(subscriptions);
             return this;
@@ -132,11 +119,19 @@ public final class GetSubscriptionsResult {
         public Builder subscriptions(GetSubscriptionsSubscription... subscriptions) {
             return subscriptions(List.of(subscriptions));
         }
+        @CustomType.Setter
         public Builder topicId(@Nullable String topicId) {
             this.topicId = topicId;
             return this;
-        }        public GetSubscriptionsResult build() {
-            return new GetSubscriptionsResult(compartmentId, filters, id, subscriptions, topicId);
+        }
+        public GetSubscriptionsResult build() {
+            final var o = new GetSubscriptionsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.subscriptions = subscriptions;
+            o.topicId = topicId;
+            return o;
         }
     }
 }

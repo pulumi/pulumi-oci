@@ -18,38 +18,25 @@ public final class GetBackupsResult {
      * @return The list of backups.
      * 
      */
-    private final List<GetBackupsBackup> backups;
+    private List<GetBackupsBackup> backups;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private final @Nullable String databaseId;
-    private final @Nullable List<GetBackupsFilter> filters;
+    private @Nullable String databaseId;
+    private @Nullable List<GetBackupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetBackupsResult(
-        @CustomType.Parameter("backups") List<GetBackupsBackup> backups,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("databaseId") @Nullable String databaseId,
-        @CustomType.Parameter("filters") @Nullable List<GetBackupsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.backups = backups;
-        this.compartmentId = compartmentId;
-        this.databaseId = databaseId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetBackupsResult() {}
     /**
      * @return The list of backups.
      * 
@@ -89,18 +76,14 @@ public final class GetBackupsResult {
     public static Builder builder(GetBackupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBackupsBackup> backups;
         private @Nullable String compartmentId;
         private @Nullable String databaseId;
         private @Nullable List<GetBackupsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backups = defaults.backups;
@@ -110,6 +93,7 @@ public final class GetBackupsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder backups(List<GetBackupsBackup> backups) {
             this.backups = Objects.requireNonNull(backups);
             return this;
@@ -117,14 +101,17 @@ public final class GetBackupsResult {
         public Builder backups(GetBackupsBackup... backups) {
             return backups(List.of(backups));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseId(@Nullable String databaseId) {
             this.databaseId = databaseId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBackupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -132,11 +119,19 @@ public final class GetBackupsResult {
         public Builder filters(GetBackupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetBackupsResult build() {
-            return new GetBackupsResult(backups, compartmentId, databaseId, filters, id);
+        }
+        public GetBackupsResult build() {
+            final var o = new GetBackupsResult();
+            o.backups = backups;
+            o.compartmentId = compartmentId;
+            o.databaseId = databaseId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

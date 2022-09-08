@@ -15,28 +15,19 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
      * @return Whether the claim is required to be present in the JWT or not. If set to &#34;false&#34;, the claim values will be matched only if the claim is present in the JWT.
      * 
      */
-    private final Boolean isRequired;
+    private Boolean isRequired;
     /**
      * @return Name of the claim.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
      * 
      */
-    private final List<String> values;
+    private List<String> values;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim(
-        @CustomType.Parameter("isRequired") Boolean isRequired,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("values") List<String> values) {
-        this.isRequired = isRequired;
-        this.key = key;
-        this.values = values;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim() {}
     /**
      * @return Whether the claim is required to be present in the JWT or not. If set to &#34;false&#34;, the claim values will be matched only if the claim is present in the JWT.
      * 
@@ -66,16 +57,12 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isRequired;
         private String key;
         private List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isRequired = defaults.isRequired;
@@ -83,22 +70,30 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = Objects.requireNonNull(isRequired);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<String> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim(isRequired, key, values);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim();
+            o.isRequired = isRequired;
+            o.key = key;
+            o.values = values;
+            return o;
         }
     }
 }

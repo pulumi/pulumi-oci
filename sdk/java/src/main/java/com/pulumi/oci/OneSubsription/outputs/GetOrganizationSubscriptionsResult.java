@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOrganizationSubscriptionsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetOrganizationSubscriptionsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetOrganizationSubscriptionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of organization_subscriptions.
      * 
      */
-    private final List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions;
+    private List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions;
 
-    @CustomType.Constructor
-    private GetOrganizationSubscriptionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetOrganizationSubscriptionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("organizationSubscriptions") List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.organizationSubscriptions = organizationSubscriptions;
-    }
-
+    private GetOrganizationSubscriptionsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetOrganizationSubscriptionsResult {
     public static Builder builder(GetOrganizationSubscriptionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetOrganizationSubscriptionsFilter> filters;
         private String id;
         private List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOrganizationSubscriptionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetOrganizationSubscriptionsResult {
     	      this.organizationSubscriptions = defaults.organizationSubscriptions;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOrganizationSubscriptionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetOrganizationSubscriptionsResult {
         public Builder filters(GetOrganizationSubscriptionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder organizationSubscriptions(List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions) {
             this.organizationSubscriptions = Objects.requireNonNull(organizationSubscriptions);
             return this;
         }
         public Builder organizationSubscriptions(GetOrganizationSubscriptionsOrganizationSubscription... organizationSubscriptions) {
             return organizationSubscriptions(List.of(organizationSubscriptions));
-        }        public GetOrganizationSubscriptionsResult build() {
-            return new GetOrganizationSubscriptionsResult(compartmentId, filters, id, organizationSubscriptions);
+        }
+        public GetOrganizationSubscriptionsResult build() {
+            final var o = new GetOrganizationSubscriptionsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.organizationSubscriptions = organizationSubscriptions;
+            return o;
         }
     }
 }

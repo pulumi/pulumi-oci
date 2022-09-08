@@ -13,73 +13,50 @@ public final class GetSuppressionResult {
      * @return The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The email address of the suppression.
      * 
      */
-    private final String emailAddress;
+    private String emailAddress;
     /**
      * @return The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
      * 
      */
-    private final String errorDetail;
+    private String errorDetail;
     /**
      * @return DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
      * 
      */
-    private final String errorSource;
+    private String errorSource;
     /**
      * @return The unique OCID of the suppression.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
      * 
      */
-    private final String messageId;
+    private String messageId;
     /**
      * @return The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
-    private final String reason;
-    private final String suppressionId;
+    private String reason;
+    private String suppressionId;
     /**
      * @return The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private final String timeLastSuppressed;
+    private String timeLastSuppressed;
 
-    @CustomType.Constructor
-    private GetSuppressionResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("emailAddress") String emailAddress,
-        @CustomType.Parameter("errorDetail") String errorDetail,
-        @CustomType.Parameter("errorSource") String errorSource,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("messageId") String messageId,
-        @CustomType.Parameter("reason") String reason,
-        @CustomType.Parameter("suppressionId") String suppressionId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastSuppressed") String timeLastSuppressed) {
-        this.compartmentId = compartmentId;
-        this.emailAddress = emailAddress;
-        this.errorDetail = errorDetail;
-        this.errorSource = errorSource;
-        this.id = id;
-        this.messageId = messageId;
-        this.reason = reason;
-        this.suppressionId = suppressionId;
-        this.timeCreated = timeCreated;
-        this.timeLastSuppressed = timeLastSuppressed;
-    }
-
+    private GetSuppressionResult() {}
     /**
      * @return The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
      * 
@@ -154,7 +131,7 @@ public final class GetSuppressionResult {
     public static Builder builder(GetSuppressionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String emailAddress;
@@ -166,11 +143,7 @@ public final class GetSuppressionResult {
         private String suppressionId;
         private String timeCreated;
         private String timeLastSuppressed;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSuppressionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -185,47 +158,69 @@ public final class GetSuppressionResult {
     	      this.timeLastSuppressed = defaults.timeLastSuppressed;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = Objects.requireNonNull(emailAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder errorDetail(String errorDetail) {
             this.errorDetail = Objects.requireNonNull(errorDetail);
             return this;
         }
+        @CustomType.Setter
         public Builder errorSource(String errorSource) {
             this.errorSource = Objects.requireNonNull(errorSource);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder messageId(String messageId) {
             this.messageId = Objects.requireNonNull(messageId);
             return this;
         }
+        @CustomType.Setter
         public Builder reason(String reason) {
             this.reason = Objects.requireNonNull(reason);
             return this;
         }
+        @CustomType.Setter
         public Builder suppressionId(String suppressionId) {
             this.suppressionId = Objects.requireNonNull(suppressionId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastSuppressed(String timeLastSuppressed) {
             this.timeLastSuppressed = Objects.requireNonNull(timeLastSuppressed);
             return this;
-        }        public GetSuppressionResult build() {
-            return new GetSuppressionResult(compartmentId, emailAddress, errorDetail, errorSource, id, messageId, reason, suppressionId, timeCreated, timeLastSuppressed);
+        }
+        public GetSuppressionResult build() {
+            final var o = new GetSuppressionResult();
+            o.compartmentId = compartmentId;
+            o.emailAddress = emailAddress;
+            o.errorDetail = errorDetail;
+            o.errorSource = errorSource;
+            o.id = id;
+            o.messageId = messageId;
+            o.reason = reason;
+            o.suppressionId = suppressionId;
+            o.timeCreated = timeCreated;
+            o.timeLastSuppressed = timeLastSuppressed;
+            return o;
         }
     }
 }

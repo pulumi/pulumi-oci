@@ -15,13 +15,9 @@ public final class DrgAttachmentsListDrgAllAttachment {
      * @return The Oracle-assigned ID of the DRG attachment
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
 
-    @CustomType.Constructor
-    private DrgAttachmentsListDrgAllAttachment(@CustomType.Parameter("id") @Nullable String id) {
-        this.id = id;
-    }
-
+    private DrgAttachmentsListDrgAllAttachment() {}
     /**
      * @return The Oracle-assigned ID of the DRG attachment
      * 
@@ -37,24 +33,24 @@ public final class DrgAttachmentsListDrgAllAttachment {
     public static Builder builder(DrgAttachmentsListDrgAllAttachment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DrgAttachmentsListDrgAllAttachment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
-        }        public DrgAttachmentsListDrgAllAttachment build() {
-            return new DrgAttachmentsListDrgAllAttachment(id);
+        }
+        public DrgAttachmentsListDrgAllAttachment build() {
+            final var o = new DrgAttachmentsListDrgAllAttachment();
+            o.id = id;
+            return o;
         }
     }
 }

@@ -20,154 +20,109 @@ public final class GetProductLicensesProductLicenseCollectionItem {
      * @return The number of active license records associated with the product license.
      * 
      */
-    private final Integer activeLicenseRecordCount;
+    private Integer activeLicenseRecordCount;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return License record name
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The image ID associated with the product license.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The images associated with the product license.
      * 
      */
-    private final List<GetProductLicensesProductLicenseCollectionItemImage> images;
+    private List<GetProductLicensesProductLicenseCollectionItemImage> images;
     /**
      * @return Specifies whether or not the product license is oversubscribed.
      * 
      */
-    private final Boolean isOverSubscribed;
+    private Boolean isOverSubscribed;
     /**
      * @return Specifies if the license unit count is unlimited.
      * 
      */
-    private final Boolean isUnlimited;
+    private Boolean isUnlimited;
     /**
      * @return Specifies whether the vendor is Oracle or a third party.
      * 
      */
-    private final Boolean isVendorOracle;
+    private Boolean isVendorOracle;
     /**
      * @return The product license unit.
      * 
      */
-    private final String licenseUnit;
+    private String licenseUnit;
     /**
      * @return The current product license state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The current product license status.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return Status description for the current product license status.
      * 
      */
-    private final String statusDescription;
+    private String statusDescription;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
      * 
      */
-    private final Integer totalActiveLicenseUnitCount;
+    private Integer totalActiveLicenseUnitCount;
     /**
      * @return The number of license records associated with the product license.
      * 
      */
-    private final Integer totalLicenseRecordCount;
+    private Integer totalLicenseRecordCount;
     /**
      * @return The number of license units consumed. Updated after each allocation run.
      * 
      */
-    private final Double totalLicenseUnitsConsumed;
+    private Double totalLicenseUnitsConsumed;
     /**
      * @return The vendor of the ProductLicense
      * 
      */
-    private final String vendorName;
+    private String vendorName;
 
-    @CustomType.Constructor
-    private GetProductLicensesProductLicenseCollectionItem(
-        @CustomType.Parameter("activeLicenseRecordCount") Integer activeLicenseRecordCount,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("images") List<GetProductLicensesProductLicenseCollectionItemImage> images,
-        @CustomType.Parameter("isOverSubscribed") Boolean isOverSubscribed,
-        @CustomType.Parameter("isUnlimited") Boolean isUnlimited,
-        @CustomType.Parameter("isVendorOracle") Boolean isVendorOracle,
-        @CustomType.Parameter("licenseUnit") String licenseUnit,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("statusDescription") String statusDescription,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("totalActiveLicenseUnitCount") Integer totalActiveLicenseUnitCount,
-        @CustomType.Parameter("totalLicenseRecordCount") Integer totalLicenseRecordCount,
-        @CustomType.Parameter("totalLicenseUnitsConsumed") Double totalLicenseUnitsConsumed,
-        @CustomType.Parameter("vendorName") String vendorName) {
-        this.activeLicenseRecordCount = activeLicenseRecordCount;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.images = images;
-        this.isOverSubscribed = isOverSubscribed;
-        this.isUnlimited = isUnlimited;
-        this.isVendorOracle = isVendorOracle;
-        this.licenseUnit = licenseUnit;
-        this.state = state;
-        this.status = status;
-        this.statusDescription = statusDescription;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.totalActiveLicenseUnitCount = totalActiveLicenseUnitCount;
-        this.totalLicenseRecordCount = totalLicenseRecordCount;
-        this.totalLicenseUnitsConsumed = totalLicenseUnitsConsumed;
-        this.vendorName = vendorName;
-    }
-
+    private GetProductLicensesProductLicenseCollectionItem() {}
     /**
      * @return The number of active license records associated with the product license.
      * 
@@ -323,7 +278,7 @@ public final class GetProductLicensesProductLicenseCollectionItem {
     public static Builder builder(GetProductLicensesProductLicenseCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer activeLicenseRecordCount;
         private String compartmentId;
@@ -346,11 +301,7 @@ public final class GetProductLicensesProductLicenseCollectionItem {
         private Integer totalLicenseRecordCount;
         private Double totalLicenseUnitsConsumed;
         private String vendorName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProductLicensesProductLicenseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activeLicenseRecordCount = defaults.activeLicenseRecordCount;
@@ -376,30 +327,37 @@ public final class GetProductLicensesProductLicenseCollectionItem {
     	      this.vendorName = defaults.vendorName;
         }
 
+        @CustomType.Setter
         public Builder activeLicenseRecordCount(Integer activeLicenseRecordCount) {
             this.activeLicenseRecordCount = Objects.requireNonNull(activeLicenseRecordCount);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder images(List<GetProductLicensesProductLicenseCollectionItemImage> images) {
             this.images = Objects.requireNonNull(images);
             return this;
@@ -407,63 +365,100 @@ public final class GetProductLicensesProductLicenseCollectionItem {
         public Builder images(GetProductLicensesProductLicenseCollectionItemImage... images) {
             return images(List.of(images));
         }
+        @CustomType.Setter
         public Builder isOverSubscribed(Boolean isOverSubscribed) {
             this.isOverSubscribed = Objects.requireNonNull(isOverSubscribed);
             return this;
         }
+        @CustomType.Setter
         public Builder isUnlimited(Boolean isUnlimited) {
             this.isUnlimited = Objects.requireNonNull(isUnlimited);
             return this;
         }
+        @CustomType.Setter
         public Builder isVendorOracle(Boolean isVendorOracle) {
             this.isVendorOracle = Objects.requireNonNull(isVendorOracle);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseUnit(String licenseUnit) {
             this.licenseUnit = Objects.requireNonNull(licenseUnit);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder statusDescription(String statusDescription) {
             this.statusDescription = Objects.requireNonNull(statusDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder totalActiveLicenseUnitCount(Integer totalActiveLicenseUnitCount) {
             this.totalActiveLicenseUnitCount = Objects.requireNonNull(totalActiveLicenseUnitCount);
             return this;
         }
+        @CustomType.Setter
         public Builder totalLicenseRecordCount(Integer totalLicenseRecordCount) {
             this.totalLicenseRecordCount = Objects.requireNonNull(totalLicenseRecordCount);
             return this;
         }
+        @CustomType.Setter
         public Builder totalLicenseUnitsConsumed(Double totalLicenseUnitsConsumed) {
             this.totalLicenseUnitsConsumed = Objects.requireNonNull(totalLicenseUnitsConsumed);
             return this;
         }
+        @CustomType.Setter
         public Builder vendorName(String vendorName) {
             this.vendorName = Objects.requireNonNull(vendorName);
             return this;
-        }        public GetProductLicensesProductLicenseCollectionItem build() {
-            return new GetProductLicensesProductLicenseCollectionItem(activeLicenseRecordCount, compartmentId, definedTags, displayName, freeformTags, id, images, isOverSubscribed, isUnlimited, isVendorOracle, licenseUnit, state, status, statusDescription, systemTags, timeCreated, timeUpdated, totalActiveLicenseUnitCount, totalLicenseRecordCount, totalLicenseUnitsConsumed, vendorName);
+        }
+        public GetProductLicensesProductLicenseCollectionItem build() {
+            final var o = new GetProductLicensesProductLicenseCollectionItem();
+            o.activeLicenseRecordCount = activeLicenseRecordCount;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.images = images;
+            o.isOverSubscribed = isOverSubscribed;
+            o.isUnlimited = isUnlimited;
+            o.isVendorOracle = isVendorOracle;
+            o.licenseUnit = licenseUnit;
+            o.state = state;
+            o.status = status;
+            o.statusDescription = statusDescription;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.totalActiveLicenseUnitCount = totalActiveLicenseUnitCount;
+            o.totalLicenseRecordCount = totalLicenseRecordCount;
+            o.totalLicenseUnitsConsumed = totalLicenseUnitsConsumed;
+            o.vendorName = vendorName;
+            return o;
         }
     }
 }

@@ -14,77 +14,54 @@ public final class GetManagementAgentImagesManagementAgentImage {
      * @return Agent image content SHA256 Hash
      * 
      */
-    private final String checksum;
+    private String checksum;
     /**
      * @return Agent image resource id
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Object storage URL for download
      * 
      */
-    private final String objectUrl;
+    private String objectUrl;
     /**
      * @return The installation package target architecture type
      * 
      */
-    private final String packageArchitectureType;
+    private String packageArchitectureType;
     /**
      * @return The installation package type
      * 
      */
-    private final String packageType;
+    private String packageType;
     /**
      * @return Agent image platform display name
      * 
      */
-    private final String platformName;
+    private String platformName;
     /**
      * @return Agent image platform type
      * 
      */
-    private final String platformType;
+    private String platformType;
     /**
      * @return Agent image size in bytes
      * 
      */
-    private final Double size;
+    private Double size;
     /**
      * @return Filter to return only Management Agents in the particular lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Agent image version
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetManagementAgentImagesManagementAgentImage(
-        @CustomType.Parameter("checksum") String checksum,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("objectUrl") String objectUrl,
-        @CustomType.Parameter("packageArchitectureType") String packageArchitectureType,
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("platformName") String platformName,
-        @CustomType.Parameter("platformType") String platformType,
-        @CustomType.Parameter("size") Double size,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("version") String version) {
-        this.checksum = checksum;
-        this.id = id;
-        this.objectUrl = objectUrl;
-        this.packageArchitectureType = packageArchitectureType;
-        this.packageType = packageType;
-        this.platformName = platformName;
-        this.platformType = platformType;
-        this.size = size;
-        this.state = state;
-        this.version = version;
-    }
-
+    private GetManagementAgentImagesManagementAgentImage() {}
     /**
      * @return Agent image content SHA256 Hash
      * 
@@ -163,7 +140,7 @@ public final class GetManagementAgentImagesManagementAgentImage {
     public static Builder builder(GetManagementAgentImagesManagementAgentImage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String checksum;
         private String id;
@@ -175,11 +152,7 @@ public final class GetManagementAgentImagesManagementAgentImage {
         private Double size;
         private String state;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentImagesManagementAgentImage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.checksum = defaults.checksum;
@@ -194,47 +167,69 @@ public final class GetManagementAgentImagesManagementAgentImage {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder checksum(String checksum) {
             this.checksum = Objects.requireNonNull(checksum);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder objectUrl(String objectUrl) {
             this.objectUrl = Objects.requireNonNull(objectUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder packageArchitectureType(String packageArchitectureType) {
             this.packageArchitectureType = Objects.requireNonNull(packageArchitectureType);
             return this;
         }
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder platformName(String platformName) {
             this.platformName = Objects.requireNonNull(platformName);
             return this;
         }
+        @CustomType.Setter
         public Builder platformType(String platformType) {
             this.platformType = Objects.requireNonNull(platformType);
             return this;
         }
+        @CustomType.Setter
         public Builder size(Double size) {
             this.size = Objects.requireNonNull(size);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetManagementAgentImagesManagementAgentImage build() {
-            return new GetManagementAgentImagesManagementAgentImage(checksum, id, objectUrl, packageArchitectureType, packageType, platformName, platformType, size, state, version);
+        }
+        public GetManagementAgentImagesManagementAgentImage build() {
+            final var o = new GetManagementAgentImagesManagementAgentImage();
+            o.checksum = checksum;
+            o.id = id;
+            o.objectUrl = objectUrl;
+            o.packageArchitectureType = packageArchitectureType;
+            o.packageType = packageType;
+            o.platformName = platformName;
+            o.platformType = platformType;
+            o.size = size;
+            o.state = state;
+            o.version = version;
+            return o;
         }
     }
 }

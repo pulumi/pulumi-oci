@@ -13,21 +13,14 @@ public final class GetInstancesInstanceAgentConfigPluginsConfig {
      * @return Whether the plugin should be enabled or disabled.
      * 
      */
-    private final String desiredState;
+    private String desiredState;
     /**
      * @return The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetInstancesInstanceAgentConfigPluginsConfig(
-        @CustomType.Parameter("desiredState") String desiredState,
-        @CustomType.Parameter("name") String name) {
-        this.desiredState = desiredState;
-        this.name = name;
-    }
-
+    private GetInstancesInstanceAgentConfigPluginsConfig() {}
     /**
      * @return Whether the plugin should be enabled or disabled.
      * 
@@ -50,30 +43,32 @@ public final class GetInstancesInstanceAgentConfigPluginsConfig {
     public static Builder builder(GetInstancesInstanceAgentConfigPluginsConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String desiredState;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstancesInstanceAgentConfigPluginsConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.desiredState = defaults.desiredState;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder desiredState(String desiredState) {
             this.desiredState = Objects.requireNonNull(desiredState);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetInstancesInstanceAgentConfigPluginsConfig build() {
-            return new GetInstancesInstanceAgentConfigPluginsConfig(desiredState, name);
+        }
+        public GetInstancesInstanceAgentConfigPluginsConfig build() {
+            final var o = new GetInstancesInstanceAgentConfigPluginsConfig();
+            o.desiredState = desiredState;
+            o.name = name;
+            return o;
         }
     }
 }

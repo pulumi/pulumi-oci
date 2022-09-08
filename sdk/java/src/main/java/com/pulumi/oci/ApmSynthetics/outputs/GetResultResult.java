@@ -11,63 +11,44 @@ import java.util.Objects;
 
 @CustomType
 public final class GetResultResult {
-    private final String apmDomainId;
+    private String apmDomainId;
     /**
      * @return The specific point of time when the result of an execution is collected.
      * 
      */
-    private final String executionTime;
+    private String executionTime;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
      * 
      */
-    private final String monitorId;
+    private String monitorId;
     /**
      * @return Type of result content. Example: Zip or Raw file.
      * 
      */
-    private final String resultContentType;
+    private String resultContentType;
     /**
      * @return Monitor result data set.
      * 
      */
-    private final List<GetResultResultDataSet> resultDataSets;
+    private List<GetResultResultDataSet> resultDataSets;
     /**
      * @return Type of result. Example: HAR, Screenshot, Log or Network.
      * 
      */
-    private final String resultType;
+    private String resultType;
     /**
      * @return The name of the public or dedicated vantage point.
      * 
      */
-    private final String vantagePoint;
+    private String vantagePoint;
 
-    @CustomType.Constructor
-    private GetResultResult(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("executionTime") String executionTime,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("monitorId") String monitorId,
-        @CustomType.Parameter("resultContentType") String resultContentType,
-        @CustomType.Parameter("resultDataSets") List<GetResultResultDataSet> resultDataSets,
-        @CustomType.Parameter("resultType") String resultType,
-        @CustomType.Parameter("vantagePoint") String vantagePoint) {
-        this.apmDomainId = apmDomainId;
-        this.executionTime = executionTime;
-        this.id = id;
-        this.monitorId = monitorId;
-        this.resultContentType = resultContentType;
-        this.resultDataSets = resultDataSets;
-        this.resultType = resultType;
-        this.vantagePoint = vantagePoint;
-    }
-
+    private GetResultResult() {}
     public String apmDomainId() {
         return this.apmDomainId;
     }
@@ -128,7 +109,7 @@ public final class GetResultResult {
     public static Builder builder(GetResultResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private String executionTime;
@@ -138,11 +119,7 @@ public final class GetResultResult {
         private List<GetResultResultDataSet> resultDataSets;
         private String resultType;
         private String vantagePoint;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResultResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -155,26 +132,32 @@ public final class GetResultResult {
     	      this.vantagePoint = defaults.vantagePoint;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder executionTime(String executionTime) {
             this.executionTime = Objects.requireNonNull(executionTime);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder monitorId(String monitorId) {
             this.monitorId = Objects.requireNonNull(monitorId);
             return this;
         }
+        @CustomType.Setter
         public Builder resultContentType(String resultContentType) {
             this.resultContentType = Objects.requireNonNull(resultContentType);
             return this;
         }
+        @CustomType.Setter
         public Builder resultDataSets(List<GetResultResultDataSet> resultDataSets) {
             this.resultDataSets = Objects.requireNonNull(resultDataSets);
             return this;
@@ -182,15 +165,27 @@ public final class GetResultResult {
         public Builder resultDataSets(GetResultResultDataSet... resultDataSets) {
             return resultDataSets(List.of(resultDataSets));
         }
+        @CustomType.Setter
         public Builder resultType(String resultType) {
             this.resultType = Objects.requireNonNull(resultType);
             return this;
         }
+        @CustomType.Setter
         public Builder vantagePoint(String vantagePoint) {
             this.vantagePoint = Objects.requireNonNull(vantagePoint);
             return this;
-        }        public GetResultResult build() {
-            return new GetResultResult(apmDomainId, executionTime, id, monitorId, resultContentType, resultDataSets, resultType, vantagePoint);
+        }
+        public GetResultResult build() {
+            final var o = new GetResultResult();
+            o.apmDomainId = apmDomainId;
+            o.executionTime = executionTime;
+            o.id = id;
+            o.monitorId = monitorId;
+            o.resultContentType = resultContentType;
+            o.resultDataSets = resultDataSets;
+            o.resultType = resultType;
+            o.vantagePoint = vantagePoint;
+            return o;
         }
     }
 }

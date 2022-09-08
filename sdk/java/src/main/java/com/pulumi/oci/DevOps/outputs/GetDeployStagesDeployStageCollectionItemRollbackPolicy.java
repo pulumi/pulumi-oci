@@ -13,13 +13,9 @@ public final class GetDeployStagesDeployStageCollectionItemRollbackPolicy {
      * @return The type of policy used for rolling out a deployment stage.
      * 
      */
-    private final String policyType;
+    private String policyType;
 
-    @CustomType.Constructor
-    private GetDeployStagesDeployStageCollectionItemRollbackPolicy(@CustomType.Parameter("policyType") String policyType) {
-        this.policyType = policyType;
-    }
-
+    private GetDeployStagesDeployStageCollectionItemRollbackPolicy() {}
     /**
      * @return The type of policy used for rolling out a deployment stage.
      * 
@@ -35,24 +31,24 @@ public final class GetDeployStagesDeployStageCollectionItemRollbackPolicy {
     public static Builder builder(GetDeployStagesDeployStageCollectionItemRollbackPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String policyType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStagesDeployStageCollectionItemRollbackPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.policyType = defaults.policyType;
         }
 
+        @CustomType.Setter
         public Builder policyType(String policyType) {
             this.policyType = Objects.requireNonNull(policyType);
             return this;
-        }        public GetDeployStagesDeployStageCollectionItemRollbackPolicy build() {
-            return new GetDeployStagesDeployStageCollectionItemRollbackPolicy(policyType);
+        }
+        public GetDeployStagesDeployStageCollectionItemRollbackPolicy build() {
+            final var o = new GetDeployStagesDeployStageCollectionItemRollbackPolicy();
+            o.policyType = policyType;
+            return o;
         }
     }
 }

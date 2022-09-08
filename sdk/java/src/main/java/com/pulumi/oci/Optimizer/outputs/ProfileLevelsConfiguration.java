@@ -15,13 +15,9 @@ public final class ProfileLevelsConfiguration {
      * @return (Updatable) The list of tags specified in the current profile override.
      * 
      */
-    private final @Nullable List<ProfileLevelsConfigurationItem> items;
+    private @Nullable List<ProfileLevelsConfigurationItem> items;
 
-    @CustomType.Constructor
-    private ProfileLevelsConfiguration(@CustomType.Parameter("items") @Nullable List<ProfileLevelsConfigurationItem> items) {
-        this.items = items;
-    }
-
+    private ProfileLevelsConfiguration() {}
     /**
      * @return (Updatable) The list of tags specified in the current profile override.
      * 
@@ -37,27 +33,27 @@ public final class ProfileLevelsConfiguration {
     public static Builder builder(ProfileLevelsConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<ProfileLevelsConfigurationItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ProfileLevelsConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<ProfileLevelsConfigurationItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(ProfileLevelsConfigurationItem... items) {
             return items(List.of(items));
-        }        public ProfileLevelsConfiguration build() {
-            return new ProfileLevelsConfiguration(items);
+        }
+        public ProfileLevelsConfiguration build() {
+            final var o = new ProfileLevelsConfiguration();
+            o.items = items;
+            return o;
         }
     }
 }

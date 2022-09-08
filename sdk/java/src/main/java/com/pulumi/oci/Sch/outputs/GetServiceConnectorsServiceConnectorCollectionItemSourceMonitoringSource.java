@@ -15,21 +15,14 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Discriminator for namespaces in the compartment-specific list.
      * 
      */
-    private final List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails;
+    private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails;
 
-    @CustomType.Constructor
-    private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("namespaceDetails") List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails) {
-        this.compartmentId = compartmentId;
-        this.namespaceDetails = namespaceDetails;
-    }
-
+    private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
      * 
@@ -52,33 +45,35 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
     public static Builder builder(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.namespaceDetails = defaults.namespaceDetails;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder namespaceDetails(List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails) {
             this.namespaceDetails = Objects.requireNonNull(namespaceDetails);
             return this;
         }
         public Builder namespaceDetails(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail... namespaceDetails) {
             return namespaceDetails(List.of(namespaceDetails));
-        }        public GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource build() {
-            return new GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource(compartmentId, namespaceDetails);
+        }
+        public GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource build() {
+            final var o = new GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource();
+            o.compartmentId = compartmentId;
+            o.namespaceDetails = namespaceDetails;
+            return o;
         }
     }
 }

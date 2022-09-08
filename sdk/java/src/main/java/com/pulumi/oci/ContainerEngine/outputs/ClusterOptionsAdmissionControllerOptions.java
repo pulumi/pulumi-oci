@@ -15,13 +15,9 @@ public final class ClusterOptionsAdmissionControllerOptions {
      * @return (Updatable) Whether or not to enable the Pod Security Policy admission controller.
      * 
      */
-    private final @Nullable Boolean isPodSecurityPolicyEnabled;
+    private @Nullable Boolean isPodSecurityPolicyEnabled;
 
-    @CustomType.Constructor
-    private ClusterOptionsAdmissionControllerOptions(@CustomType.Parameter("isPodSecurityPolicyEnabled") @Nullable Boolean isPodSecurityPolicyEnabled) {
-        this.isPodSecurityPolicyEnabled = isPodSecurityPolicyEnabled;
-    }
-
+    private ClusterOptionsAdmissionControllerOptions() {}
     /**
      * @return (Updatable) Whether or not to enable the Pod Security Policy admission controller.
      * 
@@ -37,24 +33,24 @@ public final class ClusterOptionsAdmissionControllerOptions {
     public static Builder builder(ClusterOptionsAdmissionControllerOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isPodSecurityPolicyEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterOptionsAdmissionControllerOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isPodSecurityPolicyEnabled = defaults.isPodSecurityPolicyEnabled;
         }
 
+        @CustomType.Setter
         public Builder isPodSecurityPolicyEnabled(@Nullable Boolean isPodSecurityPolicyEnabled) {
             this.isPodSecurityPolicyEnabled = isPodSecurityPolicyEnabled;
             return this;
-        }        public ClusterOptionsAdmissionControllerOptions build() {
-            return new ClusterOptionsAdmissionControllerOptions(isPodSecurityPolicyEnabled);
+        }
+        public ClusterOptionsAdmissionControllerOptions build() {
+            final var o = new ClusterOptionsAdmissionControllerOptions();
+            o.isPodSecurityPolicyEnabled = isPodSecurityPolicyEnabled;
+            return o;
         }
     }
 }

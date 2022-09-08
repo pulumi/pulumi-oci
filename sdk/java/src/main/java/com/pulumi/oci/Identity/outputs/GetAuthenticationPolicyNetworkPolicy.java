@@ -14,13 +14,9 @@ public final class GetAuthenticationPolicyNetworkPolicy {
      * @return Network Source ids
      * 
      */
-    private final List<String> networkSourceIds;
+    private List<String> networkSourceIds;
 
-    @CustomType.Constructor
-    private GetAuthenticationPolicyNetworkPolicy(@CustomType.Parameter("networkSourceIds") List<String> networkSourceIds) {
-        this.networkSourceIds = networkSourceIds;
-    }
-
+    private GetAuthenticationPolicyNetworkPolicy() {}
     /**
      * @return Network Source ids
      * 
@@ -36,27 +32,27 @@ public final class GetAuthenticationPolicyNetworkPolicy {
     public static Builder builder(GetAuthenticationPolicyNetworkPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> networkSourceIds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuthenticationPolicyNetworkPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.networkSourceIds = defaults.networkSourceIds;
         }
 
+        @CustomType.Setter
         public Builder networkSourceIds(List<String> networkSourceIds) {
             this.networkSourceIds = Objects.requireNonNull(networkSourceIds);
             return this;
         }
         public Builder networkSourceIds(String... networkSourceIds) {
             return networkSourceIds(List.of(networkSourceIds));
-        }        public GetAuthenticationPolicyNetworkPolicy build() {
-            return new GetAuthenticationPolicyNetworkPolicy(networkSourceIds);
+        }
+        public GetAuthenticationPolicyNetworkPolicy build() {
+            final var o = new GetAuthenticationPolicyNetworkPolicy();
+            o.networkSourceIds = networkSourceIds;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPublicIpPoolsPublicIpPoolCollection {
-    private final List<GetPublicIpPoolsPublicIpPoolCollectionItem> items;
+    private List<GetPublicIpPoolsPublicIpPoolCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetPublicIpPoolsPublicIpPoolCollection(@CustomType.Parameter("items") List<GetPublicIpPoolsPublicIpPoolCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetPublicIpPoolsPublicIpPoolCollection() {}
     public List<GetPublicIpPoolsPublicIpPoolCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetPublicIpPoolsPublicIpPoolCollection {
     public static Builder builder(GetPublicIpPoolsPublicIpPoolCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetPublicIpPoolsPublicIpPoolCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicIpPoolsPublicIpPoolCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetPublicIpPoolsPublicIpPoolCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetPublicIpPoolsPublicIpPoolCollectionItem... items) {
             return items(List.of(items));
-        }        public GetPublicIpPoolsPublicIpPoolCollection build() {
-            return new GetPublicIpPoolsPublicIpPoolCollection(items);
+        }
+        public GetPublicIpPoolsPublicIpPoolCollection build() {
+            final var o = new GetPublicIpPoolsPublicIpPoolCollection();
+            o.items = items;
+            return o;
         }
     }
 }

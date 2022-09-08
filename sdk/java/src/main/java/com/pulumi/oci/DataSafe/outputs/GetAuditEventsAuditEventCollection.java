@@ -14,13 +14,9 @@ public final class GetAuditEventsAuditEventCollection {
      * @return Array of audit event summary.
      * 
      */
-    private final List<GetAuditEventsAuditEventCollectionItem> items;
+    private List<GetAuditEventsAuditEventCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAuditEventsAuditEventCollection(@CustomType.Parameter("items") List<GetAuditEventsAuditEventCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAuditEventsAuditEventCollection() {}
     /**
      * @return Array of audit event summary.
      * 
@@ -36,27 +32,27 @@ public final class GetAuditEventsAuditEventCollection {
     public static Builder builder(GetAuditEventsAuditEventCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAuditEventsAuditEventCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditEventsAuditEventCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAuditEventsAuditEventCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAuditEventsAuditEventCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAuditEventsAuditEventCollection build() {
-            return new GetAuditEventsAuditEventCollection(items);
+        }
+        public GetAuditEventsAuditEventCollection build() {
+            final var o = new GetAuditEventsAuditEventCollection();
+            o.items = items;
+            return o;
         }
     }
 }

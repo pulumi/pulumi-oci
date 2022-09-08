@@ -14,13 +14,9 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      * @return A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service&#39;s VCN to the customer&#39;s VCN.
      * 
      */
-    private final List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps;
+    private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration(@CustomType.Parameter("reverseConnectionsSourceIps") List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps) {
-        this.reverseConnectionsSourceIps = reverseConnectionsSourceIps;
-    }
-
+    private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration() {}
     /**
      * @return A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service&#39;s VCN to the customer&#39;s VCN.
      * 
@@ -36,27 +32,27 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
     public static Builder builder(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.reverseConnectionsSourceIps = defaults.reverseConnectionsSourceIps;
         }
 
+        @CustomType.Setter
         public Builder reverseConnectionsSourceIps(List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps) {
             this.reverseConnectionsSourceIps = Objects.requireNonNull(reverseConnectionsSourceIps);
             return this;
         }
         public Builder reverseConnectionsSourceIps(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp... reverseConnectionsSourceIps) {
             return reverseConnectionsSourceIps(List.of(reverseConnectionsSourceIps));
-        }        public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration build() {
-            return new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration(reverseConnectionsSourceIps);
+        }
+        public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration build() {
+            final var o = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration();
+            o.reverseConnectionsSourceIps = reverseConnectionsSourceIps;
+            return o;
         }
     }
 }

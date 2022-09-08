@@ -15,87 +15,60 @@ public final class GetReportResult {
      * @return The OCID of the compartment containing the report.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Specifies a description of the report.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Name of the report.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Specifies the format of report to be excel or pdf
      * 
      */
-    private final String mimeType;
+    private String mimeType;
     /**
      * @return The OCID of the report definition.
      * 
      */
-    private final String reportDefinitionId;
-    private final String reportId;
+    private String reportDefinitionId;
+    private String reportId;
     /**
      * @return The current state of the report.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return Specifies the time at which the report was generated.
      * 
      */
-    private final String timeGenerated;
+    private String timeGenerated;
 
-    @CustomType.Constructor
-    private GetReportResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("mimeType") String mimeType,
-        @CustomType.Parameter("reportDefinitionId") String reportDefinitionId,
-        @CustomType.Parameter("reportId") String reportId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeGenerated") String timeGenerated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.mimeType = mimeType;
-        this.reportDefinitionId = reportDefinitionId;
-        this.reportId = reportId;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeGenerated = timeGenerated;
-    }
-
+    private GetReportResult() {}
     /**
      * @return The OCID of the compartment containing the report.
      * 
@@ -184,7 +157,7 @@ public final class GetReportResult {
     public static Builder builder(GetReportResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -198,11 +171,7 @@ public final class GetReportResult {
         private String state;
         private Map<String,Object> systemTags;
         private String timeGenerated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -219,55 +188,81 @@ public final class GetReportResult {
     	      this.timeGenerated = defaults.timeGenerated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder mimeType(String mimeType) {
             this.mimeType = Objects.requireNonNull(mimeType);
             return this;
         }
+        @CustomType.Setter
         public Builder reportDefinitionId(String reportDefinitionId) {
             this.reportDefinitionId = Objects.requireNonNull(reportDefinitionId);
             return this;
         }
+        @CustomType.Setter
         public Builder reportId(String reportId) {
             this.reportId = Objects.requireNonNull(reportId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeGenerated(String timeGenerated) {
             this.timeGenerated = Objects.requireNonNull(timeGenerated);
             return this;
-        }        public GetReportResult build() {
-            return new GetReportResult(compartmentId, definedTags, description, displayName, freeformTags, id, mimeType, reportDefinitionId, reportId, state, systemTags, timeGenerated);
+        }
+        public GetReportResult build() {
+            final var o = new GetReportResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.mimeType = mimeType;
+            o.reportDefinitionId = reportDefinitionId;
+            o.reportId = reportId;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeGenerated = timeGenerated;
+            return o;
         }
     }
 }

@@ -13,35 +13,24 @@ public final class GetScriptMonitorStatusCountMap {
      * @return Number of disabled monitors using the script.
      * 
      */
-    private final Integer disabled;
+    private Integer disabled;
     /**
      * @return Number of enabled monitors using the script.
      * 
      */
-    private final Integer enabled;
+    private Integer enabled;
     /**
      * @return Number of invalid monitors using the script.
      * 
      */
-    private final Integer invalid;
+    private Integer invalid;
     /**
      * @return Total number of monitors using the script.
      * 
      */
-    private final Integer total;
+    private Integer total;
 
-    @CustomType.Constructor
-    private GetScriptMonitorStatusCountMap(
-        @CustomType.Parameter("disabled") Integer disabled,
-        @CustomType.Parameter("enabled") Integer enabled,
-        @CustomType.Parameter("invalid") Integer invalid,
-        @CustomType.Parameter("total") Integer total) {
-        this.disabled = disabled;
-        this.enabled = enabled;
-        this.invalid = invalid;
-        this.total = total;
-    }
-
+    private GetScriptMonitorStatusCountMap() {}
     /**
      * @return Number of disabled monitors using the script.
      * 
@@ -78,17 +67,13 @@ public final class GetScriptMonitorStatusCountMap {
     public static Builder builder(GetScriptMonitorStatusCountMap defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer disabled;
         private Integer enabled;
         private Integer invalid;
         private Integer total;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetScriptMonitorStatusCountMap defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.disabled = defaults.disabled;
@@ -97,23 +82,33 @@ public final class GetScriptMonitorStatusCountMap {
     	      this.total = defaults.total;
         }
 
+        @CustomType.Setter
         public Builder disabled(Integer disabled) {
             this.disabled = Objects.requireNonNull(disabled);
             return this;
         }
+        @CustomType.Setter
         public Builder enabled(Integer enabled) {
             this.enabled = Objects.requireNonNull(enabled);
             return this;
         }
+        @CustomType.Setter
         public Builder invalid(Integer invalid) {
             this.invalid = Objects.requireNonNull(invalid);
             return this;
         }
+        @CustomType.Setter
         public Builder total(Integer total) {
             this.total = Objects.requireNonNull(total);
             return this;
-        }        public GetScriptMonitorStatusCountMap build() {
-            return new GetScriptMonitorStatusCountMap(disabled, enabled, invalid, total);
+        }
+        public GetScriptMonitorStatusCountMap build() {
+            final var o = new GetScriptMonitorStatusCountMap();
+            o.disabled = disabled;
+            o.enabled = enabled;
+            o.invalid = invalid;
+            o.total = total;
+            return o;
         }
     }
 }

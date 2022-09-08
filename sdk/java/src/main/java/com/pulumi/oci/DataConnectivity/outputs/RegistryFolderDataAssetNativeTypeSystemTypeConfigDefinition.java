@@ -20,63 +20,44 @@ public final class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition {
      * @return (Updatable) The parameter configuration details.
      * 
      */
-    private final @Nullable Map<String,Object> configParameterDefinitions;
+    private @Nullable Map<String,Object> configParameterDefinitions;
     /**
-     * @return (Updatable) Specifies whether the configuration is contained or not.
+     * @return (Updatable) Specifies whether the configuration is contained.
      * 
      */
-    private final @Nullable Boolean isContained;
+    private @Nullable Boolean isContained;
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return (Updatable) The type of the folder.
      * 
      */
-    private final @Nullable String modelType;
+    private @Nullable String modelType;
     /**
      * @return (Updatable) The model version of an object.
      * 
      */
-    private final @Nullable String modelVersion;
+    private @Nullable String modelVersion;
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final @Nullable Integer objectStatus;
+    private @Nullable Integer objectStatus;
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef;
+    private @Nullable RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef;
 
-    @CustomType.Constructor
-    private RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition(
-        @CustomType.Parameter("configParameterDefinitions") @Nullable Map<String,Object> configParameterDefinitions,
-        @CustomType.Parameter("isContained") @Nullable Boolean isContained,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("modelType") @Nullable String modelType,
-        @CustomType.Parameter("modelVersion") @Nullable String modelVersion,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("objectStatus") @Nullable Integer objectStatus,
-        @CustomType.Parameter("parentRef") @Nullable RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef) {
-        this.configParameterDefinitions = configParameterDefinitions;
-        this.isContained = isContained;
-        this.key = key;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.parentRef = parentRef;
-    }
-
+    private RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition() {}
     /**
      * @return (Updatable) The parameter configuration details.
      * 
@@ -85,14 +66,14 @@ public final class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition {
         return this.configParameterDefinitions == null ? Map.of() : this.configParameterDefinitions;
     }
     /**
-     * @return (Updatable) Specifies whether the configuration is contained or not.
+     * @return (Updatable) Specifies whether the configuration is contained.
      * 
      */
     public Optional<Boolean> isContained() {
         return Optional.ofNullable(this.isContained);
     }
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public Optional<String> key() {
@@ -113,7 +94,7 @@ public final class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition {
         return Optional.ofNullable(this.modelVersion);
     }
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<String> name() {
@@ -127,7 +108,7 @@ public final class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition {
         return Optional.ofNullable(this.objectStatus);
     }
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef> parentRef() {
@@ -141,7 +122,7 @@ public final class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition {
     public static Builder builder(RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> configParameterDefinitions;
         private @Nullable Boolean isContained;
@@ -151,11 +132,7 @@ public final class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition {
         private @Nullable String name;
         private @Nullable Integer objectStatus;
         private @Nullable RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configParameterDefinitions = defaults.configParameterDefinitions;
@@ -168,39 +145,57 @@ public final class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition {
     	      this.parentRef = defaults.parentRef;
         }
 
+        @CustomType.Setter
         public Builder configParameterDefinitions(@Nullable Map<String,Object> configParameterDefinitions) {
             this.configParameterDefinitions = configParameterDefinitions;
             return this;
         }
+        @CustomType.Setter
         public Builder isContained(@Nullable Boolean isContained) {
             this.isContained = isContained;
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(@Nullable String modelType) {
             this.modelType = modelType;
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(@Nullable String modelVersion) {
             this.modelVersion = modelVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(@Nullable Integer objectStatus) {
             this.objectStatus = objectStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(@Nullable RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef) {
             this.parentRef = parentRef;
             return this;
-        }        public RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition build() {
-            return new RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition(configParameterDefinitions, isContained, key, modelType, modelVersion, name, objectStatus, parentRef);
+        }
+        public RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition build() {
+            final var o = new RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition();
+            o.configParameterDefinitions = configParameterDefinitions;
+            o.isContained = isContained;
+            o.key = key;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.parentRef = parentRef;
+            return o;
         }
     }
 }

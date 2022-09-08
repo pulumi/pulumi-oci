@@ -13,21 +13,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig {
      * @return Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
      * 
      */
-    private final String manualBackupBucketName;
+    private String manualBackupBucketName;
     /**
      * @return The manual backup destination type.
      * 
      */
-    private final String manualBackupType;
+    private String manualBackupType;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig(
-        @CustomType.Parameter("manualBackupBucketName") String manualBackupBucketName,
-        @CustomType.Parameter("manualBackupType") String manualBackupType) {
-        this.manualBackupBucketName = manualBackupBucketName;
-        this.manualBackupType = manualBackupType;
-    }
-
+    private GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig() {}
     /**
      * @return Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
      * 
@@ -50,30 +43,32 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig {
     public static Builder builder(GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String manualBackupBucketName;
         private String manualBackupType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.manualBackupBucketName = defaults.manualBackupBucketName;
     	      this.manualBackupType = defaults.manualBackupType;
         }
 
+        @CustomType.Setter
         public Builder manualBackupBucketName(String manualBackupBucketName) {
             this.manualBackupBucketName = Objects.requireNonNull(manualBackupBucketName);
             return this;
         }
+        @CustomType.Setter
         public Builder manualBackupType(String manualBackupType) {
             this.manualBackupType = Objects.requireNonNull(manualBackupType);
             return this;
-        }        public GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig build() {
-            return new GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig(manualBackupBucketName, manualBackupType);
+        }
+        public GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig build() {
+            final var o = new GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig();
+            o.manualBackupBucketName = manualBackupBucketName;
+            o.manualBackupType = manualBackupType;
+            return o;
         }
     }
 }

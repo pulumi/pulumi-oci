@@ -8,10 +8,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUserAssessmentUserAnalyticsUserAggregationItem {
-    @CustomType.Constructor
-    private GetUserAssessmentUserAnalyticsUserAggregationItem() {
-    }
-
+    private GetUserAssessmentUserAnalyticsUserAggregationItem() {}
 
     public static Builder builder() {
         return new Builder();
@@ -20,18 +17,16 @@ public final class GetUserAssessmentUserAnalyticsUserAggregationItem {
     public static Builder builder(GetUserAssessmentUserAnalyticsUserAggregationItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentUserAnalyticsUserAggregationItem defaults) {
     	      Objects.requireNonNull(defaults);
         }
+
         public GetUserAssessmentUserAnalyticsUserAggregationItem build() {
-            return new GetUserAssessmentUserAnalyticsUserAggregationItem();
+            final var o = new GetUserAssessmentUserAnalyticsUserAggregationItem();
+            return o;
         }
     }
 }

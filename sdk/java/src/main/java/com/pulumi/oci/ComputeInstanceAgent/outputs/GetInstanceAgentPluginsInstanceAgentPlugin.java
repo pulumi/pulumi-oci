@@ -13,35 +13,24 @@ public final class GetInstanceAgentPluginsInstanceAgentPlugin {
      * @return The optional message from the agent plugin
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The plugin name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The plugin status
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The last update time of the plugin in UTC
      * 
      */
-    private final String timeLastUpdatedUtc;
+    private String timeLastUpdatedUtc;
 
-    @CustomType.Constructor
-    private GetInstanceAgentPluginsInstanceAgentPlugin(
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("timeLastUpdatedUtc") String timeLastUpdatedUtc) {
-        this.message = message;
-        this.name = name;
-        this.status = status;
-        this.timeLastUpdatedUtc = timeLastUpdatedUtc;
-    }
-
+    private GetInstanceAgentPluginsInstanceAgentPlugin() {}
     /**
      * @return The optional message from the agent plugin
      * 
@@ -78,17 +67,13 @@ public final class GetInstanceAgentPluginsInstanceAgentPlugin {
     public static Builder builder(GetInstanceAgentPluginsInstanceAgentPlugin defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String message;
         private String name;
         private String status;
         private String timeLastUpdatedUtc;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceAgentPluginsInstanceAgentPlugin defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
@@ -97,23 +82,33 @@ public final class GetInstanceAgentPluginsInstanceAgentPlugin {
     	      this.timeLastUpdatedUtc = defaults.timeLastUpdatedUtc;
         }
 
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastUpdatedUtc(String timeLastUpdatedUtc) {
             this.timeLastUpdatedUtc = Objects.requireNonNull(timeLastUpdatedUtc);
             return this;
-        }        public GetInstanceAgentPluginsInstanceAgentPlugin build() {
-            return new GetInstanceAgentPluginsInstanceAgentPlugin(message, name, status, timeLastUpdatedUtc);
+        }
+        public GetInstanceAgentPluginsInstanceAgentPlugin build() {
+            final var o = new GetInstanceAgentPluginsInstanceAgentPlugin();
+            o.message = message;
+            o.name = name;
+            o.status = status;
+            o.timeLastUpdatedUtc = timeLastUpdatedUtc;
+            return o;
         }
     }
 }

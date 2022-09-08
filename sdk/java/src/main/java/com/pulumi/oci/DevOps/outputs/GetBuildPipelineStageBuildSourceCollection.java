@@ -14,13 +14,9 @@ public final class GetBuildPipelineStageBuildSourceCollection {
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
      */
-    private final List<GetBuildPipelineStageBuildSourceCollectionItem> items;
+    private List<GetBuildPipelineStageBuildSourceCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStageBuildSourceCollection(@CustomType.Parameter("items") List<GetBuildPipelineStageBuildSourceCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildPipelineStageBuildSourceCollection() {}
     /**
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildPipelineStageBuildSourceCollection {
     public static Builder builder(GetBuildPipelineStageBuildSourceCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildPipelineStageBuildSourceCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStageBuildSourceCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildPipelineStageBuildSourceCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildPipelineStageBuildSourceCollectionItem... items) {
             return items(List.of(items));
-        }        public GetBuildPipelineStageBuildSourceCollection build() {
-            return new GetBuildPipelineStageBuildSourceCollection(items);
+        }
+        public GetBuildPipelineStageBuildSourceCollection build() {
+            final var o = new GetBuildPipelineStageBuildSourceCollection();
+            o.items = items;
+            return o;
         }
     }
 }

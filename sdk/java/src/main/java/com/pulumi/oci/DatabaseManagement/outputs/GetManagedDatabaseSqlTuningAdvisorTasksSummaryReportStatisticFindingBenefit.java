@@ -13,35 +13,24 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
      * @return The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are implemented.
      * 
      */
-    private final Integer dbTimeAfterImplemented;
+    private Integer dbTimeAfterImplemented;
     /**
      * @return The estimated database time of the above SQL statements, if SQL Tuning Advisor recommendations are implemented.
      * 
      */
-    private final Integer dbTimeAfterRecommended;
+    private Integer dbTimeAfterRecommended;
     /**
      * @return The actual database time of the above SQL statements, before SQL Tuning Advisor recommendations are implemented.
      * 
      */
-    private final Integer dbTimeBeforeImplemented;
+    private Integer dbTimeBeforeImplemented;
     /**
      * @return The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are not implemented.
      * 
      */
-    private final Integer dbTimeBeforeRecommended;
+    private Integer dbTimeBeforeRecommended;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit(
-        @CustomType.Parameter("dbTimeAfterImplemented") Integer dbTimeAfterImplemented,
-        @CustomType.Parameter("dbTimeAfterRecommended") Integer dbTimeAfterRecommended,
-        @CustomType.Parameter("dbTimeBeforeImplemented") Integer dbTimeBeforeImplemented,
-        @CustomType.Parameter("dbTimeBeforeRecommended") Integer dbTimeBeforeRecommended) {
-        this.dbTimeAfterImplemented = dbTimeAfterImplemented;
-        this.dbTimeAfterRecommended = dbTimeAfterRecommended;
-        this.dbTimeBeforeImplemented = dbTimeBeforeImplemented;
-        this.dbTimeBeforeRecommended = dbTimeBeforeRecommended;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit() {}
     /**
      * @return The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are implemented.
      * 
@@ -78,17 +67,13 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer dbTimeAfterImplemented;
         private Integer dbTimeAfterRecommended;
         private Integer dbTimeBeforeImplemented;
         private Integer dbTimeBeforeRecommended;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbTimeAfterImplemented = defaults.dbTimeAfterImplemented;
@@ -97,23 +82,33 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     	      this.dbTimeBeforeRecommended = defaults.dbTimeBeforeRecommended;
         }
 
+        @CustomType.Setter
         public Builder dbTimeAfterImplemented(Integer dbTimeAfterImplemented) {
             this.dbTimeAfterImplemented = Objects.requireNonNull(dbTimeAfterImplemented);
             return this;
         }
+        @CustomType.Setter
         public Builder dbTimeAfterRecommended(Integer dbTimeAfterRecommended) {
             this.dbTimeAfterRecommended = Objects.requireNonNull(dbTimeAfterRecommended);
             return this;
         }
+        @CustomType.Setter
         public Builder dbTimeBeforeImplemented(Integer dbTimeBeforeImplemented) {
             this.dbTimeBeforeImplemented = Objects.requireNonNull(dbTimeBeforeImplemented);
             return this;
         }
+        @CustomType.Setter
         public Builder dbTimeBeforeRecommended(Integer dbTimeBeforeRecommended) {
             this.dbTimeBeforeRecommended = Objects.requireNonNull(dbTimeBeforeRecommended);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit(dbTimeAfterImplemented, dbTimeAfterRecommended, dbTimeBeforeImplemented, dbTimeBeforeRecommended);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit();
+            o.dbTimeAfterImplemented = dbTimeAfterImplemented;
+            o.dbTimeAfterRecommended = dbTimeAfterRecommended;
+            o.dbTimeBeforeImplemented = dbTimeBeforeImplemented;
+            o.dbTimeBeforeRecommended = dbTimeBeforeRecommended;
+            return o;
         }
     }
 }

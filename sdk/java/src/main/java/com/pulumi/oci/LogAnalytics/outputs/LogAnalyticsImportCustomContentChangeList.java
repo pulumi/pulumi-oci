@@ -15,70 +15,49 @@ public final class LogAnalyticsImportCustomContentChangeList {
      * @return A list of field display names with conflicts.
      * 
      */
-    private final @Nullable List<String> conflictFieldDisplayNames;
+    private @Nullable List<String> conflictFieldDisplayNames;
     /**
      * @return A list of parser names with conflicts.
      * 
      */
-    private final @Nullable List<String> conflictParserNames;
+    private @Nullable List<String> conflictParserNames;
     /**
      * @return A list of source names with conflicts.
      * 
      */
-    private final @Nullable List<String> conflictSourceNames;
+    private @Nullable List<String> conflictSourceNames;
     /**
      * @return An array of created field display names.
      * 
      */
-    private final @Nullable List<String> createdFieldDisplayNames;
+    private @Nullable List<String> createdFieldDisplayNames;
     /**
      * @return An array of created parser names.
      * 
      */
-    private final @Nullable List<String> createdParserNames;
+    private @Nullable List<String> createdParserNames;
     /**
      * @return An array of created source names.
      * 
      */
-    private final @Nullable List<String> createdSourceNames;
+    private @Nullable List<String> createdSourceNames;
     /**
      * @return An array of updated field display names.
      * 
      */
-    private final @Nullable List<String> updatedFieldDisplayNames;
+    private @Nullable List<String> updatedFieldDisplayNames;
     /**
      * @return An array of updated parser names.
      * 
      */
-    private final @Nullable List<String> updatedParserNames;
+    private @Nullable List<String> updatedParserNames;
     /**
      * @return An array of updated source names.
      * 
      */
-    private final @Nullable List<String> updatedSourceNames;
+    private @Nullable List<String> updatedSourceNames;
 
-    @CustomType.Constructor
-    private LogAnalyticsImportCustomContentChangeList(
-        @CustomType.Parameter("conflictFieldDisplayNames") @Nullable List<String> conflictFieldDisplayNames,
-        @CustomType.Parameter("conflictParserNames") @Nullable List<String> conflictParserNames,
-        @CustomType.Parameter("conflictSourceNames") @Nullable List<String> conflictSourceNames,
-        @CustomType.Parameter("createdFieldDisplayNames") @Nullable List<String> createdFieldDisplayNames,
-        @CustomType.Parameter("createdParserNames") @Nullable List<String> createdParserNames,
-        @CustomType.Parameter("createdSourceNames") @Nullable List<String> createdSourceNames,
-        @CustomType.Parameter("updatedFieldDisplayNames") @Nullable List<String> updatedFieldDisplayNames,
-        @CustomType.Parameter("updatedParserNames") @Nullable List<String> updatedParserNames,
-        @CustomType.Parameter("updatedSourceNames") @Nullable List<String> updatedSourceNames) {
-        this.conflictFieldDisplayNames = conflictFieldDisplayNames;
-        this.conflictParserNames = conflictParserNames;
-        this.conflictSourceNames = conflictSourceNames;
-        this.createdFieldDisplayNames = createdFieldDisplayNames;
-        this.createdParserNames = createdParserNames;
-        this.createdSourceNames = createdSourceNames;
-        this.updatedFieldDisplayNames = updatedFieldDisplayNames;
-        this.updatedParserNames = updatedParserNames;
-        this.updatedSourceNames = updatedSourceNames;
-    }
-
+    private LogAnalyticsImportCustomContentChangeList() {}
     /**
      * @return A list of field display names with conflicts.
      * 
@@ -150,7 +129,7 @@ public final class LogAnalyticsImportCustomContentChangeList {
     public static Builder builder(LogAnalyticsImportCustomContentChangeList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> conflictFieldDisplayNames;
         private @Nullable List<String> conflictParserNames;
@@ -161,11 +140,7 @@ public final class LogAnalyticsImportCustomContentChangeList {
         private @Nullable List<String> updatedFieldDisplayNames;
         private @Nullable List<String> updatedParserNames;
         private @Nullable List<String> updatedSourceNames;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(LogAnalyticsImportCustomContentChangeList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.conflictFieldDisplayNames = defaults.conflictFieldDisplayNames;
@@ -179,6 +154,7 @@ public final class LogAnalyticsImportCustomContentChangeList {
     	      this.updatedSourceNames = defaults.updatedSourceNames;
         }
 
+        @CustomType.Setter
         public Builder conflictFieldDisplayNames(@Nullable List<String> conflictFieldDisplayNames) {
             this.conflictFieldDisplayNames = conflictFieldDisplayNames;
             return this;
@@ -186,6 +162,7 @@ public final class LogAnalyticsImportCustomContentChangeList {
         public Builder conflictFieldDisplayNames(String... conflictFieldDisplayNames) {
             return conflictFieldDisplayNames(List.of(conflictFieldDisplayNames));
         }
+        @CustomType.Setter
         public Builder conflictParserNames(@Nullable List<String> conflictParserNames) {
             this.conflictParserNames = conflictParserNames;
             return this;
@@ -193,6 +170,7 @@ public final class LogAnalyticsImportCustomContentChangeList {
         public Builder conflictParserNames(String... conflictParserNames) {
             return conflictParserNames(List.of(conflictParserNames));
         }
+        @CustomType.Setter
         public Builder conflictSourceNames(@Nullable List<String> conflictSourceNames) {
             this.conflictSourceNames = conflictSourceNames;
             return this;
@@ -200,6 +178,7 @@ public final class LogAnalyticsImportCustomContentChangeList {
         public Builder conflictSourceNames(String... conflictSourceNames) {
             return conflictSourceNames(List.of(conflictSourceNames));
         }
+        @CustomType.Setter
         public Builder createdFieldDisplayNames(@Nullable List<String> createdFieldDisplayNames) {
             this.createdFieldDisplayNames = createdFieldDisplayNames;
             return this;
@@ -207,6 +186,7 @@ public final class LogAnalyticsImportCustomContentChangeList {
         public Builder createdFieldDisplayNames(String... createdFieldDisplayNames) {
             return createdFieldDisplayNames(List.of(createdFieldDisplayNames));
         }
+        @CustomType.Setter
         public Builder createdParserNames(@Nullable List<String> createdParserNames) {
             this.createdParserNames = createdParserNames;
             return this;
@@ -214,6 +194,7 @@ public final class LogAnalyticsImportCustomContentChangeList {
         public Builder createdParserNames(String... createdParserNames) {
             return createdParserNames(List.of(createdParserNames));
         }
+        @CustomType.Setter
         public Builder createdSourceNames(@Nullable List<String> createdSourceNames) {
             this.createdSourceNames = createdSourceNames;
             return this;
@@ -221,6 +202,7 @@ public final class LogAnalyticsImportCustomContentChangeList {
         public Builder createdSourceNames(String... createdSourceNames) {
             return createdSourceNames(List.of(createdSourceNames));
         }
+        @CustomType.Setter
         public Builder updatedFieldDisplayNames(@Nullable List<String> updatedFieldDisplayNames) {
             this.updatedFieldDisplayNames = updatedFieldDisplayNames;
             return this;
@@ -228,6 +210,7 @@ public final class LogAnalyticsImportCustomContentChangeList {
         public Builder updatedFieldDisplayNames(String... updatedFieldDisplayNames) {
             return updatedFieldDisplayNames(List.of(updatedFieldDisplayNames));
         }
+        @CustomType.Setter
         public Builder updatedParserNames(@Nullable List<String> updatedParserNames) {
             this.updatedParserNames = updatedParserNames;
             return this;
@@ -235,14 +218,26 @@ public final class LogAnalyticsImportCustomContentChangeList {
         public Builder updatedParserNames(String... updatedParserNames) {
             return updatedParserNames(List.of(updatedParserNames));
         }
+        @CustomType.Setter
         public Builder updatedSourceNames(@Nullable List<String> updatedSourceNames) {
             this.updatedSourceNames = updatedSourceNames;
             return this;
         }
         public Builder updatedSourceNames(String... updatedSourceNames) {
             return updatedSourceNames(List.of(updatedSourceNames));
-        }        public LogAnalyticsImportCustomContentChangeList build() {
-            return new LogAnalyticsImportCustomContentChangeList(conflictFieldDisplayNames, conflictParserNames, conflictSourceNames, createdFieldDisplayNames, createdParserNames, createdSourceNames, updatedFieldDisplayNames, updatedParserNames, updatedSourceNames);
+        }
+        public LogAnalyticsImportCustomContentChangeList build() {
+            final var o = new LogAnalyticsImportCustomContentChangeList();
+            o.conflictFieldDisplayNames = conflictFieldDisplayNames;
+            o.conflictParserNames = conflictParserNames;
+            o.conflictSourceNames = conflictSourceNames;
+            o.createdFieldDisplayNames = createdFieldDisplayNames;
+            o.createdParserNames = createdParserNames;
+            o.createdSourceNames = createdSourceNames;
+            o.updatedFieldDisplayNames = updatedFieldDisplayNames;
+            o.updatedParserNames = updatedParserNames;
+            o.updatedSourceNames = updatedSourceNames;
+            return o;
         }
     }
 }

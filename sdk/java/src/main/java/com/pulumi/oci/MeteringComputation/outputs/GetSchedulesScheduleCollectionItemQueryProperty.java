@@ -18,63 +18,44 @@ public final class GetSchedulesScheduleCollectionItemQueryProperty {
      * @return The depth level of the compartment.
      * 
      */
-    private final Double compartmentDepth;
+    private Double compartmentDepth;
     /**
      * @return Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
      * 
      */
-    private final List<GetSchedulesScheduleCollectionItemQueryPropertyDateRange> dateRanges;
+    private List<GetSchedulesScheduleCollectionItemQueryPropertyDateRange> dateRanges;
     /**
      * @return The filter object for query usage.
      * 
      */
-    private final String filter;
+    private String filter;
     /**
      * @return The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
      * 
      */
-    private final String granularity;
+    private String granularity;
     /**
      * @return Aggregate the result by. For example: [ &#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34; ]
      * 
      */
-    private final List<String> groupBies;
+    private List<String> groupBies;
     /**
      * @return GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { &#34;namespace&#34;: &#34;oracle&#34;, &#34;key&#34;: &#34;createdBy&#34; ]
      * 
      */
-    private final List<GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag> groupByTags;
+    private List<GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag> groupByTags;
     /**
      * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      * 
      */
-    private final Boolean isAggregateByTime;
+    private Boolean isAggregateByTime;
     /**
      * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
      * 
      */
-    private final String queryType;
+    private String queryType;
 
-    @CustomType.Constructor
-    private GetSchedulesScheduleCollectionItemQueryProperty(
-        @CustomType.Parameter("compartmentDepth") Double compartmentDepth,
-        @CustomType.Parameter("dateRanges") List<GetSchedulesScheduleCollectionItemQueryPropertyDateRange> dateRanges,
-        @CustomType.Parameter("filter") String filter,
-        @CustomType.Parameter("granularity") String granularity,
-        @CustomType.Parameter("groupBies") List<String> groupBies,
-        @CustomType.Parameter("groupByTags") List<GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag> groupByTags,
-        @CustomType.Parameter("isAggregateByTime") Boolean isAggregateByTime,
-        @CustomType.Parameter("queryType") String queryType) {
-        this.compartmentDepth = compartmentDepth;
-        this.dateRanges = dateRanges;
-        this.filter = filter;
-        this.granularity = granularity;
-        this.groupBies = groupBies;
-        this.groupByTags = groupByTags;
-        this.isAggregateByTime = isAggregateByTime;
-        this.queryType = queryType;
-    }
-
+    private GetSchedulesScheduleCollectionItemQueryProperty() {}
     /**
      * @return The depth level of the compartment.
      * 
@@ -139,7 +120,7 @@ public final class GetSchedulesScheduleCollectionItemQueryProperty {
     public static Builder builder(GetSchedulesScheduleCollectionItemQueryProperty defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double compartmentDepth;
         private List<GetSchedulesScheduleCollectionItemQueryPropertyDateRange> dateRanges;
@@ -149,11 +130,7 @@ public final class GetSchedulesScheduleCollectionItemQueryProperty {
         private List<GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag> groupByTags;
         private Boolean isAggregateByTime;
         private String queryType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSchedulesScheduleCollectionItemQueryProperty defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentDepth = defaults.compartmentDepth;
@@ -166,10 +143,12 @@ public final class GetSchedulesScheduleCollectionItemQueryProperty {
     	      this.queryType = defaults.queryType;
         }
 
+        @CustomType.Setter
         public Builder compartmentDepth(Double compartmentDepth) {
             this.compartmentDepth = Objects.requireNonNull(compartmentDepth);
             return this;
         }
+        @CustomType.Setter
         public Builder dateRanges(List<GetSchedulesScheduleCollectionItemQueryPropertyDateRange> dateRanges) {
             this.dateRanges = Objects.requireNonNull(dateRanges);
             return this;
@@ -177,14 +156,17 @@ public final class GetSchedulesScheduleCollectionItemQueryProperty {
         public Builder dateRanges(GetSchedulesScheduleCollectionItemQueryPropertyDateRange... dateRanges) {
             return dateRanges(List.of(dateRanges));
         }
+        @CustomType.Setter
         public Builder filter(String filter) {
             this.filter = Objects.requireNonNull(filter);
             return this;
         }
+        @CustomType.Setter
         public Builder granularity(String granularity) {
             this.granularity = Objects.requireNonNull(granularity);
             return this;
         }
+        @CustomType.Setter
         public Builder groupBies(List<String> groupBies) {
             this.groupBies = Objects.requireNonNull(groupBies);
             return this;
@@ -192,6 +174,7 @@ public final class GetSchedulesScheduleCollectionItemQueryProperty {
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
+        @CustomType.Setter
         public Builder groupByTags(List<GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag> groupByTags) {
             this.groupByTags = Objects.requireNonNull(groupByTags);
             return this;
@@ -199,15 +182,27 @@ public final class GetSchedulesScheduleCollectionItemQueryProperty {
         public Builder groupByTags(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag... groupByTags) {
             return groupByTags(List.of(groupByTags));
         }
+        @CustomType.Setter
         public Builder isAggregateByTime(Boolean isAggregateByTime) {
             this.isAggregateByTime = Objects.requireNonNull(isAggregateByTime);
             return this;
         }
+        @CustomType.Setter
         public Builder queryType(String queryType) {
             this.queryType = Objects.requireNonNull(queryType);
             return this;
-        }        public GetSchedulesScheduleCollectionItemQueryProperty build() {
-            return new GetSchedulesScheduleCollectionItemQueryProperty(compartmentDepth, dateRanges, filter, granularity, groupBies, groupByTags, isAggregateByTime, queryType);
+        }
+        public GetSchedulesScheduleCollectionItemQueryProperty build() {
+            final var o = new GetSchedulesScheduleCollectionItemQueryProperty();
+            o.compartmentDepth = compartmentDepth;
+            o.dateRanges = dateRanges;
+            o.filter = filter;
+            o.granularity = granularity;
+            o.groupBies = groupBies;
+            o.groupByTags = groupByTags;
+            o.isAggregateByTime = isAggregateByTime;
+            o.queryType = queryType;
+            return o;
         }
     }
 }

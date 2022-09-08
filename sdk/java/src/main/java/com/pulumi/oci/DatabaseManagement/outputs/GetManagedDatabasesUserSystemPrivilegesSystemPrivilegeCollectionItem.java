@@ -13,35 +13,24 @@ public final class GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollect
      * @return Indicates whether the system privilege is granted with the ADMIN option (YES) or not (NO).
      * 
      */
-    private final String adminOption;
+    private String adminOption;
     /**
      * @return Indicates how the system privilege was granted. Possible values: YES if the system privilege is granted commonly (CONTAINER=ALL is used) NO if the system privilege is granted locally (CONTAINER=ALL is not used)
      * 
      */
-    private final String common;
+    private String common;
     /**
      * @return Indicates whether the granted system privilege is inherited from another container (YES) or not (NO).
      * 
      */
-    private final String inherited;
+    private String inherited;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem(
-        @CustomType.Parameter("adminOption") String adminOption,
-        @CustomType.Parameter("common") String common,
-        @CustomType.Parameter("inherited") String inherited,
-        @CustomType.Parameter("name") String name) {
-        this.adminOption = adminOption;
-        this.common = common;
-        this.inherited = inherited;
-        this.name = name;
-    }
-
+    private GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem() {}
     /**
      * @return Indicates whether the system privilege is granted with the ADMIN option (YES) or not (NO).
      * 
@@ -78,17 +67,13 @@ public final class GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollect
     public static Builder builder(GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminOption;
         private String common;
         private String inherited;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminOption = defaults.adminOption;
@@ -97,23 +82,33 @@ public final class GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollect
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder adminOption(String adminOption) {
             this.adminOption = Objects.requireNonNull(adminOption);
             return this;
         }
+        @CustomType.Setter
         public Builder common(String common) {
             this.common = Objects.requireNonNull(common);
             return this;
         }
+        @CustomType.Setter
         public Builder inherited(String inherited) {
             this.inherited = Objects.requireNonNull(inherited);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem build() {
-            return new GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem(adminOption, common, inherited, name);
+        }
+        public GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem build() {
+            final var o = new GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem();
+            o.adminOption = adminOption;
+            o.common = common;
+            o.inherited = inherited;
+            o.name = name;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class DeployStageDeployStagePredecessorCollection {
      * @return (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
      * 
      */
-    private final List<DeployStageDeployStagePredecessorCollectionItem> items;
+    private List<DeployStageDeployStagePredecessorCollectionItem> items;
 
-    @CustomType.Constructor
-    private DeployStageDeployStagePredecessorCollection(@CustomType.Parameter("items") List<DeployStageDeployStagePredecessorCollectionItem> items) {
-        this.items = items;
-    }
-
+    private DeployStageDeployStagePredecessorCollection() {}
     /**
      * @return (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
      * 
@@ -36,27 +32,27 @@ public final class DeployStageDeployStagePredecessorCollection {
     public static Builder builder(DeployStageDeployStagePredecessorCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<DeployStageDeployStagePredecessorCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeployStageDeployStagePredecessorCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<DeployStageDeployStagePredecessorCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(DeployStageDeployStagePredecessorCollectionItem... items) {
             return items(List.of(items));
-        }        public DeployStageDeployStagePredecessorCollection build() {
-            return new DeployStageDeployStagePredecessorCollection(items);
+        }
+        public DeployStageDeployStagePredecessorCollection build() {
+            final var o = new DeployStageDeployStagePredecessorCollection();
+            o.items = items;
+            return o;
         }
     }
 }

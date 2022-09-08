@@ -19,47 +19,32 @@ public final class RouteTableRouteRule {
      * 
      */
     @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
-    private final @Nullable String cidrBlock;
+    private @Nullable String cidrBlock;
     /**
      * @return (Updatable) An optional description of your choice for the rule.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
      * 
      */
-    private final @Nullable String destination;
+    private @Nullable String destination;
     /**
      * @return (Updatable) Type of destination for the rule. Required if you provide a `destination`.
      * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
      * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
      * 
      */
-    private final @Nullable String destinationType;
+    private @Nullable String destinationType;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule&#39;s target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      * 
      */
-    private final String networkEntityId;
-    private final @Nullable String routeType;
+    private String networkEntityId;
+    private @Nullable String routeType;
 
-    @CustomType.Constructor
-    private RouteTableRouteRule(
-        @CustomType.Parameter("cidrBlock") @Nullable String cidrBlock,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("destination") @Nullable String destination,
-        @CustomType.Parameter("destinationType") @Nullable String destinationType,
-        @CustomType.Parameter("networkEntityId") String networkEntityId,
-        @CustomType.Parameter("routeType") @Nullable String routeType) {
-        this.cidrBlock = cidrBlock;
-        this.description = description;
-        this.destination = destination;
-        this.destinationType = destinationType;
-        this.networkEntityId = networkEntityId;
-        this.routeType = routeType;
-    }
-
+    private RouteTableRouteRule() {}
     /**
      * @return (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
      * 
@@ -112,7 +97,7 @@ public final class RouteTableRouteRule {
     public static Builder builder(RouteTableRouteRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String cidrBlock;
         private @Nullable String description;
@@ -120,11 +105,7 @@ public final class RouteTableRouteRule {
         private @Nullable String destinationType;
         private String networkEntityId;
         private @Nullable String routeType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RouteTableRouteRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidrBlock = defaults.cidrBlock;
@@ -135,31 +116,45 @@ public final class RouteTableRouteRule {
     	      this.routeType = defaults.routeType;
         }
 
+        @CustomType.Setter
         public Builder cidrBlock(@Nullable String cidrBlock) {
             this.cidrBlock = cidrBlock;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder destination(@Nullable String destination) {
             this.destination = destination;
             return this;
         }
+        @CustomType.Setter
         public Builder destinationType(@Nullable String destinationType) {
             this.destinationType = destinationType;
             return this;
         }
+        @CustomType.Setter
         public Builder networkEntityId(String networkEntityId) {
             this.networkEntityId = Objects.requireNonNull(networkEntityId);
             return this;
         }
+        @CustomType.Setter
         public Builder routeType(@Nullable String routeType) {
             this.routeType = routeType;
             return this;
-        }        public RouteTableRouteRule build() {
-            return new RouteTableRouteRule(cidrBlock, description, destination, destinationType, networkEntityId, routeType);
+        }
+        public RouteTableRouteRule build() {
+            final var o = new RouteTableRouteRule();
+            o.cidrBlock = cidrBlock;
+            o.description = description;
+            o.destination = destination;
+            o.destinationType = destinationType;
+            o.networkEntityId = networkEntityId;
+            o.routeType = routeType;
+            return o;
         }
     }
 }

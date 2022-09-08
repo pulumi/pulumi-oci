@@ -15,65 +15,46 @@ public final class ImageImageSourceDetails {
      * @return The Object Storage bucket for the image.
      * 
      */
-    private final @Nullable String bucketName;
+    private @Nullable String bucketName;
     /**
      * @return The Object Storage namespace for the image.
      * 
      */
-    private final @Nullable String namespaceName;
+    private @Nullable String namespaceName;
     /**
      * @return The Object Storage name for the image.
      * 
      */
-    private final @Nullable String objectName;
+    private @Nullable String objectName;
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    private final @Nullable String operatingSystem;
+    private @Nullable String operatingSystem;
     /**
      * @return The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    private final @Nullable String operatingSystemVersion;
+    private @Nullable String operatingSystemVersion;
     /**
      * @return The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
      * * `QCOW2`
      * * `VMDK`
      * 
      */
-    private final @Nullable String sourceImageType;
+    private @Nullable String sourceImageType;
     /**
      * @return The source type for the image. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. Use `objectStorageUri` when specifying the Object Storage URL.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
     /**
      * @return The Object Storage URL for the image.
      * 
      */
-    private final @Nullable String sourceUri;
+    private @Nullable String sourceUri;
 
-    @CustomType.Constructor
-    private ImageImageSourceDetails(
-        @CustomType.Parameter("bucketName") @Nullable String bucketName,
-        @CustomType.Parameter("namespaceName") @Nullable String namespaceName,
-        @CustomType.Parameter("objectName") @Nullable String objectName,
-        @CustomType.Parameter("operatingSystem") @Nullable String operatingSystem,
-        @CustomType.Parameter("operatingSystemVersion") @Nullable String operatingSystemVersion,
-        @CustomType.Parameter("sourceImageType") @Nullable String sourceImageType,
-        @CustomType.Parameter("sourceType") String sourceType,
-        @CustomType.Parameter("sourceUri") @Nullable String sourceUri) {
-        this.bucketName = bucketName;
-        this.namespaceName = namespaceName;
-        this.objectName = objectName;
-        this.operatingSystem = operatingSystem;
-        this.operatingSystemVersion = operatingSystemVersion;
-        this.sourceImageType = sourceImageType;
-        this.sourceType = sourceType;
-        this.sourceUri = sourceUri;
-    }
-
+    private ImageImageSourceDetails() {}
     /**
      * @return The Object Storage bucket for the image.
      * 
@@ -140,7 +121,7 @@ public final class ImageImageSourceDetails {
     public static Builder builder(ImageImageSourceDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String bucketName;
         private @Nullable String namespaceName;
@@ -150,11 +131,7 @@ public final class ImageImageSourceDetails {
         private @Nullable String sourceImageType;
         private String sourceType;
         private @Nullable String sourceUri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ImageImageSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucketName = defaults.bucketName;
@@ -167,39 +144,57 @@ public final class ImageImageSourceDetails {
     	      this.sourceUri = defaults.sourceUri;
         }
 
+        @CustomType.Setter
         public Builder bucketName(@Nullable String bucketName) {
             this.bucketName = bucketName;
             return this;
         }
+        @CustomType.Setter
         public Builder namespaceName(@Nullable String namespaceName) {
             this.namespaceName = namespaceName;
             return this;
         }
+        @CustomType.Setter
         public Builder objectName(@Nullable String objectName) {
             this.objectName = objectName;
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystem(@Nullable String operatingSystem) {
             this.operatingSystem = operatingSystem;
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystemVersion(@Nullable String operatingSystemVersion) {
             this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceImageType(@Nullable String sourceImageType) {
             this.sourceImageType = sourceImageType;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceUri(@Nullable String sourceUri) {
             this.sourceUri = sourceUri;
             return this;
-        }        public ImageImageSourceDetails build() {
-            return new ImageImageSourceDetails(bucketName, namespaceName, objectName, operatingSystem, operatingSystemVersion, sourceImageType, sourceType, sourceUri);
+        }
+        public ImageImageSourceDetails build() {
+            final var o = new ImageImageSourceDetails();
+            o.bucketName = bucketName;
+            o.namespaceName = namespaceName;
+            o.objectName = objectName;
+            o.operatingSystem = operatingSystem;
+            o.operatingSystemVersion = operatingSystemVersion;
+            o.sourceImageType = sourceImageType;
+            o.sourceType = sourceType;
+            o.sourceUri = sourceUri;
+            return o;
         }
     }
 }

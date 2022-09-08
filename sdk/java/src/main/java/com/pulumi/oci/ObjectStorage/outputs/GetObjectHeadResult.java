@@ -12,66 +12,43 @@ import java.util.Objects;
 
 @CustomType
 public final class GetObjectHeadResult {
-    private final String archivalState;
-    private final String bucket;
+    private String archivalState;
+    private String bucket;
     /**
      * @return The content-length of the object
      * 
      */
-    private final Integer contentLength;
+    private Integer contentLength;
     /**
      * @return The content-type of the object
      * 
      */
-    private final String contentType;
+    private String contentType;
     /**
      * @return The etag of the object
      * 
      */
-    private final String etag;
+    private String etag;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The metadata of the object
      * 
      */
-    private final Map<String,Object> metadata;
-    private final String namespace;
-    private final String object;
+    private Map<String,Object> metadata;
+    private String namespace;
+    private String object;
     /**
      * @return The storage tier that the object is stored in.
      * * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
      * 
      */
-    private final String storageTier;
+    private String storageTier;
 
-    @CustomType.Constructor
-    private GetObjectHeadResult(
-        @CustomType.Parameter("archivalState") String archivalState,
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("contentLength") Integer contentLength,
-        @CustomType.Parameter("contentType") String contentType,
-        @CustomType.Parameter("etag") String etag,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metadata") Map<String,Object> metadata,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("storageTier") String storageTier) {
-        this.archivalState = archivalState;
-        this.bucket = bucket;
-        this.contentLength = contentLength;
-        this.contentType = contentType;
-        this.etag = etag;
-        this.id = id;
-        this.metadata = metadata;
-        this.namespace = namespace;
-        this.object = object;
-        this.storageTier = storageTier;
-    }
-
+    private GetObjectHeadResult() {}
     public String archivalState() {
         return this.archivalState;
     }
@@ -135,7 +112,7 @@ public final class GetObjectHeadResult {
     public static Builder builder(GetObjectHeadResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String archivalState;
         private String bucket;
@@ -147,11 +124,7 @@ public final class GetObjectHeadResult {
         private String namespace;
         private String object;
         private String storageTier;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetObjectHeadResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.archivalState = defaults.archivalState;
@@ -166,47 +139,69 @@ public final class GetObjectHeadResult {
     	      this.storageTier = defaults.storageTier;
         }
 
+        @CustomType.Setter
         public Builder archivalState(String archivalState) {
             this.archivalState = Objects.requireNonNull(archivalState);
             return this;
         }
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder contentLength(Integer contentLength) {
             this.contentLength = Objects.requireNonNull(contentLength);
             return this;
         }
+        @CustomType.Setter
         public Builder contentType(String contentType) {
             this.contentType = Objects.requireNonNull(contentType);
             return this;
         }
+        @CustomType.Setter
         public Builder etag(String etag) {
             this.etag = Objects.requireNonNull(etag);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
             this.metadata = Objects.requireNonNull(metadata);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder storageTier(String storageTier) {
             this.storageTier = Objects.requireNonNull(storageTier);
             return this;
-        }        public GetObjectHeadResult build() {
-            return new GetObjectHeadResult(archivalState, bucket, contentLength, contentType, etag, id, metadata, namespace, object, storageTier);
+        }
+        public GetObjectHeadResult build() {
+            final var o = new GetObjectHeadResult();
+            o.archivalState = archivalState;
+            o.bucket = bucket;
+            o.contentLength = contentLength;
+            o.contentType = contentType;
+            o.etag = etag;
+            o.id = id;
+            o.metadata = metadata;
+            o.namespace = namespace;
+            o.object = object;
+            o.storageTier = storageTier;
+            return o;
         }
     }
 }

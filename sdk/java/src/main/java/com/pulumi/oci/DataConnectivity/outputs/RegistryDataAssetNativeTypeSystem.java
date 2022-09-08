@@ -18,103 +18,76 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryDataAssetNativeTypeSystem {
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final @Nullable String identifier;
+    private @Nullable String identifier;
     /**
      * @return (Updatable) The identifying key for the object.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
-    private final @Nullable String modelType;
+    private @Nullable String modelType;
     /**
      * @return (Updatable) The model version of an object.
      * 
      */
-    private final @Nullable String modelVersion;
+    private @Nullable String modelVersion;
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final @Nullable Integer objectStatus;
+    private @Nullable Integer objectStatus;
     /**
      * @return (Updatable) The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final @Nullable Integer objectVersion;
+    private @Nullable Integer objectVersion;
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
-    private final @Nullable RegistryDataAssetNativeTypeSystemParentRef parentRef;
+    private @Nullable RegistryDataAssetNativeTypeSystemParentRef parentRef;
     /**
      * @return (Updatable) The type system to map from.
      * 
      */
-    private final @Nullable Map<String,Object> typeMappingFrom;
+    private @Nullable Map<String,Object> typeMappingFrom;
     /**
      * @return (Updatable) The type system to map to.
      * 
      */
-    private final @Nullable Map<String,Object> typeMappingTo;
+    private @Nullable Map<String,Object> typeMappingTo;
     /**
      * @return (Updatable) An array of types.
      * 
      */
-    private final @Nullable List<RegistryDataAssetNativeTypeSystemType> types;
+    private @Nullable List<RegistryDataAssetNativeTypeSystemType> types;
 
-    @CustomType.Constructor
-    private RegistryDataAssetNativeTypeSystem(
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("identifier") @Nullable String identifier,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("modelType") @Nullable String modelType,
-        @CustomType.Parameter("modelVersion") @Nullable String modelVersion,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("objectStatus") @Nullable Integer objectStatus,
-        @CustomType.Parameter("objectVersion") @Nullable Integer objectVersion,
-        @CustomType.Parameter("parentRef") @Nullable RegistryDataAssetNativeTypeSystemParentRef parentRef,
-        @CustomType.Parameter("typeMappingFrom") @Nullable Map<String,Object> typeMappingFrom,
-        @CustomType.Parameter("typeMappingTo") @Nullable Map<String,Object> typeMappingTo,
-        @CustomType.Parameter("types") @Nullable List<RegistryDataAssetNativeTypeSystemType> types) {
-        this.description = description;
-        this.identifier = identifier;
-        this.key = key;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.parentRef = parentRef;
-        this.typeMappingFrom = typeMappingFrom;
-        this.typeMappingTo = typeMappingTo;
-        this.types = types;
-    }
-
+    private RegistryDataAssetNativeTypeSystem() {}
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<String> identifier() {
@@ -128,7 +101,7 @@ public final class RegistryDataAssetNativeTypeSystem {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
     public Optional<String> modelType() {
@@ -142,7 +115,7 @@ public final class RegistryDataAssetNativeTypeSystem {
         return Optional.ofNullable(this.modelVersion);
     }
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<String> name() {
@@ -163,7 +136,7 @@ public final class RegistryDataAssetNativeTypeSystem {
         return Optional.ofNullable(this.objectVersion);
     }
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<RegistryDataAssetNativeTypeSystemParentRef> parentRef() {
@@ -198,7 +171,7 @@ public final class RegistryDataAssetNativeTypeSystem {
     public static Builder builder(RegistryDataAssetNativeTypeSystem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String description;
         private @Nullable String identifier;
@@ -212,11 +185,7 @@ public final class RegistryDataAssetNativeTypeSystem {
         private @Nullable Map<String,Object> typeMappingFrom;
         private @Nullable Map<String,Object> typeMappingTo;
         private @Nullable List<RegistryDataAssetNativeTypeSystemType> types;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryDataAssetNativeTypeSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -233,58 +202,84 @@ public final class RegistryDataAssetNativeTypeSystem {
     	      this.types = defaults.types;
         }
 
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(@Nullable String identifier) {
             this.identifier = identifier;
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(@Nullable String modelType) {
             this.modelType = modelType;
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(@Nullable String modelVersion) {
             this.modelVersion = modelVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(@Nullable Integer objectStatus) {
             this.objectStatus = objectStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(@Nullable Integer objectVersion) {
             this.objectVersion = objectVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(@Nullable RegistryDataAssetNativeTypeSystemParentRef parentRef) {
             this.parentRef = parentRef;
             return this;
         }
+        @CustomType.Setter
         public Builder typeMappingFrom(@Nullable Map<String,Object> typeMappingFrom) {
             this.typeMappingFrom = typeMappingFrom;
             return this;
         }
+        @CustomType.Setter
         public Builder typeMappingTo(@Nullable Map<String,Object> typeMappingTo) {
             this.typeMappingTo = typeMappingTo;
             return this;
         }
+        @CustomType.Setter
         public Builder types(@Nullable List<RegistryDataAssetNativeTypeSystemType> types) {
             this.types = types;
             return this;
         }
         public Builder types(RegistryDataAssetNativeTypeSystemType... types) {
             return types(List.of(types));
-        }        public RegistryDataAssetNativeTypeSystem build() {
-            return new RegistryDataAssetNativeTypeSystem(description, identifier, key, modelType, modelVersion, name, objectStatus, objectVersion, parentRef, typeMappingFrom, typeMappingTo, types);
+        }
+        public RegistryDataAssetNativeTypeSystem build() {
+            final var o = new RegistryDataAssetNativeTypeSystem();
+            o.description = description;
+            o.identifier = identifier;
+            o.key = key;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.parentRef = parentRef;
+            o.typeMappingFrom = typeMappingFrom;
+            o.typeMappingTo = typeMappingTo;
+            o.types = types;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class MigrationGoldenGateDetailsHubRestAdminCredentials {
      * @return (Updatable) Administrator password
      * 
      */
-    private final String password;
+    private String password;
     /**
      * @return (Updatable) Administrator username
      * 
      */
-    private final String username;
+    private String username;
 
-    @CustomType.Constructor
-    private MigrationGoldenGateDetailsHubRestAdminCredentials(
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("username") String username) {
-        this.password = password;
-        this.username = username;
-    }
-
+    private MigrationGoldenGateDetailsHubRestAdminCredentials() {}
     /**
      * @return (Updatable) Administrator password
      * 
@@ -50,30 +43,32 @@ public final class MigrationGoldenGateDetailsHubRestAdminCredentials {
     public static Builder builder(MigrationGoldenGateDetailsHubRestAdminCredentials defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String password;
         private String username;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationGoldenGateDetailsHubRestAdminCredentials defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.password = defaults.password;
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder username(String username) {
             this.username = Objects.requireNonNull(username);
             return this;
-        }        public MigrationGoldenGateDetailsHubRestAdminCredentials build() {
-            return new MigrationGoldenGateDetailsHubRestAdminCredentials(password, username);
+        }
+        public MigrationGoldenGateDetailsHubRestAdminCredentials build() {
+            final var o = new MigrationGoldenGateDetailsHubRestAdminCredentials();
+            o.password = password;
+            o.username = username;
+            return o;
         }
     }
 }

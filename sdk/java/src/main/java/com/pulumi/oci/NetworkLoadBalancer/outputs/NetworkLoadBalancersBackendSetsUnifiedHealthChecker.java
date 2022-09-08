@@ -16,77 +16,54 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
      * @return (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
      * 
      */
-    private final @Nullable Integer intervalInMillis;
+    private @Nullable Integer intervalInMillis;
     /**
      * @return (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
     /**
      * @return (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
      * 
      */
-    private final @Nullable String requestData;
+    private @Nullable String requestData;
     /**
      * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
      * 
      */
-    private final @Nullable String responseBodyRegex;
+    private @Nullable String responseBodyRegex;
     /**
      * @return (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
      * 
      */
-    private final @Nullable String responseData;
+    private @Nullable String responseData;
     /**
      * @return (Updatable) The number of retries to attempt before a backend server is considered &#34;unhealthy&#34;. This number also applies when recovering a server to the &#34;healthy&#34; state. The default value is 3.  Example: `3`
      * 
      */
-    private final @Nullable Integer retries;
+    private @Nullable Integer retries;
     /**
      * @return (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as &#34;200&#34;.  Example: `200`
      * 
      */
-    private final @Nullable Integer returnCode;
+    private @Nullable Integer returnCode;
     /**
      * @return (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
      * 
      */
-    private final @Nullable Integer timeoutInMillis;
+    private @Nullable Integer timeoutInMillis;
     /**
      * @return (Updatable) The path against which to run the health check.  Example: `/healthcheck`
      * 
      */
-    private final @Nullable String urlPath;
+    private @Nullable String urlPath;
 
-    @CustomType.Constructor
-    private NetworkLoadBalancersBackendSetsUnifiedHealthChecker(
-        @CustomType.Parameter("intervalInMillis") @Nullable Integer intervalInMillis,
-        @CustomType.Parameter("port") @Nullable Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("requestData") @Nullable String requestData,
-        @CustomType.Parameter("responseBodyRegex") @Nullable String responseBodyRegex,
-        @CustomType.Parameter("responseData") @Nullable String responseData,
-        @CustomType.Parameter("retries") @Nullable Integer retries,
-        @CustomType.Parameter("returnCode") @Nullable Integer returnCode,
-        @CustomType.Parameter("timeoutInMillis") @Nullable Integer timeoutInMillis,
-        @CustomType.Parameter("urlPath") @Nullable String urlPath) {
-        this.intervalInMillis = intervalInMillis;
-        this.port = port;
-        this.protocol = protocol;
-        this.requestData = requestData;
-        this.responseBodyRegex = responseBodyRegex;
-        this.responseData = responseData;
-        this.retries = retries;
-        this.returnCode = returnCode;
-        this.timeoutInMillis = timeoutInMillis;
-        this.urlPath = urlPath;
-    }
-
+    private NetworkLoadBalancersBackendSetsUnifiedHealthChecker() {}
     /**
      * @return (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
      * 
@@ -165,7 +142,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
     public static Builder builder(NetworkLoadBalancersBackendSetsUnifiedHealthChecker defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer intervalInMillis;
         private @Nullable Integer port;
@@ -177,11 +154,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
         private @Nullable Integer returnCode;
         private @Nullable Integer timeoutInMillis;
         private @Nullable String urlPath;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkLoadBalancersBackendSetsUnifiedHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.intervalInMillis = defaults.intervalInMillis;
@@ -196,47 +169,69 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
     	      this.urlPath = defaults.urlPath;
         }
 
+        @CustomType.Setter
         public Builder intervalInMillis(@Nullable Integer intervalInMillis) {
             this.intervalInMillis = intervalInMillis;
             return this;
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder requestData(@Nullable String requestData) {
             this.requestData = requestData;
             return this;
         }
+        @CustomType.Setter
         public Builder responseBodyRegex(@Nullable String responseBodyRegex) {
             this.responseBodyRegex = responseBodyRegex;
             return this;
         }
+        @CustomType.Setter
         public Builder responseData(@Nullable String responseData) {
             this.responseData = responseData;
             return this;
         }
+        @CustomType.Setter
         public Builder retries(@Nullable Integer retries) {
             this.retries = retries;
             return this;
         }
+        @CustomType.Setter
         public Builder returnCode(@Nullable Integer returnCode) {
             this.returnCode = returnCode;
             return this;
         }
+        @CustomType.Setter
         public Builder timeoutInMillis(@Nullable Integer timeoutInMillis) {
             this.timeoutInMillis = timeoutInMillis;
             return this;
         }
+        @CustomType.Setter
         public Builder urlPath(@Nullable String urlPath) {
             this.urlPath = urlPath;
             return this;
-        }        public NetworkLoadBalancersBackendSetsUnifiedHealthChecker build() {
-            return new NetworkLoadBalancersBackendSetsUnifiedHealthChecker(intervalInMillis, port, protocol, requestData, responseBodyRegex, responseData, retries, returnCode, timeoutInMillis, urlPath);
+        }
+        public NetworkLoadBalancersBackendSetsUnifiedHealthChecker build() {
+            final var o = new NetworkLoadBalancersBackendSetsUnifiedHealthChecker();
+            o.intervalInMillis = intervalInMillis;
+            o.port = port;
+            o.protocol = protocol;
+            o.requestData = requestData;
+            o.responseBodyRegex = responseBodyRegex;
+            o.responseData = responseData;
+            o.retries = retries;
+            o.returnCode = returnCode;
+            o.timeoutInMillis = timeoutInMillis;
+            o.urlPath = urlPath;
+            return o;
         }
     }
 }

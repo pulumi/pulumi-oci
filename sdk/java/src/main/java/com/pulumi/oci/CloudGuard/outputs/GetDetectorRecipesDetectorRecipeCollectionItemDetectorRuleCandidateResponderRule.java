@@ -14,28 +14,19 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCan
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Ocid for detector recipe
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Preferred state
      * 
      */
-    private final Boolean isPreferred;
+    private Boolean isPreferred;
 
-    @CustomType.Constructor
-    private GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isPreferred") Boolean isPreferred) {
-        this.displayName = displayName;
-        this.id = id;
-        this.isPreferred = isPreferred;
-    }
-
+    private GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule() {}
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
@@ -65,16 +56,12 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCan
     public static Builder builder(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String id;
         private Boolean isPreferred;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -82,19 +69,27 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCan
     	      this.isPreferred = defaults.isPreferred;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isPreferred(Boolean isPreferred) {
             this.isPreferred = Objects.requireNonNull(isPreferred);
             return this;
-        }        public GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule build() {
-            return new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule(displayName, id, isPreferred);
+        }
+        public GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule build() {
+            final var o = new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule();
+            o.displayName = displayName;
+            o.id = id;
+            o.isPreferred = isPreferred;
+            return o;
         }
     }
 }

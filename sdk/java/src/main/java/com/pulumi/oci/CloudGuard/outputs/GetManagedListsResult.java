@@ -15,65 +15,42 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedListsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return Compartment Identifier where the resource is created
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return ManagedList display name.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetManagedListsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetManagedListsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return type of the list
      * 
      */
-    private final @Nullable String listType;
+    private @Nullable String listType;
     /**
      * @return The list of managed_list_collection.
      * 
      */
-    private final List<GetManagedListsManagedListCollection> managedListCollections;
-    private final @Nullable Boolean resourceMetadataOnly;
+    private List<GetManagedListsManagedListCollection> managedListCollections;
+    private @Nullable Boolean resourceMetadataOnly;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetManagedListsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedListsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listType") @Nullable String listType,
-        @CustomType.Parameter("managedListCollections") List<GetManagedListsManagedListCollection> managedListCollections,
-        @CustomType.Parameter("resourceMetadataOnly") @Nullable Boolean resourceMetadataOnly,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.listType = listType;
-        this.managedListCollections = managedListCollections;
-        this.resourceMetadataOnly = resourceMetadataOnly;
-        this.state = state;
-    }
-
+    private GetManagedListsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -136,7 +113,7 @@ public final class GetManagedListsResult {
     public static Builder builder(GetManagedListsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -148,11 +125,7 @@ public final class GetManagedListsResult {
         private List<GetManagedListsManagedListCollection> managedListCollections;
         private @Nullable Boolean resourceMetadataOnly;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedListsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -167,22 +140,27 @@ public final class GetManagedListsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedListsFilter> filters) {
             this.filters = filters;
             return this;
@@ -190,14 +168,17 @@ public final class GetManagedListsResult {
         public Builder filters(GetManagedListsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listType(@Nullable String listType) {
             this.listType = listType;
             return this;
         }
+        @CustomType.Setter
         public Builder managedListCollections(List<GetManagedListsManagedListCollection> managedListCollections) {
             this.managedListCollections = Objects.requireNonNull(managedListCollections);
             return this;
@@ -205,15 +186,29 @@ public final class GetManagedListsResult {
         public Builder managedListCollections(GetManagedListsManagedListCollection... managedListCollections) {
             return managedListCollections(List.of(managedListCollections));
         }
+        @CustomType.Setter
         public Builder resourceMetadataOnly(@Nullable Boolean resourceMetadataOnly) {
             this.resourceMetadataOnly = resourceMetadataOnly;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetManagedListsResult build() {
-            return new GetManagedListsResult(accessLevel, compartmentId, compartmentIdInSubtree, displayName, filters, id, listType, managedListCollections, resourceMetadataOnly, state);
+        }
+        public GetManagedListsResult build() {
+            final var o = new GetManagedListsResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.listType = listType;
+            o.managedListCollections = managedListCollections;
+            o.resourceMetadataOnly = resourceMetadataOnly;
+            o.state = state;
+            return o;
         }
     }
 }

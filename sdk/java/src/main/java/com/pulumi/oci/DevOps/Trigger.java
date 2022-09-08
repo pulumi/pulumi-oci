@@ -112,6 +112,12 @@ public class Trigger extends com.pulumi.resources.CustomResource {
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
+    @Export(name="connectionId", type=String.class, parameters={})
+    private Output<String> connectionId;
+
+    public Output<String> connectionId() {
+        return this.connectionId;
+    }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 

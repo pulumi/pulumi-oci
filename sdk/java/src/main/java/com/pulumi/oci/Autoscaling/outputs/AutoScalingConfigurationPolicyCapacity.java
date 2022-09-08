@@ -15,28 +15,19 @@ public final class AutoScalingConfigurationPolicyCapacity {
      * @return For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
      * 
      */
-    private final @Nullable Integer initial;
+    private @Nullable Integer initial;
     /**
      * @return For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
      * 
      */
-    private final @Nullable Integer max;
+    private @Nullable Integer max;
     /**
      * @return For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
      * 
      */
-    private final @Nullable Integer min;
+    private @Nullable Integer min;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyCapacity(
-        @CustomType.Parameter("initial") @Nullable Integer initial,
-        @CustomType.Parameter("max") @Nullable Integer max,
-        @CustomType.Parameter("min") @Nullable Integer min) {
-        this.initial = initial;
-        this.max = max;
-        this.min = min;
-    }
-
+    private AutoScalingConfigurationPolicyCapacity() {}
     /**
      * @return For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
      * 
@@ -66,16 +57,12 @@ public final class AutoScalingConfigurationPolicyCapacity {
     public static Builder builder(AutoScalingConfigurationPolicyCapacity defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer initial;
         private @Nullable Integer max;
         private @Nullable Integer min;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyCapacity defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.initial = defaults.initial;
@@ -83,19 +70,27 @@ public final class AutoScalingConfigurationPolicyCapacity {
     	      this.min = defaults.min;
         }
 
+        @CustomType.Setter
         public Builder initial(@Nullable Integer initial) {
             this.initial = initial;
             return this;
         }
+        @CustomType.Setter
         public Builder max(@Nullable Integer max) {
             this.max = max;
             return this;
         }
+        @CustomType.Setter
         public Builder min(@Nullable Integer min) {
             this.min = min;
             return this;
-        }        public AutoScalingConfigurationPolicyCapacity build() {
-            return new AutoScalingConfigurationPolicyCapacity(initial, max, min);
+        }
+        public AutoScalingConfigurationPolicyCapacity build() {
+            final var o = new AutoScalingConfigurationPolicyCapacity();
+            o.initial = initial;
+            o.max = max;
+            o.min = min;
+            return o;
         }
     }
 }

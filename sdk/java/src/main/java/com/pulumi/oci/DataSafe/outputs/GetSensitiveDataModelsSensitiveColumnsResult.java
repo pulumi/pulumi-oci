@@ -14,112 +14,71 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSensitiveDataModelsSensitiveColumnsResult {
-    private final @Nullable String columnGroup;
+    private @Nullable String columnGroup;
     /**
      * @return The name of the sensitive column.
      * 
      */
-    private final @Nullable List<String> columnNames;
+    private @Nullable List<String> columnNames;
     /**
      * @return The data type of the sensitive column.
      * 
      */
-    private final @Nullable List<String> dataTypes;
-    private final @Nullable List<GetSensitiveDataModelsSensitiveColumnsFilter> filters;
+    private @Nullable List<String> dataTypes;
+    private @Nullable List<GetSensitiveDataModelsSensitiveColumnsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The type of the database object that contains the sensitive column.
      * 
      */
-    private final @Nullable List<String> objectTypes;
+    private @Nullable List<String> objectTypes;
     /**
      * @return The database object that contains the sensitive column.
      * 
      */
-    private final @Nullable List<String> objects;
-    private final @Nullable List<String> parentColumnKeys;
+    private @Nullable List<String> objects;
+    private @Nullable List<String> parentColumnKeys;
     /**
      * @return The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      * 
      */
-    private final @Nullable List<String> relationTypes;
+    private @Nullable List<String> relationTypes;
     /**
      * @return The database schema that contains the sensitive column.
      * 
      */
-    private final @Nullable List<String> schemaNames;
+    private @Nullable List<String> schemaNames;
     /**
      * @return The list of sensitive_column_collection.
      * 
      */
-    private final List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections;
-    private final @Nullable String sensitiveColumnLifecycleState;
+    private List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections;
+    private @Nullable String sensitiveColumnLifecycleState;
     /**
      * @return The OCID of the sensitive data model that contains the sensitive column.
      * 
      */
-    private final String sensitiveDataModelId;
+    private String sensitiveDataModelId;
     /**
      * @return The OCID of the sensitive type associated with the sensitive column.
      * 
      */
-    private final @Nullable List<String> sensitiveTypeIds;
+    private @Nullable List<String> sensitiveTypeIds;
     /**
      * @return The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive again.
      * 
      */
-    private final @Nullable List<String> statuses;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
-    private final @Nullable String timeUpdatedGreaterThanOrEqualTo;
-    private final @Nullable String timeUpdatedLessThan;
+    private @Nullable List<String> statuses;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
+    private @Nullable String timeUpdatedGreaterThanOrEqualTo;
+    private @Nullable String timeUpdatedLessThan;
 
-    @CustomType.Constructor
-    private GetSensitiveDataModelsSensitiveColumnsResult(
-        @CustomType.Parameter("columnGroup") @Nullable String columnGroup,
-        @CustomType.Parameter("columnNames") @Nullable List<String> columnNames,
-        @CustomType.Parameter("dataTypes") @Nullable List<String> dataTypes,
-        @CustomType.Parameter("filters") @Nullable List<GetSensitiveDataModelsSensitiveColumnsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("objectTypes") @Nullable List<String> objectTypes,
-        @CustomType.Parameter("objects") @Nullable List<String> objects,
-        @CustomType.Parameter("parentColumnKeys") @Nullable List<String> parentColumnKeys,
-        @CustomType.Parameter("relationTypes") @Nullable List<String> relationTypes,
-        @CustomType.Parameter("schemaNames") @Nullable List<String> schemaNames,
-        @CustomType.Parameter("sensitiveColumnCollections") List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections,
-        @CustomType.Parameter("sensitiveColumnLifecycleState") @Nullable String sensitiveColumnLifecycleState,
-        @CustomType.Parameter("sensitiveDataModelId") String sensitiveDataModelId,
-        @CustomType.Parameter("sensitiveTypeIds") @Nullable List<String> sensitiveTypeIds,
-        @CustomType.Parameter("statuses") @Nullable List<String> statuses,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan,
-        @CustomType.Parameter("timeUpdatedGreaterThanOrEqualTo") @Nullable String timeUpdatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeUpdatedLessThan") @Nullable String timeUpdatedLessThan) {
-        this.columnGroup = columnGroup;
-        this.columnNames = columnNames;
-        this.dataTypes = dataTypes;
-        this.filters = filters;
-        this.id = id;
-        this.objectTypes = objectTypes;
-        this.objects = objects;
-        this.parentColumnKeys = parentColumnKeys;
-        this.relationTypes = relationTypes;
-        this.schemaNames = schemaNames;
-        this.sensitiveColumnCollections = sensitiveColumnCollections;
-        this.sensitiveColumnLifecycleState = sensitiveColumnLifecycleState;
-        this.sensitiveDataModelId = sensitiveDataModelId;
-        this.sensitiveTypeIds = sensitiveTypeIds;
-        this.statuses = statuses;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-        this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
-        this.timeUpdatedLessThan = timeUpdatedLessThan;
-    }
-
+    private GetSensitiveDataModelsSensitiveColumnsResult() {}
     public Optional<String> columnGroup() {
         return Optional.ofNullable(this.columnGroup);
     }
@@ -229,7 +188,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
     public static Builder builder(GetSensitiveDataModelsSensitiveColumnsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String columnGroup;
         private @Nullable List<String> columnNames;
@@ -250,11 +209,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         private @Nullable String timeCreatedLessThan;
         private @Nullable String timeUpdatedGreaterThanOrEqualTo;
         private @Nullable String timeUpdatedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSensitiveDataModelsSensitiveColumnsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnGroup = defaults.columnGroup;
@@ -278,10 +233,12 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
     	      this.timeUpdatedLessThan = defaults.timeUpdatedLessThan;
         }
 
+        @CustomType.Setter
         public Builder columnGroup(@Nullable String columnGroup) {
             this.columnGroup = columnGroup;
             return this;
         }
+        @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
             this.columnNames = columnNames;
             return this;
@@ -289,6 +246,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder columnNames(String... columnNames) {
             return columnNames(List.of(columnNames));
         }
+        @CustomType.Setter
         public Builder dataTypes(@Nullable List<String> dataTypes) {
             this.dataTypes = dataTypes;
             return this;
@@ -296,6 +254,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder dataTypes(String... dataTypes) {
             return dataTypes(List.of(dataTypes));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSensitiveDataModelsSensitiveColumnsFilter> filters) {
             this.filters = filters;
             return this;
@@ -303,10 +262,12 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder filters(GetSensitiveDataModelsSensitiveColumnsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder objectTypes(@Nullable List<String> objectTypes) {
             this.objectTypes = objectTypes;
             return this;
@@ -314,6 +275,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder objectTypes(String... objectTypes) {
             return objectTypes(List.of(objectTypes));
         }
+        @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
             this.objects = objects;
             return this;
@@ -321,6 +283,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder objects(String... objects) {
             return objects(List.of(objects));
         }
+        @CustomType.Setter
         public Builder parentColumnKeys(@Nullable List<String> parentColumnKeys) {
             this.parentColumnKeys = parentColumnKeys;
             return this;
@@ -328,6 +291,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder parentColumnKeys(String... parentColumnKeys) {
             return parentColumnKeys(List.of(parentColumnKeys));
         }
+        @CustomType.Setter
         public Builder relationTypes(@Nullable List<String> relationTypes) {
             this.relationTypes = relationTypes;
             return this;
@@ -335,6 +299,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder relationTypes(String... relationTypes) {
             return relationTypes(List.of(relationTypes));
         }
+        @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
             this.schemaNames = schemaNames;
             return this;
@@ -342,6 +307,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder schemaNames(String... schemaNames) {
             return schemaNames(List.of(schemaNames));
         }
+        @CustomType.Setter
         public Builder sensitiveColumnCollections(List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections) {
             this.sensitiveColumnCollections = Objects.requireNonNull(sensitiveColumnCollections);
             return this;
@@ -349,14 +315,17 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder sensitiveColumnCollections(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection... sensitiveColumnCollections) {
             return sensitiveColumnCollections(List.of(sensitiveColumnCollections));
         }
+        @CustomType.Setter
         public Builder sensitiveColumnLifecycleState(@Nullable String sensitiveColumnLifecycleState) {
             this.sensitiveColumnLifecycleState = sensitiveColumnLifecycleState;
             return this;
         }
+        @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
             return this;
         }
+        @CustomType.Setter
         public Builder sensitiveTypeIds(@Nullable List<String> sensitiveTypeIds) {
             this.sensitiveTypeIds = sensitiveTypeIds;
             return this;
@@ -364,6 +333,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder sensitiveTypeIds(String... sensitiveTypeIds) {
             return sensitiveTypeIds(List.of(sensitiveTypeIds));
         }
+        @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
             this.statuses = statuses;
             return this;
@@ -371,23 +341,48 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder statuses(String... statuses) {
             return statuses(List.of(statuses));
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdatedGreaterThanOrEqualTo(@Nullable String timeUpdatedGreaterThanOrEqualTo) {
             this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdatedLessThan(@Nullable String timeUpdatedLessThan) {
             this.timeUpdatedLessThan = timeUpdatedLessThan;
             return this;
-        }        public GetSensitiveDataModelsSensitiveColumnsResult build() {
-            return new GetSensitiveDataModelsSensitiveColumnsResult(columnGroup, columnNames, dataTypes, filters, id, objectTypes, objects, parentColumnKeys, relationTypes, schemaNames, sensitiveColumnCollections, sensitiveColumnLifecycleState, sensitiveDataModelId, sensitiveTypeIds, statuses, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan);
+        }
+        public GetSensitiveDataModelsSensitiveColumnsResult build() {
+            final var o = new GetSensitiveDataModelsSensitiveColumnsResult();
+            o.columnGroup = columnGroup;
+            o.columnNames = columnNames;
+            o.dataTypes = dataTypes;
+            o.filters = filters;
+            o.id = id;
+            o.objectTypes = objectTypes;
+            o.objects = objects;
+            o.parentColumnKeys = parentColumnKeys;
+            o.relationTypes = relationTypes;
+            o.schemaNames = schemaNames;
+            o.sensitiveColumnCollections = sensitiveColumnCollections;
+            o.sensitiveColumnLifecycleState = sensitiveColumnLifecycleState;
+            o.sensitiveDataModelId = sensitiveDataModelId;
+            o.sensitiveTypeIds = sensitiveTypeIds;
+            o.statuses = statuses;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            o.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
+            o.timeUpdatedLessThan = timeUpdatedLessThan;
+            return o;
         }
     }
 }

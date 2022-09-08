@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetOsnsOsnCollection {
-    private final List<GetOsnsOsnCollectionItem> items;
+    private List<GetOsnsOsnCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetOsnsOsnCollection(@CustomType.Parameter("items") List<GetOsnsOsnCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetOsnsOsnCollection() {}
     public List<GetOsnsOsnCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetOsnsOsnCollection {
     public static Builder builder(GetOsnsOsnCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetOsnsOsnCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOsnsOsnCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetOsnsOsnCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetOsnsOsnCollectionItem... items) {
             return items(List.of(items));
-        }        public GetOsnsOsnCollection build() {
-            return new GetOsnsOsnCollection(items);
+        }
+        public GetOsnsOsnCollection build() {
+            final var o = new GetOsnsOsnCollection();
+            o.items = items;
+            return o;
         }
     }
 }

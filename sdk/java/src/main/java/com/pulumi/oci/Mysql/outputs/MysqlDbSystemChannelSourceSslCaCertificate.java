@@ -15,21 +15,14 @@ public final class MysqlDbSystemChannelSourceSslCaCertificate {
      * @return The type of CA certificate.
      * 
      */
-    private final @Nullable String certificateType;
+    private @Nullable String certificateType;
     /**
      * @return The string containing the CA certificate in PEM format.
      * 
      */
-    private final @Nullable String contents;
+    private @Nullable String contents;
 
-    @CustomType.Constructor
-    private MysqlDbSystemChannelSourceSslCaCertificate(
-        @CustomType.Parameter("certificateType") @Nullable String certificateType,
-        @CustomType.Parameter("contents") @Nullable String contents) {
-        this.certificateType = certificateType;
-        this.contents = contents;
-    }
-
+    private MysqlDbSystemChannelSourceSslCaCertificate() {}
     /**
      * @return The type of CA certificate.
      * 
@@ -52,30 +45,32 @@ public final class MysqlDbSystemChannelSourceSslCaCertificate {
     public static Builder builder(MysqlDbSystemChannelSourceSslCaCertificate defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String certificateType;
         private @Nullable String contents;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MysqlDbSystemChannelSourceSslCaCertificate defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateType = defaults.certificateType;
     	      this.contents = defaults.contents;
         }
 
+        @CustomType.Setter
         public Builder certificateType(@Nullable String certificateType) {
             this.certificateType = certificateType;
             return this;
         }
+        @CustomType.Setter
         public Builder contents(@Nullable String contents) {
             this.contents = contents;
             return this;
-        }        public MysqlDbSystemChannelSourceSslCaCertificate build() {
-            return new MysqlDbSystemChannelSourceSslCaCertificate(certificateType, contents);
+        }
+        public MysqlDbSystemChannelSourceSslCaCertificate build() {
+            final var o = new MysqlDbSystemChannelSourceSslCaCertificate();
+            o.certificateType = certificateType;
+            o.contents = contents;
+            return o;
         }
     }
 }

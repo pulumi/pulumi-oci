@@ -14,13 +14,9 @@ public final class GetWebAppFirewallPolicyResponseProtection {
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private final List<GetWebAppFirewallPolicyResponseProtectionRule> rules;
+    private List<GetWebAppFirewallPolicyResponseProtectionRule> rules;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPolicyResponseProtection(@CustomType.Parameter("rules") List<GetWebAppFirewallPolicyResponseProtectionRule> rules) {
-        this.rules = rules;
-    }
-
+    private GetWebAppFirewallPolicyResponseProtection() {}
     /**
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
@@ -36,27 +32,27 @@ public final class GetWebAppFirewallPolicyResponseProtection {
     public static Builder builder(GetWebAppFirewallPolicyResponseProtection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetWebAppFirewallPolicyResponseProtectionRule> rules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPolicyResponseProtection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.rules = defaults.rules;
         }
 
+        @CustomType.Setter
         public Builder rules(List<GetWebAppFirewallPolicyResponseProtectionRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
         }
         public Builder rules(GetWebAppFirewallPolicyResponseProtectionRule... rules) {
             return rules(List.of(rules));
-        }        public GetWebAppFirewallPolicyResponseProtection build() {
-            return new GetWebAppFirewallPolicyResponseProtection(rules);
+        }
+        public GetWebAppFirewallPolicyResponseProtection build() {
+            final var o = new GetWebAppFirewallPolicyResponseProtection();
+            o.rules = rules;
+            return o;
         }
     }
 }

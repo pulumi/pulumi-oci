@@ -15,21 +15,14 @@ public final class BuildPipelineStageDeliverArtifactCollectionItem {
      * @return (Updatable) Artifact identifier that contains the artifact definition.
      * 
      */
-    private final @Nullable String artifactId;
+    private @Nullable String artifactId;
     /**
      * @return (Updatable) Name of the artifact specified in the build_spec.yaml file.
      * 
      */
-    private final @Nullable String artifactName;
+    private @Nullable String artifactName;
 
-    @CustomType.Constructor
-    private BuildPipelineStageDeliverArtifactCollectionItem(
-        @CustomType.Parameter("artifactId") @Nullable String artifactId,
-        @CustomType.Parameter("artifactName") @Nullable String artifactName) {
-        this.artifactId = artifactId;
-        this.artifactName = artifactName;
-    }
-
+    private BuildPipelineStageDeliverArtifactCollectionItem() {}
     /**
      * @return (Updatable) Artifact identifier that contains the artifact definition.
      * 
@@ -52,30 +45,32 @@ public final class BuildPipelineStageDeliverArtifactCollectionItem {
     public static Builder builder(BuildPipelineStageDeliverArtifactCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String artifactId;
         private @Nullable String artifactName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildPipelineStageDeliverArtifactCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.artifactId = defaults.artifactId;
     	      this.artifactName = defaults.artifactName;
         }
 
+        @CustomType.Setter
         public Builder artifactId(@Nullable String artifactId) {
             this.artifactId = artifactId;
             return this;
         }
+        @CustomType.Setter
         public Builder artifactName(@Nullable String artifactName) {
             this.artifactName = artifactName;
             return this;
-        }        public BuildPipelineStageDeliverArtifactCollectionItem build() {
-            return new BuildPipelineStageDeliverArtifactCollectionItem(artifactId, artifactName);
+        }
+        public BuildPipelineStageDeliverArtifactCollectionItem build() {
+            final var o = new BuildPipelineStageDeliverArtifactCollectionItem();
+            o.artifactId = artifactId;
+            o.artifactName = artifactName;
+            return o;
         }
     }
 }

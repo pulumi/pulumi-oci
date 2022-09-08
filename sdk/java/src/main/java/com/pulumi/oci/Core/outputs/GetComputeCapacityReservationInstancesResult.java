@@ -18,41 +18,26 @@ public final class GetComputeCapacityReservationInstancesResult {
      * @return The availability domain the instance is running in.
      * 
      */
-    private final @Nullable String availabilityDomain;
-    private final String capacityReservationId;
+    private @Nullable String availabilityDomain;
+    private String capacityReservationId;
     /**
      * @return The list of capacity_reservation_instances.
      * 
      */
-    private final List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances;
+    private List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances;
     /**
      * @return The OCID of the compartment that contains the instance.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetComputeCapacityReservationInstancesFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetComputeCapacityReservationInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetComputeCapacityReservationInstancesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("capacityReservationId") String capacityReservationId,
-        @CustomType.Parameter("capacityReservationInstances") List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetComputeCapacityReservationInstancesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.availabilityDomain = availabilityDomain;
-        this.capacityReservationId = capacityReservationId;
-        this.capacityReservationInstances = capacityReservationInstances;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetComputeCapacityReservationInstancesResult() {}
     /**
      * @return The availability domain the instance is running in.
      * 
@@ -95,7 +80,7 @@ public final class GetComputeCapacityReservationInstancesResult {
     public static Builder builder(GetComputeCapacityReservationInstancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String capacityReservationId;
@@ -103,11 +88,7 @@ public final class GetComputeCapacityReservationInstancesResult {
         private @Nullable String compartmentId;
         private @Nullable List<GetComputeCapacityReservationInstancesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeCapacityReservationInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -118,14 +99,17 @@ public final class GetComputeCapacityReservationInstancesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
             return this;
         }
+        @CustomType.Setter
         public Builder capacityReservationInstances(List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances) {
             this.capacityReservationInstances = Objects.requireNonNull(capacityReservationInstances);
             return this;
@@ -133,10 +117,12 @@ public final class GetComputeCapacityReservationInstancesResult {
         public Builder capacityReservationInstances(GetComputeCapacityReservationInstancesCapacityReservationInstance... capacityReservationInstances) {
             return capacityReservationInstances(List.of(capacityReservationInstances));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeCapacityReservationInstancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -144,11 +130,20 @@ public final class GetComputeCapacityReservationInstancesResult {
         public Builder filters(GetComputeCapacityReservationInstancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetComputeCapacityReservationInstancesResult build() {
-            return new GetComputeCapacityReservationInstancesResult(availabilityDomain, capacityReservationId, capacityReservationInstances, compartmentId, filters, id);
+        }
+        public GetComputeCapacityReservationInstancesResult build() {
+            final var o = new GetComputeCapacityReservationInstancesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.capacityReservationId = capacityReservationId;
+            o.capacityReservationInstances = capacityReservationInstances;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

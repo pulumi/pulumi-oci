@@ -15,13 +15,9 @@ public final class DbSystemsUpgradeDbSystemOption {
      * @return The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
      * 
      */
-    private final @Nullable String storageManagement;
+    private @Nullable String storageManagement;
 
-    @CustomType.Constructor
-    private DbSystemsUpgradeDbSystemOption(@CustomType.Parameter("storageManagement") @Nullable String storageManagement) {
-        this.storageManagement = storageManagement;
-    }
-
+    private DbSystemsUpgradeDbSystemOption() {}
     /**
      * @return The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
      * 
@@ -37,24 +33,24 @@ public final class DbSystemsUpgradeDbSystemOption {
     public static Builder builder(DbSystemsUpgradeDbSystemOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String storageManagement;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DbSystemsUpgradeDbSystemOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.storageManagement = defaults.storageManagement;
         }
 
+        @CustomType.Setter
         public Builder storageManagement(@Nullable String storageManagement) {
             this.storageManagement = storageManagement;
             return this;
-        }        public DbSystemsUpgradeDbSystemOption build() {
-            return new DbSystemsUpgradeDbSystemOption(storageManagement);
+        }
+        public DbSystemsUpgradeDbSystemOption build() {
+            final var o = new DbSystemsUpgradeDbSystemOption();
+            o.storageManagement = storageManagement;
+            return o;
         }
     }
 }

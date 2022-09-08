@@ -15,28 +15,19 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
      * @return The description of the rule.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The list of findings for the rule.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding> findings;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding> findings;
     /**
      * @return The name of the rule.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("findings") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding> findings,
-        @CustomType.Parameter("name") String name) {
-        this.description = description;
-        this.findings = findings;
-        this.name = name;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule() {}
     /**
      * @return The description of the rule.
      * 
@@ -66,16 +57,12 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding> findings;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -83,10 +70,12 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder findings(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding> findings) {
             this.findings = Objects.requireNonNull(findings);
             return this;
@@ -94,11 +83,17 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         public Builder findings(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding... findings) {
             return findings(List.of(findings));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule(description, findings, name);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule();
+            o.description = description;
+            o.findings = findings;
+            o.name = name;
+            return o;
         }
     }
 }

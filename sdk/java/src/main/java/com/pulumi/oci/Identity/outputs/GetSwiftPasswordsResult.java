@@ -13,35 +13,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSwiftPasswordsResult {
-    private final @Nullable List<GetSwiftPasswordsFilter> filters;
+    private @Nullable List<GetSwiftPasswordsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of passwords.
      * 
      */
-    private final List<GetSwiftPasswordsPassword> passwords;
+    private List<GetSwiftPasswordsPassword> passwords;
     /**
      * @return The OCID of the user the password belongs to.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetSwiftPasswordsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetSwiftPasswordsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("passwords") List<GetSwiftPasswordsPassword> passwords,
-        @CustomType.Parameter("userId") String userId) {
-        this.filters = filters;
-        this.id = id;
-        this.passwords = passwords;
-        this.userId = userId;
-    }
-
+    private GetSwiftPasswordsResult() {}
     public List<GetSwiftPasswordsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -74,17 +63,13 @@ public final class GetSwiftPasswordsResult {
     public static Builder builder(GetSwiftPasswordsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSwiftPasswordsFilter> filters;
         private String id;
         private List<GetSwiftPasswordsPassword> passwords;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSwiftPasswordsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -93,6 +78,7 @@ public final class GetSwiftPasswordsResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSwiftPasswordsFilter> filters) {
             this.filters = filters;
             return this;
@@ -100,10 +86,12 @@ public final class GetSwiftPasswordsResult {
         public Builder filters(GetSwiftPasswordsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder passwords(List<GetSwiftPasswordsPassword> passwords) {
             this.passwords = Objects.requireNonNull(passwords);
             return this;
@@ -111,11 +99,18 @@ public final class GetSwiftPasswordsResult {
         public Builder passwords(GetSwiftPasswordsPassword... passwords) {
             return passwords(List.of(passwords));
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetSwiftPasswordsResult build() {
-            return new GetSwiftPasswordsResult(filters, id, passwords, userId);
+        }
+        public GetSwiftPasswordsResult build() {
+            final var o = new GetSwiftPasswordsResult();
+            o.filters = filters;
+            o.id = id;
+            o.passwords = passwords;
+            o.userId = userId;
+            return o;
         }
     }
 }

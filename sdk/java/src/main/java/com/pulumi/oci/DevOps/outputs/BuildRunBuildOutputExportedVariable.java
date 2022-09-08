@@ -15,13 +15,9 @@ public final class BuildRunBuildOutputExportedVariable {
      * @return List of arguments provided at the time of running the build.
      * 
      */
-    private final @Nullable List<BuildRunBuildOutputExportedVariableItem> items;
+    private @Nullable List<BuildRunBuildOutputExportedVariableItem> items;
 
-    @CustomType.Constructor
-    private BuildRunBuildOutputExportedVariable(@CustomType.Parameter("items") @Nullable List<BuildRunBuildOutputExportedVariableItem> items) {
-        this.items = items;
-    }
-
+    private BuildRunBuildOutputExportedVariable() {}
     /**
      * @return List of arguments provided at the time of running the build.
      * 
@@ -37,27 +33,27 @@ public final class BuildRunBuildOutputExportedVariable {
     public static Builder builder(BuildRunBuildOutputExportedVariable defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<BuildRunBuildOutputExportedVariableItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildOutputExportedVariable defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<BuildRunBuildOutputExportedVariableItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(BuildRunBuildOutputExportedVariableItem... items) {
             return items(List.of(items));
-        }        public BuildRunBuildOutputExportedVariable build() {
-            return new BuildRunBuildOutputExportedVariable(items);
+        }
+        public BuildRunBuildOutputExportedVariable build() {
+            final var o = new BuildRunBuildOutputExportedVariable();
+            o.items = items;
+            return o;
         }
     }
 }

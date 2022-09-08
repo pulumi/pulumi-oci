@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollection {
-    private final List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items;
+    private List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetMaskingPoliciesMaskingColumnsMaskingColumnCollection(@CustomType.Parameter("items") List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetMaskingPoliciesMaskingColumnsMaskingColumnCollection() {}
     public List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollection {
     public static Builder builder(GetMaskingPoliciesMaskingColumnsMaskingColumnCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingPoliciesMaskingColumnsMaskingColumnCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem... items) {
             return items(List.of(items));
-        }        public GetMaskingPoliciesMaskingColumnsMaskingColumnCollection build() {
-            return new GetMaskingPoliciesMaskingColumnsMaskingColumnCollection(items);
+        }
+        public GetMaskingPoliciesMaskingColumnsMaskingColumnCollection build() {
+            final var o = new GetMaskingPoliciesMaskingColumnsMaskingColumnCollection();
+            o.items = items;
+            return o;
         }
     }
 }

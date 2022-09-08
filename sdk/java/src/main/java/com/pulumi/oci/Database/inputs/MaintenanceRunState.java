@@ -380,14 +380,14 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The target software version for the database server patching operation.
+     * (Updatable) The target database server system software version for the patching operation.
      * 
      */
     @Import(name="targetDbServerVersion")
     private @Nullable Output<String> targetDbServerVersion;
 
     /**
-     * @return The target software version for the database server patching operation.
+     * @return (Updatable) The target database server system software version for the patching operation.
      * 
      */
     public Optional<Output<String>> targetDbServerVersion() {
@@ -425,14 +425,14 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The target Cell version that is to be patched to.
+     * (Updatable) The target storage cell system software version for the patching operation.
      * 
      */
     @Import(name="targetStorageServerVersion")
     private @Nullable Output<String> targetStorageServerVersion;
 
     /**
-     * @return The target Cell version that is to be patched to.
+     * @return (Updatable) The target storage cell system software version for the patching operation.
      * 
      */
     public Optional<Output<String>> targetStorageServerVersion() {
@@ -1053,7 +1053,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param targetDbServerVersion The target software version for the database server patching operation.
+         * @param targetDbServerVersion (Updatable) The target database server system software version for the patching operation.
          * 
          * @return builder
          * 
@@ -1064,7 +1064,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param targetDbServerVersion The target software version for the database server patching operation.
+         * @param targetDbServerVersion (Updatable) The target database server system software version for the patching operation.
          * 
          * @return builder
          * 
@@ -1116,7 +1116,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param targetStorageServerVersion The target Cell version that is to be patched to.
+         * @param targetStorageServerVersion (Updatable) The target storage cell system software version for the patching operation.
          * 
          * @return builder
          * 
@@ -1127,7 +1127,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param targetStorageServerVersion The target Cell version that is to be patched to.
+         * @param targetStorageServerVersion (Updatable) The target storage cell system software version for the patching operation.
          * 
          * @return builder
          * 

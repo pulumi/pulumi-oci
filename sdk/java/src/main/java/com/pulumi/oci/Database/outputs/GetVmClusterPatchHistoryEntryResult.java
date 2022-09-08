@@ -13,62 +13,41 @@ public final class GetVmClusterPatchHistoryEntryResult {
      * @return The action being performed or was completed.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
      * 
      */
-    private final String lifecycleDetails;
-    private final String patchHistoryEntryId;
+    private String lifecycleDetails;
+    private String patchHistoryEntryId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      * 
      */
-    private final String patchId;
+    private String patchId;
     /**
      * @return The current state of the action.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time when the patch action completed
      * 
      */
-    private final String timeEnded;
+    private String timeEnded;
     /**
      * @return The date and time when the patch action started.
      * 
      */
-    private final String timeStarted;
-    private final String vmClusterId;
+    private String timeStarted;
+    private String vmClusterId;
 
-    @CustomType.Constructor
-    private GetVmClusterPatchHistoryEntryResult(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("patchHistoryEntryId") String patchHistoryEntryId,
-        @CustomType.Parameter("patchId") String patchId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeEnded") String timeEnded,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("vmClusterId") String vmClusterId) {
-        this.action = action;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.patchHistoryEntryId = patchHistoryEntryId;
-        this.patchId = patchId;
-        this.state = state;
-        this.timeEnded = timeEnded;
-        this.timeStarted = timeStarted;
-        this.vmClusterId = vmClusterId;
-    }
-
+    private GetVmClusterPatchHistoryEntryResult() {}
     /**
      * @return The action being performed or was completed.
      * 
@@ -132,7 +111,7 @@ public final class GetVmClusterPatchHistoryEntryResult {
     public static Builder builder(GetVmClusterPatchHistoryEntryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private String id;
@@ -143,11 +122,7 @@ public final class GetVmClusterPatchHistoryEntryResult {
         private String timeEnded;
         private String timeStarted;
         private String vmClusterId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterPatchHistoryEntryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -161,43 +136,63 @@ public final class GetVmClusterPatchHistoryEntryResult {
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder patchHistoryEntryId(String patchHistoryEntryId) {
             this.patchHistoryEntryId = Objects.requireNonNull(patchHistoryEntryId);
             return this;
         }
+        @CustomType.Setter
         public Builder patchId(String patchId) {
             this.patchId = Objects.requireNonNull(patchId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             this.timeEnded = Objects.requireNonNull(timeEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = Objects.requireNonNull(vmClusterId);
             return this;
-        }        public GetVmClusterPatchHistoryEntryResult build() {
-            return new GetVmClusterPatchHistoryEntryResult(action, id, lifecycleDetails, patchHistoryEntryId, patchId, state, timeEnded, timeStarted, vmClusterId);
+        }
+        public GetVmClusterPatchHistoryEntryResult build() {
+            final var o = new GetVmClusterPatchHistoryEntryResult();
+            o.action = action;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.patchHistoryEntryId = patchHistoryEntryId;
+            o.patchId = patchId;
+            o.state = state;
+            o.timeEnded = timeEnded;
+            o.timeStarted = timeStarted;
+            o.vmClusterId = vmClusterId;
+            return o;
         }
     }
 }

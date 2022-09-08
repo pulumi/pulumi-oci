@@ -16,28 +16,19 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListener {
      * @return Port on which ingress gateway is listening.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return Type of protocol used.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return TLS enforcement config for the ingress listener.
      * 
      */
-    private final List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl> tls;
+    private List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl> tls;
 
-    @CustomType.Constructor
-    private GetIngressGatewaysIngressGatewayCollectionItemHostListener(
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("tls") List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl> tls) {
-        this.port = port;
-        this.protocol = protocol;
-        this.tls = tls;
-    }
-
+    private GetIngressGatewaysIngressGatewayCollectionItemHostListener() {}
     /**
      * @return Port on which ingress gateway is listening.
      * 
@@ -67,16 +58,12 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListener {
     public static Builder builder(GetIngressGatewaysIngressGatewayCollectionItemHostListener defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer port;
         private String protocol;
         private List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl> tls;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewaysIngressGatewayCollectionItemHostListener defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.port = defaults.port;
@@ -84,22 +71,30 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListener {
     	      this.tls = defaults.tls;
         }
 
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder tls(List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl> tls) {
             this.tls = Objects.requireNonNull(tls);
             return this;
         }
         public Builder tls(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl... tls) {
             return tls(List.of(tls));
-        }        public GetIngressGatewaysIngressGatewayCollectionItemHostListener build() {
-            return new GetIngressGatewaysIngressGatewayCollectionItemHostListener(port, protocol, tls);
+        }
+        public GetIngressGatewaysIngressGatewayCollectionItemHostListener build() {
+            final var o = new GetIngressGatewaysIngressGatewayCollectionItemHostListener();
+            o.port = port;
+            o.protocol = protocol;
+            o.tls = tls;
+            return o;
         }
     }
 }

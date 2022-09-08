@@ -13,63 +13,44 @@ public final class GetCommitmentsCommitment {
      * @return Commitment available amount
      * 
      */
-    private final String availableAmount;
+    private String availableAmount;
     /**
      * @return Funded Allocation line value example: 12000.00
      * 
      */
-    private final String fundedAllocationValue;
+    private String fundedAllocationValue;
     /**
      * @return SPM internal Commitment ID
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Commitment quantity
      * 
      */
-    private final String quantity;
+    private String quantity;
     /**
      * @return This param is used to get the commitments for a particular subscribed service
      * 
      */
-    private final String subscribedServiceId;
+    private String subscribedServiceId;
     /**
      * @return Commitment end date
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Commitment start date
      * 
      */
-    private final String timeStart;
+    private String timeStart;
     /**
      * @return Commitment used amount
      * 
      */
-    private final String usedAmount;
+    private String usedAmount;
 
-    @CustomType.Constructor
-    private GetCommitmentsCommitment(
-        @CustomType.Parameter("availableAmount") String availableAmount,
-        @CustomType.Parameter("fundedAllocationValue") String fundedAllocationValue,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("quantity") String quantity,
-        @CustomType.Parameter("subscribedServiceId") String subscribedServiceId,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart,
-        @CustomType.Parameter("usedAmount") String usedAmount) {
-        this.availableAmount = availableAmount;
-        this.fundedAllocationValue = fundedAllocationValue;
-        this.id = id;
-        this.quantity = quantity;
-        this.subscribedServiceId = subscribedServiceId;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-        this.usedAmount = usedAmount;
-    }
-
+    private GetCommitmentsCommitment() {}
     /**
      * @return Commitment available amount
      * 
@@ -134,7 +115,7 @@ public final class GetCommitmentsCommitment {
     public static Builder builder(GetCommitmentsCommitment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availableAmount;
         private String fundedAllocationValue;
@@ -144,11 +125,7 @@ public final class GetCommitmentsCommitment {
         private String timeEnd;
         private String timeStart;
         private String usedAmount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCommitmentsCommitment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableAmount = defaults.availableAmount;
@@ -161,39 +138,57 @@ public final class GetCommitmentsCommitment {
     	      this.usedAmount = defaults.usedAmount;
         }
 
+        @CustomType.Setter
         public Builder availableAmount(String availableAmount) {
             this.availableAmount = Objects.requireNonNull(availableAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder fundedAllocationValue(String fundedAllocationValue) {
             this.fundedAllocationValue = Objects.requireNonNull(fundedAllocationValue);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder quantity(String quantity) {
             this.quantity = Objects.requireNonNull(quantity);
             return this;
         }
+        @CustomType.Setter
         public Builder subscribedServiceId(String subscribedServiceId) {
             this.subscribedServiceId = Objects.requireNonNull(subscribedServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
         }
+        @CustomType.Setter
         public Builder usedAmount(String usedAmount) {
             this.usedAmount = Objects.requireNonNull(usedAmount);
             return this;
-        }        public GetCommitmentsCommitment build() {
-            return new GetCommitmentsCommitment(availableAmount, fundedAllocationValue, id, quantity, subscribedServiceId, timeEnd, timeStart, usedAmount);
+        }
+        public GetCommitmentsCommitment build() {
+            final var o = new GetCommitmentsCommitment();
+            o.availableAmount = availableAmount;
+            o.fundedAllocationValue = fundedAllocationValue;
+            o.id = id;
+            o.quantity = quantity;
+            o.subscribedServiceId = subscribedServiceId;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            o.usedAmount = usedAmount;
+            return o;
         }
     }
 }

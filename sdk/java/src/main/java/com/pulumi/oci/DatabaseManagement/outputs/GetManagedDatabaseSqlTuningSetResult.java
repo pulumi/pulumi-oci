@@ -17,38 +17,25 @@ public final class GetManagedDatabaseSqlTuningSetResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The details in the SQL tuning set summary.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningSetItem> items;
+    private List<GetManagedDatabaseSqlTuningSetItem> items;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    private final String managedDatabaseId;
-    private final @Nullable String nameContains;
+    private String managedDatabaseId;
+    private @Nullable String nameContains;
     /**
      * @return The owner of the SQL tuning set.
      * 
      */
-    private final @Nullable String owner;
+    private @Nullable String owner;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningSetResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetManagedDatabaseSqlTuningSetItem> items,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("nameContains") @Nullable String nameContains,
-        @CustomType.Parameter("owner") @Nullable String owner) {
-        this.id = id;
-        this.items = items;
-        this.managedDatabaseId = managedDatabaseId;
-        this.nameContains = nameContains;
-        this.owner = owner;
-    }
-
+    private GetManagedDatabaseSqlTuningSetResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -88,18 +75,14 @@ public final class GetManagedDatabaseSqlTuningSetResult {
     public static Builder builder(GetManagedDatabaseSqlTuningSetResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetManagedDatabaseSqlTuningSetItem> items;
         private String managedDatabaseId;
         private @Nullable String nameContains;
         private @Nullable String owner;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningSetResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -109,10 +92,12 @@ public final class GetManagedDatabaseSqlTuningSetResult {
     	      this.owner = defaults.owner;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseSqlTuningSetItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -120,19 +105,29 @@ public final class GetManagedDatabaseSqlTuningSetResult {
         public Builder items(GetManagedDatabaseSqlTuningSetItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
             this.nameContains = nameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder owner(@Nullable String owner) {
             this.owner = owner;
             return this;
-        }        public GetManagedDatabaseSqlTuningSetResult build() {
-            return new GetManagedDatabaseSqlTuningSetResult(id, items, managedDatabaseId, nameContains, owner);
+        }
+        public GetManagedDatabaseSqlTuningSetResult build() {
+            final var o = new GetManagedDatabaseSqlTuningSetResult();
+            o.id = id;
+            o.items = items;
+            o.managedDatabaseId = managedDatabaseId;
+            o.nameContains = nameContains;
+            o.owner = owner;
+            return o;
         }
     }
 }

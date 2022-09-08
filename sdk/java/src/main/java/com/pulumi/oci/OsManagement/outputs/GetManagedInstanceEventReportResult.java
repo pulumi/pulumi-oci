@@ -12,33 +12,18 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceEventReportResult {
-    private final String compartmentId;
-    private final Integer counts;
+    private String compartmentId;
+    private Integer counts;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String latestTimestampGreaterThanOrEqualTo;
-    private final @Nullable String latestTimestampLessThan;
-    private final String managedInstanceId;
+    private String id;
+    private @Nullable String latestTimestampGreaterThanOrEqualTo;
+    private @Nullable String latestTimestampLessThan;
+    private String managedInstanceId;
 
-    @CustomType.Constructor
-    private GetManagedInstanceEventReportResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("counts") Integer counts,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("latestTimestampGreaterThanOrEqualTo") @Nullable String latestTimestampGreaterThanOrEqualTo,
-        @CustomType.Parameter("latestTimestampLessThan") @Nullable String latestTimestampLessThan,
-        @CustomType.Parameter("managedInstanceId") String managedInstanceId) {
-        this.compartmentId = compartmentId;
-        this.counts = counts;
-        this.id = id;
-        this.latestTimestampGreaterThanOrEqualTo = latestTimestampGreaterThanOrEqualTo;
-        this.latestTimestampLessThan = latestTimestampLessThan;
-        this.managedInstanceId = managedInstanceId;
-    }
-
+    private GetManagedInstanceEventReportResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -69,7 +54,7 @@ public final class GetManagedInstanceEventReportResult {
     public static Builder builder(GetManagedInstanceEventReportResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Integer counts;
@@ -77,11 +62,7 @@ public final class GetManagedInstanceEventReportResult {
         private @Nullable String latestTimestampGreaterThanOrEqualTo;
         private @Nullable String latestTimestampLessThan;
         private String managedInstanceId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedInstanceEventReportResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -92,31 +73,45 @@ public final class GetManagedInstanceEventReportResult {
     	      this.managedInstanceId = defaults.managedInstanceId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder counts(Integer counts) {
             this.counts = Objects.requireNonNull(counts);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder latestTimestampGreaterThanOrEqualTo(@Nullable String latestTimestampGreaterThanOrEqualTo) {
             this.latestTimestampGreaterThanOrEqualTo = latestTimestampGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder latestTimestampLessThan(@Nullable String latestTimestampLessThan) {
             this.latestTimestampLessThan = latestTimestampLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
             return this;
-        }        public GetManagedInstanceEventReportResult build() {
-            return new GetManagedInstanceEventReportResult(compartmentId, counts, id, latestTimestampGreaterThanOrEqualTo, latestTimestampLessThan, managedInstanceId);
+        }
+        public GetManagedInstanceEventReportResult build() {
+            final var o = new GetManagedInstanceEventReportResult();
+            o.compartmentId = compartmentId;
+            o.counts = counts;
+            o.id = id;
+            o.latestTimestampGreaterThanOrEqualTo = latestTimestampGreaterThanOrEqualTo;
+            o.latestTimestampLessThan = latestTimestampLessThan;
+            o.managedInstanceId = managedInstanceId;
+            return o;
         }
     }
 }

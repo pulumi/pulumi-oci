@@ -15,87 +15,60 @@ public final class GetDbManagementPrivateEndpointResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final String dbManagementPrivateEndpointId;
+    private String compartmentId;
+    private String dbManagementPrivateEndpointId;
     /**
      * @return The description of the Database Management private endpoint.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
      * 
      */
-    private final Boolean isCluster;
+    private Boolean isCluster;
     /**
      * @return The display name of the Database Management private endpoint.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      * 
      */
-    private final List<String> nsgIds;
+    private List<String> nsgIds;
     /**
      * @return The IP addresses assigned to the Database Management private endpoint.
      * 
      */
-    private final String privateIp;
+    private String privateIp;
     /**
      * @return The current lifecycle state of the Database Management private endpoint.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetDbManagementPrivateEndpointResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbManagementPrivateEndpointId") String dbManagementPrivateEndpointId,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCluster") Boolean isCluster,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("nsgIds") List<String> nsgIds,
-        @CustomType.Parameter("privateIp") String privateIp,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.compartmentId = compartmentId;
-        this.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
-        this.description = description;
-        this.id = id;
-        this.isCluster = isCluster;
-        this.name = name;
-        this.nsgIds = nsgIds;
-        this.privateIp = privateIp;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.vcnId = vcnId;
-    }
-
+    private GetDbManagementPrivateEndpointResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -184,7 +157,7 @@ public final class GetDbManagementPrivateEndpointResult {
     public static Builder builder(GetDbManagementPrivateEndpointResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String dbManagementPrivateEndpointId;
@@ -198,11 +171,7 @@ public final class GetDbManagementPrivateEndpointResult {
         private String subnetId;
         private String timeCreated;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbManagementPrivateEndpointResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -219,30 +188,37 @@ public final class GetDbManagementPrivateEndpointResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbManagementPrivateEndpointId(String dbManagementPrivateEndpointId) {
             this.dbManagementPrivateEndpointId = Objects.requireNonNull(dbManagementPrivateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCluster(Boolean isCluster) {
             this.isCluster = Objects.requireNonNull(isCluster);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -250,27 +226,46 @@ public final class GetDbManagementPrivateEndpointResult {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder privateIp(String privateIp) {
             this.privateIp = Objects.requireNonNull(privateIp);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetDbManagementPrivateEndpointResult build() {
-            return new GetDbManagementPrivateEndpointResult(compartmentId, dbManagementPrivateEndpointId, description, id, isCluster, name, nsgIds, privateIp, state, subnetId, timeCreated, vcnId);
+        }
+        public GetDbManagementPrivateEndpointResult build() {
+            final var o = new GetDbManagementPrivateEndpointResult();
+            o.compartmentId = compartmentId;
+            o.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
+            o.description = description;
+            o.id = id;
+            o.isCluster = isCluster;
+            o.name = name;
+            o.nsgIds = nsgIds;
+            o.privateIp = privateIp;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

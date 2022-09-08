@@ -17,30 +17,17 @@ public final class GetBackendsResult {
      * @return The list of backend_collection.
      * 
      */
-    private final List<GetBackendsBackendCollection> backendCollections;
-    private final String backendSetName;
-    private final @Nullable List<GetBackendsFilter> filters;
+    private List<GetBackendsBackendCollection> backendCollections;
+    private String backendSetName;
+    private @Nullable List<GetBackendsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String networkLoadBalancerId;
+    private String id;
+    private String networkLoadBalancerId;
 
-    @CustomType.Constructor
-    private GetBackendsResult(
-        @CustomType.Parameter("backendCollections") List<GetBackendsBackendCollection> backendCollections,
-        @CustomType.Parameter("backendSetName") String backendSetName,
-        @CustomType.Parameter("filters") @Nullable List<GetBackendsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("networkLoadBalancerId") String networkLoadBalancerId) {
-        this.backendCollections = backendCollections;
-        this.backendSetName = backendSetName;
-        this.filters = filters;
-        this.id = id;
-        this.networkLoadBalancerId = networkLoadBalancerId;
-    }
-
+    private GetBackendsResult() {}
     /**
      * @return The list of backend_collection.
      * 
@@ -72,18 +59,14 @@ public final class GetBackendsResult {
     public static Builder builder(GetBackendsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBackendsBackendCollection> backendCollections;
         private String backendSetName;
         private @Nullable List<GetBackendsFilter> filters;
         private String id;
         private String networkLoadBalancerId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendCollections = defaults.backendCollections;
@@ -93,6 +76,7 @@ public final class GetBackendsResult {
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
         }
 
+        @CustomType.Setter
         public Builder backendCollections(List<GetBackendsBackendCollection> backendCollections) {
             this.backendCollections = Objects.requireNonNull(backendCollections);
             return this;
@@ -100,10 +84,12 @@ public final class GetBackendsResult {
         public Builder backendCollections(GetBackendsBackendCollection... backendCollections) {
             return backendCollections(List.of(backendCollections));
         }
+        @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBackendsFilter> filters) {
             this.filters = filters;
             return this;
@@ -111,15 +97,24 @@ public final class GetBackendsResult {
         public Builder filters(GetBackendsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
             this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
             return this;
-        }        public GetBackendsResult build() {
-            return new GetBackendsResult(backendCollections, backendSetName, filters, id, networkLoadBalancerId);
+        }
+        public GetBackendsResult build() {
+            final var o = new GetBackendsResult();
+            o.backendCollections = backendCollections;
+            o.backendSetName = backendSetName;
+            o.filters = filters;
+            o.id = id;
+            o.networkLoadBalancerId = networkLoadBalancerId;
+            return o;
         }
     }
 }

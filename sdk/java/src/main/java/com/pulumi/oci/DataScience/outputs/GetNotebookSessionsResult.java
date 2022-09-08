@@ -18,59 +18,40 @@ public final class GetNotebookSessionsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
      * 
      */
-    private final @Nullable String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetNotebookSessionsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetNotebookSessionsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of notebook_sessions.
      * 
      */
-    private final List<GetNotebookSessionsNotebookSession> notebookSessions;
+    private List<GetNotebookSessionsNotebookSession> notebookSessions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the notebook session.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The state of the notebook session.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetNotebookSessionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") @Nullable String createdBy,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetNotebookSessionsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("notebookSessions") List<GetNotebookSessionsNotebookSession> notebookSessions,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.notebookSessions = notebookSessions;
-        this.projectId = projectId;
-        this.state = state;
-    }
-
+    private GetNotebookSessionsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session&#39;s compartment.
      * 
@@ -131,7 +112,7 @@ public final class GetNotebookSessionsResult {
     public static Builder builder(GetNotebookSessionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String createdBy;
@@ -141,11 +122,7 @@ public final class GetNotebookSessionsResult {
         private List<GetNotebookSessionsNotebookSession> notebookSessions;
         private @Nullable String projectId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNotebookSessionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -158,18 +135,22 @@ public final class GetNotebookSessionsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
             this.createdBy = createdBy;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNotebookSessionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -177,10 +158,12 @@ public final class GetNotebookSessionsResult {
         public Builder filters(GetNotebookSessionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder notebookSessions(List<GetNotebookSessionsNotebookSession> notebookSessions) {
             this.notebookSessions = Objects.requireNonNull(notebookSessions);
             return this;
@@ -188,15 +171,27 @@ public final class GetNotebookSessionsResult {
         public Builder notebookSessions(GetNotebookSessionsNotebookSession... notebookSessions) {
             return notebookSessions(List.of(notebookSessions));
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetNotebookSessionsResult build() {
-            return new GetNotebookSessionsResult(compartmentId, createdBy, displayName, filters, id, notebookSessions, projectId, state);
+        }
+        public GetNotebookSessionsResult build() {
+            final var o = new GetNotebookSessionsResult();
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.notebookSessions = notebookSessions;
+            o.projectId = projectId;
+            o.state = state;
+            return o;
         }
     }
 }

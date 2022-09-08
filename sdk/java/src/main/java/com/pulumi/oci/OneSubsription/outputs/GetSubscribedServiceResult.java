@@ -35,794 +35,565 @@ public final class GetSubscribedServiceResult {
      * @return Subscribed service admin email id
      * 
      */
-    private final String adminEmail;
+    private String adminEmail;
     /**
      * @return Subscribed service agreement ID
      * 
      */
-    private final String agreementId;
+    private String agreementId;
     /**
      * @return Subscribed service agrrement name
      * 
      */
-    private final String agreementName;
+    private String agreementName;
     /**
      * @return Subscribed service agrrement type
      * 
      */
-    private final String agreementType;
+    private String agreementType;
     /**
      * @return Commitment available amount
      * 
      */
-    private final String availableAmount;
+    private String availableAmount;
     /**
      * @return Address.
      * 
      */
-    private final List<GetSubscribedServiceBillToAddress> billToAddresses;
+    private List<GetSubscribedServiceBillToAddress> billToAddresses;
     /**
      * @return User.
      * 
      */
-    private final List<GetSubscribedServiceBillToContact> billToContacts;
+    private List<GetSubscribedServiceBillToContact> billToContacts;
     /**
      * @return Business partner.
      * 
      */
-    private final List<GetSubscribedServiceBillToCustomer> billToCustomers;
+    private List<GetSubscribedServiceBillToCustomer> billToCustomers;
     /**
      * @return Subscribed service invoice frequency
      * 
      */
-    private final String billingFrequency;
+    private String billingFrequency;
     /**
      * @return Booking Opportunity Number of Subscribed Service
      * 
      */
-    private final String bookingOptyNumber;
+    private String bookingOptyNumber;
     /**
      * @return Subscribed service buyer email id
      * 
      */
-    private final String buyerEmail;
+    private String buyerEmail;
     /**
      * @return Subscribed service commitment schedule Id
      * 
      */
-    private final String commitmentScheduleId;
+    private String commitmentScheduleId;
     /**
      * @return List of Commitment services of a line
      * 
      */
-    private final List<GetSubscribedServiceCommitmentService> commitmentServices;
+    private List<GetSubscribedServiceCommitmentService> commitmentServices;
     /**
      * @return User that created the Payment term
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return Subscribed service credit percentage
      * 
      */
-    private final String creditPercentage;
+    private String creditPercentage;
     /**
      * @return Subscribed service CSI number
      * 
      */
-    private final String csi;
+    private String csi;
     /**
      * @return Identifier for a customer&#39;s transactions for purchase of ay oracle services
      * 
      */
-    private final String customerTransactionReference;
+    private String customerTransactionReference;
     /**
      * @return Subscribed service data center
      * 
      */
-    private final String dataCenter;
+    private String dataCenter;
     /**
      * @return Subscribed service data center region
      * 
      */
-    private final String dataCenterRegion;
+    private String dataCenterRegion;
     /**
      * @return Subscribed service eligible to renew field
      * 
      */
-    private final String eligibleToRenew;
+    private String eligibleToRenew;
     /**
      * @return Address.
      * 
      */
-    private final List<GetSubscribedServiceEndUserAddress> endUserAddresses;
+    private List<GetSubscribedServiceEndUserAddress> endUserAddresses;
     /**
      * @return User.
      * 
      */
-    private final List<GetSubscribedServiceEndUserContact> endUserContacts;
+    private List<GetSubscribedServiceEndUserContact> endUserContacts;
     /**
      * @return Business partner.
      * 
      */
-    private final List<GetSubscribedServiceEndUserCustomer> endUserCustomers;
-    private final @Nullable List<String> fields;
+    private List<GetSubscribedServiceEndUserCustomer> endUserCustomers;
+    private @Nullable List<String> fields;
     /**
      * @return Subscribed service fulfillment set
      * 
      */
-    private final String fulfillmentSet;
+    private String fulfillmentSet;
     /**
      * @return Funded Allocation line value example: 12000.00
      * 
      */
-    private final String fundedAllocationValue;
+    private String fundedAllocationValue;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if a service can recieve usages and consequently have available amounts computed
      * 
      */
-    private final Boolean isAllowance;
+    private Boolean isAllowance;
     /**
      * @return If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
      * 
      */
-    private final Boolean isCapToPriceList;
+    private Boolean isCapToPriceList;
     /**
      * @return Used in context of service credit lines
      * 
      */
-    private final Boolean isCreditEnabled;
+    private Boolean isCreditEnabled;
     /**
      * @return Indicator on whether or not there has been usage for the subscribed service
      * 
      */
-    private final Boolean isHavingUsage;
+    private Boolean isHavingUsage;
     /**
      * @return Subscribed service intent to pay flag
      * 
      */
-    private final Boolean isIntentToPay;
+    private Boolean isIntentToPay;
     /**
      * @return Subscribed service payg flag
      * 
      */
-    private final Boolean isPayg;
+    private Boolean isPayg;
     /**
      * @return Indicates if the Subscribed service has a single ratecard
      * 
      */
-    private final Boolean isSingleRateCard;
+    private Boolean isSingleRateCard;
     /**
      * @return Indicates if the commitment lines can have different quantities
      * 
      */
-    private final Boolean isVariableCommitment;
+    private Boolean isVariableCommitment;
     /**
      * @return Subscribed service line net amount
      * 
      */
-    private final String lineNetAmount;
+    private String lineNetAmount;
     /**
      * @return Subscribed service Major Set
      * 
      */
-    private final String majorSet;
+    private String majorSet;
     /**
      * @return Rate card tier net unit price
      * 
      */
-    private final String netUnitPrice;
+    private String netUnitPrice;
     /**
      * @return Subscribed service operation type
      * 
      */
-    private final String operationType;
+    private String operationType;
     /**
      * @return Sales Order Header associated to the subscribed service
      * 
      */
-    private final String orderHeaderId;
+    private String orderHeaderId;
     /**
      * @return Sales Order Line Id associated to the subscribed service
      * 
      */
-    private final String orderLineId;
+    private String orderLineId;
     /**
      * @return Sales Order Line Number associated to the subscribed service
      * 
      */
-    private final Integer orderLineNumber;
+    private Integer orderLineNumber;
     /**
      * @return Sales Order Number associated to the subscribed service
      * 
      */
-    private final String orderNumber;
+    private String orderNumber;
     /**
      * @return Order Type of Subscribed Service
      * 
      */
-    private final String orderType;
+    private String orderType;
     /**
      * @return Subscribed service Promotion Amount
      * 
      */
-    private final String originalPromoAmount;
+    private String originalPromoAmount;
     /**
      * @return Overage Bill To of Subscribed Service
      * 
      */
-    private final String overageBillTo;
+    private String overageBillTo;
     /**
      * @return Subscribed service Overage Discount Percentage
      * 
      */
-    private final String overageDiscountPercentage;
+    private String overageDiscountPercentage;
     /**
      * @return Overage Policy of Subscribed Service
      * 
      */
-    private final String overagePolicy;
+    private String overagePolicy;
     /**
      * @return Subscribed service partner credit amount
      * 
      */
-    private final String partnerCreditAmount;
+    private String partnerCreditAmount;
     /**
      * @return This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
      * 
      */
-    private final String partnerTransactionType;
+    private String partnerTransactionType;
     /**
      * @return Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
      * 
      */
-    private final String paygPolicy;
+    private String paygPolicy;
     /**
      * @return Payment Method of Subscribed Service
      * 
      */
-    private final String paymentMethod;
+    private String paymentMethod;
     /**
      * @return Payment Number of Subscribed Service
      * 
      */
-    private final String paymentNumber;
+    private String paymentNumber;
     /**
      * @return Payment Term details
      * 
      */
-    private final List<GetSubscribedServicePaymentTerm> paymentTerms;
+    private List<GetSubscribedServicePaymentTerm> paymentTerms;
     /**
      * @return Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
      * 
      */
-    private final String pricePeriod;
+    private String pricePeriod;
     /**
      * @return Subscribed service pricing model
      * 
      */
-    private final String pricingModel;
+    private String pricingModel;
     /**
      * @return Product description
      * 
      */
-    private final List<GetSubscribedServiceProduct> products;
+    private List<GetSubscribedServiceProduct> products;
     /**
      * @return Subscribed service program type
      * 
      */
-    private final String programType;
+    private String programType;
     /**
      * @return Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of  the associated promo line.
      * 
      */
-    private final String promoOrderLineId;
+    private String promoOrderLineId;
     /**
      * @return Subscribed service promotion type
      * 
      */
-    private final String promoType;
+    private String promoType;
     /**
      * @return Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
      * 
      */
-    private final String promotionPricingType;
+    private String promotionPricingType;
     /**
      * @return Subscribed service provisioning source
      * 
      */
-    private final String provisioningSource;
+    private String provisioningSource;
     /**
      * @return Subscribed service quantity
      * 
      */
-    private final String quantity;
+    private String quantity;
     /**
      * @return Subscribed service Rate Card Discount Percentage
      * 
      */
-    private final String rateCardDiscountPercentage;
+    private String rateCardDiscountPercentage;
     /**
      * @return List of Rate Cards of a Subscribed Service
      * 
      */
-    private final List<GetSubscribedServiceRateCard> rateCards;
+    private List<GetSubscribedServiceRateCard> rateCards;
     /**
      * @return SPM Ratecard Type
      * 
      */
-    private final String ratecardType;
+    private String ratecardType;
     /**
      * @return Subscribed service Opportunity Id
      * 
      */
-    private final String renewalOptyId;
+    private String renewalOptyId;
     /**
      * @return Renewal Opportunity Number of Subscribed Service
      * 
      */
-    private final String renewalOptyNumber;
+    private String renewalOptyNumber;
     /**
      * @return Renewal Opportunity Type of Subscribed Service
      * 
      */
-    private final String renewalOptyType;
+    private String renewalOptyType;
     /**
      * @return SPM renewed Subscription ID
      * 
      */
-    private final String renewedSubscribedServiceId;
+    private String renewedSubscribedServiceId;
     /**
      * @return Address.
      * 
      */
-    private final List<GetSubscribedServiceResellerAddress> resellerAddresses;
+    private List<GetSubscribedServiceResellerAddress> resellerAddresses;
     /**
      * @return User.
      * 
      */
-    private final List<GetSubscribedServiceResellerContact> resellerContacts;
+    private List<GetSubscribedServiceResellerContact> resellerContacts;
     /**
      * @return Business partner.
      * 
      */
-    private final List<GetSubscribedServiceResellerCustomer> resellerCustomers;
+    private List<GetSubscribedServiceResellerCustomer> resellerCustomers;
     /**
      * @return Subscribed service Revenue Line Id
      * 
      */
-    private final String revenueLineId;
+    private String revenueLineId;
     /**
      * @return Revenue Line NUmber of Subscribed Service
      * 
      */
-    private final String revenueLineNumber;
+    private String revenueLineNumber;
     /**
      * @return Subscribed service Revised ARR
      * 
      */
-    private final String revisedArrInLc;
+    private String revisedArrInLc;
     /**
      * @return Subscribed service Revised ARR in Standard Currency
      * 
      */
-    private final String revisedArrInSc;
+    private String revisedArrInSc;
     /**
      * @return Subscribed service sales account party id
      * 
      */
-    private final String salesAccountPartyId;
+    private String salesAccountPartyId;
     /**
      * @return Sales Channel of Subscribed Service
      * 
      */
-    private final String salesChannel;
+    private String salesChannel;
     /**
      * @return Subscribed service line number
      * 
      */
-    private final String serialNumber;
+    private String serialNumber;
     /**
      * @return Address.
      * 
      */
-    private final List<GetSubscribedServiceServiceToAddress> serviceToAddresses;
+    private List<GetSubscribedServiceServiceToAddress> serviceToAddresses;
     /**
      * @return User.
      * 
      */
-    private final List<GetSubscribedServiceServiceToContact> serviceToContacts;
+    private List<GetSubscribedServiceServiceToContact> serviceToContacts;
     /**
      * @return Business partner.
      * 
      */
-    private final List<GetSubscribedServiceServiceToCustomer> serviceToCustomers;
+    private List<GetSubscribedServiceServiceToCustomer> serviceToCustomers;
     /**
      * @return User.
      * 
      */
-    private final List<GetSubscribedServiceSoldToContact> soldToContacts;
+    private List<GetSubscribedServiceSoldToContact> soldToContacts;
     /**
      * @return Business partner.
      * 
      */
-    private final List<GetSubscribedServiceSoldToCustomer> soldToCustomers;
+    private List<GetSubscribedServiceSoldToCustomer> soldToCustomers;
     /**
      * @return Subscribed service start date type
      * 
      */
-    private final String startDateType;
+    private String startDateType;
     /**
      * @return Subscribed service status
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return SPM internal Subscribed Service ID
      * 
      */
-    private final String subscribedServiceId;
+    private String subscribedServiceId;
     /**
      * @return Subscription ID associated to the subscribed service
      * 
      */
-    private final String subscriptionId;
+    private String subscriptionId;
     /**
      * @return Subscribed service source
      * 
      */
-    private final String subscriptionSource;
+    private String subscriptionSource;
     /**
      * @return Subscribed service System ARR
      * 
      */
-    private final String systemArrInLc;
+    private String systemArrInLc;
     /**
      * @return Subscribed service System ARR in Standard Currency
      * 
      */
-    private final String systemArrInSc;
+    private String systemArrInSc;
     /**
      * @return Subscribed service System ATR-ARR
      * 
      */
-    private final String systemAtrArrInLc;
+    private String systemAtrArrInLc;
     /**
      * @return Subscribed service System ATR-ARR in Standard Currency
      * 
      */
-    private final String systemAtrArrInSc;
+    private String systemAtrArrInSc;
     /**
      * @return Term value in Months
      * 
      */
-    private final String termValue;
+    private String termValue;
     /**
      * @return Term value UOM
      * 
      */
-    private final String termValueUom;
+    private String termValueUom;
     /**
      * @return Subscribed service agrrement end date
      * 
      */
-    private final String timeAgreementEnd;
+    private String timeAgreementEnd;
     /**
      * @return Subscribed service creation date
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Subscribed service customer config date
      * 
      */
-    private final String timeCustomerConfig;
+    private String timeCustomerConfig;
     /**
      * @return Subscribed service end date
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Subscribed service Major Set End date
      * 
      */
-    private final String timeMajorsetEnd;
+    private String timeMajorsetEnd;
     /**
      * @return Subscribed service Major Set Start date
      * 
      */
-    private final String timeMajorsetStart;
+    private String timeMajorsetStart;
     /**
      * @return Subscribed service payment expiry date
      * 
      */
-    private final String timePaymentExpiry;
+    private String timePaymentExpiry;
     /**
      * @return Subscribed service provisioning date
      * 
      */
-    private final String timeProvisioned;
+    private String timeProvisioned;
     /**
      * @return Subscribed service service configuration email sent date
      * 
      */
-    private final String timeServiceConfigurationEmailSent;
+    private String timeServiceConfigurationEmailSent;
     /**
      * @return Subscribed service start date
      * 
      */
-    private final String timeStart;
+    private String timeStart;
     /**
      * @return Subscribed service last update date
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Subscribed service welcome email sent date
      * 
      */
-    private final String timeWelcomeEmailSent;
+    private String timeWelcomeEmailSent;
     /**
      * @return Subscribed service total value
      * 
      */
-    private final String totalValue;
+    private String totalValue;
     /**
      * @return Subscribed service Transaction Extension Id
      * 
      */
-    private final String transactionExtensionId;
+    private String transactionExtensionId;
     /**
      * @return Subscribed Service line type
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return User that updated the subscribed service
      * 
      */
-    private final String updatedBy;
+    private String updatedBy;
     /**
      * @return Subscribed service used amount
      * 
      */
-    private final String usedAmount;
+    private String usedAmount;
 
-    @CustomType.Constructor
-    private GetSubscribedServiceResult(
-        @CustomType.Parameter("adminEmail") String adminEmail,
-        @CustomType.Parameter("agreementId") String agreementId,
-        @CustomType.Parameter("agreementName") String agreementName,
-        @CustomType.Parameter("agreementType") String agreementType,
-        @CustomType.Parameter("availableAmount") String availableAmount,
-        @CustomType.Parameter("billToAddresses") List<GetSubscribedServiceBillToAddress> billToAddresses,
-        @CustomType.Parameter("billToContacts") List<GetSubscribedServiceBillToContact> billToContacts,
-        @CustomType.Parameter("billToCustomers") List<GetSubscribedServiceBillToCustomer> billToCustomers,
-        @CustomType.Parameter("billingFrequency") String billingFrequency,
-        @CustomType.Parameter("bookingOptyNumber") String bookingOptyNumber,
-        @CustomType.Parameter("buyerEmail") String buyerEmail,
-        @CustomType.Parameter("commitmentScheduleId") String commitmentScheduleId,
-        @CustomType.Parameter("commitmentServices") List<GetSubscribedServiceCommitmentService> commitmentServices,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("creditPercentage") String creditPercentage,
-        @CustomType.Parameter("csi") String csi,
-        @CustomType.Parameter("customerTransactionReference") String customerTransactionReference,
-        @CustomType.Parameter("dataCenter") String dataCenter,
-        @CustomType.Parameter("dataCenterRegion") String dataCenterRegion,
-        @CustomType.Parameter("eligibleToRenew") String eligibleToRenew,
-        @CustomType.Parameter("endUserAddresses") List<GetSubscribedServiceEndUserAddress> endUserAddresses,
-        @CustomType.Parameter("endUserContacts") List<GetSubscribedServiceEndUserContact> endUserContacts,
-        @CustomType.Parameter("endUserCustomers") List<GetSubscribedServiceEndUserCustomer> endUserCustomers,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("fulfillmentSet") String fulfillmentSet,
-        @CustomType.Parameter("fundedAllocationValue") String fundedAllocationValue,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAllowance") Boolean isAllowance,
-        @CustomType.Parameter("isCapToPriceList") Boolean isCapToPriceList,
-        @CustomType.Parameter("isCreditEnabled") Boolean isCreditEnabled,
-        @CustomType.Parameter("isHavingUsage") Boolean isHavingUsage,
-        @CustomType.Parameter("isIntentToPay") Boolean isIntentToPay,
-        @CustomType.Parameter("isPayg") Boolean isPayg,
-        @CustomType.Parameter("isSingleRateCard") Boolean isSingleRateCard,
-        @CustomType.Parameter("isVariableCommitment") Boolean isVariableCommitment,
-        @CustomType.Parameter("lineNetAmount") String lineNetAmount,
-        @CustomType.Parameter("majorSet") String majorSet,
-        @CustomType.Parameter("netUnitPrice") String netUnitPrice,
-        @CustomType.Parameter("operationType") String operationType,
-        @CustomType.Parameter("orderHeaderId") String orderHeaderId,
-        @CustomType.Parameter("orderLineId") String orderLineId,
-        @CustomType.Parameter("orderLineNumber") Integer orderLineNumber,
-        @CustomType.Parameter("orderNumber") String orderNumber,
-        @CustomType.Parameter("orderType") String orderType,
-        @CustomType.Parameter("originalPromoAmount") String originalPromoAmount,
-        @CustomType.Parameter("overageBillTo") String overageBillTo,
-        @CustomType.Parameter("overageDiscountPercentage") String overageDiscountPercentage,
-        @CustomType.Parameter("overagePolicy") String overagePolicy,
-        @CustomType.Parameter("partnerCreditAmount") String partnerCreditAmount,
-        @CustomType.Parameter("partnerTransactionType") String partnerTransactionType,
-        @CustomType.Parameter("paygPolicy") String paygPolicy,
-        @CustomType.Parameter("paymentMethod") String paymentMethod,
-        @CustomType.Parameter("paymentNumber") String paymentNumber,
-        @CustomType.Parameter("paymentTerms") List<GetSubscribedServicePaymentTerm> paymentTerms,
-        @CustomType.Parameter("pricePeriod") String pricePeriod,
-        @CustomType.Parameter("pricingModel") String pricingModel,
-        @CustomType.Parameter("products") List<GetSubscribedServiceProduct> products,
-        @CustomType.Parameter("programType") String programType,
-        @CustomType.Parameter("promoOrderLineId") String promoOrderLineId,
-        @CustomType.Parameter("promoType") String promoType,
-        @CustomType.Parameter("promotionPricingType") String promotionPricingType,
-        @CustomType.Parameter("provisioningSource") String provisioningSource,
-        @CustomType.Parameter("quantity") String quantity,
-        @CustomType.Parameter("rateCardDiscountPercentage") String rateCardDiscountPercentage,
-        @CustomType.Parameter("rateCards") List<GetSubscribedServiceRateCard> rateCards,
-        @CustomType.Parameter("ratecardType") String ratecardType,
-        @CustomType.Parameter("renewalOptyId") String renewalOptyId,
-        @CustomType.Parameter("renewalOptyNumber") String renewalOptyNumber,
-        @CustomType.Parameter("renewalOptyType") String renewalOptyType,
-        @CustomType.Parameter("renewedSubscribedServiceId") String renewedSubscribedServiceId,
-        @CustomType.Parameter("resellerAddresses") List<GetSubscribedServiceResellerAddress> resellerAddresses,
-        @CustomType.Parameter("resellerContacts") List<GetSubscribedServiceResellerContact> resellerContacts,
-        @CustomType.Parameter("resellerCustomers") List<GetSubscribedServiceResellerCustomer> resellerCustomers,
-        @CustomType.Parameter("revenueLineId") String revenueLineId,
-        @CustomType.Parameter("revenueLineNumber") String revenueLineNumber,
-        @CustomType.Parameter("revisedArrInLc") String revisedArrInLc,
-        @CustomType.Parameter("revisedArrInSc") String revisedArrInSc,
-        @CustomType.Parameter("salesAccountPartyId") String salesAccountPartyId,
-        @CustomType.Parameter("salesChannel") String salesChannel,
-        @CustomType.Parameter("serialNumber") String serialNumber,
-        @CustomType.Parameter("serviceToAddresses") List<GetSubscribedServiceServiceToAddress> serviceToAddresses,
-        @CustomType.Parameter("serviceToContacts") List<GetSubscribedServiceServiceToContact> serviceToContacts,
-        @CustomType.Parameter("serviceToCustomers") List<GetSubscribedServiceServiceToCustomer> serviceToCustomers,
-        @CustomType.Parameter("soldToContacts") List<GetSubscribedServiceSoldToContact> soldToContacts,
-        @CustomType.Parameter("soldToCustomers") List<GetSubscribedServiceSoldToCustomer> soldToCustomers,
-        @CustomType.Parameter("startDateType") String startDateType,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("subscribedServiceId") String subscribedServiceId,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("subscriptionSource") String subscriptionSource,
-        @CustomType.Parameter("systemArrInLc") String systemArrInLc,
-        @CustomType.Parameter("systemArrInSc") String systemArrInSc,
-        @CustomType.Parameter("systemAtrArrInLc") String systemAtrArrInLc,
-        @CustomType.Parameter("systemAtrArrInSc") String systemAtrArrInSc,
-        @CustomType.Parameter("termValue") String termValue,
-        @CustomType.Parameter("termValueUom") String termValueUom,
-        @CustomType.Parameter("timeAgreementEnd") String timeAgreementEnd,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeCustomerConfig") String timeCustomerConfig,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeMajorsetEnd") String timeMajorsetEnd,
-        @CustomType.Parameter("timeMajorsetStart") String timeMajorsetStart,
-        @CustomType.Parameter("timePaymentExpiry") String timePaymentExpiry,
-        @CustomType.Parameter("timeProvisioned") String timeProvisioned,
-        @CustomType.Parameter("timeServiceConfigurationEmailSent") String timeServiceConfigurationEmailSent,
-        @CustomType.Parameter("timeStart") String timeStart,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("timeWelcomeEmailSent") String timeWelcomeEmailSent,
-        @CustomType.Parameter("totalValue") String totalValue,
-        @CustomType.Parameter("transactionExtensionId") String transactionExtensionId,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("updatedBy") String updatedBy,
-        @CustomType.Parameter("usedAmount") String usedAmount) {
-        this.adminEmail = adminEmail;
-        this.agreementId = agreementId;
-        this.agreementName = agreementName;
-        this.agreementType = agreementType;
-        this.availableAmount = availableAmount;
-        this.billToAddresses = billToAddresses;
-        this.billToContacts = billToContacts;
-        this.billToCustomers = billToCustomers;
-        this.billingFrequency = billingFrequency;
-        this.bookingOptyNumber = bookingOptyNumber;
-        this.buyerEmail = buyerEmail;
-        this.commitmentScheduleId = commitmentScheduleId;
-        this.commitmentServices = commitmentServices;
-        this.createdBy = createdBy;
-        this.creditPercentage = creditPercentage;
-        this.csi = csi;
-        this.customerTransactionReference = customerTransactionReference;
-        this.dataCenter = dataCenter;
-        this.dataCenterRegion = dataCenterRegion;
-        this.eligibleToRenew = eligibleToRenew;
-        this.endUserAddresses = endUserAddresses;
-        this.endUserContacts = endUserContacts;
-        this.endUserCustomers = endUserCustomers;
-        this.fields = fields;
-        this.fulfillmentSet = fulfillmentSet;
-        this.fundedAllocationValue = fundedAllocationValue;
-        this.id = id;
-        this.isAllowance = isAllowance;
-        this.isCapToPriceList = isCapToPriceList;
-        this.isCreditEnabled = isCreditEnabled;
-        this.isHavingUsage = isHavingUsage;
-        this.isIntentToPay = isIntentToPay;
-        this.isPayg = isPayg;
-        this.isSingleRateCard = isSingleRateCard;
-        this.isVariableCommitment = isVariableCommitment;
-        this.lineNetAmount = lineNetAmount;
-        this.majorSet = majorSet;
-        this.netUnitPrice = netUnitPrice;
-        this.operationType = operationType;
-        this.orderHeaderId = orderHeaderId;
-        this.orderLineId = orderLineId;
-        this.orderLineNumber = orderLineNumber;
-        this.orderNumber = orderNumber;
-        this.orderType = orderType;
-        this.originalPromoAmount = originalPromoAmount;
-        this.overageBillTo = overageBillTo;
-        this.overageDiscountPercentage = overageDiscountPercentage;
-        this.overagePolicy = overagePolicy;
-        this.partnerCreditAmount = partnerCreditAmount;
-        this.partnerTransactionType = partnerTransactionType;
-        this.paygPolicy = paygPolicy;
-        this.paymentMethod = paymentMethod;
-        this.paymentNumber = paymentNumber;
-        this.paymentTerms = paymentTerms;
-        this.pricePeriod = pricePeriod;
-        this.pricingModel = pricingModel;
-        this.products = products;
-        this.programType = programType;
-        this.promoOrderLineId = promoOrderLineId;
-        this.promoType = promoType;
-        this.promotionPricingType = promotionPricingType;
-        this.provisioningSource = provisioningSource;
-        this.quantity = quantity;
-        this.rateCardDiscountPercentage = rateCardDiscountPercentage;
-        this.rateCards = rateCards;
-        this.ratecardType = ratecardType;
-        this.renewalOptyId = renewalOptyId;
-        this.renewalOptyNumber = renewalOptyNumber;
-        this.renewalOptyType = renewalOptyType;
-        this.renewedSubscribedServiceId = renewedSubscribedServiceId;
-        this.resellerAddresses = resellerAddresses;
-        this.resellerContacts = resellerContacts;
-        this.resellerCustomers = resellerCustomers;
-        this.revenueLineId = revenueLineId;
-        this.revenueLineNumber = revenueLineNumber;
-        this.revisedArrInLc = revisedArrInLc;
-        this.revisedArrInSc = revisedArrInSc;
-        this.salesAccountPartyId = salesAccountPartyId;
-        this.salesChannel = salesChannel;
-        this.serialNumber = serialNumber;
-        this.serviceToAddresses = serviceToAddresses;
-        this.serviceToContacts = serviceToContacts;
-        this.serviceToCustomers = serviceToCustomers;
-        this.soldToContacts = soldToContacts;
-        this.soldToCustomers = soldToCustomers;
-        this.startDateType = startDateType;
-        this.status = status;
-        this.subscribedServiceId = subscribedServiceId;
-        this.subscriptionId = subscriptionId;
-        this.subscriptionSource = subscriptionSource;
-        this.systemArrInLc = systemArrInLc;
-        this.systemArrInSc = systemArrInSc;
-        this.systemAtrArrInLc = systemAtrArrInLc;
-        this.systemAtrArrInSc = systemAtrArrInSc;
-        this.termValue = termValue;
-        this.termValueUom = termValueUom;
-        this.timeAgreementEnd = timeAgreementEnd;
-        this.timeCreated = timeCreated;
-        this.timeCustomerConfig = timeCustomerConfig;
-        this.timeEnd = timeEnd;
-        this.timeMajorsetEnd = timeMajorsetEnd;
-        this.timeMajorsetStart = timeMajorsetStart;
-        this.timePaymentExpiry = timePaymentExpiry;
-        this.timeProvisioned = timeProvisioned;
-        this.timeServiceConfigurationEmailSent = timeServiceConfigurationEmailSent;
-        this.timeStart = timeStart;
-        this.timeUpdated = timeUpdated;
-        this.timeWelcomeEmailSent = timeWelcomeEmailSent;
-        this.totalValue = totalValue;
-        this.transactionExtensionId = transactionExtensionId;
-        this.type = type;
-        this.updatedBy = updatedBy;
-        this.usedAmount = usedAmount;
-    }
-
+    private GetSubscribedServiceResult() {}
     /**
      * @return Subscribed service admin email id
      * 
@@ -1618,7 +1389,7 @@ public final class GetSubscribedServiceResult {
     public static Builder builder(GetSubscribedServiceResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminEmail;
         private String agreementId;
@@ -1733,11 +1504,7 @@ public final class GetSubscribedServiceResult {
         private String type;
         private String updatedBy;
         private String usedAmount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscribedServiceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminEmail = defaults.adminEmail;
@@ -1855,26 +1622,32 @@ public final class GetSubscribedServiceResult {
     	      this.usedAmount = defaults.usedAmount;
         }
 
+        @CustomType.Setter
         public Builder adminEmail(String adminEmail) {
             this.adminEmail = Objects.requireNonNull(adminEmail);
             return this;
         }
+        @CustomType.Setter
         public Builder agreementId(String agreementId) {
             this.agreementId = Objects.requireNonNull(agreementId);
             return this;
         }
+        @CustomType.Setter
         public Builder agreementName(String agreementName) {
             this.agreementName = Objects.requireNonNull(agreementName);
             return this;
         }
+        @CustomType.Setter
         public Builder agreementType(String agreementType) {
             this.agreementType = Objects.requireNonNull(agreementType);
             return this;
         }
+        @CustomType.Setter
         public Builder availableAmount(String availableAmount) {
             this.availableAmount = Objects.requireNonNull(availableAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder billToAddresses(List<GetSubscribedServiceBillToAddress> billToAddresses) {
             this.billToAddresses = Objects.requireNonNull(billToAddresses);
             return this;
@@ -1882,6 +1655,7 @@ public final class GetSubscribedServiceResult {
         public Builder billToAddresses(GetSubscribedServiceBillToAddress... billToAddresses) {
             return billToAddresses(List.of(billToAddresses));
         }
+        @CustomType.Setter
         public Builder billToContacts(List<GetSubscribedServiceBillToContact> billToContacts) {
             this.billToContacts = Objects.requireNonNull(billToContacts);
             return this;
@@ -1889,6 +1663,7 @@ public final class GetSubscribedServiceResult {
         public Builder billToContacts(GetSubscribedServiceBillToContact... billToContacts) {
             return billToContacts(List.of(billToContacts));
         }
+        @CustomType.Setter
         public Builder billToCustomers(List<GetSubscribedServiceBillToCustomer> billToCustomers) {
             this.billToCustomers = Objects.requireNonNull(billToCustomers);
             return this;
@@ -1896,22 +1671,27 @@ public final class GetSubscribedServiceResult {
         public Builder billToCustomers(GetSubscribedServiceBillToCustomer... billToCustomers) {
             return billToCustomers(List.of(billToCustomers));
         }
+        @CustomType.Setter
         public Builder billingFrequency(String billingFrequency) {
             this.billingFrequency = Objects.requireNonNull(billingFrequency);
             return this;
         }
+        @CustomType.Setter
         public Builder bookingOptyNumber(String bookingOptyNumber) {
             this.bookingOptyNumber = Objects.requireNonNull(bookingOptyNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder buyerEmail(String buyerEmail) {
             this.buyerEmail = Objects.requireNonNull(buyerEmail);
             return this;
         }
+        @CustomType.Setter
         public Builder commitmentScheduleId(String commitmentScheduleId) {
             this.commitmentScheduleId = Objects.requireNonNull(commitmentScheduleId);
             return this;
         }
+        @CustomType.Setter
         public Builder commitmentServices(List<GetSubscribedServiceCommitmentService> commitmentServices) {
             this.commitmentServices = Objects.requireNonNull(commitmentServices);
             return this;
@@ -1919,34 +1699,42 @@ public final class GetSubscribedServiceResult {
         public Builder commitmentServices(GetSubscribedServiceCommitmentService... commitmentServices) {
             return commitmentServices(List.of(commitmentServices));
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder creditPercentage(String creditPercentage) {
             this.creditPercentage = Objects.requireNonNull(creditPercentage);
             return this;
         }
+        @CustomType.Setter
         public Builder csi(String csi) {
             this.csi = Objects.requireNonNull(csi);
             return this;
         }
+        @CustomType.Setter
         public Builder customerTransactionReference(String customerTransactionReference) {
             this.customerTransactionReference = Objects.requireNonNull(customerTransactionReference);
             return this;
         }
+        @CustomType.Setter
         public Builder dataCenter(String dataCenter) {
             this.dataCenter = Objects.requireNonNull(dataCenter);
             return this;
         }
+        @CustomType.Setter
         public Builder dataCenterRegion(String dataCenterRegion) {
             this.dataCenterRegion = Objects.requireNonNull(dataCenterRegion);
             return this;
         }
+        @CustomType.Setter
         public Builder eligibleToRenew(String eligibleToRenew) {
             this.eligibleToRenew = Objects.requireNonNull(eligibleToRenew);
             return this;
         }
+        @CustomType.Setter
         public Builder endUserAddresses(List<GetSubscribedServiceEndUserAddress> endUserAddresses) {
             this.endUserAddresses = Objects.requireNonNull(endUserAddresses);
             return this;
@@ -1954,6 +1742,7 @@ public final class GetSubscribedServiceResult {
         public Builder endUserAddresses(GetSubscribedServiceEndUserAddress... endUserAddresses) {
             return endUserAddresses(List.of(endUserAddresses));
         }
+        @CustomType.Setter
         public Builder endUserContacts(List<GetSubscribedServiceEndUserContact> endUserContacts) {
             this.endUserContacts = Objects.requireNonNull(endUserContacts);
             return this;
@@ -1961,6 +1750,7 @@ public final class GetSubscribedServiceResult {
         public Builder endUserContacts(GetSubscribedServiceEndUserContact... endUserContacts) {
             return endUserContacts(List.of(endUserContacts));
         }
+        @CustomType.Setter
         public Builder endUserCustomers(List<GetSubscribedServiceEndUserCustomer> endUserCustomers) {
             this.endUserCustomers = Objects.requireNonNull(endUserCustomers);
             return this;
@@ -1968,6 +1758,7 @@ public final class GetSubscribedServiceResult {
         public Builder endUserCustomers(GetSubscribedServiceEndUserCustomer... endUserCustomers) {
             return endUserCustomers(List.of(endUserCustomers));
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -1975,122 +1766,152 @@ public final class GetSubscribedServiceResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder fulfillmentSet(String fulfillmentSet) {
             this.fulfillmentSet = Objects.requireNonNull(fulfillmentSet);
             return this;
         }
+        @CustomType.Setter
         public Builder fundedAllocationValue(String fundedAllocationValue) {
             this.fundedAllocationValue = Objects.requireNonNull(fundedAllocationValue);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAllowance(Boolean isAllowance) {
             this.isAllowance = Objects.requireNonNull(isAllowance);
             return this;
         }
+        @CustomType.Setter
         public Builder isCapToPriceList(Boolean isCapToPriceList) {
             this.isCapToPriceList = Objects.requireNonNull(isCapToPriceList);
             return this;
         }
+        @CustomType.Setter
         public Builder isCreditEnabled(Boolean isCreditEnabled) {
             this.isCreditEnabled = Objects.requireNonNull(isCreditEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isHavingUsage(Boolean isHavingUsage) {
             this.isHavingUsage = Objects.requireNonNull(isHavingUsage);
             return this;
         }
+        @CustomType.Setter
         public Builder isIntentToPay(Boolean isIntentToPay) {
             this.isIntentToPay = Objects.requireNonNull(isIntentToPay);
             return this;
         }
+        @CustomType.Setter
         public Builder isPayg(Boolean isPayg) {
             this.isPayg = Objects.requireNonNull(isPayg);
             return this;
         }
+        @CustomType.Setter
         public Builder isSingleRateCard(Boolean isSingleRateCard) {
             this.isSingleRateCard = Objects.requireNonNull(isSingleRateCard);
             return this;
         }
+        @CustomType.Setter
         public Builder isVariableCommitment(Boolean isVariableCommitment) {
             this.isVariableCommitment = Objects.requireNonNull(isVariableCommitment);
             return this;
         }
+        @CustomType.Setter
         public Builder lineNetAmount(String lineNetAmount) {
             this.lineNetAmount = Objects.requireNonNull(lineNetAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder majorSet(String majorSet) {
             this.majorSet = Objects.requireNonNull(majorSet);
             return this;
         }
+        @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
             return this;
         }
+        @CustomType.Setter
         public Builder operationType(String operationType) {
             this.operationType = Objects.requireNonNull(operationType);
             return this;
         }
+        @CustomType.Setter
         public Builder orderHeaderId(String orderHeaderId) {
             this.orderHeaderId = Objects.requireNonNull(orderHeaderId);
             return this;
         }
+        @CustomType.Setter
         public Builder orderLineId(String orderLineId) {
             this.orderLineId = Objects.requireNonNull(orderLineId);
             return this;
         }
+        @CustomType.Setter
         public Builder orderLineNumber(Integer orderLineNumber) {
             this.orderLineNumber = Objects.requireNonNull(orderLineNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder orderNumber(String orderNumber) {
             this.orderNumber = Objects.requireNonNull(orderNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder orderType(String orderType) {
             this.orderType = Objects.requireNonNull(orderType);
             return this;
         }
+        @CustomType.Setter
         public Builder originalPromoAmount(String originalPromoAmount) {
             this.originalPromoAmount = Objects.requireNonNull(originalPromoAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder overageBillTo(String overageBillTo) {
             this.overageBillTo = Objects.requireNonNull(overageBillTo);
             return this;
         }
+        @CustomType.Setter
         public Builder overageDiscountPercentage(String overageDiscountPercentage) {
             this.overageDiscountPercentage = Objects.requireNonNull(overageDiscountPercentage);
             return this;
         }
+        @CustomType.Setter
         public Builder overagePolicy(String overagePolicy) {
             this.overagePolicy = Objects.requireNonNull(overagePolicy);
             return this;
         }
+        @CustomType.Setter
         public Builder partnerCreditAmount(String partnerCreditAmount) {
             this.partnerCreditAmount = Objects.requireNonNull(partnerCreditAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder partnerTransactionType(String partnerTransactionType) {
             this.partnerTransactionType = Objects.requireNonNull(partnerTransactionType);
             return this;
         }
+        @CustomType.Setter
         public Builder paygPolicy(String paygPolicy) {
             this.paygPolicy = Objects.requireNonNull(paygPolicy);
             return this;
         }
+        @CustomType.Setter
         public Builder paymentMethod(String paymentMethod) {
             this.paymentMethod = Objects.requireNonNull(paymentMethod);
             return this;
         }
+        @CustomType.Setter
         public Builder paymentNumber(String paymentNumber) {
             this.paymentNumber = Objects.requireNonNull(paymentNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder paymentTerms(List<GetSubscribedServicePaymentTerm> paymentTerms) {
             this.paymentTerms = Objects.requireNonNull(paymentTerms);
             return this;
@@ -2098,14 +1919,17 @@ public final class GetSubscribedServiceResult {
         public Builder paymentTerms(GetSubscribedServicePaymentTerm... paymentTerms) {
             return paymentTerms(List.of(paymentTerms));
         }
+        @CustomType.Setter
         public Builder pricePeriod(String pricePeriod) {
             this.pricePeriod = Objects.requireNonNull(pricePeriod);
             return this;
         }
+        @CustomType.Setter
         public Builder pricingModel(String pricingModel) {
             this.pricingModel = Objects.requireNonNull(pricingModel);
             return this;
         }
+        @CustomType.Setter
         public Builder products(List<GetSubscribedServiceProduct> products) {
             this.products = Objects.requireNonNull(products);
             return this;
@@ -2113,34 +1937,42 @@ public final class GetSubscribedServiceResult {
         public Builder products(GetSubscribedServiceProduct... products) {
             return products(List.of(products));
         }
+        @CustomType.Setter
         public Builder programType(String programType) {
             this.programType = Objects.requireNonNull(programType);
             return this;
         }
+        @CustomType.Setter
         public Builder promoOrderLineId(String promoOrderLineId) {
             this.promoOrderLineId = Objects.requireNonNull(promoOrderLineId);
             return this;
         }
+        @CustomType.Setter
         public Builder promoType(String promoType) {
             this.promoType = Objects.requireNonNull(promoType);
             return this;
         }
+        @CustomType.Setter
         public Builder promotionPricingType(String promotionPricingType) {
             this.promotionPricingType = Objects.requireNonNull(promotionPricingType);
             return this;
         }
+        @CustomType.Setter
         public Builder provisioningSource(String provisioningSource) {
             this.provisioningSource = Objects.requireNonNull(provisioningSource);
             return this;
         }
+        @CustomType.Setter
         public Builder quantity(String quantity) {
             this.quantity = Objects.requireNonNull(quantity);
             return this;
         }
+        @CustomType.Setter
         public Builder rateCardDiscountPercentage(String rateCardDiscountPercentage) {
             this.rateCardDiscountPercentage = Objects.requireNonNull(rateCardDiscountPercentage);
             return this;
         }
+        @CustomType.Setter
         public Builder rateCards(List<GetSubscribedServiceRateCard> rateCards) {
             this.rateCards = Objects.requireNonNull(rateCards);
             return this;
@@ -2148,26 +1980,32 @@ public final class GetSubscribedServiceResult {
         public Builder rateCards(GetSubscribedServiceRateCard... rateCards) {
             return rateCards(List.of(rateCards));
         }
+        @CustomType.Setter
         public Builder ratecardType(String ratecardType) {
             this.ratecardType = Objects.requireNonNull(ratecardType);
             return this;
         }
+        @CustomType.Setter
         public Builder renewalOptyId(String renewalOptyId) {
             this.renewalOptyId = Objects.requireNonNull(renewalOptyId);
             return this;
         }
+        @CustomType.Setter
         public Builder renewalOptyNumber(String renewalOptyNumber) {
             this.renewalOptyNumber = Objects.requireNonNull(renewalOptyNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder renewalOptyType(String renewalOptyType) {
             this.renewalOptyType = Objects.requireNonNull(renewalOptyType);
             return this;
         }
+        @CustomType.Setter
         public Builder renewedSubscribedServiceId(String renewedSubscribedServiceId) {
             this.renewedSubscribedServiceId = Objects.requireNonNull(renewedSubscribedServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder resellerAddresses(List<GetSubscribedServiceResellerAddress> resellerAddresses) {
             this.resellerAddresses = Objects.requireNonNull(resellerAddresses);
             return this;
@@ -2175,6 +2013,7 @@ public final class GetSubscribedServiceResult {
         public Builder resellerAddresses(GetSubscribedServiceResellerAddress... resellerAddresses) {
             return resellerAddresses(List.of(resellerAddresses));
         }
+        @CustomType.Setter
         public Builder resellerContacts(List<GetSubscribedServiceResellerContact> resellerContacts) {
             this.resellerContacts = Objects.requireNonNull(resellerContacts);
             return this;
@@ -2182,6 +2021,7 @@ public final class GetSubscribedServiceResult {
         public Builder resellerContacts(GetSubscribedServiceResellerContact... resellerContacts) {
             return resellerContacts(List.of(resellerContacts));
         }
+        @CustomType.Setter
         public Builder resellerCustomers(List<GetSubscribedServiceResellerCustomer> resellerCustomers) {
             this.resellerCustomers = Objects.requireNonNull(resellerCustomers);
             return this;
@@ -2189,34 +2029,42 @@ public final class GetSubscribedServiceResult {
         public Builder resellerCustomers(GetSubscribedServiceResellerCustomer... resellerCustomers) {
             return resellerCustomers(List.of(resellerCustomers));
         }
+        @CustomType.Setter
         public Builder revenueLineId(String revenueLineId) {
             this.revenueLineId = Objects.requireNonNull(revenueLineId);
             return this;
         }
+        @CustomType.Setter
         public Builder revenueLineNumber(String revenueLineNumber) {
             this.revenueLineNumber = Objects.requireNonNull(revenueLineNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder revisedArrInLc(String revisedArrInLc) {
             this.revisedArrInLc = Objects.requireNonNull(revisedArrInLc);
             return this;
         }
+        @CustomType.Setter
         public Builder revisedArrInSc(String revisedArrInSc) {
             this.revisedArrInSc = Objects.requireNonNull(revisedArrInSc);
             return this;
         }
+        @CustomType.Setter
         public Builder salesAccountPartyId(String salesAccountPartyId) {
             this.salesAccountPartyId = Objects.requireNonNull(salesAccountPartyId);
             return this;
         }
+        @CustomType.Setter
         public Builder salesChannel(String salesChannel) {
             this.salesChannel = Objects.requireNonNull(salesChannel);
             return this;
         }
+        @CustomType.Setter
         public Builder serialNumber(String serialNumber) {
             this.serialNumber = Objects.requireNonNull(serialNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceToAddresses(List<GetSubscribedServiceServiceToAddress> serviceToAddresses) {
             this.serviceToAddresses = Objects.requireNonNull(serviceToAddresses);
             return this;
@@ -2224,6 +2072,7 @@ public final class GetSubscribedServiceResult {
         public Builder serviceToAddresses(GetSubscribedServiceServiceToAddress... serviceToAddresses) {
             return serviceToAddresses(List.of(serviceToAddresses));
         }
+        @CustomType.Setter
         public Builder serviceToContacts(List<GetSubscribedServiceServiceToContact> serviceToContacts) {
             this.serviceToContacts = Objects.requireNonNull(serviceToContacts);
             return this;
@@ -2231,6 +2080,7 @@ public final class GetSubscribedServiceResult {
         public Builder serviceToContacts(GetSubscribedServiceServiceToContact... serviceToContacts) {
             return serviceToContacts(List.of(serviceToContacts));
         }
+        @CustomType.Setter
         public Builder serviceToCustomers(List<GetSubscribedServiceServiceToCustomer> serviceToCustomers) {
             this.serviceToCustomers = Objects.requireNonNull(serviceToCustomers);
             return this;
@@ -2238,6 +2088,7 @@ public final class GetSubscribedServiceResult {
         public Builder serviceToCustomers(GetSubscribedServiceServiceToCustomer... serviceToCustomers) {
             return serviceToCustomers(List.of(serviceToCustomers));
         }
+        @CustomType.Setter
         public Builder soldToContacts(List<GetSubscribedServiceSoldToContact> soldToContacts) {
             this.soldToContacts = Objects.requireNonNull(soldToContacts);
             return this;
@@ -2245,6 +2096,7 @@ public final class GetSubscribedServiceResult {
         public Builder soldToContacts(GetSubscribedServiceSoldToContact... soldToContacts) {
             return soldToContacts(List.of(soldToContacts));
         }
+        @CustomType.Setter
         public Builder soldToCustomers(List<GetSubscribedServiceSoldToCustomer> soldToCustomers) {
             this.soldToCustomers = Objects.requireNonNull(soldToCustomers);
             return this;
@@ -2252,119 +2104,262 @@ public final class GetSubscribedServiceResult {
         public Builder soldToCustomers(GetSubscribedServiceSoldToCustomer... soldToCustomers) {
             return soldToCustomers(List.of(soldToCustomers));
         }
+        @CustomType.Setter
         public Builder startDateType(String startDateType) {
             this.startDateType = Objects.requireNonNull(startDateType);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder subscribedServiceId(String subscribedServiceId) {
             this.subscribedServiceId = Objects.requireNonNull(subscribedServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionSource(String subscriptionSource) {
             this.subscriptionSource = Objects.requireNonNull(subscriptionSource);
             return this;
         }
+        @CustomType.Setter
         public Builder systemArrInLc(String systemArrInLc) {
             this.systemArrInLc = Objects.requireNonNull(systemArrInLc);
             return this;
         }
+        @CustomType.Setter
         public Builder systemArrInSc(String systemArrInSc) {
             this.systemArrInSc = Objects.requireNonNull(systemArrInSc);
             return this;
         }
+        @CustomType.Setter
         public Builder systemAtrArrInLc(String systemAtrArrInLc) {
             this.systemAtrArrInLc = Objects.requireNonNull(systemAtrArrInLc);
             return this;
         }
+        @CustomType.Setter
         public Builder systemAtrArrInSc(String systemAtrArrInSc) {
             this.systemAtrArrInSc = Objects.requireNonNull(systemAtrArrInSc);
             return this;
         }
+        @CustomType.Setter
         public Builder termValue(String termValue) {
             this.termValue = Objects.requireNonNull(termValue);
             return this;
         }
+        @CustomType.Setter
         public Builder termValueUom(String termValueUom) {
             this.termValueUom = Objects.requireNonNull(termValueUom);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAgreementEnd(String timeAgreementEnd) {
             this.timeAgreementEnd = Objects.requireNonNull(timeAgreementEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCustomerConfig(String timeCustomerConfig) {
             this.timeCustomerConfig = Objects.requireNonNull(timeCustomerConfig);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeMajorsetEnd(String timeMajorsetEnd) {
             this.timeMajorsetEnd = Objects.requireNonNull(timeMajorsetEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeMajorsetStart(String timeMajorsetStart) {
             this.timeMajorsetStart = Objects.requireNonNull(timeMajorsetStart);
             return this;
         }
+        @CustomType.Setter
         public Builder timePaymentExpiry(String timePaymentExpiry) {
             this.timePaymentExpiry = Objects.requireNonNull(timePaymentExpiry);
             return this;
         }
+        @CustomType.Setter
         public Builder timeProvisioned(String timeProvisioned) {
             this.timeProvisioned = Objects.requireNonNull(timeProvisioned);
             return this;
         }
+        @CustomType.Setter
         public Builder timeServiceConfigurationEmailSent(String timeServiceConfigurationEmailSent) {
             this.timeServiceConfigurationEmailSent = Objects.requireNonNull(timeServiceConfigurationEmailSent);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeWelcomeEmailSent(String timeWelcomeEmailSent) {
             this.timeWelcomeEmailSent = Objects.requireNonNull(timeWelcomeEmailSent);
             return this;
         }
+        @CustomType.Setter
         public Builder totalValue(String totalValue) {
             this.totalValue = Objects.requireNonNull(totalValue);
             return this;
         }
+        @CustomType.Setter
         public Builder transactionExtensionId(String transactionExtensionId) {
             this.transactionExtensionId = Objects.requireNonNull(transactionExtensionId);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = Objects.requireNonNull(updatedBy);
             return this;
         }
+        @CustomType.Setter
         public Builder usedAmount(String usedAmount) {
             this.usedAmount = Objects.requireNonNull(usedAmount);
             return this;
-        }        public GetSubscribedServiceResult build() {
-            return new GetSubscribedServiceResult(adminEmail, agreementId, agreementName, agreementType, availableAmount, billToAddresses, billToContacts, billToCustomers, billingFrequency, bookingOptyNumber, buyerEmail, commitmentScheduleId, commitmentServices, createdBy, creditPercentage, csi, customerTransactionReference, dataCenter, dataCenterRegion, eligibleToRenew, endUserAddresses, endUserContacts, endUserCustomers, fields, fulfillmentSet, fundedAllocationValue, id, isAllowance, isCapToPriceList, isCreditEnabled, isHavingUsage, isIntentToPay, isPayg, isSingleRateCard, isVariableCommitment, lineNetAmount, majorSet, netUnitPrice, operationType, orderHeaderId, orderLineId, orderLineNumber, orderNumber, orderType, originalPromoAmount, overageBillTo, overageDiscountPercentage, overagePolicy, partnerCreditAmount, partnerTransactionType, paygPolicy, paymentMethod, paymentNumber, paymentTerms, pricePeriod, pricingModel, products, programType, promoOrderLineId, promoType, promotionPricingType, provisioningSource, quantity, rateCardDiscountPercentage, rateCards, ratecardType, renewalOptyId, renewalOptyNumber, renewalOptyType, renewedSubscribedServiceId, resellerAddresses, resellerContacts, resellerCustomers, revenueLineId, revenueLineNumber, revisedArrInLc, revisedArrInSc, salesAccountPartyId, salesChannel, serialNumber, serviceToAddresses, serviceToContacts, serviceToCustomers, soldToContacts, soldToCustomers, startDateType, status, subscribedServiceId, subscriptionId, subscriptionSource, systemArrInLc, systemArrInSc, systemAtrArrInLc, systemAtrArrInSc, termValue, termValueUom, timeAgreementEnd, timeCreated, timeCustomerConfig, timeEnd, timeMajorsetEnd, timeMajorsetStart, timePaymentExpiry, timeProvisioned, timeServiceConfigurationEmailSent, timeStart, timeUpdated, timeWelcomeEmailSent, totalValue, transactionExtensionId, type, updatedBy, usedAmount);
+        }
+        public GetSubscribedServiceResult build() {
+            final var o = new GetSubscribedServiceResult();
+            o.adminEmail = adminEmail;
+            o.agreementId = agreementId;
+            o.agreementName = agreementName;
+            o.agreementType = agreementType;
+            o.availableAmount = availableAmount;
+            o.billToAddresses = billToAddresses;
+            o.billToContacts = billToContacts;
+            o.billToCustomers = billToCustomers;
+            o.billingFrequency = billingFrequency;
+            o.bookingOptyNumber = bookingOptyNumber;
+            o.buyerEmail = buyerEmail;
+            o.commitmentScheduleId = commitmentScheduleId;
+            o.commitmentServices = commitmentServices;
+            o.createdBy = createdBy;
+            o.creditPercentage = creditPercentage;
+            o.csi = csi;
+            o.customerTransactionReference = customerTransactionReference;
+            o.dataCenter = dataCenter;
+            o.dataCenterRegion = dataCenterRegion;
+            o.eligibleToRenew = eligibleToRenew;
+            o.endUserAddresses = endUserAddresses;
+            o.endUserContacts = endUserContacts;
+            o.endUserCustomers = endUserCustomers;
+            o.fields = fields;
+            o.fulfillmentSet = fulfillmentSet;
+            o.fundedAllocationValue = fundedAllocationValue;
+            o.id = id;
+            o.isAllowance = isAllowance;
+            o.isCapToPriceList = isCapToPriceList;
+            o.isCreditEnabled = isCreditEnabled;
+            o.isHavingUsage = isHavingUsage;
+            o.isIntentToPay = isIntentToPay;
+            o.isPayg = isPayg;
+            o.isSingleRateCard = isSingleRateCard;
+            o.isVariableCommitment = isVariableCommitment;
+            o.lineNetAmount = lineNetAmount;
+            o.majorSet = majorSet;
+            o.netUnitPrice = netUnitPrice;
+            o.operationType = operationType;
+            o.orderHeaderId = orderHeaderId;
+            o.orderLineId = orderLineId;
+            o.orderLineNumber = orderLineNumber;
+            o.orderNumber = orderNumber;
+            o.orderType = orderType;
+            o.originalPromoAmount = originalPromoAmount;
+            o.overageBillTo = overageBillTo;
+            o.overageDiscountPercentage = overageDiscountPercentage;
+            o.overagePolicy = overagePolicy;
+            o.partnerCreditAmount = partnerCreditAmount;
+            o.partnerTransactionType = partnerTransactionType;
+            o.paygPolicy = paygPolicy;
+            o.paymentMethod = paymentMethod;
+            o.paymentNumber = paymentNumber;
+            o.paymentTerms = paymentTerms;
+            o.pricePeriod = pricePeriod;
+            o.pricingModel = pricingModel;
+            o.products = products;
+            o.programType = programType;
+            o.promoOrderLineId = promoOrderLineId;
+            o.promoType = promoType;
+            o.promotionPricingType = promotionPricingType;
+            o.provisioningSource = provisioningSource;
+            o.quantity = quantity;
+            o.rateCardDiscountPercentage = rateCardDiscountPercentage;
+            o.rateCards = rateCards;
+            o.ratecardType = ratecardType;
+            o.renewalOptyId = renewalOptyId;
+            o.renewalOptyNumber = renewalOptyNumber;
+            o.renewalOptyType = renewalOptyType;
+            o.renewedSubscribedServiceId = renewedSubscribedServiceId;
+            o.resellerAddresses = resellerAddresses;
+            o.resellerContacts = resellerContacts;
+            o.resellerCustomers = resellerCustomers;
+            o.revenueLineId = revenueLineId;
+            o.revenueLineNumber = revenueLineNumber;
+            o.revisedArrInLc = revisedArrInLc;
+            o.revisedArrInSc = revisedArrInSc;
+            o.salesAccountPartyId = salesAccountPartyId;
+            o.salesChannel = salesChannel;
+            o.serialNumber = serialNumber;
+            o.serviceToAddresses = serviceToAddresses;
+            o.serviceToContacts = serviceToContacts;
+            o.serviceToCustomers = serviceToCustomers;
+            o.soldToContacts = soldToContacts;
+            o.soldToCustomers = soldToCustomers;
+            o.startDateType = startDateType;
+            o.status = status;
+            o.subscribedServiceId = subscribedServiceId;
+            o.subscriptionId = subscriptionId;
+            o.subscriptionSource = subscriptionSource;
+            o.systemArrInLc = systemArrInLc;
+            o.systemArrInSc = systemArrInSc;
+            o.systemAtrArrInLc = systemAtrArrInLc;
+            o.systemAtrArrInSc = systemAtrArrInSc;
+            o.termValue = termValue;
+            o.termValueUom = termValueUom;
+            o.timeAgreementEnd = timeAgreementEnd;
+            o.timeCreated = timeCreated;
+            o.timeCustomerConfig = timeCustomerConfig;
+            o.timeEnd = timeEnd;
+            o.timeMajorsetEnd = timeMajorsetEnd;
+            o.timeMajorsetStart = timeMajorsetStart;
+            o.timePaymentExpiry = timePaymentExpiry;
+            o.timeProvisioned = timeProvisioned;
+            o.timeServiceConfigurationEmailSent = timeServiceConfigurationEmailSent;
+            o.timeStart = timeStart;
+            o.timeUpdated = timeUpdated;
+            o.timeWelcomeEmailSent = timeWelcomeEmailSent;
+            o.totalValue = totalValue;
+            o.transactionExtensionId = transactionExtensionId;
+            o.type = type;
+            o.updatedBy = updatedBy;
+            o.usedAmount = usedAmount;
+            return o;
         }
     }
 }

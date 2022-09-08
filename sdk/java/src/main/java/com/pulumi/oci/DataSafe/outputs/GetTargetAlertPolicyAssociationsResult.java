@@ -15,67 +15,40 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAlertPolicyAssociationsResult {
-    private final @Nullable String accessLevel;
-    private final @Nullable String alertPolicyId;
+    private @Nullable String accessLevel;
+    private @Nullable String alertPolicyId;
     /**
      * @return The OCID of the compartment that contains the policy.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
-    private final @Nullable List<GetTargetAlertPolicyAssociationsFilter> filters;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable List<GetTargetAlertPolicyAssociationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the target-alert policy association.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of target_alert_policy_association_collection.
      * 
      */
-    private final List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections;
-    private final @Nullable String targetAlertPolicyAssociationId;
+    private List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections;
+    private @Nullable String targetAlertPolicyAssociationId;
     /**
      * @return The OCID of the target on which alert policy is to be applied.
      * 
      */
-    private final @Nullable String targetId;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private @Nullable String targetId;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
 
-    @CustomType.Constructor
-    private GetTargetAlertPolicyAssociationsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("alertPolicyId") @Nullable String alertPolicyId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("filters") @Nullable List<GetTargetAlertPolicyAssociationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targetAlertPolicyAssociationCollections") List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections,
-        @CustomType.Parameter("targetAlertPolicyAssociationId") @Nullable String targetAlertPolicyAssociationId,
-        @CustomType.Parameter("targetId") @Nullable String targetId,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan) {
-        this.accessLevel = accessLevel;
-        this.alertPolicyId = alertPolicyId;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.targetAlertPolicyAssociationCollections = targetAlertPolicyAssociationCollections;
-        this.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
-        this.targetId = targetId;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-    }
-
+    private GetTargetAlertPolicyAssociationsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -140,7 +113,7 @@ public final class GetTargetAlertPolicyAssociationsResult {
     public static Builder builder(GetTargetAlertPolicyAssociationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private @Nullable String alertPolicyId;
@@ -154,11 +127,7 @@ public final class GetTargetAlertPolicyAssociationsResult {
         private @Nullable String targetId;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetAlertPolicyAssociationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -175,22 +144,27 @@ public final class GetTargetAlertPolicyAssociationsResult {
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder alertPolicyId(@Nullable String alertPolicyId) {
             this.alertPolicyId = alertPolicyId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetAlertPolicyAssociationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -198,14 +172,17 @@ public final class GetTargetAlertPolicyAssociationsResult {
         public Builder filters(GetTargetAlertPolicyAssociationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targetAlertPolicyAssociationCollections(List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections) {
             this.targetAlertPolicyAssociationCollections = Objects.requireNonNull(targetAlertPolicyAssociationCollections);
             return this;
@@ -213,23 +190,41 @@ public final class GetTargetAlertPolicyAssociationsResult {
         public Builder targetAlertPolicyAssociationCollections(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection... targetAlertPolicyAssociationCollections) {
             return targetAlertPolicyAssociationCollections(List.of(targetAlertPolicyAssociationCollections));
         }
+        @CustomType.Setter
         public Builder targetAlertPolicyAssociationId(@Nullable String targetAlertPolicyAssociationId) {
             this.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
-        }        public GetTargetAlertPolicyAssociationsResult build() {
-            return new GetTargetAlertPolicyAssociationsResult(accessLevel, alertPolicyId, compartmentId, compartmentIdInSubtree, filters, id, state, targetAlertPolicyAssociationCollections, targetAlertPolicyAssociationId, targetId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan);
+        }
+        public GetTargetAlertPolicyAssociationsResult build() {
+            final var o = new GetTargetAlertPolicyAssociationsResult();
+            o.accessLevel = accessLevel;
+            o.alertPolicyId = alertPolicyId;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.targetAlertPolicyAssociationCollections = targetAlertPolicyAssociationCollections;
+            o.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
+            o.targetId = targetId;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            return o;
         }
     }
 }

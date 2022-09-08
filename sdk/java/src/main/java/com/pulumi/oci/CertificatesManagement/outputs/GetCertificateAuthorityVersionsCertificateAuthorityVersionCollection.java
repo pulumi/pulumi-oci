@@ -14,13 +14,9 @@ public final class GetCertificateAuthorityVersionsCertificateAuthorityVersionCol
      * @return A list of certificate authority version summary objects.
      * 
      */
-    private final List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem> items;
+    private List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection(@CustomType.Parameter("items") List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection() {}
     /**
      * @return A list of certificate authority version summary objects.
      * 
@@ -36,27 +32,27 @@ public final class GetCertificateAuthorityVersionsCertificateAuthorityVersionCol
     public static Builder builder(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem... items) {
             return items(List.of(items));
-        }        public GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection build() {
-            return new GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection(items);
+        }
+        public GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection build() {
+            final var o = new GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection();
+            o.items = items;
+            return o;
         }
     }
 }

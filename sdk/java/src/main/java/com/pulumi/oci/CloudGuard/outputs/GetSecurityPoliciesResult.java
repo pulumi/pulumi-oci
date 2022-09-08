@@ -18,45 +18,30 @@ public final class GetSecurityPoliciesResult {
      * @return The id of the security policy&#39;s compartment
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The security policy&#39;s full name
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetSecurityPoliciesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetSecurityPoliciesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of security_policy_collection.
      * 
      */
-    private final List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
+    private List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
     /**
      * @return The current state of the security policy
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetSecurityPoliciesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetSecurityPoliciesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("securityPolicyCollections") List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.securityPolicyCollections = securityPolicyCollections;
-        this.state = state;
-    }
-
+    private GetSecurityPoliciesResult() {}
     /**
      * @return The id of the security policy&#39;s compartment
      * 
@@ -103,7 +88,7 @@ public final class GetSecurityPoliciesResult {
     public static Builder builder(GetSecurityPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetSecurityPoliciesResult {
         private @Nullable String id;
         private List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetSecurityPoliciesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetSecurityPoliciesResult {
         public Builder filters(GetSecurityPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder securityPolicyCollections(List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections) {
             this.securityPolicyCollections = Objects.requireNonNull(securityPolicyCollections);
             return this;
@@ -152,11 +138,20 @@ public final class GetSecurityPoliciesResult {
         public Builder securityPolicyCollections(GetSecurityPoliciesSecurityPolicyCollection... securityPolicyCollections) {
             return securityPolicyCollections(List.of(securityPolicyCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetSecurityPoliciesResult build() {
-            return new GetSecurityPoliciesResult(compartmentId, displayName, filters, id, securityPolicyCollections, state);
+        }
+        public GetSecurityPoliciesResult build() {
+            final var o = new GetSecurityPoliciesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.securityPolicyCollections = securityPolicyCollections;
+            o.state = state;
+            return o;
         }
     }
 }

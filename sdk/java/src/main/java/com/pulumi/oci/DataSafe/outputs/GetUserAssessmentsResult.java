@@ -16,98 +16,61 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserAssessmentsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The OCID of the compartment that contains the user assessment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The display name of the user assessment.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetUserAssessmentsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetUserAssessmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    private final List<GetUserAssessmentsIgnoredTarget> ignoredTargets;
+    private List<GetUserAssessmentsIgnoredTarget> ignoredTargets;
     /**
      * @return Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      * 
      */
-    private final @Nullable Boolean isBaseline;
-    private final @Nullable Boolean isScheduleAssessment;
-    private final @Nullable String scheduleUserAssessmentId;
+    private @Nullable Boolean isBaseline;
+    private @Nullable Boolean isScheduleAssessment;
+    private @Nullable String scheduleUserAssessmentId;
     /**
      * @return The current state of the user assessment.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String targetId;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private @Nullable String state;
+    private @Nullable String targetId;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
     /**
      * @return Indicates whether the user assessment was created by system or user.
      * 
      */
-    private final @Nullable String triggeredBy;
+    private @Nullable String triggeredBy;
     /**
      * @return Type of user assessment. The possible types are:
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
     /**
      * @return The list of user_assessments.
      * 
      */
-    private final List<GetUserAssessmentsUserAssessment> userAssessments;
+    private List<GetUserAssessmentsUserAssessment> userAssessments;
 
-    @CustomType.Constructor
-    private GetUserAssessmentsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetUserAssessmentsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ignoredTargets") List<GetUserAssessmentsIgnoredTarget> ignoredTargets,
-        @CustomType.Parameter("isBaseline") @Nullable Boolean isBaseline,
-        @CustomType.Parameter("isScheduleAssessment") @Nullable Boolean isScheduleAssessment,
-        @CustomType.Parameter("scheduleUserAssessmentId") @Nullable String scheduleUserAssessmentId,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targetId") @Nullable String targetId,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan,
-        @CustomType.Parameter("triggeredBy") @Nullable String triggeredBy,
-        @CustomType.Parameter("type") @Nullable String type,
-        @CustomType.Parameter("userAssessments") List<GetUserAssessmentsUserAssessment> userAssessments) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.ignoredTargets = ignoredTargets;
-        this.isBaseline = isBaseline;
-        this.isScheduleAssessment = isScheduleAssessment;
-        this.scheduleUserAssessmentId = scheduleUserAssessmentId;
-        this.state = state;
-        this.targetId = targetId;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-        this.triggeredBy = triggeredBy;
-        this.type = type;
-        this.userAssessments = userAssessments;
-    }
-
+    private GetUserAssessmentsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -203,7 +166,7 @@ public final class GetUserAssessmentsResult {
     public static Builder builder(GetUserAssessmentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -222,11 +185,7 @@ public final class GetUserAssessmentsResult {
         private @Nullable String triggeredBy;
         private @Nullable String type;
         private List<GetUserAssessmentsUserAssessment> userAssessments;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -248,22 +207,27 @@ public final class GetUserAssessmentsResult {
     	      this.userAssessments = defaults.userAssessments;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetUserAssessmentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -271,10 +235,12 @@ public final class GetUserAssessmentsResult {
         public Builder filters(GetUserAssessmentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ignoredTargets(List<GetUserAssessmentsIgnoredTarget> ignoredTargets) {
             this.ignoredTargets = Objects.requireNonNull(ignoredTargets);
             return this;
@@ -282,50 +248,79 @@ public final class GetUserAssessmentsResult {
         public Builder ignoredTargets(GetUserAssessmentsIgnoredTarget... ignoredTargets) {
             return ignoredTargets(List.of(ignoredTargets));
         }
+        @CustomType.Setter
         public Builder isBaseline(@Nullable Boolean isBaseline) {
             this.isBaseline = isBaseline;
             return this;
         }
+        @CustomType.Setter
         public Builder isScheduleAssessment(@Nullable Boolean isScheduleAssessment) {
             this.isScheduleAssessment = isScheduleAssessment;
             return this;
         }
+        @CustomType.Setter
         public Builder scheduleUserAssessmentId(@Nullable String scheduleUserAssessmentId) {
             this.scheduleUserAssessmentId = scheduleUserAssessmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder triggeredBy(@Nullable String triggeredBy) {
             this.triggeredBy = triggeredBy;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
         }
+        @CustomType.Setter
         public Builder userAssessments(List<GetUserAssessmentsUserAssessment> userAssessments) {
             this.userAssessments = Objects.requireNonNull(userAssessments);
             return this;
         }
         public Builder userAssessments(GetUserAssessmentsUserAssessment... userAssessments) {
             return userAssessments(List.of(userAssessments));
-        }        public GetUserAssessmentsResult build() {
-            return new GetUserAssessmentsResult(accessLevel, compartmentId, compartmentIdInSubtree, displayName, filters, id, ignoredTargets, isBaseline, isScheduleAssessment, scheduleUserAssessmentId, state, targetId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, triggeredBy, type, userAssessments);
+        }
+        public GetUserAssessmentsResult build() {
+            final var o = new GetUserAssessmentsResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.ignoredTargets = ignoredTargets;
+            o.isBaseline = isBaseline;
+            o.isScheduleAssessment = isScheduleAssessment;
+            o.scheduleUserAssessmentId = scheduleUserAssessmentId;
+            o.state = state;
+            o.targetId = targetId;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            o.triggeredBy = triggeredBy;
+            o.type = type;
+            o.userAssessments = userAssessments;
+            return o;
         }
     }
 }

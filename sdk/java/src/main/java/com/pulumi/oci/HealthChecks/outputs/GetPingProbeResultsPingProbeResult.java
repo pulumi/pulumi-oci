@@ -19,22 +19,22 @@ public final class GetPingProbeResultsPingProbeResult {
      * @return The network connection results.
      * 
      */
-    private final List<GetPingProbeResultsPingProbeResultConnection> connections;
+    private List<GetPingProbeResultsPingProbeResultConnection> connections;
     /**
      * @return The DNS resolution results.
      * 
      */
-    private final List<GetPingProbeResultsPingProbeResultDn> dns;
+    private List<GetPingProbeResultsPingProbeResultDn> dns;
     /**
      * @return The time immediately before the vantage point finishes the domain name lookup for the resource.
      * 
      */
-    private final Double domainLookupEnd;
+    private Double domainLookupEnd;
     /**
      * @return The time immediately before the vantage point starts the domain name lookup for the resource.
      * 
      */
-    private final Double domainLookupStart;
+    private Double domainLookupStart;
     /**
      * @return The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
      * * NONE - No error
@@ -44,99 +44,64 @@ public final class GetPingProbeResultsPingProbeResult {
      * * SYSTEM - Internal system errors.
      * 
      */
-    private final String errorCategory;
+    private String errorCategory;
     /**
      * @return The error information indicating why a probe execution failed.
      * 
      */
-    private final String errorMessage;
+    private String errorMessage;
     /**
      * @return The ICMP code of the response message.  This field is not used when the protocol is set to TCP.  For more information on ICMP codes, see [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
      * 
      */
-    private final Integer icmpCode;
+    private Integer icmpCode;
     /**
      * @return True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
      * 
      */
-    private final Boolean isHealthy;
+    private Boolean isHealthy;
     /**
      * @return True if the probe did not complete before the configured `timeoutInSeconds` value.
      * 
      */
-    private final Boolean isTimedOut;
+    private Boolean isTimedOut;
     /**
      * @return A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The latency of the probe execution, in milliseconds.
      * 
      */
-    private final Double latencyInMs;
+    private Double latencyInMs;
     /**
      * @return The OCID of a monitor or on-demand probe.
      * 
      */
-    private final String probeConfigurationId;
+    private String probeConfigurationId;
     /**
      * @return The protocols for ping probes.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
      * 
      */
-    private final Double startTime;
+    private Double startTime;
     /**
      * @return Filters results that match the `target`.
      * 
      */
-    private final String target;
+    private String target;
     /**
      * @return The name of the vantage point that executed the probe.
      * 
      */
-    private final String vantagePointName;
+    private String vantagePointName;
 
-    @CustomType.Constructor
-    private GetPingProbeResultsPingProbeResult(
-        @CustomType.Parameter("connections") List<GetPingProbeResultsPingProbeResultConnection> connections,
-        @CustomType.Parameter("dns") List<GetPingProbeResultsPingProbeResultDn> dns,
-        @CustomType.Parameter("domainLookupEnd") Double domainLookupEnd,
-        @CustomType.Parameter("domainLookupStart") Double domainLookupStart,
-        @CustomType.Parameter("errorCategory") String errorCategory,
-        @CustomType.Parameter("errorMessage") String errorMessage,
-        @CustomType.Parameter("icmpCode") Integer icmpCode,
-        @CustomType.Parameter("isHealthy") Boolean isHealthy,
-        @CustomType.Parameter("isTimedOut") Boolean isTimedOut,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("latencyInMs") Double latencyInMs,
-        @CustomType.Parameter("probeConfigurationId") String probeConfigurationId,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("startTime") Double startTime,
-        @CustomType.Parameter("target") String target,
-        @CustomType.Parameter("vantagePointName") String vantagePointName) {
-        this.connections = connections;
-        this.dns = dns;
-        this.domainLookupEnd = domainLookupEnd;
-        this.domainLookupStart = domainLookupStart;
-        this.errorCategory = errorCategory;
-        this.errorMessage = errorMessage;
-        this.icmpCode = icmpCode;
-        this.isHealthy = isHealthy;
-        this.isTimedOut = isTimedOut;
-        this.key = key;
-        this.latencyInMs = latencyInMs;
-        this.probeConfigurationId = probeConfigurationId;
-        this.protocol = protocol;
-        this.startTime = startTime;
-        this.target = target;
-        this.vantagePointName = vantagePointName;
-    }
-
+    private GetPingProbeResultsPingProbeResult() {}
     /**
      * @return The network connection results.
      * 
@@ -262,7 +227,7 @@ public final class GetPingProbeResultsPingProbeResult {
     public static Builder builder(GetPingProbeResultsPingProbeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetPingProbeResultsPingProbeResultConnection> connections;
         private List<GetPingProbeResultsPingProbeResultDn> dns;
@@ -280,11 +245,7 @@ public final class GetPingProbeResultsPingProbeResult {
         private Double startTime;
         private String target;
         private String vantagePointName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPingProbeResultsPingProbeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connections = defaults.connections;
@@ -305,6 +266,7 @@ public final class GetPingProbeResultsPingProbeResult {
     	      this.vantagePointName = defaults.vantagePointName;
         }
 
+        @CustomType.Setter
         public Builder connections(List<GetPingProbeResultsPingProbeResultConnection> connections) {
             this.connections = Objects.requireNonNull(connections);
             return this;
@@ -312,6 +274,7 @@ public final class GetPingProbeResultsPingProbeResult {
         public Builder connections(GetPingProbeResultsPingProbeResultConnection... connections) {
             return connections(List.of(connections));
         }
+        @CustomType.Setter
         public Builder dns(List<GetPingProbeResultsPingProbeResultDn> dns) {
             this.dns = Objects.requireNonNull(dns);
             return this;
@@ -319,63 +282,95 @@ public final class GetPingProbeResultsPingProbeResult {
         public Builder dns(GetPingProbeResultsPingProbeResultDn... dns) {
             return dns(List.of(dns));
         }
+        @CustomType.Setter
         public Builder domainLookupEnd(Double domainLookupEnd) {
             this.domainLookupEnd = Objects.requireNonNull(domainLookupEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder domainLookupStart(Double domainLookupStart) {
             this.domainLookupStart = Objects.requireNonNull(domainLookupStart);
             return this;
         }
+        @CustomType.Setter
         public Builder errorCategory(String errorCategory) {
             this.errorCategory = Objects.requireNonNull(errorCategory);
             return this;
         }
+        @CustomType.Setter
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = Objects.requireNonNull(errorMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder icmpCode(Integer icmpCode) {
             this.icmpCode = Objects.requireNonNull(icmpCode);
             return this;
         }
+        @CustomType.Setter
         public Builder isHealthy(Boolean isHealthy) {
             this.isHealthy = Objects.requireNonNull(isHealthy);
             return this;
         }
+        @CustomType.Setter
         public Builder isTimedOut(Boolean isTimedOut) {
             this.isTimedOut = Objects.requireNonNull(isTimedOut);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder latencyInMs(Double latencyInMs) {
             this.latencyInMs = Objects.requireNonNull(latencyInMs);
             return this;
         }
+        @CustomType.Setter
         public Builder probeConfigurationId(String probeConfigurationId) {
             this.probeConfigurationId = Objects.requireNonNull(probeConfigurationId);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder startTime(Double startTime) {
             this.startTime = Objects.requireNonNull(startTime);
             return this;
         }
+        @CustomType.Setter
         public Builder target(String target) {
             this.target = Objects.requireNonNull(target);
             return this;
         }
+        @CustomType.Setter
         public Builder vantagePointName(String vantagePointName) {
             this.vantagePointName = Objects.requireNonNull(vantagePointName);
             return this;
-        }        public GetPingProbeResultsPingProbeResult build() {
-            return new GetPingProbeResultsPingProbeResult(connections, dns, domainLookupEnd, domainLookupStart, errorCategory, errorMessage, icmpCode, isHealthy, isTimedOut, key, latencyInMs, probeConfigurationId, protocol, startTime, target, vantagePointName);
+        }
+        public GetPingProbeResultsPingProbeResult build() {
+            final var o = new GetPingProbeResultsPingProbeResult();
+            o.connections = connections;
+            o.dns = dns;
+            o.domainLookupEnd = domainLookupEnd;
+            o.domainLookupStart = domainLookupStart;
+            o.errorCategory = errorCategory;
+            o.errorMessage = errorMessage;
+            o.icmpCode = icmpCode;
+            o.isHealthy = isHealthy;
+            o.isTimedOut = isTimedOut;
+            o.key = key;
+            o.latencyInMs = latencyInMs;
+            o.probeConfigurationId = probeConfigurationId;
+            o.protocol = protocol;
+            o.startTime = startTime;
+            o.target = target;
+            o.vantagePointName = vantagePointName;
+            return o;
         }
     }
 }

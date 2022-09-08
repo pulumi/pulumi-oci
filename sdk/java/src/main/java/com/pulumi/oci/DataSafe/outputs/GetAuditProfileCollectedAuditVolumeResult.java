@@ -17,37 +17,22 @@ public final class GetAuditProfileCollectedAuditVolumeResult {
      * @return The OCID of the audit profile resource.
      * 
      */
-    private final String auditProfileId;
+    private String auditProfileId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Array of collected audit volume summary.
      * 
      */
-    private final List<GetAuditProfileCollectedAuditVolumeItem> items;
-    private final @Nullable String monthInConsiderationGreaterThan;
-    private final @Nullable String monthInConsiderationLessThan;
-    private final String workRequestId;
+    private List<GetAuditProfileCollectedAuditVolumeItem> items;
+    private @Nullable String monthInConsiderationGreaterThan;
+    private @Nullable String monthInConsiderationLessThan;
+    private String workRequestId;
 
-    @CustomType.Constructor
-    private GetAuditProfileCollectedAuditVolumeResult(
-        @CustomType.Parameter("auditProfileId") String auditProfileId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetAuditProfileCollectedAuditVolumeItem> items,
-        @CustomType.Parameter("monthInConsiderationGreaterThan") @Nullable String monthInConsiderationGreaterThan,
-        @CustomType.Parameter("monthInConsiderationLessThan") @Nullable String monthInConsiderationLessThan,
-        @CustomType.Parameter("workRequestId") String workRequestId) {
-        this.auditProfileId = auditProfileId;
-        this.id = id;
-        this.items = items;
-        this.monthInConsiderationGreaterThan = monthInConsiderationGreaterThan;
-        this.monthInConsiderationLessThan = monthInConsiderationLessThan;
-        this.workRequestId = workRequestId;
-    }
-
+    private GetAuditProfileCollectedAuditVolumeResult() {}
     /**
      * @return The OCID of the audit profile resource.
      * 
@@ -86,7 +71,7 @@ public final class GetAuditProfileCollectedAuditVolumeResult {
     public static Builder builder(GetAuditProfileCollectedAuditVolumeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String auditProfileId;
         private String id;
@@ -94,11 +79,7 @@ public final class GetAuditProfileCollectedAuditVolumeResult {
         private @Nullable String monthInConsiderationGreaterThan;
         private @Nullable String monthInConsiderationLessThan;
         private String workRequestId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditProfileCollectedAuditVolumeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditProfileId = defaults.auditProfileId;
@@ -109,14 +90,17 @@ public final class GetAuditProfileCollectedAuditVolumeResult {
     	      this.workRequestId = defaults.workRequestId;
         }
 
+        @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = Objects.requireNonNull(auditProfileId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetAuditProfileCollectedAuditVolumeItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -124,19 +108,30 @@ public final class GetAuditProfileCollectedAuditVolumeResult {
         public Builder items(GetAuditProfileCollectedAuditVolumeItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder monthInConsiderationGreaterThan(@Nullable String monthInConsiderationGreaterThan) {
             this.monthInConsiderationGreaterThan = monthInConsiderationGreaterThan;
             return this;
         }
+        @CustomType.Setter
         public Builder monthInConsiderationLessThan(@Nullable String monthInConsiderationLessThan) {
             this.monthInConsiderationLessThan = monthInConsiderationLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = Objects.requireNonNull(workRequestId);
             return this;
-        }        public GetAuditProfileCollectedAuditVolumeResult build() {
-            return new GetAuditProfileCollectedAuditVolumeResult(auditProfileId, id, items, monthInConsiderationGreaterThan, monthInConsiderationLessThan, workRequestId);
+        }
+        public GetAuditProfileCollectedAuditVolumeResult build() {
+            final var o = new GetAuditProfileCollectedAuditVolumeResult();
+            o.auditProfileId = auditProfileId;
+            o.id = id;
+            o.items = items;
+            o.monthInConsiderationGreaterThan = monthInConsiderationGreaterThan;
+            o.monthInConsiderationLessThan = monthInConsiderationLessThan;
+            o.workRequestId = workRequestId;
+            return o;
         }
     }
 }

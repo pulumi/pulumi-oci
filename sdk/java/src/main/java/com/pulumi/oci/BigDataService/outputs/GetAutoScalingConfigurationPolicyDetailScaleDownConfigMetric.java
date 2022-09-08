@@ -15,21 +15,14 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric 
      * @return Allowed value is CPU_UTILIZATION.
      * 
      */
-    private final String metricType;
+    private String metricType;
     /**
      * @return An autoscale action is triggered when a performance metric exceeds a threshold.
      * 
      */
-    private final List<GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold> thresholds;
+    private List<GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold> thresholds;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric(
-        @CustomType.Parameter("metricType") String metricType,
-        @CustomType.Parameter("thresholds") List<GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold> thresholds) {
-        this.metricType = metricType;
-        this.thresholds = thresholds;
-    }
-
+    private GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric() {}
     /**
      * @return Allowed value is CPU_UTILIZATION.
      * 
@@ -52,33 +45,35 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric 
     public static Builder builder(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String metricType;
         private List<GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold> thresholds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.metricType = defaults.metricType;
     	      this.thresholds = defaults.thresholds;
         }
 
+        @CustomType.Setter
         public Builder metricType(String metricType) {
             this.metricType = Objects.requireNonNull(metricType);
             return this;
         }
+        @CustomType.Setter
         public Builder thresholds(List<GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold> thresholds) {
             this.thresholds = Objects.requireNonNull(thresholds);
             return this;
         }
         public Builder thresholds(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold... thresholds) {
             return thresholds(List.of(thresholds));
-        }        public GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric build() {
-            return new GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric(metricType, thresholds);
+        }
+        public GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric build() {
+            final var o = new GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric();
+            o.metricType = metricType;
+            o.thresholds = thresholds;
+            return o;
         }
     }
 }

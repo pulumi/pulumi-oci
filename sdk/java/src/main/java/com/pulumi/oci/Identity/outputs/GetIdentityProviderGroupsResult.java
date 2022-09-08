@@ -14,45 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIdentityProviderGroupsResult {
-    private final @Nullable List<GetIdentityProviderGroupsFilter> filters;
+    private @Nullable List<GetIdentityProviderGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of identity_provider_groups.
      * 
      */
-    private final List<GetIdentityProviderGroupsIdentityProviderGroup> identityProviderGroups;
+    private List<GetIdentityProviderGroupsIdentityProviderGroup> identityProviderGroups;
     /**
      * @return The OCID of the `IdentityProvider` this group belongs to.
      * 
      */
-    private final String identityProviderId;
+    private String identityProviderId;
     /**
      * @return Display name of the group
      * 
      */
-    private final @Nullable String name;
-    private final @Nullable String state;
+    private @Nullable String name;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetIdentityProviderGroupsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetIdentityProviderGroupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("identityProviderGroups") List<GetIdentityProviderGroupsIdentityProviderGroup> identityProviderGroups,
-        @CustomType.Parameter("identityProviderId") String identityProviderId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.filters = filters;
-        this.id = id;
-        this.identityProviderGroups = identityProviderGroups;
-        this.identityProviderId = identityProviderId;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetIdentityProviderGroupsResult() {}
     public List<GetIdentityProviderGroupsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -95,7 +80,7 @@ public final class GetIdentityProviderGroupsResult {
     public static Builder builder(GetIdentityProviderGroupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetIdentityProviderGroupsFilter> filters;
         private String id;
@@ -103,11 +88,7 @@ public final class GetIdentityProviderGroupsResult {
         private String identityProviderId;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIdentityProviderGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -118,6 +99,7 @@ public final class GetIdentityProviderGroupsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIdentityProviderGroupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -125,10 +107,12 @@ public final class GetIdentityProviderGroupsResult {
         public Builder filters(GetIdentityProviderGroupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder identityProviderGroups(List<GetIdentityProviderGroupsIdentityProviderGroup> identityProviderGroups) {
             this.identityProviderGroups = Objects.requireNonNull(identityProviderGroups);
             return this;
@@ -136,19 +120,30 @@ public final class GetIdentityProviderGroupsResult {
         public Builder identityProviderGroups(GetIdentityProviderGroupsIdentityProviderGroup... identityProviderGroups) {
             return identityProviderGroups(List.of(identityProviderGroups));
         }
+        @CustomType.Setter
         public Builder identityProviderId(String identityProviderId) {
             this.identityProviderId = Objects.requireNonNull(identityProviderId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetIdentityProviderGroupsResult build() {
-            return new GetIdentityProviderGroupsResult(filters, id, identityProviderGroups, identityProviderId, name, state);
+        }
+        public GetIdentityProviderGroupsResult build() {
+            final var o = new GetIdentityProviderGroupsResult();
+            o.filters = filters;
+            o.id = id;
+            o.identityProviderGroups = identityProviderGroups;
+            o.identityProviderId = identityProviderId;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

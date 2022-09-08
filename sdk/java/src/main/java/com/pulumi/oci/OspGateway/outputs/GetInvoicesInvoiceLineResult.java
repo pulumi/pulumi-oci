@@ -11,34 +11,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetInvoicesInvoiceLineResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String internalInvoiceId;
+    private String id;
+    private String internalInvoiceId;
     /**
      * @return Invoice line list elements
      * 
      */
-    private final List<GetInvoicesInvoiceLineItem> items;
-    private final String ospHomeRegion;
+    private List<GetInvoicesInvoiceLineItem> items;
+    private String ospHomeRegion;
 
-    @CustomType.Constructor
-    private GetInvoicesInvoiceLineResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("internalInvoiceId") String internalInvoiceId,
-        @CustomType.Parameter("items") List<GetInvoicesInvoiceLineItem> items,
-        @CustomType.Parameter("ospHomeRegion") String ospHomeRegion) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.internalInvoiceId = internalInvoiceId;
-        this.items = items;
-        this.ospHomeRegion = ospHomeRegion;
-    }
-
+    private GetInvoicesInvoiceLineResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -70,18 +57,14 @@ public final class GetInvoicesInvoiceLineResult {
     public static Builder builder(GetInvoicesInvoiceLineResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private String internalInvoiceId;
         private List<GetInvoicesInvoiceLineItem> items;
         private String ospHomeRegion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesInvoiceLineResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -91,18 +74,22 @@ public final class GetInvoicesInvoiceLineResult {
     	      this.ospHomeRegion = defaults.ospHomeRegion;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder internalInvoiceId(String internalInvoiceId) {
             this.internalInvoiceId = Objects.requireNonNull(internalInvoiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetInvoicesInvoiceLineItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -110,11 +97,19 @@ public final class GetInvoicesInvoiceLineResult {
         public Builder items(GetInvoicesInvoiceLineItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
             this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
             return this;
-        }        public GetInvoicesInvoiceLineResult build() {
-            return new GetInvoicesInvoiceLineResult(compartmentId, id, internalInvoiceId, items, ospHomeRegion);
+        }
+        public GetInvoicesInvoiceLineResult build() {
+            final var o = new GetInvoicesInvoiceLineResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.internalInvoiceId = internalInvoiceId;
+            o.items = items;
+            o.ospHomeRegion = ospHomeRegion;
+            return o;
         }
     }
 }

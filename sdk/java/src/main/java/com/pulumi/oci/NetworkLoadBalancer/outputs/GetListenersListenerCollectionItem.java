@@ -14,52 +14,35 @@ public final class GetListenersListenerCollectionItem {
      * @return The name of the associated backend set.  Example: `example_backend_set`
      * 
      */
-    private final String defaultBackendSetName;
-    private final String id;
+    private String defaultBackendSetName;
+    private String id;
     /**
      * @return IP version associated with the listener.
      * 
      */
-    private final String ipVersion;
+    private String ipVersion;
     /**
      * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      * 
      */
-    private final String networkLoadBalancerId;
+    private String networkLoadBalancerId;
     /**
      * @return The communication port for the listener.  Example: `80`
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
      * 
      */
-    private final String protocol;
+    private String protocol;
 
-    @CustomType.Constructor
-    private GetListenersListenerCollectionItem(
-        @CustomType.Parameter("defaultBackendSetName") String defaultBackendSetName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipVersion") String ipVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("networkLoadBalancerId") String networkLoadBalancerId,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol) {
-        this.defaultBackendSetName = defaultBackendSetName;
-        this.id = id;
-        this.ipVersion = ipVersion;
-        this.name = name;
-        this.networkLoadBalancerId = networkLoadBalancerId;
-        this.port = port;
-        this.protocol = protocol;
-    }
-
+    private GetListenersListenerCollectionItem() {}
     /**
      * @return The name of the associated backend set.  Example: `example_backend_set`
      * 
@@ -113,7 +96,7 @@ public final class GetListenersListenerCollectionItem {
     public static Builder builder(GetListenersListenerCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String defaultBackendSetName;
         private String id;
@@ -122,11 +105,7 @@ public final class GetListenersListenerCollectionItem {
         private String networkLoadBalancerId;
         private Integer port;
         private String protocol;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListenersListenerCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultBackendSetName = defaults.defaultBackendSetName;
@@ -138,35 +117,51 @@ public final class GetListenersListenerCollectionItem {
     	      this.protocol = defaults.protocol;
         }
 
+        @CustomType.Setter
         public Builder defaultBackendSetName(String defaultBackendSetName) {
             this.defaultBackendSetName = Objects.requireNonNull(defaultBackendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipVersion(String ipVersion) {
             this.ipVersion = Objects.requireNonNull(ipVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
             this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
-        }        public GetListenersListenerCollectionItem build() {
-            return new GetListenersListenerCollectionItem(defaultBackendSetName, id, ipVersion, name, networkLoadBalancerId, port, protocol);
+        }
+        public GetListenersListenerCollectionItem build() {
+            final var o = new GetListenersListenerCollectionItem();
+            o.defaultBackendSetName = defaultBackendSetName;
+            o.id = id;
+            o.ipVersion = ipVersion;
+            o.name = name;
+            o.networkLoadBalancerId = networkLoadBalancerId;
+            o.port = port;
+            o.protocol = protocol;
+            return o;
         }
     }
 }

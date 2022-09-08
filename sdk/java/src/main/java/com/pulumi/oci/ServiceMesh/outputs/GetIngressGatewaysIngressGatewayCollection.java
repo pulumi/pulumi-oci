@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetIngressGatewaysIngressGatewayCollection {
-    private final List<GetIngressGatewaysIngressGatewayCollectionItem> items;
+    private List<GetIngressGatewaysIngressGatewayCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetIngressGatewaysIngressGatewayCollection(@CustomType.Parameter("items") List<GetIngressGatewaysIngressGatewayCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetIngressGatewaysIngressGatewayCollection() {}
     public List<GetIngressGatewaysIngressGatewayCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetIngressGatewaysIngressGatewayCollection {
     public static Builder builder(GetIngressGatewaysIngressGatewayCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetIngressGatewaysIngressGatewayCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewaysIngressGatewayCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetIngressGatewaysIngressGatewayCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetIngressGatewaysIngressGatewayCollectionItem... items) {
             return items(List.of(items));
-        }        public GetIngressGatewaysIngressGatewayCollection build() {
-            return new GetIngressGatewaysIngressGatewayCollection(items);
+        }
+        public GetIngressGatewaysIngressGatewayCollection build() {
+            final var o = new GetIngressGatewaysIngressGatewayCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -17,147 +17,104 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      * @return A list of additional FQDNs that can be also be used for the private endpoint.
      * 
      */
-    private final List<String> additionalFqdns;
+    private List<String> additionalFqdns;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A description of the Database Tools private endpoint.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only resources that match the entire specified display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Then FQDN to use for the private endpoint.
      * 
      */
-    private final String endpointFqdn;
+    private String endpointFqdn;
     /**
      * @return A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
      * 
      */
-    private final String endpointServiceId;
+    private String endpointServiceId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint&#39;s VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
-    private final List<String> nsgIds;
+    private List<String> nsgIds;
     /**
      * @return The private IP address that represents the access point for the associated endpoint service.
      * 
      */
-    private final String privateEndpointIp;
+    private String privateEndpointIp;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint&#39;s VNIC.
      * 
      */
-    private final String privateEndpointVnicId;
+    private String privateEndpointVnicId;
     /**
      * @return Reverse connection configuration details of the private endpoint.
      * 
      */
-    private final List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration> reverseConnectionConfigurations;
+    private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration> reverseConnectionConfigurations;
     /**
      * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return A filter to return only resources their `subnetId` matches the specified `subnetId`.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem(
-        @CustomType.Parameter("additionalFqdns") List<String> additionalFqdns,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("endpointFqdn") String endpointFqdn,
-        @CustomType.Parameter("endpointServiceId") String endpointServiceId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("nsgIds") List<String> nsgIds,
-        @CustomType.Parameter("privateEndpointIp") String privateEndpointIp,
-        @CustomType.Parameter("privateEndpointVnicId") String privateEndpointVnicId,
-        @CustomType.Parameter("reverseConnectionConfigurations") List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration> reverseConnectionConfigurations,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.additionalFqdns = additionalFqdns;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.endpointFqdn = endpointFqdn;
-        this.endpointServiceId = endpointServiceId;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.nsgIds = nsgIds;
-        this.privateEndpointIp = privateEndpointIp;
-        this.privateEndpointVnicId = privateEndpointVnicId;
-        this.reverseConnectionConfigurations = reverseConnectionConfigurations;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.vcnId = vcnId;
-    }
-
+    private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem() {}
     /**
      * @return A list of additional FQDNs that can be also be used for the private endpoint.
      * 
@@ -306,7 +263,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
     public static Builder builder(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> additionalFqdns;
         private String compartmentId;
@@ -328,11 +285,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         private String timeCreated;
         private String timeUpdated;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalFqdns = defaults.additionalFqdns;
@@ -357,6 +310,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder additionalFqdns(List<String> additionalFqdns) {
             this.additionalFqdns = Objects.requireNonNull(additionalFqdns);
             return this;
@@ -364,42 +318,52 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         public Builder additionalFqdns(String... additionalFqdns) {
             return additionalFqdns(List.of(additionalFqdns));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder endpointFqdn(String endpointFqdn) {
             this.endpointFqdn = Objects.requireNonNull(endpointFqdn);
             return this;
         }
+        @CustomType.Setter
         public Builder endpointServiceId(String endpointServiceId) {
             this.endpointServiceId = Objects.requireNonNull(endpointServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -407,14 +371,17 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder privateEndpointIp(String privateEndpointIp) {
             this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpointVnicId(String privateEndpointVnicId) {
             this.privateEndpointVnicId = Objects.requireNonNull(privateEndpointVnicId);
             return this;
         }
+        @CustomType.Setter
         public Builder reverseConnectionConfigurations(List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration> reverseConnectionConfigurations) {
             this.reverseConnectionConfigurations = Objects.requireNonNull(reverseConnectionConfigurations);
             return this;
@@ -422,31 +389,59 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         public Builder reverseConnectionConfigurations(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration... reverseConnectionConfigurations) {
             return reverseConnectionConfigurations(List.of(reverseConnectionConfigurations));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem build() {
-            return new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem(additionalFqdns, compartmentId, definedTags, description, displayName, endpointFqdn, endpointServiceId, freeformTags, id, lifecycleDetails, nsgIds, privateEndpointIp, privateEndpointVnicId, reverseConnectionConfigurations, state, subnetId, systemTags, timeCreated, timeUpdated, vcnId);
+        }
+        public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem build() {
+            final var o = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem();
+            o.additionalFqdns = additionalFqdns;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.endpointFqdn = endpointFqdn;
+            o.endpointServiceId = endpointServiceId;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.nsgIds = nsgIds;
+            o.privateEndpointIp = privateEndpointIp;
+            o.privateEndpointVnicId = privateEndpointVnicId;
+            o.reverseConnectionConfigurations = reverseConnectionConfigurations;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

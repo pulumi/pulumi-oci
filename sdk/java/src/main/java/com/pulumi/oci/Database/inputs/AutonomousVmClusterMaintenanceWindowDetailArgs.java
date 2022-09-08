@@ -66,6 +66,13 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
         return Optional.ofNullable(this.isCustomActionTimeoutEnabled);
     }
 
+    @Import(name="isMonthlyPatchingEnabled")
+    private @Nullable Output<Boolean> isMonthlyPatchingEnabled;
+
+    public Optional<Output<Boolean>> isMonthlyPatchingEnabled() {
+        return Optional.ofNullable(this.isMonthlyPatchingEnabled);
+    }
+
     /**
      * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
@@ -140,6 +147,7 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
         this.daysOfWeeks = $.daysOfWeeks;
         this.hoursOfDays = $.hoursOfDays;
         this.isCustomActionTimeoutEnabled = $.isCustomActionTimeoutEnabled;
+        this.isMonthlyPatchingEnabled = $.isMonthlyPatchingEnabled;
         this.leadTimeInWeeks = $.leadTimeInWeeks;
         this.months = $.months;
         this.patchingMode = $.patchingMode;
@@ -246,6 +254,15 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
 
         public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
             return isCustomActionTimeoutEnabled(Output.of(isCustomActionTimeoutEnabled));
+        }
+
+        public Builder isMonthlyPatchingEnabled(@Nullable Output<Boolean> isMonthlyPatchingEnabled) {
+            $.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
+            return this;
+        }
+
+        public Builder isMonthlyPatchingEnabled(Boolean isMonthlyPatchingEnabled) {
+            return isMonthlyPatchingEnabled(Output.of(isMonthlyPatchingEnabled));
         }
 
         /**

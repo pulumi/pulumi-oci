@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DevOps.inputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs;
 import com.pulumi.oci.DevOps.inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs;
 import java.lang.String;
 import java.util.List;
@@ -30,6 +31,13 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
      */
     public Optional<Output<List<String>>> events() {
         return Optional.ofNullable(this.events);
+    }
+
+    @Import(name="excludes")
+    private @Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs>> excludes;
+
+    public Optional<Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs>>> excludes() {
+        return Optional.ofNullable(this.excludes);
     }
 
     /**
@@ -66,6 +74,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
 
     private BuildRunBuildRunSourceTriggerInfoActionFilterArgs(BuildRunBuildRunSourceTriggerInfoActionFilterArgs $) {
         this.events = $.events;
+        this.excludes = $.excludes;
         this.includes = $.includes;
         this.triggerSource = $.triggerSource;
     }
@@ -117,6 +126,19 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
          */
         public Builder events(String... events) {
             return events(List.of(events));
+        }
+
+        public Builder excludes(@Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs>> excludes) {
+            $.excludes = excludes;
+            return this;
+        }
+
+        public Builder excludes(List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs> excludes) {
+            return excludes(Output.of(excludes));
+        }
+
+        public Builder excludes(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs... excludes) {
+            return excludes(List.of(excludes));
         }
 
         /**

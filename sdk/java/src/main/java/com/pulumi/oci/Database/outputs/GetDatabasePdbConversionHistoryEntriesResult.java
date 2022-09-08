@@ -14,41 +14,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabasePdbConversionHistoryEntriesResult {
-    private final String databaseId;
-    private final @Nullable List<GetDatabasePdbConversionHistoryEntriesFilter> filters;
+    private String databaseId;
+    private @Nullable List<GetDatabasePdbConversionHistoryEntriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String pdbConversionAction;
+    private String id;
+    private @Nullable String pdbConversionAction;
     /**
      * @return The list of pdb_conversion_history_entries.
      * 
      */
-    private final List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries;
+    private List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries;
     /**
      * @return Status of an operation performed during the conversion of a non-container database to a pluggable database.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDatabasePdbConversionHistoryEntriesResult(
-        @CustomType.Parameter("databaseId") String databaseId,
-        @CustomType.Parameter("filters") @Nullable List<GetDatabasePdbConversionHistoryEntriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("pdbConversionAction") @Nullable String pdbConversionAction,
-        @CustomType.Parameter("pdbConversionHistoryEntries") List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.databaseId = databaseId;
-        this.filters = filters;
-        this.id = id;
-        this.pdbConversionAction = pdbConversionAction;
-        this.pdbConversionHistoryEntries = pdbConversionHistoryEntries;
-        this.state = state;
-    }
-
+    private GetDatabasePdbConversionHistoryEntriesResult() {}
     public String databaseId() {
         return this.databaseId;
     }
@@ -87,7 +72,7 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
     public static Builder builder(GetDatabasePdbConversionHistoryEntriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String databaseId;
         private @Nullable List<GetDatabasePdbConversionHistoryEntriesFilter> filters;
@@ -95,11 +80,7 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
         private @Nullable String pdbConversionAction;
         private List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabasePdbConversionHistoryEntriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.databaseId = defaults.databaseId;
@@ -110,10 +91,12 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder databaseId(String databaseId) {
             this.databaseId = Objects.requireNonNull(databaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabasePdbConversionHistoryEntriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -121,14 +104,17 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
         public Builder filters(GetDatabasePdbConversionHistoryEntriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder pdbConversionAction(@Nullable String pdbConversionAction) {
             this.pdbConversionAction = pdbConversionAction;
             return this;
         }
+        @CustomType.Setter
         public Builder pdbConversionHistoryEntries(List<GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry> pdbConversionHistoryEntries) {
             this.pdbConversionHistoryEntries = Objects.requireNonNull(pdbConversionHistoryEntries);
             return this;
@@ -136,11 +122,20 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
         public Builder pdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry... pdbConversionHistoryEntries) {
             return pdbConversionHistoryEntries(List.of(pdbConversionHistoryEntries));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDatabasePdbConversionHistoryEntriesResult build() {
-            return new GetDatabasePdbConversionHistoryEntriesResult(databaseId, filters, id, pdbConversionAction, pdbConversionHistoryEntries, state);
+        }
+        public GetDatabasePdbConversionHistoryEntriesResult build() {
+            final var o = new GetDatabasePdbConversionHistoryEntriesResult();
+            o.databaseId = databaseId;
+            o.filters = filters;
+            o.id = id;
+            o.pdbConversionAction = pdbConversionAction;
+            o.pdbConversionHistoryEntries = pdbConversionHistoryEntries;
+            o.state = state;
+            return o;
         }
     }
 }

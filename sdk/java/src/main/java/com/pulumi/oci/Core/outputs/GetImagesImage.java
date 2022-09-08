@@ -20,132 +20,91 @@ public final class GetImagesImage {
      * @return Oracle Cloud Agent features supported on the image.
      * 
      */
-    private final List<GetImagesImageAgentFeature> agentFeatures;
+    private List<GetImagesImageAgentFeature> agentFeatures;
     /**
      * @return The OCID of the image originally used to launch the instance.
      * 
      */
-    private final String baseImageId;
+    private String baseImageId;
     /**
      * @return The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
      * 
      */
-    private final String billableSizeInGbs;
+    private String billableSizeInGbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
      * 
      */
-    private final Boolean createImageAllowed;
+    private Boolean createImageAllowed;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the image.
      * 
      */
-    private final String id;
-    private final List<GetImagesImageImageSourceDetail> imageSourceDetails;
-    private final String instanceId;
+    private String id;
+    private List<GetImagesImageImageSourceDetail> imageSourceDetails;
+    private String instanceId;
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * 
      */
-    private final String launchMode;
+    private String launchMode;
     /**
      * @return Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      * 
      */
-    private final List<GetImagesImageLaunchOption> launchOptions;
+    private List<GetImagesImageLaunchOption> launchOptions;
     /**
      * @return The listing type of the image. The default value is &#34;NONE&#34;.
      * 
      */
-    private final String listingType;
+    private String listingType;
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    private final String operatingSystem;
+    private String operatingSystem;
     /**
      * @return The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    private final String operatingSystemVersion;
+    private String operatingSystemVersion;
     /**
      * @return The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
      * 
      */
-    private final String sizeInMbs;
+    private String sizeInMbs;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetImagesImage(
-        @CustomType.Parameter("agentFeatures") List<GetImagesImageAgentFeature> agentFeatures,
-        @CustomType.Parameter("baseImageId") String baseImageId,
-        @CustomType.Parameter("billableSizeInGbs") String billableSizeInGbs,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createImageAllowed") Boolean createImageAllowed,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageSourceDetails") List<GetImagesImageImageSourceDetail> imageSourceDetails,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("launchMode") String launchMode,
-        @CustomType.Parameter("launchOptions") List<GetImagesImageLaunchOption> launchOptions,
-        @CustomType.Parameter("listingType") String listingType,
-        @CustomType.Parameter("operatingSystem") String operatingSystem,
-        @CustomType.Parameter("operatingSystemVersion") String operatingSystemVersion,
-        @CustomType.Parameter("sizeInMbs") String sizeInMbs,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.agentFeatures = agentFeatures;
-        this.baseImageId = baseImageId;
-        this.billableSizeInGbs = billableSizeInGbs;
-        this.compartmentId = compartmentId;
-        this.createImageAllowed = createImageAllowed;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.imageSourceDetails = imageSourceDetails;
-        this.instanceId = instanceId;
-        this.launchMode = launchMode;
-        this.launchOptions = launchOptions;
-        this.listingType = listingType;
-        this.operatingSystem = operatingSystem;
-        this.operatingSystemVersion = operatingSystemVersion;
-        this.sizeInMbs = sizeInMbs;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetImagesImage() {}
     /**
      * @return Oracle Cloud Agent features supported on the image.
      * 
@@ -279,7 +238,7 @@ public final class GetImagesImage {
     public static Builder builder(GetImagesImage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetImagesImageAgentFeature> agentFeatures;
         private String baseImageId;
@@ -300,11 +259,7 @@ public final class GetImagesImage {
         private String sizeInMbs;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImagesImage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.agentFeatures = defaults.agentFeatures;
@@ -328,6 +283,7 @@ public final class GetImagesImage {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder agentFeatures(List<GetImagesImageAgentFeature> agentFeatures) {
             this.agentFeatures = Objects.requireNonNull(agentFeatures);
             return this;
@@ -335,38 +291,47 @@ public final class GetImagesImage {
         public Builder agentFeatures(GetImagesImageAgentFeature... agentFeatures) {
             return agentFeatures(List.of(agentFeatures));
         }
+        @CustomType.Setter
         public Builder baseImageId(String baseImageId) {
             this.baseImageId = Objects.requireNonNull(baseImageId);
             return this;
         }
+        @CustomType.Setter
         public Builder billableSizeInGbs(String billableSizeInGbs) {
             this.billableSizeInGbs = Objects.requireNonNull(billableSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createImageAllowed(Boolean createImageAllowed) {
             this.createImageAllowed = Objects.requireNonNull(createImageAllowed);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageSourceDetails(List<GetImagesImageImageSourceDetail> imageSourceDetails) {
             this.imageSourceDetails = Objects.requireNonNull(imageSourceDetails);
             return this;
@@ -374,14 +339,17 @@ public final class GetImagesImage {
         public Builder imageSourceDetails(GetImagesImageImageSourceDetail... imageSourceDetails) {
             return imageSourceDetails(List.of(imageSourceDetails));
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder launchMode(String launchMode) {
             this.launchMode = Objects.requireNonNull(launchMode);
             return this;
         }
+        @CustomType.Setter
         public Builder launchOptions(List<GetImagesImageLaunchOption> launchOptions) {
             this.launchOptions = Objects.requireNonNull(launchOptions);
             return this;
@@ -389,31 +357,58 @@ public final class GetImagesImage {
         public Builder launchOptions(GetImagesImageLaunchOption... launchOptions) {
             return launchOptions(List.of(launchOptions));
         }
+        @CustomType.Setter
         public Builder listingType(String listingType) {
             this.listingType = Objects.requireNonNull(listingType);
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystem(String operatingSystem) {
             this.operatingSystem = Objects.requireNonNull(operatingSystem);
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystemVersion(String operatingSystemVersion) {
             this.operatingSystemVersion = Objects.requireNonNull(operatingSystemVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInMbs(String sizeInMbs) {
             this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetImagesImage build() {
-            return new GetImagesImage(agentFeatures, baseImageId, billableSizeInGbs, compartmentId, createImageAllowed, definedTags, displayName, freeformTags, id, imageSourceDetails, instanceId, launchMode, launchOptions, listingType, operatingSystem, operatingSystemVersion, sizeInMbs, state, timeCreated);
+        }
+        public GetImagesImage build() {
+            final var o = new GetImagesImage();
+            o.agentFeatures = agentFeatures;
+            o.baseImageId = baseImageId;
+            o.billableSizeInGbs = billableSizeInGbs;
+            o.compartmentId = compartmentId;
+            o.createImageAllowed = createImageAllowed;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.imageSourceDetails = imageSourceDetails;
+            o.instanceId = instanceId;
+            o.launchMode = launchMode;
+            o.launchOptions = launchOptions;
+            o.listingType = listingType;
+            o.operatingSystem = operatingSystem;
+            o.operatingSystemVersion = operatingSystemVersion;
+            o.sizeInMbs = sizeInMbs;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

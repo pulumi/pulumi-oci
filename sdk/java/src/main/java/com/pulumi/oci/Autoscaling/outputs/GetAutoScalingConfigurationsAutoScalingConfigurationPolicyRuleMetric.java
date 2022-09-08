@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric {
-    private final String metricType;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds;
+    private String metricType;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric(
-        @CustomType.Parameter("metricType") String metricType,
-        @CustomType.Parameter("thresholds") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds) {
-        this.metricType = metricType;
-        this.thresholds = thresholds;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric() {}
     public String metricType() {
         return this.metricType;
     }
@@ -36,33 +29,35 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String metricType;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.metricType = defaults.metricType;
     	      this.thresholds = defaults.thresholds;
         }
 
+        @CustomType.Setter
         public Builder metricType(String metricType) {
             this.metricType = Objects.requireNonNull(metricType);
             return this;
         }
+        @CustomType.Setter
         public Builder thresholds(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds) {
             this.thresholds = Objects.requireNonNull(thresholds);
             return this;
         }
         public Builder thresholds(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold... thresholds) {
             return thresholds(List.of(thresholds));
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric(metricType, thresholds);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric();
+            o.metricType = metricType;
+            o.thresholds = thresholds;
+            return o;
         }
     }
 }

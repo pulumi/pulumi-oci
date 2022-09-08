@@ -13,35 +13,24 @@ public final class GetMaintenanceRunEstimatedPatchingTime {
      * @return The estimated time required in minutes for database server patching.
      * 
      */
-    private final Integer estimatedDbServerPatchingTime;
+    private Integer estimatedDbServerPatchingTime;
     /**
      * @return The estimated time required in minutes for network switch patching.
      * 
      */
-    private final Integer estimatedNetworkSwitchesPatchingTime;
+    private Integer estimatedNetworkSwitchesPatchingTime;
     /**
      * @return The estimated time required in minutes for storage server patching.
      * 
      */
-    private final Integer estimatedStorageServerPatchingTime;
+    private Integer estimatedStorageServerPatchingTime;
     /**
      * @return The estimated total time required in minutes for all patching operations.
      * 
      */
-    private final Integer totalEstimatedPatchingTime;
+    private Integer totalEstimatedPatchingTime;
 
-    @CustomType.Constructor
-    private GetMaintenanceRunEstimatedPatchingTime(
-        @CustomType.Parameter("estimatedDbServerPatchingTime") Integer estimatedDbServerPatchingTime,
-        @CustomType.Parameter("estimatedNetworkSwitchesPatchingTime") Integer estimatedNetworkSwitchesPatchingTime,
-        @CustomType.Parameter("estimatedStorageServerPatchingTime") Integer estimatedStorageServerPatchingTime,
-        @CustomType.Parameter("totalEstimatedPatchingTime") Integer totalEstimatedPatchingTime) {
-        this.estimatedDbServerPatchingTime = estimatedDbServerPatchingTime;
-        this.estimatedNetworkSwitchesPatchingTime = estimatedNetworkSwitchesPatchingTime;
-        this.estimatedStorageServerPatchingTime = estimatedStorageServerPatchingTime;
-        this.totalEstimatedPatchingTime = totalEstimatedPatchingTime;
-    }
-
+    private GetMaintenanceRunEstimatedPatchingTime() {}
     /**
      * @return The estimated time required in minutes for database server patching.
      * 
@@ -78,17 +67,13 @@ public final class GetMaintenanceRunEstimatedPatchingTime {
     public static Builder builder(GetMaintenanceRunEstimatedPatchingTime defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer estimatedDbServerPatchingTime;
         private Integer estimatedNetworkSwitchesPatchingTime;
         private Integer estimatedStorageServerPatchingTime;
         private Integer totalEstimatedPatchingTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaintenanceRunEstimatedPatchingTime defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.estimatedDbServerPatchingTime = defaults.estimatedDbServerPatchingTime;
@@ -97,23 +82,33 @@ public final class GetMaintenanceRunEstimatedPatchingTime {
     	      this.totalEstimatedPatchingTime = defaults.totalEstimatedPatchingTime;
         }
 
+        @CustomType.Setter
         public Builder estimatedDbServerPatchingTime(Integer estimatedDbServerPatchingTime) {
             this.estimatedDbServerPatchingTime = Objects.requireNonNull(estimatedDbServerPatchingTime);
             return this;
         }
+        @CustomType.Setter
         public Builder estimatedNetworkSwitchesPatchingTime(Integer estimatedNetworkSwitchesPatchingTime) {
             this.estimatedNetworkSwitchesPatchingTime = Objects.requireNonNull(estimatedNetworkSwitchesPatchingTime);
             return this;
         }
+        @CustomType.Setter
         public Builder estimatedStorageServerPatchingTime(Integer estimatedStorageServerPatchingTime) {
             this.estimatedStorageServerPatchingTime = Objects.requireNonNull(estimatedStorageServerPatchingTime);
             return this;
         }
+        @CustomType.Setter
         public Builder totalEstimatedPatchingTime(Integer totalEstimatedPatchingTime) {
             this.totalEstimatedPatchingTime = Objects.requireNonNull(totalEstimatedPatchingTime);
             return this;
-        }        public GetMaintenanceRunEstimatedPatchingTime build() {
-            return new GetMaintenanceRunEstimatedPatchingTime(estimatedDbServerPatchingTime, estimatedNetworkSwitchesPatchingTime, estimatedStorageServerPatchingTime, totalEstimatedPatchingTime);
+        }
+        public GetMaintenanceRunEstimatedPatchingTime build() {
+            final var o = new GetMaintenanceRunEstimatedPatchingTime();
+            o.estimatedDbServerPatchingTime = estimatedDbServerPatchingTime;
+            o.estimatedNetworkSwitchesPatchingTime = estimatedNetworkSwitchesPatchingTime;
+            o.estimatedStorageServerPatchingTime = estimatedStorageServerPatchingTime;
+            o.totalEstimatedPatchingTime = totalEstimatedPatchingTime;
+            return o;
         }
     }
 }

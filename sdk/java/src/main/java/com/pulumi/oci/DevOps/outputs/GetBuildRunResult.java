@@ -21,129 +21,90 @@ public final class GetBuildRunResult {
      * @return Outputs from the build.
      * 
      */
-    private final List<GetBuildRunBuildOutput> buildOutputs;
+    private List<GetBuildRunBuildOutput> buildOutputs;
     /**
      * @return The OCID of the build pipeline to be triggered.
      * 
      */
-    private final String buildPipelineId;
+    private String buildPipelineId;
     /**
      * @return Specifies list of arguments passed along with the build run.
      * 
      */
-    private final List<GetBuildRunBuildRunArgument> buildRunArguments;
-    private final String buildRunId;
+    private List<GetBuildRunBuildRunArgument> buildRunArguments;
+    private String buildRunId;
     /**
      * @return The run progress details of a build run.
      * 
      */
-    private final List<GetBuildRunBuildRunProgress> buildRunProgresses;
+    private List<GetBuildRunBuildRunProgress> buildRunProgresses;
     /**
      * @return The source from which the build run is triggered.
      * 
      */
-    private final List<GetBuildRunBuildRunSource> buildRunSources;
+    private List<GetBuildRunBuildRunSource> buildRunSources;
     /**
      * @return Commit details that need to be used for the build run.
      * 
      */
-    private final List<GetBuildRunCommitInfo> commitInfos;
+    private List<GetBuildRunCommitInfo> commitInfos;
     /**
      * @return The OCID of the compartment where the build is running.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The OCID of the DevOps project.
      * 
      */
-    private final String projectId;
+    private String projectId;
     /**
      * @return The current state of the build run.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetBuildRunResult(
-        @CustomType.Parameter("buildOutputs") List<GetBuildRunBuildOutput> buildOutputs,
-        @CustomType.Parameter("buildPipelineId") String buildPipelineId,
-        @CustomType.Parameter("buildRunArguments") List<GetBuildRunBuildRunArgument> buildRunArguments,
-        @CustomType.Parameter("buildRunId") String buildRunId,
-        @CustomType.Parameter("buildRunProgresses") List<GetBuildRunBuildRunProgress> buildRunProgresses,
-        @CustomType.Parameter("buildRunSources") List<GetBuildRunBuildRunSource> buildRunSources,
-        @CustomType.Parameter("commitInfos") List<GetBuildRunCommitInfo> commitInfos,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("projectId") String projectId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.buildOutputs = buildOutputs;
-        this.buildPipelineId = buildPipelineId;
-        this.buildRunArguments = buildRunArguments;
-        this.buildRunId = buildRunId;
-        this.buildRunProgresses = buildRunProgresses;
-        this.buildRunSources = buildRunSources;
-        this.commitInfos = commitInfos;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.projectId = projectId;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetBuildRunResult() {}
     /**
      * @return Outputs from the build.
      * 
@@ -274,7 +235,7 @@ public final class GetBuildRunResult {
     public static Builder builder(GetBuildRunResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildRunBuildOutput> buildOutputs;
         private String buildPipelineId;
@@ -294,11 +255,7 @@ public final class GetBuildRunResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildOutputs = defaults.buildOutputs;
@@ -321,6 +278,7 @@ public final class GetBuildRunResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder buildOutputs(List<GetBuildRunBuildOutput> buildOutputs) {
             this.buildOutputs = Objects.requireNonNull(buildOutputs);
             return this;
@@ -328,10 +286,12 @@ public final class GetBuildRunResult {
         public Builder buildOutputs(GetBuildRunBuildOutput... buildOutputs) {
             return buildOutputs(List.of(buildOutputs));
         }
+        @CustomType.Setter
         public Builder buildPipelineId(String buildPipelineId) {
             this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
             return this;
         }
+        @CustomType.Setter
         public Builder buildRunArguments(List<GetBuildRunBuildRunArgument> buildRunArguments) {
             this.buildRunArguments = Objects.requireNonNull(buildRunArguments);
             return this;
@@ -339,10 +299,12 @@ public final class GetBuildRunResult {
         public Builder buildRunArguments(GetBuildRunBuildRunArgument... buildRunArguments) {
             return buildRunArguments(List.of(buildRunArguments));
         }
+        @CustomType.Setter
         public Builder buildRunId(String buildRunId) {
             this.buildRunId = Objects.requireNonNull(buildRunId);
             return this;
         }
+        @CustomType.Setter
         public Builder buildRunProgresses(List<GetBuildRunBuildRunProgress> buildRunProgresses) {
             this.buildRunProgresses = Objects.requireNonNull(buildRunProgresses);
             return this;
@@ -350,6 +312,7 @@ public final class GetBuildRunResult {
         public Builder buildRunProgresses(GetBuildRunBuildRunProgress... buildRunProgresses) {
             return buildRunProgresses(List.of(buildRunProgresses));
         }
+        @CustomType.Setter
         public Builder buildRunSources(List<GetBuildRunBuildRunSource> buildRunSources) {
             this.buildRunSources = Objects.requireNonNull(buildRunSources);
             return this;
@@ -357,6 +320,7 @@ public final class GetBuildRunResult {
         public Builder buildRunSources(GetBuildRunBuildRunSource... buildRunSources) {
             return buildRunSources(List.of(buildRunSources));
         }
+        @CustomType.Setter
         public Builder commitInfos(List<GetBuildRunCommitInfo> commitInfos) {
             this.commitInfos = Objects.requireNonNull(commitInfos);
             return this;
@@ -364,51 +328,82 @@ public final class GetBuildRunResult {
         public Builder commitInfos(GetBuildRunCommitInfo... commitInfos) {
             return commitInfos(List.of(commitInfos));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetBuildRunResult build() {
-            return new GetBuildRunResult(buildOutputs, buildPipelineId, buildRunArguments, buildRunId, buildRunProgresses, buildRunSources, commitInfos, compartmentId, definedTags, displayName, freeformTags, id, lifecycleDetails, projectId, state, systemTags, timeCreated, timeUpdated);
+        }
+        public GetBuildRunResult build() {
+            final var o = new GetBuildRunResult();
+            o.buildOutputs = buildOutputs;
+            o.buildPipelineId = buildPipelineId;
+            o.buildRunArguments = buildRunArguments;
+            o.buildRunId = buildRunId;
+            o.buildRunProgresses = buildRunProgresses;
+            o.buildRunSources = buildRunSources;
+            o.commitInfos = commitInfos;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.projectId = projectId;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

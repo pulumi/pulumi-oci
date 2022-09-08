@@ -13,63 +13,44 @@ public final class GetManagedDatabaseGroupManagedDatabase {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      * 
      */
-    private final String databaseSubType;
+    private String databaseSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private final String databaseType;
+    private String databaseType;
     /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
-    private final String deploymentType;
+    private String deploymentType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the Managed Database Group.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The date and time the Managed Database was added to the group.
      * 
      */
-    private final String timeAdded;
+    private String timeAdded;
     /**
      * @return The workload type of the Autonomous Database.
      * 
      */
-    private final String workloadType;
+    private String workloadType;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseGroupManagedDatabase(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("databaseSubType") String databaseSubType,
-        @CustomType.Parameter("databaseType") String databaseType,
-        @CustomType.Parameter("deploymentType") String deploymentType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("timeAdded") String timeAdded,
-        @CustomType.Parameter("workloadType") String workloadType) {
-        this.compartmentId = compartmentId;
-        this.databaseSubType = databaseSubType;
-        this.databaseType = databaseType;
-        this.deploymentType = deploymentType;
-        this.id = id;
-        this.name = name;
-        this.timeAdded = timeAdded;
-        this.workloadType = workloadType;
-    }
-
+    private GetManagedDatabaseGroupManagedDatabase() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * 
@@ -134,7 +115,7 @@ public final class GetManagedDatabaseGroupManagedDatabase {
     public static Builder builder(GetManagedDatabaseGroupManagedDatabase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String databaseSubType;
@@ -144,11 +125,7 @@ public final class GetManagedDatabaseGroupManagedDatabase {
         private String name;
         private String timeAdded;
         private String workloadType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseGroupManagedDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -161,39 +138,57 @@ public final class GetManagedDatabaseGroupManagedDatabase {
     	      this.workloadType = defaults.workloadType;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSubType(String databaseSubType) {
             this.databaseSubType = Objects.requireNonNull(databaseSubType);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseType(String databaseType) {
             this.databaseType = Objects.requireNonNull(databaseType);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
             this.deploymentType = Objects.requireNonNull(deploymentType);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAdded(String timeAdded) {
             this.timeAdded = Objects.requireNonNull(timeAdded);
             return this;
         }
+        @CustomType.Setter
         public Builder workloadType(String workloadType) {
             this.workloadType = Objects.requireNonNull(workloadType);
             return this;
-        }        public GetManagedDatabaseGroupManagedDatabase build() {
-            return new GetManagedDatabaseGroupManagedDatabase(compartmentId, databaseSubType, databaseType, deploymentType, id, name, timeAdded, workloadType);
+        }
+        public GetManagedDatabaseGroupManagedDatabase build() {
+            final var o = new GetManagedDatabaseGroupManagedDatabase();
+            o.compartmentId = compartmentId;
+            o.databaseSubType = databaseSubType;
+            o.databaseType = databaseType;
+            o.deploymentType = deploymentType;
+            o.id = id;
+            o.name = name;
+            o.timeAdded = timeAdded;
+            o.workloadType = workloadType;
+            return o;
         }
     }
 }

@@ -15,31 +15,20 @@ public final class GetQueryResult {
      * @return The compartment OCID.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The query OCID.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The common fields for queries.
      * 
      */
-    private final List<GetQueryQueryDefinition> queryDefinitions;
-    private final String queryId;
+    private List<GetQueryQueryDefinition> queryDefinitions;
+    private String queryId;
 
-    @CustomType.Constructor
-    private GetQueryResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("queryDefinitions") List<GetQueryQueryDefinition> queryDefinitions,
-        @CustomType.Parameter("queryId") String queryId) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.queryDefinitions = queryDefinitions;
-        this.queryId = queryId;
-    }
-
+    private GetQueryResult() {}
     /**
      * @return The compartment OCID.
      * 
@@ -72,17 +61,13 @@ public final class GetQueryResult {
     public static Builder builder(GetQueryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private List<GetQueryQueryDefinition> queryDefinitions;
         private String queryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQueryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -91,14 +76,17 @@ public final class GetQueryResult {
     	      this.queryId = defaults.queryId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder queryDefinitions(List<GetQueryQueryDefinition> queryDefinitions) {
             this.queryDefinitions = Objects.requireNonNull(queryDefinitions);
             return this;
@@ -106,11 +94,18 @@ public final class GetQueryResult {
         public Builder queryDefinitions(GetQueryQueryDefinition... queryDefinitions) {
             return queryDefinitions(List.of(queryDefinitions));
         }
+        @CustomType.Setter
         public Builder queryId(String queryId) {
             this.queryId = Objects.requireNonNull(queryId);
             return this;
-        }        public GetQueryResult build() {
-            return new GetQueryResult(compartmentId, id, queryDefinitions, queryId);
+        }
+        public GetQueryResult build() {
+            final var o = new GetQueryResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.queryDefinitions = queryDefinitions;
+            o.queryId = queryId;
+            return o;
         }
     }
 }

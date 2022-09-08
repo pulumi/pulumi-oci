@@ -19,52 +19,35 @@ public final class GetRepositoriesResult {
      * @return The OCID of the repository&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The repository name.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetRepositoriesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetRepositoriesFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return Whether the repository is immutable. The artifacts of an immutable repository cannot be overwritten.
      * 
      */
-    private final @Nullable Boolean isImmutable;
+    private @Nullable Boolean isImmutable;
     /**
      * @return The list of repository_collection.
      * 
      */
-    private final List<GetRepositoriesRepositoryCollection> repositoryCollections;
+    private List<GetRepositoriesRepositoryCollection> repositoryCollections;
     /**
      * @return The current state of the repository.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetRepositoriesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetRepositoriesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("isImmutable") @Nullable Boolean isImmutable,
-        @CustomType.Parameter("repositoryCollections") List<GetRepositoriesRepositoryCollection> repositoryCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isImmutable = isImmutable;
-        this.repositoryCollections = repositoryCollections;
-        this.state = state;
-    }
-
+    private GetRepositoriesResult() {}
     /**
      * @return The OCID of the repository&#39;s compartment.
      * 
@@ -118,7 +101,7 @@ public final class GetRepositoriesResult {
     public static Builder builder(GetRepositoriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -127,11 +110,7 @@ public final class GetRepositoriesResult {
         private @Nullable Boolean isImmutable;
         private List<GetRepositoriesRepositoryCollection> repositoryCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -143,14 +122,17 @@ public final class GetRepositoriesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -158,14 +140,17 @@ public final class GetRepositoriesResult {
         public Builder filters(GetRepositoriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder isImmutable(@Nullable Boolean isImmutable) {
             this.isImmutable = isImmutable;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryCollections(List<GetRepositoriesRepositoryCollection> repositoryCollections) {
             this.repositoryCollections = Objects.requireNonNull(repositoryCollections);
             return this;
@@ -173,11 +158,21 @@ public final class GetRepositoriesResult {
         public Builder repositoryCollections(GetRepositoriesRepositoryCollection... repositoryCollections) {
             return repositoryCollections(List.of(repositoryCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetRepositoriesResult build() {
-            return new GetRepositoriesResult(compartmentId, displayName, filters, id, isImmutable, repositoryCollections, state);
+        }
+        public GetRepositoriesResult build() {
+            final var o = new GetRepositoriesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isImmutable = isImmutable;
+            o.repositoryCollections = repositoryCollections;
+            o.state = state;
+            return o;
         }
     }
 }

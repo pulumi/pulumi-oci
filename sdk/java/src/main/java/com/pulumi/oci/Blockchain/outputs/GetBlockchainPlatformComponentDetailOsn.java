@@ -15,35 +15,24 @@ public final class GetBlockchainPlatformComponentDetailOsn {
      * @return Availability Domain of peer
      * 
      */
-    private final String ad;
+    private String ad;
     /**
      * @return OCPU allocation parameter
      * 
      */
-    private final List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams;
+    private List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams;
     /**
      * @return OSN identifier
      * 
      */
-    private final String osnKey;
+    private String osnKey;
     /**
      * @return The current state of the Platform Instance.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformComponentDetailOsn(
-        @CustomType.Parameter("ad") String ad,
-        @CustomType.Parameter("ocpuAllocationParams") List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams,
-        @CustomType.Parameter("osnKey") String osnKey,
-        @CustomType.Parameter("state") String state) {
-        this.ad = ad;
-        this.ocpuAllocationParams = ocpuAllocationParams;
-        this.osnKey = osnKey;
-        this.state = state;
-    }
-
+    private GetBlockchainPlatformComponentDetailOsn() {}
     /**
      * @return Availability Domain of peer
      * 
@@ -80,17 +69,13 @@ public final class GetBlockchainPlatformComponentDetailOsn {
     public static Builder builder(GetBlockchainPlatformComponentDetailOsn defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ad;
         private List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams;
         private String osnKey;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformComponentDetailOsn defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ad = defaults.ad;
@@ -99,10 +84,12 @@ public final class GetBlockchainPlatformComponentDetailOsn {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder ad(String ad) {
             this.ad = Objects.requireNonNull(ad);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuAllocationParams(List<GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams) {
             this.ocpuAllocationParams = Objects.requireNonNull(ocpuAllocationParams);
             return this;
@@ -110,15 +97,23 @@ public final class GetBlockchainPlatformComponentDetailOsn {
         public Builder ocpuAllocationParams(GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam... ocpuAllocationParams) {
             return ocpuAllocationParams(List.of(ocpuAllocationParams));
         }
+        @CustomType.Setter
         public Builder osnKey(String osnKey) {
             this.osnKey = Objects.requireNonNull(osnKey);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetBlockchainPlatformComponentDetailOsn build() {
-            return new GetBlockchainPlatformComponentDetailOsn(ad, ocpuAllocationParams, osnKey, state);
+        }
+        public GetBlockchainPlatformComponentDetailOsn build() {
+            final var o = new GetBlockchainPlatformComponentDetailOsn();
+            o.ad = ad;
+            o.ocpuAllocationParams = ocpuAllocationParams;
+            o.osnKey = osnKey;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollection {
      * @return List of logs
      * 
      */
-    private final List<GetDiscoveryJobLogsDiscoveryJobLogCollectionItem> items;
+    private List<GetDiscoveryJobLogsDiscoveryJobLogCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobLogsDiscoveryJobLogCollection(@CustomType.Parameter("items") List<GetDiscoveryJobLogsDiscoveryJobLogCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDiscoveryJobLogsDiscoveryJobLogCollection() {}
     /**
      * @return List of logs
      * 
@@ -36,27 +32,27 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollection {
     public static Builder builder(GetDiscoveryJobLogsDiscoveryJobLogCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDiscoveryJobLogsDiscoveryJobLogCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobLogsDiscoveryJobLogCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDiscoveryJobLogsDiscoveryJobLogCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDiscoveryJobLogsDiscoveryJobLogCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDiscoveryJobLogsDiscoveryJobLogCollection build() {
-            return new GetDiscoveryJobLogsDiscoveryJobLogCollection(items);
+        }
+        public GetDiscoveryJobLogsDiscoveryJobLogCollection build() {
+            final var o = new GetDiscoveryJobLogsDiscoveryJobLogCollection();
+            o.items = items;
+            return o;
         }
     }
 }

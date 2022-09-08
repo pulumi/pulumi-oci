@@ -15,21 +15,14 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
      * @return The list of headers.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItem> items;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItem> items;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter(
-        @CustomType.Parameter("items") List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItem> items,
-        @CustomType.Parameter("type") String type) {
-        this.items = items;
-        this.type = type;
-    }
-
+    private GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter() {}
     /**
      * @return The list of headers.
      * 
@@ -52,21 +45,18 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
     public static Builder builder(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItem> items;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -74,11 +64,16 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
         public Builder items(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter build() {
-            return new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter(items, type);
+        }
+        public GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter build() {
+            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter();
+            o.items = items;
+            o.type = type;
+            return o;
         }
     }
 }

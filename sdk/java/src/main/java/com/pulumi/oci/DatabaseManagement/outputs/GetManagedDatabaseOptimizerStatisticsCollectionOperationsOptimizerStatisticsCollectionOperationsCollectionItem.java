@@ -18,112 +18,79 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
      * @return The number of objects for which statistics collection is completed.
      * 
      */
-    private final Integer completedCount;
+    private Integer completedCount;
     /**
      * @return The summary of the Managed Database resource.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase> databases;
+    private List<GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase> databases;
     /**
      * @return The time it takes to complete the operation (in seconds).
      * 
      */
-    private final Double durationInSeconds;
+    private Double durationInSeconds;
     /**
      * @return The end time of the operation.
      * 
      */
-    private final String endTime;
+    private String endTime;
     /**
      * @return The number of objects for which statistics collection failed.
      * 
      */
-    private final Integer failedCount;
+    private Integer failedCount;
     /**
      * @return The ID of the operation.
      * 
      */
-    private final Integer id;
+    private Integer id;
     /**
      * @return The number of objects for which statistics collection is in progress.
      * 
      */
-    private final Integer inProgressCount;
+    private Integer inProgressCount;
     /**
      * @return The name of the job.
      * 
      */
-    private final String jobName;
+    private String jobName;
     /**
      * @return The name of the operation.
      * 
      */
-    private final String operationName;
+    private String operationName;
     /**
      * @return The start time of the operation.
      * 
      */
-    private final String startTime;
+    private String startTime;
     /**
      * @return The status of the Optimizer Statistics Collection task.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The name of the target object for which statistics are gathered.
      * 
      */
-    private final String target;
+    private String target;
     /**
      * @return An array of Optimizer Statistics Collection task details.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask> tasks;
+    private List<GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask> tasks;
     /**
      * @return The number of objects for which statistics collection timed out.
      * 
      */
-    private final Integer timedOutCount;
+    private Integer timedOutCount;
     /**
      * @return The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
      * 
      */
-    private final Integer totalObjectsCount;
+    private Integer totalObjectsCount;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem(
-        @CustomType.Parameter("completedCount") Integer completedCount,
-        @CustomType.Parameter("databases") List<GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase> databases,
-        @CustomType.Parameter("durationInSeconds") Double durationInSeconds,
-        @CustomType.Parameter("endTime") String endTime,
-        @CustomType.Parameter("failedCount") Integer failedCount,
-        @CustomType.Parameter("id") Integer id,
-        @CustomType.Parameter("inProgressCount") Integer inProgressCount,
-        @CustomType.Parameter("jobName") String jobName,
-        @CustomType.Parameter("operationName") String operationName,
-        @CustomType.Parameter("startTime") String startTime,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("target") String target,
-        @CustomType.Parameter("tasks") List<GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask> tasks,
-        @CustomType.Parameter("timedOutCount") Integer timedOutCount,
-        @CustomType.Parameter("totalObjectsCount") Integer totalObjectsCount) {
-        this.completedCount = completedCount;
-        this.databases = databases;
-        this.durationInSeconds = durationInSeconds;
-        this.endTime = endTime;
-        this.failedCount = failedCount;
-        this.id = id;
-        this.inProgressCount = inProgressCount;
-        this.jobName = jobName;
-        this.operationName = operationName;
-        this.startTime = startTime;
-        this.status = status;
-        this.target = target;
-        this.tasks = tasks;
-        this.timedOutCount = timedOutCount;
-        this.totalObjectsCount = totalObjectsCount;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem() {}
     /**
      * @return The number of objects for which statistics collection is completed.
      * 
@@ -237,7 +204,7 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer completedCount;
         private List<GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase> databases;
@@ -254,11 +221,7 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
         private List<GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask> tasks;
         private Integer timedOutCount;
         private Integer totalObjectsCount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.completedCount = defaults.completedCount;
@@ -278,10 +241,12 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
     	      this.totalObjectsCount = defaults.totalObjectsCount;
         }
 
+        @CustomType.Setter
         public Builder completedCount(Integer completedCount) {
             this.completedCount = Objects.requireNonNull(completedCount);
             return this;
         }
+        @CustomType.Setter
         public Builder databases(List<GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase> databases) {
             this.databases = Objects.requireNonNull(databases);
             return this;
@@ -289,46 +254,57 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
         public Builder databases(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase... databases) {
             return databases(List.of(databases));
         }
+        @CustomType.Setter
         public Builder durationInSeconds(Double durationInSeconds) {
             this.durationInSeconds = Objects.requireNonNull(durationInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder endTime(String endTime) {
             this.endTime = Objects.requireNonNull(endTime);
             return this;
         }
+        @CustomType.Setter
         public Builder failedCount(Integer failedCount) {
             this.failedCount = Objects.requireNonNull(failedCount);
             return this;
         }
+        @CustomType.Setter
         public Builder id(Integer id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inProgressCount(Integer inProgressCount) {
             this.inProgressCount = Objects.requireNonNull(inProgressCount);
             return this;
         }
+        @CustomType.Setter
         public Builder jobName(String jobName) {
             this.jobName = Objects.requireNonNull(jobName);
             return this;
         }
+        @CustomType.Setter
         public Builder operationName(String operationName) {
             this.operationName = Objects.requireNonNull(operationName);
             return this;
         }
+        @CustomType.Setter
         public Builder startTime(String startTime) {
             this.startTime = Objects.requireNonNull(startTime);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder target(String target) {
             this.target = Objects.requireNonNull(target);
             return this;
         }
+        @CustomType.Setter
         public Builder tasks(List<GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask> tasks) {
             this.tasks = Objects.requireNonNull(tasks);
             return this;
@@ -336,15 +312,34 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
         public Builder tasks(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask... tasks) {
             return tasks(List.of(tasks));
         }
+        @CustomType.Setter
         public Builder timedOutCount(Integer timedOutCount) {
             this.timedOutCount = Objects.requireNonNull(timedOutCount);
             return this;
         }
+        @CustomType.Setter
         public Builder totalObjectsCount(Integer totalObjectsCount) {
             this.totalObjectsCount = Objects.requireNonNull(totalObjectsCount);
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem build() {
-            return new GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem(completedCount, databases, durationInSeconds, endTime, failedCount, id, inProgressCount, jobName, operationName, startTime, status, target, tasks, timedOutCount, totalObjectsCount);
+        }
+        public GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem();
+            o.completedCount = completedCount;
+            o.databases = databases;
+            o.durationInSeconds = durationInSeconds;
+            o.endTime = endTime;
+            o.failedCount = failedCount;
+            o.id = id;
+            o.inProgressCount = inProgressCount;
+            o.jobName = jobName;
+            o.operationName = operationName;
+            o.startTime = startTime;
+            o.status = status;
+            o.target = target;
+            o.tasks = tasks;
+            o.timedOutCount = timedOutCount;
+            o.totalObjectsCount = totalObjectsCount;
+            return o;
         }
     }
 }

@@ -14,49 +14,34 @@ public final class GetPublicationPackageVariable {
      * @return The data type of the variable.
      * 
      */
-    private final String dataType;
+    private String dataType;
     /**
      * @return The variable&#39;s default value.
      * 
      */
-    private final String defaultValue;
+    private String defaultValue;
     /**
      * @return A description of the variable.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A brief textual description that helps to explain the variable.
      * 
      */
-    private final String hintMessage;
+    private String hintMessage;
     /**
      * @return Whether the variable is mandatory.
      * 
      */
-    private final Boolean isMandatory;
+    private Boolean isMandatory;
     /**
      * @return The name of the variable.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetPublicationPackageVariable(
-        @CustomType.Parameter("dataType") String dataType,
-        @CustomType.Parameter("defaultValue") String defaultValue,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("hintMessage") String hintMessage,
-        @CustomType.Parameter("isMandatory") Boolean isMandatory,
-        @CustomType.Parameter("name") String name) {
-        this.dataType = dataType;
-        this.defaultValue = defaultValue;
-        this.description = description;
-        this.hintMessage = hintMessage;
-        this.isMandatory = isMandatory;
-        this.name = name;
-    }
-
+    private GetPublicationPackageVariable() {}
     /**
      * @return The data type of the variable.
      * 
@@ -107,7 +92,7 @@ public final class GetPublicationPackageVariable {
     public static Builder builder(GetPublicationPackageVariable defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dataType;
         private String defaultValue;
@@ -115,11 +100,7 @@ public final class GetPublicationPackageVariable {
         private String hintMessage;
         private Boolean isMandatory;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationPackageVariable defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dataType = defaults.dataType;
@@ -130,31 +111,45 @@ public final class GetPublicationPackageVariable {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder dataType(String dataType) {
             this.dataType = Objects.requireNonNull(dataType);
             return this;
         }
+        @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = Objects.requireNonNull(defaultValue);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder hintMessage(String hintMessage) {
             this.hintMessage = Objects.requireNonNull(hintMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder isMandatory(Boolean isMandatory) {
             this.isMandatory = Objects.requireNonNull(isMandatory);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetPublicationPackageVariable build() {
-            return new GetPublicationPackageVariable(dataType, defaultValue, description, hintMessage, isMandatory, name);
+        }
+        public GetPublicationPackageVariable build() {
+            final var o = new GetPublicationPackageVariable();
+            o.dataType = dataType;
+            o.defaultValue = defaultValue;
+            o.description = description;
+            o.hintMessage = hintMessage;
+            o.isMandatory = isMandatory;
+            o.name = name;
+            return o;
         }
     }
 }

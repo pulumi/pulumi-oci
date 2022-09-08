@@ -14,56 +14,39 @@ public final class GetVantagePointsHealthChecksVantagePointGeo {
      * @return The ISO 3166-2 code for this location&#39;s first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
      * 
      */
-    private final String adminDivCode;
+    private String adminDivCode;
     /**
      * @return Common English-language name for the city.
      * 
      */
-    private final String cityName;
+    private String cityName;
     /**
      * @return The ISO 3166-1 alpha-2 country code. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
      * 
      */
-    private final String countryCode;
+    private String countryCode;
     /**
      * @return The common English-language name for the country.
      * 
      */
-    private final String countryName;
+    private String countryName;
     /**
      * @return An opaque identifier for the geographic location of the vantage point.
      * 
      */
-    private final String geoKey;
+    private String geoKey;
     /**
      * @return Degrees north of the Equator.
      * 
      */
-    private final Double latitude;
+    private Double latitude;
     /**
      * @return Degrees east of the prime meridian.
      * 
      */
-    private final Double longitude;
+    private Double longitude;
 
-    @CustomType.Constructor
-    private GetVantagePointsHealthChecksVantagePointGeo(
-        @CustomType.Parameter("adminDivCode") String adminDivCode,
-        @CustomType.Parameter("cityName") String cityName,
-        @CustomType.Parameter("countryCode") String countryCode,
-        @CustomType.Parameter("countryName") String countryName,
-        @CustomType.Parameter("geoKey") String geoKey,
-        @CustomType.Parameter("latitude") Double latitude,
-        @CustomType.Parameter("longitude") Double longitude) {
-        this.adminDivCode = adminDivCode;
-        this.cityName = cityName;
-        this.countryCode = countryCode;
-        this.countryName = countryName;
-        this.geoKey = geoKey;
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
-
+    private GetVantagePointsHealthChecksVantagePointGeo() {}
     /**
      * @return The ISO 3166-2 code for this location&#39;s first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
      * 
@@ -121,7 +104,7 @@ public final class GetVantagePointsHealthChecksVantagePointGeo {
     public static Builder builder(GetVantagePointsHealthChecksVantagePointGeo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminDivCode;
         private String cityName;
@@ -130,11 +113,7 @@ public final class GetVantagePointsHealthChecksVantagePointGeo {
         private String geoKey;
         private Double latitude;
         private Double longitude;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVantagePointsHealthChecksVantagePointGeo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminDivCode = defaults.adminDivCode;
@@ -146,35 +125,51 @@ public final class GetVantagePointsHealthChecksVantagePointGeo {
     	      this.longitude = defaults.longitude;
         }
 
+        @CustomType.Setter
         public Builder adminDivCode(String adminDivCode) {
             this.adminDivCode = Objects.requireNonNull(adminDivCode);
             return this;
         }
+        @CustomType.Setter
         public Builder cityName(String cityName) {
             this.cityName = Objects.requireNonNull(cityName);
             return this;
         }
+        @CustomType.Setter
         public Builder countryCode(String countryCode) {
             this.countryCode = Objects.requireNonNull(countryCode);
             return this;
         }
+        @CustomType.Setter
         public Builder countryName(String countryName) {
             this.countryName = Objects.requireNonNull(countryName);
             return this;
         }
+        @CustomType.Setter
         public Builder geoKey(String geoKey) {
             this.geoKey = Objects.requireNonNull(geoKey);
             return this;
         }
+        @CustomType.Setter
         public Builder latitude(Double latitude) {
             this.latitude = Objects.requireNonNull(latitude);
             return this;
         }
+        @CustomType.Setter
         public Builder longitude(Double longitude) {
             this.longitude = Objects.requireNonNull(longitude);
             return this;
-        }        public GetVantagePointsHealthChecksVantagePointGeo build() {
-            return new GetVantagePointsHealthChecksVantagePointGeo(adminDivCode, cityName, countryCode, countryName, geoKey, latitude, longitude);
+        }
+        public GetVantagePointsHealthChecksVantagePointGeo build() {
+            final var o = new GetVantagePointsHealthChecksVantagePointGeo();
+            o.adminDivCode = adminDivCode;
+            o.cityName = cityName;
+            o.countryCode = countryCode;
+            o.countryName = countryName;
+            o.geoKey = geoKey;
+            o.latitude = latitude;
+            o.longitude = longitude;
+            return o;
         }
     }
 }

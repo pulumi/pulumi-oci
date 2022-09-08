@@ -11,18 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetSubscriptionRedeemableUsersRedeemableUserCollection {
     /**
-     * @return The list of user email IDs that can redeem rewards.
+     * @return The list of user summary that can redeem rewards.
      * 
      */
-    private final List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItem> items;
+    private List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetSubscriptionRedeemableUsersRedeemableUserCollection(@CustomType.Parameter("items") List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetSubscriptionRedeemableUsersRedeemableUserCollection() {}
     /**
-     * @return The list of user email IDs that can redeem rewards.
+     * @return The list of user summary that can redeem rewards.
      * 
      */
     public List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItem> items() {
@@ -36,27 +32,27 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollection {
     public static Builder builder(GetSubscriptionRedeemableUsersRedeemableUserCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionRedeemableUsersRedeemableUserCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSubscriptionRedeemableUsersRedeemableUserCollectionItem... items) {
             return items(List.of(items));
-        }        public GetSubscriptionRedeemableUsersRedeemableUserCollection build() {
-            return new GetSubscriptionRedeemableUsersRedeemableUserCollection(items);
+        }
+        public GetSubscriptionRedeemableUsersRedeemableUserCollection build() {
+            final var o = new GetSubscriptionRedeemableUsersRedeemableUserCollection();
+            o.items = items;
+            return o;
         }
     }
 }

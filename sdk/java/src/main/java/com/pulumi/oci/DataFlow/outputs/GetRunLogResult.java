@@ -12,41 +12,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRunLogResult {
-    private final @Nullable Boolean base64EncodeContent;
+    private @Nullable Boolean base64EncodeContent;
     /**
      * @return The content of the run log.
      * 
      */
-    private final String content;
+    private String content;
     /**
      * @return The content type of the run log.
      * 
      */
-    private final String contentType;
+    private String contentType;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String name;
-    private final String runId;
+    private String id;
+    private String name;
+    private String runId;
 
-    @CustomType.Constructor
-    private GetRunLogResult(
-        @CustomType.Parameter("base64EncodeContent") @Nullable Boolean base64EncodeContent,
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("contentType") String contentType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("runId") String runId) {
-        this.base64EncodeContent = base64EncodeContent;
-        this.content = content;
-        this.contentType = contentType;
-        this.id = id;
-        this.name = name;
-        this.runId = runId;
-    }
-
+    private GetRunLogResult() {}
     public Optional<Boolean> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -85,7 +70,7 @@ public final class GetRunLogResult {
     public static Builder builder(GetRunLogResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean base64EncodeContent;
         private String content;
@@ -93,11 +78,7 @@ public final class GetRunLogResult {
         private String id;
         private String name;
         private String runId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRunLogResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.base64EncodeContent = defaults.base64EncodeContent;
@@ -108,31 +89,45 @@ public final class GetRunLogResult {
     	      this.runId = defaults.runId;
         }
 
+        @CustomType.Setter
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
             this.base64EncodeContent = base64EncodeContent;
             return this;
         }
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder contentType(String contentType) {
             this.contentType = Objects.requireNonNull(contentType);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder runId(String runId) {
             this.runId = Objects.requireNonNull(runId);
             return this;
-        }        public GetRunLogResult build() {
-            return new GetRunLogResult(base64EncodeContent, content, contentType, id, name, runId);
+        }
+        public GetRunLogResult build() {
+            final var o = new GetRunLogResult();
+            o.base64EncodeContent = base64EncodeContent;
+            o.content = content;
+            o.contentType = contentType;
+            o.id = id;
+            o.name = name;
+            o.runId = runId;
+            return o;
         }
     }
 }

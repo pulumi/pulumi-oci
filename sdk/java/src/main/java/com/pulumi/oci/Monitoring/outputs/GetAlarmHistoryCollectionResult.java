@@ -14,48 +14,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlarmHistoryCollectionResult {
-    private final @Nullable String alarmHistorytype;
+    private @Nullable String alarmHistorytype;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
      * 
      */
-    private final String alarmId;
+    private String alarmId;
     /**
      * @return The set of history entries retrieved for the alarm.
      * 
      */
-    private final List<GetAlarmHistoryCollectionEntry> entries;
+    private List<GetAlarmHistoryCollectionEntry> entries;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether the alarm is enabled.  Example: `true`
      * 
      */
-    private final Boolean isEnabled;
-    private final @Nullable String timestampGreaterThanOrEqualTo;
-    private final @Nullable String timestampLessThan;
+    private Boolean isEnabled;
+    private @Nullable String timestampGreaterThanOrEqualTo;
+    private @Nullable String timestampLessThan;
 
-    @CustomType.Constructor
-    private GetAlarmHistoryCollectionResult(
-        @CustomType.Parameter("alarmHistorytype") @Nullable String alarmHistorytype,
-        @CustomType.Parameter("alarmId") String alarmId,
-        @CustomType.Parameter("entries") List<GetAlarmHistoryCollectionEntry> entries,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("timestampGreaterThanOrEqualTo") @Nullable String timestampGreaterThanOrEqualTo,
-        @CustomType.Parameter("timestampLessThan") @Nullable String timestampLessThan) {
-        this.alarmHistorytype = alarmHistorytype;
-        this.alarmId = alarmId;
-        this.entries = entries;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
-        this.timestampLessThan = timestampLessThan;
-    }
-
+    private GetAlarmHistoryCollectionResult() {}
     public Optional<String> alarmHistorytype() {
         return Optional.ofNullable(this.alarmHistorytype);
     }
@@ -101,7 +84,7 @@ public final class GetAlarmHistoryCollectionResult {
     public static Builder builder(GetAlarmHistoryCollectionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String alarmHistorytype;
         private String alarmId;
@@ -110,11 +93,7 @@ public final class GetAlarmHistoryCollectionResult {
         private Boolean isEnabled;
         private @Nullable String timestampGreaterThanOrEqualTo;
         private @Nullable String timestampLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlarmHistoryCollectionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alarmHistorytype = defaults.alarmHistorytype;
@@ -126,14 +105,17 @@ public final class GetAlarmHistoryCollectionResult {
     	      this.timestampLessThan = defaults.timestampLessThan;
         }
 
+        @CustomType.Setter
         public Builder alarmHistorytype(@Nullable String alarmHistorytype) {
             this.alarmHistorytype = alarmHistorytype;
             return this;
         }
+        @CustomType.Setter
         public Builder alarmId(String alarmId) {
             this.alarmId = Objects.requireNonNull(alarmId);
             return this;
         }
+        @CustomType.Setter
         public Builder entries(List<GetAlarmHistoryCollectionEntry> entries) {
             this.entries = Objects.requireNonNull(entries);
             return this;
@@ -141,23 +123,36 @@ public final class GetAlarmHistoryCollectionResult {
         public Builder entries(GetAlarmHistoryCollectionEntry... entries) {
             return entries(List.of(entries));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder timestampGreaterThanOrEqualTo(@Nullable String timestampGreaterThanOrEqualTo) {
             this.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timestampLessThan(@Nullable String timestampLessThan) {
             this.timestampLessThan = timestampLessThan;
             return this;
-        }        public GetAlarmHistoryCollectionResult build() {
-            return new GetAlarmHistoryCollectionResult(alarmHistorytype, alarmId, entries, id, isEnabled, timestampGreaterThanOrEqualTo, timestampLessThan);
+        }
+        public GetAlarmHistoryCollectionResult build() {
+            final var o = new GetAlarmHistoryCollectionResult();
+            o.alarmHistorytype = alarmHistorytype;
+            o.alarmId = alarmId;
+            o.entries = entries;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
+            o.timestampLessThan = timestampLessThan;
+            return o;
         }
     }
 }

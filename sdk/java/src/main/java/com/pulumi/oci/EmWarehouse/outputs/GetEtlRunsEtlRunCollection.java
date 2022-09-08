@@ -14,13 +14,9 @@ public final class GetEtlRunsEtlRunCollection {
      * @return List of runs
      * 
      */
-    private final List<GetEtlRunsEtlRunCollectionItem> items;
+    private List<GetEtlRunsEtlRunCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetEtlRunsEtlRunCollection(@CustomType.Parameter("items") List<GetEtlRunsEtlRunCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetEtlRunsEtlRunCollection() {}
     /**
      * @return List of runs
      * 
@@ -36,27 +32,27 @@ public final class GetEtlRunsEtlRunCollection {
     public static Builder builder(GetEtlRunsEtlRunCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetEtlRunsEtlRunCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEtlRunsEtlRunCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetEtlRunsEtlRunCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetEtlRunsEtlRunCollectionItem... items) {
             return items(List.of(items));
-        }        public GetEtlRunsEtlRunCollection build() {
-            return new GetEtlRunsEtlRunCollection(items);
+        }
+        public GetEtlRunsEtlRunCollection build() {
+            final var o = new GetEtlRunsEtlRunCollection();
+            o.items = items;
+            return o;
         }
     }
 }

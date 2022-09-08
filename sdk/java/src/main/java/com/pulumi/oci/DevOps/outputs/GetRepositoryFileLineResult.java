@@ -14,37 +14,22 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryFileLineResult {
-    private final String filePath;
+    private String filePath;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of lines in the file.
      * 
      */
-    private final List<GetRepositoryFileLineLine> lines;
-    private final String repositoryId;
-    private final String revision;
-    private final @Nullable Integer startLineNumber;
+    private List<GetRepositoryFileLineLine> lines;
+    private String repositoryId;
+    private String revision;
+    private @Nullable Integer startLineNumber;
 
-    @CustomType.Constructor
-    private GetRepositoryFileLineResult(
-        @CustomType.Parameter("filePath") String filePath,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lines") List<GetRepositoryFileLineLine> lines,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("revision") String revision,
-        @CustomType.Parameter("startLineNumber") @Nullable Integer startLineNumber) {
-        this.filePath = filePath;
-        this.id = id;
-        this.lines = lines;
-        this.repositoryId = repositoryId;
-        this.revision = revision;
-        this.startLineNumber = startLineNumber;
-    }
-
+    private GetRepositoryFileLineResult() {}
     public String filePath() {
         return this.filePath;
     }
@@ -79,7 +64,7 @@ public final class GetRepositoryFileLineResult {
     public static Builder builder(GetRepositoryFileLineResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String filePath;
         private String id;
@@ -87,11 +72,7 @@ public final class GetRepositoryFileLineResult {
         private String repositoryId;
         private String revision;
         private @Nullable Integer startLineNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryFileLineResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filePath = defaults.filePath;
@@ -102,14 +83,17 @@ public final class GetRepositoryFileLineResult {
     	      this.startLineNumber = defaults.startLineNumber;
         }
 
+        @CustomType.Setter
         public Builder filePath(String filePath) {
             this.filePath = Objects.requireNonNull(filePath);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lines(List<GetRepositoryFileLineLine> lines) {
             this.lines = Objects.requireNonNull(lines);
             return this;
@@ -117,19 +101,30 @@ public final class GetRepositoryFileLineResult {
         public Builder lines(GetRepositoryFileLineLine... lines) {
             return lines(List.of(lines));
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder revision(String revision) {
             this.revision = Objects.requireNonNull(revision);
             return this;
         }
+        @CustomType.Setter
         public Builder startLineNumber(@Nullable Integer startLineNumber) {
             this.startLineNumber = startLineNumber;
             return this;
-        }        public GetRepositoryFileLineResult build() {
-            return new GetRepositoryFileLineResult(filePath, id, lines, repositoryId, revision, startLineNumber);
+        }
+        public GetRepositoryFileLineResult build() {
+            final var o = new GetRepositoryFileLineResult();
+            o.filePath = filePath;
+            o.id = id;
+            o.lines = lines;
+            o.repositoryId = repositoryId;
+            o.revision = revision;
+            o.startLineNumber = startLineNumber;
+            return o;
         }
     }
 }

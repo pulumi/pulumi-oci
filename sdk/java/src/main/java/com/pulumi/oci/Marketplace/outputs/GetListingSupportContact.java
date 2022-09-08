@@ -13,35 +13,24 @@ public final class GetListingSupportContact {
      * @return The email of the contact.
      * 
      */
-    private final String email;
+    private String email;
     /**
      * @return Text that describes the resource.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The phone number of the contact.
      * 
      */
-    private final String phone;
+    private String phone;
     /**
      * @return The email subject line to use when contacting support.
      * 
      */
-    private final String subject;
+    private String subject;
 
-    @CustomType.Constructor
-    private GetListingSupportContact(
-        @CustomType.Parameter("email") String email,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("phone") String phone,
-        @CustomType.Parameter("subject") String subject) {
-        this.email = email;
-        this.name = name;
-        this.phone = phone;
-        this.subject = subject;
-    }
-
+    private GetListingSupportContact() {}
     /**
      * @return The email of the contact.
      * 
@@ -78,17 +67,13 @@ public final class GetListingSupportContact {
     public static Builder builder(GetListingSupportContact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String email;
         private String name;
         private String phone;
         private String subject;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingSupportContact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.email = defaults.email;
@@ -97,23 +82,33 @@ public final class GetListingSupportContact {
     	      this.subject = defaults.subject;
         }
 
+        @CustomType.Setter
         public Builder email(String email) {
             this.email = Objects.requireNonNull(email);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder phone(String phone) {
             this.phone = Objects.requireNonNull(phone);
             return this;
         }
+        @CustomType.Setter
         public Builder subject(String subject) {
             this.subject = Objects.requireNonNull(subject);
             return this;
-        }        public GetListingSupportContact build() {
-            return new GetListingSupportContact(email, name, phone, subject);
+        }
+        public GetListingSupportContact build() {
+            final var o = new GetListingSupportContact();
+            o.email = email;
+            o.name = name;
+            o.phone = phone;
+            o.subject = subject;
+            return o;
         }
     }
 }

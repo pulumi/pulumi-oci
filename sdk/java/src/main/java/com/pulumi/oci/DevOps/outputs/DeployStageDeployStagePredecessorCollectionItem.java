@@ -13,13 +13,9 @@ public final class DeployStageDeployStagePredecessorCollectionItem {
      * @return (Updatable) The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID is the pipeline&#39;s OCID.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private DeployStageDeployStagePredecessorCollectionItem(@CustomType.Parameter("id") String id) {
-        this.id = id;
-    }
-
+    private DeployStageDeployStagePredecessorCollectionItem() {}
     /**
      * @return (Updatable) The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID is the pipeline&#39;s OCID.
      * 
@@ -35,24 +31,24 @@ public final class DeployStageDeployStagePredecessorCollectionItem {
     public static Builder builder(DeployStageDeployStagePredecessorCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeployStageDeployStagePredecessorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public DeployStageDeployStagePredecessorCollectionItem build() {
-            return new DeployStageDeployStagePredecessorCollectionItem(id);
+        }
+        public DeployStageDeployStagePredecessorCollectionItem build() {
+            final var o = new DeployStageDeployStagePredecessorCollectionItem();
+            o.id = id;
+            return o;
         }
     }
 }

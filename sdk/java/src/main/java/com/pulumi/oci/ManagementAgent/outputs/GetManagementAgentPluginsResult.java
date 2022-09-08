@@ -14,51 +14,32 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentPluginsResult {
-    private final @Nullable String agentId;
-    private final String compartmentId;
+    private @Nullable String agentId;
+    private String compartmentId;
     /**
      * @return Management Agent Plugin Display Name
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetManagementAgentPluginsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetManagementAgentPluginsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of management_agent_plugins.
      * 
      */
-    private final List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins;
-    private final @Nullable List<String> platformTypes;
+    private List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins;
+    private @Nullable List<String> platformTypes;
     /**
      * @return The current state of Management Agent Plugin
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetManagementAgentPluginsResult(
-        @CustomType.Parameter("agentId") @Nullable String agentId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetManagementAgentPluginsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managementAgentPlugins") List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins,
-        @CustomType.Parameter("platformTypes") @Nullable List<String> platformTypes,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.agentId = agentId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.managementAgentPlugins = managementAgentPlugins;
-        this.platformTypes = platformTypes;
-        this.state = state;
-    }
-
+    private GetManagementAgentPluginsResult() {}
     public Optional<String> agentId() {
         return Optional.ofNullable(this.agentId);
     }
@@ -107,7 +88,7 @@ public final class GetManagementAgentPluginsResult {
     public static Builder builder(GetManagementAgentPluginsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String agentId;
         private String compartmentId;
@@ -117,11 +98,7 @@ public final class GetManagementAgentPluginsResult {
         private List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins;
         private @Nullable List<String> platformTypes;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentPluginsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.agentId = defaults.agentId;
@@ -134,18 +111,22 @@ public final class GetManagementAgentPluginsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder agentId(@Nullable String agentId) {
             this.agentId = agentId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementAgentPluginsFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,10 +134,12 @@ public final class GetManagementAgentPluginsResult {
         public Builder filters(GetManagementAgentPluginsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentPlugins(List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins) {
             this.managementAgentPlugins = Objects.requireNonNull(managementAgentPlugins);
             return this;
@@ -164,6 +147,7 @@ public final class GetManagementAgentPluginsResult {
         public Builder managementAgentPlugins(GetManagementAgentPluginsManagementAgentPlugin... managementAgentPlugins) {
             return managementAgentPlugins(List.of(managementAgentPlugins));
         }
+        @CustomType.Setter
         public Builder platformTypes(@Nullable List<String> platformTypes) {
             this.platformTypes = platformTypes;
             return this;
@@ -171,11 +155,22 @@ public final class GetManagementAgentPluginsResult {
         public Builder platformTypes(String... platformTypes) {
             return platformTypes(List.of(platformTypes));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetManagementAgentPluginsResult build() {
-            return new GetManagementAgentPluginsResult(agentId, compartmentId, displayName, filters, id, managementAgentPlugins, platformTypes, state);
+        }
+        public GetManagementAgentPluginsResult build() {
+            final var o = new GetManagementAgentPluginsResult();
+            o.agentId = agentId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.managementAgentPlugins = managementAgentPlugins;
+            o.platformTypes = platformTypes;
+            o.state = state;
+            return o;
         }
     }
 }

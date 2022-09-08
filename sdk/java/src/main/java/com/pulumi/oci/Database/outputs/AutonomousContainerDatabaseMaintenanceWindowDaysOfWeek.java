@@ -15,13 +15,9 @@ public final class AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek {
      * @return (Updatable) Name of the month of the year.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek(@CustomType.Parameter("name") @Nullable String name) {
-        this.name = name;
-    }
-
+    private AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek() {}
     /**
      * @return (Updatable) Name of the month of the year.
      * 
@@ -37,24 +33,24 @@ public final class AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek {
     public static Builder builder(AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek build() {
-            return new AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek(name);
+        }
+        public AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek build() {
+            final var o = new AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek();
+            o.name = name;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetPublicationPackageDetailOperatingSystem {
      * @return The name of the operating system.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetPublicationPackageDetailOperatingSystem(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetPublicationPackageDetailOperatingSystem() {}
     /**
      * @return The name of the operating system.
      * 
@@ -35,24 +31,24 @@ public final class GetPublicationPackageDetailOperatingSystem {
     public static Builder builder(GetPublicationPackageDetailOperatingSystem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationPackageDetailOperatingSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetPublicationPackageDetailOperatingSystem build() {
-            return new GetPublicationPackageDetailOperatingSystem(name);
+        }
+        public GetPublicationPackageDetailOperatingSystem build() {
+            final var o = new GetPublicationPackageDetailOperatingSystem();
+            o.name = name;
+            return o;
         }
     }
 }

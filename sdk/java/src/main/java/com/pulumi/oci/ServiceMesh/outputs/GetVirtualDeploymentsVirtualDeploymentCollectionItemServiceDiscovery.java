@@ -13,21 +13,14 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDi
      * @return The hostname of the virtual deployments.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return Type of service discovery.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery(
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("type") String type) {
-        this.hostname = hostname;
-        this.type = type;
-    }
-
+    private GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery() {}
     /**
      * @return The hostname of the virtual deployments.
      * 
@@ -50,30 +43,32 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDi
     public static Builder builder(GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostname;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery build() {
-            return new GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery(hostname, type);
+        }
+        public GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery build() {
+            final var o = new GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery();
+            o.hostname = hostname;
+            o.type = type;
+            return o;
         }
     }
 }

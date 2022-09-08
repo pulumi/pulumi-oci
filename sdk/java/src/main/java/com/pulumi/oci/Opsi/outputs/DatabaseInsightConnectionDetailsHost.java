@@ -16,21 +16,14 @@ public final class DatabaseInsightConnectionDetailsHost {
      * @return Host IP used for connection requests for Cloud DB resource.
      * 
      */
-    private final @Nullable String hostIp;
+    private @Nullable String hostIp;
     /**
      * @return Listener port number used for connection requests.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
 
-    @CustomType.Constructor
-    private DatabaseInsightConnectionDetailsHost(
-        @CustomType.Parameter("hostIp") @Nullable String hostIp,
-        @CustomType.Parameter("port") @Nullable Integer port) {
-        this.hostIp = hostIp;
-        this.port = port;
-    }
-
+    private DatabaseInsightConnectionDetailsHost() {}
     /**
      * @return Host IP used for connection requests for Cloud DB resource.
      * 
@@ -53,30 +46,32 @@ public final class DatabaseInsightConnectionDetailsHost {
     public static Builder builder(DatabaseInsightConnectionDetailsHost defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String hostIp;
         private @Nullable Integer port;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseInsightConnectionDetailsHost defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostIp = defaults.hostIp;
     	      this.port = defaults.port;
         }
 
+        @CustomType.Setter
         public Builder hostIp(@Nullable String hostIp) {
             this.hostIp = hostIp;
             return this;
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
-        }        public DatabaseInsightConnectionDetailsHost build() {
-            return new DatabaseInsightConnectionDetailsHost(hostIp, port);
+        }
+        public DatabaseInsightConnectionDetailsHost build() {
+            final var o = new DatabaseInsightConnectionDetailsHost();
+            o.hostIp = hostIp;
+            o.port = port;
+            return o;
         }
     }
 }

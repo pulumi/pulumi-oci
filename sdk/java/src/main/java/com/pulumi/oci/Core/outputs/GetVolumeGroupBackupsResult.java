@@ -18,45 +18,30 @@ public final class GetVolumeGroupBackupsResult {
      * @return The OCID of the compartment that contains the volume group backup.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetVolumeGroupBackupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetVolumeGroupBackupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of volume_group_backups.
      * 
      */
-    private final List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups;
+    private List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups;
     /**
      * @return The OCID of the source volume group.
      * 
      */
-    private final @Nullable String volumeGroupId;
+    private @Nullable String volumeGroupId;
 
-    @CustomType.Constructor
-    private GetVolumeGroupBackupsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetVolumeGroupBackupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("volumeGroupBackups") List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups,
-        @CustomType.Parameter("volumeGroupId") @Nullable String volumeGroupId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.volumeGroupBackups = volumeGroupBackups;
-        this.volumeGroupId = volumeGroupId;
-    }
-
+    private GetVolumeGroupBackupsResult() {}
     /**
      * @return The OCID of the compartment that contains the volume group backup.
      * 
@@ -103,7 +88,7 @@ public final class GetVolumeGroupBackupsResult {
     public static Builder builder(GetVolumeGroupBackupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetVolumeGroupBackupsResult {
         private String id;
         private List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups;
         private @Nullable String volumeGroupId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeGroupBackupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetVolumeGroupBackupsResult {
     	      this.volumeGroupId = defaults.volumeGroupId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeGroupBackupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetVolumeGroupBackupsResult {
         public Builder filters(GetVolumeGroupBackupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupBackups(List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups) {
             this.volumeGroupBackups = Objects.requireNonNull(volumeGroupBackups);
             return this;
@@ -152,11 +138,20 @@ public final class GetVolumeGroupBackupsResult {
         public Builder volumeGroupBackups(GetVolumeGroupBackupsVolumeGroupBackup... volumeGroupBackups) {
             return volumeGroupBackups(List.of(volumeGroupBackups));
         }
+        @CustomType.Setter
         public Builder volumeGroupId(@Nullable String volumeGroupId) {
             this.volumeGroupId = volumeGroupId;
             return this;
-        }        public GetVolumeGroupBackupsResult build() {
-            return new GetVolumeGroupBackupsResult(compartmentId, displayName, filters, id, volumeGroupBackups, volumeGroupId);
+        }
+        public GetVolumeGroupBackupsResult build() {
+            final var o = new GetVolumeGroupBackupsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.volumeGroupBackups = volumeGroupBackups;
+            o.volumeGroupId = volumeGroupId;
+            return o;
         }
     }
 }

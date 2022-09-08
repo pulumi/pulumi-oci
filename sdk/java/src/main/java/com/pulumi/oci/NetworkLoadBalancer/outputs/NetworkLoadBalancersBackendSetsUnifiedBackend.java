@@ -17,63 +17,44 @@ public final class NetworkLoadBalancersBackendSetsUnifiedBackend {
      * @return (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
      * 
      */
-    private final @Nullable String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;isBackup&#34; fail the health check policy.  Example: `false`
      * 
      */
-    private final @Nullable Boolean isBackup;
+    private @Nullable Boolean isBackup;
     /**
      * @return (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no  incoming traffic.  Example: `false`
      * 
      */
-    private final @Nullable Boolean isDrain;
+    private @Nullable Boolean isDrain;
     /**
      * @return (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
-    private final @Nullable Boolean isOffline;
+    private @Nullable Boolean isOffline;
     /**
      * @return A user-friendly name for the backend set that must be unique and cannot be changed.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
      * 
      */
-    private final @Nullable String targetId;
+    private @Nullable String targetId;
     /**
      * @return (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
      */
-    private final @Nullable Integer weight;
+    private @Nullable Integer weight;
 
-    @CustomType.Constructor
-    private NetworkLoadBalancersBackendSetsUnifiedBackend(
-        @CustomType.Parameter("ipAddress") @Nullable String ipAddress,
-        @CustomType.Parameter("isBackup") @Nullable Boolean isBackup,
-        @CustomType.Parameter("isDrain") @Nullable Boolean isDrain,
-        @CustomType.Parameter("isOffline") @Nullable Boolean isOffline,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("targetId") @Nullable String targetId,
-        @CustomType.Parameter("weight") @Nullable Integer weight) {
-        this.ipAddress = ipAddress;
-        this.isBackup = isBackup;
-        this.isDrain = isDrain;
-        this.isOffline = isOffline;
-        this.name = name;
-        this.port = port;
-        this.targetId = targetId;
-        this.weight = weight;
-    }
-
+    private NetworkLoadBalancersBackendSetsUnifiedBackend() {}
     /**
      * @return (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
      * 
@@ -138,7 +119,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedBackend {
     public static Builder builder(NetworkLoadBalancersBackendSetsUnifiedBackend defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String ipAddress;
         private @Nullable Boolean isBackup;
@@ -148,11 +129,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedBackend {
         private Integer port;
         private @Nullable String targetId;
         private @Nullable Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkLoadBalancersBackendSetsUnifiedBackend defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipAddress = defaults.ipAddress;
@@ -165,39 +142,57 @@ public final class NetworkLoadBalancersBackendSetsUnifiedBackend {
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
             this.ipAddress = ipAddress;
             return this;
         }
+        @CustomType.Setter
         public Builder isBackup(@Nullable Boolean isBackup) {
             this.isBackup = isBackup;
             return this;
         }
+        @CustomType.Setter
         public Builder isDrain(@Nullable Boolean isDrain) {
             this.isDrain = isDrain;
             return this;
         }
+        @CustomType.Setter
         public Builder isOffline(@Nullable Boolean isOffline) {
             this.isOffline = isOffline;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
         public Builder weight(@Nullable Integer weight) {
             this.weight = weight;
             return this;
-        }        public NetworkLoadBalancersBackendSetsUnifiedBackend build() {
-            return new NetworkLoadBalancersBackendSetsUnifiedBackend(ipAddress, isBackup, isDrain, isOffline, name, port, targetId, weight);
+        }
+        public NetworkLoadBalancersBackendSetsUnifiedBackend build() {
+            final var o = new NetworkLoadBalancersBackendSetsUnifiedBackend();
+            o.ipAddress = ipAddress;
+            o.isBackup = isBackup;
+            o.isDrain = isDrain;
+            o.isOffline = isOffline;
+            o.name = name;
+            o.port = port;
+            o.targetId = targetId;
+            o.weight = weight;
+            return o;
         }
     }
 }

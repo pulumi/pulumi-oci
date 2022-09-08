@@ -18,52 +18,35 @@ public final class GetVolumeGroupsResult {
      * @return The availability domain of the boot volume replica replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment that contains the volume group.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetVolumeGroupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetVolumeGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of a volume group.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of volume_groups.
      * 
      */
-    private final List<GetVolumeGroupsVolumeGroup> volumeGroups;
+    private List<GetVolumeGroupsVolumeGroup> volumeGroups;
 
-    @CustomType.Constructor
-    private GetVolumeGroupsResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetVolumeGroupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("volumeGroups") List<GetVolumeGroupsVolumeGroup> volumeGroups) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.volumeGroups = volumeGroups;
-    }
-
+    private GetVolumeGroupsResult() {}
     /**
      * @return The availability domain of the boot volume replica replica.  Example: `Uocm:PHX-AD-1`
      * 
@@ -117,7 +100,7 @@ public final class GetVolumeGroupsResult {
     public static Builder builder(GetVolumeGroupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -126,11 +109,7 @@ public final class GetVolumeGroupsResult {
         private String id;
         private @Nullable String state;
         private List<GetVolumeGroupsVolumeGroup> volumeGroups;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -142,18 +121,22 @@ public final class GetVolumeGroupsResult {
     	      this.volumeGroups = defaults.volumeGroups;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeGroupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -161,22 +144,34 @@ public final class GetVolumeGroupsResult {
         public Builder filters(GetVolumeGroupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroups(List<GetVolumeGroupsVolumeGroup> volumeGroups) {
             this.volumeGroups = Objects.requireNonNull(volumeGroups);
             return this;
         }
         public Builder volumeGroups(GetVolumeGroupsVolumeGroup... volumeGroups) {
             return volumeGroups(List.of(volumeGroups));
-        }        public GetVolumeGroupsResult build() {
-            return new GetVolumeGroupsResult(availabilityDomain, compartmentId, displayName, filters, id, state, volumeGroups);
+        }
+        public GetVolumeGroupsResult build() {
+            final var o = new GetVolumeGroupsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.volumeGroups = volumeGroups;
+            return o;
         }
     }
 }

@@ -14,45 +14,30 @@ public final class GetVaultUsageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
      * 
      */
-    private final Integer keyCount;
+    private Integer keyCount;
     /**
      * @return The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
      * 
      */
-    private final Integer keyVersionCount;
+    private Integer keyVersionCount;
     /**
      * @return The number of keys in this vault that persist on the server, across all compartments, excluding keys in a `DELETED` state.
      * 
      */
-    private final Integer softwareKeyCount;
+    private Integer softwareKeyCount;
     /**
      * @return The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a `DELETED` state.
      * 
      */
-    private final Integer softwareKeyVersionCount;
-    private final String vaultId;
+    private Integer softwareKeyVersionCount;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private GetVaultUsageResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("keyCount") Integer keyCount,
-        @CustomType.Parameter("keyVersionCount") Integer keyVersionCount,
-        @CustomType.Parameter("softwareKeyCount") Integer softwareKeyCount,
-        @CustomType.Parameter("softwareKeyVersionCount") Integer softwareKeyVersionCount,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.id = id;
-        this.keyCount = keyCount;
-        this.keyVersionCount = keyVersionCount;
-        this.softwareKeyCount = softwareKeyCount;
-        this.softwareKeyVersionCount = softwareKeyVersionCount;
-        this.vaultId = vaultId;
-    }
-
+    private GetVaultUsageResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -99,7 +84,7 @@ public final class GetVaultUsageResult {
     public static Builder builder(GetVaultUsageResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private Integer keyCount;
@@ -107,11 +92,7 @@ public final class GetVaultUsageResult {
         private Integer softwareKeyCount;
         private Integer softwareKeyVersionCount;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVaultUsageResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -122,31 +103,45 @@ public final class GetVaultUsageResult {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder keyCount(Integer keyCount) {
             this.keyCount = Objects.requireNonNull(keyCount);
             return this;
         }
+        @CustomType.Setter
         public Builder keyVersionCount(Integer keyVersionCount) {
             this.keyVersionCount = Objects.requireNonNull(keyVersionCount);
             return this;
         }
+        @CustomType.Setter
         public Builder softwareKeyCount(Integer softwareKeyCount) {
             this.softwareKeyCount = Objects.requireNonNull(softwareKeyCount);
             return this;
         }
+        @CustomType.Setter
         public Builder softwareKeyVersionCount(Integer softwareKeyVersionCount) {
             this.softwareKeyVersionCount = Objects.requireNonNull(softwareKeyVersionCount);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public GetVaultUsageResult build() {
-            return new GetVaultUsageResult(id, keyCount, keyVersionCount, softwareKeyCount, softwareKeyVersionCount, vaultId);
+        }
+        public GetVaultUsageResult build() {
+            final var o = new GetVaultUsageResult();
+            o.id = id;
+            o.keyCount = keyCount;
+            o.keyVersionCount = keyVersionCount;
+            o.softwareKeyCount = softwareKeyCount;
+            o.softwareKeyVersionCount = softwareKeyVersionCount;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

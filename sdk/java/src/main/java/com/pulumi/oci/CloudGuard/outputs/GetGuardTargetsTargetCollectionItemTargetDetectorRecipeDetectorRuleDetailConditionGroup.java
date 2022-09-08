@@ -13,21 +13,14 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Base condition object
      * 
      */
-    private final String condition;
+    private String condition;
 
-    @CustomType.Constructor
-    private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("condition") String condition) {
-        this.compartmentId = compartmentId;
-        this.condition = condition;
-    }
-
+    private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -50,30 +43,32 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
     public static Builder builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String condition;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.condition = defaults.condition;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
-        }        public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup build() {
-            return new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup(compartmentId, condition);
+        }
+        public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup build() {
+            final var o = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup();
+            o.compartmentId = compartmentId;
+            o.condition = condition;
+            return o;
         }
     }
 }

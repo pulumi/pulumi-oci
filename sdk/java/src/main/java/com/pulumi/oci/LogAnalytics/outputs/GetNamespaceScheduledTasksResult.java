@@ -18,48 +18,31 @@ public final class GetNamespaceScheduledTasksResult {
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetNamespaceScheduledTasksFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetNamespaceScheduledTasksFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String namespace;
+    private String id;
+    private String namespace;
     /**
      * @return The list of scheduled_task_collection.
      * 
      */
-    private final List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections;
+    private List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections;
     /**
      * @return Task type.
      * 
      */
-    private final String taskType;
+    private String taskType;
 
-    @CustomType.Constructor
-    private GetNamespaceScheduledTasksResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetNamespaceScheduledTasksFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("scheduledTaskCollections") List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections,
-        @CustomType.Parameter("taskType") String taskType) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.namespace = namespace;
-        this.scheduledTaskCollections = scheduledTaskCollections;
-        this.taskType = taskType;
-    }
-
+    private GetNamespaceScheduledTasksResult() {}
     /**
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -109,7 +92,7 @@ public final class GetNamespaceScheduledTasksResult {
     public static Builder builder(GetNamespaceScheduledTasksResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -118,11 +101,7 @@ public final class GetNamespaceScheduledTasksResult {
         private String namespace;
         private List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections;
         private String taskType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNamespaceScheduledTasksResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,14 +113,17 @@ public final class GetNamespaceScheduledTasksResult {
     	      this.taskType = defaults.taskType;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNamespaceScheduledTasksFilter> filters) {
             this.filters = filters;
             return this;
@@ -149,14 +131,17 @@ public final class GetNamespaceScheduledTasksResult {
         public Builder filters(GetNamespaceScheduledTasksFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder scheduledTaskCollections(List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections) {
             this.scheduledTaskCollections = Objects.requireNonNull(scheduledTaskCollections);
             return this;
@@ -164,11 +149,21 @@ public final class GetNamespaceScheduledTasksResult {
         public Builder scheduledTaskCollections(GetNamespaceScheduledTasksScheduledTaskCollection... scheduledTaskCollections) {
             return scheduledTaskCollections(List.of(scheduledTaskCollections));
         }
+        @CustomType.Setter
         public Builder taskType(String taskType) {
             this.taskType = Objects.requireNonNull(taskType);
             return this;
-        }        public GetNamespaceScheduledTasksResult build() {
-            return new GetNamespaceScheduledTasksResult(compartmentId, displayName, filters, id, namespace, scheduledTaskCollections, taskType);
+        }
+        public GetNamespaceScheduledTasksResult build() {
+            final var o = new GetNamespaceScheduledTasksResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.namespace = namespace;
+            o.scheduledTaskCollections = scheduledTaskCollections;
+            o.taskType = taskType;
+            return o;
         }
     }
 }

@@ -22,14 +22,14 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
     public static final RegistryDataAssetNativeTypeSystemArgs Empty = new RegistryDataAssetNativeTypeSystemArgs();
 
     /**
-     * (Updatable) A user defined description for the object.
+     * (Updatable) A user-defined description for the object.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
     public Optional<Output<String>> description() {
@@ -37,14 +37,14 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     @Import(name="identifier")
     private @Nullable Output<String> identifier;
 
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<Output<String>> identifier() {
@@ -67,14 +67,14 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The property which disciminates the subtypes.
+     * (Updatable) The property which differentiates the subtypes.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -97,14 +97,14 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -142,14 +142,14 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) A reference to the object&#39;s parent.
+     * (Updatable) A reference to the parent object.
      * 
      */
     @Import(name="parentRef")
     private @Nullable Output<RegistryDataAssetNativeTypeSystemParentRefArgs> parentRef;
 
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<Output<RegistryDataAssetNativeTypeSystemParentRefArgs>> parentRef() {
@@ -237,7 +237,7 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
         }
 
         /**
-         * @param description (Updatable) A user defined description for the object.
+         * @param description (Updatable) A user-defined description for the object.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
         }
 
         /**
-         * @param description (Updatable) A user defined description for the object.
+         * @param description (Updatable) A user-defined description for the object.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
         }
 
         /**
-         * @param modelType (Updatable) The property which disciminates the subtypes.
+         * @param modelType (Updatable) The property which differentiates the subtypes.
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
         }
 
         /**
-         * @param modelType (Updatable) The property which disciminates the subtypes.
+         * @param modelType (Updatable) The property which differentiates the subtypes.
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 
@@ -416,7 +416,7 @@ public final class RegistryDataAssetNativeTypeSystemArgs extends com.pulumi.reso
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 

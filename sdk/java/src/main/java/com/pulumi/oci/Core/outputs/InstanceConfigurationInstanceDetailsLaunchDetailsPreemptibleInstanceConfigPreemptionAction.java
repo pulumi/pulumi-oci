@@ -16,21 +16,14 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleI
      * @return Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      * 
      */
-    private final @Nullable Boolean preserveBootVolume;
+    private @Nullable Boolean preserveBootVolume;
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction(
-        @CustomType.Parameter("preserveBootVolume") @Nullable Boolean preserveBootVolume,
-        @CustomType.Parameter("type") String type) {
-        this.preserveBootVolume = preserveBootVolume;
-        this.type = type;
-    }
-
+    private InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction() {}
     /**
      * @return Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      * 
@@ -53,30 +46,32 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleI
     public static Builder builder(InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean preserveBootVolume;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.preserveBootVolume = defaults.preserveBootVolume;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder preserveBootVolume(@Nullable Boolean preserveBootVolume) {
             this.preserveBootVolume = preserveBootVolume;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction build() {
-            return new InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction(preserveBootVolume, type);
+        }
+        public InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction build() {
+            final var o = new InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction();
+            o.preserveBootVolume = preserveBootVolume;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -14,125 +14,70 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbHomeDatabase {
-    private final String adminPassword;
-    private final String backupId;
-    private final String backupTdePassword;
-    private final String characterSet;
-    private final List<GetDbHomeDatabaseConnectionString> connectionStrings;
-    private final String databaseId;
+    private String adminPassword;
+    private String backupId;
+    private String backupTdePassword;
+    private String characterSet;
+    private List<GetDbHomeDatabaseConnectionString> connectionStrings;
+    private String databaseId;
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private final String databaseSoftwareImageId;
-    private final List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs;
-    private final String dbName;
-    private final String dbUniqueName;
-    private final String dbWorkload;
+    private String databaseSoftwareImageId;
+    private List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs;
+    private String dbName;
+    private String dbUniqueName;
+    private String dbWorkload;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private final String kmsKeyId;
-    private final String kmsKeyVersionId;
+    private String kmsKeyId;
+    private String kmsKeyVersionId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
-    private final String ncharacterSet;
+    private String lifecycleDetails;
+    private String ncharacterSet;
     /**
      * @return List of one-off patches for Database Homes.
      * 
      */
-    private final List<String> oneOffPatches;
-    private final String pdbName;
-    private final String sidPrefix;
+    private List<String> oneOffPatches;
+    private String pdbName;
+    private String sidPrefix;
     /**
      * @return The current state of the Database Home.
      * 
      */
-    private final String state;
-    private final String tdeWalletPassword;
+    private String state;
+    private String tdeWalletPassword;
     /**
      * @return The date and time the Database Home was created.
      * 
      */
-    private final String timeCreated;
-    private final String timeStampForPointInTimeRecovery;
-    private final String vaultId;
+    private String timeCreated;
+    private String timeStampForPointInTimeRecovery;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private GetDbHomeDatabase(
-        @CustomType.Parameter("adminPassword") String adminPassword,
-        @CustomType.Parameter("backupId") String backupId,
-        @CustomType.Parameter("backupTdePassword") String backupTdePassword,
-        @CustomType.Parameter("characterSet") String characterSet,
-        @CustomType.Parameter("connectionStrings") List<GetDbHomeDatabaseConnectionString> connectionStrings,
-        @CustomType.Parameter("databaseId") String databaseId,
-        @CustomType.Parameter("databaseSoftwareImageId") String databaseSoftwareImageId,
-        @CustomType.Parameter("dbBackupConfigs") List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs,
-        @CustomType.Parameter("dbName") String dbName,
-        @CustomType.Parameter("dbUniqueName") String dbUniqueName,
-        @CustomType.Parameter("dbWorkload") String dbWorkload,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("kmsKeyVersionId") String kmsKeyVersionId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("ncharacterSet") String ncharacterSet,
-        @CustomType.Parameter("oneOffPatches") List<String> oneOffPatches,
-        @CustomType.Parameter("pdbName") String pdbName,
-        @CustomType.Parameter("sidPrefix") String sidPrefix,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("tdeWalletPassword") String tdeWalletPassword,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeStampForPointInTimeRecovery") String timeStampForPointInTimeRecovery,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.adminPassword = adminPassword;
-        this.backupId = backupId;
-        this.backupTdePassword = backupTdePassword;
-        this.characterSet = characterSet;
-        this.connectionStrings = connectionStrings;
-        this.databaseId = databaseId;
-        this.databaseSoftwareImageId = databaseSoftwareImageId;
-        this.dbBackupConfigs = dbBackupConfigs;
-        this.dbName = dbName;
-        this.dbUniqueName = dbUniqueName;
-        this.dbWorkload = dbWorkload;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.kmsKeyId = kmsKeyId;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.ncharacterSet = ncharacterSet;
-        this.oneOffPatches = oneOffPatches;
-        this.pdbName = pdbName;
-        this.sidPrefix = sidPrefix;
-        this.state = state;
-        this.tdeWalletPassword = tdeWalletPassword;
-        this.timeCreated = timeCreated;
-        this.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
-        this.vaultId = vaultId;
-    }
-
+    private GetDbHomeDatabase() {}
     public String adminPassword() {
         return this.adminPassword;
     }
@@ -255,7 +200,7 @@ public final class GetDbHomeDatabase {
     public static Builder builder(GetDbHomeDatabase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminPassword;
         private String backupId;
@@ -283,11 +228,7 @@ public final class GetDbHomeDatabase {
         private String timeCreated;
         private String timeStampForPointInTimeRecovery;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbHomeDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
@@ -318,22 +259,27 @@ public final class GetDbHomeDatabase {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = Objects.requireNonNull(adminPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder backupId(String backupId) {
             this.backupId = Objects.requireNonNull(backupId);
             return this;
         }
+        @CustomType.Setter
         public Builder backupTdePassword(String backupTdePassword) {
             this.backupTdePassword = Objects.requireNonNull(backupTdePassword);
             return this;
         }
+        @CustomType.Setter
         public Builder characterSet(String characterSet) {
             this.characterSet = Objects.requireNonNull(characterSet);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionStrings(List<GetDbHomeDatabaseConnectionString> connectionStrings) {
             this.connectionStrings = Objects.requireNonNull(connectionStrings);
             return this;
@@ -341,14 +287,17 @@ public final class GetDbHomeDatabase {
         public Builder connectionStrings(GetDbHomeDatabaseConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
+        @CustomType.Setter
         public Builder databaseId(String databaseId) {
             this.databaseId = Objects.requireNonNull(databaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbBackupConfigs(List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs) {
             this.dbBackupConfigs = Objects.requireNonNull(dbBackupConfigs);
             return this;
@@ -356,46 +305,57 @@ public final class GetDbHomeDatabase {
         public Builder dbBackupConfigs(GetDbHomeDatabaseDbBackupConfig... dbBackupConfigs) {
             return dbBackupConfigs(List.of(dbBackupConfigs));
         }
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
+        @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
             return this;
         }
+        @CustomType.Setter
         public Builder dbWorkload(String dbWorkload) {
             this.dbWorkload = Objects.requireNonNull(dbWorkload);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
             return this;
         }
+        @CustomType.Setter
         public Builder oneOffPatches(List<String> oneOffPatches) {
             this.oneOffPatches = Objects.requireNonNull(oneOffPatches);
             return this;
@@ -403,35 +363,70 @@ public final class GetDbHomeDatabase {
         public Builder oneOffPatches(String... oneOffPatches) {
             return oneOffPatches(List.of(oneOffPatches));
         }
+        @CustomType.Setter
         public Builder pdbName(String pdbName) {
             this.pdbName = Objects.requireNonNull(pdbName);
             return this;
         }
+        @CustomType.Setter
         public Builder sidPrefix(String sidPrefix) {
             this.sidPrefix = Objects.requireNonNull(sidPrefix);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder tdeWalletPassword(String tdeWalletPassword) {
             this.tdeWalletPassword = Objects.requireNonNull(tdeWalletPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStampForPointInTimeRecovery(String timeStampForPointInTimeRecovery) {
             this.timeStampForPointInTimeRecovery = Objects.requireNonNull(timeStampForPointInTimeRecovery);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public GetDbHomeDatabase build() {
-            return new GetDbHomeDatabase(adminPassword, backupId, backupTdePassword, characterSet, connectionStrings, databaseId, databaseSoftwareImageId, dbBackupConfigs, dbName, dbUniqueName, dbWorkload, definedTags, freeformTags, id, kmsKeyId, kmsKeyVersionId, lifecycleDetails, ncharacterSet, oneOffPatches, pdbName, sidPrefix, state, tdeWalletPassword, timeCreated, timeStampForPointInTimeRecovery, vaultId);
+        }
+        public GetDbHomeDatabase build() {
+            final var o = new GetDbHomeDatabase();
+            o.adminPassword = adminPassword;
+            o.backupId = backupId;
+            o.backupTdePassword = backupTdePassword;
+            o.characterSet = characterSet;
+            o.connectionStrings = connectionStrings;
+            o.databaseId = databaseId;
+            o.databaseSoftwareImageId = databaseSoftwareImageId;
+            o.dbBackupConfigs = dbBackupConfigs;
+            o.dbName = dbName;
+            o.dbUniqueName = dbUniqueName;
+            o.dbWorkload = dbWorkload;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.kmsKeyId = kmsKeyId;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.ncharacterSet = ncharacterSet;
+            o.oneOffPatches = oneOffPatches;
+            o.pdbName = pdbName;
+            o.sidPrefix = sidPrefix;
+            o.state = state;
+            o.tdeWalletPassword = tdeWalletPassword;
+            o.timeCreated = timeCreated;
+            o.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

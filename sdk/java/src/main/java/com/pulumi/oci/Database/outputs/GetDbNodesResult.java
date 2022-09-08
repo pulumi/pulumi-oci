@@ -14,55 +14,36 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbNodesResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of db_nodes.
      * 
      */
-    private final List<GetDbNodesDbNode> dbNodes;
+    private List<GetDbNodesDbNode> dbNodes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      * 
      */
-    private final @Nullable String dbServerId;
+    private @Nullable String dbServerId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    private final @Nullable String dbSystemId;
-    private final @Nullable List<GetDbNodesFilter> filters;
+    private @Nullable String dbSystemId;
+    private @Nullable List<GetDbNodesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the database node.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String vmClusterId;
+    private @Nullable String state;
+    private @Nullable String vmClusterId;
 
-    @CustomType.Constructor
-    private GetDbNodesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbNodes") List<GetDbNodesDbNode> dbNodes,
-        @CustomType.Parameter("dbServerId") @Nullable String dbServerId,
-        @CustomType.Parameter("dbSystemId") @Nullable String dbSystemId,
-        @CustomType.Parameter("filters") @Nullable List<GetDbNodesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vmClusterId") @Nullable String vmClusterId) {
-        this.compartmentId = compartmentId;
-        this.dbNodes = dbNodes;
-        this.dbServerId = dbServerId;
-        this.dbSystemId = dbSystemId;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.vmClusterId = vmClusterId;
-    }
-
+    private GetDbNodesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -115,7 +96,7 @@ public final class GetDbNodesResult {
     public static Builder builder(GetDbNodesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetDbNodesDbNode> dbNodes;
@@ -125,11 +106,7 @@ public final class GetDbNodesResult {
         private String id;
         private @Nullable String state;
         private @Nullable String vmClusterId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbNodesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +119,12 @@ public final class GetDbNodesResult {
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbNodes(List<GetDbNodesDbNode> dbNodes) {
             this.dbNodes = Objects.requireNonNull(dbNodes);
             return this;
@@ -153,14 +132,17 @@ public final class GetDbNodesResult {
         public Builder dbNodes(GetDbNodesDbNode... dbNodes) {
             return dbNodes(List.of(dbNodes));
         }
+        @CustomType.Setter
         public Builder dbServerId(@Nullable String dbServerId) {
             this.dbServerId = dbServerId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
             this.dbSystemId = dbSystemId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbNodesFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,19 +150,32 @@ public final class GetDbNodesResult {
         public Builder filters(GetDbNodesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(@Nullable String vmClusterId) {
             this.vmClusterId = vmClusterId;
             return this;
-        }        public GetDbNodesResult build() {
-            return new GetDbNodesResult(compartmentId, dbNodes, dbServerId, dbSystemId, filters, id, state, vmClusterId);
+        }
+        public GetDbNodesResult build() {
+            final var o = new GetDbNodesResult();
+            o.compartmentId = compartmentId;
+            o.dbNodes = dbNodes;
+            o.dbServerId = dbServerId;
+            o.dbSystemId = dbSystemId;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.vmClusterId = vmClusterId;
+            return o;
         }
     }
 }

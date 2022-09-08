@@ -13,56 +13,39 @@ public final class GetIdentityProviderGroupsIdentityProviderGroup {
      * @return Display name of the group
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Identifier of the group in the identity provider
      * 
      */
-    private final String externalIdentifier;
+    private String externalIdentifier;
     /**
      * @return The OCID of the `IdentityProviderGroup`.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the identity provider.
      * 
      */
-    private final String identityProviderId;
+    private String identityProviderId;
     /**
      * @return A filter to only return resources that match the given name exactly.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Date and time the `IdentityProviderGroup` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Date and time the `IdentityProviderGroup` was last modified, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeModified;
+    private String timeModified;
 
-    @CustomType.Constructor
-    private GetIdentityProviderGroupsIdentityProviderGroup(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("externalIdentifier") String externalIdentifier,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("identityProviderId") String identityProviderId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeModified") String timeModified) {
-        this.displayName = displayName;
-        this.externalIdentifier = externalIdentifier;
-        this.id = id;
-        this.identityProviderId = identityProviderId;
-        this.name = name;
-        this.timeCreated = timeCreated;
-        this.timeModified = timeModified;
-    }
-
+    private GetIdentityProviderGroupsIdentityProviderGroup() {}
     /**
      * @return Display name of the group
      * 
@@ -120,7 +103,7 @@ public final class GetIdentityProviderGroupsIdentityProviderGroup {
     public static Builder builder(GetIdentityProviderGroupsIdentityProviderGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String externalIdentifier;
@@ -129,11 +112,7 @@ public final class GetIdentityProviderGroupsIdentityProviderGroup {
         private String name;
         private String timeCreated;
         private String timeModified;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIdentityProviderGroupsIdentityProviderGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -145,35 +124,51 @@ public final class GetIdentityProviderGroupsIdentityProviderGroup {
     	      this.timeModified = defaults.timeModified;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder externalIdentifier(String externalIdentifier) {
             this.externalIdentifier = Objects.requireNonNull(externalIdentifier);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder identityProviderId(String identityProviderId) {
             this.identityProviderId = Objects.requireNonNull(identityProviderId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeModified(String timeModified) {
             this.timeModified = Objects.requireNonNull(timeModified);
             return this;
-        }        public GetIdentityProviderGroupsIdentityProviderGroup build() {
-            return new GetIdentityProviderGroupsIdentityProviderGroup(displayName, externalIdentifier, id, identityProviderId, name, timeCreated, timeModified);
+        }
+        public GetIdentityProviderGroupsIdentityProviderGroup build() {
+            final var o = new GetIdentityProviderGroupsIdentityProviderGroup();
+            o.displayName = displayName;
+            o.externalIdentifier = externalIdentifier;
+            o.id = id;
+            o.identityProviderId = identityProviderId;
+            o.name = name;
+            o.timeCreated = timeCreated;
+            o.timeModified = timeModified;
+            return o;
         }
     }
 }

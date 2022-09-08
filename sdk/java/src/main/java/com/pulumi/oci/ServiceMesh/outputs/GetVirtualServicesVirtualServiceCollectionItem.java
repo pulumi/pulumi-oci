@@ -18,112 +18,79 @@ public final class GetVirtualServicesVirtualServiceCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Routing policy for the virtual service.
      * 
      */
-    private final List<GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy> defaultRoutingPolicies;
+    private List<GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy> defaultRoutingPolicies;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are &#34;www.example.com&#34;, &#34;*.example.com&#34;, &#34;*.com&#34;. Can be omitted if the virtual service will only have TCP virtual deployments.
      * 
      */
-    private final List<String> hosts;
+    private List<String> hosts;
     /**
      * @return Unique VirtualService identifier.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Unique Mesh identifier.
      * 
      */
-    private final String meshId;
+    private String meshId;
     /**
      * @return Mutual TLS settings used when communicating with other virtual services or ingress gateways within the mesh.
      * 
      */
-    private final List<GetVirtualServicesVirtualServiceCollectionItemMtl> mtls;
+    private List<GetVirtualServicesVirtualServiceCollectionItemMtl> mtls;
     /**
      * @return A filter to return only resources that match the entire name given.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A filter to return only resources that match the life cycle state given.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time when this resource was created in an RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time when this resource was updated in an RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetVirtualServicesVirtualServiceCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("defaultRoutingPolicies") List<GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy> defaultRoutingPolicies,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hosts") List<String> hosts,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("meshId") String meshId,
-        @CustomType.Parameter("mtls") List<GetVirtualServicesVirtualServiceCollectionItemMtl> mtls,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.defaultRoutingPolicies = defaultRoutingPolicies;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.hosts = hosts;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.meshId = meshId;
-        this.mtls = mtls;
-        this.name = name;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetVirtualServicesVirtualServiceCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -237,7 +204,7 @@ public final class GetVirtualServicesVirtualServiceCollectionItem {
     public static Builder builder(GetVirtualServicesVirtualServiceCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy> defaultRoutingPolicies;
@@ -254,11 +221,7 @@ public final class GetVirtualServicesVirtualServiceCollectionItem {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualServicesVirtualServiceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -278,10 +241,12 @@ public final class GetVirtualServicesVirtualServiceCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder defaultRoutingPolicies(List<GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy> defaultRoutingPolicies) {
             this.defaultRoutingPolicies = Objects.requireNonNull(defaultRoutingPolicies);
             return this;
@@ -289,18 +254,22 @@ public final class GetVirtualServicesVirtualServiceCollectionItem {
         public Builder defaultRoutingPolicies(GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy... defaultRoutingPolicies) {
             return defaultRoutingPolicies(List.of(defaultRoutingPolicies));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hosts(List<String> hosts) {
             this.hosts = Objects.requireNonNull(hosts);
             return this;
@@ -308,18 +277,22 @@ public final class GetVirtualServicesVirtualServiceCollectionItem {
         public Builder hosts(String... hosts) {
             return hosts(List.of(hosts));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder meshId(String meshId) {
             this.meshId = Objects.requireNonNull(meshId);
             return this;
         }
+        @CustomType.Setter
         public Builder mtls(List<GetVirtualServicesVirtualServiceCollectionItemMtl> mtls) {
             this.mtls = Objects.requireNonNull(mtls);
             return this;
@@ -327,27 +300,49 @@ public final class GetVirtualServicesVirtualServiceCollectionItem {
         public Builder mtls(GetVirtualServicesVirtualServiceCollectionItemMtl... mtls) {
             return mtls(List.of(mtls));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetVirtualServicesVirtualServiceCollectionItem build() {
-            return new GetVirtualServicesVirtualServiceCollectionItem(compartmentId, defaultRoutingPolicies, definedTags, description, freeformTags, hosts, id, lifecycleDetails, meshId, mtls, name, state, systemTags, timeCreated, timeUpdated);
+        }
+        public GetVirtualServicesVirtualServiceCollectionItem build() {
+            final var o = new GetVirtualServicesVirtualServiceCollectionItem();
+            o.compartmentId = compartmentId;
+            o.defaultRoutingPolicies = defaultRoutingPolicies;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.hosts = hosts;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.meshId = meshId;
+            o.mtls = mtls;
+            o.name = name;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

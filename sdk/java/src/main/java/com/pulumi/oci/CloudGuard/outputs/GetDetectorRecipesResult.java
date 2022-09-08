@@ -15,58 +15,37 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectorRecipesResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return compartmentId of detector recipe
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The list of detector_recipe_collection.
      * 
      */
-    private final List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections;
+    private List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections;
     /**
-     * @return Display name for DetectorRecipeDetectorRule.
+     * @return The display name of entity
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDetectorRecipesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDetectorRecipesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean resourceMetadataOnly;
+    private String id;
+    private @Nullable Boolean resourceMetadataOnly;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDetectorRecipesResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("detectorRecipeCollections") List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDetectorRecipesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("resourceMetadataOnly") @Nullable Boolean resourceMetadataOnly,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.detectorRecipeCollections = detectorRecipeCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.resourceMetadataOnly = resourceMetadataOnly;
-        this.state = state;
-    }
-
+    private GetDetectorRecipesResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -88,7 +67,7 @@ public final class GetDetectorRecipesResult {
         return this.detectorRecipeCollections;
     }
     /**
-     * @return Display name for DetectorRecipeDetectorRule.
+     * @return The display name of entity
      * 
      */
     public Optional<String> displayName() {
@@ -122,7 +101,7 @@ public final class GetDetectorRecipesResult {
     public static Builder builder(GetDetectorRecipesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -133,11 +112,7 @@ public final class GetDetectorRecipesResult {
         private String id;
         private @Nullable Boolean resourceMetadataOnly;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectorRecipesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -151,18 +126,22 @@ public final class GetDetectorRecipesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder detectorRecipeCollections(List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections) {
             this.detectorRecipeCollections = Objects.requireNonNull(detectorRecipeCollections);
             return this;
@@ -170,10 +149,12 @@ public final class GetDetectorRecipesResult {
         public Builder detectorRecipeCollections(GetDetectorRecipesDetectorRecipeCollection... detectorRecipeCollections) {
             return detectorRecipeCollections(List.of(detectorRecipeCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDetectorRecipesFilter> filters) {
             this.filters = filters;
             return this;
@@ -181,19 +162,33 @@ public final class GetDetectorRecipesResult {
         public Builder filters(GetDetectorRecipesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceMetadataOnly(@Nullable Boolean resourceMetadataOnly) {
             this.resourceMetadataOnly = resourceMetadataOnly;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDetectorRecipesResult build() {
-            return new GetDetectorRecipesResult(accessLevel, compartmentId, compartmentIdInSubtree, detectorRecipeCollections, displayName, filters, id, resourceMetadataOnly, state);
+        }
+        public GetDetectorRecipesResult build() {
+            final var o = new GetDetectorRecipesResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.detectorRecipeCollections = detectorRecipeCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.resourceMetadataOnly = resourceMetadataOnly;
+            o.state = state;
+            return o;
         }
     }
 }

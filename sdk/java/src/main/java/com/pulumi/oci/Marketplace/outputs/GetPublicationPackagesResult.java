@@ -14,41 +14,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPublicationPackagesResult {
-    private final @Nullable List<GetPublicationPackagesFilter> filters;
+    private @Nullable List<GetPublicationPackagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The specified package&#39;s type.
      * 
      */
-    private final @Nullable String packageType;
-    private final @Nullable String packageVersion;
-    private final String publicationId;
+    private @Nullable String packageType;
+    private @Nullable String packageVersion;
+    private String publicationId;
     /**
      * @return The list of publication_packages.
      * 
      */
-    private final List<GetPublicationPackagesPublicationPackage> publicationPackages;
+    private List<GetPublicationPackagesPublicationPackage> publicationPackages;
 
-    @CustomType.Constructor
-    private GetPublicationPackagesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetPublicationPackagesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("packageType") @Nullable String packageType,
-        @CustomType.Parameter("packageVersion") @Nullable String packageVersion,
-        @CustomType.Parameter("publicationId") String publicationId,
-        @CustomType.Parameter("publicationPackages") List<GetPublicationPackagesPublicationPackage> publicationPackages) {
-        this.filters = filters;
-        this.id = id;
-        this.packageType = packageType;
-        this.packageVersion = packageVersion;
-        this.publicationId = publicationId;
-        this.publicationPackages = publicationPackages;
-    }
-
+    private GetPublicationPackagesResult() {}
     public List<GetPublicationPackagesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -87,7 +72,7 @@ public final class GetPublicationPackagesResult {
     public static Builder builder(GetPublicationPackagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetPublicationPackagesFilter> filters;
         private String id;
@@ -95,11 +80,7 @@ public final class GetPublicationPackagesResult {
         private @Nullable String packageVersion;
         private String publicationId;
         private List<GetPublicationPackagesPublicationPackage> publicationPackages;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationPackagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -110,6 +91,7 @@ public final class GetPublicationPackagesResult {
     	      this.publicationPackages = defaults.publicationPackages;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPublicationPackagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -117,30 +99,43 @@ public final class GetPublicationPackagesResult {
         public Builder filters(GetPublicationPackagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder packageType(@Nullable String packageType) {
             this.packageType = packageType;
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(@Nullable String packageVersion) {
             this.packageVersion = packageVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder publicationId(String publicationId) {
             this.publicationId = Objects.requireNonNull(publicationId);
             return this;
         }
+        @CustomType.Setter
         public Builder publicationPackages(List<GetPublicationPackagesPublicationPackage> publicationPackages) {
             this.publicationPackages = Objects.requireNonNull(publicationPackages);
             return this;
         }
         public Builder publicationPackages(GetPublicationPackagesPublicationPackage... publicationPackages) {
             return publicationPackages(List.of(publicationPackages));
-        }        public GetPublicationPackagesResult build() {
-            return new GetPublicationPackagesResult(filters, id, packageType, packageVersion, publicationId, publicationPackages);
+        }
+        public GetPublicationPackagesResult build() {
+            final var o = new GetPublicationPackagesResult();
+            o.filters = filters;
+            o.id = id;
+            o.packageType = packageType;
+            o.packageVersion = packageVersion;
+            o.publicationId = publicationId;
+            o.publicationPackages = publicationPackages;
+            return o;
         }
     }
 }

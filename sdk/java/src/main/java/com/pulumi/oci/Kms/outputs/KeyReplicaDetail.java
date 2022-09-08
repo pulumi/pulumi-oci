@@ -15,13 +15,9 @@ public final class KeyReplicaDetail {
      * @return ReplicationId associated with a key operation
      * 
      */
-    private final @Nullable String replicationId;
+    private @Nullable String replicationId;
 
-    @CustomType.Constructor
-    private KeyReplicaDetail(@CustomType.Parameter("replicationId") @Nullable String replicationId) {
-        this.replicationId = replicationId;
-    }
-
+    private KeyReplicaDetail() {}
     /**
      * @return ReplicationId associated with a key operation
      * 
@@ -37,24 +33,24 @@ public final class KeyReplicaDetail {
     public static Builder builder(KeyReplicaDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String replicationId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(KeyReplicaDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.replicationId = defaults.replicationId;
         }
 
+        @CustomType.Setter
         public Builder replicationId(@Nullable String replicationId) {
             this.replicationId = replicationId;
             return this;
-        }        public KeyReplicaDetail build() {
-            return new KeyReplicaDetail(replicationId);
+        }
+        public KeyReplicaDetail build() {
+            final var o = new KeyReplicaDetail();
+            o.replicationId = replicationId;
+            return o;
         }
     }
 }

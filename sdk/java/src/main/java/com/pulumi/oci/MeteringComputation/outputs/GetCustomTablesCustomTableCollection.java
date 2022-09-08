@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCustomTablesCustomTableCollection {
-    private final List<GetCustomTablesCustomTableCollectionItem> items;
+    private List<GetCustomTablesCustomTableCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetCustomTablesCustomTableCollection(@CustomType.Parameter("items") List<GetCustomTablesCustomTableCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetCustomTablesCustomTableCollection() {}
     public List<GetCustomTablesCustomTableCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetCustomTablesCustomTableCollection {
     public static Builder builder(GetCustomTablesCustomTableCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCustomTablesCustomTableCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCustomTablesCustomTableCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetCustomTablesCustomTableCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetCustomTablesCustomTableCollectionItem... items) {
             return items(List.of(items));
-        }        public GetCustomTablesCustomTableCollection build() {
-            return new GetCustomTablesCustomTableCollection(items);
+        }
+        public GetCustomTablesCustomTableCollection build() {
+            final var o = new GetCustomTablesCustomTableCollection();
+            o.items = items;
+            return o;
         }
     }
 }

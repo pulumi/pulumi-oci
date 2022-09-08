@@ -13,34 +13,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListenerRulesResult {
-    private final @Nullable List<GetListenerRulesFilter> filters;
+    private @Nullable List<GetListenerRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String listenerName;
+    private String id;
+    private String listenerName;
     /**
      * @return The list of listener_rules.
      * 
      */
-    private final List<GetListenerRulesListenerRule> listenerRules;
-    private final String loadBalancerId;
+    private List<GetListenerRulesListenerRule> listenerRules;
+    private String loadBalancerId;
 
-    @CustomType.Constructor
-    private GetListenerRulesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetListenerRulesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listenerName") String listenerName,
-        @CustomType.Parameter("listenerRules") List<GetListenerRulesListenerRule> listenerRules,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId) {
-        this.filters = filters;
-        this.id = id;
-        this.listenerName = listenerName;
-        this.listenerRules = listenerRules;
-        this.loadBalancerId = loadBalancerId;
-    }
-
+    private GetListenerRulesResult() {}
     public List<GetListenerRulesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -72,18 +59,14 @@ public final class GetListenerRulesResult {
     public static Builder builder(GetListenerRulesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetListenerRulesFilter> filters;
         private String id;
         private String listenerName;
         private List<GetListenerRulesListenerRule> listenerRules;
         private String loadBalancerId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListenerRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -93,6 +76,7 @@ public final class GetListenerRulesResult {
     	      this.loadBalancerId = defaults.loadBalancerId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetListenerRulesFilter> filters) {
             this.filters = filters;
             return this;
@@ -100,14 +84,17 @@ public final class GetListenerRulesResult {
         public Builder filters(GetListenerRulesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listenerName(String listenerName) {
             this.listenerName = Objects.requireNonNull(listenerName);
             return this;
         }
+        @CustomType.Setter
         public Builder listenerRules(List<GetListenerRulesListenerRule> listenerRules) {
             this.listenerRules = Objects.requireNonNull(listenerRules);
             return this;
@@ -115,11 +102,19 @@ public final class GetListenerRulesResult {
         public Builder listenerRules(GetListenerRulesListenerRule... listenerRules) {
             return listenerRules(List.of(listenerRules));
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
-        }        public GetListenerRulesResult build() {
-            return new GetListenerRulesResult(filters, id, listenerName, listenerRules, loadBalancerId);
+        }
+        public GetListenerRulesResult build() {
+            final var o = new GetListenerRulesResult();
+            o.filters = filters;
+            o.id = id;
+            o.listenerName = listenerName;
+            o.listenerRules = listenerRules;
+            o.loadBalancerId = loadBalancerId;
+            return o;
         }
     }
 }

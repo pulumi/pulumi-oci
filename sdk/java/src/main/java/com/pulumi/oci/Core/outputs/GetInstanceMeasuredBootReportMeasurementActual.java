@@ -13,28 +13,19 @@ public final class GetInstanceMeasuredBootReportMeasurementActual {
      * @return The type of algorithm used to calculate the hash.
      * 
      */
-    private final String hashAlgorithm;
+    private String hashAlgorithm;
     /**
      * @return The index of the policy.
      * 
      */
-    private final String pcrIndex;
+    private String pcrIndex;
     /**
      * @return The hashed PCR value.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetInstanceMeasuredBootReportMeasurementActual(
-        @CustomType.Parameter("hashAlgorithm") String hashAlgorithm,
-        @CustomType.Parameter("pcrIndex") String pcrIndex,
-        @CustomType.Parameter("value") String value) {
-        this.hashAlgorithm = hashAlgorithm;
-        this.pcrIndex = pcrIndex;
-        this.value = value;
-    }
-
+    private GetInstanceMeasuredBootReportMeasurementActual() {}
     /**
      * @return The type of algorithm used to calculate the hash.
      * 
@@ -64,16 +55,12 @@ public final class GetInstanceMeasuredBootReportMeasurementActual {
     public static Builder builder(GetInstanceMeasuredBootReportMeasurementActual defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hashAlgorithm;
         private String pcrIndex;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceMeasuredBootReportMeasurementActual defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hashAlgorithm = defaults.hashAlgorithm;
@@ -81,19 +68,27 @@ public final class GetInstanceMeasuredBootReportMeasurementActual {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder hashAlgorithm(String hashAlgorithm) {
             this.hashAlgorithm = Objects.requireNonNull(hashAlgorithm);
             return this;
         }
+        @CustomType.Setter
         public Builder pcrIndex(String pcrIndex) {
             this.pcrIndex = Objects.requireNonNull(pcrIndex);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetInstanceMeasuredBootReportMeasurementActual build() {
-            return new GetInstanceMeasuredBootReportMeasurementActual(hashAlgorithm, pcrIndex, value);
+        }
+        public GetInstanceMeasuredBootReportMeasurementActual build() {
+            final var o = new GetInstanceMeasuredBootReportMeasurementActual();
+            o.hashAlgorithm = hashAlgorithm;
+            o.pcrIndex = pcrIndex;
+            o.value = value;
+            return o;
         }
     }
 }

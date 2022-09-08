@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetEmailDomainsEmailDomainCollection {
-    private final List<GetEmailDomainsEmailDomainCollectionItem> items;
+    private List<GetEmailDomainsEmailDomainCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetEmailDomainsEmailDomainCollection(@CustomType.Parameter("items") List<GetEmailDomainsEmailDomainCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetEmailDomainsEmailDomainCollection() {}
     public List<GetEmailDomainsEmailDomainCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetEmailDomainsEmailDomainCollection {
     public static Builder builder(GetEmailDomainsEmailDomainCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetEmailDomainsEmailDomainCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEmailDomainsEmailDomainCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetEmailDomainsEmailDomainCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetEmailDomainsEmailDomainCollectionItem... items) {
             return items(List.of(items));
-        }        public GetEmailDomainsEmailDomainCollection build() {
-            return new GetEmailDomainsEmailDomainCollection(items);
+        }
+        public GetEmailDomainsEmailDomainCollection build() {
+            final var o = new GetEmailDomainsEmailDomainCollection();
+            o.items = items;
+            return o;
         }
     }
 }

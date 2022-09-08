@@ -14,42 +14,29 @@ public final class GetRuleSetsRuleSetItemRedirectUri {
      * @return The valid domain name (hostname) or IP address to use in the redirect URI.
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return The HTTP URI path to use in the redirect URI.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return The communication port to use in the redirect URI.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The HTTP protocol to use in the redirect URI.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return The query string to use in the redirect URI.
      * 
      */
-    private final String query;
+    private String query;
 
-    @CustomType.Constructor
-    private GetRuleSetsRuleSetItemRedirectUri(
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("query") String query) {
-        this.host = host;
-        this.path = path;
-        this.port = port;
-        this.protocol = protocol;
-        this.query = query;
-    }
-
+    private GetRuleSetsRuleSetItemRedirectUri() {}
     /**
      * @return The valid domain name (hostname) or IP address to use in the redirect URI.
      * 
@@ -93,18 +80,14 @@ public final class GetRuleSetsRuleSetItemRedirectUri {
     public static Builder builder(GetRuleSetsRuleSetItemRedirectUri defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String host;
         private String path;
         private Integer port;
         private String protocol;
         private String query;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRuleSetsRuleSetItemRedirectUri defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.host = defaults.host;
@@ -114,27 +97,39 @@ public final class GetRuleSetsRuleSetItemRedirectUri {
     	      this.query = defaults.query;
         }
 
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder query(String query) {
             this.query = Objects.requireNonNull(query);
             return this;
-        }        public GetRuleSetsRuleSetItemRedirectUri build() {
-            return new GetRuleSetsRuleSetItemRedirectUri(host, path, port, protocol, query);
+        }
+        public GetRuleSetsRuleSetItemRedirectUri build() {
+            final var o = new GetRuleSetsRuleSetItemRedirectUri();
+            o.host = host;
+            o.path = path;
+            o.port = port;
+            o.protocol = protocol;
+            o.query = query;
+            return o;
         }
     }
 }

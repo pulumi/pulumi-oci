@@ -13,52 +13,35 @@ public final class GetScheduledRunResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional details about scheduled run failure
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The ocid representing unique shedule
      * 
      */
-    private final String scheduleId;
-    private final String scheduledRunId;
+    private String scheduleId;
+    private String scheduledRunId;
     /**
      * @return Specifies if the schedule job was run successfully or not.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time when schedule started executing
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time when schedule finished executing
      * 
      */
-    private final String timeFinished;
+    private String timeFinished;
 
-    @CustomType.Constructor
-    private GetScheduledRunResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("scheduleId") String scheduleId,
-        @CustomType.Parameter("scheduledRunId") String scheduledRunId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeFinished") String timeFinished) {
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.scheduleId = scheduleId;
-        this.scheduledRunId = scheduledRunId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeFinished = timeFinished;
-    }
-
+    private GetScheduledRunResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -112,7 +95,7 @@ public final class GetScheduledRunResult {
     public static Builder builder(GetScheduledRunResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String lifecycleDetails;
@@ -121,11 +104,7 @@ public final class GetScheduledRunResult {
         private String state;
         private String timeCreated;
         private String timeFinished;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetScheduledRunResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -137,35 +116,51 @@ public final class GetScheduledRunResult {
     	      this.timeFinished = defaults.timeFinished;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder scheduleId(String scheduleId) {
             this.scheduleId = Objects.requireNonNull(scheduleId);
             return this;
         }
+        @CustomType.Setter
         public Builder scheduledRunId(String scheduledRunId) {
             this.scheduledRunId = Objects.requireNonNull(scheduledRunId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
             this.timeFinished = Objects.requireNonNull(timeFinished);
             return this;
-        }        public GetScheduledRunResult build() {
-            return new GetScheduledRunResult(id, lifecycleDetails, scheduleId, scheduledRunId, state, timeCreated, timeFinished);
+        }
+        public GetScheduledRunResult build() {
+            final var o = new GetScheduledRunResult();
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.scheduleId = scheduleId;
+            o.scheduledRunId = scheduledRunId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeFinished = timeFinished;
+            return o;
         }
     }
 }

@@ -15,28 +15,19 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
      * @return (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
      * 
      */
-    private final @Nullable List<String> exclusionPatterns;
+    private @Nullable List<String> exclusionPatterns;
     /**
      * @return (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
      * 
      */
-    private final @Nullable List<String> inclusionPatterns;
+    private @Nullable List<String> inclusionPatterns;
     /**
      * @return (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
      * 
      */
-    private final @Nullable List<String> inclusionPrefixes;
+    private @Nullable List<String> inclusionPrefixes;
 
-    @CustomType.Constructor
-    private ObjectLifecyclePolicyRuleObjectNameFilter(
-        @CustomType.Parameter("exclusionPatterns") @Nullable List<String> exclusionPatterns,
-        @CustomType.Parameter("inclusionPatterns") @Nullable List<String> inclusionPatterns,
-        @CustomType.Parameter("inclusionPrefixes") @Nullable List<String> inclusionPrefixes) {
-        this.exclusionPatterns = exclusionPatterns;
-        this.inclusionPatterns = inclusionPatterns;
-        this.inclusionPrefixes = inclusionPrefixes;
-    }
-
+    private ObjectLifecyclePolicyRuleObjectNameFilter() {}
     /**
      * @return (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
      * 
@@ -66,16 +57,12 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
     public static Builder builder(ObjectLifecyclePolicyRuleObjectNameFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> exclusionPatterns;
         private @Nullable List<String> inclusionPatterns;
         private @Nullable List<String> inclusionPrefixes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ObjectLifecyclePolicyRuleObjectNameFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.exclusionPatterns = defaults.exclusionPatterns;
@@ -83,6 +70,7 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
     	      this.inclusionPrefixes = defaults.inclusionPrefixes;
         }
 
+        @CustomType.Setter
         public Builder exclusionPatterns(@Nullable List<String> exclusionPatterns) {
             this.exclusionPatterns = exclusionPatterns;
             return this;
@@ -90,6 +78,7 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
         public Builder exclusionPatterns(String... exclusionPatterns) {
             return exclusionPatterns(List.of(exclusionPatterns));
         }
+        @CustomType.Setter
         public Builder inclusionPatterns(@Nullable List<String> inclusionPatterns) {
             this.inclusionPatterns = inclusionPatterns;
             return this;
@@ -97,14 +86,20 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
         public Builder inclusionPatterns(String... inclusionPatterns) {
             return inclusionPatterns(List.of(inclusionPatterns));
         }
+        @CustomType.Setter
         public Builder inclusionPrefixes(@Nullable List<String> inclusionPrefixes) {
             this.inclusionPrefixes = inclusionPrefixes;
             return this;
         }
         public Builder inclusionPrefixes(String... inclusionPrefixes) {
             return inclusionPrefixes(List.of(inclusionPrefixes));
-        }        public ObjectLifecyclePolicyRuleObjectNameFilter build() {
-            return new ObjectLifecyclePolicyRuleObjectNameFilter(exclusionPatterns, inclusionPatterns, inclusionPrefixes);
+        }
+        public ObjectLifecyclePolicyRuleObjectNameFilter build() {
+            final var o = new ObjectLifecyclePolicyRuleObjectNameFilter();
+            o.exclusionPatterns = exclusionPatterns;
+            o.inclusionPatterns = inclusionPatterns;
+            o.inclusionPrefixes = inclusionPrefixes;
+            return o;
         }
     }
 }

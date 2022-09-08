@@ -18,63 +18,44 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeT
      * @return The parameter configuration details.
      * 
      */
-    private final Map<String,Object> configParameterDefinitions;
+    private Map<String,Object> configParameterDefinitions;
     /**
-     * @return Specifies whether the configuration is contained or not.
+     * @return Specifies whether the configuration is contained.
      * 
      */
-    private final Boolean isContained;
+    private Boolean isContained;
     /**
-     * @return Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The type of the folder.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
      * @return The model version of an object.
      * 
      */
-    private final String modelVersion;
+    private String modelVersion;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final Integer objectStatus;
+    private Integer objectStatus;
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
-    private final GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef;
+    private GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef;
 
-    @CustomType.Constructor
-    private GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition(
-        @CustomType.Parameter("configParameterDefinitions") Map<String,Object> configParameterDefinitions,
-        @CustomType.Parameter("isContained") Boolean isContained,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStatus") Integer objectStatus,
-        @CustomType.Parameter("parentRef") GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef) {
-        this.configParameterDefinitions = configParameterDefinitions;
-        this.isContained = isContained;
-        this.key = key;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.parentRef = parentRef;
-    }
-
+    private GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition() {}
     /**
      * @return The parameter configuration details.
      * 
@@ -83,14 +64,14 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeT
         return this.configParameterDefinitions;
     }
     /**
-     * @return Specifies whether the configuration is contained or not.
+     * @return Specifies whether the configuration is contained.
      * 
      */
     public Boolean isContained() {
         return this.isContained;
     }
     /**
-     * @return Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public String key() {
@@ -125,7 +106,7 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeT
         return this.objectStatus;
     }
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
     public GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef() {
@@ -139,7 +120,7 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeT
     public static Builder builder(GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> configParameterDefinitions;
         private Boolean isContained;
@@ -149,11 +130,7 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeT
         private String name;
         private Integer objectStatus;
         private GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configParameterDefinitions = defaults.configParameterDefinitions;
@@ -166,39 +143,57 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeT
     	      this.parentRef = defaults.parentRef;
         }
 
+        @CustomType.Setter
         public Builder configParameterDefinitions(Map<String,Object> configParameterDefinitions) {
             this.configParameterDefinitions = Objects.requireNonNull(configParameterDefinitions);
             return this;
         }
+        @CustomType.Setter
         public Builder isContained(Boolean isContained) {
             this.isContained = Objects.requireNonNull(isContained);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = Objects.requireNonNull(modelVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = Objects.requireNonNull(objectStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRef parentRef) {
             this.parentRef = Objects.requireNonNull(parentRef);
             return this;
-        }        public GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition build() {
-            return new GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition(configParameterDefinitions, isContained, key, modelType, modelVersion, name, objectStatus, parentRef);
+        }
+        public GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition build() {
+            final var o = new GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition();
+            o.configParameterDefinitions = configParameterDefinitions;
+            o.isContained = isContained;
+            o.key = key;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.parentRef = parentRef;
+            return o;
         }
     }
 }

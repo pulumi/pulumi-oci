@@ -17,24 +17,15 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsFilter {
      * @return The name of the compute global image capability schema version
      * 
      */
-    private final String name;
-    private final @Nullable Boolean regex;
+    private String name;
+    private @Nullable Boolean regex;
     /**
      * @return the list of values for the enum
      * 
      */
-    private final List<String> values;
+    private List<String> values;
 
-    @CustomType.Constructor
-    private GetComputeGlobalImageCapabilitySchemasVersionsFilter(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("regex") @Nullable Boolean regex,
-        @CustomType.Parameter("values") List<String> values) {
-        this.name = name;
-        this.regex = regex;
-        this.values = values;
-    }
-
+    private GetComputeGlobalImageCapabilitySchemasVersionsFilter() {}
     /**
      * @return The name of the compute global image capability schema version
      * 
@@ -60,16 +51,12 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsFilter {
     public static Builder builder(GetComputeGlobalImageCapabilitySchemasVersionsFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private @Nullable Boolean regex;
         private List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeGlobalImageCapabilitySchemasVersionsFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -77,22 +64,30 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsFilter {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder regex(@Nullable Boolean regex) {
             this.regex = regex;
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<String> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public GetComputeGlobalImageCapabilitySchemasVersionsFilter build() {
-            return new GetComputeGlobalImageCapabilitySchemasVersionsFilter(name, regex, values);
+        }
+        public GetComputeGlobalImageCapabilitySchemasVersionsFilter build() {
+            final var o = new GetComputeGlobalImageCapabilitySchemasVersionsFilter();
+            o.name = name;
+            o.regex = regex;
+            o.values = values;
+            return o;
         }
     }
 }

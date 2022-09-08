@@ -13,63 +13,44 @@ public final class GetSecurityAssessmentStatisticPass {
      * @return The number of findings in the Auditing category.
      * 
      */
-    private final Integer auditingFindingsCount;
+    private Integer auditingFindingsCount;
     /**
      * @return The number of findings in the Authorization Control category.
      * 
      */
-    private final Integer authorizationControlFindingsCount;
+    private Integer authorizationControlFindingsCount;
     /**
      * @return The number of findings in the Data Encryption category.
      * 
      */
-    private final Integer dataEncryptionFindingsCount;
+    private Integer dataEncryptionFindingsCount;
     /**
      * @return The number of findings in the Database Configuration category.
      * 
      */
-    private final Integer dbConfigurationFindingsCount;
+    private Integer dbConfigurationFindingsCount;
     /**
      * @return The number of findings in the Fine-Grained Access Control category.
      * 
      */
-    private final Integer fineGrainedAccessControlFindingsCount;
+    private Integer fineGrainedAccessControlFindingsCount;
     /**
      * @return The number of findings in the Privileges and Roles category.
      * 
      */
-    private final Integer privilegesAndRolesFindingsCount;
+    private Integer privilegesAndRolesFindingsCount;
     /**
      * @return The total number of targets in this security assessment.
      * 
      */
-    private final Integer targetsCount;
+    private Integer targetsCount;
     /**
      * @return The number of findings in the User Accounts category.
      * 
      */
-    private final Integer userAccountsFindingsCount;
+    private Integer userAccountsFindingsCount;
 
-    @CustomType.Constructor
-    private GetSecurityAssessmentStatisticPass(
-        @CustomType.Parameter("auditingFindingsCount") Integer auditingFindingsCount,
-        @CustomType.Parameter("authorizationControlFindingsCount") Integer authorizationControlFindingsCount,
-        @CustomType.Parameter("dataEncryptionFindingsCount") Integer dataEncryptionFindingsCount,
-        @CustomType.Parameter("dbConfigurationFindingsCount") Integer dbConfigurationFindingsCount,
-        @CustomType.Parameter("fineGrainedAccessControlFindingsCount") Integer fineGrainedAccessControlFindingsCount,
-        @CustomType.Parameter("privilegesAndRolesFindingsCount") Integer privilegesAndRolesFindingsCount,
-        @CustomType.Parameter("targetsCount") Integer targetsCount,
-        @CustomType.Parameter("userAccountsFindingsCount") Integer userAccountsFindingsCount) {
-        this.auditingFindingsCount = auditingFindingsCount;
-        this.authorizationControlFindingsCount = authorizationControlFindingsCount;
-        this.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
-        this.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
-        this.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
-        this.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
-        this.targetsCount = targetsCount;
-        this.userAccountsFindingsCount = userAccountsFindingsCount;
-    }
-
+    private GetSecurityAssessmentStatisticPass() {}
     /**
      * @return The number of findings in the Auditing category.
      * 
@@ -134,7 +115,7 @@ public final class GetSecurityAssessmentStatisticPass {
     public static Builder builder(GetSecurityAssessmentStatisticPass defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer auditingFindingsCount;
         private Integer authorizationControlFindingsCount;
@@ -144,11 +125,7 @@ public final class GetSecurityAssessmentStatisticPass {
         private Integer privilegesAndRolesFindingsCount;
         private Integer targetsCount;
         private Integer userAccountsFindingsCount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityAssessmentStatisticPass defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditingFindingsCount = defaults.auditingFindingsCount;
@@ -161,39 +138,57 @@ public final class GetSecurityAssessmentStatisticPass {
     	      this.userAccountsFindingsCount = defaults.userAccountsFindingsCount;
         }
 
+        @CustomType.Setter
         public Builder auditingFindingsCount(Integer auditingFindingsCount) {
             this.auditingFindingsCount = Objects.requireNonNull(auditingFindingsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder authorizationControlFindingsCount(Integer authorizationControlFindingsCount) {
             this.authorizationControlFindingsCount = Objects.requireNonNull(authorizationControlFindingsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder dataEncryptionFindingsCount(Integer dataEncryptionFindingsCount) {
             this.dataEncryptionFindingsCount = Objects.requireNonNull(dataEncryptionFindingsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder dbConfigurationFindingsCount(Integer dbConfigurationFindingsCount) {
             this.dbConfigurationFindingsCount = Objects.requireNonNull(dbConfigurationFindingsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder fineGrainedAccessControlFindingsCount(Integer fineGrainedAccessControlFindingsCount) {
             this.fineGrainedAccessControlFindingsCount = Objects.requireNonNull(fineGrainedAccessControlFindingsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder privilegesAndRolesFindingsCount(Integer privilegesAndRolesFindingsCount) {
             this.privilegesAndRolesFindingsCount = Objects.requireNonNull(privilegesAndRolesFindingsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder targetsCount(Integer targetsCount) {
             this.targetsCount = Objects.requireNonNull(targetsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder userAccountsFindingsCount(Integer userAccountsFindingsCount) {
             this.userAccountsFindingsCount = Objects.requireNonNull(userAccountsFindingsCount);
             return this;
-        }        public GetSecurityAssessmentStatisticPass build() {
-            return new GetSecurityAssessmentStatisticPass(auditingFindingsCount, authorizationControlFindingsCount, dataEncryptionFindingsCount, dbConfigurationFindingsCount, fineGrainedAccessControlFindingsCount, privilegesAndRolesFindingsCount, targetsCount, userAccountsFindingsCount);
+        }
+        public GetSecurityAssessmentStatisticPass build() {
+            final var o = new GetSecurityAssessmentStatisticPass();
+            o.auditingFindingsCount = auditingFindingsCount;
+            o.authorizationControlFindingsCount = authorizationControlFindingsCount;
+            o.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
+            o.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
+            o.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
+            o.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
+            o.targetsCount = targetsCount;
+            o.userAccountsFindingsCount = userAccountsFindingsCount;
+            return o;
         }
     }
 }

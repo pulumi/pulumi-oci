@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetProductLicensesProductLicenseCollection {
-    private final List<GetProductLicensesProductLicenseCollectionItem> items;
+    private List<GetProductLicensesProductLicenseCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetProductLicensesProductLicenseCollection(@CustomType.Parameter("items") List<GetProductLicensesProductLicenseCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetProductLicensesProductLicenseCollection() {}
     public List<GetProductLicensesProductLicenseCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetProductLicensesProductLicenseCollection {
     public static Builder builder(GetProductLicensesProductLicenseCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetProductLicensesProductLicenseCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProductLicensesProductLicenseCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetProductLicensesProductLicenseCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetProductLicensesProductLicenseCollectionItem... items) {
             return items(List.of(items));
-        }        public GetProductLicensesProductLicenseCollection build() {
-            return new GetProductLicensesProductLicenseCollection(items);
+        }
+        public GetProductLicensesProductLicenseCollection build() {
+            final var o = new GetProductLicensesProductLicenseCollection();
+            o.items = items;
+            return o;
         }
     }
 }

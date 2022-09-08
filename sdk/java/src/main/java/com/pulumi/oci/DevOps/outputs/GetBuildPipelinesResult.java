@@ -18,52 +18,35 @@ public final class GetBuildPipelinesResult {
      * @return The list of build_pipeline_collection.
      * 
      */
-    private final List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections;
+    private List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections;
     /**
      * @return The OCID of the compartment where the build pipeline is created.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Build pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetBuildPipelinesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetBuildPipelinesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the DevOps project.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The current state of the build pipeline.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetBuildPipelinesResult(
-        @CustomType.Parameter("buildPipelineCollections") List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetBuildPipelinesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.buildPipelineCollections = buildPipelineCollections;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.projectId = projectId;
-        this.state = state;
-    }
-
+    private GetBuildPipelinesResult() {}
     /**
      * @return The list of build_pipeline_collection.
      * 
@@ -117,7 +100,7 @@ public final class GetBuildPipelinesResult {
     public static Builder builder(GetBuildPipelinesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections;
         private @Nullable String compartmentId;
@@ -126,11 +109,7 @@ public final class GetBuildPipelinesResult {
         private @Nullable String id;
         private @Nullable String projectId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelinesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildPipelineCollections = defaults.buildPipelineCollections;
@@ -142,6 +121,7 @@ public final class GetBuildPipelinesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder buildPipelineCollections(List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections) {
             this.buildPipelineCollections = Objects.requireNonNull(buildPipelineCollections);
             return this;
@@ -149,14 +129,17 @@ public final class GetBuildPipelinesResult {
         public Builder buildPipelineCollections(GetBuildPipelinesBuildPipelineCollection... buildPipelineCollections) {
             return buildPipelineCollections(List.of(buildPipelineCollections));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBuildPipelinesFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,19 +147,31 @@ public final class GetBuildPipelinesResult {
         public Builder filters(GetBuildPipelinesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetBuildPipelinesResult build() {
-            return new GetBuildPipelinesResult(buildPipelineCollections, compartmentId, displayName, filters, id, projectId, state);
+        }
+        public GetBuildPipelinesResult build() {
+            final var o = new GetBuildPipelinesResult();
+            o.buildPipelineCollections = buildPipelineCollections;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.projectId = projectId;
+            o.state = state;
+            return o;
         }
     }
 }

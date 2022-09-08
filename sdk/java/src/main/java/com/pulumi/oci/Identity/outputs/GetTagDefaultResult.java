@@ -14,75 +14,52 @@ public final class GetTagDefaultResult {
      * @return The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the tag default.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
      * * If the `isRequired` flag is set to &#34;true&#34;, the value is set during resource creation.
      * * If the `isRequired` flag is set to &#34;false&#34;, the value you enter is set during resource creation.
      * 
      */
-    private final Boolean isRequired;
+    private Boolean isRequired;
     /**
      * @return The tag default&#39;s current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      * 
      */
-    private final String state;
-    private final String tagDefaultId;
+    private String state;
+    private String tagDefaultId;
     /**
      * @return The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      * 
      */
-    private final String tagDefinitionId;
+    private String tagDefinitionId;
     /**
      * @return The name used in the tag definition. This field is informational in the context of the tag default.
      * 
      */
-    private final String tagDefinitionName;
+    private String tagDefinitionName;
     /**
      * @return The OCID of the tag namespace that contains the tag definition.
      * 
      */
-    private final String tagNamespaceId;
+    private String tagNamespaceId;
     /**
      * @return Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The default value for the tag definition. This will be applied to all new resources created in the compartment.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetTagDefaultResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isRequired") Boolean isRequired,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("tagDefaultId") String tagDefaultId,
-        @CustomType.Parameter("tagDefinitionId") String tagDefinitionId,
-        @CustomType.Parameter("tagDefinitionName") String tagDefinitionName,
-        @CustomType.Parameter("tagNamespaceId") String tagNamespaceId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("value") String value) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.isRequired = isRequired;
-        this.state = state;
-        this.tagDefaultId = tagDefaultId;
-        this.tagDefinitionId = tagDefinitionId;
-        this.tagDefinitionName = tagDefinitionName;
-        this.tagNamespaceId = tagNamespaceId;
-        this.timeCreated = timeCreated;
-        this.value = value;
-    }
-
+    private GetTagDefaultResult() {}
     /**
      * @return The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.
      * 
@@ -159,7 +136,7 @@ public final class GetTagDefaultResult {
     public static Builder builder(GetTagDefaultResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
@@ -171,11 +148,7 @@ public final class GetTagDefaultResult {
         private String tagNamespaceId;
         private String timeCreated;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTagDefaultResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -190,47 +163,69 @@ public final class GetTagDefaultResult {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = Objects.requireNonNull(isRequired);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder tagDefaultId(String tagDefaultId) {
             this.tagDefaultId = Objects.requireNonNull(tagDefaultId);
             return this;
         }
+        @CustomType.Setter
         public Builder tagDefinitionId(String tagDefinitionId) {
             this.tagDefinitionId = Objects.requireNonNull(tagDefinitionId);
             return this;
         }
+        @CustomType.Setter
         public Builder tagDefinitionName(String tagDefinitionName) {
             this.tagDefinitionName = Objects.requireNonNull(tagDefinitionName);
             return this;
         }
+        @CustomType.Setter
         public Builder tagNamespaceId(String tagNamespaceId) {
             this.tagNamespaceId = Objects.requireNonNull(tagNamespaceId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetTagDefaultResult build() {
-            return new GetTagDefaultResult(compartmentId, id, isRequired, state, tagDefaultId, tagDefinitionId, tagDefinitionName, tagNamespaceId, timeCreated, value);
+        }
+        public GetTagDefaultResult build() {
+            final var o = new GetTagDefaultResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.isRequired = isRequired;
+            o.state = state;
+            o.tagDefaultId = tagDefaultId;
+            o.tagDefinitionId = tagDefinitionId;
+            o.tagDefinitionName = tagDefinitionName;
+            o.tagNamespaceId = tagNamespaceId;
+            o.timeCreated = timeCreated;
+            o.value = value;
+            return o;
         }
     }
 }

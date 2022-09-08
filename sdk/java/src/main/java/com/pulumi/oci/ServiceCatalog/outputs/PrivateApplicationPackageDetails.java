@@ -15,24 +15,15 @@ public final class PrivateApplicationPackageDetails {
      * @return The package&#39;s type.
      * 
      */
-    private final String packageType;
+    private String packageType;
     /**
      * @return The package version.
      * 
      */
-    private final String version;
-    private final @Nullable String zipFileBase64encoded;
+    private String version;
+    private @Nullable String zipFileBase64encoded;
 
-    @CustomType.Constructor
-    private PrivateApplicationPackageDetails(
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("version") String version,
-        @CustomType.Parameter("zipFileBase64encoded") @Nullable String zipFileBase64encoded) {
-        this.packageType = packageType;
-        this.version = version;
-        this.zipFileBase64encoded = zipFileBase64encoded;
-    }
-
+    private PrivateApplicationPackageDetails() {}
     /**
      * @return The package&#39;s type.
      * 
@@ -58,16 +49,12 @@ public final class PrivateApplicationPackageDetails {
     public static Builder builder(PrivateApplicationPackageDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String packageType;
         private String version;
         private @Nullable String zipFileBase64encoded;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PrivateApplicationPackageDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.packageType = defaults.packageType;
@@ -75,19 +62,27 @@ public final class PrivateApplicationPackageDetails {
     	      this.zipFileBase64encoded = defaults.zipFileBase64encoded;
         }
 
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
         }
+        @CustomType.Setter
         public Builder zipFileBase64encoded(@Nullable String zipFileBase64encoded) {
             this.zipFileBase64encoded = zipFileBase64encoded;
             return this;
-        }        public PrivateApplicationPackageDetails build() {
-            return new PrivateApplicationPackageDetails(packageType, version, zipFileBase64encoded);
+        }
+        public PrivateApplicationPackageDetails build() {
+            final var o = new PrivateApplicationPackageDetails();
+            o.packageType = packageType;
+            o.version = version;
+            o.zipFileBase64encoded = zipFileBase64encoded;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection {
-    private final List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items;
+    private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection(@CustomType.Parameter("items") List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection() {}
     public List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection 
     public static Builder builder(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection build() {
-            return new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection(items);
+        }
+        public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection build() {
+            final var o = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

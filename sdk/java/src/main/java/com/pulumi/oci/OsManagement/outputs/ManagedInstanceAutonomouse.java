@@ -15,13 +15,9 @@ public final class ManagedInstanceAutonomouse {
      * @return True if daily updates are enabled
      * 
      */
-    private final @Nullable Boolean isAutoUpdateEnabled;
+    private @Nullable Boolean isAutoUpdateEnabled;
 
-    @CustomType.Constructor
-    private ManagedInstanceAutonomouse(@CustomType.Parameter("isAutoUpdateEnabled") @Nullable Boolean isAutoUpdateEnabled) {
-        this.isAutoUpdateEnabled = isAutoUpdateEnabled;
-    }
-
+    private ManagedInstanceAutonomouse() {}
     /**
      * @return True if daily updates are enabled
      * 
@@ -37,24 +33,24 @@ public final class ManagedInstanceAutonomouse {
     public static Builder builder(ManagedInstanceAutonomouse defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isAutoUpdateEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ManagedInstanceAutonomouse defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isAutoUpdateEnabled = defaults.isAutoUpdateEnabled;
         }
 
+        @CustomType.Setter
         public Builder isAutoUpdateEnabled(@Nullable Boolean isAutoUpdateEnabled) {
             this.isAutoUpdateEnabled = isAutoUpdateEnabled;
             return this;
-        }        public ManagedInstanceAutonomouse build() {
-            return new ManagedInstanceAutonomouse(isAutoUpdateEnabled);
+        }
+        public ManagedInstanceAutonomouse build() {
+            final var o = new ManagedInstanceAutonomouse();
+            o.isAutoUpdateEnabled = isAutoUpdateEnabled;
+            return o;
         }
     }
 }

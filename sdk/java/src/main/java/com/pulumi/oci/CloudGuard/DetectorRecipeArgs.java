@@ -50,18 +50,33 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Detector recipe description.
+     * (Updatable) Description for DetectorRecipeDetectorRule.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Detector recipe description.
+     * @return (Updatable) Description for DetectorRecipeDetectorRule.
      * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
+    }
+
+    /**
+     * detector for the rule
+     * 
+     */
+    @Import(name="detector")
+    private @Nullable Output<String> detector;
+
+    /**
+     * @return detector for the rule
+     * 
+     */
+    public Optional<Output<String>> detector() {
+        return Optional.ofNullable(this.detector);
     }
 
     /**
@@ -113,15 +128,15 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
      * The id of the source detector recipe.
      * 
      */
-    @Import(name="sourceDetectorRecipeId", required=true)
-    private Output<String> sourceDetectorRecipeId;
+    @Import(name="sourceDetectorRecipeId")
+    private @Nullable Output<String> sourceDetectorRecipeId;
 
     /**
      * @return The id of the source detector recipe.
      * 
      */
-    public Output<String> sourceDetectorRecipeId() {
-        return this.sourceDetectorRecipeId;
+    public Optional<Output<String>> sourceDetectorRecipeId() {
+        return Optional.ofNullable(this.sourceDetectorRecipeId);
     }
 
     private DetectorRecipeArgs() {}
@@ -130,6 +145,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
+        this.detector = $.detector;
         this.detectorRules = $.detectorRules;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
@@ -197,7 +213,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description (Updatable) Detector recipe description.
+         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
          * 
          * @return builder
          * 
@@ -208,13 +224,34 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description (Updatable) Detector recipe description.
+         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
          * 
          * @return builder
          * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param detector detector for the rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder detector(@Nullable Output<String> detector) {
+            $.detector = detector;
+            return this;
+        }
+
+        /**
+         * @param detector detector for the rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder detector(String detector) {
+            return detector(Output.of(detector));
         }
 
         /**
@@ -296,7 +333,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder sourceDetectorRecipeId(Output<String> sourceDetectorRecipeId) {
+        public Builder sourceDetectorRecipeId(@Nullable Output<String> sourceDetectorRecipeId) {
             $.sourceDetectorRecipeId = sourceDetectorRecipeId;
             return this;
         }
@@ -314,7 +351,6 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         public DetectorRecipeArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.sourceDetectorRecipeId = Objects.requireNonNull($.sourceDetectorRecipeId, "expected parameter 'sourceDetectorRecipeId' to be non-null");
             return $;
         }
     }

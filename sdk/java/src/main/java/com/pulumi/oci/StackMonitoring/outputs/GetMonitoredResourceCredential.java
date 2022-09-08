@@ -15,56 +15,39 @@ public final class GetMonitoredResourceCredential {
      * @return Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
      */
-    private final String credentialType;
+    private String credentialType;
     /**
      * @return The user-specified textual description of the credential.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
      * 
      */
-    private final String keyId;
+    private String keyId;
     /**
      * @return property name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return List of monitored resource properties
      * 
      */
-    private final List<GetMonitoredResourceCredentialProperty> properties;
+    private List<GetMonitoredResourceCredentialProperty> properties;
     /**
      * @return The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
-    private final String source;
+    private String source;
     /**
      * @return Monitored resource type
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetMonitoredResourceCredential(
-        @CustomType.Parameter("credentialType") String credentialType,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("keyId") String keyId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("properties") List<GetMonitoredResourceCredentialProperty> properties,
-        @CustomType.Parameter("source") String source,
-        @CustomType.Parameter("type") String type) {
-        this.credentialType = credentialType;
-        this.description = description;
-        this.keyId = keyId;
-        this.name = name;
-        this.properties = properties;
-        this.source = source;
-        this.type = type;
-    }
-
+    private GetMonitoredResourceCredential() {}
     /**
      * @return Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
@@ -122,7 +105,7 @@ public final class GetMonitoredResourceCredential {
     public static Builder builder(GetMonitoredResourceCredential defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String credentialType;
         private String description;
@@ -131,11 +114,7 @@ public final class GetMonitoredResourceCredential {
         private List<GetMonitoredResourceCredentialProperty> properties;
         private String source;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitoredResourceCredential defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.credentialType = defaults.credentialType;
@@ -147,22 +126,27 @@ public final class GetMonitoredResourceCredential {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder credentialType(String credentialType) {
             this.credentialType = Objects.requireNonNull(credentialType);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder keyId(String keyId) {
             this.keyId = Objects.requireNonNull(keyId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder properties(List<GetMonitoredResourceCredentialProperty> properties) {
             this.properties = Objects.requireNonNull(properties);
             return this;
@@ -170,15 +154,26 @@ public final class GetMonitoredResourceCredential {
         public Builder properties(GetMonitoredResourceCredentialProperty... properties) {
             return properties(List.of(properties));
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetMonitoredResourceCredential build() {
-            return new GetMonitoredResourceCredential(credentialType, description, keyId, name, properties, source, type);
+        }
+        public GetMonitoredResourceCredential build() {
+            final var o = new GetMonitoredResourceCredential();
+            o.credentialType = credentialType;
+            o.description = description;
+            o.keyId = keyId;
+            o.name = name;
+            o.properties = properties;
+            o.source = source;
+            o.type = type;
+            return o;
         }
     }
 }

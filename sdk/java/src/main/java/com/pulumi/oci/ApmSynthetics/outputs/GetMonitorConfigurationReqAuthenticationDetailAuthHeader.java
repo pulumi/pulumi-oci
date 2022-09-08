@@ -13,21 +13,14 @@ public final class GetMonitorConfigurationReqAuthenticationDetailAuthHeader {
      * @return Name of the header.
      * 
      */
-    private final String headerName;
+    private String headerName;
     /**
      * @return Value of the header.
      * 
      */
-    private final String headerValue;
+    private String headerValue;
 
-    @CustomType.Constructor
-    private GetMonitorConfigurationReqAuthenticationDetailAuthHeader(
-        @CustomType.Parameter("headerName") String headerName,
-        @CustomType.Parameter("headerValue") String headerValue) {
-        this.headerName = headerName;
-        this.headerValue = headerValue;
-    }
-
+    private GetMonitorConfigurationReqAuthenticationDetailAuthHeader() {}
     /**
      * @return Name of the header.
      * 
@@ -50,30 +43,32 @@ public final class GetMonitorConfigurationReqAuthenticationDetailAuthHeader {
     public static Builder builder(GetMonitorConfigurationReqAuthenticationDetailAuthHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String headerName;
         private String headerValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorConfigurationReqAuthenticationDetailAuthHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.headerName = defaults.headerName;
     	      this.headerValue = defaults.headerValue;
         }
 
+        @CustomType.Setter
         public Builder headerName(String headerName) {
             this.headerName = Objects.requireNonNull(headerName);
             return this;
         }
+        @CustomType.Setter
         public Builder headerValue(String headerValue) {
             this.headerValue = Objects.requireNonNull(headerValue);
             return this;
-        }        public GetMonitorConfigurationReqAuthenticationDetailAuthHeader build() {
-            return new GetMonitorConfigurationReqAuthenticationDetailAuthHeader(headerName, headerValue);
+        }
+        public GetMonitorConfigurationReqAuthenticationDetailAuthHeader build() {
+            final var o = new GetMonitorConfigurationReqAuthenticationDetailAuthHeader();
+            o.headerName = headerName;
+            o.headerValue = headerValue;
+            return o;
         }
     }
 }

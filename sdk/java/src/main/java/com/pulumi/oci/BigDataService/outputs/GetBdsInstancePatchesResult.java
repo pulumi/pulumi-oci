@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstancePatchesResult {
-    private final String bdsInstanceId;
-    private final @Nullable List<GetBdsInstancePatchesFilter> filters;
+    private String bdsInstanceId;
+    private @Nullable List<GetBdsInstancePatchesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of patches.
      * 
      */
-    private final List<GetBdsInstancePatchesPatch> patches;
+    private List<GetBdsInstancePatchesPatch> patches;
 
-    @CustomType.Constructor
-    private GetBdsInstancePatchesResult(
-        @CustomType.Parameter("bdsInstanceId") String bdsInstanceId,
-        @CustomType.Parameter("filters") @Nullable List<GetBdsInstancePatchesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("patches") List<GetBdsInstancePatchesPatch> patches) {
-        this.bdsInstanceId = bdsInstanceId;
-        this.filters = filters;
-        this.id = id;
-        this.patches = patches;
-    }
-
+    private GetBdsInstancePatchesResult() {}
     public String bdsInstanceId() {
         return this.bdsInstanceId;
     }
@@ -66,17 +55,13 @@ public final class GetBdsInstancePatchesResult {
     public static Builder builder(GetBdsInstancePatchesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bdsInstanceId;
         private @Nullable List<GetBdsInstancePatchesFilter> filters;
         private String id;
         private List<GetBdsInstancePatchesPatch> patches;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstancePatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bdsInstanceId = defaults.bdsInstanceId;
@@ -85,10 +70,12 @@ public final class GetBdsInstancePatchesResult {
     	      this.patches = defaults.patches;
         }
 
+        @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBdsInstancePatchesFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetBdsInstancePatchesResult {
         public Builder filters(GetBdsInstancePatchesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder patches(List<GetBdsInstancePatchesPatch> patches) {
             this.patches = Objects.requireNonNull(patches);
             return this;
         }
         public Builder patches(GetBdsInstancePatchesPatch... patches) {
             return patches(List.of(patches));
-        }        public GetBdsInstancePatchesResult build() {
-            return new GetBdsInstancePatchesResult(bdsInstanceId, filters, id, patches);
+        }
+        public GetBdsInstancePatchesResult build() {
+            final var o = new GetBdsInstancePatchesResult();
+            o.bdsInstanceId = bdsInstanceId;
+            o.filters = filters;
+            o.id = id;
+            o.patches = patches;
+            return o;
         }
     }
 }

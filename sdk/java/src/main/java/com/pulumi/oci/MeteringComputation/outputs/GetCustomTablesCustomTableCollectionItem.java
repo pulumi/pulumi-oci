@@ -15,35 +15,24 @@ public final class GetCustomTablesCustomTableCollectionItem {
      * @return The compartment ID in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The custom table OCID.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The custom table for Cost Analysis UI rendering.
      * 
      */
-    private final List<GetCustomTablesCustomTableCollectionItemSavedCustomTable> savedCustomTables;
+    private List<GetCustomTablesCustomTableCollectionItemSavedCustomTable> savedCustomTables;
     /**
      * @return The saved report ID in which to list resources.
      * 
      */
-    private final String savedReportId;
+    private String savedReportId;
 
-    @CustomType.Constructor
-    private GetCustomTablesCustomTableCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("savedCustomTables") List<GetCustomTablesCustomTableCollectionItemSavedCustomTable> savedCustomTables,
-        @CustomType.Parameter("savedReportId") String savedReportId) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.savedCustomTables = savedCustomTables;
-        this.savedReportId = savedReportId;
-    }
-
+    private GetCustomTablesCustomTableCollectionItem() {}
     /**
      * @return The compartment ID in which to list resources.
      * 
@@ -80,17 +69,13 @@ public final class GetCustomTablesCustomTableCollectionItem {
     public static Builder builder(GetCustomTablesCustomTableCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private List<GetCustomTablesCustomTableCollectionItemSavedCustomTable> savedCustomTables;
         private String savedReportId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCustomTablesCustomTableCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -99,14 +84,17 @@ public final class GetCustomTablesCustomTableCollectionItem {
     	      this.savedReportId = defaults.savedReportId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder savedCustomTables(List<GetCustomTablesCustomTableCollectionItemSavedCustomTable> savedCustomTables) {
             this.savedCustomTables = Objects.requireNonNull(savedCustomTables);
             return this;
@@ -114,11 +102,18 @@ public final class GetCustomTablesCustomTableCollectionItem {
         public Builder savedCustomTables(GetCustomTablesCustomTableCollectionItemSavedCustomTable... savedCustomTables) {
             return savedCustomTables(List.of(savedCustomTables));
         }
+        @CustomType.Setter
         public Builder savedReportId(String savedReportId) {
             this.savedReportId = Objects.requireNonNull(savedReportId);
             return this;
-        }        public GetCustomTablesCustomTableCollectionItem build() {
-            return new GetCustomTablesCustomTableCollectionItem(compartmentId, id, savedCustomTables, savedReportId);
+        }
+        public GetCustomTablesCustomTableCollectionItem build() {
+            final var o = new GetCustomTablesCustomTableCollectionItem();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.savedCustomTables = savedCustomTables;
+            o.savedReportId = savedReportId;
+            return o;
         }
     }
 }

@@ -20,197 +20,138 @@ public final class GetVmClusterResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final Integer cpuCoreCount;
+    private String compartmentId;
+    private Integer cpuCoreCount;
     /**
      * @return The number of enabled CPU cores.
      * 
      */
-    private final Integer cpusEnabled;
+    private Integer cpusEnabled;
     /**
-     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    private final List<GetVmClusterDataCollectionOption> dataCollectionOptions;
-    private final Double dataStorageSizeInGb;
+    private List<GetVmClusterDataCollectionOption> dataCollectionOptions;
+    /**
+     * @return Size of the DATA disk group in GBs.
+     * 
+     */
+    private Double dataStorageSizeInGb;
     /**
      * @return Size, in terabytes, of the DATA disk group.
      * 
      */
-    private final Double dataStorageSizeInTbs;
+    private Double dataStorageSizeInTbs;
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    private final Integer dbNodeStorageSizeInGbs;
+    private Integer dbNodeStorageSizeInGbs;
     /**
      * @return The list of Db server.
      * 
      */
-    private final List<String> dbServers;
+    private List<String> dbServers;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    private final String exadataInfrastructureId;
+    private String exadataInfrastructureId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The Oracle Grid Infrastructure software version for the VM cluster.
      * 
      */
-    private final String giVersion;
+    private String giVersion;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      * 
      */
-    private final Boolean isLocalBackupEnabled;
+    private Boolean isLocalBackupEnabled;
     /**
      * @return If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      * 
      */
-    private final Boolean isSparseDiskgroupEnabled;
+    private Boolean isSparseDiskgroupEnabled;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    private final String lastPatchHistoryEntryId;
+    private String lastPatchHistoryEntryId;
     /**
      * @return The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
      * 
      */
-    private final String licenseModel;
+    private String licenseModel;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    private final Integer memorySizeInGbs;
-    private final Double ocpuCount;
-    private final Double ocpusEnabled;
+    private Integer memorySizeInGbs;
+    private Double ocpuCount;
+    private Double ocpusEnabled;
     /**
      * @return The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the VM cluster.
      * 
      */
-    private final List<String> sshPublicKeys;
+    private List<String> sshPublicKeys;
     /**
      * @return The current state of the VM cluster.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Operating system version of the image.
      * 
      */
-    private final String systemVersion;
+    private String systemVersion;
     /**
      * @return The date and time that the VM cluster was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    private final String timeZone;
-    private final String vmClusterId;
+    private String timeZone;
+    private String vmClusterId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
      */
-    private final String vmClusterNetworkId;
+    private String vmClusterNetworkId;
 
-    @CustomType.Constructor
-    private GetVmClusterResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("cpuCoreCount") Integer cpuCoreCount,
-        @CustomType.Parameter("cpusEnabled") Integer cpusEnabled,
-        @CustomType.Parameter("dataCollectionOptions") List<GetVmClusterDataCollectionOption> dataCollectionOptions,
-        @CustomType.Parameter("dataStorageSizeInGb") Double dataStorageSizeInGb,
-        @CustomType.Parameter("dataStorageSizeInTbs") Double dataStorageSizeInTbs,
-        @CustomType.Parameter("dbNodeStorageSizeInGbs") Integer dbNodeStorageSizeInGbs,
-        @CustomType.Parameter("dbServers") List<String> dbServers,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("exadataInfrastructureId") String exadataInfrastructureId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("giVersion") String giVersion,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isLocalBackupEnabled") Boolean isLocalBackupEnabled,
-        @CustomType.Parameter("isSparseDiskgroupEnabled") Boolean isSparseDiskgroupEnabled,
-        @CustomType.Parameter("lastPatchHistoryEntryId") String lastPatchHistoryEntryId,
-        @CustomType.Parameter("licenseModel") String licenseModel,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("memorySizeInGbs") Integer memorySizeInGbs,
-        @CustomType.Parameter("ocpuCount") Double ocpuCount,
-        @CustomType.Parameter("ocpusEnabled") Double ocpusEnabled,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("sshPublicKeys") List<String> sshPublicKeys,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemVersion") String systemVersion,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeZone") String timeZone,
-        @CustomType.Parameter("vmClusterId") String vmClusterId,
-        @CustomType.Parameter("vmClusterNetworkId") String vmClusterNetworkId) {
-        this.compartmentId = compartmentId;
-        this.cpuCoreCount = cpuCoreCount;
-        this.cpusEnabled = cpusEnabled;
-        this.dataCollectionOptions = dataCollectionOptions;
-        this.dataStorageSizeInGb = dataStorageSizeInGb;
-        this.dataStorageSizeInTbs = dataStorageSizeInTbs;
-        this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
-        this.dbServers = dbServers;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.exadataInfrastructureId = exadataInfrastructureId;
-        this.freeformTags = freeformTags;
-        this.giVersion = giVersion;
-        this.id = id;
-        this.isLocalBackupEnabled = isLocalBackupEnabled;
-        this.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
-        this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
-        this.licenseModel = licenseModel;
-        this.lifecycleDetails = lifecycleDetails;
-        this.memorySizeInGbs = memorySizeInGbs;
-        this.ocpuCount = ocpuCount;
-        this.ocpusEnabled = ocpusEnabled;
-        this.shape = shape;
-        this.sshPublicKeys = sshPublicKeys;
-        this.state = state;
-        this.systemVersion = systemVersion;
-        this.timeCreated = timeCreated;
-        this.timeZone = timeZone;
-        this.vmClusterId = vmClusterId;
-        this.vmClusterNetworkId = vmClusterNetworkId;
-    }
-
+    private GetVmClusterResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -229,12 +170,16 @@ public final class GetVmClusterResult {
         return this.cpusEnabled;
     }
     /**
-     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     public List<GetVmClusterDataCollectionOption> dataCollectionOptions() {
         return this.dataCollectionOptions;
     }
+    /**
+     * @return Size of the DATA disk group in GBs.
+     * 
+     */
     public Double dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
     }
@@ -409,7 +354,7 @@ public final class GetVmClusterResult {
     public static Builder builder(GetVmClusterResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Integer cpuCoreCount;
@@ -441,11 +386,7 @@ public final class GetVmClusterResult {
         private String timeZone;
         private String vmClusterId;
         private String vmClusterNetworkId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -480,18 +421,22 @@ public final class GetVmClusterResult {
     	      this.vmClusterNetworkId = defaults.vmClusterNetworkId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder cpusEnabled(Integer cpusEnabled) {
             this.cpusEnabled = Objects.requireNonNull(cpusEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder dataCollectionOptions(List<GetVmClusterDataCollectionOption> dataCollectionOptions) {
             this.dataCollectionOptions = Objects.requireNonNull(dataCollectionOptions);
             return this;
@@ -499,18 +444,22 @@ public final class GetVmClusterResult {
         public Builder dataCollectionOptions(GetVmClusterDataCollectionOption... dataCollectionOptions) {
             return dataCollectionOptions(List.of(dataCollectionOptions));
         }
+        @CustomType.Setter
         public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
             return this;
         }
+        @CustomType.Setter
         public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
             this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
             return this;
         }
+        @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
             this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder dbServers(List<String> dbServers) {
             this.dbServers = Objects.requireNonNull(dbServers);
             return this;
@@ -518,66 +467,82 @@ public final class GetVmClusterResult {
         public Builder dbServers(String... dbServers) {
             return dbServers(List.of(dbServers));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder giVersion(String giVersion) {
             this.giVersion = Objects.requireNonNull(giVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isLocalBackupEnabled(Boolean isLocalBackupEnabled) {
             this.isLocalBackupEnabled = Objects.requireNonNull(isLocalBackupEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isSparseDiskgroupEnabled(Boolean isSparseDiskgroupEnabled) {
             this.isSparseDiskgroupEnabled = Objects.requireNonNull(isSparseDiskgroupEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
             this.lastPatchHistoryEntryId = Objects.requireNonNull(lastPatchHistoryEntryId);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
             this.licenseModel = Objects.requireNonNull(licenseModel);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
             this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuCount(Double ocpuCount) {
             this.ocpuCount = Objects.requireNonNull(ocpuCount);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpusEnabled(Double ocpusEnabled) {
             this.ocpusEnabled = Objects.requireNonNull(ocpusEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder sshPublicKeys(List<String> sshPublicKeys) {
             this.sshPublicKeys = Objects.requireNonNull(sshPublicKeys);
             return this;
@@ -585,31 +550,69 @@ public final class GetVmClusterResult {
         public Builder sshPublicKeys(String... sshPublicKeys) {
             return sshPublicKeys(List.of(sshPublicKeys));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemVersion(String systemVersion) {
             this.systemVersion = Objects.requireNonNull(systemVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeZone(String timeZone) {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = Objects.requireNonNull(vmClusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterNetworkId(String vmClusterNetworkId) {
             this.vmClusterNetworkId = Objects.requireNonNull(vmClusterNetworkId);
             return this;
-        }        public GetVmClusterResult build() {
-            return new GetVmClusterResult(compartmentId, cpuCoreCount, cpusEnabled, dataCollectionOptions, dataStorageSizeInGb, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, dbServers, definedTags, displayName, exadataInfrastructureId, freeformTags, giVersion, id, isLocalBackupEnabled, isSparseDiskgroupEnabled, lastPatchHistoryEntryId, licenseModel, lifecycleDetails, memorySizeInGbs, ocpuCount, ocpusEnabled, shape, sshPublicKeys, state, systemVersion, timeCreated, timeZone, vmClusterId, vmClusterNetworkId);
+        }
+        public GetVmClusterResult build() {
+            final var o = new GetVmClusterResult();
+            o.compartmentId = compartmentId;
+            o.cpuCoreCount = cpuCoreCount;
+            o.cpusEnabled = cpusEnabled;
+            o.dataCollectionOptions = dataCollectionOptions;
+            o.dataStorageSizeInGb = dataStorageSizeInGb;
+            o.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            o.dbServers = dbServers;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.exadataInfrastructureId = exadataInfrastructureId;
+            o.freeformTags = freeformTags;
+            o.giVersion = giVersion;
+            o.id = id;
+            o.isLocalBackupEnabled = isLocalBackupEnabled;
+            o.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
+            o.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
+            o.licenseModel = licenseModel;
+            o.lifecycleDetails = lifecycleDetails;
+            o.memorySizeInGbs = memorySizeInGbs;
+            o.ocpuCount = ocpuCount;
+            o.ocpusEnabled = ocpusEnabled;
+            o.shape = shape;
+            o.sshPublicKeys = sshPublicKeys;
+            o.state = state;
+            o.systemVersion = systemVersion;
+            o.timeCreated = timeCreated;
+            o.timeZone = timeZone;
+            o.vmClusterId = vmClusterId;
+            o.vmClusterNetworkId = vmClusterNetworkId;
+            return o;
         }
     }
 }

@@ -17,31 +17,20 @@ public final class GetKeyStoresResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetKeyStoresFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetKeyStoresFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of key_stores.
      * 
      */
-    private final List<GetKeyStoresKeyStore> keyStores;
+    private List<GetKeyStoresKeyStore> keyStores;
 
-    @CustomType.Constructor
-    private GetKeyStoresResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetKeyStoresFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("keyStores") List<GetKeyStoresKeyStore> keyStores) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.keyStores = keyStores;
-    }
-
+    private GetKeyStoresResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -74,17 +63,13 @@ public final class GetKeyStoresResult {
     public static Builder builder(GetKeyStoresResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetKeyStoresFilter> filters;
         private String id;
         private List<GetKeyStoresKeyStore> keyStores;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetKeyStoresResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -93,10 +78,12 @@ public final class GetKeyStoresResult {
     	      this.keyStores = defaults.keyStores;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetKeyStoresFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,18 +91,26 @@ public final class GetKeyStoresResult {
         public Builder filters(GetKeyStoresFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder keyStores(List<GetKeyStoresKeyStore> keyStores) {
             this.keyStores = Objects.requireNonNull(keyStores);
             return this;
         }
         public Builder keyStores(GetKeyStoresKeyStore... keyStores) {
             return keyStores(List.of(keyStores));
-        }        public GetKeyStoresResult build() {
-            return new GetKeyStoresResult(compartmentId, filters, id, keyStores);
+        }
+        public GetKeyStoresResult build() {
+            final var o = new GetKeyStoresResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.keyStores = keyStores;
+            return o;
         }
     }
 }

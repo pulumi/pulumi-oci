@@ -14,21 +14,14 @@ public final class GetInstanceAvailabilityConfig {
      * @return Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
      * 
      */
-    private final Boolean isLiveMigrationPreferred;
+    private Boolean isLiveMigrationPreferred;
     /**
      * @return The lifecycle state for an instance when it is recovered after infrastructure maintenance.
      * 
      */
-    private final String recoveryAction;
+    private String recoveryAction;
 
-    @CustomType.Constructor
-    private GetInstanceAvailabilityConfig(
-        @CustomType.Parameter("isLiveMigrationPreferred") Boolean isLiveMigrationPreferred,
-        @CustomType.Parameter("recoveryAction") String recoveryAction) {
-        this.isLiveMigrationPreferred = isLiveMigrationPreferred;
-        this.recoveryAction = recoveryAction;
-    }
-
+    private GetInstanceAvailabilityConfig() {}
     /**
      * @return Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
      * 
@@ -51,30 +44,32 @@ public final class GetInstanceAvailabilityConfig {
     public static Builder builder(GetInstanceAvailabilityConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isLiveMigrationPreferred;
         private String recoveryAction;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceAvailabilityConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isLiveMigrationPreferred = defaults.isLiveMigrationPreferred;
     	      this.recoveryAction = defaults.recoveryAction;
         }
 
+        @CustomType.Setter
         public Builder isLiveMigrationPreferred(Boolean isLiveMigrationPreferred) {
             this.isLiveMigrationPreferred = Objects.requireNonNull(isLiveMigrationPreferred);
             return this;
         }
+        @CustomType.Setter
         public Builder recoveryAction(String recoveryAction) {
             this.recoveryAction = Objects.requireNonNull(recoveryAction);
             return this;
-        }        public GetInstanceAvailabilityConfig build() {
-            return new GetInstanceAvailabilityConfig(isLiveMigrationPreferred, recoveryAction);
+        }
+        public GetInstanceAvailabilityConfig build() {
+            final var o = new GetInstanceAvailabilityConfig();
+            o.isLiveMigrationPreferred = isLiveMigrationPreferred;
+            o.recoveryAction = recoveryAction;
+            return o;
         }
     }
 }

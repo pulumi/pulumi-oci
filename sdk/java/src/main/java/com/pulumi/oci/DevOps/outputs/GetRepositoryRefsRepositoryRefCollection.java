@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRepositoryRefsRepositoryRefCollection {
-    private final List<GetRepositoryRefsRepositoryRefCollectionItem> items;
+    private List<GetRepositoryRefsRepositoryRefCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRepositoryRefsRepositoryRefCollection(@CustomType.Parameter("items") List<GetRepositoryRefsRepositoryRefCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRepositoryRefsRepositoryRefCollection() {}
     public List<GetRepositoryRefsRepositoryRefCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetRepositoryRefsRepositoryRefCollection {
     public static Builder builder(GetRepositoryRefsRepositoryRefCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRepositoryRefsRepositoryRefCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryRefsRepositoryRefCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRepositoryRefsRepositoryRefCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRepositoryRefsRepositoryRefCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRepositoryRefsRepositoryRefCollection build() {
-            return new GetRepositoryRefsRepositoryRefCollection(items);
+        }
+        public GetRepositoryRefsRepositoryRefCollection build() {
+            final var o = new GetRepositoryRefsRepositoryRefCollection();
+            o.items = items;
+            return o;
         }
     }
 }

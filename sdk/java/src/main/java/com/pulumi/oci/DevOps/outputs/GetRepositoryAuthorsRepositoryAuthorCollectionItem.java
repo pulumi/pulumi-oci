@@ -15,28 +15,19 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
      * @return Author name.
      * 
      */
-    private final String authorName;
+    private String authorName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
 
-    @CustomType.Constructor
-    private GetRepositoryAuthorsRepositoryAuthorCollectionItem(
-        @CustomType.Parameter("authorName") String authorName,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags) {
-        this.authorName = authorName;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-    }
-
+    private GetRepositoryAuthorsRepositoryAuthorCollectionItem() {}
     /**
      * @return Author name.
      * 
@@ -66,16 +57,12 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
     public static Builder builder(GetRepositoryAuthorsRepositoryAuthorCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String authorName;
         private Map<String,Object> definedTags;
         private Map<String,Object> freeformTags;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryAuthorsRepositoryAuthorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authorName = defaults.authorName;
@@ -83,19 +70,27 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
         }
 
+        @CustomType.Setter
         public Builder authorName(String authorName) {
             this.authorName = Objects.requireNonNull(authorName);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
-        }        public GetRepositoryAuthorsRepositoryAuthorCollectionItem build() {
-            return new GetRepositoryAuthorsRepositoryAuthorCollectionItem(authorName, definedTags, freeformTags);
+        }
+        public GetRepositoryAuthorsRepositoryAuthorCollectionItem build() {
+            final var o = new GetRepositoryAuthorsRepositoryAuthorCollectionItem();
+            o.authorName = authorName;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            return o;
         }
     }
 }

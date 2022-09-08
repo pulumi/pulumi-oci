@@ -13,21 +13,14 @@ public final class GetKeyStoresKeyStoreAssociatedDatabase {
      * @return The name of the database that is associated with the key store.
      * 
      */
-    private final String dbName;
+    private String dbName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetKeyStoresKeyStoreAssociatedDatabase(
-        @CustomType.Parameter("dbName") String dbName,
-        @CustomType.Parameter("id") String id) {
-        this.dbName = dbName;
-        this.id = id;
-    }
-
+    private GetKeyStoresKeyStoreAssociatedDatabase() {}
     /**
      * @return The name of the database that is associated with the key store.
      * 
@@ -50,30 +43,32 @@ public final class GetKeyStoresKeyStoreAssociatedDatabase {
     public static Builder builder(GetKeyStoresKeyStoreAssociatedDatabase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbName;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetKeyStoresKeyStoreAssociatedDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbName = defaults.dbName;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetKeyStoresKeyStoreAssociatedDatabase build() {
-            return new GetKeyStoresKeyStoreAssociatedDatabase(dbName, id);
+        }
+        public GetKeyStoresKeyStoreAssociatedDatabase build() {
+            final var o = new GetKeyStoresKeyStoreAssociatedDatabase();
+            o.dbName = dbName;
+            o.id = id;
+            return o;
         }
     }
 }

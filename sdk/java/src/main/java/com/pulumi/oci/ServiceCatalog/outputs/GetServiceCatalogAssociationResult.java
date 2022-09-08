@@ -13,45 +13,30 @@ public final class GetServiceCatalogAssociationResult {
      * @return Identifier of the entity being associated with service catalog.
      * 
      */
-    private final String entityId;
+    private String entityId;
     /**
      * @return The type of the entity that is associated with the service catalog.
      * 
      */
-    private final String entityType;
+    private String entityType;
     /**
      * @return Identifier of the association.
      * 
      */
-    private final String id;
-    private final String serviceCatalogAssociationId;
+    private String id;
+    private String serviceCatalogAssociationId;
     /**
      * @return Identifier of the service catalog.
      * 
      */
-    private final String serviceCatalogId;
+    private String serviceCatalogId;
     /**
      * @return Timestamp of when the resource was associated with service catalog.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetServiceCatalogAssociationResult(
-        @CustomType.Parameter("entityId") String entityId,
-        @CustomType.Parameter("entityType") String entityType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("serviceCatalogAssociationId") String serviceCatalogAssociationId,
-        @CustomType.Parameter("serviceCatalogId") String serviceCatalogId,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.entityId = entityId;
-        this.entityType = entityType;
-        this.id = id;
-        this.serviceCatalogAssociationId = serviceCatalogAssociationId;
-        this.serviceCatalogId = serviceCatalogId;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetServiceCatalogAssociationResult() {}
     /**
      * @return Identifier of the entity being associated with service catalog.
      * 
@@ -98,7 +83,7 @@ public final class GetServiceCatalogAssociationResult {
     public static Builder builder(GetServiceCatalogAssociationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String entityId;
         private String entityType;
@@ -106,11 +91,7 @@ public final class GetServiceCatalogAssociationResult {
         private String serviceCatalogAssociationId;
         private String serviceCatalogId;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceCatalogAssociationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.entityId = defaults.entityId;
@@ -121,31 +102,45 @@ public final class GetServiceCatalogAssociationResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder entityId(String entityId) {
             this.entityId = Objects.requireNonNull(entityId);
             return this;
         }
+        @CustomType.Setter
         public Builder entityType(String entityType) {
             this.entityType = Objects.requireNonNull(entityType);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceCatalogAssociationId(String serviceCatalogAssociationId) {
             this.serviceCatalogAssociationId = Objects.requireNonNull(serviceCatalogAssociationId);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceCatalogId(String serviceCatalogId) {
             this.serviceCatalogId = Objects.requireNonNull(serviceCatalogId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetServiceCatalogAssociationResult build() {
-            return new GetServiceCatalogAssociationResult(entityId, entityType, id, serviceCatalogAssociationId, serviceCatalogId, timeCreated);
+        }
+        public GetServiceCatalogAssociationResult build() {
+            final var o = new GetServiceCatalogAssociationResult();
+            o.entityId = entityId;
+            o.entityType = entityType;
+            o.id = id;
+            o.serviceCatalogAssociationId = serviceCatalogAssociationId;
+            o.serviceCatalogId = serviceCatalogId;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

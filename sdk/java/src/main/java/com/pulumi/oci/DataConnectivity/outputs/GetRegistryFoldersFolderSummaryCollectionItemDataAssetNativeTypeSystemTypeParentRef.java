@@ -13,13 +13,9 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeT
      * @return Key of the parent object.
      * 
      */
-    private final String parent;
+    private String parent;
 
-    @CustomType.Constructor
-    private GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef(@CustomType.Parameter("parent") String parent) {
-        this.parent = parent;
-    }
-
+    private GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef() {}
     /**
      * @return Key of the parent object.
      * 
@@ -35,24 +31,24 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeT
     public static Builder builder(GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String parent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parent = defaults.parent;
         }
 
+        @CustomType.Setter
         public Builder parent(String parent) {
             this.parent = Objects.requireNonNull(parent);
             return this;
-        }        public GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef build() {
-            return new GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef(parent);
+        }
+        public GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef build() {
+            final var o = new GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef();
+            o.parent = parent;
+            return o;
         }
     }
 }

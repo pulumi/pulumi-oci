@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRegionSubscriptionsResult {
-    private final @Nullable List<GetRegionSubscriptionsFilter> filters;
+    private @Nullable List<GetRegionSubscriptionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of region_subscriptions.
      * 
      */
-    private final List<GetRegionSubscriptionsRegionSubscription> regionSubscriptions;
-    private final String tenancyId;
+    private List<GetRegionSubscriptionsRegionSubscription> regionSubscriptions;
+    private String tenancyId;
 
-    @CustomType.Constructor
-    private GetRegionSubscriptionsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetRegionSubscriptionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("regionSubscriptions") List<GetRegionSubscriptionsRegionSubscription> regionSubscriptions,
-        @CustomType.Parameter("tenancyId") String tenancyId) {
-        this.filters = filters;
-        this.id = id;
-        this.regionSubscriptions = regionSubscriptions;
-        this.tenancyId = tenancyId;
-    }
-
+    private GetRegionSubscriptionsResult() {}
     public List<GetRegionSubscriptionsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetRegionSubscriptionsResult {
     public static Builder builder(GetRegionSubscriptionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRegionSubscriptionsFilter> filters;
         private String id;
         private List<GetRegionSubscriptionsRegionSubscription> regionSubscriptions;
         private String tenancyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegionSubscriptionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetRegionSubscriptionsResult {
     	      this.tenancyId = defaults.tenancyId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRegionSubscriptionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,10 +78,12 @@ public final class GetRegionSubscriptionsResult {
         public Builder filters(GetRegionSubscriptionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder regionSubscriptions(List<GetRegionSubscriptionsRegionSubscription> regionSubscriptions) {
             this.regionSubscriptions = Objects.requireNonNull(regionSubscriptions);
             return this;
@@ -103,11 +91,18 @@ public final class GetRegionSubscriptionsResult {
         public Builder regionSubscriptions(GetRegionSubscriptionsRegionSubscription... regionSubscriptions) {
             return regionSubscriptions(List.of(regionSubscriptions));
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
-        }        public GetRegionSubscriptionsResult build() {
-            return new GetRegionSubscriptionsResult(filters, id, regionSubscriptions, tenancyId);
+        }
+        public GetRegionSubscriptionsResult build() {
+            final var o = new GetRegionSubscriptionsResult();
+            o.filters = filters;
+            o.id = id;
+            o.regionSubscriptions = regionSubscriptions;
+            o.tenancyId = tenancyId;
+            return o;
         }
     }
 }

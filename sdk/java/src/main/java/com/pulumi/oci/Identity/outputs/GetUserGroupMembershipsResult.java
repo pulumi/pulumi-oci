@@ -18,45 +18,30 @@ public final class GetUserGroupMembershipsResult {
      * @return The OCID of the tenancy containing the user, group, and membership object.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetUserGroupMembershipsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetUserGroupMembershipsFilter> filters;
     /**
      * @return The OCID of the group.
      * 
      */
-    private final @Nullable String groupId;
+    private @Nullable String groupId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of memberships.
      * 
      */
-    private final List<GetUserGroupMembershipsMembership> memberships;
+    private List<GetUserGroupMembershipsMembership> memberships;
     /**
      * @return The OCID of the user.
      * 
      */
-    private final @Nullable String userId;
+    private @Nullable String userId;
 
-    @CustomType.Constructor
-    private GetUserGroupMembershipsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetUserGroupMembershipsFilter> filters,
-        @CustomType.Parameter("groupId") @Nullable String groupId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("memberships") List<GetUserGroupMembershipsMembership> memberships,
-        @CustomType.Parameter("userId") @Nullable String userId) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.groupId = groupId;
-        this.id = id;
-        this.memberships = memberships;
-        this.userId = userId;
-    }
-
+    private GetUserGroupMembershipsResult() {}
     /**
      * @return The OCID of the tenancy containing the user, group, and membership object.
      * 
@@ -103,7 +88,7 @@ public final class GetUserGroupMembershipsResult {
     public static Builder builder(GetUserGroupMembershipsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetUserGroupMembershipsFilter> filters;
@@ -111,11 +96,7 @@ public final class GetUserGroupMembershipsResult {
         private String id;
         private List<GetUserGroupMembershipsMembership> memberships;
         private @Nullable String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserGroupMembershipsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetUserGroupMembershipsResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetUserGroupMembershipsFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,14 +120,17 @@ public final class GetUserGroupMembershipsResult {
         public Builder filters(GetUserGroupMembershipsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder groupId(@Nullable String groupId) {
             this.groupId = groupId;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder memberships(List<GetUserGroupMembershipsMembership> memberships) {
             this.memberships = Objects.requireNonNull(memberships);
             return this;
@@ -152,11 +138,20 @@ public final class GetUserGroupMembershipsResult {
         public Builder memberships(GetUserGroupMembershipsMembership... memberships) {
             return memberships(List.of(memberships));
         }
+        @CustomType.Setter
         public Builder userId(@Nullable String userId) {
             this.userId = userId;
             return this;
-        }        public GetUserGroupMembershipsResult build() {
-            return new GetUserGroupMembershipsResult(compartmentId, filters, groupId, id, memberships, userId);
+        }
+        public GetUserGroupMembershipsResult build() {
+            final var o = new GetUserGroupMembershipsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.groupId = groupId;
+            o.id = id;
+            o.memberships = memberships;
+            o.userId = userId;
+            return o;
         }
     }
 }

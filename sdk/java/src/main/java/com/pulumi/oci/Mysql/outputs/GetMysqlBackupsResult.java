@@ -14,66 +14,45 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlBackupsResult {
-    private final @Nullable String backupId;
+    private @Nullable String backupId;
     /**
      * @return The list of backups.
      * 
      */
-    private final List<GetMysqlBackupsBackup> backups;
+    private List<GetMysqlBackupsBackup> backups;
     /**
      * @return The OCID of the compartment the DB System belongs in.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Indicates how the backup was created: manually, automatic, or by an Operator.
      * 
      */
-    private final @Nullable String creationType;
+    private @Nullable String creationType;
     /**
      * @return The OCID of the DB System the backup is associated with.
      * 
      */
-    private final @Nullable String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return A user-supplied display name for the backup.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetMysqlBackupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetMysqlBackupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The state of the backup.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetMysqlBackupsResult(
-        @CustomType.Parameter("backupId") @Nullable String backupId,
-        @CustomType.Parameter("backups") List<GetMysqlBackupsBackup> backups,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("creationType") @Nullable String creationType,
-        @CustomType.Parameter("dbSystemId") @Nullable String dbSystemId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetMysqlBackupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.backupId = backupId;
-        this.backups = backups;
-        this.compartmentId = compartmentId;
-        this.creationType = creationType;
-        this.dbSystemId = dbSystemId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetMysqlBackupsResult() {}
     public Optional<String> backupId() {
         return Optional.ofNullable(this.backupId);
     }
@@ -137,7 +116,7 @@ public final class GetMysqlBackupsResult {
     public static Builder builder(GetMysqlBackupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String backupId;
         private List<GetMysqlBackupsBackup> backups;
@@ -148,11 +127,7 @@ public final class GetMysqlBackupsResult {
         private @Nullable List<GetMysqlBackupsFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlBackupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
@@ -166,10 +141,12 @@ public final class GetMysqlBackupsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
             this.backupId = backupId;
             return this;
         }
+        @CustomType.Setter
         public Builder backups(List<GetMysqlBackupsBackup> backups) {
             this.backups = Objects.requireNonNull(backups);
             return this;
@@ -177,22 +154,27 @@ public final class GetMysqlBackupsResult {
         public Builder backups(GetMysqlBackupsBackup... backups) {
             return backups(List.of(backups));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder creationType(@Nullable String creationType) {
             this.creationType = creationType;
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
             this.dbSystemId = dbSystemId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMysqlBackupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -200,15 +182,28 @@ public final class GetMysqlBackupsResult {
         public Builder filters(GetMysqlBackupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetMysqlBackupsResult build() {
-            return new GetMysqlBackupsResult(backupId, backups, compartmentId, creationType, dbSystemId, displayName, filters, id, state);
+        }
+        public GetMysqlBackupsResult build() {
+            final var o = new GetMysqlBackupsResult();
+            o.backupId = backupId;
+            o.backups = backups;
+            o.compartmentId = compartmentId;
+            o.creationType = creationType;
+            o.dbSystemId = dbSystemId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

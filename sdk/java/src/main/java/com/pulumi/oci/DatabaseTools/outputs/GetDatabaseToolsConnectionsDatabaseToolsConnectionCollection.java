@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection {
-    private final List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem> items;
+    private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection(@CustomType.Parameter("items") List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection() {}
     public List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection 
     public static Builder builder(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection build() {
-            return new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection(items);
+        }
+        public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection build() {
+            final var o = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection();
+            o.items = items;
+            return o;
         }
     }
 }

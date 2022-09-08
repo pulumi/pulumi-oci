@@ -13,63 +13,44 @@ public final class GetAuthTokensToken {
      * @return The description you assign to the auth token. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The OCID of the auth token.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private final String inactiveState;
+    private String inactiveState;
     /**
      * @return The token&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Date and time the `AuthToken` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Date and time when this auth token will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeExpires;
+    private String timeExpires;
     /**
      * @return The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
      * 
      */
-    private final String token;
+    private String token;
     /**
      * @return The OCID of the user.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetAuthTokensToken(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inactiveState") String inactiveState,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeExpires") String timeExpires,
-        @CustomType.Parameter("token") String token,
-        @CustomType.Parameter("userId") String userId) {
-        this.description = description;
-        this.id = id;
-        this.inactiveState = inactiveState;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeExpires = timeExpires;
-        this.token = token;
-        this.userId = userId;
-    }
-
+    private GetAuthTokensToken() {}
     /**
      * @return The description you assign to the auth token. Does not have to be unique, and it&#39;s changeable.
      * 
@@ -134,7 +115,7 @@ public final class GetAuthTokensToken {
     public static Builder builder(GetAuthTokensToken defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String id;
@@ -144,11 +125,7 @@ public final class GetAuthTokensToken {
         private String timeExpires;
         private String token;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuthTokensToken defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -161,39 +138,57 @@ public final class GetAuthTokensToken {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
             this.inactiveState = Objects.requireNonNull(inactiveState);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
             this.timeExpires = Objects.requireNonNull(timeExpires);
             return this;
         }
+        @CustomType.Setter
         public Builder token(String token) {
             this.token = Objects.requireNonNull(token);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetAuthTokensToken build() {
-            return new GetAuthTokensToken(description, id, inactiveState, state, timeCreated, timeExpires, token, userId);
+        }
+        public GetAuthTokensToken build() {
+            final var o = new GetAuthTokensToken();
+            o.description = description;
+            o.id = id;
+            o.inactiveState = inactiveState;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeExpires = timeExpires;
+            o.token = token;
+            o.userId = userId;
+            return o;
         }
     }
 }

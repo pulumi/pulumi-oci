@@ -13,13 +13,9 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
      * @return Key of the parent object.
      * 
      */
-    private final String parent;
+    private String parent;
 
-    @CustomType.Constructor
-    private GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef(@CustomType.Parameter("parent") String parent) {
-        this.parent = parent;
-    }
-
+    private GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef() {}
     /**
      * @return Key of the parent object.
      * 
@@ -35,24 +31,24 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
     public static Builder builder(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String parent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parent = defaults.parent;
         }
 
+        @CustomType.Setter
         public Builder parent(String parent) {
             this.parent = Objects.requireNonNull(parent);
             return this;
-        }        public GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef build() {
-            return new GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef(parent);
+        }
+        public GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef build() {
+            final var o = new GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef();
+            o.parent = parent;
+            return o;
         }
     }
 }

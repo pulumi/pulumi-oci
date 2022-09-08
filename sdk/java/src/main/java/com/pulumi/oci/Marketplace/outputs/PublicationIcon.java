@@ -15,35 +15,24 @@ public final class PublicationIcon {
      * @return The content URL of the upload data.
      * 
      */
-    private final @Nullable String contentUrl;
+    private @Nullable String contentUrl;
     /**
      * @return The file extension of the upload data.
      * 
      */
-    private final @Nullable String fileExtension;
+    private @Nullable String fileExtension;
     /**
      * @return The MIME type of the upload data.
      * 
      */
-    private final @Nullable String mimeType;
+    private @Nullable String mimeType;
     /**
      * @return (Updatable) The name of the contact.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private PublicationIcon(
-        @CustomType.Parameter("contentUrl") @Nullable String contentUrl,
-        @CustomType.Parameter("fileExtension") @Nullable String fileExtension,
-        @CustomType.Parameter("mimeType") @Nullable String mimeType,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.contentUrl = contentUrl;
-        this.fileExtension = fileExtension;
-        this.mimeType = mimeType;
-        this.name = name;
-    }
-
+    private PublicationIcon() {}
     /**
      * @return The content URL of the upload data.
      * 
@@ -80,17 +69,13 @@ public final class PublicationIcon {
     public static Builder builder(PublicationIcon defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String contentUrl;
         private @Nullable String fileExtension;
         private @Nullable String mimeType;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PublicationIcon defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contentUrl = defaults.contentUrl;
@@ -99,23 +84,33 @@ public final class PublicationIcon {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder contentUrl(@Nullable String contentUrl) {
             this.contentUrl = contentUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder fileExtension(@Nullable String fileExtension) {
             this.fileExtension = fileExtension;
             return this;
         }
+        @CustomType.Setter
         public Builder mimeType(@Nullable String mimeType) {
             this.mimeType = mimeType;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public PublicationIcon build() {
-            return new PublicationIcon(contentUrl, fileExtension, mimeType, name);
+        }
+        public PublicationIcon build() {
+            final var o = new PublicationIcon();
+            o.contentUrl = contentUrl;
+            o.fileExtension = fileExtension;
+            o.mimeType = mimeType;
+            o.name = name;
+            return o;
         }
     }
 }

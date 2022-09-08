@@ -19,59 +19,40 @@ public final class GetDbManagementPrivateEndpointsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of db_management_private_endpoint_collection.
      * 
      */
-    private final List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections;
-    private final @Nullable List<GetDbManagementPrivateEndpointsFilter> filters;
+    private List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections;
+    private @Nullable List<GetDbManagementPrivateEndpointsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
      * 
      */
-    private final @Nullable Boolean isCluster;
+    private @Nullable Boolean isCluster;
     /**
      * @return The display name of the Database Management private endpoint.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current lifecycle state of the Database Management private endpoint.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetDbManagementPrivateEndpointsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbManagementPrivateEndpointCollections") List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetDbManagementPrivateEndpointsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCluster") @Nullable Boolean isCluster,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.compartmentId = compartmentId;
-        this.dbManagementPrivateEndpointCollections = dbManagementPrivateEndpointCollections;
-        this.filters = filters;
-        this.id = id;
-        this.isCluster = isCluster;
-        this.name = name;
-        this.state = state;
-        this.vcnId = vcnId;
-    }
-
+    private GetDbManagementPrivateEndpointsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -132,7 +113,7 @@ public final class GetDbManagementPrivateEndpointsResult {
     public static Builder builder(GetDbManagementPrivateEndpointsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections;
@@ -142,11 +123,7 @@ public final class GetDbManagementPrivateEndpointsResult {
         private @Nullable String name;
         private @Nullable String state;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbManagementPrivateEndpointsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -159,10 +136,12 @@ public final class GetDbManagementPrivateEndpointsResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbManagementPrivateEndpointCollections(List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections) {
             this.dbManagementPrivateEndpointCollections = Objects.requireNonNull(dbManagementPrivateEndpointCollections);
             return this;
@@ -170,6 +149,7 @@ public final class GetDbManagementPrivateEndpointsResult {
         public Builder dbManagementPrivateEndpointCollections(GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection... dbManagementPrivateEndpointCollections) {
             return dbManagementPrivateEndpointCollections(List.of(dbManagementPrivateEndpointCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbManagementPrivateEndpointsFilter> filters) {
             this.filters = filters;
             return this;
@@ -177,27 +157,42 @@ public final class GetDbManagementPrivateEndpointsResult {
         public Builder filters(GetDbManagementPrivateEndpointsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCluster(@Nullable Boolean isCluster) {
             this.isCluster = isCluster;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetDbManagementPrivateEndpointsResult build() {
-            return new GetDbManagementPrivateEndpointsResult(compartmentId, dbManagementPrivateEndpointCollections, filters, id, isCluster, name, state, vcnId);
+        }
+        public GetDbManagementPrivateEndpointsResult build() {
+            final var o = new GetDbManagementPrivateEndpointsResult();
+            o.compartmentId = compartmentId;
+            o.dbManagementPrivateEndpointCollections = dbManagementPrivateEndpointCollections;
+            o.filters = filters;
+            o.id = id;
+            o.isCluster = isCluster;
+            o.name = name;
+            o.state = state;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

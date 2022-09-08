@@ -14,13 +14,9 @@ public final class GetRecommendationSupportedLevel {
      * @return The list of supported levels.
      * 
      */
-    private final List<GetRecommendationSupportedLevelItem> items;
+    private List<GetRecommendationSupportedLevelItem> items;
 
-    @CustomType.Constructor
-    private GetRecommendationSupportedLevel(@CustomType.Parameter("items") List<GetRecommendationSupportedLevelItem> items) {
-        this.items = items;
-    }
-
+    private GetRecommendationSupportedLevel() {}
     /**
      * @return The list of supported levels.
      * 
@@ -36,27 +32,27 @@ public final class GetRecommendationSupportedLevel {
     public static Builder builder(GetRecommendationSupportedLevel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRecommendationSupportedLevelItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationSupportedLevel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRecommendationSupportedLevelItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRecommendationSupportedLevelItem... items) {
             return items(List.of(items));
-        }        public GetRecommendationSupportedLevel build() {
-            return new GetRecommendationSupportedLevel(items);
+        }
+        public GetRecommendationSupportedLevel build() {
+            final var o = new GetRecommendationSupportedLevel();
+            o.items = items;
+            return o;
         }
     }
 }

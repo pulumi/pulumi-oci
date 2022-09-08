@@ -18,42 +18,29 @@ public final class BdsInstanceCloudSqlDetail {
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    private final String blockVolumeSizeInGbs;
+    private String blockVolumeSizeInGbs;
     /**
      * @return IP address of the node
      * 
      */
-    private final @Nullable String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return Boolean flag specifying whether or not are Kerberos principals mapped to database users.
      * 
      */
-    private final @Nullable Boolean isKerberosMappedToDatabaseUsers;
+    private @Nullable Boolean isKerberosMappedToDatabaseUsers;
     /**
      * @return Details about Kerberos principals
      * 
      */
-    private final @Nullable List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
+    private @Nullable List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
     /**
      * @return Shape of the node
      * 
      */
-    private final String shape;
+    private String shape;
 
-    @CustomType.Constructor
-    private BdsInstanceCloudSqlDetail(
-        @CustomType.Parameter("blockVolumeSizeInGbs") String blockVolumeSizeInGbs,
-        @CustomType.Parameter("ipAddress") @Nullable String ipAddress,
-        @CustomType.Parameter("isKerberosMappedToDatabaseUsers") @Nullable Boolean isKerberosMappedToDatabaseUsers,
-        @CustomType.Parameter("kerberosDetails") @Nullable List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails,
-        @CustomType.Parameter("shape") String shape) {
-        this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
-        this.ipAddress = ipAddress;
-        this.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
-        this.kerberosDetails = kerberosDetails;
-        this.shape = shape;
-    }
-
+    private BdsInstanceCloudSqlDetail() {}
     /**
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
@@ -97,18 +84,14 @@ public final class BdsInstanceCloudSqlDetail {
     public static Builder builder(BdsInstanceCloudSqlDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String blockVolumeSizeInGbs;
         private @Nullable String ipAddress;
         private @Nullable Boolean isKerberosMappedToDatabaseUsers;
         private @Nullable List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
         private String shape;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BdsInstanceCloudSqlDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockVolumeSizeInGbs = defaults.blockVolumeSizeInGbs;
@@ -118,18 +101,22 @@ public final class BdsInstanceCloudSqlDetail {
     	      this.shape = defaults.shape;
         }
 
+        @CustomType.Setter
         public Builder blockVolumeSizeInGbs(String blockVolumeSizeInGbs) {
             this.blockVolumeSizeInGbs = Objects.requireNonNull(blockVolumeSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
             this.ipAddress = ipAddress;
             return this;
         }
+        @CustomType.Setter
         public Builder isKerberosMappedToDatabaseUsers(@Nullable Boolean isKerberosMappedToDatabaseUsers) {
             this.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
             return this;
         }
+        @CustomType.Setter
         public Builder kerberosDetails(@Nullable List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails) {
             this.kerberosDetails = kerberosDetails;
             return this;
@@ -137,11 +124,19 @@ public final class BdsInstanceCloudSqlDetail {
         public Builder kerberosDetails(BdsInstanceCloudSqlDetailKerberosDetail... kerberosDetails) {
             return kerberosDetails(List.of(kerberosDetails));
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
-        }        public BdsInstanceCloudSqlDetail build() {
-            return new BdsInstanceCloudSqlDetail(blockVolumeSizeInGbs, ipAddress, isKerberosMappedToDatabaseUsers, kerberosDetails, shape);
+        }
+        public BdsInstanceCloudSqlDetail build() {
+            final var o = new BdsInstanceCloudSqlDetail();
+            o.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
+            o.ipAddress = ipAddress;
+            o.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
+            o.kerberosDetails = kerberosDetails;
+            o.shape = shape;
+            return o;
         }
     }
 }

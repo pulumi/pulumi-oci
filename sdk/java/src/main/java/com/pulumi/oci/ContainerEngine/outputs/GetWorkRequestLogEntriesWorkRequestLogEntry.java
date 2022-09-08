@@ -13,21 +13,14 @@ public final class GetWorkRequestLogEntriesWorkRequestLogEntry {
      * @return The description of an action that occurred.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The date and time the log entry occurred.
      * 
      */
-    private final String timestamp;
+    private String timestamp;
 
-    @CustomType.Constructor
-    private GetWorkRequestLogEntriesWorkRequestLogEntry(
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("timestamp") String timestamp) {
-        this.message = message;
-        this.timestamp = timestamp;
-    }
-
+    private GetWorkRequestLogEntriesWorkRequestLogEntry() {}
     /**
      * @return The description of an action that occurred.
      * 
@@ -50,30 +43,32 @@ public final class GetWorkRequestLogEntriesWorkRequestLogEntry {
     public static Builder builder(GetWorkRequestLogEntriesWorkRequestLogEntry defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String message;
         private String timestamp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWorkRequestLogEntriesWorkRequestLogEntry defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
     	      this.timestamp = defaults.timestamp;
         }
 
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder timestamp(String timestamp) {
             this.timestamp = Objects.requireNonNull(timestamp);
             return this;
-        }        public GetWorkRequestLogEntriesWorkRequestLogEntry build() {
-            return new GetWorkRequestLogEntriesWorkRequestLogEntry(message, timestamp);
+        }
+        public GetWorkRequestLogEntriesWorkRequestLogEntry build() {
+            final var o = new GetWorkRequestLogEntriesWorkRequestLogEntry();
+            o.message = message;
+            o.timestamp = timestamp;
+            return o;
         }
     }
 }

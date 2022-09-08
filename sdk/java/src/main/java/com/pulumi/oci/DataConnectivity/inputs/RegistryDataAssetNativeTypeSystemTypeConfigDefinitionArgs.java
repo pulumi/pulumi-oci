@@ -36,14 +36,14 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
     }
 
     /**
-     * (Updatable) Specifies whether the configuration is contained or not.
+     * (Updatable) Specifies whether the configuration is contained.
      * 
      */
     @Import(name="isContained")
     private @Nullable Output<Boolean> isContained;
 
     /**
-     * @return (Updatable) Specifies whether the configuration is contained or not.
+     * @return (Updatable) Specifies whether the configuration is contained.
      * 
      */
     public Optional<Output<Boolean>> isContained() {
@@ -66,14 +66,14 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
     }
 
     /**
-     * (Updatable) The property which disciminates the subtypes.
+     * (Updatable) The property which differentiates the subtypes.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -96,14 +96,14 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -126,14 +126,14 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
     }
 
     /**
-     * (Updatable) A reference to the object&#39;s parent.
+     * (Updatable) A reference to the parent object.
      * 
      */
     @Import(name="parentRef")
     private @Nullable Output<RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs> parentRef;
 
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<Output<RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs>> parentRef() {
@@ -193,7 +193,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
         }
 
         /**
-         * @param isContained (Updatable) Specifies whether the configuration is contained or not.
+         * @param isContained (Updatable) Specifies whether the configuration is contained.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
         }
 
         /**
-         * @param isContained (Updatable) Specifies whether the configuration is contained or not.
+         * @param isContained (Updatable) Specifies whether the configuration is contained.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
         }
 
         /**
-         * @param modelType (Updatable) The property which disciminates the subtypes.
+         * @param modelType (Updatable) The property which differentiates the subtypes.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
         }
 
         /**
-         * @param modelType (Updatable) The property which disciminates the subtypes.
+         * @param modelType (Updatable) The property which differentiates the subtypes.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -319,7 +319,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 
@@ -330,7 +330,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs ext
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 

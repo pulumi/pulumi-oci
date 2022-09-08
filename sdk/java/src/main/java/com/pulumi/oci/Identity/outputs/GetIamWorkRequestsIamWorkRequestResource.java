@@ -13,35 +13,24 @@ public final class GetIamWorkRequestsIamWorkRequestResource {
      * @return The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
      * 
      */
-    private final String actionType;
+    private String actionType;
     /**
      * @return The resource type the work request is affects.
      * 
      */
-    private final String entityType;
+    private String entityType;
     /**
      * @return The URI path that the user can do a GET on to access the resource metadata.
      * 
      */
-    private final String entityUri;
+    private String entityUri;
     /**
      * @return An OCID of the resource that the work request affects.
      * 
      */
-    private final String identifier;
+    private String identifier;
 
-    @CustomType.Constructor
-    private GetIamWorkRequestsIamWorkRequestResource(
-        @CustomType.Parameter("actionType") String actionType,
-        @CustomType.Parameter("entityType") String entityType,
-        @CustomType.Parameter("entityUri") String entityUri,
-        @CustomType.Parameter("identifier") String identifier) {
-        this.actionType = actionType;
-        this.entityType = entityType;
-        this.entityUri = entityUri;
-        this.identifier = identifier;
-    }
-
+    private GetIamWorkRequestsIamWorkRequestResource() {}
     /**
      * @return The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
      * 
@@ -78,17 +67,13 @@ public final class GetIamWorkRequestsIamWorkRequestResource {
     public static Builder builder(GetIamWorkRequestsIamWorkRequestResource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String actionType;
         private String entityType;
         private String entityUri;
         private String identifier;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIamWorkRequestsIamWorkRequestResource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionType = defaults.actionType;
@@ -97,23 +82,33 @@ public final class GetIamWorkRequestsIamWorkRequestResource {
     	      this.identifier = defaults.identifier;
         }
 
+        @CustomType.Setter
         public Builder actionType(String actionType) {
             this.actionType = Objects.requireNonNull(actionType);
             return this;
         }
+        @CustomType.Setter
         public Builder entityType(String entityType) {
             this.entityType = Objects.requireNonNull(entityType);
             return this;
         }
+        @CustomType.Setter
         public Builder entityUri(String entityUri) {
             this.entityUri = Objects.requireNonNull(entityUri);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
-        }        public GetIamWorkRequestsIamWorkRequestResource build() {
-            return new GetIamWorkRequestsIamWorkRequestResource(actionType, entityType, entityUri, identifier);
+        }
+        public GetIamWorkRequestsIamWorkRequestResource build() {
+            final var o = new GetIamWorkRequestsIamWorkRequestResource();
+            o.actionType = actionType;
+            o.entityType = entityType;
+            o.entityUri = entityUri;
+            o.identifier = identifier;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineA
      * @return List of parameters defined for a deployment pipeline.
      * 
      */
-    private final List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items;
+    private List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items;
 
-    @CustomType.Constructor
-    private GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStage(@CustomType.Parameter("items") List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items) {
-        this.items = items;
-    }
-
+    private GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStage() {}
     /**
      * @return List of parameters defined for a deployment pipeline.
      * 
@@ -36,27 +32,27 @@ public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineA
     public static Builder builder(GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem... items) {
             return items(List.of(items));
-        }        public GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStage build() {
-            return new GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStage(items);
+        }
+        public GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStage build() {
+            final var o = new GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStage();
+            o.items = items;
+            return o;
         }
     }
 }

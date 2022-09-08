@@ -11,35 +11,22 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSubscriptionRedeemableUserResult {
-    private final String id;
+    private String id;
     /**
-     * @return The list of user email IDs that can redeem rewards.
+     * @return The list of user summary that can redeem rewards.
      * 
      */
-    private final List<GetSubscriptionRedeemableUserItem> items;
-    private final String subscriptionId;
-    private final String tenancyId;
-    private final String userId;
+    private List<GetSubscriptionRedeemableUserItem> items;
+    private String subscriptionId;
+    private String tenancyId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetSubscriptionRedeemableUserResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetSubscriptionRedeemableUserItem> items,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("tenancyId") String tenancyId,
-        @CustomType.Parameter("userId") String userId) {
-        this.id = id;
-        this.items = items;
-        this.subscriptionId = subscriptionId;
-        this.tenancyId = tenancyId;
-        this.userId = userId;
-    }
-
+    private GetSubscriptionRedeemableUserResult() {}
     public String id() {
         return this.id;
     }
     /**
-     * @return The list of user email IDs that can redeem rewards.
+     * @return The list of user summary that can redeem rewards.
      * 
      */
     public List<GetSubscriptionRedeemableUserItem> items() {
@@ -62,18 +49,14 @@ public final class GetSubscriptionRedeemableUserResult {
     public static Builder builder(GetSubscriptionRedeemableUserResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetSubscriptionRedeemableUserItem> items;
         private String subscriptionId;
         private String tenancyId;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionRedeemableUserResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -83,10 +66,12 @@ public final class GetSubscriptionRedeemableUserResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetSubscriptionRedeemableUserItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -94,19 +79,29 @@ public final class GetSubscriptionRedeemableUserResult {
         public Builder items(GetSubscriptionRedeemableUserItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetSubscriptionRedeemableUserResult build() {
-            return new GetSubscriptionRedeemableUserResult(id, items, subscriptionId, tenancyId, userId);
+        }
+        public GetSubscriptionRedeemableUserResult build() {
+            final var o = new GetSubscriptionRedeemableUserResult();
+            o.id = id;
+            o.items = items;
+            o.subscriptionId = subscriptionId;
+            o.tenancyId = tenancyId;
+            o.userId = userId;
+            return o;
         }
     }
 }

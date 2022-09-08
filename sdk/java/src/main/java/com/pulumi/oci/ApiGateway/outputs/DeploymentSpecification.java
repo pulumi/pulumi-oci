@@ -18,28 +18,19 @@ public final class DeploymentSpecification {
      * @return (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
      */
-    private final @Nullable DeploymentSpecificationLoggingPolicies loggingPolicies;
+    private @Nullable DeploymentSpecificationLoggingPolicies loggingPolicies;
     /**
      * @return (Updatable) Behavior applied to any requests received by the API on this route.
      * 
      */
-    private final @Nullable DeploymentSpecificationRequestPolicies requestPolicies;
+    private @Nullable DeploymentSpecificationRequestPolicies requestPolicies;
     /**
      * @return (Updatable) A list of routes that this API exposes.
      * 
      */
-    private final List<DeploymentSpecificationRoute> routes;
+    private List<DeploymentSpecificationRoute> routes;
 
-    @CustomType.Constructor
-    private DeploymentSpecification(
-        @CustomType.Parameter("loggingPolicies") @Nullable DeploymentSpecificationLoggingPolicies loggingPolicies,
-        @CustomType.Parameter("requestPolicies") @Nullable DeploymentSpecificationRequestPolicies requestPolicies,
-        @CustomType.Parameter("routes") List<DeploymentSpecificationRoute> routes) {
-        this.loggingPolicies = loggingPolicies;
-        this.requestPolicies = requestPolicies;
-        this.routes = routes;
-    }
-
+    private DeploymentSpecification() {}
     /**
      * @return (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
@@ -69,16 +60,12 @@ public final class DeploymentSpecification {
     public static Builder builder(DeploymentSpecification defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable DeploymentSpecificationLoggingPolicies loggingPolicies;
         private @Nullable DeploymentSpecificationRequestPolicies requestPolicies;
         private List<DeploymentSpecificationRoute> routes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecification defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.loggingPolicies = defaults.loggingPolicies;
@@ -86,22 +73,30 @@ public final class DeploymentSpecification {
     	      this.routes = defaults.routes;
         }
 
+        @CustomType.Setter
         public Builder loggingPolicies(@Nullable DeploymentSpecificationLoggingPolicies loggingPolicies) {
             this.loggingPolicies = loggingPolicies;
             return this;
         }
+        @CustomType.Setter
         public Builder requestPolicies(@Nullable DeploymentSpecificationRequestPolicies requestPolicies) {
             this.requestPolicies = requestPolicies;
             return this;
         }
+        @CustomType.Setter
         public Builder routes(List<DeploymentSpecificationRoute> routes) {
             this.routes = Objects.requireNonNull(routes);
             return this;
         }
         public Builder routes(DeploymentSpecificationRoute... routes) {
             return routes(List.of(routes));
-        }        public DeploymentSpecification build() {
-            return new DeploymentSpecification(loggingPolicies, requestPolicies, routes);
+        }
+        public DeploymentSpecification build() {
+            final var o = new DeploymentSpecification();
+            o.loggingPolicies = loggingPolicies;
+            o.requestPolicies = requestPolicies;
+            o.routes = routes;
+            return o;
         }
     }
 }

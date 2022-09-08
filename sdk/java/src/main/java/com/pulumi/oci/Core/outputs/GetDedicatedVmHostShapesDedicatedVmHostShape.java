@@ -13,21 +13,14 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShape {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The name of the dedicated VM host shape. You can enumerate all available shapes by calling [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/dedicatedVmHostShapes).
      * 
      */
-    private final String dedicatedVmHostShape;
+    private String dedicatedVmHostShape;
 
-    @CustomType.Constructor
-    private GetDedicatedVmHostShapesDedicatedVmHostShape(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("dedicatedVmHostShape") String dedicatedVmHostShape) {
-        this.availabilityDomain = availabilityDomain;
-        this.dedicatedVmHostShape = dedicatedVmHostShape;
-    }
-
+    private GetDedicatedVmHostShapesDedicatedVmHostShape() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -50,30 +43,32 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShape {
     public static Builder builder(GetDedicatedVmHostShapesDedicatedVmHostShape defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String dedicatedVmHostShape;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDedicatedVmHostShapesDedicatedVmHostShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.dedicatedVmHostShape = defaults.dedicatedVmHostShape;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder dedicatedVmHostShape(String dedicatedVmHostShape) {
             this.dedicatedVmHostShape = Objects.requireNonNull(dedicatedVmHostShape);
             return this;
-        }        public GetDedicatedVmHostShapesDedicatedVmHostShape build() {
-            return new GetDedicatedVmHostShapesDedicatedVmHostShape(availabilityDomain, dedicatedVmHostShape);
+        }
+        public GetDedicatedVmHostShapesDedicatedVmHostShape build() {
+            final var o = new GetDedicatedVmHostShapesDedicatedVmHostShape();
+            o.availabilityDomain = availabilityDomain;
+            o.dedicatedVmHostShape = dedicatedVmHostShape;
+            return o;
         }
     }
 }

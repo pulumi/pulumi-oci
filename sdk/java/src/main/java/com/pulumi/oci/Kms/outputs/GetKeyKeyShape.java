@@ -14,12 +14,12 @@ public final class GetKeyKeyShape {
      * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt.
      * 
      */
-    private final String algorithm;
+    private String algorithm;
     /**
      * @return Supported curve IDs for ECDSA keys.
      * 
      */
-    private final String curveId;
+    private String curveId;
     /**
      * @return The length of the key in bytes, expressed as an integer. Supported values include the following:
      * * AES: 16, 24, or 32
@@ -27,18 +27,9 @@ public final class GetKeyKeyShape {
      * * ECDSA: 32, 48, or 66
      * 
      */
-    private final Integer length;
+    private Integer length;
 
-    @CustomType.Constructor
-    private GetKeyKeyShape(
-        @CustomType.Parameter("algorithm") String algorithm,
-        @CustomType.Parameter("curveId") String curveId,
-        @CustomType.Parameter("length") Integer length) {
-        this.algorithm = algorithm;
-        this.curveId = curveId;
-        this.length = length;
-    }
-
+    private GetKeyKeyShape() {}
     /**
      * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt.
      * 
@@ -71,16 +62,12 @@ public final class GetKeyKeyShape {
     public static Builder builder(GetKeyKeyShape defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String algorithm;
         private String curveId;
         private Integer length;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetKeyKeyShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.algorithm = defaults.algorithm;
@@ -88,19 +75,27 @@ public final class GetKeyKeyShape {
     	      this.length = defaults.length;
         }
 
+        @CustomType.Setter
         public Builder algorithm(String algorithm) {
             this.algorithm = Objects.requireNonNull(algorithm);
             return this;
         }
+        @CustomType.Setter
         public Builder curveId(String curveId) {
             this.curveId = Objects.requireNonNull(curveId);
             return this;
         }
+        @CustomType.Setter
         public Builder length(Integer length) {
             this.length = Objects.requireNonNull(length);
             return this;
-        }        public GetKeyKeyShape build() {
-            return new GetKeyKeyShape(algorithm, curveId, length);
+        }
+        public GetKeyKeyShape build() {
+            final var o = new GetKeyKeyShape();
+            o.algorithm = algorithm;
+            o.curveId = curveId;
+            o.length = length;
+            return o;
         }
     }
 }

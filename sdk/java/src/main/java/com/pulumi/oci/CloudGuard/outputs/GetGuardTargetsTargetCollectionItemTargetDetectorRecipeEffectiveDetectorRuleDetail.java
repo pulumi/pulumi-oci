@@ -17,49 +17,34 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
      * @return Condition group corresponding to each compartment
      * 
      */
-    private final List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup> conditionGroups;
+    private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup> conditionGroups;
     /**
      * @return ResponderRule configurations
      * 
      */
-    private final List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
+    private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
     /**
      * @return configuration allowed or not
      * 
      */
-    private final Boolean isConfigurationAllowed;
+    private Boolean isConfigurationAllowed;
     /**
      * @return Identifies state for ResponderRule
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return user defined labels for a detector rule
      * 
      */
-    private final List<String> labels;
+    private List<String> labels;
     /**
      * @return The Risk Level
      * 
      */
-    private final String riskLevel;
+    private String riskLevel;
 
-    @CustomType.Constructor
-    private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail(
-        @CustomType.Parameter("conditionGroups") List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup> conditionGroups,
-        @CustomType.Parameter("configurations") List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations,
-        @CustomType.Parameter("isConfigurationAllowed") Boolean isConfigurationAllowed,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("labels") List<String> labels,
-        @CustomType.Parameter("riskLevel") String riskLevel) {
-        this.conditionGroups = conditionGroups;
-        this.configurations = configurations;
-        this.isConfigurationAllowed = isConfigurationAllowed;
-        this.isEnabled = isEnabled;
-        this.labels = labels;
-        this.riskLevel = riskLevel;
-    }
-
+    private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail() {}
     /**
      * @return Condition group corresponding to each compartment
      * 
@@ -110,7 +95,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
     public static Builder builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup> conditionGroups;
         private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
@@ -118,11 +103,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
         private Boolean isEnabled;
         private List<String> labels;
         private String riskLevel;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.conditionGroups = defaults.conditionGroups;
@@ -133,6 +114,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
     	      this.riskLevel = defaults.riskLevel;
         }
 
+        @CustomType.Setter
         public Builder conditionGroups(List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup> conditionGroups) {
             this.conditionGroups = Objects.requireNonNull(conditionGroups);
             return this;
@@ -140,6 +122,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
         public Builder conditionGroups(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup... conditionGroups) {
             return conditionGroups(List.of(conditionGroups));
         }
+        @CustomType.Setter
         public Builder configurations(List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations) {
             this.configurations = Objects.requireNonNull(configurations);
             return this;
@@ -147,14 +130,17 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
         public Builder configurations(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
+        @CustomType.Setter
         public Builder isConfigurationAllowed(Boolean isConfigurationAllowed) {
             this.isConfigurationAllowed = Objects.requireNonNull(isConfigurationAllowed);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder labels(List<String> labels) {
             this.labels = Objects.requireNonNull(labels);
             return this;
@@ -162,11 +148,20 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
+        @CustomType.Setter
         public Builder riskLevel(String riskLevel) {
             this.riskLevel = Objects.requireNonNull(riskLevel);
             return this;
-        }        public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail build() {
-            return new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail(conditionGroups, configurations, isConfigurationAllowed, isEnabled, labels, riskLevel);
+        }
+        public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail build() {
+            final var o = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail();
+            o.conditionGroups = conditionGroups;
+            o.configurations = configurations;
+            o.isConfigurationAllowed = isConfigurationAllowed;
+            o.isEnabled = isEnabled;
+            o.labels = labels;
+            o.riskLevel = riskLevel;
+            return o;
         }
     }
 }

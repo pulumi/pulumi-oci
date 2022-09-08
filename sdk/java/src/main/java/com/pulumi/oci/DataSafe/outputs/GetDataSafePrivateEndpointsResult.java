@@ -15,62 +15,41 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSafePrivateEndpointsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The list of data_safe_private_endpoints.
      * 
      */
-    private final List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints;
+    private List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints;
     /**
      * @return The display name of the private endpoint.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDataSafePrivateEndpointsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDataSafePrivateEndpointsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the private endpoint.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the VCN.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetDataSafePrivateEndpointsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("dataSafePrivateEndpoints") List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDataSafePrivateEndpointsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.dataSafePrivateEndpoints = dataSafePrivateEndpoints;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.vcnId = vcnId;
-    }
-
+    private GetDataSafePrivateEndpointsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -130,7 +109,7 @@ public final class GetDataSafePrivateEndpointsResult {
     public static Builder builder(GetDataSafePrivateEndpointsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -141,11 +120,7 @@ public final class GetDataSafePrivateEndpointsResult {
         private String id;
         private @Nullable String state;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataSafePrivateEndpointsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -159,18 +134,22 @@ public final class GetDataSafePrivateEndpointsResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder dataSafePrivateEndpoints(List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints) {
             this.dataSafePrivateEndpoints = Objects.requireNonNull(dataSafePrivateEndpoints);
             return this;
@@ -178,10 +157,12 @@ public final class GetDataSafePrivateEndpointsResult {
         public Builder dataSafePrivateEndpoints(GetDataSafePrivateEndpointsDataSafePrivateEndpoint... dataSafePrivateEndpoints) {
             return dataSafePrivateEndpoints(List.of(dataSafePrivateEndpoints));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDataSafePrivateEndpointsFilter> filters) {
             this.filters = filters;
             return this;
@@ -189,19 +170,33 @@ public final class GetDataSafePrivateEndpointsResult {
         public Builder filters(GetDataSafePrivateEndpointsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetDataSafePrivateEndpointsResult build() {
-            return new GetDataSafePrivateEndpointsResult(accessLevel, compartmentId, compartmentIdInSubtree, dataSafePrivateEndpoints, displayName, filters, id, state, vcnId);
+        }
+        public GetDataSafePrivateEndpointsResult build() {
+            final var o = new GetDataSafePrivateEndpointsResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.dataSafePrivateEndpoints = dataSafePrivateEndpoints;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

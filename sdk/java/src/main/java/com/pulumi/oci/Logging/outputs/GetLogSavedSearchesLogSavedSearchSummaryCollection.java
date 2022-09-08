@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetLogSavedSearchesLogSavedSearchSummaryCollection {
-    private final List<GetLogSavedSearchesLogSavedSearchSummaryCollectionItem> items;
+    private List<GetLogSavedSearchesLogSavedSearchSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetLogSavedSearchesLogSavedSearchSummaryCollection(@CustomType.Parameter("items") List<GetLogSavedSearchesLogSavedSearchSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetLogSavedSearchesLogSavedSearchSummaryCollection() {}
     public List<GetLogSavedSearchesLogSavedSearchSummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetLogSavedSearchesLogSavedSearchSummaryCollection {
     public static Builder builder(GetLogSavedSearchesLogSavedSearchSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetLogSavedSearchesLogSavedSearchSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogSavedSearchesLogSavedSearchSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetLogSavedSearchesLogSavedSearchSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetLogSavedSearchesLogSavedSearchSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetLogSavedSearchesLogSavedSearchSummaryCollection build() {
-            return new GetLogSavedSearchesLogSavedSearchSummaryCollection(items);
+        }
+        public GetLogSavedSearchesLogSavedSearchSummaryCollection build() {
+            final var o = new GetLogSavedSearchesLogSavedSearchSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

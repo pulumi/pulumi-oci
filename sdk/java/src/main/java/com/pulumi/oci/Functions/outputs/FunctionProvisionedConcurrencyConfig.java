@@ -16,21 +16,14 @@ public final class FunctionProvisionedConcurrencyConfig {
      * @return (Updatable)
      * 
      */
-    private final @Nullable Integer count;
+    private @Nullable Integer count;
     /**
      * @return (Updatable) The strategy for provisioned concurrency to be used.
      * 
      */
-    private final String strategy;
+    private String strategy;
 
-    @CustomType.Constructor
-    private FunctionProvisionedConcurrencyConfig(
-        @CustomType.Parameter("count") @Nullable Integer count,
-        @CustomType.Parameter("strategy") String strategy) {
-        this.count = count;
-        this.strategy = strategy;
-    }
-
+    private FunctionProvisionedConcurrencyConfig() {}
     /**
      * @return (Updatable)
      * 
@@ -53,30 +46,32 @@ public final class FunctionProvisionedConcurrencyConfig {
     public static Builder builder(FunctionProvisionedConcurrencyConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer count;
         private String strategy;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(FunctionProvisionedConcurrencyConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.strategy = defaults.strategy;
         }
 
+        @CustomType.Setter
         public Builder count(@Nullable Integer count) {
             this.count = count;
             return this;
         }
+        @CustomType.Setter
         public Builder strategy(String strategy) {
             this.strategy = Objects.requireNonNull(strategy);
             return this;
-        }        public FunctionProvisionedConcurrencyConfig build() {
-            return new FunctionProvisionedConcurrencyConfig(count, strategy);
+        }
+        public FunctionProvisionedConcurrencyConfig build() {
+            final var o = new FunctionProvisionedConcurrencyConfig();
+            o.count = count;
+            o.strategy = strategy;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection {
-    private final List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items;
+    private List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection(@CustomType.Parameter("items") List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection() {}
     public List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     public static Builder builder(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem... items) {
             return items(List.of(items));
-        }        public GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection build() {
-            return new GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection(items);
+        }
+        public GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection build() {
+            final var o = new GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection();
+            o.items = items;
+            return o;
         }
     }
 }

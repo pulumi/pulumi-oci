@@ -218,14 +218,14 @@ public final class TargetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * possible type of targets(compartment/HCMCloud/ERPCloud)
+     * possible type of targets(COMPARTMENT/FACLOUD)
      * 
      */
     @Import(name="targetResourceType")
     private @Nullable Output<String> targetResourceType;
 
     /**
-     * @return possible type of targets(compartment/HCMCloud/ERPCloud)
+     * @return possible type of targets(COMPARTMENT/FACLOUD)
      * 
      */
     public Optional<Output<String>> targetResourceType() {
@@ -621,7 +621,7 @@ public final class TargetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetResourceType possible type of targets(compartment/HCMCloud/ERPCloud)
+         * @param targetResourceType possible type of targets(COMPARTMENT/FACLOUD)
          * 
          * @return builder
          * 
@@ -632,7 +632,7 @@ public final class TargetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetResourceType possible type of targets(compartment/HCMCloud/ERPCloud)
+         * @param targetResourceType possible type of targets(COMPARTMENT/FACLOUD)
          * 
          * @return builder
          * 

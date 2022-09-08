@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetServiceCatalogAssociationsServiceCatalogAssociationCollection {
-    private final List<GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem> items;
+    private List<GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetServiceCatalogAssociationsServiceCatalogAssociationCollection(@CustomType.Parameter("items") List<GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetServiceCatalogAssociationsServiceCatalogAssociationCollection() {}
     public List<GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetServiceCatalogAssociationsServiceCatalogAssociationCollect
     public static Builder builder(GetServiceCatalogAssociationsServiceCatalogAssociationCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceCatalogAssociationsServiceCatalogAssociationCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem... items) {
             return items(List.of(items));
-        }        public GetServiceCatalogAssociationsServiceCatalogAssociationCollection build() {
-            return new GetServiceCatalogAssociationsServiceCatalogAssociationCollection(items);
+        }
+        public GetServiceCatalogAssociationsServiceCatalogAssociationCollection build() {
+            final var o = new GetServiceCatalogAssociationsServiceCatalogAssociationCollection();
+            o.items = items;
+            return o;
         }
     }
 }

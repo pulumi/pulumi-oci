@@ -14,41 +14,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtectionCapabilityGroupTagsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetProtectionCapabilityGroupTagsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetProtectionCapabilityGroupTagsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Unique name of protection capability group tag.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of protection_capability_group_tag_collection.
      * 
      */
-    private final List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections;
-    private final @Nullable String type;
+    private List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private GetProtectionCapabilityGroupTagsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetProtectionCapabilityGroupTagsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("protectionCapabilityGroupTagCollections") List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.protectionCapabilityGroupTagCollections = protectionCapabilityGroupTagCollections;
-        this.type = type;
-    }
-
+    private GetProtectionCapabilityGroupTagsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -87,7 +72,7 @@ public final class GetProtectionCapabilityGroupTagsResult {
     public static Builder builder(GetProtectionCapabilityGroupTagsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetProtectionCapabilityGroupTagsFilter> filters;
@@ -95,11 +80,7 @@ public final class GetProtectionCapabilityGroupTagsResult {
         private @Nullable String name;
         private List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProtectionCapabilityGroupTagsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -110,10 +91,12 @@ public final class GetProtectionCapabilityGroupTagsResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetProtectionCapabilityGroupTagsFilter> filters) {
             this.filters = filters;
             return this;
@@ -121,14 +104,17 @@ public final class GetProtectionCapabilityGroupTagsResult {
         public Builder filters(GetProtectionCapabilityGroupTagsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder protectionCapabilityGroupTagCollections(List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections) {
             this.protectionCapabilityGroupTagCollections = Objects.requireNonNull(protectionCapabilityGroupTagCollections);
             return this;
@@ -136,11 +122,20 @@ public final class GetProtectionCapabilityGroupTagsResult {
         public Builder protectionCapabilityGroupTagCollections(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection... protectionCapabilityGroupTagCollections) {
             return protectionCapabilityGroupTagCollections(List.of(protectionCapabilityGroupTagCollections));
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public GetProtectionCapabilityGroupTagsResult build() {
-            return new GetProtectionCapabilityGroupTagsResult(compartmentId, filters, id, name, protectionCapabilityGroupTagCollections, type);
+        }
+        public GetProtectionCapabilityGroupTagsResult build() {
+            final var o = new GetProtectionCapabilityGroupTagsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.protectionCapabilityGroupTagCollections = protectionCapabilityGroupTagCollections;
+            o.type = type;
+            return o;
         }
     }
 }

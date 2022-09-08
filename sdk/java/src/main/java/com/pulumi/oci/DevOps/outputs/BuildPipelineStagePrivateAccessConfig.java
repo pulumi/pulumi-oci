@@ -15,28 +15,19 @@ public final class BuildPipelineStagePrivateAccessConfig {
      * @return (Updatable) Network channel type.
      * 
      */
-    private final String networkChannelType;
+    private String networkChannelType;
     /**
      * @return (Updatable) An array of network security group OCIDs.
      * 
      */
-    private final @Nullable List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private BuildPipelineStagePrivateAccessConfig(
-        @CustomType.Parameter("networkChannelType") String networkChannelType,
-        @CustomType.Parameter("nsgIds") @Nullable List<String> nsgIds,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.networkChannelType = networkChannelType;
-        this.nsgIds = nsgIds;
-        this.subnetId = subnetId;
-    }
-
+    private BuildPipelineStagePrivateAccessConfig() {}
     /**
      * @return (Updatable) Network channel type.
      * 
@@ -66,16 +57,12 @@ public final class BuildPipelineStagePrivateAccessConfig {
     public static Builder builder(BuildPipelineStagePrivateAccessConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String networkChannelType;
         private @Nullable List<String> nsgIds;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildPipelineStagePrivateAccessConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.networkChannelType = defaults.networkChannelType;
@@ -83,10 +70,12 @@ public final class BuildPipelineStagePrivateAccessConfig {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder networkChannelType(String networkChannelType) {
             this.networkChannelType = Objects.requireNonNull(networkChannelType);
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
             this.nsgIds = nsgIds;
             return this;
@@ -94,11 +83,17 @@ public final class BuildPipelineStagePrivateAccessConfig {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public BuildPipelineStagePrivateAccessConfig build() {
-            return new BuildPipelineStagePrivateAccessConfig(networkChannelType, nsgIds, subnetId);
+        }
+        public BuildPipelineStagePrivateAccessConfig build() {
+            final var o = new BuildPipelineStagePrivateAccessConfig();
+            o.networkChannelType = networkChannelType;
+            o.nsgIds = nsgIds;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

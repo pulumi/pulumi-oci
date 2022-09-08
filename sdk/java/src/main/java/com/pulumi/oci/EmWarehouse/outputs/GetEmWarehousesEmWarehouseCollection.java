@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetEmWarehousesEmWarehouseCollection {
-    private final List<GetEmWarehousesEmWarehouseCollectionItem> items;
+    private List<GetEmWarehousesEmWarehouseCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetEmWarehousesEmWarehouseCollection(@CustomType.Parameter("items") List<GetEmWarehousesEmWarehouseCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetEmWarehousesEmWarehouseCollection() {}
     public List<GetEmWarehousesEmWarehouseCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetEmWarehousesEmWarehouseCollection {
     public static Builder builder(GetEmWarehousesEmWarehouseCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetEmWarehousesEmWarehouseCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEmWarehousesEmWarehouseCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetEmWarehousesEmWarehouseCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetEmWarehousesEmWarehouseCollectionItem... items) {
             return items(List.of(items));
-        }        public GetEmWarehousesEmWarehouseCollection build() {
-            return new GetEmWarehousesEmWarehouseCollection(items);
+        }
+        public GetEmWarehousesEmWarehouseCollection build() {
+            final var o = new GetEmWarehousesEmWarehouseCollection();
+            o.items = items;
+            return o;
         }
     }
 }

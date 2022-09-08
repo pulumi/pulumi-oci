@@ -13,35 +13,24 @@ public final class GetConfigsConfigCollectionItemMetric {
      * @return A description of the metric.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The name of the metric. This must be a known metric name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The unit of the metric.
      * 
      */
-    private final String unit;
+    private String unit;
     /**
      * @return This must not be set.
      * 
      */
-    private final String valueSource;
+    private String valueSource;
 
-    @CustomType.Constructor
-    private GetConfigsConfigCollectionItemMetric(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("unit") String unit,
-        @CustomType.Parameter("valueSource") String valueSource) {
-        this.description = description;
-        this.name = name;
-        this.unit = unit;
-        this.valueSource = valueSource;
-    }
-
+    private GetConfigsConfigCollectionItemMetric() {}
     /**
      * @return A description of the metric.
      * 
@@ -78,17 +67,13 @@ public final class GetConfigsConfigCollectionItemMetric {
     public static Builder builder(GetConfigsConfigCollectionItemMetric defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String name;
         private String unit;
         private String valueSource;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConfigsConfigCollectionItemMetric defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -97,23 +82,33 @@ public final class GetConfigsConfigCollectionItemMetric {
     	      this.valueSource = defaults.valueSource;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder unit(String unit) {
             this.unit = Objects.requireNonNull(unit);
             return this;
         }
+        @CustomType.Setter
         public Builder valueSource(String valueSource) {
             this.valueSource = Objects.requireNonNull(valueSource);
             return this;
-        }        public GetConfigsConfigCollectionItemMetric build() {
-            return new GetConfigsConfigCollectionItemMetric(description, name, unit, valueSource);
+        }
+        public GetConfigsConfigCollectionItemMetric build() {
+            final var o = new GetConfigsConfigCollectionItemMetric();
+            o.description = description;
+            o.name = name;
+            o.unit = unit;
+            o.valueSource = valueSource;
+            return o;
         }
     }
 }

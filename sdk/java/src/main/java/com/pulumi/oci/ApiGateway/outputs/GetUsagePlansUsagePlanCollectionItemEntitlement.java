@@ -17,42 +17,29 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
      * @return A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return An entitlement name, unique within a usage plan.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Quota policy for a usage plan.
      * 
      */
-    private final List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas;
+    private List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas;
     /**
      * @return Rate-limiting policy for a usage plan.
      * 
      */
-    private final List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits;
+    private List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits;
     /**
      * @return A collection of targeted deployments that the entitlement will be applied to.
      * 
      */
-    private final List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets;
+    private List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets;
 
-    @CustomType.Constructor
-    private GetUsagePlansUsagePlanCollectionItemEntitlement(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("quotas") List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas,
-        @CustomType.Parameter("rateLimits") List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits,
-        @CustomType.Parameter("targets") List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets) {
-        this.description = description;
-        this.name = name;
-        this.quotas = quotas;
-        this.rateLimits = rateLimits;
-        this.targets = targets;
-    }
-
+    private GetUsagePlansUsagePlanCollectionItemEntitlement() {}
     /**
      * @return A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      * 
@@ -96,18 +83,14 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
     public static Builder builder(GetUsagePlansUsagePlanCollectionItemEntitlement defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String name;
         private List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas;
         private List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits;
         private List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUsagePlansUsagePlanCollectionItemEntitlement defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -117,14 +100,17 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
     	      this.targets = defaults.targets;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder quotas(List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas) {
             this.quotas = Objects.requireNonNull(quotas);
             return this;
@@ -132,6 +118,7 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
         public Builder quotas(GetUsagePlansUsagePlanCollectionItemEntitlementQuota... quotas) {
             return quotas(List.of(quotas));
         }
+        @CustomType.Setter
         public Builder rateLimits(List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits) {
             this.rateLimits = Objects.requireNonNull(rateLimits);
             return this;
@@ -139,14 +126,22 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
         public Builder rateLimits(GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit... rateLimits) {
             return rateLimits(List.of(rateLimits));
         }
+        @CustomType.Setter
         public Builder targets(List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
         }
         public Builder targets(GetUsagePlansUsagePlanCollectionItemEntitlementTarget... targets) {
             return targets(List.of(targets));
-        }        public GetUsagePlansUsagePlanCollectionItemEntitlement build() {
-            return new GetUsagePlansUsagePlanCollectionItemEntitlement(description, name, quotas, rateLimits, targets);
+        }
+        public GetUsagePlansUsagePlanCollectionItemEntitlement build() {
+            final var o = new GetUsagePlansUsagePlanCollectionItemEntitlement();
+            o.description = description;
+            o.name = name;
+            o.quotas = quotas;
+            o.rateLimits = rateLimits;
+            o.targets = targets;
+            return o;
         }
     }
 }

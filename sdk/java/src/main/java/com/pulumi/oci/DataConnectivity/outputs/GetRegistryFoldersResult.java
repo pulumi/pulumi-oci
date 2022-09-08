@@ -14,51 +14,32 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRegistryFoldersResult {
-    private final @Nullable String favoritesQueryParam;
-    private final @Nullable List<String> fields;
-    private final @Nullable List<GetRegistryFoldersFilter> filters;
+    private @Nullable String favoritesQueryParam;
+    private @Nullable List<String> fields;
+    private @Nullable List<GetRegistryFoldersFilter> filters;
     /**
      * @return The list of folder_summary_collection.
      * 
      */
-    private final List<GetRegistryFoldersFolderSummaryCollection> folderSummaryCollections;
+    private List<GetRegistryFoldersFolderSummaryCollection> folderSummaryCollections;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final @Nullable String name;
-    private final String registryId;
+    private @Nullable String name;
+    private String registryId;
     /**
      * @return Specific DataAsset Type
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private GetRegistryFoldersResult(
-        @CustomType.Parameter("favoritesQueryParam") @Nullable String favoritesQueryParam,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("filters") @Nullable List<GetRegistryFoldersFilter> filters,
-        @CustomType.Parameter("folderSummaryCollections") List<GetRegistryFoldersFolderSummaryCollection> folderSummaryCollections,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("registryId") String registryId,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.favoritesQueryParam = favoritesQueryParam;
-        this.fields = fields;
-        this.filters = filters;
-        this.folderSummaryCollections = folderSummaryCollections;
-        this.id = id;
-        this.name = name;
-        this.registryId = registryId;
-        this.type = type;
-    }
-
+    private GetRegistryFoldersResult() {}
     public Optional<String> favoritesQueryParam() {
         return Optional.ofNullable(this.favoritesQueryParam);
     }
@@ -83,7 +64,7 @@ public final class GetRegistryFoldersResult {
         return this.id;
     }
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<String> name() {
@@ -107,7 +88,7 @@ public final class GetRegistryFoldersResult {
     public static Builder builder(GetRegistryFoldersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String favoritesQueryParam;
         private @Nullable List<String> fields;
@@ -117,11 +98,7 @@ public final class GetRegistryFoldersResult {
         private @Nullable String name;
         private String registryId;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryFoldersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.favoritesQueryParam = defaults.favoritesQueryParam;
@@ -134,10 +111,12 @@ public final class GetRegistryFoldersResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder favoritesQueryParam(@Nullable String favoritesQueryParam) {
             this.favoritesQueryParam = favoritesQueryParam;
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -145,6 +124,7 @@ public final class GetRegistryFoldersResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRegistryFoldersFilter> filters) {
             this.filters = filters;
             return this;
@@ -152,6 +132,7 @@ public final class GetRegistryFoldersResult {
         public Builder filters(GetRegistryFoldersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder folderSummaryCollections(List<GetRegistryFoldersFolderSummaryCollection> folderSummaryCollections) {
             this.folderSummaryCollections = Objects.requireNonNull(folderSummaryCollections);
             return this;
@@ -159,23 +140,37 @@ public final class GetRegistryFoldersResult {
         public Builder folderSummaryCollections(GetRegistryFoldersFolderSummaryCollection... folderSummaryCollections) {
             return folderSummaryCollections(List.of(folderSummaryCollections));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder registryId(String registryId) {
             this.registryId = Objects.requireNonNull(registryId);
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public GetRegistryFoldersResult build() {
-            return new GetRegistryFoldersResult(favoritesQueryParam, fields, filters, folderSummaryCollections, id, name, registryId, type);
+        }
+        public GetRegistryFoldersResult build() {
+            final var o = new GetRegistryFoldersResult();
+            o.favoritesQueryParam = favoritesQueryParam;
+            o.fields = fields;
+            o.filters = filters;
+            o.folderSummaryCollections = folderSummaryCollections;
+            o.id = id;
+            o.name = name;
+            o.registryId = registryId;
+            o.type = type;
+            return o;
         }
     }
 }

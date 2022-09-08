@@ -13,28 +13,19 @@ public final class GetVolumesVolumeBlockVolumeReplica {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The block volume replica&#39;s Oracle ID (OCID).
      * 
      */
-    private final String blockVolumeReplicaId;
+    private String blockVolumeReplicaId;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
 
-    @CustomType.Constructor
-    private GetVolumesVolumeBlockVolumeReplica(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("blockVolumeReplicaId") String blockVolumeReplicaId,
-        @CustomType.Parameter("displayName") String displayName) {
-        this.availabilityDomain = availabilityDomain;
-        this.blockVolumeReplicaId = blockVolumeReplicaId;
-        this.displayName = displayName;
-    }
-
+    private GetVolumesVolumeBlockVolumeReplica() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -64,16 +55,12 @@ public final class GetVolumesVolumeBlockVolumeReplica {
     public static Builder builder(GetVolumesVolumeBlockVolumeReplica defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String blockVolumeReplicaId;
         private String displayName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumesVolumeBlockVolumeReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -81,19 +68,27 @@ public final class GetVolumesVolumeBlockVolumeReplica {
     	      this.displayName = defaults.displayName;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder blockVolumeReplicaId(String blockVolumeReplicaId) {
             this.blockVolumeReplicaId = Objects.requireNonNull(blockVolumeReplicaId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
-        }        public GetVolumesVolumeBlockVolumeReplica build() {
-            return new GetVolumesVolumeBlockVolumeReplica(availabilityDomain, blockVolumeReplicaId, displayName);
+        }
+        public GetVolumesVolumeBlockVolumeReplica build() {
+            final var o = new GetVolumesVolumeBlockVolumeReplica();
+            o.availabilityDomain = availabilityDomain;
+            o.blockVolumeReplicaId = blockVolumeReplicaId;
+            o.displayName = displayName;
+            return o;
         }
     }
 }

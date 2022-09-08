@@ -14,13 +14,9 @@ public final class GetSubscriptionPaymentGateway {
      * @return Merchant details.
      * 
      */
-    private final List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
+    private List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
 
-    @CustomType.Constructor
-    private GetSubscriptionPaymentGateway(@CustomType.Parameter("merchantDefinedDatas") List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
-        this.merchantDefinedDatas = merchantDefinedDatas;
-    }
-
+    private GetSubscriptionPaymentGateway() {}
     /**
      * @return Merchant details.
      * 
@@ -36,27 +32,27 @@ public final class GetSubscriptionPaymentGateway {
     public static Builder builder(GetSubscriptionPaymentGateway defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionPaymentGateway defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.merchantDefinedDatas = defaults.merchantDefinedDatas;
         }
 
+        @CustomType.Setter
         public Builder merchantDefinedDatas(List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
             this.merchantDefinedDatas = Objects.requireNonNull(merchantDefinedDatas);
             return this;
         }
         public Builder merchantDefinedDatas(GetSubscriptionPaymentGatewayMerchantDefinedData... merchantDefinedDatas) {
             return merchantDefinedDatas(List.of(merchantDefinedDatas));
-        }        public GetSubscriptionPaymentGateway build() {
-            return new GetSubscriptionPaymentGateway(merchantDefinedDatas);
+        }
+        public GetSubscriptionPaymentGateway build() {
+            final var o = new GetSubscriptionPaymentGateway();
+            o.merchantDefinedDatas = merchantDefinedDatas;
+            return o;
         }
     }
 }

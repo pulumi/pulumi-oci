@@ -20,49 +20,34 @@ public final class DeploymentSpecificationRoute {
      * @return (Updatable) The backend to forward requests to.
      * 
      */
-    private final DeploymentSpecificationRouteBackend backend;
+    private DeploymentSpecificationRouteBackend backend;
     /**
      * @return (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteLoggingPolicies loggingPolicies;
+    private @Nullable DeploymentSpecificationRouteLoggingPolicies loggingPolicies;
     /**
      * @return (Updatable) A list of allowed methods on this route.
      * 
      */
-    private final @Nullable List<String> methods;
+    private @Nullable List<String> methods;
     /**
      * @return (Updatable) A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return (Updatable) Behavior applied to any requests received by the API on this route.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteRequestPolicies requestPolicies;
+    private @Nullable DeploymentSpecificationRouteRequestPolicies requestPolicies;
     /**
      * @return (Updatable) Behavior applied to any responses sent by the API for requests on this route.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteResponsePolicies responsePolicies;
+    private @Nullable DeploymentSpecificationRouteResponsePolicies responsePolicies;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRoute(
-        @CustomType.Parameter("backend") DeploymentSpecificationRouteBackend backend,
-        @CustomType.Parameter("loggingPolicies") @Nullable DeploymentSpecificationRouteLoggingPolicies loggingPolicies,
-        @CustomType.Parameter("methods") @Nullable List<String> methods,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("requestPolicies") @Nullable DeploymentSpecificationRouteRequestPolicies requestPolicies,
-        @CustomType.Parameter("responsePolicies") @Nullable DeploymentSpecificationRouteResponsePolicies responsePolicies) {
-        this.backend = backend;
-        this.loggingPolicies = loggingPolicies;
-        this.methods = methods;
-        this.path = path;
-        this.requestPolicies = requestPolicies;
-        this.responsePolicies = responsePolicies;
-    }
-
+    private DeploymentSpecificationRoute() {}
     /**
      * @return (Updatable) The backend to forward requests to.
      * 
@@ -113,7 +98,7 @@ public final class DeploymentSpecificationRoute {
     public static Builder builder(DeploymentSpecificationRoute defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private DeploymentSpecificationRouteBackend backend;
         private @Nullable DeploymentSpecificationRouteLoggingPolicies loggingPolicies;
@@ -121,11 +106,7 @@ public final class DeploymentSpecificationRoute {
         private String path;
         private @Nullable DeploymentSpecificationRouteRequestPolicies requestPolicies;
         private @Nullable DeploymentSpecificationRouteResponsePolicies responsePolicies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRoute defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backend = defaults.backend;
@@ -136,14 +117,17 @@ public final class DeploymentSpecificationRoute {
     	      this.responsePolicies = defaults.responsePolicies;
         }
 
+        @CustomType.Setter
         public Builder backend(DeploymentSpecificationRouteBackend backend) {
             this.backend = Objects.requireNonNull(backend);
             return this;
         }
+        @CustomType.Setter
         public Builder loggingPolicies(@Nullable DeploymentSpecificationRouteLoggingPolicies loggingPolicies) {
             this.loggingPolicies = loggingPolicies;
             return this;
         }
+        @CustomType.Setter
         public Builder methods(@Nullable List<String> methods) {
             this.methods = methods;
             return this;
@@ -151,19 +135,30 @@ public final class DeploymentSpecificationRoute {
         public Builder methods(String... methods) {
             return methods(List.of(methods));
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder requestPolicies(@Nullable DeploymentSpecificationRouteRequestPolicies requestPolicies) {
             this.requestPolicies = requestPolicies;
             return this;
         }
+        @CustomType.Setter
         public Builder responsePolicies(@Nullable DeploymentSpecificationRouteResponsePolicies responsePolicies) {
             this.responsePolicies = responsePolicies;
             return this;
-        }        public DeploymentSpecificationRoute build() {
-            return new DeploymentSpecificationRoute(backend, loggingPolicies, methods, path, requestPolicies, responsePolicies);
+        }
+        public DeploymentSpecificationRoute build() {
+            final var o = new DeploymentSpecificationRoute();
+            o.backend = backend;
+            o.loggingPolicies = loggingPolicies;
+            o.methods = methods;
+            o.path = path;
+            o.requestPolicies = requestPolicies;
+            o.responsePolicies = responsePolicies;
+            return o;
         }
     }
 }

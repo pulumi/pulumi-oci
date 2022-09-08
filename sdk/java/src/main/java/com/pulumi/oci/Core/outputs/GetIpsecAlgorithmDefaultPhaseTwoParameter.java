@@ -14,28 +14,19 @@ public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
      * @return Default phase two authentication algorithms.
      * 
      */
-    private final List<String> defaultAuthenticationAlgorithms;
+    private List<String> defaultAuthenticationAlgorithms;
     /**
      * @return Default phase two encryption algorithms.
      * 
      */
-    private final List<String> defaultEncryptionAlgorithms;
+    private List<String> defaultEncryptionAlgorithms;
     /**
      * @return Default perfect forward secrecy Diffie-Hellman groups.
      * 
      */
-    private final String defaultPfsDhGroup;
+    private String defaultPfsDhGroup;
 
-    @CustomType.Constructor
-    private GetIpsecAlgorithmDefaultPhaseTwoParameter(
-        @CustomType.Parameter("defaultAuthenticationAlgorithms") List<String> defaultAuthenticationAlgorithms,
-        @CustomType.Parameter("defaultEncryptionAlgorithms") List<String> defaultEncryptionAlgorithms,
-        @CustomType.Parameter("defaultPfsDhGroup") String defaultPfsDhGroup) {
-        this.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
-        this.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
-        this.defaultPfsDhGroup = defaultPfsDhGroup;
-    }
-
+    private GetIpsecAlgorithmDefaultPhaseTwoParameter() {}
     /**
      * @return Default phase two authentication algorithms.
      * 
@@ -65,16 +56,12 @@ public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
     public static Builder builder(GetIpsecAlgorithmDefaultPhaseTwoParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> defaultAuthenticationAlgorithms;
         private List<String> defaultEncryptionAlgorithms;
         private String defaultPfsDhGroup;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecAlgorithmDefaultPhaseTwoParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultAuthenticationAlgorithms = defaults.defaultAuthenticationAlgorithms;
@@ -82,6 +69,7 @@ public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
     	      this.defaultPfsDhGroup = defaults.defaultPfsDhGroup;
         }
 
+        @CustomType.Setter
         public Builder defaultAuthenticationAlgorithms(List<String> defaultAuthenticationAlgorithms) {
             this.defaultAuthenticationAlgorithms = Objects.requireNonNull(defaultAuthenticationAlgorithms);
             return this;
@@ -89,6 +77,7 @@ public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
         public Builder defaultAuthenticationAlgorithms(String... defaultAuthenticationAlgorithms) {
             return defaultAuthenticationAlgorithms(List.of(defaultAuthenticationAlgorithms));
         }
+        @CustomType.Setter
         public Builder defaultEncryptionAlgorithms(List<String> defaultEncryptionAlgorithms) {
             this.defaultEncryptionAlgorithms = Objects.requireNonNull(defaultEncryptionAlgorithms);
             return this;
@@ -96,11 +85,17 @@ public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
         public Builder defaultEncryptionAlgorithms(String... defaultEncryptionAlgorithms) {
             return defaultEncryptionAlgorithms(List.of(defaultEncryptionAlgorithms));
         }
+        @CustomType.Setter
         public Builder defaultPfsDhGroup(String defaultPfsDhGroup) {
             this.defaultPfsDhGroup = Objects.requireNonNull(defaultPfsDhGroup);
             return this;
-        }        public GetIpsecAlgorithmDefaultPhaseTwoParameter build() {
-            return new GetIpsecAlgorithmDefaultPhaseTwoParameter(defaultAuthenticationAlgorithms, defaultEncryptionAlgorithms, defaultPfsDhGroup);
+        }
+        public GetIpsecAlgorithmDefaultPhaseTwoParameter build() {
+            final var o = new GetIpsecAlgorithmDefaultPhaseTwoParameter();
+            o.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
+            o.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
+            o.defaultPfsDhGroup = defaultPfsDhGroup;
+            return o;
         }
     }
 }

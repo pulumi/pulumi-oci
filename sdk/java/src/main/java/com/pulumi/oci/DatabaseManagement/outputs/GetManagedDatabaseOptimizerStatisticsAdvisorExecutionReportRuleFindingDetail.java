@@ -15,21 +15,14 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * @return The list of operation details.
      * 
      */
-    private final List<String> operations;
+    private List<String> operations;
     /**
      * @return The names of the impacted database schemas and their objects.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail(
-        @CustomType.Parameter("operations") List<String> operations,
-        @CustomType.Parameter("schemas") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas) {
-        this.operations = operations;
-        this.schemas = schemas;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail() {}
     /**
      * @return The list of operation details.
      * 
@@ -52,21 +45,18 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> operations;
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.operations = defaults.operations;
     	      this.schemas = defaults.schemas;
         }
 
+        @CustomType.Setter
         public Builder operations(List<String> operations) {
             this.operations = Objects.requireNonNull(operations);
             return this;
@@ -74,14 +64,19 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
         public Builder operations(String... operations) {
             return operations(List.of(operations));
         }
+        @CustomType.Setter
         public Builder schemas(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema> schemas) {
             this.schemas = Objects.requireNonNull(schemas);
             return this;
         }
         public Builder schemas(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema... schemas) {
             return schemas(List.of(schemas));
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail(operations, schemas);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail();
+            o.operations = operations;
+            o.schemas = schemas;
+            return o;
         }
     }
 }

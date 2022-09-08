@@ -18,47 +18,28 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
      * @return The OCID of the audit profile resource.
      * 
      */
-    private final String auditProfileId;
+    private String auditProfileId;
     /**
      * @return The list of available_audit_volume_collection.
      * 
      */
-    private final List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections;
-    private final @Nullable List<GetAuditProfileAvailableAuditVolumesFilter> filters;
+    private List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections;
+    private @Nullable List<GetAuditProfileAvailableAuditVolumesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String monthInConsiderationGreaterThan;
-    private final @Nullable String monthInConsiderationLessThan;
+    private String id;
+    private @Nullable String monthInConsiderationGreaterThan;
+    private @Nullable String monthInConsiderationLessThan;
     /**
      * @return Audit trail location on the target database from where the audit data is being collected by Data Safe.
      * 
      */
-    private final @Nullable String trailLocation;
-    private final String workRequestId;
+    private @Nullable String trailLocation;
+    private String workRequestId;
 
-    @CustomType.Constructor
-    private GetAuditProfileAvailableAuditVolumesResult(
-        @CustomType.Parameter("auditProfileId") String auditProfileId,
-        @CustomType.Parameter("availableAuditVolumeCollections") List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetAuditProfileAvailableAuditVolumesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("monthInConsiderationGreaterThan") @Nullable String monthInConsiderationGreaterThan,
-        @CustomType.Parameter("monthInConsiderationLessThan") @Nullable String monthInConsiderationLessThan,
-        @CustomType.Parameter("trailLocation") @Nullable String trailLocation,
-        @CustomType.Parameter("workRequestId") String workRequestId) {
-        this.auditProfileId = auditProfileId;
-        this.availableAuditVolumeCollections = availableAuditVolumeCollections;
-        this.filters = filters;
-        this.id = id;
-        this.monthInConsiderationGreaterThan = monthInConsiderationGreaterThan;
-        this.monthInConsiderationLessThan = monthInConsiderationLessThan;
-        this.trailLocation = trailLocation;
-        this.workRequestId = workRequestId;
-    }
-
+    private GetAuditProfileAvailableAuditVolumesResult() {}
     /**
      * @return The OCID of the audit profile resource.
      * 
@@ -107,7 +88,7 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
     public static Builder builder(GetAuditProfileAvailableAuditVolumesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String auditProfileId;
         private List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections;
@@ -117,11 +98,7 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
         private @Nullable String monthInConsiderationLessThan;
         private @Nullable String trailLocation;
         private String workRequestId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditProfileAvailableAuditVolumesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditProfileId = defaults.auditProfileId;
@@ -134,10 +111,12 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
     	      this.workRequestId = defaults.workRequestId;
         }
 
+        @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = Objects.requireNonNull(auditProfileId);
             return this;
         }
+        @CustomType.Setter
         public Builder availableAuditVolumeCollections(List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections) {
             this.availableAuditVolumeCollections = Objects.requireNonNull(availableAuditVolumeCollections);
             return this;
@@ -145,6 +124,7 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
         public Builder availableAuditVolumeCollections(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection... availableAuditVolumeCollections) {
             return availableAuditVolumeCollections(List.of(availableAuditVolumeCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAuditProfileAvailableAuditVolumesFilter> filters) {
             this.filters = filters;
             return this;
@@ -152,27 +132,42 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
         public Builder filters(GetAuditProfileAvailableAuditVolumesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder monthInConsiderationGreaterThan(@Nullable String monthInConsiderationGreaterThan) {
             this.monthInConsiderationGreaterThan = monthInConsiderationGreaterThan;
             return this;
         }
+        @CustomType.Setter
         public Builder monthInConsiderationLessThan(@Nullable String monthInConsiderationLessThan) {
             this.monthInConsiderationLessThan = monthInConsiderationLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder trailLocation(@Nullable String trailLocation) {
             this.trailLocation = trailLocation;
             return this;
         }
+        @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = Objects.requireNonNull(workRequestId);
             return this;
-        }        public GetAuditProfileAvailableAuditVolumesResult build() {
-            return new GetAuditProfileAvailableAuditVolumesResult(auditProfileId, availableAuditVolumeCollections, filters, id, monthInConsiderationGreaterThan, monthInConsiderationLessThan, trailLocation, workRequestId);
+        }
+        public GetAuditProfileAvailableAuditVolumesResult build() {
+            final var o = new GetAuditProfileAvailableAuditVolumesResult();
+            o.auditProfileId = auditProfileId;
+            o.availableAuditVolumeCollections = availableAuditVolumeCollections;
+            o.filters = filters;
+            o.id = id;
+            o.monthInConsiderationGreaterThan = monthInConsiderationGreaterThan;
+            o.monthInConsiderationLessThan = monthInConsiderationLessThan;
+            o.trailLocation = trailLocation;
+            o.workRequestId = workRequestId;
+            return o;
         }
     }
 }

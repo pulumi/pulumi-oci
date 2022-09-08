@@ -17,84 +17,59 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A reference name or identifier for the physical fiber connection that this cross-connect group uses.
      * 
      */
-    private final String customerReferenceName;
+    private String customerReferenceName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The cross-connect group&#39;s Oracle ID (OCID).
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Properties used for MACsec (if capable).
      * 
      */
-    private final List<GetCrossConnectGroupsCrossConnectGroupMacsecProperty> macsecProperties;
+    private List<GetCrossConnectGroupsCrossConnectGroupMacsecProperty> macsecProperties;
     /**
      * @return The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      * 
      */
-    private final String ociLogicalDeviceName;
+    private String ociLogicalDeviceName;
     /**
      * @return The FastConnect device that terminates the physical connection.
      * 
      */
-    private final String ociPhysicalDeviceName;
+    private String ociPhysicalDeviceName;
     /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetCrossConnectGroupsCrossConnectGroup(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("customerReferenceName") String customerReferenceName,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("macsecProperties") List<GetCrossConnectGroupsCrossConnectGroupMacsecProperty> macsecProperties,
-        @CustomType.Parameter("ociLogicalDeviceName") String ociLogicalDeviceName,
-        @CustomType.Parameter("ociPhysicalDeviceName") String ociPhysicalDeviceName,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.customerReferenceName = customerReferenceName;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.macsecProperties = macsecProperties;
-        this.ociLogicalDeviceName = ociLogicalDeviceName;
-        this.ociPhysicalDeviceName = ociPhysicalDeviceName;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetCrossConnectGroupsCrossConnectGroup() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -180,7 +155,7 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
     public static Builder builder(GetCrossConnectGroupsCrossConnectGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String customerReferenceName;
@@ -193,11 +168,7 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
         private String ociPhysicalDeviceName;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCrossConnectGroupsCrossConnectGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -213,30 +184,37 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder customerReferenceName(String customerReferenceName) {
             this.customerReferenceName = Objects.requireNonNull(customerReferenceName);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder macsecProperties(List<GetCrossConnectGroupsCrossConnectGroupMacsecProperty> macsecProperties) {
             this.macsecProperties = Objects.requireNonNull(macsecProperties);
             return this;
@@ -244,23 +222,40 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
         public Builder macsecProperties(GetCrossConnectGroupsCrossConnectGroupMacsecProperty... macsecProperties) {
             return macsecProperties(List.of(macsecProperties));
         }
+        @CustomType.Setter
         public Builder ociLogicalDeviceName(String ociLogicalDeviceName) {
             this.ociLogicalDeviceName = Objects.requireNonNull(ociLogicalDeviceName);
             return this;
         }
+        @CustomType.Setter
         public Builder ociPhysicalDeviceName(String ociPhysicalDeviceName) {
             this.ociPhysicalDeviceName = Objects.requireNonNull(ociPhysicalDeviceName);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetCrossConnectGroupsCrossConnectGroup build() {
-            return new GetCrossConnectGroupsCrossConnectGroup(compartmentId, customerReferenceName, definedTags, displayName, freeformTags, id, macsecProperties, ociLogicalDeviceName, ociPhysicalDeviceName, state, timeCreated);
+        }
+        public GetCrossConnectGroupsCrossConnectGroup build() {
+            final var o = new GetCrossConnectGroupsCrossConnectGroup();
+            o.compartmentId = compartmentId;
+            o.customerReferenceName = customerReferenceName;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.macsecProperties = macsecProperties;
+            o.ociLogicalDeviceName = ociLogicalDeviceName;
+            o.ociPhysicalDeviceName = ociPhysicalDeviceName;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

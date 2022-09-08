@@ -32,14 +32,14 @@ public final class GetRegistryTypeArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId", required=true)
     private Output<String> registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public Output<String> registryId() {
@@ -47,14 +47,14 @@ public final class GetRegistryTypeArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * key of the a specefic Type.
+     * Key of the a specific type.
      * 
      */
     @Import(name="typeKey", required=true)
     private Output<String> typeKey;
 
     /**
-     * @return key of the a specefic Type.
+     * @return Key of the a specific type.
      * 
      */
     public Output<String> typeKey() {
@@ -119,7 +119,7 @@ public final class GetRegistryTypeArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class GetRegistryTypeArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class GetRegistryTypeArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param typeKey key of the a specefic Type.
+         * @param typeKey Key of the a specific type.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class GetRegistryTypeArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param typeKey key of the a specefic Type.
+         * @param typeKey Key of the a specific type.
          * 
          * @return builder
          * 

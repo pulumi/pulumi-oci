@@ -15,13 +15,9 @@ public final class AppFirewallPolicyRequestRateLimiting {
      * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private final @Nullable List<AppFirewallPolicyRequestRateLimitingRule> rules;
+    private @Nullable List<AppFirewallPolicyRequestRateLimitingRule> rules;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyRequestRateLimiting(@CustomType.Parameter("rules") @Nullable List<AppFirewallPolicyRequestRateLimitingRule> rules) {
-        this.rules = rules;
-    }
-
+    private AppFirewallPolicyRequestRateLimiting() {}
     /**
      * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
@@ -37,27 +33,27 @@ public final class AppFirewallPolicyRequestRateLimiting {
     public static Builder builder(AppFirewallPolicyRequestRateLimiting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<AppFirewallPolicyRequestRateLimitingRule> rules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyRequestRateLimiting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.rules = defaults.rules;
         }
 
+        @CustomType.Setter
         public Builder rules(@Nullable List<AppFirewallPolicyRequestRateLimitingRule> rules) {
             this.rules = rules;
             return this;
         }
         public Builder rules(AppFirewallPolicyRequestRateLimitingRule... rules) {
             return rules(List.of(rules));
-        }        public AppFirewallPolicyRequestRateLimiting build() {
-            return new AppFirewallPolicyRequestRateLimiting(rules);
+        }
+        public AppFirewallPolicyRequestRateLimiting build() {
+            final var o = new AppFirewallPolicyRequestRateLimiting();
+            o.rules = rules;
+            return o;
         }
     }
 }

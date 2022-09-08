@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIamWorkRequestErrorsResult {
-    private final @Nullable List<GetIamWorkRequestErrorsFilter> filters;
+    private @Nullable List<GetIamWorkRequestErrorsFilter> filters;
     /**
      * @return The list of iam_work_request_errors.
      * 
      */
-    private final List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors;
-    private final String iamWorkRequestId;
+    private List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors;
+    private String iamWorkRequestId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetIamWorkRequestErrorsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetIamWorkRequestErrorsFilter> filters,
-        @CustomType.Parameter("iamWorkRequestErrors") List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors,
-        @CustomType.Parameter("iamWorkRequestId") String iamWorkRequestId,
-        @CustomType.Parameter("id") String id) {
-        this.filters = filters;
-        this.iamWorkRequestErrors = iamWorkRequestErrors;
-        this.iamWorkRequestId = iamWorkRequestId;
-        this.id = id;
-    }
-
+    private GetIamWorkRequestErrorsResult() {}
     public List<GetIamWorkRequestErrorsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetIamWorkRequestErrorsResult {
     public static Builder builder(GetIamWorkRequestErrorsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetIamWorkRequestErrorsFilter> filters;
         private List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors;
         private String iamWorkRequestId;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIamWorkRequestErrorsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetIamWorkRequestErrorsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIamWorkRequestErrorsFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,6 +78,7 @@ public final class GetIamWorkRequestErrorsResult {
         public Builder filters(GetIamWorkRequestErrorsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder iamWorkRequestErrors(List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors) {
             this.iamWorkRequestErrors = Objects.requireNonNull(iamWorkRequestErrors);
             return this;
@@ -99,15 +86,23 @@ public final class GetIamWorkRequestErrorsResult {
         public Builder iamWorkRequestErrors(GetIamWorkRequestErrorsIamWorkRequestError... iamWorkRequestErrors) {
             return iamWorkRequestErrors(List.of(iamWorkRequestErrors));
         }
+        @CustomType.Setter
         public Builder iamWorkRequestId(String iamWorkRequestId) {
             this.iamWorkRequestId = Objects.requireNonNull(iamWorkRequestId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetIamWorkRequestErrorsResult build() {
-            return new GetIamWorkRequestErrorsResult(filters, iamWorkRequestErrors, iamWorkRequestId, id);
+        }
+        public GetIamWorkRequestErrorsResult build() {
+            final var o = new GetIamWorkRequestErrorsResult();
+            o.filters = filters;
+            o.iamWorkRequestErrors = iamWorkRequestErrors;
+            o.iamWorkRequestId = iamWorkRequestId;
+            o.id = id;
+            return o;
         }
     }
 }

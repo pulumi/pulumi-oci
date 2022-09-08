@@ -18,85 +18,54 @@ public final class GetRepositoryFileDiffResult {
      * @return Indicates whether the changed file contains conflicts.
      * 
      */
-    private final Boolean areConflictsInFile;
-    private final String baseVersion;
+    private Boolean areConflictsInFile;
+    private String baseVersion;
     /**
      * @return List of changed section in the file.
      * 
      */
-    private final List<GetRepositoryFileDiffChange> changes;
-    private final String filePath;
+    private List<GetRepositoryFileDiffChange> changes;
+    private String filePath;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether the file is binary.
      * 
      */
-    private final Boolean isBinary;
-    private final @Nullable Boolean isComparisonFromMergeBase;
+    private Boolean isBinary;
+    private @Nullable Boolean isComparisonFromMergeBase;
     /**
      * @return Indicates whether the file is large.
      * 
      */
-    private final Boolean isLarge;
+    private Boolean isLarge;
     /**
      * @return The ID of the changed object on the target version.
      * 
      */
-    private final String newId;
+    private String newId;
     /**
      * @return The path on the target version to the changed object.
      * 
      */
-    private final String newPath;
+    private String newPath;
     /**
      * @return The ID of the changed object on the base version.
      * 
      */
-    private final String oldId;
+    private String oldId;
     /**
      * @return The path on the base version to the changed object.
      * 
      */
-    private final String oldPath;
-    private final String repositoryId;
-    private final String targetVersion;
+    private String oldPath;
+    private String repositoryId;
+    private String targetVersion;
 
-    @CustomType.Constructor
-    private GetRepositoryFileDiffResult(
-        @CustomType.Parameter("areConflictsInFile") Boolean areConflictsInFile,
-        @CustomType.Parameter("baseVersion") String baseVersion,
-        @CustomType.Parameter("changes") List<GetRepositoryFileDiffChange> changes,
-        @CustomType.Parameter("filePath") String filePath,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isBinary") Boolean isBinary,
-        @CustomType.Parameter("isComparisonFromMergeBase") @Nullable Boolean isComparisonFromMergeBase,
-        @CustomType.Parameter("isLarge") Boolean isLarge,
-        @CustomType.Parameter("newId") String newId,
-        @CustomType.Parameter("newPath") String newPath,
-        @CustomType.Parameter("oldId") String oldId,
-        @CustomType.Parameter("oldPath") String oldPath,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("targetVersion") String targetVersion) {
-        this.areConflictsInFile = areConflictsInFile;
-        this.baseVersion = baseVersion;
-        this.changes = changes;
-        this.filePath = filePath;
-        this.id = id;
-        this.isBinary = isBinary;
-        this.isComparisonFromMergeBase = isComparisonFromMergeBase;
-        this.isLarge = isLarge;
-        this.newId = newId;
-        this.newPath = newPath;
-        this.oldId = oldId;
-        this.oldPath = oldPath;
-        this.repositoryId = repositoryId;
-        this.targetVersion = targetVersion;
-    }
-
+    private GetRepositoryFileDiffResult() {}
     /**
      * @return Indicates whether the changed file contains conflicts.
      * 
@@ -183,7 +152,7 @@ public final class GetRepositoryFileDiffResult {
     public static Builder builder(GetRepositoryFileDiffResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean areConflictsInFile;
         private String baseVersion;
@@ -199,11 +168,7 @@ public final class GetRepositoryFileDiffResult {
         private String oldPath;
         private String repositoryId;
         private String targetVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryFileDiffResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areConflictsInFile = defaults.areConflictsInFile;
@@ -222,14 +187,17 @@ public final class GetRepositoryFileDiffResult {
     	      this.targetVersion = defaults.targetVersion;
         }
 
+        @CustomType.Setter
         public Builder areConflictsInFile(Boolean areConflictsInFile) {
             this.areConflictsInFile = Objects.requireNonNull(areConflictsInFile);
             return this;
         }
+        @CustomType.Setter
         public Builder baseVersion(String baseVersion) {
             this.baseVersion = Objects.requireNonNull(baseVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder changes(List<GetRepositoryFileDiffChange> changes) {
             this.changes = Objects.requireNonNull(changes);
             return this;
@@ -237,51 +205,78 @@ public final class GetRepositoryFileDiffResult {
         public Builder changes(GetRepositoryFileDiffChange... changes) {
             return changes(List.of(changes));
         }
+        @CustomType.Setter
         public Builder filePath(String filePath) {
             this.filePath = Objects.requireNonNull(filePath);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isBinary(Boolean isBinary) {
             this.isBinary = Objects.requireNonNull(isBinary);
             return this;
         }
+        @CustomType.Setter
         public Builder isComparisonFromMergeBase(@Nullable Boolean isComparisonFromMergeBase) {
             this.isComparisonFromMergeBase = isComparisonFromMergeBase;
             return this;
         }
+        @CustomType.Setter
         public Builder isLarge(Boolean isLarge) {
             this.isLarge = Objects.requireNonNull(isLarge);
             return this;
         }
+        @CustomType.Setter
         public Builder newId(String newId) {
             this.newId = Objects.requireNonNull(newId);
             return this;
         }
+        @CustomType.Setter
         public Builder newPath(String newPath) {
             this.newPath = Objects.requireNonNull(newPath);
             return this;
         }
+        @CustomType.Setter
         public Builder oldId(String oldId) {
             this.oldId = Objects.requireNonNull(oldId);
             return this;
         }
+        @CustomType.Setter
         public Builder oldPath(String oldPath) {
             this.oldPath = Objects.requireNonNull(oldPath);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetVersion(String targetVersion) {
             this.targetVersion = Objects.requireNonNull(targetVersion);
             return this;
-        }        public GetRepositoryFileDiffResult build() {
-            return new GetRepositoryFileDiffResult(areConflictsInFile, baseVersion, changes, filePath, id, isBinary, isComparisonFromMergeBase, isLarge, newId, newPath, oldId, oldPath, repositoryId, targetVersion);
+        }
+        public GetRepositoryFileDiffResult build() {
+            final var o = new GetRepositoryFileDiffResult();
+            o.areConflictsInFile = areConflictsInFile;
+            o.baseVersion = baseVersion;
+            o.changes = changes;
+            o.filePath = filePath;
+            o.id = id;
+            o.isBinary = isBinary;
+            o.isComparisonFromMergeBase = isComparisonFromMergeBase;
+            o.isLarge = isLarge;
+            o.newId = newId;
+            o.newPath = newPath;
+            o.oldId = oldId;
+            o.oldPath = oldPath;
+            o.repositoryId = repositoryId;
+            o.targetVersion = targetVersion;
+            return o;
         }
     }
 }

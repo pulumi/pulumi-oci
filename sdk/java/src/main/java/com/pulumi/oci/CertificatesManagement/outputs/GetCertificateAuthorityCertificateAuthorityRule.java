@@ -13,28 +13,19 @@ public final class GetCertificateAuthorityCertificateAuthorityRule {
      * @return A property indicating the maximum validity duration, in days, of subordinate CA&#39;s issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private final String certificateAuthorityMaxValidityDuration;
+    private String certificateAuthorityMaxValidityDuration;
     /**
      * @return A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private final String leafCertificateMaxValidityDuration;
+    private String leafCertificateMaxValidityDuration;
     /**
      * @return The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
      * 
      */
-    private final String ruleType;
+    private String ruleType;
 
-    @CustomType.Constructor
-    private GetCertificateAuthorityCertificateAuthorityRule(
-        @CustomType.Parameter("certificateAuthorityMaxValidityDuration") String certificateAuthorityMaxValidityDuration,
-        @CustomType.Parameter("leafCertificateMaxValidityDuration") String leafCertificateMaxValidityDuration,
-        @CustomType.Parameter("ruleType") String ruleType) {
-        this.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
-        this.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
-        this.ruleType = ruleType;
-    }
-
+    private GetCertificateAuthorityCertificateAuthorityRule() {}
     /**
      * @return A property indicating the maximum validity duration, in days, of subordinate CA&#39;s issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
@@ -64,16 +55,12 @@ public final class GetCertificateAuthorityCertificateAuthorityRule {
     public static Builder builder(GetCertificateAuthorityCertificateAuthorityRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificateAuthorityMaxValidityDuration;
         private String leafCertificateMaxValidityDuration;
         private String ruleType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateAuthorityCertificateAuthorityRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateAuthorityMaxValidityDuration = defaults.certificateAuthorityMaxValidityDuration;
@@ -81,19 +68,27 @@ public final class GetCertificateAuthorityCertificateAuthorityRule {
     	      this.ruleType = defaults.ruleType;
         }
 
+        @CustomType.Setter
         public Builder certificateAuthorityMaxValidityDuration(String certificateAuthorityMaxValidityDuration) {
             this.certificateAuthorityMaxValidityDuration = Objects.requireNonNull(certificateAuthorityMaxValidityDuration);
             return this;
         }
+        @CustomType.Setter
         public Builder leafCertificateMaxValidityDuration(String leafCertificateMaxValidityDuration) {
             this.leafCertificateMaxValidityDuration = Objects.requireNonNull(leafCertificateMaxValidityDuration);
             return this;
         }
+        @CustomType.Setter
         public Builder ruleType(String ruleType) {
             this.ruleType = Objects.requireNonNull(ruleType);
             return this;
-        }        public GetCertificateAuthorityCertificateAuthorityRule build() {
-            return new GetCertificateAuthorityCertificateAuthorityRule(certificateAuthorityMaxValidityDuration, leafCertificateMaxValidityDuration, ruleType);
+        }
+        public GetCertificateAuthorityCertificateAuthorityRule build() {
+            final var o = new GetCertificateAuthorityCertificateAuthorityRule();
+            o.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
+            o.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
+            o.ruleType = ruleType;
+            return o;
         }
     }
 }

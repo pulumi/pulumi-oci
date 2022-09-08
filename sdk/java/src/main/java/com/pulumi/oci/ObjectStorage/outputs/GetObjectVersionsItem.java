@@ -14,77 +14,54 @@ public final class GetObjectVersionsItem {
      * @return Archival state of an object. This field is set only for objects in Archive tier.
      * 
      */
-    private final String archivalState;
+    private String archivalState;
     /**
      * @return The current entity tag (ETag) for the object.
      * 
      */
-    private final String etag;
+    private String etag;
     /**
      * @return This flag will indicate if the version is deleted or not.
      * 
      */
-    private final Boolean isDeleteMarker;
+    private Boolean isDeleteMarker;
     /**
      * @return Base64-encoded MD5 hash of the object data.
      * 
      */
-    private final String md5;
+    private String md5;
     /**
      * @return The name of the object. Avoid entering confidential information. Example: test/object1.log
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Size of the object in bytes.
      * 
      */
-    private final String size;
+    private String size;
     /**
      * @return The storage tier that the object is stored in.
      * 
      */
-    private final String storageTier;
+    private String storageTier;
     /**
      * @return The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
      * 
      */
-    private final String timeModified;
+    private String timeModified;
     /**
      * @return VersionId of the object.
      * 
      */
-    private final String versionId;
+    private String versionId;
 
-    @CustomType.Constructor
-    private GetObjectVersionsItem(
-        @CustomType.Parameter("archivalState") String archivalState,
-        @CustomType.Parameter("etag") String etag,
-        @CustomType.Parameter("isDeleteMarker") Boolean isDeleteMarker,
-        @CustomType.Parameter("md5") String md5,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("size") String size,
-        @CustomType.Parameter("storageTier") String storageTier,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeModified") String timeModified,
-        @CustomType.Parameter("versionId") String versionId) {
-        this.archivalState = archivalState;
-        this.etag = etag;
-        this.isDeleteMarker = isDeleteMarker;
-        this.md5 = md5;
-        this.name = name;
-        this.size = size;
-        this.storageTier = storageTier;
-        this.timeCreated = timeCreated;
-        this.timeModified = timeModified;
-        this.versionId = versionId;
-    }
-
+    private GetObjectVersionsItem() {}
     /**
      * @return Archival state of an object. This field is set only for objects in Archive tier.
      * 
@@ -163,7 +140,7 @@ public final class GetObjectVersionsItem {
     public static Builder builder(GetObjectVersionsItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String archivalState;
         private String etag;
@@ -175,11 +152,7 @@ public final class GetObjectVersionsItem {
         private String timeCreated;
         private String timeModified;
         private String versionId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetObjectVersionsItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.archivalState = defaults.archivalState;
@@ -194,47 +167,69 @@ public final class GetObjectVersionsItem {
     	      this.versionId = defaults.versionId;
         }
 
+        @CustomType.Setter
         public Builder archivalState(String archivalState) {
             this.archivalState = Objects.requireNonNull(archivalState);
             return this;
         }
+        @CustomType.Setter
         public Builder etag(String etag) {
             this.etag = Objects.requireNonNull(etag);
             return this;
         }
+        @CustomType.Setter
         public Builder isDeleteMarker(Boolean isDeleteMarker) {
             this.isDeleteMarker = Objects.requireNonNull(isDeleteMarker);
             return this;
         }
+        @CustomType.Setter
         public Builder md5(String md5) {
             this.md5 = Objects.requireNonNull(md5);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder size(String size) {
             this.size = Objects.requireNonNull(size);
             return this;
         }
+        @CustomType.Setter
         public Builder storageTier(String storageTier) {
             this.storageTier = Objects.requireNonNull(storageTier);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeModified(String timeModified) {
             this.timeModified = Objects.requireNonNull(timeModified);
             return this;
         }
+        @CustomType.Setter
         public Builder versionId(String versionId) {
             this.versionId = Objects.requireNonNull(versionId);
             return this;
-        }        public GetObjectVersionsItem build() {
-            return new GetObjectVersionsItem(archivalState, etag, isDeleteMarker, md5, name, size, storageTier, timeCreated, timeModified, versionId);
+        }
+        public GetObjectVersionsItem build() {
+            final var o = new GetObjectVersionsItem();
+            o.archivalState = archivalState;
+            o.etag = etag;
+            o.isDeleteMarker = isDeleteMarker;
+            o.md5 = md5;
+            o.name = name;
+            o.size = size;
+            o.storageTier = storageTier;
+            o.timeCreated = timeCreated;
+            o.timeModified = timeModified;
+            o.versionId = versionId;
+            return o;
         }
     }
 }

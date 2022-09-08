@@ -16,28 +16,19 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
      * @return Whether this is the default recommendation strategy.
      * 
      */
-    private final Boolean isDefault;
+    private Boolean isDefault;
     /**
      * @return The list of strategies for the parameters.
      * 
      */
-    private final List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition> parametersDefinitions;
+    private List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition> parametersDefinitions;
     /**
      * @return The name of the strategy.
      * 
      */
-    private final String strategyName;
+    private String strategyName;
 
-    @CustomType.Constructor
-    private GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy(
-        @CustomType.Parameter("isDefault") Boolean isDefault,
-        @CustomType.Parameter("parametersDefinitions") List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition> parametersDefinitions,
-        @CustomType.Parameter("strategyName") String strategyName) {
-        this.isDefault = isDefault;
-        this.parametersDefinitions = parametersDefinitions;
-        this.strategyName = strategyName;
-    }
-
+    private GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy() {}
     /**
      * @return Whether this is the default recommendation strategy.
      * 
@@ -67,16 +58,12 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
     public static Builder builder(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isDefault;
         private List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition> parametersDefinitions;
         private String strategyName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isDefault = defaults.isDefault;
@@ -84,10 +71,12 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
     	      this.strategyName = defaults.strategyName;
         }
 
+        @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = Objects.requireNonNull(isDefault);
             return this;
         }
+        @CustomType.Setter
         public Builder parametersDefinitions(List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition> parametersDefinitions) {
             this.parametersDefinitions = Objects.requireNonNull(parametersDefinitions);
             return this;
@@ -95,11 +84,17 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
         public Builder parametersDefinitions(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition... parametersDefinitions) {
             return parametersDefinitions(List.of(parametersDefinitions));
         }
+        @CustomType.Setter
         public Builder strategyName(String strategyName) {
             this.strategyName = Objects.requireNonNull(strategyName);
             return this;
-        }        public GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy build() {
-            return new GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy(isDefault, parametersDefinitions, strategyName);
+        }
+        public GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy build() {
+            final var o = new GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy();
+            o.isDefault = isDefault;
+            o.parametersDefinitions = parametersDefinitions;
+            o.strategyName = strategyName;
+            return o;
         }
     }
 }

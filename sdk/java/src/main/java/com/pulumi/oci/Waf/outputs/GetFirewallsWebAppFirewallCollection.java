@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetFirewallsWebAppFirewallCollection {
-    private final List<GetFirewallsWebAppFirewallCollectionItem> items;
+    private List<GetFirewallsWebAppFirewallCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetFirewallsWebAppFirewallCollection(@CustomType.Parameter("items") List<GetFirewallsWebAppFirewallCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetFirewallsWebAppFirewallCollection() {}
     public List<GetFirewallsWebAppFirewallCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetFirewallsWebAppFirewallCollection {
     public static Builder builder(GetFirewallsWebAppFirewallCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetFirewallsWebAppFirewallCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFirewallsWebAppFirewallCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetFirewallsWebAppFirewallCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetFirewallsWebAppFirewallCollectionItem... items) {
             return items(List.of(items));
-        }        public GetFirewallsWebAppFirewallCollection build() {
-            return new GetFirewallsWebAppFirewallCollection(items);
+        }
+        public GetFirewallsWebAppFirewallCollection build() {
+            final var o = new GetFirewallsWebAppFirewallCollection();
+            o.items = items;
+            return o;
         }
     }
 }

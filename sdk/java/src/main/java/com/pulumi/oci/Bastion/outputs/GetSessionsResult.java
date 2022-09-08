@@ -18,44 +18,27 @@ public final class GetSessionsResult {
      * @return The unique identifier (OCID) of the bastion that is hosting this session.
      * 
      */
-    private final String bastionId;
+    private String bastionId;
     /**
      * @return The name of the session.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetSessionsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetSessionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String sessionId;
-    private final @Nullable String sessionLifecycleState;
+    private String id;
+    private @Nullable String sessionId;
+    private @Nullable String sessionLifecycleState;
     /**
      * @return The list of sessions.
      * 
      */
-    private final List<GetSessionsSession> sessions;
+    private List<GetSessionsSession> sessions;
 
-    @CustomType.Constructor
-    private GetSessionsResult(
-        @CustomType.Parameter("bastionId") String bastionId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetSessionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("sessionId") @Nullable String sessionId,
-        @CustomType.Parameter("sessionLifecycleState") @Nullable String sessionLifecycleState,
-        @CustomType.Parameter("sessions") List<GetSessionsSession> sessions) {
-        this.bastionId = bastionId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.sessionId = sessionId;
-        this.sessionLifecycleState = sessionLifecycleState;
-        this.sessions = sessions;
-    }
-
+    private GetSessionsResult() {}
     /**
      * @return The unique identifier (OCID) of the bastion that is hosting this session.
      * 
@@ -101,7 +84,7 @@ public final class GetSessionsResult {
     public static Builder builder(GetSessionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bastionId;
         private @Nullable String displayName;
@@ -110,11 +93,7 @@ public final class GetSessionsResult {
         private @Nullable String sessionId;
         private @Nullable String sessionLifecycleState;
         private List<GetSessionsSession> sessions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSessionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bastionId = defaults.bastionId;
@@ -126,14 +105,17 @@ public final class GetSessionsResult {
     	      this.sessions = defaults.sessions;
         }
 
+        @CustomType.Setter
         public Builder bastionId(String bastionId) {
             this.bastionId = Objects.requireNonNull(bastionId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSessionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,26 +123,39 @@ public final class GetSessionsResult {
         public Builder filters(GetSessionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder sessionId(@Nullable String sessionId) {
             this.sessionId = sessionId;
             return this;
         }
+        @CustomType.Setter
         public Builder sessionLifecycleState(@Nullable String sessionLifecycleState) {
             this.sessionLifecycleState = sessionLifecycleState;
             return this;
         }
+        @CustomType.Setter
         public Builder sessions(List<GetSessionsSession> sessions) {
             this.sessions = Objects.requireNonNull(sessions);
             return this;
         }
         public Builder sessions(GetSessionsSession... sessions) {
             return sessions(List.of(sessions));
-        }        public GetSessionsResult build() {
-            return new GetSessionsResult(bastionId, displayName, filters, id, sessionId, sessionLifecycleState, sessions);
+        }
+        public GetSessionsResult build() {
+            final var o = new GetSessionsResult();
+            o.bastionId = bastionId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.sessionId = sessionId;
+            o.sessionLifecycleState = sessionLifecycleState;
+            o.sessions = sessions;
+            return o;
         }
     }
 }

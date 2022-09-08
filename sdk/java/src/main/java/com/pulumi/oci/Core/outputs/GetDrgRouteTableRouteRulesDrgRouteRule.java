@@ -16,70 +16,49 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
      * @return Additional properties for the route, computed by the service.
      * 
      */
-    private final Map<String,Object> attributes;
+    private Map<String,Object> attributes;
     /**
      * @return Represents the range of IP addresses to match against when routing traffic.
      * 
      */
-    private final String destination;
+    private String destination;
     /**
      * @return The type of destination for the rule. the type is required if `direction` = `EGRESS`.
      * 
      */
-    private final String destinationType;
+    private String destinationType;
     /**
      * @return The Oracle-assigned ID of the DRG route rule.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
      * 
      */
-    private final Boolean isBlackhole;
+    private Boolean isBlackhole;
     /**
      * @return Indicates that the route was not imported due to a conflict between route rules.
      * 
      */
-    private final Boolean isConflict;
+    private Boolean isConflict;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment responsible for reaching the network destination.
      * 
      */
-    private final String nextHopDrgAttachmentId;
+    private String nextHopDrgAttachmentId;
     /**
      * @return The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route&#39;s provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
      * 
      */
-    private final String routeProvenance;
+    private String routeProvenance;
     /**
      * @return Static routes are specified through the DRG route table API. Dynamic routes are learned by the DRG from the DRG attachments through various routing protocols.
      * 
      */
-    private final String routeType;
+    private String routeType;
 
-    @CustomType.Constructor
-    private GetDrgRouteTableRouteRulesDrgRouteRule(
-        @CustomType.Parameter("attributes") Map<String,Object> attributes,
-        @CustomType.Parameter("destination") String destination,
-        @CustomType.Parameter("destinationType") String destinationType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isBlackhole") Boolean isBlackhole,
-        @CustomType.Parameter("isConflict") Boolean isConflict,
-        @CustomType.Parameter("nextHopDrgAttachmentId") String nextHopDrgAttachmentId,
-        @CustomType.Parameter("routeProvenance") String routeProvenance,
-        @CustomType.Parameter("routeType") String routeType) {
-        this.attributes = attributes;
-        this.destination = destination;
-        this.destinationType = destinationType;
-        this.id = id;
-        this.isBlackhole = isBlackhole;
-        this.isConflict = isConflict;
-        this.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
-        this.routeProvenance = routeProvenance;
-        this.routeType = routeType;
-    }
-
+    private GetDrgRouteTableRouteRulesDrgRouteRule() {}
     /**
      * @return Additional properties for the route, computed by the service.
      * 
@@ -151,7 +130,7 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
     public static Builder builder(GetDrgRouteTableRouteRulesDrgRouteRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> attributes;
         private String destination;
@@ -162,11 +141,7 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
         private String nextHopDrgAttachmentId;
         private String routeProvenance;
         private String routeType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDrgRouteTableRouteRulesDrgRouteRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attributes = defaults.attributes;
@@ -180,43 +155,63 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
     	      this.routeType = defaults.routeType;
         }
 
+        @CustomType.Setter
         public Builder attributes(Map<String,Object> attributes) {
             this.attributes = Objects.requireNonNull(attributes);
             return this;
         }
+        @CustomType.Setter
         public Builder destination(String destination) {
             this.destination = Objects.requireNonNull(destination);
             return this;
         }
+        @CustomType.Setter
         public Builder destinationType(String destinationType) {
             this.destinationType = Objects.requireNonNull(destinationType);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isBlackhole(Boolean isBlackhole) {
             this.isBlackhole = Objects.requireNonNull(isBlackhole);
             return this;
         }
+        @CustomType.Setter
         public Builder isConflict(Boolean isConflict) {
             this.isConflict = Objects.requireNonNull(isConflict);
             return this;
         }
+        @CustomType.Setter
         public Builder nextHopDrgAttachmentId(String nextHopDrgAttachmentId) {
             this.nextHopDrgAttachmentId = Objects.requireNonNull(nextHopDrgAttachmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder routeProvenance(String routeProvenance) {
             this.routeProvenance = Objects.requireNonNull(routeProvenance);
             return this;
         }
+        @CustomType.Setter
         public Builder routeType(String routeType) {
             this.routeType = Objects.requireNonNull(routeType);
             return this;
-        }        public GetDrgRouteTableRouteRulesDrgRouteRule build() {
-            return new GetDrgRouteTableRouteRulesDrgRouteRule(attributes, destination, destinationType, id, isBlackhole, isConflict, nextHopDrgAttachmentId, routeProvenance, routeType);
+        }
+        public GetDrgRouteTableRouteRulesDrgRouteRule build() {
+            final var o = new GetDrgRouteTableRouteRulesDrgRouteRule();
+            o.attributes = attributes;
+            o.destination = destination;
+            o.destinationType = destinationType;
+            o.id = id;
+            o.isBlackhole = isBlackhole;
+            o.isConflict = isConflict;
+            o.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
+            o.routeProvenance = routeProvenance;
+            o.routeType = routeType;
+            return o;
         }
     }
 }

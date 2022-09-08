@@ -10,38 +10,25 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudGuardConfigurationResult {
-    private final String compartmentId;
-    private final String id;
+    private String compartmentId;
+    private String id;
     /**
      * @return The reporting region value
      * 
      */
-    private final String reportingRegion;
+    private String reportingRegion;
     /**
      * @return Identifies if Oracle managed resources were created by customers
      * 
      */
-    private final Boolean selfManageResources;
+    private Boolean selfManageResources;
     /**
      * @return Status of Cloud Guard Tenant
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetCloudGuardConfigurationResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("reportingRegion") String reportingRegion,
-        @CustomType.Parameter("selfManageResources") Boolean selfManageResources,
-        @CustomType.Parameter("status") String status) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.reportingRegion = reportingRegion;
-        this.selfManageResources = selfManageResources;
-        this.status = status;
-    }
-
+    private GetCloudGuardConfigurationResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -77,18 +64,14 @@ public final class GetCloudGuardConfigurationResult {
     public static Builder builder(GetCloudGuardConfigurationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private String reportingRegion;
         private Boolean selfManageResources;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCloudGuardConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -98,27 +81,39 @@ public final class GetCloudGuardConfigurationResult {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder reportingRegion(String reportingRegion) {
             this.reportingRegion = Objects.requireNonNull(reportingRegion);
             return this;
         }
+        @CustomType.Setter
         public Builder selfManageResources(Boolean selfManageResources) {
             this.selfManageResources = Objects.requireNonNull(selfManageResources);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetCloudGuardConfigurationResult build() {
-            return new GetCloudGuardConfigurationResult(compartmentId, id, reportingRegion, selfManageResources, status);
+        }
+        public GetCloudGuardConfigurationResult build() {
+            final var o = new GetCloudGuardConfigurationResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.reportingRegion = reportingRegion;
+            o.selfManageResources = selfManageResources;
+            o.status = status;
+            return o;
         }
     }
 }

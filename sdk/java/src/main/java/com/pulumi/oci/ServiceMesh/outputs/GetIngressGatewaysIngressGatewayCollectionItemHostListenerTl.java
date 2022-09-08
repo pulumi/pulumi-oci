@@ -16,28 +16,19 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl 
      * @return Resource representing the TLS configuration used for validating client certificates.
      * 
      */
-    private final List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation> clientValidations;
+    private List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation> clientValidations;
     /**
      * @return DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client&#39;s certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
      * 
      */
-    private final String mode;
+    private String mode;
     /**
      * @return Resource representing the location of the TLS certificate.
      * 
      */
-    private final List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate> serverCertificates;
+    private List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate> serverCertificates;
 
-    @CustomType.Constructor
-    private GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl(
-        @CustomType.Parameter("clientValidations") List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation> clientValidations,
-        @CustomType.Parameter("mode") String mode,
-        @CustomType.Parameter("serverCertificates") List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate> serverCertificates) {
-        this.clientValidations = clientValidations;
-        this.mode = mode;
-        this.serverCertificates = serverCertificates;
-    }
-
+    private GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl() {}
     /**
      * @return Resource representing the TLS configuration used for validating client certificates.
      * 
@@ -67,16 +58,12 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl 
     public static Builder builder(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation> clientValidations;
         private String mode;
         private List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate> serverCertificates;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clientValidations = defaults.clientValidations;
@@ -84,6 +71,7 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl 
     	      this.serverCertificates = defaults.serverCertificates;
         }
 
+        @CustomType.Setter
         public Builder clientValidations(List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation> clientValidations) {
             this.clientValidations = Objects.requireNonNull(clientValidations);
             return this;
@@ -91,18 +79,25 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl 
         public Builder clientValidations(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation... clientValidations) {
             return clientValidations(List.of(clientValidations));
         }
+        @CustomType.Setter
         public Builder mode(String mode) {
             this.mode = Objects.requireNonNull(mode);
             return this;
         }
+        @CustomType.Setter
         public Builder serverCertificates(List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate> serverCertificates) {
             this.serverCertificates = Objects.requireNonNull(serverCertificates);
             return this;
         }
         public Builder serverCertificates(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate... serverCertificates) {
             return serverCertificates(List.of(serverCertificates));
-        }        public GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl build() {
-            return new GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl(clientValidations, mode, serverCertificates);
+        }
+        public GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl build() {
+            final var o = new GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl();
+            o.clientValidations = clientValidations;
+            o.mode = mode;
+            o.serverCertificates = serverCertificates;
+            return o;
         }
     }
 }

@@ -13,37 +13,37 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
      * @return The operation that can be performed on this resource.
      * 
      */
-    private final String accessType;
+    private String accessType;
     /**
      * @return The URI to embed in the URL when using the pre-authenticated request.
      * 
      */
-    private final String accessUri;
+    private String accessUri;
     /**
      * @return The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return Specifies whether a list operation is allowed on a PAR with accessType &#34;AnyObjectRead&#34; or &#34;AnyObjectReadWrite&#34;. Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      * 
      */
-    private final String bucketListingAction;
+    private String bucketListingAction;
     /**
      * @return The unique identifier to use when directly addressing the pre-authenticated request.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The user-provided name of the pre-authenticated request.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The Object Storage namespace used for the request.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return Deprecated. Instead use `object_name`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
      * 
@@ -52,52 +52,25 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
      * 
      */
     @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
-    private final String object;
+    private String object;
     /**
      * @return The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
      * 
      */
-    private final String objectName;
-    private final String parId;
+    private String objectName;
+    private String parId;
     /**
      * @return The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
      * 
      */
-    private final String timeExpires;
+    private String timeExpires;
 
-    @CustomType.Constructor
-    private GetPreauthrequestsPreauthenticatedRequest(
-        @CustomType.Parameter("accessType") String accessType,
-        @CustomType.Parameter("accessUri") String accessUri,
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("bucketListingAction") String bucketListingAction,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("objectName") String objectName,
-        @CustomType.Parameter("parId") String parId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeExpires") String timeExpires) {
-        this.accessType = accessType;
-        this.accessUri = accessUri;
-        this.bucket = bucket;
-        this.bucketListingAction = bucketListingAction;
-        this.id = id;
-        this.name = name;
-        this.namespace = namespace;
-        this.object = object;
-        this.objectName = objectName;
-        this.parId = parId;
-        this.timeCreated = timeCreated;
-        this.timeExpires = timeExpires;
-    }
-
+    private GetPreauthrequestsPreauthenticatedRequest() {}
     /**
      * @return The operation that can be performed on this resource.
      * 
@@ -190,7 +163,7 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
     public static Builder builder(GetPreauthrequestsPreauthenticatedRequest defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String accessType;
         private String accessUri;
@@ -204,11 +177,7 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
         private String parId;
         private String timeCreated;
         private String timeExpires;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPreauthrequestsPreauthenticatedRequest defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessType = defaults.accessType;
@@ -225,55 +194,81 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
     	      this.timeExpires = defaults.timeExpires;
         }
 
+        @CustomType.Setter
         public Builder accessType(String accessType) {
             this.accessType = Objects.requireNonNull(accessType);
             return this;
         }
+        @CustomType.Setter
         public Builder accessUri(String accessUri) {
             this.accessUri = Objects.requireNonNull(accessUri);
             return this;
         }
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder bucketListingAction(String bucketListingAction) {
             this.bucketListingAction = Objects.requireNonNull(bucketListingAction);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder objectName(String objectName) {
             this.objectName = Objects.requireNonNull(objectName);
             return this;
         }
+        @CustomType.Setter
         public Builder parId(String parId) {
             this.parId = Objects.requireNonNull(parId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
             this.timeExpires = Objects.requireNonNull(timeExpires);
             return this;
-        }        public GetPreauthrequestsPreauthenticatedRequest build() {
-            return new GetPreauthrequestsPreauthenticatedRequest(accessType, accessUri, bucket, bucketListingAction, id, name, namespace, object, objectName, parId, timeCreated, timeExpires);
+        }
+        public GetPreauthrequestsPreauthenticatedRequest build() {
+            final var o = new GetPreauthrequestsPreauthenticatedRequest();
+            o.accessType = accessType;
+            o.accessUri = accessUri;
+            o.bucket = bucket;
+            o.bucketListingAction = bucketListingAction;
+            o.id = id;
+            o.name = name;
+            o.namespace = namespace;
+            o.object = object;
+            o.objectName = objectName;
+            o.parId = parId;
+            o.timeCreated = timeCreated;
+            o.timeExpires = timeExpires;
+            return o;
         }
     }
 }

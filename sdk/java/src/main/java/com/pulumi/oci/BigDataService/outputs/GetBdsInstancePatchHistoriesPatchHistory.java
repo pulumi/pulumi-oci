@@ -13,28 +13,19 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
      * @return The status of the patch.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time when the patch history was last updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The version of the patch.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetBdsInstancePatchHistoriesPatchHistory(
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("version") String version) {
-        this.state = state;
-        this.timeUpdated = timeUpdated;
-        this.version = version;
-    }
-
+    private GetBdsInstancePatchHistoriesPatchHistory() {}
     /**
      * @return The status of the patch.
      * 
@@ -64,16 +55,12 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
     public static Builder builder(GetBdsInstancePatchHistoriesPatchHistory defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String state;
         private String timeUpdated;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstancePatchHistoriesPatchHistory defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.state = defaults.state;
@@ -81,19 +68,27 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetBdsInstancePatchHistoriesPatchHistory build() {
-            return new GetBdsInstancePatchHistoriesPatchHistory(state, timeUpdated, version);
+        }
+        public GetBdsInstancePatchHistoriesPatchHistory build() {
+            final var o = new GetBdsInstancePatchHistoriesPatchHistory();
+            o.state = state;
+            o.timeUpdated = timeUpdated;
+            o.version = version;
+            return o;
         }
     }
 }

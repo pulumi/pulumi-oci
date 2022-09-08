@@ -17,21 +17,14 @@ public final class AnnouncementSubscriptionFilterGroups {
      * @return A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
      * 
      */
-    private final List<AnnouncementSubscriptionFilterGroupsFilter> filters;
+    private List<AnnouncementSubscriptionFilterGroupsFilter> filters;
     /**
      * @return The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private AnnouncementSubscriptionFilterGroups(
-        @CustomType.Parameter("filters") List<AnnouncementSubscriptionFilterGroupsFilter> filters,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.filters = filters;
-        this.name = name;
-    }
-
+    private AnnouncementSubscriptionFilterGroups() {}
     /**
      * @return A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
      * 
@@ -54,21 +47,18 @@ public final class AnnouncementSubscriptionFilterGroups {
     public static Builder builder(AnnouncementSubscriptionFilterGroups defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<AnnouncementSubscriptionFilterGroupsFilter> filters;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AnnouncementSubscriptionFilterGroups defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder filters(List<AnnouncementSubscriptionFilterGroupsFilter> filters) {
             this.filters = Objects.requireNonNull(filters);
             return this;
@@ -76,11 +66,16 @@ public final class AnnouncementSubscriptionFilterGroups {
         public Builder filters(AnnouncementSubscriptionFilterGroupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public AnnouncementSubscriptionFilterGroups build() {
-            return new AnnouncementSubscriptionFilterGroups(filters, name);
+        }
+        public AnnouncementSubscriptionFilterGroups build() {
+            final var o = new AnnouncementSubscriptionFilterGroups();
+            o.filters = filters;
+            o.name = name;
+            return o;
         }
     }
 }

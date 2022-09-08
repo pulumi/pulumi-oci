@@ -14,35 +14,24 @@ public final class GetInstanceAvailablePluginAvailablePlugin {
      * @return Is the plugin enabled or disabled by default
      * 
      */
-    private final Boolean isEnabledByDefault;
+    private Boolean isEnabledByDefault;
     /**
      * @return Is the plugin supported or not
      * 
      */
-    private final Boolean isSupported;
+    private Boolean isSupported;
     /**
      * @return The plugin name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A brief description of the plugin functionality
      * 
      */
-    private final String summary;
+    private String summary;
 
-    @CustomType.Constructor
-    private GetInstanceAvailablePluginAvailablePlugin(
-        @CustomType.Parameter("isEnabledByDefault") Boolean isEnabledByDefault,
-        @CustomType.Parameter("isSupported") Boolean isSupported,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("summary") String summary) {
-        this.isEnabledByDefault = isEnabledByDefault;
-        this.isSupported = isSupported;
-        this.name = name;
-        this.summary = summary;
-    }
-
+    private GetInstanceAvailablePluginAvailablePlugin() {}
     /**
      * @return Is the plugin enabled or disabled by default
      * 
@@ -79,17 +68,13 @@ public final class GetInstanceAvailablePluginAvailablePlugin {
     public static Builder builder(GetInstanceAvailablePluginAvailablePlugin defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabledByDefault;
         private Boolean isSupported;
         private String name;
         private String summary;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceAvailablePluginAvailablePlugin defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabledByDefault = defaults.isEnabledByDefault;
@@ -98,23 +83,33 @@ public final class GetInstanceAvailablePluginAvailablePlugin {
     	      this.summary = defaults.summary;
         }
 
+        @CustomType.Setter
         public Builder isEnabledByDefault(Boolean isEnabledByDefault) {
             this.isEnabledByDefault = Objects.requireNonNull(isEnabledByDefault);
             return this;
         }
+        @CustomType.Setter
         public Builder isSupported(Boolean isSupported) {
             this.isSupported = Objects.requireNonNull(isSupported);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder summary(String summary) {
             this.summary = Objects.requireNonNull(summary);
             return this;
-        }        public GetInstanceAvailablePluginAvailablePlugin build() {
-            return new GetInstanceAvailablePluginAvailablePlugin(isEnabledByDefault, isSupported, name, summary);
+        }
+        public GetInstanceAvailablePluginAvailablePlugin build() {
+            final var o = new GetInstanceAvailablePluginAvailablePlugin();
+            o.isEnabledByDefault = isEnabledByDefault;
+            o.isSupported = isSupported;
+            o.name = name;
+            o.summary = summary;
+            return o;
         }
     }
 }

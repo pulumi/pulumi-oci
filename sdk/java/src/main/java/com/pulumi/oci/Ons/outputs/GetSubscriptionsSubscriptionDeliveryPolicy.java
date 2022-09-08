@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionDeliveryPolicy {
-    private final List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies;
+    private List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies;
 
-    @CustomType.Constructor
-    private GetSubscriptionsSubscriptionDeliveryPolicy(@CustomType.Parameter("backoffRetryPolicies") List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies) {
-        this.backoffRetryPolicies = backoffRetryPolicies;
-    }
-
+    private GetSubscriptionsSubscriptionDeliveryPolicy() {}
     public List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies() {
         return this.backoffRetryPolicies;
     }
@@ -28,27 +24,27 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicy {
     public static Builder builder(GetSubscriptionsSubscriptionDeliveryPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsSubscriptionDeliveryPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backoffRetryPolicies = defaults.backoffRetryPolicies;
         }
 
+        @CustomType.Setter
         public Builder backoffRetryPolicies(List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies) {
             this.backoffRetryPolicies = Objects.requireNonNull(backoffRetryPolicies);
             return this;
         }
         public Builder backoffRetryPolicies(GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy... backoffRetryPolicies) {
             return backoffRetryPolicies(List.of(backoffRetryPolicies));
-        }        public GetSubscriptionsSubscriptionDeliveryPolicy build() {
-            return new GetSubscriptionsSubscriptionDeliveryPolicy(backoffRetryPolicies);
+        }
+        public GetSubscriptionsSubscriptionDeliveryPolicy build() {
+            final var o = new GetSubscriptionsSubscriptionDeliveryPolicy();
+            o.backoffRetryPolicies = backoffRetryPolicies;
+            return o;
         }
     }
 }

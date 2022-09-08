@@ -13,35 +13,24 @@ public final class GetServicesService {
      * @return A string that represents the regional public IP address ranges for the Oracle service or services covered by this `Service` object. Also known as the `Service` object&#39;s *service CIDR label*.
      * 
      */
-    private final String cidrBlock;
+    private String cidrBlock;
     /**
      * @return Description of the Oracle service or services covered by this `Service` object.  Example: `OCI PHX Object Storage`
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The `Service` object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetServicesService(
-        @CustomType.Parameter("cidrBlock") String cidrBlock,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name) {
-        this.cidrBlock = cidrBlock;
-        this.description = description;
-        this.id = id;
-        this.name = name;
-    }
-
+    private GetServicesService() {}
     /**
      * @return A string that represents the regional public IP address ranges for the Oracle service or services covered by this `Service` object. Also known as the `Service` object&#39;s *service CIDR label*.
      * 
@@ -78,17 +67,13 @@ public final class GetServicesService {
     public static Builder builder(GetServicesService defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cidrBlock;
         private String description;
         private String id;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServicesService defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidrBlock = defaults.cidrBlock;
@@ -97,23 +82,33 @@ public final class GetServicesService {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = Objects.requireNonNull(cidrBlock);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetServicesService build() {
-            return new GetServicesService(cidrBlock, description, id, name);
+        }
+        public GetServicesService build() {
+            final var o = new GetServicesService();
+            o.cidrBlock = cidrBlock;
+            o.description = description;
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

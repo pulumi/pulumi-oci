@@ -15,28 +15,19 @@ public final class GetPluggableDatabaseConnectionString {
      * @return All connection strings to use to connect to the pluggable database.
      * 
      */
-    private final Map<String,Object> allConnectionStrings;
+    private Map<String,Object> allConnectionStrings;
     /**
      * @return A host name-based PDB connection string.
      * 
      */
-    private final String pdbDefault;
+    private String pdbDefault;
     /**
      * @return An IP-based PDB connection string.
      * 
      */
-    private final String pdbIpDefault;
+    private String pdbIpDefault;
 
-    @CustomType.Constructor
-    private GetPluggableDatabaseConnectionString(
-        @CustomType.Parameter("allConnectionStrings") Map<String,Object> allConnectionStrings,
-        @CustomType.Parameter("pdbDefault") String pdbDefault,
-        @CustomType.Parameter("pdbIpDefault") String pdbIpDefault) {
-        this.allConnectionStrings = allConnectionStrings;
-        this.pdbDefault = pdbDefault;
-        this.pdbIpDefault = pdbIpDefault;
-    }
-
+    private GetPluggableDatabaseConnectionString() {}
     /**
      * @return All connection strings to use to connect to the pluggable database.
      * 
@@ -66,16 +57,12 @@ public final class GetPluggableDatabaseConnectionString {
     public static Builder builder(GetPluggableDatabaseConnectionString defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> allConnectionStrings;
         private String pdbDefault;
         private String pdbIpDefault;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPluggableDatabaseConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allConnectionStrings = defaults.allConnectionStrings;
@@ -83,19 +70,27 @@ public final class GetPluggableDatabaseConnectionString {
     	      this.pdbIpDefault = defaults.pdbIpDefault;
         }
 
+        @CustomType.Setter
         public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
             this.allConnectionStrings = Objects.requireNonNull(allConnectionStrings);
             return this;
         }
+        @CustomType.Setter
         public Builder pdbDefault(String pdbDefault) {
             this.pdbDefault = Objects.requireNonNull(pdbDefault);
             return this;
         }
+        @CustomType.Setter
         public Builder pdbIpDefault(String pdbIpDefault) {
             this.pdbIpDefault = Objects.requireNonNull(pdbIpDefault);
             return this;
-        }        public GetPluggableDatabaseConnectionString build() {
-            return new GetPluggableDatabaseConnectionString(allConnectionStrings, pdbDefault, pdbIpDefault);
+        }
+        public GetPluggableDatabaseConnectionString build() {
+            final var o = new GetPluggableDatabaseConnectionString();
+            o.allConnectionStrings = allConnectionStrings;
+            o.pdbDefault = pdbDefault;
+            o.pdbIpDefault = pdbIpDefault;
+            return o;
         }
     }
 }

@@ -14,56 +14,39 @@ public final class GetVirtualCircuitsVirtualCircuitCrossConnectMapping {
      * @return The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don&#39;t use BGP MD5 authentication.
      * 
      */
-    private final String bgpMd5authKey;
+    private String bgpMd5authKey;
     /**
      * @return The OCID of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
      * 
      */
-    private final String crossConnectOrCrossConnectGroupId;
+    private String crossConnectOrCrossConnectGroupId;
     /**
      * @return The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider&#39;s edge router. Must use a /30 or /31 subnet mask.
      * 
      */
-    private final String customerBgpPeeringIp;
+    private String customerBgpPeeringIp;
     /**
      * @return The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider&#39;s edge router. Only subnet masks from /64 up to /127 are allowed.
      * 
      */
-    private final String customerBgpPeeringIpv6;
+    private String customerBgpPeeringIpv6;
     /**
      * @return The IPv4 address for Oracle&#39;s end of the BGP session. Must use a /30 or /31 subnet mask. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
      * 
      */
-    private final String oracleBgpPeeringIp;
+    private String oracleBgpPeeringIp;
     /**
      * @return The IPv6 address for Oracle&#39;s end of the BGP session. Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
      * 
      */
-    private final String oracleBgpPeeringIpv6;
+    private String oracleBgpPeeringIpv6;
     /**
      * @return The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
      * 
      */
-    private final Integer vlan;
+    private Integer vlan;
 
-    @CustomType.Constructor
-    private GetVirtualCircuitsVirtualCircuitCrossConnectMapping(
-        @CustomType.Parameter("bgpMd5authKey") String bgpMd5authKey,
-        @CustomType.Parameter("crossConnectOrCrossConnectGroupId") String crossConnectOrCrossConnectGroupId,
-        @CustomType.Parameter("customerBgpPeeringIp") String customerBgpPeeringIp,
-        @CustomType.Parameter("customerBgpPeeringIpv6") String customerBgpPeeringIpv6,
-        @CustomType.Parameter("oracleBgpPeeringIp") String oracleBgpPeeringIp,
-        @CustomType.Parameter("oracleBgpPeeringIpv6") String oracleBgpPeeringIpv6,
-        @CustomType.Parameter("vlan") Integer vlan) {
-        this.bgpMd5authKey = bgpMd5authKey;
-        this.crossConnectOrCrossConnectGroupId = crossConnectOrCrossConnectGroupId;
-        this.customerBgpPeeringIp = customerBgpPeeringIp;
-        this.customerBgpPeeringIpv6 = customerBgpPeeringIpv6;
-        this.oracleBgpPeeringIp = oracleBgpPeeringIp;
-        this.oracleBgpPeeringIpv6 = oracleBgpPeeringIpv6;
-        this.vlan = vlan;
-    }
-
+    private GetVirtualCircuitsVirtualCircuitCrossConnectMapping() {}
     /**
      * @return The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don&#39;t use BGP MD5 authentication.
      * 
@@ -121,7 +104,7 @@ public final class GetVirtualCircuitsVirtualCircuitCrossConnectMapping {
     public static Builder builder(GetVirtualCircuitsVirtualCircuitCrossConnectMapping defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bgpMd5authKey;
         private String crossConnectOrCrossConnectGroupId;
@@ -130,11 +113,7 @@ public final class GetVirtualCircuitsVirtualCircuitCrossConnectMapping {
         private String oracleBgpPeeringIp;
         private String oracleBgpPeeringIpv6;
         private Integer vlan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualCircuitsVirtualCircuitCrossConnectMapping defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bgpMd5authKey = defaults.bgpMd5authKey;
@@ -146,35 +125,51 @@ public final class GetVirtualCircuitsVirtualCircuitCrossConnectMapping {
     	      this.vlan = defaults.vlan;
         }
 
+        @CustomType.Setter
         public Builder bgpMd5authKey(String bgpMd5authKey) {
             this.bgpMd5authKey = Objects.requireNonNull(bgpMd5authKey);
             return this;
         }
+        @CustomType.Setter
         public Builder crossConnectOrCrossConnectGroupId(String crossConnectOrCrossConnectGroupId) {
             this.crossConnectOrCrossConnectGroupId = Objects.requireNonNull(crossConnectOrCrossConnectGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder customerBgpPeeringIp(String customerBgpPeeringIp) {
             this.customerBgpPeeringIp = Objects.requireNonNull(customerBgpPeeringIp);
             return this;
         }
+        @CustomType.Setter
         public Builder customerBgpPeeringIpv6(String customerBgpPeeringIpv6) {
             this.customerBgpPeeringIpv6 = Objects.requireNonNull(customerBgpPeeringIpv6);
             return this;
         }
+        @CustomType.Setter
         public Builder oracleBgpPeeringIp(String oracleBgpPeeringIp) {
             this.oracleBgpPeeringIp = Objects.requireNonNull(oracleBgpPeeringIp);
             return this;
         }
+        @CustomType.Setter
         public Builder oracleBgpPeeringIpv6(String oracleBgpPeeringIpv6) {
             this.oracleBgpPeeringIpv6 = Objects.requireNonNull(oracleBgpPeeringIpv6);
             return this;
         }
+        @CustomType.Setter
         public Builder vlan(Integer vlan) {
             this.vlan = Objects.requireNonNull(vlan);
             return this;
-        }        public GetVirtualCircuitsVirtualCircuitCrossConnectMapping build() {
-            return new GetVirtualCircuitsVirtualCircuitCrossConnectMapping(bgpMd5authKey, crossConnectOrCrossConnectGroupId, customerBgpPeeringIp, customerBgpPeeringIpv6, oracleBgpPeeringIp, oracleBgpPeeringIpv6, vlan);
+        }
+        public GetVirtualCircuitsVirtualCircuitCrossConnectMapping build() {
+            final var o = new GetVirtualCircuitsVirtualCircuitCrossConnectMapping();
+            o.bgpMd5authKey = bgpMd5authKey;
+            o.crossConnectOrCrossConnectGroupId = crossConnectOrCrossConnectGroupId;
+            o.customerBgpPeeringIp = customerBgpPeeringIp;
+            o.customerBgpPeeringIpv6 = customerBgpPeeringIpv6;
+            o.oracleBgpPeeringIp = oracleBgpPeeringIp;
+            o.oracleBgpPeeringIpv6 = oracleBgpPeeringIpv6;
+            o.vlan = vlan;
+            return o;
         }
     }
 }

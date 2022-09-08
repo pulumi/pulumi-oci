@@ -18,52 +18,35 @@ public final class GetManagedInstanceGroupsResult {
      * @return OCID for the Compartment
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return User friendly name
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetManagedInstanceGroupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetManagedInstanceGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of managed_instance_groups.
      * 
      */
-    private final List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups;
+    private List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups;
     /**
      * @return The Operating System type of the managed instance.
      * 
      */
-    private final @Nullable String osFamily;
+    private @Nullable String osFamily;
     /**
      * @return The current state of the Software Source.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetManagedInstanceGroupsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedInstanceGroupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedInstanceGroups") List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups,
-        @CustomType.Parameter("osFamily") @Nullable String osFamily,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.managedInstanceGroups = managedInstanceGroups;
-        this.osFamily = osFamily;
-        this.state = state;
-    }
-
+    private GetManagedInstanceGroupsResult() {}
     /**
      * @return OCID for the Compartment
      * 
@@ -117,7 +100,7 @@ public final class GetManagedInstanceGroupsResult {
     public static Builder builder(GetManagedInstanceGroupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetManagedInstanceGroupsResult {
         private List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups;
         private @Nullable String osFamily;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedInstanceGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetManagedInstanceGroupsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedInstanceGroupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,10 +139,12 @@ public final class GetManagedInstanceGroupsResult {
         public Builder filters(GetManagedInstanceGroupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstanceGroups(List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups) {
             this.managedInstanceGroups = Objects.requireNonNull(managedInstanceGroups);
             return this;
@@ -168,15 +152,26 @@ public final class GetManagedInstanceGroupsResult {
         public Builder managedInstanceGroups(GetManagedInstanceGroupsManagedInstanceGroup... managedInstanceGroups) {
             return managedInstanceGroups(List.of(managedInstanceGroups));
         }
+        @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
             this.osFamily = osFamily;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetManagedInstanceGroupsResult build() {
-            return new GetManagedInstanceGroupsResult(compartmentId, displayName, filters, id, managedInstanceGroups, osFamily, state);
+        }
+        public GetManagedInstanceGroupsResult build() {
+            final var o = new GetManagedInstanceGroupsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.managedInstanceGroups = managedInstanceGroups;
+            o.osFamily = osFamily;
+            o.state = state;
+            return o;
         }
     }
 }

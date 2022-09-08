@@ -15,42 +15,29 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
      * @return (Updatable) Process value using the specified format. This is available only when time_type is a string.
      * 
      */
-    private final @Nullable String fieldTimeFormat;
+    private @Nullable String fieldTimeFormat;
     /**
      * @return (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
-    private final @Nullable String fieldTimeKey;
+    private @Nullable String fieldTimeKey;
     /**
      * @return (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
      * 
      */
-    private final @Nullable String fieldTimeZone;
+    private @Nullable String fieldTimeZone;
     /**
      * @return (Updatable) The name key to tag this grok pattern.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The grok pattern.
      * 
      */
-    private final @Nullable String pattern;
+    private @Nullable String pattern;
 
-    @CustomType.Constructor
-    private UnifiedAgentConfigurationServiceConfigurationSourceParserPattern(
-        @CustomType.Parameter("fieldTimeFormat") @Nullable String fieldTimeFormat,
-        @CustomType.Parameter("fieldTimeKey") @Nullable String fieldTimeKey,
-        @CustomType.Parameter("fieldTimeZone") @Nullable String fieldTimeZone,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("pattern") @Nullable String pattern) {
-        this.fieldTimeFormat = fieldTimeFormat;
-        this.fieldTimeKey = fieldTimeKey;
-        this.fieldTimeZone = fieldTimeZone;
-        this.name = name;
-        this.pattern = pattern;
-    }
-
+    private UnifiedAgentConfigurationServiceConfigurationSourceParserPattern() {}
     /**
      * @return (Updatable) Process value using the specified format. This is available only when time_type is a string.
      * 
@@ -94,18 +81,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
     public static Builder builder(UnifiedAgentConfigurationServiceConfigurationSourceParserPattern defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String fieldTimeFormat;
         private @Nullable String fieldTimeKey;
         private @Nullable String fieldTimeZone;
         private @Nullable String name;
         private @Nullable String pattern;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(UnifiedAgentConfigurationServiceConfigurationSourceParserPattern defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fieldTimeFormat = defaults.fieldTimeFormat;
@@ -115,27 +98,39 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
     	      this.pattern = defaults.pattern;
         }
 
+        @CustomType.Setter
         public Builder fieldTimeFormat(@Nullable String fieldTimeFormat) {
             this.fieldTimeFormat = fieldTimeFormat;
             return this;
         }
+        @CustomType.Setter
         public Builder fieldTimeKey(@Nullable String fieldTimeKey) {
             this.fieldTimeKey = fieldTimeKey;
             return this;
         }
+        @CustomType.Setter
         public Builder fieldTimeZone(@Nullable String fieldTimeZone) {
             this.fieldTimeZone = fieldTimeZone;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder pattern(@Nullable String pattern) {
             this.pattern = pattern;
             return this;
-        }        public UnifiedAgentConfigurationServiceConfigurationSourceParserPattern build() {
-            return new UnifiedAgentConfigurationServiceConfigurationSourceParserPattern(fieldTimeFormat, fieldTimeKey, fieldTimeZone, name, pattern);
+        }
+        public UnifiedAgentConfigurationServiceConfigurationSourceParserPattern build() {
+            final var o = new UnifiedAgentConfigurationServiceConfigurationSourceParserPattern();
+            o.fieldTimeFormat = fieldTimeFormat;
+            o.fieldTimeKey = fieldTimeKey;
+            o.fieldTimeZone = fieldTimeZone;
+            o.name = name;
+            o.pattern = pattern;
+            return o;
         }
     }
 }

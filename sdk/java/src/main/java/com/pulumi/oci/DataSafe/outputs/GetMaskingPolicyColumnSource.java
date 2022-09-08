@@ -13,28 +13,19 @@ public final class GetMaskingPolicyColumnSource {
      * @return The source of masking columns.
      * 
      */
-    private final String columnSource;
+    private String columnSource;
     /**
      * @return The OCID of the sensitive data model that&#39;s used as the source of masking columns.
      * 
      */
-    private final String sensitiveDataModelId;
+    private String sensitiveDataModelId;
     /**
      * @return The OCID of the target database that&#39;s used as the source of masking columns.
      * 
      */
-    private final String targetId;
+    private String targetId;
 
-    @CustomType.Constructor
-    private GetMaskingPolicyColumnSource(
-        @CustomType.Parameter("columnSource") String columnSource,
-        @CustomType.Parameter("sensitiveDataModelId") String sensitiveDataModelId,
-        @CustomType.Parameter("targetId") String targetId) {
-        this.columnSource = columnSource;
-        this.sensitiveDataModelId = sensitiveDataModelId;
-        this.targetId = targetId;
-    }
-
+    private GetMaskingPolicyColumnSource() {}
     /**
      * @return The source of masking columns.
      * 
@@ -64,16 +55,12 @@ public final class GetMaskingPolicyColumnSource {
     public static Builder builder(GetMaskingPolicyColumnSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String columnSource;
         private String sensitiveDataModelId;
         private String targetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingPolicyColumnSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnSource = defaults.columnSource;
@@ -81,19 +68,27 @@ public final class GetMaskingPolicyColumnSource {
     	      this.targetId = defaults.targetId;
         }
 
+        @CustomType.Setter
         public Builder columnSource(String columnSource) {
             this.columnSource = Objects.requireNonNull(columnSource);
             return this;
         }
+        @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
-        }        public GetMaskingPolicyColumnSource build() {
-            return new GetMaskingPolicyColumnSource(columnSource, sensitiveDataModelId, targetId);
+        }
+        public GetMaskingPolicyColumnSource build() {
+            final var o = new GetMaskingPolicyColumnSource();
+            o.columnSource = columnSource;
+            o.sensitiveDataModelId = sensitiveDataModelId;
+            o.targetId = targetId;
+            return o;
         }
     }
 }

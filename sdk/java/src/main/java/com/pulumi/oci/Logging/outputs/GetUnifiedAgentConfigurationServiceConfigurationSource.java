@@ -11,38 +11,25 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
-    private final List<String> channels;
+    private List<String> channels;
     /**
      * @return The name key to tag this grok pattern.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return source parser object.
      * 
      */
-    private final List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers;
-    private final List<String> paths;
+    private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers;
+    private List<String> paths;
     /**
      * @return Unified schema logging source type.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
 
-    @CustomType.Constructor
-    private GetUnifiedAgentConfigurationServiceConfigurationSource(
-        @CustomType.Parameter("channels") List<String> channels,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("parsers") List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers,
-        @CustomType.Parameter("paths") List<String> paths,
-        @CustomType.Parameter("sourceType") String sourceType) {
-        this.channels = channels;
-        this.name = name;
-        this.parsers = parsers;
-        this.paths = paths;
-        this.sourceType = sourceType;
-    }
-
+    private GetUnifiedAgentConfigurationServiceConfigurationSource() {}
     public List<String> channels() {
         return this.channels;
     }
@@ -78,18 +65,14 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
     public static Builder builder(GetUnifiedAgentConfigurationServiceConfigurationSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> channels;
         private String name;
         private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers;
         private List<String> paths;
         private String sourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.channels = defaults.channels;
@@ -99,6 +82,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
         public Builder channels(List<String> channels) {
             this.channels = Objects.requireNonNull(channels);
             return this;
@@ -106,10 +90,12 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         public Builder channels(String... channels) {
             return channels(List.of(channels));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder parsers(List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers) {
             this.parsers = Objects.requireNonNull(parsers);
             return this;
@@ -117,6 +103,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         public Builder parsers(GetUnifiedAgentConfigurationServiceConfigurationSourceParser... parsers) {
             return parsers(List.of(parsers));
         }
+        @CustomType.Setter
         public Builder paths(List<String> paths) {
             this.paths = Objects.requireNonNull(paths);
             return this;
@@ -124,11 +111,19 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         public Builder paths(String... paths) {
             return paths(List.of(paths));
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
-        }        public GetUnifiedAgentConfigurationServiceConfigurationSource build() {
-            return new GetUnifiedAgentConfigurationServiceConfigurationSource(channels, name, parsers, paths, sourceType);
+        }
+        public GetUnifiedAgentConfigurationServiceConfigurationSource build() {
+            final var o = new GetUnifiedAgentConfigurationServiceConfigurationSource();
+            o.channels = channels;
+            o.name = name;
+            o.parsers = parsers;
+            o.paths = paths;
+            o.sourceType = sourceType;
+            return o;
         }
     }
 }

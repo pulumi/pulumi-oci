@@ -13,21 +13,14 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
      * @return A description of the software in the bundle.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A short, unique string that identifies the version of bundled software.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetSupportedVmwareSoftwareVersionsItem(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("version") String version) {
-        this.description = description;
-        this.version = version;
-    }
-
+    private GetSupportedVmwareSoftwareVersionsItem() {}
     /**
      * @return A description of the software in the bundle.
      * 
@@ -50,30 +43,32 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
     public static Builder builder(GetSupportedVmwareSoftwareVersionsItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSupportedVmwareSoftwareVersionsItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetSupportedVmwareSoftwareVersionsItem build() {
-            return new GetSupportedVmwareSoftwareVersionsItem(description, version);
+        }
+        public GetSupportedVmwareSoftwareVersionsItem build() {
+            final var o = new GetSupportedVmwareSoftwareVersionsItem();
+            o.description = description;
+            o.version = version;
+            return o;
         }
     }
 }

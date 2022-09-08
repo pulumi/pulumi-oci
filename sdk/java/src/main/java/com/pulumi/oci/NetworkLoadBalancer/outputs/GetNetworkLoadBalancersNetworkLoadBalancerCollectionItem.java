@@ -19,122 +19,85 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return OCID of the reserved public IP address created with the virtual cloud network.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An array of IP addresses.
      * 
      */
-    private final List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress> ipAddresses;
+    private List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress> ipAddresses;
     /**
      * @return When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC. Packets are sent to the backend set without any changes to the source and destination IP.
      * 
      */
-    private final Boolean isPreserveSourceDestination;
+    private Boolean isPreserveSourceDestination;
     /**
      * @return Whether the network load balancer has a virtual cloud network-local (private) IP address.
      * 
      */
-    private final Boolean isPrivate;
+    private Boolean isPrivate;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
      * 
      */
-    private final List<String> networkSecurityGroupIds;
+    private List<String> networkSecurityGroupIds;
     /**
      * @return IP version associated with the NLB.
      * 
      */
-    private final String nlbIpVersion;
-    private final List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp> reservedIps;
+    private String nlbIpVersion;
+    private List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp> reservedIps;
     /**
      * @return A filter to return only resources that match the given lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).&#34;
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return Key-value pair representing system tags&#39; keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddresses") List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress> ipAddresses,
-        @CustomType.Parameter("isPreserveSourceDestination") Boolean isPreserveSourceDestination,
-        @CustomType.Parameter("isPrivate") Boolean isPrivate,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("networkSecurityGroupIds") List<String> networkSecurityGroupIds,
-        @CustomType.Parameter("nlbIpVersion") String nlbIpVersion,
-        @CustomType.Parameter("reservedIps") List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp> reservedIps,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.ipAddresses = ipAddresses;
-        this.isPreserveSourceDestination = isPreserveSourceDestination;
-        this.isPrivate = isPrivate;
-        this.lifecycleDetails = lifecycleDetails;
-        this.networkSecurityGroupIds = networkSecurityGroupIds;
-        this.nlbIpVersion = nlbIpVersion;
-        this.reservedIps = reservedIps;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
      * 
@@ -258,7 +221,7 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
     public static Builder builder(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -277,11 +240,7 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -303,26 +262,32 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddresses(List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress> ipAddresses) {
             this.ipAddresses = Objects.requireNonNull(ipAddresses);
             return this;
@@ -330,18 +295,22 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
         public Builder ipAddresses(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
         }
+        @CustomType.Setter
         public Builder isPreserveSourceDestination(Boolean isPreserveSourceDestination) {
             this.isPreserveSourceDestination = Objects.requireNonNull(isPreserveSourceDestination);
             return this;
         }
+        @CustomType.Setter
         public Builder isPrivate(Boolean isPrivate) {
             this.isPrivate = Objects.requireNonNull(isPrivate);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
             return this;
@@ -349,10 +318,12 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
+        @CustomType.Setter
         public Builder nlbIpVersion(String nlbIpVersion) {
             this.nlbIpVersion = Objects.requireNonNull(nlbIpVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder reservedIps(List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp> reservedIps) {
             this.reservedIps = Objects.requireNonNull(reservedIps);
             return this;
@@ -360,27 +331,51 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
         public Builder reservedIps(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp... reservedIps) {
             return reservedIps(List.of(reservedIps));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem build() {
-            return new GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem(compartmentId, definedTags, displayName, freeformTags, id, ipAddresses, isPreserveSourceDestination, isPrivate, lifecycleDetails, networkSecurityGroupIds, nlbIpVersion, reservedIps, state, subnetId, systemTags, timeCreated, timeUpdated);
+        }
+        public GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem build() {
+            final var o = new GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.ipAddresses = ipAddresses;
+            o.isPreserveSourceDestination = isPreserveSourceDestination;
+            o.isPrivate = isPrivate;
+            o.lifecycleDetails = lifecycleDetails;
+            o.networkSecurityGroupIds = networkSecurityGroupIds;
+            o.nlbIpVersion = nlbIpVersion;
+            o.reservedIps = reservedIps;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

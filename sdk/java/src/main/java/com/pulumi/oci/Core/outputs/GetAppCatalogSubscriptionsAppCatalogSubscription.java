@@ -15,75 +15,48 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
-    private final @Nullable String eulaLink;
+    private String displayName;
+    private @Nullable String eulaLink;
     /**
      * @return A filter to return only the listings that matches the given listing id.
      * 
      */
-    private final String listingId;
+    private String listingId;
     /**
      * @return Listing resource id.
      * 
      */
-    private final String listingResourceId;
+    private String listingResourceId;
     /**
      * @return Listing resource version.
      * 
      */
-    private final String listingResourceVersion;
-    private final String oracleTermsOfUseLink;
+    private String listingResourceVersion;
+    private String oracleTermsOfUseLink;
     /**
      * @return Name of the publisher who published this listing.
      * 
      */
-    private final String publisherName;
-    private final String signature;
+    private String publisherName;
+    private String signature;
     /**
      * @return The short summary to the listing.
      * 
      */
-    private final String summary;
+    private String summary;
     /**
      * @return Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    private final String timeCreated;
-    private final String timeRetrieved;
+    private String timeCreated;
+    private String timeRetrieved;
 
-    @CustomType.Constructor
-    private GetAppCatalogSubscriptionsAppCatalogSubscription(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("eulaLink") @Nullable String eulaLink,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("listingResourceId") String listingResourceId,
-        @CustomType.Parameter("listingResourceVersion") String listingResourceVersion,
-        @CustomType.Parameter("oracleTermsOfUseLink") String oracleTermsOfUseLink,
-        @CustomType.Parameter("publisherName") String publisherName,
-        @CustomType.Parameter("signature") String signature,
-        @CustomType.Parameter("summary") String summary,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeRetrieved") String timeRetrieved) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.eulaLink = eulaLink;
-        this.listingId = listingId;
-        this.listingResourceId = listingResourceId;
-        this.listingResourceVersion = listingResourceVersion;
-        this.oracleTermsOfUseLink = oracleTermsOfUseLink;
-        this.publisherName = publisherName;
-        this.signature = signature;
-        this.summary = summary;
-        this.timeCreated = timeCreated;
-        this.timeRetrieved = timeRetrieved;
-    }
-
+    private GetAppCatalogSubscriptionsAppCatalogSubscription() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -160,7 +133,7 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
     public static Builder builder(GetAppCatalogSubscriptionsAppCatalogSubscription defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String displayName;
@@ -174,11 +147,7 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
         private String summary;
         private String timeCreated;
         private String timeRetrieved;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppCatalogSubscriptionsAppCatalogSubscription defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -195,55 +164,81 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
     	      this.timeRetrieved = defaults.timeRetrieved;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder eulaLink(@Nullable String eulaLink) {
             this.eulaLink = eulaLink;
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingResourceId(String listingResourceId) {
             this.listingResourceId = Objects.requireNonNull(listingResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingResourceVersion(String listingResourceVersion) {
             this.listingResourceVersion = Objects.requireNonNull(listingResourceVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder oracleTermsOfUseLink(String oracleTermsOfUseLink) {
             this.oracleTermsOfUseLink = Objects.requireNonNull(oracleTermsOfUseLink);
             return this;
         }
+        @CustomType.Setter
         public Builder publisherName(String publisherName) {
             this.publisherName = Objects.requireNonNull(publisherName);
             return this;
         }
+        @CustomType.Setter
         public Builder signature(String signature) {
             this.signature = Objects.requireNonNull(signature);
             return this;
         }
+        @CustomType.Setter
         public Builder summary(String summary) {
             this.summary = Objects.requireNonNull(summary);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRetrieved(String timeRetrieved) {
             this.timeRetrieved = Objects.requireNonNull(timeRetrieved);
             return this;
-        }        public GetAppCatalogSubscriptionsAppCatalogSubscription build() {
-            return new GetAppCatalogSubscriptionsAppCatalogSubscription(compartmentId, displayName, eulaLink, listingId, listingResourceId, listingResourceVersion, oracleTermsOfUseLink, publisherName, signature, summary, timeCreated, timeRetrieved);
+        }
+        public GetAppCatalogSubscriptionsAppCatalogSubscription build() {
+            final var o = new GetAppCatalogSubscriptionsAppCatalogSubscription();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.eulaLink = eulaLink;
+            o.listingId = listingId;
+            o.listingResourceId = listingResourceId;
+            o.listingResourceVersion = listingResourceVersion;
+            o.oracleTermsOfUseLink = oracleTermsOfUseLink;
+            o.publisherName = publisherName;
+            o.signature = signature;
+            o.summary = summary;
+            o.timeCreated = timeCreated;
+            o.timeRetrieved = timeRetrieved;
+            return o;
         }
     }
 }

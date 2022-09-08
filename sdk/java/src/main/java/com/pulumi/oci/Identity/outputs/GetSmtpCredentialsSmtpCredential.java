@@ -13,66 +13,45 @@ public final class GetSmtpCredentialsSmtpCredential {
      * @return The description you assign to the SMTP credential. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The OCID of the SMTP credential.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private final String inactiveState;
-    private final String password;
+    private String inactiveState;
+    private String password;
     /**
      * @return The credential&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeExpires;
+    private String timeExpires;
     /**
      * @return The OCID of the user.
      * 
      */
-    private final String userId;
+    private String userId;
     /**
      * @return The SMTP user name.
      * 
      */
-    private final String username;
+    private String username;
 
-    @CustomType.Constructor
-    private GetSmtpCredentialsSmtpCredential(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inactiveState") String inactiveState,
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeExpires") String timeExpires,
-        @CustomType.Parameter("userId") String userId,
-        @CustomType.Parameter("username") String username) {
-        this.description = description;
-        this.id = id;
-        this.inactiveState = inactiveState;
-        this.password = password;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeExpires = timeExpires;
-        this.userId = userId;
-        this.username = username;
-    }
-
+    private GetSmtpCredentialsSmtpCredential() {}
     /**
      * @return The description you assign to the SMTP credential. Does not have to be unique, and it&#39;s changeable.
      * 
@@ -140,7 +119,7 @@ public final class GetSmtpCredentialsSmtpCredential {
     public static Builder builder(GetSmtpCredentialsSmtpCredential defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String id;
@@ -151,11 +130,7 @@ public final class GetSmtpCredentialsSmtpCredential {
         private String timeExpires;
         private String userId;
         private String username;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSmtpCredentialsSmtpCredential defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -169,43 +144,63 @@ public final class GetSmtpCredentialsSmtpCredential {
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
             this.inactiveState = Objects.requireNonNull(inactiveState);
             return this;
         }
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
             this.timeExpires = Objects.requireNonNull(timeExpires);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
         }
+        @CustomType.Setter
         public Builder username(String username) {
             this.username = Objects.requireNonNull(username);
             return this;
-        }        public GetSmtpCredentialsSmtpCredential build() {
-            return new GetSmtpCredentialsSmtpCredential(description, id, inactiveState, password, state, timeCreated, timeExpires, userId, username);
+        }
+        public GetSmtpCredentialsSmtpCredential build() {
+            final var o = new GetSmtpCredentialsSmtpCredential();
+            o.description = description;
+            o.id = id;
+            o.inactiveState = inactiveState;
+            o.password = password;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeExpires = timeExpires;
+            o.userId = userId;
+            o.username = username;
+            return o;
         }
     }
 }

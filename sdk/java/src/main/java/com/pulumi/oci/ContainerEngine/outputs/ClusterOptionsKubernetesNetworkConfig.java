@@ -15,21 +15,14 @@ public final class ClusterOptionsKubernetesNetworkConfig {
      * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
      * 
      */
-    private final @Nullable String podsCidr;
+    private @Nullable String podsCidr;
     /**
      * @return The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
      * 
      */
-    private final @Nullable String servicesCidr;
+    private @Nullable String servicesCidr;
 
-    @CustomType.Constructor
-    private ClusterOptionsKubernetesNetworkConfig(
-        @CustomType.Parameter("podsCidr") @Nullable String podsCidr,
-        @CustomType.Parameter("servicesCidr") @Nullable String servicesCidr) {
-        this.podsCidr = podsCidr;
-        this.servicesCidr = servicesCidr;
-    }
-
+    private ClusterOptionsKubernetesNetworkConfig() {}
     /**
      * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
      * 
@@ -52,30 +45,32 @@ public final class ClusterOptionsKubernetesNetworkConfig {
     public static Builder builder(ClusterOptionsKubernetesNetworkConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String podsCidr;
         private @Nullable String servicesCidr;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterOptionsKubernetesNetworkConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.podsCidr = defaults.podsCidr;
     	      this.servicesCidr = defaults.servicesCidr;
         }
 
+        @CustomType.Setter
         public Builder podsCidr(@Nullable String podsCidr) {
             this.podsCidr = podsCidr;
             return this;
         }
+        @CustomType.Setter
         public Builder servicesCidr(@Nullable String servicesCidr) {
             this.servicesCidr = servicesCidr;
             return this;
-        }        public ClusterOptionsKubernetesNetworkConfig build() {
-            return new ClusterOptionsKubernetesNetworkConfig(podsCidr, servicesCidr);
+        }
+        public ClusterOptionsKubernetesNetworkConfig build() {
+            final var o = new ClusterOptionsKubernetesNetworkConfig();
+            o.podsCidr = podsCidr;
+            o.servicesCidr = servicesCidr;
+            return o;
         }
     }
 }

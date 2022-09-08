@@ -13,13 +13,9 @@ public final class GetServiceConnectorSourceCursor {
      * @return The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
 
-    @CustomType.Constructor
-    private GetServiceConnectorSourceCursor(@CustomType.Parameter("kind") String kind) {
-        this.kind = kind;
-    }
-
+    private GetServiceConnectorSourceCursor() {}
     /**
      * @return The type descriminator.
      * 
@@ -35,24 +31,24 @@ public final class GetServiceConnectorSourceCursor {
     public static Builder builder(GetServiceConnectorSourceCursor defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kind;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorSourceCursor defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
         }
 
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
-        }        public GetServiceConnectorSourceCursor build() {
-            return new GetServiceConnectorSourceCursor(kind);
+        }
+        public GetServiceConnectorSourceCursor build() {
+            final var o = new GetServiceConnectorSourceCursor();
+            o.kind = kind;
+            return o;
         }
     }
 }

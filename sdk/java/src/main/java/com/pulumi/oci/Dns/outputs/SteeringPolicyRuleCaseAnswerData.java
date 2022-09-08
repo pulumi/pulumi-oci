@@ -17,28 +17,19 @@ public final class SteeringPolicyRuleCaseAnswerData {
      * @return An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
      * 
      */
-    private final @Nullable String answerCondition;
+    private @Nullable String answerCondition;
     /**
      * @return Keeps the answer only if the value is `true`.
      * 
      */
-    private final @Nullable Boolean shouldKeep;
+    private @Nullable Boolean shouldKeep;
     /**
      * @return The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
      * 
      */
-    private final @Nullable Integer value;
+    private @Nullable Integer value;
 
-    @CustomType.Constructor
-    private SteeringPolicyRuleCaseAnswerData(
-        @CustomType.Parameter("answerCondition") @Nullable String answerCondition,
-        @CustomType.Parameter("shouldKeep") @Nullable Boolean shouldKeep,
-        @CustomType.Parameter("value") @Nullable Integer value) {
-        this.answerCondition = answerCondition;
-        this.shouldKeep = shouldKeep;
-        this.value = value;
-    }
-
+    private SteeringPolicyRuleCaseAnswerData() {}
     /**
      * @return An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
      * 
@@ -68,16 +59,12 @@ public final class SteeringPolicyRuleCaseAnswerData {
     public static Builder builder(SteeringPolicyRuleCaseAnswerData defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String answerCondition;
         private @Nullable Boolean shouldKeep;
         private @Nullable Integer value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SteeringPolicyRuleCaseAnswerData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.answerCondition = defaults.answerCondition;
@@ -85,19 +72,27 @@ public final class SteeringPolicyRuleCaseAnswerData {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder answerCondition(@Nullable String answerCondition) {
             this.answerCondition = answerCondition;
             return this;
         }
+        @CustomType.Setter
         public Builder shouldKeep(@Nullable Boolean shouldKeep) {
             this.shouldKeep = shouldKeep;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable Integer value) {
             this.value = value;
             return this;
-        }        public SteeringPolicyRuleCaseAnswerData build() {
-            return new SteeringPolicyRuleCaseAnswerData(answerCondition, shouldKeep, value);
+        }
+        public SteeringPolicyRuleCaseAnswerData build() {
+            final var o = new SteeringPolicyRuleCaseAnswerData();
+            o.answerCondition = answerCondition;
+            o.shouldKeep = shouldKeep;
+            o.value = value;
+            return o;
         }
     }
 }

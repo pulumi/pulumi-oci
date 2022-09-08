@@ -13,24 +13,15 @@ public final class GetInstanceMaintenanceRebootResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String instanceId;
+    private String id;
+    private String instanceId;
     /**
      * @return The maximum extension date and time for the maintenance reboot, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). The range for the maintenance extension is between 1 and 14 days from the initial scheduled maintenance date. Example: `2018-05-25T21:10:29.600Z`
      * 
      */
-    private final String timeMaintenanceRebootDueMax;
+    private String timeMaintenanceRebootDueMax;
 
-    @CustomType.Constructor
-    private GetInstanceMaintenanceRebootResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("timeMaintenanceRebootDueMax") String timeMaintenanceRebootDueMax) {
-        this.id = id;
-        this.instanceId = instanceId;
-        this.timeMaintenanceRebootDueMax = timeMaintenanceRebootDueMax;
-    }
-
+    private GetInstanceMaintenanceRebootResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -56,16 +47,12 @@ public final class GetInstanceMaintenanceRebootResult {
     public static Builder builder(GetInstanceMaintenanceRebootResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String instanceId;
         private String timeMaintenanceRebootDueMax;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceMaintenanceRebootResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -73,19 +60,27 @@ public final class GetInstanceMaintenanceRebootResult {
     	      this.timeMaintenanceRebootDueMax = defaults.timeMaintenanceRebootDueMax;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeMaintenanceRebootDueMax(String timeMaintenanceRebootDueMax) {
             this.timeMaintenanceRebootDueMax = Objects.requireNonNull(timeMaintenanceRebootDueMax);
             return this;
-        }        public GetInstanceMaintenanceRebootResult build() {
-            return new GetInstanceMaintenanceRebootResult(id, instanceId, timeMaintenanceRebootDueMax);
+        }
+        public GetInstanceMaintenanceRebootResult build() {
+            final var o = new GetInstanceMaintenanceRebootResult();
+            o.id = id;
+            o.instanceId = instanceId;
+            o.timeMaintenanceRebootDueMax = timeMaintenanceRebootDueMax;
+            return o;
         }
     }
 }

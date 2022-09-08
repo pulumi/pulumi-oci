@@ -14,52 +14,35 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExportsResult {
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export&#39;s export set.
      * 
      */
-    private final @Nullable String exportSetId;
+    private @Nullable String exportSetId;
     /**
      * @return The list of exports.
      * 
      */
-    private final List<GetExportsExport> exports;
+    private List<GetExportsExport> exports;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export&#39;s file system.
      * 
      */
-    private final @Nullable String fileSystemId;
-    private final @Nullable List<GetExportsFilter> filters;
+    private @Nullable String fileSystemId;
+    private @Nullable List<GetExportsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of this export.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetExportsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("exportSetId") @Nullable String exportSetId,
-        @CustomType.Parameter("exports") List<GetExportsExport> exports,
-        @CustomType.Parameter("fileSystemId") @Nullable String fileSystemId,
-        @CustomType.Parameter("filters") @Nullable List<GetExportsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.exportSetId = exportSetId;
-        this.exports = exports;
-        this.fileSystemId = fileSystemId;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetExportsResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -109,7 +92,7 @@ public final class GetExportsResult {
     public static Builder builder(GetExportsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String exportSetId;
@@ -118,11 +101,7 @@ public final class GetExportsResult {
         private @Nullable List<GetExportsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExportsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,14 +113,17 @@ public final class GetExportsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder exportSetId(@Nullable String exportSetId) {
             this.exportSetId = exportSetId;
             return this;
         }
+        @CustomType.Setter
         public Builder exports(List<GetExportsExport> exports) {
             this.exports = Objects.requireNonNull(exports);
             return this;
@@ -149,10 +131,12 @@ public final class GetExportsResult {
         public Builder exports(GetExportsExport... exports) {
             return exports(List.of(exports));
         }
+        @CustomType.Setter
         public Builder fileSystemId(@Nullable String fileSystemId) {
             this.fileSystemId = fileSystemId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetExportsFilter> filters) {
             this.filters = filters;
             return this;
@@ -160,15 +144,26 @@ public final class GetExportsResult {
         public Builder filters(GetExportsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetExportsResult build() {
-            return new GetExportsResult(compartmentId, exportSetId, exports, fileSystemId, filters, id, state);
+        }
+        public GetExportsResult build() {
+            final var o = new GetExportsResult();
+            o.compartmentId = compartmentId;
+            o.exportSetId = exportSetId;
+            o.exports = exports;
+            o.fileSystemId = fileSystemId;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

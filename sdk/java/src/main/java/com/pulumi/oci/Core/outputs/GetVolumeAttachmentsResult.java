@@ -18,52 +18,35 @@ public final class GetVolumeAttachmentsResult {
      * @return The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetVolumeAttachmentsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetVolumeAttachmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the instance the volume is attached to.
      * 
      */
-    private final @Nullable String instanceId;
+    private @Nullable String instanceId;
     /**
      * @return The list of volume_attachments.
      * 
      */
-    private final List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments;
+    private List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments;
     /**
      * @return The OCID of the volume.
      * 
      */
-    private final @Nullable String volumeId;
+    private @Nullable String volumeId;
 
-    @CustomType.Constructor
-    private GetVolumeAttachmentsResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetVolumeAttachmentsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") @Nullable String instanceId,
-        @CustomType.Parameter("volumeAttachments") List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments,
-        @CustomType.Parameter("volumeId") @Nullable String volumeId) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.instanceId = instanceId;
-        this.volumeAttachments = volumeAttachments;
-        this.volumeId = volumeId;
-    }
-
+    private GetVolumeAttachmentsResult() {}
     /**
      * @return The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      * 
@@ -117,7 +100,7 @@ public final class GetVolumeAttachmentsResult {
     public static Builder builder(GetVolumeAttachmentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -126,11 +109,7 @@ public final class GetVolumeAttachmentsResult {
         private @Nullable String instanceId;
         private List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments;
         private @Nullable String volumeId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeAttachmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -142,14 +121,17 @@ public final class GetVolumeAttachmentsResult {
     	      this.volumeId = defaults.volumeId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeAttachmentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,14 +139,17 @@ public final class GetVolumeAttachmentsResult {
         public Builder filters(GetVolumeAttachmentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
             this.instanceId = instanceId;
             return this;
         }
+        @CustomType.Setter
         public Builder volumeAttachments(List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments) {
             this.volumeAttachments = Objects.requireNonNull(volumeAttachments);
             return this;
@@ -172,11 +157,21 @@ public final class GetVolumeAttachmentsResult {
         public Builder volumeAttachments(GetVolumeAttachmentsVolumeAttachment... volumeAttachments) {
             return volumeAttachments(List.of(volumeAttachments));
         }
+        @CustomType.Setter
         public Builder volumeId(@Nullable String volumeId) {
             this.volumeId = volumeId;
             return this;
-        }        public GetVolumeAttachmentsResult build() {
-            return new GetVolumeAttachmentsResult(availabilityDomain, compartmentId, filters, id, instanceId, volumeAttachments, volumeId);
+        }
+        public GetVolumeAttachmentsResult build() {
+            final var o = new GetVolumeAttachmentsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.instanceId = instanceId;
+            o.volumeAttachments = volumeAttachments;
+            o.volumeId = volumeId;
+            return o;
         }
     }
 }

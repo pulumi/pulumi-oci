@@ -34,14 +34,14 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) A user defined description for the object.
+     * (Updatable) A user-defined description for the object.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
     public Optional<Output<String>> description() {
@@ -79,14 +79,14 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) The property which disciminates the subtypes.
+     * (Updatable) The property which differentiates the subtypes.
      * 
      */
     @Import(name="modelType", required=true)
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
     public Output<String> modelType() {
@@ -109,14 +109,14 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -139,14 +139,14 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) A reference to the object&#39;s parent.
+     * (Updatable) A reference to the parent object.
      * 
      */
     @Import(name="parentRef")
     private @Nullable Output<RegistryDataAssetNativeTypeSystemTypeParentRefArgs> parentRef;
 
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<Output<RegistryDataAssetNativeTypeSystemTypeParentRefArgs>> parentRef() {
@@ -223,7 +223,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
         }
 
         /**
-         * @param description (Updatable) A user defined description for the object.
+         * @param description (Updatable) A user-defined description for the object.
          * 
          * @return builder
          * 
@@ -234,7 +234,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
         }
 
         /**
-         * @param description (Updatable) A user defined description for the object.
+         * @param description (Updatable) A user-defined description for the object.
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
         }
 
         /**
-         * @param modelType (Updatable) The property which disciminates the subtypes.
+         * @param modelType (Updatable) The property which differentiates the subtypes.
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
         }
 
         /**
-         * @param modelType (Updatable) The property which disciminates the subtypes.
+         * @param modelType (Updatable) The property which differentiates the subtypes.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 
@@ -381,7 +381,7 @@ public final class RegistryDataAssetNativeTypeSystemTypeArgs extends com.pulumi.
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 

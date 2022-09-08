@@ -15,46 +15,25 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult {
-    private final @Nullable String endTimeLessThanOrEqualTo;
-    private final @Nullable List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter> filters;
-    private final String groupType;
+    private @Nullable String endTimeLessThanOrEqualTo;
+    private @Nullable List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter> filters;
+    private String groupType;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Integer limit;
-    private final String managedDatabaseId;
+    private String id;
+    private @Nullable Integer limit;
+    private String managedDatabaseId;
     /**
      * @return The list of optimizer_statistics_collection_aggregations_collection.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection> optimizerStatisticsCollectionAggregationsCollections;
-    private final @Nullable String startTimeGreaterThanOrEqualTo;
-    private final @Nullable String taskType;
+    private List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection> optimizerStatisticsCollectionAggregationsCollections;
+    private @Nullable String startTimeGreaterThanOrEqualTo;
+    private @Nullable String taskType;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult(
-        @CustomType.Parameter("endTimeLessThanOrEqualTo") @Nullable String endTimeLessThanOrEqualTo,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter> filters,
-        @CustomType.Parameter("groupType") String groupType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("limit") @Nullable Integer limit,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("optimizerStatisticsCollectionAggregationsCollections") List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection> optimizerStatisticsCollectionAggregationsCollections,
-        @CustomType.Parameter("startTimeGreaterThanOrEqualTo") @Nullable String startTimeGreaterThanOrEqualTo,
-        @CustomType.Parameter("taskType") @Nullable String taskType) {
-        this.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
-        this.filters = filters;
-        this.groupType = groupType;
-        this.id = id;
-        this.limit = limit;
-        this.managedDatabaseId = managedDatabaseId;
-        this.optimizerStatisticsCollectionAggregationsCollections = optimizerStatisticsCollectionAggregationsCollections;
-        this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
-        this.taskType = taskType;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult() {}
     public Optional<String> endTimeLessThanOrEqualTo() {
         return Optional.ofNullable(this.endTimeLessThanOrEqualTo);
     }
@@ -98,7 +77,7 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsRe
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String endTimeLessThanOrEqualTo;
         private @Nullable List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter> filters;
@@ -109,11 +88,7 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsRe
         private List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection> optimizerStatisticsCollectionAggregationsCollections;
         private @Nullable String startTimeGreaterThanOrEqualTo;
         private @Nullable String taskType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.endTimeLessThanOrEqualTo = defaults.endTimeLessThanOrEqualTo;
@@ -127,10 +102,12 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsRe
     	      this.taskType = defaults.taskType;
         }
 
+        @CustomType.Setter
         public Builder endTimeLessThanOrEqualTo(@Nullable String endTimeLessThanOrEqualTo) {
             this.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -138,22 +115,27 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsRe
         public Builder filters(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder groupType(String groupType) {
             this.groupType = Objects.requireNonNull(groupType);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder limit(@Nullable Integer limit) {
             this.limit = limit;
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder optimizerStatisticsCollectionAggregationsCollections(List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection> optimizerStatisticsCollectionAggregationsCollections) {
             this.optimizerStatisticsCollectionAggregationsCollections = Objects.requireNonNull(optimizerStatisticsCollectionAggregationsCollections);
             return this;
@@ -161,15 +143,28 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsRe
         public Builder optimizerStatisticsCollectionAggregationsCollections(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection... optimizerStatisticsCollectionAggregationsCollections) {
             return optimizerStatisticsCollectionAggregationsCollections(List.of(optimizerStatisticsCollectionAggregationsCollections));
         }
+        @CustomType.Setter
         public Builder startTimeGreaterThanOrEqualTo(@Nullable String startTimeGreaterThanOrEqualTo) {
             this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder taskType(@Nullable String taskType) {
             this.taskType = taskType;
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult build() {
-            return new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult(endTimeLessThanOrEqualTo, filters, groupType, id, limit, managedDatabaseId, optimizerStatisticsCollectionAggregationsCollections, startTimeGreaterThanOrEqualTo, taskType);
+        }
+        public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult();
+            o.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
+            o.filters = filters;
+            o.groupType = groupType;
+            o.id = id;
+            o.limit = limit;
+            o.managedDatabaseId = managedDatabaseId;
+            o.optimizerStatisticsCollectionAggregationsCollections = optimizerStatisticsCollectionAggregationsCollections;
+            o.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
+            o.taskType = taskType;
+            return o;
         }
     }
 }

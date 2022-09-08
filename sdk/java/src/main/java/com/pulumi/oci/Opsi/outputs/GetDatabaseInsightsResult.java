@@ -19,86 +19,57 @@ public final class GetDatabaseInsightsResult {
      * @return Compartment identifier of the database
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private final @Nullable List<String> databaseIds;
+    private @Nullable List<String> databaseIds;
     /**
      * @return The list of database_insights_collection.
      * 
      */
-    private final List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections;
+    private List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections;
     /**
      * @return Operations Insights internal representation of the database type.
      * 
      */
-    private final @Nullable List<String> databaseTypes;
+    private @Nullable List<String> databaseTypes;
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    private final @Nullable String enterpriseManagerBridgeId;
+    private @Nullable String enterpriseManagerBridgeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * 
      */
-    private final @Nullable String exadataInsightId;
-    private final @Nullable List<String> fields;
-    private final @Nullable List<GetDatabaseInsightsFilter> filters;
+    private @Nullable String exadataInsightId;
+    private @Nullable List<String> fields;
+    private @Nullable List<GetDatabaseInsightsFilter> filters;
     /**
      * @return Database insight identifier
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      * 
      */
-    private final @Nullable String opsiPrivateEndpointId;
+    private @Nullable String opsiPrivateEndpointId;
     /**
      * @return The current state of the database.
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
     /**
      * @return Indicates the status of a database insight in Operations Insights
      * 
      */
-    private final @Nullable List<String> statuses;
+    private @Nullable List<String> statuses;
 
-    @CustomType.Constructor
-    private GetDatabaseInsightsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("databaseIds") @Nullable List<String> databaseIds,
-        @CustomType.Parameter("databaseInsightsCollections") List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections,
-        @CustomType.Parameter("databaseTypes") @Nullable List<String> databaseTypes,
-        @CustomType.Parameter("enterpriseManagerBridgeId") @Nullable String enterpriseManagerBridgeId,
-        @CustomType.Parameter("exadataInsightId") @Nullable String exadataInsightId,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("filters") @Nullable List<GetDatabaseInsightsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("opsiPrivateEndpointId") @Nullable String opsiPrivateEndpointId,
-        @CustomType.Parameter("states") @Nullable List<String> states,
-        @CustomType.Parameter("statuses") @Nullable List<String> statuses) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.databaseIds = databaseIds;
-        this.databaseInsightsCollections = databaseInsightsCollections;
-        this.databaseTypes = databaseTypes;
-        this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
-        this.exadataInsightId = exadataInsightId;
-        this.fields = fields;
-        this.filters = filters;
-        this.id = id;
-        this.opsiPrivateEndpointId = opsiPrivateEndpointId;
-        this.states = states;
-        this.statuses = statuses;
-    }
-
+    private GetDatabaseInsightsResult() {}
     /**
      * @return Compartment identifier of the database
      * 
@@ -186,7 +157,7 @@ public final class GetDatabaseInsightsResult {
     public static Builder builder(GetDatabaseInsightsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -201,11 +172,7 @@ public final class GetDatabaseInsightsResult {
         private @Nullable String opsiPrivateEndpointId;
         private @Nullable List<String> states;
         private @Nullable List<String> statuses;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseInsightsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -223,14 +190,17 @@ public final class GetDatabaseInsightsResult {
     	      this.statuses = defaults.statuses;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseIds(@Nullable List<String> databaseIds) {
             this.databaseIds = databaseIds;
             return this;
@@ -238,6 +208,7 @@ public final class GetDatabaseInsightsResult {
         public Builder databaseIds(String... databaseIds) {
             return databaseIds(List.of(databaseIds));
         }
+        @CustomType.Setter
         public Builder databaseInsightsCollections(List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections) {
             this.databaseInsightsCollections = Objects.requireNonNull(databaseInsightsCollections);
             return this;
@@ -245,6 +216,7 @@ public final class GetDatabaseInsightsResult {
         public Builder databaseInsightsCollections(GetDatabaseInsightsDatabaseInsightsCollection... databaseInsightsCollections) {
             return databaseInsightsCollections(List.of(databaseInsightsCollections));
         }
+        @CustomType.Setter
         public Builder databaseTypes(@Nullable List<String> databaseTypes) {
             this.databaseTypes = databaseTypes;
             return this;
@@ -252,14 +224,17 @@ public final class GetDatabaseInsightsResult {
         public Builder databaseTypes(String... databaseTypes) {
             return databaseTypes(List.of(databaseTypes));
         }
+        @CustomType.Setter
         public Builder enterpriseManagerBridgeId(@Nullable String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
+        @CustomType.Setter
         public Builder exadataInsightId(@Nullable String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -267,6 +242,7 @@ public final class GetDatabaseInsightsResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseInsightsFilter> filters) {
             this.filters = filters;
             return this;
@@ -274,14 +250,17 @@ public final class GetDatabaseInsightsResult {
         public Builder filters(GetDatabaseInsightsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder opsiPrivateEndpointId(@Nullable String opsiPrivateEndpointId) {
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
@@ -289,14 +268,30 @@ public final class GetDatabaseInsightsResult {
         public Builder states(String... states) {
             return states(List.of(states));
         }
+        @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
             this.statuses = statuses;
             return this;
         }
         public Builder statuses(String... statuses) {
             return statuses(List.of(statuses));
-        }        public GetDatabaseInsightsResult build() {
-            return new GetDatabaseInsightsResult(compartmentId, compartmentIdInSubtree, databaseIds, databaseInsightsCollections, databaseTypes, enterpriseManagerBridgeId, exadataInsightId, fields, filters, id, opsiPrivateEndpointId, states, statuses);
+        }
+        public GetDatabaseInsightsResult build() {
+            final var o = new GetDatabaseInsightsResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.databaseIds = databaseIds;
+            o.databaseInsightsCollections = databaseInsightsCollections;
+            o.databaseTypes = databaseTypes;
+            o.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            o.exadataInsightId = exadataInsightId;
+            o.fields = fields;
+            o.filters = filters;
+            o.id = id;
+            o.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            o.states = states;
+            o.statuses = statuses;
+            return o;
         }
     }
 }

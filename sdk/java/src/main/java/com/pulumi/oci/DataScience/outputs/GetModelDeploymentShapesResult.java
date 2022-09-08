@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelDeploymentShapesResult {
-    private final String compartmentId;
-    private final @Nullable List<GetModelDeploymentShapesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetModelDeploymentShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of model_deployment_shapes.
      * 
      */
-    private final List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes;
+    private List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes;
 
-    @CustomType.Constructor
-    private GetModelDeploymentShapesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetModelDeploymentShapesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("modelDeploymentShapes") List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.modelDeploymentShapes = modelDeploymentShapes;
-    }
-
+    private GetModelDeploymentShapesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetModelDeploymentShapesResult {
     public static Builder builder(GetModelDeploymentShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetModelDeploymentShapesFilter> filters;
         private String id;
         private List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelDeploymentShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetModelDeploymentShapesResult {
     	      this.modelDeploymentShapes = defaults.modelDeploymentShapes;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetModelDeploymentShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetModelDeploymentShapesResult {
         public Builder filters(GetModelDeploymentShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder modelDeploymentShapes(List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes) {
             this.modelDeploymentShapes = Objects.requireNonNull(modelDeploymentShapes);
             return this;
         }
         public Builder modelDeploymentShapes(GetModelDeploymentShapesModelDeploymentShape... modelDeploymentShapes) {
             return modelDeploymentShapes(List.of(modelDeploymentShapes));
-        }        public GetModelDeploymentShapesResult build() {
-            return new GetModelDeploymentShapesResult(compartmentId, filters, id, modelDeploymentShapes);
+        }
+        public GetModelDeploymentShapesResult build() {
+            final var o = new GetModelDeploymentShapesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.modelDeploymentShapes = modelDeploymentShapes;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetWebAppFirewallPolicyActionBody {
      * @return Static response body text.
      * 
      */
-    private final String text;
+    private String text;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPolicyActionBody(
-        @CustomType.Parameter("text") String text,
-        @CustomType.Parameter("type") String type) {
-        this.text = text;
-        this.type = type;
-    }
-
+    private GetWebAppFirewallPolicyActionBody() {}
     /**
      * @return Static response body text.
      * 
@@ -50,30 +43,32 @@ public final class GetWebAppFirewallPolicyActionBody {
     public static Builder builder(GetWebAppFirewallPolicyActionBody defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String text;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPolicyActionBody defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.text = defaults.text;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder text(String text) {
             this.text = Objects.requireNonNull(text);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetWebAppFirewallPolicyActionBody build() {
-            return new GetWebAppFirewallPolicyActionBody(text, type);
+        }
+        public GetWebAppFirewallPolicyActionBody build() {
+            final var o = new GetWebAppFirewallPolicyActionBody();
+            o.text = text;
+            o.type = type;
+            return o;
         }
     }
 }

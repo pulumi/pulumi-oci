@@ -14,13 +14,9 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollection {
      * @return Array of alert policy rules summary
      * 
      */
-    private final List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items;
+    private List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAlertPolicyRulesAlertPolicyRuleCollection(@CustomType.Parameter("items") List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAlertPolicyRulesAlertPolicyRuleCollection() {}
     /**
      * @return Array of alert policy rules summary
      * 
@@ -36,27 +32,27 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollection {
     public static Builder builder(GetAlertPolicyRulesAlertPolicyRuleCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertPolicyRulesAlertPolicyRuleCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAlertPolicyRulesAlertPolicyRuleCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAlertPolicyRulesAlertPolicyRuleCollection build() {
-            return new GetAlertPolicyRulesAlertPolicyRuleCollection(items);
+        }
+        public GetAlertPolicyRulesAlertPolicyRuleCollection build() {
+            final var o = new GetAlertPolicyRulesAlertPolicyRuleCollection();
+            o.items = items;
+            return o;
         }
     }
 }

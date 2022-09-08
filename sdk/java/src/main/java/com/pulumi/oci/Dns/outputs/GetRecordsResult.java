@@ -14,31 +14,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecordsResult {
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The fully qualified domain name where the record can be located.
      * 
      */
-    private final @Nullable String domain;
-    private final @Nullable String domainContains;
-    private final @Nullable List<GetRecordsFilter> filters;
+    private @Nullable String domain;
+    private @Nullable String domainContains;
+    private @Nullable List<GetRecordsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of records.
      * 
      */
-    private final List<GetRecordsRecord> records;
+    private List<GetRecordsRecord> records;
     /**
      * @return The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
      */
-    private final @Nullable String rtype;
-    private final @Nullable String sortBy;
-    private final @Nullable String sortOrder;
+    private @Nullable String rtype;
+    private @Nullable String sortBy;
+    private @Nullable String sortOrder;
     /**
      * @return The name or OCID of the target zone.
      * 
@@ -47,35 +47,10 @@ public final class GetRecordsResult {
      * 
      */
     @Deprecated /* The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
-    private final String zoneNameOrId;
-    private final @Nullable String zoneVersion;
+    private String zoneNameOrId;
+    private @Nullable String zoneVersion;
 
-    @CustomType.Constructor
-    private GetRecordsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("domain") @Nullable String domain,
-        @CustomType.Parameter("domainContains") @Nullable String domainContains,
-        @CustomType.Parameter("filters") @Nullable List<GetRecordsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("records") List<GetRecordsRecord> records,
-        @CustomType.Parameter("rtype") @Nullable String rtype,
-        @CustomType.Parameter("sortBy") @Nullable String sortBy,
-        @CustomType.Parameter("sortOrder") @Nullable String sortOrder,
-        @CustomType.Parameter("zoneNameOrId") String zoneNameOrId,
-        @CustomType.Parameter("zoneVersion") @Nullable String zoneVersion) {
-        this.compartmentId = compartmentId;
-        this.domain = domain;
-        this.domainContains = domainContains;
-        this.filters = filters;
-        this.id = id;
-        this.records = records;
-        this.rtype = rtype;
-        this.sortBy = sortBy;
-        this.sortOrder = sortOrder;
-        this.zoneNameOrId = zoneNameOrId;
-        this.zoneVersion = zoneVersion;
-    }
-
+    private GetRecordsResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -141,7 +116,7 @@ public final class GetRecordsResult {
     public static Builder builder(GetRecordsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String domain;
@@ -154,11 +129,7 @@ public final class GetRecordsResult {
         private @Nullable String sortOrder;
         private String zoneNameOrId;
         private @Nullable String zoneVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecordsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -174,18 +145,22 @@ public final class GetRecordsResult {
     	      this.zoneVersion = defaults.zoneVersion;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder domain(@Nullable String domain) {
             this.domain = domain;
             return this;
         }
+        @CustomType.Setter
         public Builder domainContains(@Nullable String domainContains) {
             this.domainContains = domainContains;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRecordsFilter> filters) {
             this.filters = filters;
             return this;
@@ -193,10 +168,12 @@ public final class GetRecordsResult {
         public Builder filters(GetRecordsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder records(List<GetRecordsRecord> records) {
             this.records = Objects.requireNonNull(records);
             return this;
@@ -204,27 +181,45 @@ public final class GetRecordsResult {
         public Builder records(GetRecordsRecord... records) {
             return records(List.of(records));
         }
+        @CustomType.Setter
         public Builder rtype(@Nullable String rtype) {
             this.rtype = rtype;
             return this;
         }
+        @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
             this.sortBy = sortBy;
             return this;
         }
+        @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
             this.sortOrder = sortOrder;
             return this;
         }
+        @CustomType.Setter
         public Builder zoneNameOrId(String zoneNameOrId) {
             this.zoneNameOrId = Objects.requireNonNull(zoneNameOrId);
             return this;
         }
+        @CustomType.Setter
         public Builder zoneVersion(@Nullable String zoneVersion) {
             this.zoneVersion = zoneVersion;
             return this;
-        }        public GetRecordsResult build() {
-            return new GetRecordsResult(compartmentId, domain, domainContains, filters, id, records, rtype, sortBy, sortOrder, zoneNameOrId, zoneVersion);
+        }
+        public GetRecordsResult build() {
+            final var o = new GetRecordsResult();
+            o.compartmentId = compartmentId;
+            o.domain = domain;
+            o.domainContains = domainContains;
+            o.filters = filters;
+            o.id = id;
+            o.records = records;
+            o.rtype = rtype;
+            o.sortBy = sortBy;
+            o.sortOrder = sortOrder;
+            o.zoneNameOrId = zoneNameOrId;
+            o.zoneVersion = zoneVersion;
+            return o;
         }
     }
 }

@@ -15,63 +15,44 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The information specified by the user about the Managed Database Group.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The identifier of the resource. Only one of the parameters, id or name should be provided.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A list of Managed Databases in the Managed Database Group.
      * 
      */
-    private final List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase> managedDatabases;
+    private List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase> managedDatabases;
     /**
      * @return A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The lifecycle state of a resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the Managed Database Group was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the Managed Database Group was last updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabases") List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase> managedDatabases,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.description = description;
-        this.id = id;
-        this.managedDatabases = managedDatabases;
-        this.name = name;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -136,7 +117,7 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem {
     public static Builder builder(GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String description;
@@ -146,11 +127,7 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -163,18 +140,22 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabases(List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase> managedDatabases) {
             this.managedDatabases = Objects.requireNonNull(managedDatabases);
             return this;
@@ -182,23 +163,37 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem {
         public Builder managedDatabases(GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase... managedDatabases) {
             return managedDatabases(List.of(managedDatabases));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem build() {
-            return new GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem(compartmentId, description, id, managedDatabases, name, state, timeCreated, timeUpdated);
+        }
+        public GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem build() {
+            final var o = new GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem();
+            o.compartmentId = compartmentId;
+            o.description = description;
+            o.id = id;
+            o.managedDatabases = managedDatabases;
+            o.name = name;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

@@ -15,133 +15,94 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
-    private final Integer addMaskingColumnsFromSdmTrigger;
+    private Integer addMaskingColumnsFromSdmTrigger;
     /**
      * @return The source of masking columns.
      * 
      */
-    private final List<GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource> columnSources;
+    private List<GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource> columnSources;
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the masking policy.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the masking policy.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if the temporary tables created during a masking operation should be dropped after masking. It&#39;s enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      * 
      */
-    private final Boolean isDropTempTablesEnabled;
+    private Boolean isDropTempTablesEnabled;
     /**
      * @return Indicates if redo logging is enabled during a masking operation. It&#39;s disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
      * 
      */
-    private final Boolean isRedoLoggingEnabled;
+    private Boolean isRedoLoggingEnabled;
     /**
      * @return Indicates if statistics gathering is enabled. It&#39;s enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
      * 
      */
-    private final Boolean isRefreshStatsEnabled;
+    private Boolean isRefreshStatsEnabled;
     /**
      * @return Specifies options to enable parallel execution when running data masking. Allowed values are &#39;NONE&#39; (no parallelism), &#39;DEFAULT&#39; (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      * 
      */
-    private final String parallelDegree;
+    private String parallelDegree;
     /**
      * @return A post-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed after the core masking script generated using the masking policy. It&#39;s usually used to perform additional transformation or cleanup work after masking.
      * 
      */
-    private final String postMaskingScript;
+    private String postMaskingScript;
     /**
      * @return A pre-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed before  the core masking script generated using the masking policy. It&#39;s usually used to perform any preparation or prerequisite work before masking data.
      * 
      */
-    private final String preMaskingScript;
+    private String preMaskingScript;
     /**
      * @return Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used.
      * 
      */
-    private final String recompile;
+    private String recompile;
     /**
      * @return A filter to return only the resources that match the specified lifecycle states.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetMaskingPoliciesMaskingPolicyCollectionItem(
-        @CustomType.Parameter("addMaskingColumnsFromSdmTrigger") Integer addMaskingColumnsFromSdmTrigger,
-        @CustomType.Parameter("columnSources") List<GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource> columnSources,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isDropTempTablesEnabled") Boolean isDropTempTablesEnabled,
-        @CustomType.Parameter("isRedoLoggingEnabled") Boolean isRedoLoggingEnabled,
-        @CustomType.Parameter("isRefreshStatsEnabled") Boolean isRefreshStatsEnabled,
-        @CustomType.Parameter("parallelDegree") String parallelDegree,
-        @CustomType.Parameter("postMaskingScript") String postMaskingScript,
-        @CustomType.Parameter("preMaskingScript") String preMaskingScript,
-        @CustomType.Parameter("recompile") String recompile,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.addMaskingColumnsFromSdmTrigger = addMaskingColumnsFromSdmTrigger;
-        this.columnSources = columnSources;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isDropTempTablesEnabled = isDropTempTablesEnabled;
-        this.isRedoLoggingEnabled = isRedoLoggingEnabled;
-        this.isRefreshStatsEnabled = isRefreshStatsEnabled;
-        this.parallelDegree = parallelDegree;
-        this.postMaskingScript = postMaskingScript;
-        this.preMaskingScript = preMaskingScript;
-        this.recompile = recompile;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetMaskingPoliciesMaskingPolicyCollectionItem() {}
     public Integer addMaskingColumnsFromSdmTrigger() {
         return this.addMaskingColumnsFromSdmTrigger;
     }
@@ -272,7 +233,7 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
     public static Builder builder(GetMaskingPoliciesMaskingPolicyCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer addMaskingColumnsFromSdmTrigger;
         private List<GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource> columnSources;
@@ -292,11 +253,7 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingPoliciesMaskingPolicyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addMaskingColumnsFromSdmTrigger = defaults.addMaskingColumnsFromSdmTrigger;
@@ -319,10 +276,12 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder addMaskingColumnsFromSdmTrigger(Integer addMaskingColumnsFromSdmTrigger) {
             this.addMaskingColumnsFromSdmTrigger = Objects.requireNonNull(addMaskingColumnsFromSdmTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder columnSources(List<GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource> columnSources) {
             this.columnSources = Objects.requireNonNull(columnSources);
             return this;
@@ -330,71 +289,107 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
         public Builder columnSources(GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource... columnSources) {
             return columnSources(List.of(columnSources));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isDropTempTablesEnabled(Boolean isDropTempTablesEnabled) {
             this.isDropTempTablesEnabled = Objects.requireNonNull(isDropTempTablesEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isRedoLoggingEnabled(Boolean isRedoLoggingEnabled) {
             this.isRedoLoggingEnabled = Objects.requireNonNull(isRedoLoggingEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isRefreshStatsEnabled(Boolean isRefreshStatsEnabled) {
             this.isRefreshStatsEnabled = Objects.requireNonNull(isRefreshStatsEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder parallelDegree(String parallelDegree) {
             this.parallelDegree = Objects.requireNonNull(parallelDegree);
             return this;
         }
+        @CustomType.Setter
         public Builder postMaskingScript(String postMaskingScript) {
             this.postMaskingScript = Objects.requireNonNull(postMaskingScript);
             return this;
         }
+        @CustomType.Setter
         public Builder preMaskingScript(String preMaskingScript) {
             this.preMaskingScript = Objects.requireNonNull(preMaskingScript);
             return this;
         }
+        @CustomType.Setter
         public Builder recompile(String recompile) {
             this.recompile = Objects.requireNonNull(recompile);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetMaskingPoliciesMaskingPolicyCollectionItem build() {
-            return new GetMaskingPoliciesMaskingPolicyCollectionItem(addMaskingColumnsFromSdmTrigger, columnSources, compartmentId, definedTags, description, displayName, freeformTags, id, isDropTempTablesEnabled, isRedoLoggingEnabled, isRefreshStatsEnabled, parallelDegree, postMaskingScript, preMaskingScript, recompile, state, timeCreated, timeUpdated);
+        }
+        public GetMaskingPoliciesMaskingPolicyCollectionItem build() {
+            final var o = new GetMaskingPoliciesMaskingPolicyCollectionItem();
+            o.addMaskingColumnsFromSdmTrigger = addMaskingColumnsFromSdmTrigger;
+            o.columnSources = columnSources;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isDropTempTablesEnabled = isDropTempTablesEnabled;
+            o.isRedoLoggingEnabled = isRedoLoggingEnabled;
+            o.isRefreshStatsEnabled = isRefreshStatsEnabled;
+            o.parallelDegree = parallelDegree;
+            o.postMaskingScript = postMaskingScript;
+            o.preMaskingScript = preMaskingScript;
+            o.recompile = recompile;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

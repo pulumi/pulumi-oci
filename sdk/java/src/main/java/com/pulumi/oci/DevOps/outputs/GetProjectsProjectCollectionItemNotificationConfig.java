@@ -13,13 +13,9 @@ public final class GetProjectsProjectCollectionItemNotificationConfig {
      * @return The topic ID for notifications.
      * 
      */
-    private final String topicId;
+    private String topicId;
 
-    @CustomType.Constructor
-    private GetProjectsProjectCollectionItemNotificationConfig(@CustomType.Parameter("topicId") String topicId) {
-        this.topicId = topicId;
-    }
-
+    private GetProjectsProjectCollectionItemNotificationConfig() {}
     /**
      * @return The topic ID for notifications.
      * 
@@ -35,24 +31,24 @@ public final class GetProjectsProjectCollectionItemNotificationConfig {
     public static Builder builder(GetProjectsProjectCollectionItemNotificationConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String topicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProjectsProjectCollectionItemNotificationConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.topicId = defaults.topicId;
         }
 
+        @CustomType.Setter
         public Builder topicId(String topicId) {
             this.topicId = Objects.requireNonNull(topicId);
             return this;
-        }        public GetProjectsProjectCollectionItemNotificationConfig build() {
-            return new GetProjectsProjectCollectionItemNotificationConfig(topicId);
+        }
+        public GetProjectsProjectCollectionItemNotificationConfig build() {
+            final var o = new GetProjectsProjectCollectionItemNotificationConfig();
+            o.topicId = topicId;
+            return o;
         }
     }
 }

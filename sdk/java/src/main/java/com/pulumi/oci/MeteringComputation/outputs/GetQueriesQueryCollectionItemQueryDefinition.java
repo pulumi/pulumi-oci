@@ -17,35 +17,24 @@ public final class GetQueriesQueryCollectionItemQueryDefinition {
      * @return The common fields for Cost Analysis UI rendering.
      * 
      */
-    private final List<GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi> costAnalysisUis;
+    private List<GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi> costAnalysisUis;
     /**
      * @return The query display name. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The request of the generated Cost Analysis report.
      * 
      */
-    private final List<GetQueriesQueryCollectionItemQueryDefinitionReportQuery> reportQueries;
+    private List<GetQueriesQueryCollectionItemQueryDefinitionReportQuery> reportQueries;
     /**
      * @return The saved query version.
      * 
      */
-    private final Double version;
+    private Double version;
 
-    @CustomType.Constructor
-    private GetQueriesQueryCollectionItemQueryDefinition(
-        @CustomType.Parameter("costAnalysisUis") List<GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi> costAnalysisUis,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("reportQueries") List<GetQueriesQueryCollectionItemQueryDefinitionReportQuery> reportQueries,
-        @CustomType.Parameter("version") Double version) {
-        this.costAnalysisUis = costAnalysisUis;
-        this.displayName = displayName;
-        this.reportQueries = reportQueries;
-        this.version = version;
-    }
-
+    private GetQueriesQueryCollectionItemQueryDefinition() {}
     /**
      * @return The common fields for Cost Analysis UI rendering.
      * 
@@ -82,17 +71,13 @@ public final class GetQueriesQueryCollectionItemQueryDefinition {
     public static Builder builder(GetQueriesQueryCollectionItemQueryDefinition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi> costAnalysisUis;
         private String displayName;
         private List<GetQueriesQueryCollectionItemQueryDefinitionReportQuery> reportQueries;
         private Double version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQueriesQueryCollectionItemQueryDefinition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.costAnalysisUis = defaults.costAnalysisUis;
@@ -101,6 +86,7 @@ public final class GetQueriesQueryCollectionItemQueryDefinition {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder costAnalysisUis(List<GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi> costAnalysisUis) {
             this.costAnalysisUis = Objects.requireNonNull(costAnalysisUis);
             return this;
@@ -108,10 +94,12 @@ public final class GetQueriesQueryCollectionItemQueryDefinition {
         public Builder costAnalysisUis(GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi... costAnalysisUis) {
             return costAnalysisUis(List.of(costAnalysisUis));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder reportQueries(List<GetQueriesQueryCollectionItemQueryDefinitionReportQuery> reportQueries) {
             this.reportQueries = Objects.requireNonNull(reportQueries);
             return this;
@@ -119,11 +107,18 @@ public final class GetQueriesQueryCollectionItemQueryDefinition {
         public Builder reportQueries(GetQueriesQueryCollectionItemQueryDefinitionReportQuery... reportQueries) {
             return reportQueries(List.of(reportQueries));
         }
+        @CustomType.Setter
         public Builder version(Double version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetQueriesQueryCollectionItemQueryDefinition build() {
-            return new GetQueriesQueryCollectionItemQueryDefinition(costAnalysisUis, displayName, reportQueries, version);
+        }
+        public GetQueriesQueryCollectionItemQueryDefinition build() {
+            final var o = new GetQueriesQueryCollectionItemQueryDefinition();
+            o.costAnalysisUis = costAnalysisUis;
+            o.displayName = displayName;
+            o.reportQueries = reportQueries;
+            o.version = version;
+            return o;
         }
     }
 }

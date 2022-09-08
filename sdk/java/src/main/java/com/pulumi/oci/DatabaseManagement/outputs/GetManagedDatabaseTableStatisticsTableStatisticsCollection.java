@@ -14,13 +14,9 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollection {
      * @return The list of table statistics statuses.
      * 
      */
-    private final List<GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem> items;
+    private List<GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseTableStatisticsTableStatisticsCollection(@CustomType.Parameter("items") List<GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseTableStatisticsTableStatisticsCollection() {}
     /**
      * @return The list of table statistics statuses.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollection {
     public static Builder builder(GetManagedDatabaseTableStatisticsTableStatisticsCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseTableStatisticsTableStatisticsCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseTableStatisticsTableStatisticsCollection build() {
-            return new GetManagedDatabaseTableStatisticsTableStatisticsCollection(items);
+        }
+        public GetManagedDatabaseTableStatisticsTableStatisticsCollection build() {
+            final var o = new GetManagedDatabaseTableStatisticsTableStatisticsCollection();
+            o.items = items;
+            return o;
         }
     }
 }

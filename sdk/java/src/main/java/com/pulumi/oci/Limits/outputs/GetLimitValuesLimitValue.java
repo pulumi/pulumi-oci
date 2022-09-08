@@ -13,35 +13,24 @@ public final class GetLimitValuesLimitValue {
      * @return Filter entries by availability domain. This implies that only AD-specific values are returned.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return Optional field, can be used to see a specific resource limit value.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Filter entries by scope type.
      * 
      */
-    private final String scopeType;
+    private String scopeType;
     /**
      * @return The resource limit value.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetLimitValuesLimitValue(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("scopeType") String scopeType,
-        @CustomType.Parameter("value") String value) {
-        this.availabilityDomain = availabilityDomain;
-        this.name = name;
-        this.scopeType = scopeType;
-        this.value = value;
-    }
-
+    private GetLimitValuesLimitValue() {}
     /**
      * @return Filter entries by availability domain. This implies that only AD-specific values are returned.
      * 
@@ -78,17 +67,13 @@ public final class GetLimitValuesLimitValue {
     public static Builder builder(GetLimitValuesLimitValue defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String name;
         private String scopeType;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLimitValuesLimitValue defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -97,23 +82,33 @@ public final class GetLimitValuesLimitValue {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder scopeType(String scopeType) {
             this.scopeType = Objects.requireNonNull(scopeType);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetLimitValuesLimitValue build() {
-            return new GetLimitValuesLimitValue(availabilityDomain, name, scopeType, value);
+        }
+        public GetLimitValuesLimitValue build() {
+            final var o = new GetLimitValuesLimitValue();
+            o.availabilityDomain = availabilityDomain;
+            o.name = name;
+            o.scopeType = scopeType;
+            o.value = value;
+            return o;
         }
     }
 }

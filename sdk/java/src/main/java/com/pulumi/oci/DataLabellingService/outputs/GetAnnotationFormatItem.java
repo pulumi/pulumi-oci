@@ -13,13 +13,9 @@ public final class GetAnnotationFormatItem {
      * @return A unique name for the target AnnotationFormat for the Dataset.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetAnnotationFormatItem(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetAnnotationFormatItem() {}
     /**
      * @return A unique name for the target AnnotationFormat for the Dataset.
      * 
@@ -35,24 +31,24 @@ public final class GetAnnotationFormatItem {
     public static Builder builder(GetAnnotationFormatItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnnotationFormatItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetAnnotationFormatItem build() {
-            return new GetAnnotationFormatItem(name);
+        }
+        public GetAnnotationFormatItem build() {
+            final var o = new GetAnnotationFormatItem();
+            o.name = name;
+            return o;
         }
     }
 }

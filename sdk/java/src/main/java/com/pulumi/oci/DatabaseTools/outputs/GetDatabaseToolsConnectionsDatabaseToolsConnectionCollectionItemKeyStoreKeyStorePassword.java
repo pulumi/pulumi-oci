@@ -13,21 +13,14 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    private final String secretId;
+    private String secretId;
     /**
      * @return The value type of the user password.
      * 
      */
-    private final String valueType;
+    private String valueType;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword(
-        @CustomType.Parameter("secretId") String secretId,
-        @CustomType.Parameter("valueType") String valueType) {
-        this.secretId = secretId;
-        this.valueType = valueType;
-    }
-
+    private GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
@@ -50,30 +43,32 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
     public static Builder builder(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String secretId;
         private String valueType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.secretId = defaults.secretId;
     	      this.valueType = defaults.valueType;
         }
 
+        @CustomType.Setter
         public Builder secretId(String secretId) {
             this.secretId = Objects.requireNonNull(secretId);
             return this;
         }
+        @CustomType.Setter
         public Builder valueType(String valueType) {
             this.valueType = Objects.requireNonNull(valueType);
             return this;
-        }        public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword build() {
-            return new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword(secretId, valueType);
+        }
+        public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword build() {
+            final var o = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword();
+            o.secretId = secretId;
+            o.valueType = valueType;
+            return o;
         }
     }
 }

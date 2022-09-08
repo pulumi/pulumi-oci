@@ -13,13 +13,9 @@ public final class GetRegistryFolderDataAssetNativeTypeSystemParentRef {
      * @return Key of the parent object.
      * 
      */
-    private final String parent;
+    private String parent;
 
-    @CustomType.Constructor
-    private GetRegistryFolderDataAssetNativeTypeSystemParentRef(@CustomType.Parameter("parent") String parent) {
-        this.parent = parent;
-    }
-
+    private GetRegistryFolderDataAssetNativeTypeSystemParentRef() {}
     /**
      * @return Key of the parent object.
      * 
@@ -35,24 +31,24 @@ public final class GetRegistryFolderDataAssetNativeTypeSystemParentRef {
     public static Builder builder(GetRegistryFolderDataAssetNativeTypeSystemParentRef defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String parent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryFolderDataAssetNativeTypeSystemParentRef defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parent = defaults.parent;
         }
 
+        @CustomType.Setter
         public Builder parent(String parent) {
             this.parent = Objects.requireNonNull(parent);
             return this;
-        }        public GetRegistryFolderDataAssetNativeTypeSystemParentRef build() {
-            return new GetRegistryFolderDataAssetNativeTypeSystemParentRef(parent);
+        }
+        public GetRegistryFolderDataAssetNativeTypeSystemParentRef build() {
+            final var o = new GetRegistryFolderDataAssetNativeTypeSystemParentRef();
+            o.parent = parent;
+            return o;
         }
     }
 }

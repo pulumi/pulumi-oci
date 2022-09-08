@@ -15,50 +15,35 @@ public final class GetWebAppFirewallPolicyRequestRateLimitingRule {
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    private final String actionName;
+    private String actionName;
     /**
      * @return An expression that determines whether or not the rule action should be executed.
      * 
      */
-    private final String condition;
+    private String condition;
     /**
      * @return The language used to parse condition from field `condition`. Available languages:
      * * **JMESPATH** an extended JMESPath language syntax.
      * 
      */
-    private final String conditionLanguage;
+    private String conditionLanguage;
     /**
      * @return Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
      * 
      */
-    private final List<GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration> configurations;
+    private List<GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration> configurations;
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPolicyRequestRateLimitingRule(
-        @CustomType.Parameter("actionName") String actionName,
-        @CustomType.Parameter("condition") String condition,
-        @CustomType.Parameter("conditionLanguage") String conditionLanguage,
-        @CustomType.Parameter("configurations") List<GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration> configurations,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.actionName = actionName;
-        this.condition = condition;
-        this.conditionLanguage = conditionLanguage;
-        this.configurations = configurations;
-        this.name = name;
-        this.type = type;
-    }
-
+    private GetWebAppFirewallPolicyRequestRateLimitingRule() {}
     /**
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
@@ -110,7 +95,7 @@ public final class GetWebAppFirewallPolicyRequestRateLimitingRule {
     public static Builder builder(GetWebAppFirewallPolicyRequestRateLimitingRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String actionName;
         private String condition;
@@ -118,11 +103,7 @@ public final class GetWebAppFirewallPolicyRequestRateLimitingRule {
         private List<GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration> configurations;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPolicyRequestRateLimitingRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionName = defaults.actionName;
@@ -133,18 +114,22 @@ public final class GetWebAppFirewallPolicyRequestRateLimitingRule {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder actionName(String actionName) {
             this.actionName = Objects.requireNonNull(actionName);
             return this;
         }
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
         }
+        @CustomType.Setter
         public Builder conditionLanguage(String conditionLanguage) {
             this.conditionLanguage = Objects.requireNonNull(conditionLanguage);
             return this;
         }
+        @CustomType.Setter
         public Builder configurations(List<GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration> configurations) {
             this.configurations = Objects.requireNonNull(configurations);
             return this;
@@ -152,15 +137,25 @@ public final class GetWebAppFirewallPolicyRequestRateLimitingRule {
         public Builder configurations(GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetWebAppFirewallPolicyRequestRateLimitingRule build() {
-            return new GetWebAppFirewallPolicyRequestRateLimitingRule(actionName, condition, conditionLanguage, configurations, name, type);
+        }
+        public GetWebAppFirewallPolicyRequestRateLimitingRule build() {
+            final var o = new GetWebAppFirewallPolicyRequestRateLimitingRule();
+            o.actionName = actionName;
+            o.condition = condition;
+            o.conditionLanguage = conditionLanguage;
+            o.configurations = configurations;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

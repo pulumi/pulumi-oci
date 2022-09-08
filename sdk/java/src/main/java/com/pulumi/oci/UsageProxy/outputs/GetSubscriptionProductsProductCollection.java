@@ -14,13 +14,9 @@ public final class GetSubscriptionProductsProductCollection {
      * @return The list of product rewards summaries.
      * 
      */
-    private final List<GetSubscriptionProductsProductCollectionItem> items;
+    private List<GetSubscriptionProductsProductCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetSubscriptionProductsProductCollection(@CustomType.Parameter("items") List<GetSubscriptionProductsProductCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetSubscriptionProductsProductCollection() {}
     /**
      * @return The list of product rewards summaries.
      * 
@@ -36,27 +32,27 @@ public final class GetSubscriptionProductsProductCollection {
     public static Builder builder(GetSubscriptionProductsProductCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionProductsProductCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionProductsProductCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSubscriptionProductsProductCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSubscriptionProductsProductCollectionItem... items) {
             return items(List.of(items));
-        }        public GetSubscriptionProductsProductCollection build() {
-            return new GetSubscriptionProductsProductCollection(items);
+        }
+        public GetSubscriptionProductsProductCollection build() {
+            final var o = new GetSubscriptionProductsProductCollection();
+            o.items = items;
+            return o;
         }
     }
 }

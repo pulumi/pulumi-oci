@@ -15,28 +15,19 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfig
      * @return (Updatable) Unique name of the configuration
      * 
      */
-    private final @Nullable String configKey;
+    private @Nullable String configKey;
     /**
      * @return (Updatable) configuration name
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) configuration value
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration(
-        @CustomType.Parameter("configKey") @Nullable String configKey,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.configKey = configKey;
-        this.name = name;
-        this.value = value;
-    }
-
+    private TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration() {}
     /**
      * @return (Updatable) Unique name of the configuration
      * 
@@ -66,16 +57,12 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfig
     public static Builder builder(TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String configKey;
         private @Nullable String name;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configKey = defaults.configKey;
@@ -83,19 +70,27 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfig
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder configKey(@Nullable String configKey) {
             this.configKey = configKey;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration build() {
-            return new TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration(configKey, name, value);
+        }
+        public TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration build() {
+            final var o = new TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration();
+            o.configKey = configKey;
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

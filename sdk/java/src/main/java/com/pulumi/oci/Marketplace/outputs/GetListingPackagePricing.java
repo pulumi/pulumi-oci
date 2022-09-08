@@ -16,42 +16,29 @@ public final class GetListingPackagePricing {
      * @return The currency of the pricing model.
      * 
      */
-    private final String currency;
+    private String currency;
     /**
      * @return The model for international market pricing.
      * 
      */
-    private final List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices;
+    private List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices;
     /**
      * @return The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
      * 
      */
-    private final String payGoStrategy;
+    private String payGoStrategy;
     /**
      * @return The pricing rate.
      * 
      */
-    private final Double rate;
+    private Double rate;
     /**
      * @return The type of the pricing model.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetListingPackagePricing(
-        @CustomType.Parameter("currency") String currency,
-        @CustomType.Parameter("internationalMarketPrices") List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices,
-        @CustomType.Parameter("payGoStrategy") String payGoStrategy,
-        @CustomType.Parameter("rate") Double rate,
-        @CustomType.Parameter("type") String type) {
-        this.currency = currency;
-        this.internationalMarketPrices = internationalMarketPrices;
-        this.payGoStrategy = payGoStrategy;
-        this.rate = rate;
-        this.type = type;
-    }
-
+    private GetListingPackagePricing() {}
     /**
      * @return The currency of the pricing model.
      * 
@@ -95,18 +82,14 @@ public final class GetListingPackagePricing {
     public static Builder builder(GetListingPackagePricing defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String currency;
         private List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices;
         private String payGoStrategy;
         private Double rate;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPackagePricing defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currency = defaults.currency;
@@ -116,10 +99,12 @@ public final class GetListingPackagePricing {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder currency(String currency) {
             this.currency = Objects.requireNonNull(currency);
             return this;
         }
+        @CustomType.Setter
         public Builder internationalMarketPrices(List<GetListingPackagePricingInternationalMarketPrice> internationalMarketPrices) {
             this.internationalMarketPrices = Objects.requireNonNull(internationalMarketPrices);
             return this;
@@ -127,19 +112,29 @@ public final class GetListingPackagePricing {
         public Builder internationalMarketPrices(GetListingPackagePricingInternationalMarketPrice... internationalMarketPrices) {
             return internationalMarketPrices(List.of(internationalMarketPrices));
         }
+        @CustomType.Setter
         public Builder payGoStrategy(String payGoStrategy) {
             this.payGoStrategy = Objects.requireNonNull(payGoStrategy);
             return this;
         }
+        @CustomType.Setter
         public Builder rate(Double rate) {
             this.rate = Objects.requireNonNull(rate);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetListingPackagePricing build() {
-            return new GetListingPackagePricing(currency, internationalMarketPrices, payGoStrategy, rate, type);
+        }
+        public GetListingPackagePricing build() {
+            final var o = new GetListingPackagePricing();
+            o.currency = currency;
+            o.internationalMarketPrices = internationalMarketPrices;
+            o.payGoStrategy = payGoStrategy;
+            o.rate = rate;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOf
      * @return (Updatable) Name of the month of the year.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek() {}
     /**
      * @return (Updatable) Name of the month of the year.
      * 
@@ -35,24 +31,24 @@ public final class AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOf
     public static Builder builder(AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek build() {
-            return new AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek(name);
+        }
+        public AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek build() {
+            final var o = new AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek();
+            o.name = name;
+            return o;
         }
     }
 }

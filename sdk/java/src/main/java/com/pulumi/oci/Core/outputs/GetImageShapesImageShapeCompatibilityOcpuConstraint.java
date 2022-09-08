@@ -13,21 +13,14 @@ public final class GetImageShapesImageShapeCompatibilityOcpuConstraint {
      * @return The maximum number of OCPUs supported for this image and shape.
      * 
      */
-    private final Integer max;
+    private Integer max;
     /**
      * @return The minimum number of OCPUs supported for this image and shape.
      * 
      */
-    private final Integer min;
+    private Integer min;
 
-    @CustomType.Constructor
-    private GetImageShapesImageShapeCompatibilityOcpuConstraint(
-        @CustomType.Parameter("max") Integer max,
-        @CustomType.Parameter("min") Integer min) {
-        this.max = max;
-        this.min = min;
-    }
-
+    private GetImageShapesImageShapeCompatibilityOcpuConstraint() {}
     /**
      * @return The maximum number of OCPUs supported for this image and shape.
      * 
@@ -50,30 +43,32 @@ public final class GetImageShapesImageShapeCompatibilityOcpuConstraint {
     public static Builder builder(GetImageShapesImageShapeCompatibilityOcpuConstraint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer max;
         private Integer min;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImageShapesImageShapeCompatibilityOcpuConstraint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.max = defaults.max;
     	      this.min = defaults.min;
         }
 
+        @CustomType.Setter
         public Builder max(Integer max) {
             this.max = Objects.requireNonNull(max);
             return this;
         }
+        @CustomType.Setter
         public Builder min(Integer min) {
             this.min = Objects.requireNonNull(min);
             return this;
-        }        public GetImageShapesImageShapeCompatibilityOcpuConstraint build() {
-            return new GetImageShapesImageShapeCompatibilityOcpuConstraint(max, min);
+        }
+        public GetImageShapesImageShapeCompatibilityOcpuConstraint build() {
+            final var o = new GetImageShapesImageShapeCompatibilityOcpuConstraint();
+            o.max = max;
+            o.min = min;
+            return o;
         }
     }
 }

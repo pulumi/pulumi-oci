@@ -18,41 +18,26 @@ public final class GetDedicatedVmHostInstancesResult {
      * @return The availability domain the virtual machine instance is running in.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment that contains the virtual machine instance.
      * 
      */
-    private final String compartmentId;
-    private final String dedicatedVmHostId;
+    private String compartmentId;
+    private String dedicatedVmHostId;
     /**
      * @return The list of dedicated_vm_host_instances.
      * 
      */
-    private final List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances;
-    private final @Nullable List<GetDedicatedVmHostInstancesFilter> filters;
+    private List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances;
+    private @Nullable List<GetDedicatedVmHostInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDedicatedVmHostInstancesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dedicatedVmHostId") String dedicatedVmHostId,
-        @CustomType.Parameter("dedicatedVmHostInstances") List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances,
-        @CustomType.Parameter("filters") @Nullable List<GetDedicatedVmHostInstancesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.dedicatedVmHostId = dedicatedVmHostId;
-        this.dedicatedVmHostInstances = dedicatedVmHostInstances;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetDedicatedVmHostInstancesResult() {}
     /**
      * @return The availability domain the virtual machine instance is running in.  Example: `Uocm:PHX-AD-1`
      * 
@@ -95,7 +80,7 @@ public final class GetDedicatedVmHostInstancesResult {
     public static Builder builder(GetDedicatedVmHostInstancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -103,11 +88,7 @@ public final class GetDedicatedVmHostInstancesResult {
         private List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances;
         private @Nullable List<GetDedicatedVmHostInstancesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDedicatedVmHostInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -118,18 +99,22 @@ public final class GetDedicatedVmHostInstancesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dedicatedVmHostId(String dedicatedVmHostId) {
             this.dedicatedVmHostId = Objects.requireNonNull(dedicatedVmHostId);
             return this;
         }
+        @CustomType.Setter
         public Builder dedicatedVmHostInstances(List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances) {
             this.dedicatedVmHostInstances = Objects.requireNonNull(dedicatedVmHostInstances);
             return this;
@@ -137,6 +122,7 @@ public final class GetDedicatedVmHostInstancesResult {
         public Builder dedicatedVmHostInstances(GetDedicatedVmHostInstancesDedicatedVmHostInstance... dedicatedVmHostInstances) {
             return dedicatedVmHostInstances(List.of(dedicatedVmHostInstances));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDedicatedVmHostInstancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -144,11 +130,20 @@ public final class GetDedicatedVmHostInstancesResult {
         public Builder filters(GetDedicatedVmHostInstancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDedicatedVmHostInstancesResult build() {
-            return new GetDedicatedVmHostInstancesResult(availabilityDomain, compartmentId, dedicatedVmHostId, dedicatedVmHostInstances, filters, id);
+        }
+        public GetDedicatedVmHostInstancesResult build() {
+            final var o = new GetDedicatedVmHostInstancesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.dedicatedVmHostId = dedicatedVmHostId;
+            o.dedicatedVmHostInstances = dedicatedVmHostInstances;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

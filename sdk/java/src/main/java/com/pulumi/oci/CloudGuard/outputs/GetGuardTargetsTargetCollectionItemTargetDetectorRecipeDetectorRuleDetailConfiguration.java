@@ -15,42 +15,29 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
      * @return Unique name of the configuration
      * 
      */
-    private final String configKey;
+    private String configKey;
     /**
      * @return configuration data type
      * 
      */
-    private final String dataType;
+    private String dataType;
     /**
      * @return configuration name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return configuration value
      * 
      */
-    private final String value;
+    private String value;
     /**
      * @return List of configuration values
      * 
      */
-    private final List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
+    private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
 
-    @CustomType.Constructor
-    private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration(
-        @CustomType.Parameter("configKey") String configKey,
-        @CustomType.Parameter("dataType") String dataType,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value,
-        @CustomType.Parameter("values") List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values) {
-        this.configKey = configKey;
-        this.dataType = dataType;
-        this.name = name;
-        this.value = value;
-        this.values = values;
-    }
-
+    private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration() {}
     /**
      * @return Unique name of the configuration
      * 
@@ -94,18 +81,14 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
     public static Builder builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String configKey;
         private String dataType;
         private String name;
         private String value;
         private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configKey = defaults.configKey;
@@ -115,30 +98,42 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder configKey(String configKey) {
             this.configKey = Objects.requireNonNull(configKey);
             return this;
         }
+        @CustomType.Setter
         public Builder dataType(String dataType) {
             this.dataType = Objects.requireNonNull(dataType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue... values) {
             return values(List.of(values));
-        }        public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration build() {
-            return new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration(configKey, dataType, name, value, values);
+        }
+        public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration build() {
+            final var o = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration();
+            o.configKey = configKey;
+            o.dataType = dataType;
+            o.name = name;
+            o.value = value;
+            o.values = values;
+            return o;
         }
     }
 }

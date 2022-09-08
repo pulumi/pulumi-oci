@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection {
-    private final List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem> items;
+    private List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection(@CustomType.Parameter("items") List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection() {}
     public List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehous
     public static Builder builder(GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection build() {
-            return new GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection(items);
+        }
+        public GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection build() {
+            final var o = new GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

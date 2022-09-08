@@ -15,35 +15,24 @@ public final class HeatWaveClusterClusterNode {
      * @return The ID of the node within MySQL HeatWave cluster.
      * 
      */
-    private final @Nullable String nodeId;
+    private @Nullable String nodeId;
     /**
      * @return (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final @Nullable String timeUpdated;
+    private @Nullable String timeUpdated;
 
-    @CustomType.Constructor
-    private HeatWaveClusterClusterNode(
-        @CustomType.Parameter("nodeId") @Nullable String nodeId,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeUpdated") @Nullable String timeUpdated) {
-        this.nodeId = nodeId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private HeatWaveClusterClusterNode() {}
     /**
      * @return The ID of the node within MySQL HeatWave cluster.
      * 
@@ -80,17 +69,13 @@ public final class HeatWaveClusterClusterNode {
     public static Builder builder(HeatWaveClusterClusterNode defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String nodeId;
         private @Nullable String state;
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(HeatWaveClusterClusterNode defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.nodeId = defaults.nodeId;
@@ -99,23 +84,33 @@ public final class HeatWaveClusterClusterNode {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder nodeId(@Nullable String nodeId) {
             this.nodeId = nodeId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
-        }        public HeatWaveClusterClusterNode build() {
-            return new HeatWaveClusterClusterNode(nodeId, state, timeCreated, timeUpdated);
+        }
+        public HeatWaveClusterClusterNode build() {
+            final var o = new HeatWaveClusterClusterNode();
+            o.nodeId = nodeId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseTableStatisticsResult {
-    private final @Nullable List<GetManagedDatabaseTableStatisticsFilter> filters;
+    private @Nullable List<GetManagedDatabaseTableStatisticsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
+    private String id;
+    private String managedDatabaseId;
     /**
      * @return The list of table_statistics_collection.
      * 
      */
-    private final List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections;
+    private List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseTableStatisticsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseTableStatisticsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("tableStatisticsCollections") List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections) {
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.tableStatisticsCollections = tableStatisticsCollections;
-    }
-
+    private GetManagedDatabaseTableStatisticsResult() {}
     public List<GetManagedDatabaseTableStatisticsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetManagedDatabaseTableStatisticsResult {
     public static Builder builder(GetManagedDatabaseTableStatisticsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseTableStatisticsFilter> filters;
         private String id;
         private String managedDatabaseId;
         private List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseTableStatisticsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetManagedDatabaseTableStatisticsResult {
     	      this.tableStatisticsCollections = defaults.tableStatisticsCollections;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseTableStatisticsFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,22 +78,31 @@ public final class GetManagedDatabaseTableStatisticsResult {
         public Builder filters(GetManagedDatabaseTableStatisticsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder tableStatisticsCollections(List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections) {
             this.tableStatisticsCollections = Objects.requireNonNull(tableStatisticsCollections);
             return this;
         }
         public Builder tableStatisticsCollections(GetManagedDatabaseTableStatisticsTableStatisticsCollection... tableStatisticsCollections) {
             return tableStatisticsCollections(List.of(tableStatisticsCollections));
-        }        public GetManagedDatabaseTableStatisticsResult build() {
-            return new GetManagedDatabaseTableStatisticsResult(filters, id, managedDatabaseId, tableStatisticsCollections);
+        }
+        public GetManagedDatabaseTableStatisticsResult build() {
+            final var o = new GetManagedDatabaseTableStatisticsResult();
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.tableStatisticsCollections = tableStatisticsCollections;
+            return o;
         }
     }
 }

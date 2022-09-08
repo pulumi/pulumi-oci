@@ -17,30 +17,17 @@ public final class GetBackendsResult {
      * @return The list of backends.
      * 
      */
-    private final List<GetBackendsBackend> backends;
-    private final String backendsetName;
-    private final @Nullable List<GetBackendsFilter> filters;
+    private List<GetBackendsBackend> backends;
+    private String backendsetName;
+    private @Nullable List<GetBackendsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String loadBalancerId;
+    private String id;
+    private String loadBalancerId;
 
-    @CustomType.Constructor
-    private GetBackendsResult(
-        @CustomType.Parameter("backends") List<GetBackendsBackend> backends,
-        @CustomType.Parameter("backendsetName") String backendsetName,
-        @CustomType.Parameter("filters") @Nullable List<GetBackendsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId) {
-        this.backends = backends;
-        this.backendsetName = backendsetName;
-        this.filters = filters;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-    }
-
+    private GetBackendsResult() {}
     /**
      * @return The list of backends.
      * 
@@ -72,18 +59,14 @@ public final class GetBackendsResult {
     public static Builder builder(GetBackendsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBackendsBackend> backends;
         private String backendsetName;
         private @Nullable List<GetBackendsFilter> filters;
         private String id;
         private String loadBalancerId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backends = defaults.backends;
@@ -93,6 +76,7 @@ public final class GetBackendsResult {
     	      this.loadBalancerId = defaults.loadBalancerId;
         }
 
+        @CustomType.Setter
         public Builder backends(List<GetBackendsBackend> backends) {
             this.backends = Objects.requireNonNull(backends);
             return this;
@@ -100,10 +84,12 @@ public final class GetBackendsResult {
         public Builder backends(GetBackendsBackend... backends) {
             return backends(List.of(backends));
         }
+        @CustomType.Setter
         public Builder backendsetName(String backendsetName) {
             this.backendsetName = Objects.requireNonNull(backendsetName);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBackendsFilter> filters) {
             this.filters = filters;
             return this;
@@ -111,15 +97,24 @@ public final class GetBackendsResult {
         public Builder filters(GetBackendsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
-        }        public GetBackendsResult build() {
-            return new GetBackendsResult(backends, backendsetName, filters, id, loadBalancerId);
+        }
+        public GetBackendsResult build() {
+            final var o = new GetBackendsResult();
+            o.backends = backends;
+            o.backendsetName = backendsetName;
+            o.filters = filters;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            return o;
         }
     }
 }

@@ -15,35 +15,24 @@ public final class ChannelTarget {
      * @return (Updatable) The username for the replication applier of the target MySQL DB System.
      * 
      */
-    private final @Nullable String applierUsername;
+    private @Nullable String applierUsername;
     /**
      * @return (Updatable) The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
      * 
      */
-    private final @Nullable String channelName;
+    private @Nullable String channelName;
     /**
      * @return The OCID of the target DB System.
      * 
      */
-    private final String dbSystemId;
+    private String dbSystemId;
     /**
      * @return (Updatable) The specific target identifier.
      * 
      */
-    private final String targetType;
+    private String targetType;
 
-    @CustomType.Constructor
-    private ChannelTarget(
-        @CustomType.Parameter("applierUsername") @Nullable String applierUsername,
-        @CustomType.Parameter("channelName") @Nullable String channelName,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("targetType") String targetType) {
-        this.applierUsername = applierUsername;
-        this.channelName = channelName;
-        this.dbSystemId = dbSystemId;
-        this.targetType = targetType;
-    }
-
+    private ChannelTarget() {}
     /**
      * @return (Updatable) The username for the replication applier of the target MySQL DB System.
      * 
@@ -80,17 +69,13 @@ public final class ChannelTarget {
     public static Builder builder(ChannelTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String applierUsername;
         private @Nullable String channelName;
         private String dbSystemId;
         private String targetType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ChannelTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applierUsername = defaults.applierUsername;
@@ -99,23 +84,33 @@ public final class ChannelTarget {
     	      this.targetType = defaults.targetType;
         }
 
+        @CustomType.Setter
         public Builder applierUsername(@Nullable String applierUsername) {
             this.applierUsername = applierUsername;
             return this;
         }
+        @CustomType.Setter
         public Builder channelName(@Nullable String channelName) {
             this.channelName = channelName;
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetType(String targetType) {
             this.targetType = Objects.requireNonNull(targetType);
             return this;
-        }        public ChannelTarget build() {
-            return new ChannelTarget(applierUsername, channelName, dbSystemId, targetType);
+        }
+        public ChannelTarget build() {
+            final var o = new ChannelTarget();
+            o.applierUsername = applierUsername;
+            o.channelName = channelName;
+            o.dbSystemId = dbSystemId;
+            o.targetType = targetType;
+            return o;
         }
     }
 }

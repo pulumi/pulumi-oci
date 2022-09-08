@@ -13,21 +13,14 @@ public final class GetContainerRepositoryReadme {
      * @return Readme content. Avoid entering confidential information.
      * 
      */
-    private final String content;
+    private String content;
     /**
      * @return Readme format. Supported formats are text/plain and text/markdown.
      * 
      */
-    private final String format;
+    private String format;
 
-    @CustomType.Constructor
-    private GetContainerRepositoryReadme(
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("format") String format) {
-        this.content = content;
-        this.format = format;
-    }
-
+    private GetContainerRepositoryReadme() {}
     /**
      * @return Readme content. Avoid entering confidential information.
      * 
@@ -50,30 +43,32 @@ public final class GetContainerRepositoryReadme {
     public static Builder builder(GetContainerRepositoryReadme defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String content;
         private String format;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerRepositoryReadme defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.content = defaults.content;
     	      this.format = defaults.format;
         }
 
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder format(String format) {
             this.format = Objects.requireNonNull(format);
             return this;
-        }        public GetContainerRepositoryReadme build() {
-            return new GetContainerRepositoryReadme(content, format);
+        }
+        public GetContainerRepositoryReadme build() {
+            final var o = new GetContainerRepositoryReadme();
+            o.content = content;
+            o.format = format;
+            return o;
         }
     }
 }

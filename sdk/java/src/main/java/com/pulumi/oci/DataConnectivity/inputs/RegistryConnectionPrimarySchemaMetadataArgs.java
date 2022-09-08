@@ -22,14 +22,14 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
     public static final RegistryConnectionPrimarySchemaMetadataArgs Empty = new RegistryConnectionPrimarySchemaMetadataArgs();
 
     /**
-     * (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+     * (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name, and description.
      * 
      */
     @Import(name="aggregator")
     private @Nullable Output<RegistryConnectionPrimarySchemaMetadataAggregatorArgs> aggregator;
 
     /**
-     * @return (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+     * @return (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name, and description.
      * 
      */
     public Optional<Output<RegistryConnectionPrimarySchemaMetadataAggregatorArgs>> aggregator() {
@@ -82,14 +82,14 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
     }
 
     /**
-     * (Updatable) The full path to identify this object.
+     * (Updatable) The full path to identify the object.
      * 
      */
     @Import(name="identifierPath")
     private @Nullable Output<String> identifierPath;
 
     /**
-     * @return (Updatable) The full path to identify this object.
+     * @return (Updatable) The full path to identify the object.
      * 
      */
     public Optional<Output<String>> identifierPath() {
@@ -112,14 +112,14 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Specifies whether this object is a favorite or not.
+     * (Updatable) Specifies whether the object is a favorite.
      * 
      */
     @Import(name="isFavorite")
     private @Nullable Output<Boolean> isFavorite;
 
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return (Updatable) Specifies whether the object is a favorite.
      * 
      */
     public Optional<Output<Boolean>> isFavorite() {
@@ -127,14 +127,14 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
     @Import(name="labels")
     private @Nullable Output<List<String>> labels;
 
     /**
-     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public Optional<Output<List<String>>> labels() {
@@ -253,7 +253,7 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
         }
 
         /**
-         * @param aggregator (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+         * @param aggregator (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name, and description.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
         }
 
         /**
-         * @param aggregator (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+         * @param aggregator (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name, and description.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
         }
 
         /**
-         * @param identifierPath (Updatable) The full path to identify this object.
+         * @param identifierPath (Updatable) The full path to identify the object.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
         }
 
         /**
-         * @param identifierPath (Updatable) The full path to identify this object.
+         * @param identifierPath (Updatable) The full path to identify the object.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
         }
 
         /**
-         * @param isFavorite (Updatable) Specifies whether this object is a favorite or not.
+         * @param isFavorite (Updatable) Specifies whether the object is a favorite.
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
         }
 
         /**
-         * @param isFavorite (Updatable) Specifies whether this object is a favorite or not.
+         * @param isFavorite (Updatable) Specifies whether the object is a favorite.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class RegistryConnectionPrimarySchemaMetadataArgs extends com.pulum
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 

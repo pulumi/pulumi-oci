@@ -12,26 +12,19 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
     /**
-     * @return (Updatable) Description of private source dns zone.
+     * @return (Updatable) Description of private source scan host zone.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
      * 
      */
-    private final String dnsZone;
+    private String dnsZone;
 
-    @CustomType.Constructor
-    private AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone(
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("dnsZone") String dnsZone) {
-        this.description = description;
-        this.dnsZone = dnsZone;
-    }
-
+    private AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone() {}
     /**
-     * @return (Updatable) Description of private source dns zone.
+     * @return (Updatable) Description of private source scan host zone.
      * 
      */
     public Optional<String> description() {
@@ -52,30 +45,32 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
     public static Builder builder(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String description;
         private String dnsZone;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
     	      this.dnsZone = defaults.dnsZone;
         }
 
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder dnsZone(String dnsZone) {
             this.dnsZone = Objects.requireNonNull(dnsZone);
             return this;
-        }        public AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone build() {
-            return new AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone(description, dnsZone);
+        }
+        public AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone build() {
+            final var o = new AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone();
+            o.description = description;
+            o.dnsZone = dnsZone;
+            return o;
         }
     }
 }

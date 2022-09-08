@@ -11,133 +11,94 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAuditArchiveRetrievalResult {
-    private final String auditArchiveRetrievalId;
+    private String auditArchiveRetrievalId;
     /**
      * @return Total count of audit events to be retrieved from the archive for the specified date range.
      * 
      */
-    private final String auditEventCount;
+    private String auditEventCount;
     /**
      * @return The OCID of the compartment that contains archive retrieval.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description of the archive retrieval.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The display name of the archive retrieval. The name does not have to be unique, and is changeable.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return End month of the archive retrieval, in the format defined by RFC3339.
      * 
      */
-    private final String endDate;
+    private String endDate;
     /**
      * @return The Error details of a failed archive retrieval.
      * 
      */
-    private final String errorInfo;
+    private String errorInfo;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the archive retrieval.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Details about the current state of the archive retrieval.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Start month of the archive retrieval, in the format defined by RFC3339.
      * 
      */
-    private final String startDate;
+    private String startDate;
     /**
      * @return The current state of the archive retrieval.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The OCID of the target associated with the archive retrieval.
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
      * 
      */
-    private final String timeCompleted;
+    private String timeCompleted;
     /**
      * @return The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
      * 
      */
-    private final String timeOfExpiry;
+    private String timeOfExpiry;
     /**
      * @return The date time when archive retrieval was requested, in the format defined by RFC3339.
      * 
      */
-    private final String timeRequested;
+    private String timeRequested;
 
-    @CustomType.Constructor
-    private GetAuditArchiveRetrievalResult(
-        @CustomType.Parameter("auditArchiveRetrievalId") String auditArchiveRetrievalId,
-        @CustomType.Parameter("auditEventCount") String auditEventCount,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("endDate") String endDate,
-        @CustomType.Parameter("errorInfo") String errorInfo,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("startDate") String startDate,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("timeCompleted") String timeCompleted,
-        @CustomType.Parameter("timeOfExpiry") String timeOfExpiry,
-        @CustomType.Parameter("timeRequested") String timeRequested) {
-        this.auditArchiveRetrievalId = auditArchiveRetrievalId;
-        this.auditEventCount = auditEventCount;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.endDate = endDate;
-        this.errorInfo = errorInfo;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.startDate = startDate;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.targetId = targetId;
-        this.timeCompleted = timeCompleted;
-        this.timeOfExpiry = timeOfExpiry;
-        this.timeRequested = timeRequested;
-    }
-
+    private GetAuditArchiveRetrievalResult() {}
     public String auditArchiveRetrievalId() {
         return this.auditArchiveRetrievalId;
     }
@@ -268,7 +229,7 @@ public final class GetAuditArchiveRetrievalResult {
     public static Builder builder(GetAuditArchiveRetrievalResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String auditArchiveRetrievalId;
         private String auditEventCount;
@@ -288,11 +249,7 @@ public final class GetAuditArchiveRetrievalResult {
         private String timeCompleted;
         private String timeOfExpiry;
         private String timeRequested;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditArchiveRetrievalResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditArchiveRetrievalId = defaults.auditArchiveRetrievalId;
@@ -315,79 +272,117 @@ public final class GetAuditArchiveRetrievalResult {
     	      this.timeRequested = defaults.timeRequested;
         }
 
+        @CustomType.Setter
         public Builder auditArchiveRetrievalId(String auditArchiveRetrievalId) {
             this.auditArchiveRetrievalId = Objects.requireNonNull(auditArchiveRetrievalId);
             return this;
         }
+        @CustomType.Setter
         public Builder auditEventCount(String auditEventCount) {
             this.auditEventCount = Objects.requireNonNull(auditEventCount);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder endDate(String endDate) {
             this.endDate = Objects.requireNonNull(endDate);
             return this;
         }
+        @CustomType.Setter
         public Builder errorInfo(String errorInfo) {
             this.errorInfo = Objects.requireNonNull(errorInfo);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder startDate(String startDate) {
             this.startDate = Objects.requireNonNull(startDate);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCompleted(String timeCompleted) {
             this.timeCompleted = Objects.requireNonNull(timeCompleted);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfExpiry(String timeOfExpiry) {
             this.timeOfExpiry = Objects.requireNonNull(timeOfExpiry);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRequested(String timeRequested) {
             this.timeRequested = Objects.requireNonNull(timeRequested);
             return this;
-        }        public GetAuditArchiveRetrievalResult build() {
-            return new GetAuditArchiveRetrievalResult(auditArchiveRetrievalId, auditEventCount, compartmentId, definedTags, description, displayName, endDate, errorInfo, freeformTags, id, lifecycleDetails, startDate, state, systemTags, targetId, timeCompleted, timeOfExpiry, timeRequested);
+        }
+        public GetAuditArchiveRetrievalResult build() {
+            final var o = new GetAuditArchiveRetrievalResult();
+            o.auditArchiveRetrievalId = auditArchiveRetrievalId;
+            o.auditEventCount = auditEventCount;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.endDate = endDate;
+            o.errorInfo = errorInfo;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.startDate = startDate;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.targetId = targetId;
+            o.timeCompleted = timeCompleted;
+            o.timeOfExpiry = timeOfExpiry;
+            o.timeRequested = timeRequested;
+            return o;
         }
     }
 }

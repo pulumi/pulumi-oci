@@ -54,14 +54,14 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) A user defined description for the object.
+     * (Updatable) A user-defined description for the object.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
     public Optional<Output<String>> description() {
@@ -84,14 +84,14 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The external key for the object.
+     * (Updatable) The external key of the object.
      * 
      */
     @Import(name="externalKey")
     private @Nullable Output<String> externalKey;
 
     /**
-     * @return (Updatable) The external key for the object.
+     * @return (Updatable) The external key of the object.
      * 
      */
     public Optional<Output<String>> externalKey() {
@@ -99,14 +99,14 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     @Import(name="identifier", required=true)
     private Output<String> identifier;
 
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Output<String> identifier() {
@@ -129,14 +129,14 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     @Import(name="metadata")
     private @Nullable Output<RegistryDataAssetMetadataArgs> metadata;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public Optional<Output<RegistryDataAssetMetadataArgs>> metadata() {
@@ -144,14 +144,14 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The property which disciminates the subtypes.
+     * (Updatable) The property which differentiates the subtypes.
      * 
      */
     @Import(name="modelType", required=true)
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
     public Output<String> modelType() {
@@ -174,14 +174,14 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -249,14 +249,14 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId", required=true)
     private Output<String> registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public Output<String> registryId() {
@@ -377,7 +377,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) A user defined description for the object.
+         * @param description (Updatable) A user-defined description for the object.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) A user defined description for the object.
+         * @param description (Updatable) A user-defined description for the object.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param externalKey (Updatable) The external key for the object.
+         * @param externalKey (Updatable) The external key of the object.
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param externalKey (Updatable) The external key for the object.
+         * @param externalKey (Updatable) The external key of the object.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param metadata (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadata (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param metadata (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadata (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param modelType (Updatable) The property which disciminates the subtypes.
+         * @param modelType (Updatable) The property which differentiates the subtypes.
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param modelType (Updatable) The property which disciminates the subtypes.
+         * @param modelType (Updatable) The property which differentiates the subtypes.
          * 
          * @return builder
          * 
@@ -555,7 +555,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -660,7 +660,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 
@@ -671,7 +671,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 

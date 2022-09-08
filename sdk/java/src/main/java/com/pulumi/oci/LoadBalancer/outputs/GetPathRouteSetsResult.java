@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPathRouteSetsResult {
-    private final @Nullable List<GetPathRouteSetsFilter> filters;
+    private @Nullable List<GetPathRouteSetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String loadBalancerId;
+    private String id;
+    private String loadBalancerId;
     /**
      * @return The list of path_route_sets.
      * 
      */
-    private final List<GetPathRouteSetsPathRouteSet> pathRouteSets;
+    private List<GetPathRouteSetsPathRouteSet> pathRouteSets;
 
-    @CustomType.Constructor
-    private GetPathRouteSetsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetPathRouteSetsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("pathRouteSets") List<GetPathRouteSetsPathRouteSet> pathRouteSets) {
-        this.filters = filters;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-        this.pathRouteSets = pathRouteSets;
-    }
-
+    private GetPathRouteSetsResult() {}
     public List<GetPathRouteSetsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetPathRouteSetsResult {
     public static Builder builder(GetPathRouteSetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetPathRouteSetsFilter> filters;
         private String id;
         private String loadBalancerId;
         private List<GetPathRouteSetsPathRouteSet> pathRouteSets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPathRouteSetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetPathRouteSetsResult {
     	      this.pathRouteSets = defaults.pathRouteSets;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPathRouteSetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,22 +78,31 @@ public final class GetPathRouteSetsResult {
         public Builder filters(GetPathRouteSetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder pathRouteSets(List<GetPathRouteSetsPathRouteSet> pathRouteSets) {
             this.pathRouteSets = Objects.requireNonNull(pathRouteSets);
             return this;
         }
         public Builder pathRouteSets(GetPathRouteSetsPathRouteSet... pathRouteSets) {
             return pathRouteSets(List.of(pathRouteSets));
-        }        public GetPathRouteSetsResult build() {
-            return new GetPathRouteSetsResult(filters, id, loadBalancerId, pathRouteSets);
+        }
+        public GetPathRouteSetsResult build() {
+            final var o = new GetPathRouteSetsResult();
+            o.filters = filters;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            o.pathRouteSets = pathRouteSets;
+            return o;
         }
     }
 }

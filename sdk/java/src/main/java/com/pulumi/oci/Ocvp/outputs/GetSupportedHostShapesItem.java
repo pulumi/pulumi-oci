@@ -16,70 +16,49 @@ public final class GetSupportedHostShapesItem {
      * @return The default OCPU count of the shape.
      * 
      */
-    private final Double defaultOcpuCount;
+    private Double defaultOcpuCount;
     /**
      * @return Description of the shape.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Indicates whether the shape supports shielded instances.
      * 
      */
-    private final Boolean isSupportShieldedInstances;
+    private Boolean isSupportShieldedInstances;
     /**
      * @return A filter to return only resources that match the given name exactly.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The family of the shape. ESXi hosts of one SDDC must have the same shape family.
      * 
      */
-    private final String shapeFamily;
+    private String shapeFamily;
     /**
      * @return Support OCPU count of the shape.
      * 
      */
-    private final List<Double> supportedOcpuCounts;
+    private List<Double> supportedOcpuCounts;
     /**
      * @return The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
      * 
      */
-    private final List<String> supportedOperations;
+    private List<String> supportedOperations;
     /**
      * @return The supported SDDC types for the shape.
      * 
      */
-    private final List<String> supportedSddcTypes;
+    private List<String> supportedSddcTypes;
     /**
      * @return The VMware software versions supported by the shape.
      * 
      */
-    private final List<String> supportedVmwareSoftwareVersions;
+    private List<String> supportedVmwareSoftwareVersions;
 
-    @CustomType.Constructor
-    private GetSupportedHostShapesItem(
-        @CustomType.Parameter("defaultOcpuCount") Double defaultOcpuCount,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("isSupportShieldedInstances") Boolean isSupportShieldedInstances,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("shapeFamily") String shapeFamily,
-        @CustomType.Parameter("supportedOcpuCounts") List<Double> supportedOcpuCounts,
-        @CustomType.Parameter("supportedOperations") List<String> supportedOperations,
-        @CustomType.Parameter("supportedSddcTypes") List<String> supportedSddcTypes,
-        @CustomType.Parameter("supportedVmwareSoftwareVersions") List<String> supportedVmwareSoftwareVersions) {
-        this.defaultOcpuCount = defaultOcpuCount;
-        this.description = description;
-        this.isSupportShieldedInstances = isSupportShieldedInstances;
-        this.name = name;
-        this.shapeFamily = shapeFamily;
-        this.supportedOcpuCounts = supportedOcpuCounts;
-        this.supportedOperations = supportedOperations;
-        this.supportedSddcTypes = supportedSddcTypes;
-        this.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
-    }
-
+    private GetSupportedHostShapesItem() {}
     /**
      * @return The default OCPU count of the shape.
      * 
@@ -151,7 +130,7 @@ public final class GetSupportedHostShapesItem {
     public static Builder builder(GetSupportedHostShapesItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double defaultOcpuCount;
         private String description;
@@ -162,11 +141,7 @@ public final class GetSupportedHostShapesItem {
         private List<String> supportedOperations;
         private List<String> supportedSddcTypes;
         private List<String> supportedVmwareSoftwareVersions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSupportedHostShapesItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultOcpuCount = defaults.defaultOcpuCount;
@@ -180,26 +155,32 @@ public final class GetSupportedHostShapesItem {
     	      this.supportedVmwareSoftwareVersions = defaults.supportedVmwareSoftwareVersions;
         }
 
+        @CustomType.Setter
         public Builder defaultOcpuCount(Double defaultOcpuCount) {
             this.defaultOcpuCount = Objects.requireNonNull(defaultOcpuCount);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder isSupportShieldedInstances(Boolean isSupportShieldedInstances) {
             this.isSupportShieldedInstances = Objects.requireNonNull(isSupportShieldedInstances);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeFamily(String shapeFamily) {
             this.shapeFamily = Objects.requireNonNull(shapeFamily);
             return this;
         }
+        @CustomType.Setter
         public Builder supportedOcpuCounts(List<Double> supportedOcpuCounts) {
             this.supportedOcpuCounts = Objects.requireNonNull(supportedOcpuCounts);
             return this;
@@ -207,6 +188,7 @@ public final class GetSupportedHostShapesItem {
         public Builder supportedOcpuCounts(Double... supportedOcpuCounts) {
             return supportedOcpuCounts(List.of(supportedOcpuCounts));
         }
+        @CustomType.Setter
         public Builder supportedOperations(List<String> supportedOperations) {
             this.supportedOperations = Objects.requireNonNull(supportedOperations);
             return this;
@@ -214,6 +196,7 @@ public final class GetSupportedHostShapesItem {
         public Builder supportedOperations(String... supportedOperations) {
             return supportedOperations(List.of(supportedOperations));
         }
+        @CustomType.Setter
         public Builder supportedSddcTypes(List<String> supportedSddcTypes) {
             this.supportedSddcTypes = Objects.requireNonNull(supportedSddcTypes);
             return this;
@@ -221,14 +204,26 @@ public final class GetSupportedHostShapesItem {
         public Builder supportedSddcTypes(String... supportedSddcTypes) {
             return supportedSddcTypes(List.of(supportedSddcTypes));
         }
+        @CustomType.Setter
         public Builder supportedVmwareSoftwareVersions(List<String> supportedVmwareSoftwareVersions) {
             this.supportedVmwareSoftwareVersions = Objects.requireNonNull(supportedVmwareSoftwareVersions);
             return this;
         }
         public Builder supportedVmwareSoftwareVersions(String... supportedVmwareSoftwareVersions) {
             return supportedVmwareSoftwareVersions(List.of(supportedVmwareSoftwareVersions));
-        }        public GetSupportedHostShapesItem build() {
-            return new GetSupportedHostShapesItem(defaultOcpuCount, description, isSupportShieldedInstances, name, shapeFamily, supportedOcpuCounts, supportedOperations, supportedSddcTypes, supportedVmwareSoftwareVersions);
+        }
+        public GetSupportedHostShapesItem build() {
+            final var o = new GetSupportedHostShapesItem();
+            o.defaultOcpuCount = defaultOcpuCount;
+            o.description = description;
+            o.isSupportShieldedInstances = isSupportShieldedInstances;
+            o.name = name;
+            o.shapeFamily = shapeFamily;
+            o.supportedOcpuCounts = supportedOcpuCounts;
+            o.supportedOperations = supportedOperations;
+            o.supportedSddcTypes = supportedSddcTypes;
+            o.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
+            return o;
         }
     }
 }

@@ -18,65 +18,42 @@ public final class GetManagedDatabasesDatabaseParameterResult {
      * @return The name of the Managed Database.
      * 
      */
-    private final String databaseName;
+    private String databaseName;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
      * 
      */
-    private final String databaseSubType;
+    private String databaseSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private final String databaseType;
+    private String databaseType;
     /**
      * @return The Oracle Database version.
      * 
      */
-    private final String databaseVersion;
+    private String databaseVersion;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isAllowedValuesIncluded;
+    private String id;
+    private @Nullable Boolean isAllowedValuesIncluded;
     /**
      * @return An array of DatabaseParameterSummary objects.
      * 
      */
-    private final List<GetManagedDatabasesDatabaseParameterItem> items;
-    private final String managedDatabaseId;
+    private List<GetManagedDatabasesDatabaseParameterItem> items;
+    private String managedDatabaseId;
     /**
      * @return The parameter name.
      * 
      */
-    private final @Nullable String name;
-    private final @Nullable String source;
+    private @Nullable String name;
+    private @Nullable String source;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesDatabaseParameterResult(
-        @CustomType.Parameter("databaseName") String databaseName,
-        @CustomType.Parameter("databaseSubType") String databaseSubType,
-        @CustomType.Parameter("databaseType") String databaseType,
-        @CustomType.Parameter("databaseVersion") String databaseVersion,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAllowedValuesIncluded") @Nullable Boolean isAllowedValuesIncluded,
-        @CustomType.Parameter("items") List<GetManagedDatabasesDatabaseParameterItem> items,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("source") @Nullable String source) {
-        this.databaseName = databaseName;
-        this.databaseSubType = databaseSubType;
-        this.databaseType = databaseType;
-        this.databaseVersion = databaseVersion;
-        this.id = id;
-        this.isAllowedValuesIncluded = isAllowedValuesIncluded;
-        this.items = items;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.source = source;
-    }
-
+    private GetManagedDatabasesDatabaseParameterResult() {}
     /**
      * @return The name of the Managed Database.
      * 
@@ -143,7 +120,7 @@ public final class GetManagedDatabasesDatabaseParameterResult {
     public static Builder builder(GetManagedDatabasesDatabaseParameterResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String databaseName;
         private String databaseSubType;
@@ -155,11 +132,7 @@ public final class GetManagedDatabasesDatabaseParameterResult {
         private String managedDatabaseId;
         private @Nullable String name;
         private @Nullable String source;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesDatabaseParameterResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.databaseName = defaults.databaseName;
@@ -174,30 +147,37 @@ public final class GetManagedDatabasesDatabaseParameterResult {
     	      this.source = defaults.source;
         }
 
+        @CustomType.Setter
         public Builder databaseName(String databaseName) {
             this.databaseName = Objects.requireNonNull(databaseName);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSubType(String databaseSubType) {
             this.databaseSubType = Objects.requireNonNull(databaseSubType);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseType(String databaseType) {
             this.databaseType = Objects.requireNonNull(databaseType);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = Objects.requireNonNull(databaseVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAllowedValuesIncluded(@Nullable Boolean isAllowedValuesIncluded) {
             this.isAllowedValuesIncluded = isAllowedValuesIncluded;
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabasesDatabaseParameterItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -205,19 +185,34 @@ public final class GetManagedDatabasesDatabaseParameterResult {
         public Builder items(GetManagedDatabasesDatabaseParameterItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder source(@Nullable String source) {
             this.source = source;
             return this;
-        }        public GetManagedDatabasesDatabaseParameterResult build() {
-            return new GetManagedDatabasesDatabaseParameterResult(databaseName, databaseSubType, databaseType, databaseVersion, id, isAllowedValuesIncluded, items, managedDatabaseId, name, source);
+        }
+        public GetManagedDatabasesDatabaseParameterResult build() {
+            final var o = new GetManagedDatabasesDatabaseParameterResult();
+            o.databaseName = databaseName;
+            o.databaseSubType = databaseSubType;
+            o.databaseType = databaseType;
+            o.databaseVersion = databaseVersion;
+            o.id = id;
+            o.isAllowedValuesIncluded = isAllowedValuesIncluded;
+            o.items = items;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.source = source;
+            return o;
         }
     }
 }

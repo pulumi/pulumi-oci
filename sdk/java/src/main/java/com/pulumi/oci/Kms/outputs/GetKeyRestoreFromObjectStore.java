@@ -13,42 +13,29 @@ public final class GetKeyRestoreFromObjectStore {
      * @return Name of the bucket where key was backed up
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return Type of backup to restore from. Values of &#34;BUCKET&#34;, &#34;PRE_AUTHENTICATED_REQUEST_URI&#34; are supported
      * 
      */
-    private final String destination;
+    private String destination;
     /**
      * @return Namespace of the bucket where key was backed up
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return Object containing the backup
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return Pre-authenticated-request-uri of the backup
      * 
      */
-    private final String uri;
+    private String uri;
 
-    @CustomType.Constructor
-    private GetKeyRestoreFromObjectStore(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("destination") String destination,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("uri") String uri) {
-        this.bucket = bucket;
-        this.destination = destination;
-        this.namespace = namespace;
-        this.object = object;
-        this.uri = uri;
-    }
-
+    private GetKeyRestoreFromObjectStore() {}
     /**
      * @return Name of the bucket where key was backed up
      * 
@@ -92,18 +79,14 @@ public final class GetKeyRestoreFromObjectStore {
     public static Builder builder(GetKeyRestoreFromObjectStore defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String destination;
         private String namespace;
         private String object;
         private String uri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetKeyRestoreFromObjectStore defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -113,27 +96,39 @@ public final class GetKeyRestoreFromObjectStore {
     	      this.uri = defaults.uri;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder destination(String destination) {
             this.destination = Objects.requireNonNull(destination);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder uri(String uri) {
             this.uri = Objects.requireNonNull(uri);
             return this;
-        }        public GetKeyRestoreFromObjectStore build() {
-            return new GetKeyRestoreFromObjectStore(bucket, destination, namespace, object, uri);
+        }
+        public GetKeyRestoreFromObjectStore build() {
+            final var o = new GetKeyRestoreFromObjectStore();
+            o.bucket = bucket;
+            o.destination = destination;
+            o.namespace = namespace;
+            o.object = object;
+            o.uri = uri;
+            return o;
         }
     }
 }

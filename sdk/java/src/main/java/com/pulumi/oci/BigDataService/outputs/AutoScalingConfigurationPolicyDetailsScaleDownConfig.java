@@ -16,42 +16,29 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfig {
      * @return (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private final @Nullable Integer memoryStepSize;
+    private @Nullable Integer memoryStepSize;
     /**
      * @return (Updatable) Metric and threshold details for triggering an autoscale action.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric metric;
+    private @Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric metric;
     /**
      * @return (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private final @Nullable Integer minMemoryPerNode;
+    private @Nullable Integer minMemoryPerNode;
     /**
      * @return (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private final @Nullable Integer minOcpusPerNode;
+    private @Nullable Integer minOcpusPerNode;
     /**
      * @return (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private final @Nullable Integer ocpuStepSize;
+    private @Nullable Integer ocpuStepSize;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyDetailsScaleDownConfig(
-        @CustomType.Parameter("memoryStepSize") @Nullable Integer memoryStepSize,
-        @CustomType.Parameter("metric") @Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric metric,
-        @CustomType.Parameter("minMemoryPerNode") @Nullable Integer minMemoryPerNode,
-        @CustomType.Parameter("minOcpusPerNode") @Nullable Integer minOcpusPerNode,
-        @CustomType.Parameter("ocpuStepSize") @Nullable Integer ocpuStepSize) {
-        this.memoryStepSize = memoryStepSize;
-        this.metric = metric;
-        this.minMemoryPerNode = minMemoryPerNode;
-        this.minOcpusPerNode = minOcpusPerNode;
-        this.ocpuStepSize = ocpuStepSize;
-    }
-
+    private AutoScalingConfigurationPolicyDetailsScaleDownConfig() {}
     /**
      * @return (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
      * 
@@ -95,18 +82,14 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfig {
     public static Builder builder(AutoScalingConfigurationPolicyDetailsScaleDownConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer memoryStepSize;
         private @Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric metric;
         private @Nullable Integer minMemoryPerNode;
         private @Nullable Integer minOcpusPerNode;
         private @Nullable Integer ocpuStepSize;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyDetailsScaleDownConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryStepSize = defaults.memoryStepSize;
@@ -116,27 +99,39 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfig {
     	      this.ocpuStepSize = defaults.ocpuStepSize;
         }
 
+        @CustomType.Setter
         public Builder memoryStepSize(@Nullable Integer memoryStepSize) {
             this.memoryStepSize = memoryStepSize;
             return this;
         }
+        @CustomType.Setter
         public Builder metric(@Nullable AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric metric) {
             this.metric = metric;
             return this;
         }
+        @CustomType.Setter
         public Builder minMemoryPerNode(@Nullable Integer minMemoryPerNode) {
             this.minMemoryPerNode = minMemoryPerNode;
             return this;
         }
+        @CustomType.Setter
         public Builder minOcpusPerNode(@Nullable Integer minOcpusPerNode) {
             this.minOcpusPerNode = minOcpusPerNode;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuStepSize(@Nullable Integer ocpuStepSize) {
             this.ocpuStepSize = ocpuStepSize;
             return this;
-        }        public AutoScalingConfigurationPolicyDetailsScaleDownConfig build() {
-            return new AutoScalingConfigurationPolicyDetailsScaleDownConfig(memoryStepSize, metric, minMemoryPerNode, minOcpusPerNode, ocpuStepSize);
+        }
+        public AutoScalingConfigurationPolicyDetailsScaleDownConfig build() {
+            final var o = new AutoScalingConfigurationPolicyDetailsScaleDownConfig();
+            o.memoryStepSize = memoryStepSize;
+            o.metric = metric;
+            o.minMemoryPerNode = minMemoryPerNode;
+            o.minOcpusPerNode = minOcpusPerNode;
+            o.ocpuStepSize = ocpuStepSize;
+            return o;
         }
     }
 }

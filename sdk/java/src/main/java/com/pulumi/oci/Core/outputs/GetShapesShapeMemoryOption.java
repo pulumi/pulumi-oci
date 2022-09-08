@@ -13,42 +13,29 @@ public final class GetShapesShapeMemoryOption {
      * @return The default amount of memory per OCPU available for this shape, in gigabytes.
      * 
      */
-    private final Double defaultPerOcpuInGbs;
+    private Double defaultPerOcpuInGbs;
     /**
      * @return The maximum amount of memory, in gigabytes.
      * 
      */
-    private final Double maxInGbs;
+    private Double maxInGbs;
     /**
      * @return The maximum amount of memory per OCPU available for this shape, in gigabytes.
      * 
      */
-    private final Double maxPerOcpuInGbs;
+    private Double maxPerOcpuInGbs;
     /**
      * @return The minimum amount of memory, in gigabytes.
      * 
      */
-    private final Double minInGbs;
+    private Double minInGbs;
     /**
      * @return The minimum amount of memory per OCPU available for this shape, in gigabytes.
      * 
      */
-    private final Double minPerOcpuInGbs;
+    private Double minPerOcpuInGbs;
 
-    @CustomType.Constructor
-    private GetShapesShapeMemoryOption(
-        @CustomType.Parameter("defaultPerOcpuInGbs") Double defaultPerOcpuInGbs,
-        @CustomType.Parameter("maxInGbs") Double maxInGbs,
-        @CustomType.Parameter("maxPerOcpuInGbs") Double maxPerOcpuInGbs,
-        @CustomType.Parameter("minInGbs") Double minInGbs,
-        @CustomType.Parameter("minPerOcpuInGbs") Double minPerOcpuInGbs) {
-        this.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
-        this.maxInGbs = maxInGbs;
-        this.maxPerOcpuInGbs = maxPerOcpuInGbs;
-        this.minInGbs = minInGbs;
-        this.minPerOcpuInGbs = minPerOcpuInGbs;
-    }
-
+    private GetShapesShapeMemoryOption() {}
     /**
      * @return The default amount of memory per OCPU available for this shape, in gigabytes.
      * 
@@ -92,18 +79,14 @@ public final class GetShapesShapeMemoryOption {
     public static Builder builder(GetShapesShapeMemoryOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double defaultPerOcpuInGbs;
         private Double maxInGbs;
         private Double maxPerOcpuInGbs;
         private Double minInGbs;
         private Double minPerOcpuInGbs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapesShapeMemoryOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultPerOcpuInGbs = defaults.defaultPerOcpuInGbs;
@@ -113,27 +96,39 @@ public final class GetShapesShapeMemoryOption {
     	      this.minPerOcpuInGbs = defaults.minPerOcpuInGbs;
         }
 
+        @CustomType.Setter
         public Builder defaultPerOcpuInGbs(Double defaultPerOcpuInGbs) {
             this.defaultPerOcpuInGbs = Objects.requireNonNull(defaultPerOcpuInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder maxInGbs(Double maxInGbs) {
             this.maxInGbs = Objects.requireNonNull(maxInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder maxPerOcpuInGbs(Double maxPerOcpuInGbs) {
             this.maxPerOcpuInGbs = Objects.requireNonNull(maxPerOcpuInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder minInGbs(Double minInGbs) {
             this.minInGbs = Objects.requireNonNull(minInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder minPerOcpuInGbs(Double minPerOcpuInGbs) {
             this.minPerOcpuInGbs = Objects.requireNonNull(minPerOcpuInGbs);
             return this;
-        }        public GetShapesShapeMemoryOption build() {
-            return new GetShapesShapeMemoryOption(defaultPerOcpuInGbs, maxInGbs, maxPerOcpuInGbs, minInGbs, minPerOcpuInGbs);
+        }
+        public GetShapesShapeMemoryOption build() {
+            final var o = new GetShapesShapeMemoryOption();
+            o.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
+            o.maxInGbs = maxInGbs;
+            o.maxPerOcpuInGbs = maxPerOcpuInGbs;
+            o.minInGbs = minInGbs;
+            o.minPerOcpuInGbs = minPerOcpuInGbs;
+            return o;
         }
     }
 }

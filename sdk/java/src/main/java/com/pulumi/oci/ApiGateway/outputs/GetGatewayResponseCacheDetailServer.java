@@ -14,21 +14,14 @@ public final class GetGatewayResponseCacheDetailServer {
      * @return Hostname or IP address (IPv4 only) where the cache store is running.
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return The port the cache store is exposed on.
      * 
      */
-    private final Integer port;
+    private Integer port;
 
-    @CustomType.Constructor
-    private GetGatewayResponseCacheDetailServer(
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("port") Integer port) {
-        this.host = host;
-        this.port = port;
-    }
-
+    private GetGatewayResponseCacheDetailServer() {}
     /**
      * @return Hostname or IP address (IPv4 only) where the cache store is running.
      * 
@@ -51,30 +44,32 @@ public final class GetGatewayResponseCacheDetailServer {
     public static Builder builder(GetGatewayResponseCacheDetailServer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String host;
         private Integer port;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGatewayResponseCacheDetailServer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.host = defaults.host;
     	      this.port = defaults.port;
         }
 
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
-        }        public GetGatewayResponseCacheDetailServer build() {
-            return new GetGatewayResponseCacheDetailServer(host, port);
+        }
+        public GetGatewayResponseCacheDetailServer build() {
+            final var o = new GetGatewayResponseCacheDetailServer();
+            o.host = host;
+            o.port = port;
+            return o;
         }
     }
 }

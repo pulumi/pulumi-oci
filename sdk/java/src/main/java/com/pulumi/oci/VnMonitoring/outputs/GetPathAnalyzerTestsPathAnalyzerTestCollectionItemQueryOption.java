@@ -13,13 +13,9 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption
      * @return If true, a path analysis is done for both the forward and reverse routes.
      * 
      */
-    private final Boolean isBiDirectionalAnalysis;
+    private Boolean isBiDirectionalAnalysis;
 
-    @CustomType.Constructor
-    private GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption(@CustomType.Parameter("isBiDirectionalAnalysis") Boolean isBiDirectionalAnalysis) {
-        this.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
-    }
-
+    private GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption() {}
     /**
      * @return If true, a path analysis is done for both the forward and reverse routes.
      * 
@@ -35,24 +31,24 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption
     public static Builder builder(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isBiDirectionalAnalysis;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isBiDirectionalAnalysis = defaults.isBiDirectionalAnalysis;
         }
 
+        @CustomType.Setter
         public Builder isBiDirectionalAnalysis(Boolean isBiDirectionalAnalysis) {
             this.isBiDirectionalAnalysis = Objects.requireNonNull(isBiDirectionalAnalysis);
             return this;
-        }        public GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption build() {
-            return new GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption(isBiDirectionalAnalysis);
+        }
+        public GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption build() {
+            final var o = new GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption();
+            o.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
+            return o;
         }
     }
 }

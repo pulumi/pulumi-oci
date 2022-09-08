@@ -15,21 +15,14 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
      * @return The list of operation details.
      * 
      */
-    private final List<String> operations;
+    private List<String> operations;
     /**
      * @return The names of the impacted database schemas and their objects.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema> schemas;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema> schemas;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail(
-        @CustomType.Parameter("operations") List<String> operations,
-        @CustomType.Parameter("schemas") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema> schemas) {
-        this.operations = operations;
-        this.schemas = schemas;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail() {}
     /**
      * @return The list of operation details.
      * 
@@ -52,21 +45,18 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> operations;
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema> schemas;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.operations = defaults.operations;
     	      this.schemas = defaults.schemas;
         }
 
+        @CustomType.Setter
         public Builder operations(List<String> operations) {
             this.operations = Objects.requireNonNull(operations);
             return this;
@@ -74,14 +64,19 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         public Builder operations(String... operations) {
             return operations(List.of(operations));
         }
+        @CustomType.Setter
         public Builder schemas(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema> schemas) {
             this.schemas = Objects.requireNonNull(schemas);
             return this;
         }
         public Builder schemas(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema... schemas) {
             return schemas(List.of(schemas));
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail(operations, schemas);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail();
+            o.operations = operations;
+            o.schemas = schemas;
+            return o;
         }
     }
 }

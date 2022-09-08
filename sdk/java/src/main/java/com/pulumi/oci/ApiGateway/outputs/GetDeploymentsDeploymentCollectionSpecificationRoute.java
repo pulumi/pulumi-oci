@@ -18,49 +18,34 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
      * @return The backend to forward requests to.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteBackend> backends;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteBackend> backends;
     /**
      * @return Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy> loggingPolicies;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy> loggingPolicies;
     /**
      * @return A list of allowed methods on this route.
      * 
      */
-    private final List<String> methods;
+    private List<String> methods;
     /**
      * @return A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return Behavior applied to any requests received by the API on this route.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy> requestPolicies;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy> requestPolicies;
     /**
      * @return Behavior applied to any responses sent by the API for requests on this route.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy> responsePolicies;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy> responsePolicies;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationRoute(
-        @CustomType.Parameter("backends") List<GetDeploymentsDeploymentCollectionSpecificationRouteBackend> backends,
-        @CustomType.Parameter("loggingPolicies") List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy> loggingPolicies,
-        @CustomType.Parameter("methods") List<String> methods,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("requestPolicies") List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy> requestPolicies,
-        @CustomType.Parameter("responsePolicies") List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy> responsePolicies) {
-        this.backends = backends;
-        this.loggingPolicies = loggingPolicies;
-        this.methods = methods;
-        this.path = path;
-        this.requestPolicies = requestPolicies;
-        this.responsePolicies = responsePolicies;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationRoute() {}
     /**
      * @return The backend to forward requests to.
      * 
@@ -111,7 +96,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationRoute defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteBackend> backends;
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy> loggingPolicies;
@@ -119,11 +104,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
         private String path;
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy> requestPolicies;
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy> responsePolicies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRoute defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backends = defaults.backends;
@@ -134,6 +115,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
     	      this.responsePolicies = defaults.responsePolicies;
         }
 
+        @CustomType.Setter
         public Builder backends(List<GetDeploymentsDeploymentCollectionSpecificationRouteBackend> backends) {
             this.backends = Objects.requireNonNull(backends);
             return this;
@@ -141,6 +123,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
         public Builder backends(GetDeploymentsDeploymentCollectionSpecificationRouteBackend... backends) {
             return backends(List.of(backends));
         }
+        @CustomType.Setter
         public Builder loggingPolicies(List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy> loggingPolicies) {
             this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
             return this;
@@ -148,6 +131,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
         public Builder loggingPolicies(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy... loggingPolicies) {
             return loggingPolicies(List.of(loggingPolicies));
         }
+        @CustomType.Setter
         public Builder methods(List<String> methods) {
             this.methods = Objects.requireNonNull(methods);
             return this;
@@ -155,10 +139,12 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
         public Builder methods(String... methods) {
             return methods(List.of(methods));
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder requestPolicies(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy> requestPolicies) {
             this.requestPolicies = Objects.requireNonNull(requestPolicies);
             return this;
@@ -166,14 +152,23 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
         public Builder requestPolicies(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy... requestPolicies) {
             return requestPolicies(List.of(requestPolicies));
         }
+        @CustomType.Setter
         public Builder responsePolicies(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy> responsePolicies) {
             this.responsePolicies = Objects.requireNonNull(responsePolicies);
             return this;
         }
         public Builder responsePolicies(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy... responsePolicies) {
             return responsePolicies(List.of(responsePolicies));
-        }        public GetDeploymentsDeploymentCollectionSpecificationRoute build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRoute(backends, loggingPolicies, methods, path, requestPolicies, responsePolicies);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationRoute build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationRoute();
+            o.backends = backends;
+            o.loggingPolicies = loggingPolicies;
+            o.methods = methods;
+            o.path = path;
+            o.requestPolicies = requestPolicies;
+            o.responsePolicies = responsePolicies;
+            return o;
         }
     }
 }

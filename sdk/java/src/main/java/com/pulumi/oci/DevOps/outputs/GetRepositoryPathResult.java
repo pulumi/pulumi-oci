@@ -14,40 +14,23 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryPathResult {
-    private final @Nullable String displayName;
-    private final @Nullable String folderPath;
+    private @Nullable String displayName;
+    private @Nullable String folderPath;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return List of objects describing files or directories in a repository.
      * 
      */
-    private final List<GetRepositoryPathItem> items;
-    private final @Nullable Boolean pathsInSubtree;
-    private final @Nullable String ref;
-    private final String repositoryId;
+    private List<GetRepositoryPathItem> items;
+    private @Nullable Boolean pathsInSubtree;
+    private @Nullable String ref;
+    private String repositoryId;
 
-    @CustomType.Constructor
-    private GetRepositoryPathResult(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("folderPath") @Nullable String folderPath,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetRepositoryPathItem> items,
-        @CustomType.Parameter("pathsInSubtree") @Nullable Boolean pathsInSubtree,
-        @CustomType.Parameter("ref") @Nullable String ref,
-        @CustomType.Parameter("repositoryId") String repositoryId) {
-        this.displayName = displayName;
-        this.folderPath = folderPath;
-        this.id = id;
-        this.items = items;
-        this.pathsInSubtree = pathsInSubtree;
-        this.ref = ref;
-        this.repositoryId = repositoryId;
-    }
-
+    private GetRepositoryPathResult() {}
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
@@ -85,7 +68,7 @@ public final class GetRepositoryPathResult {
     public static Builder builder(GetRepositoryPathResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable String folderPath;
@@ -94,11 +77,7 @@ public final class GetRepositoryPathResult {
         private @Nullable Boolean pathsInSubtree;
         private @Nullable String ref;
         private String repositoryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryPathResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -110,18 +89,22 @@ public final class GetRepositoryPathResult {
     	      this.repositoryId = defaults.repositoryId;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder folderPath(@Nullable String folderPath) {
             this.folderPath = folderPath;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetRepositoryPathItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -129,19 +112,31 @@ public final class GetRepositoryPathResult {
         public Builder items(GetRepositoryPathItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder pathsInSubtree(@Nullable Boolean pathsInSubtree) {
             this.pathsInSubtree = pathsInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder ref(@Nullable String ref) {
             this.ref = ref;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
-        }        public GetRepositoryPathResult build() {
-            return new GetRepositoryPathResult(displayName, folderPath, id, items, pathsInSubtree, ref, repositoryId);
+        }
+        public GetRepositoryPathResult build() {
+            final var o = new GetRepositoryPathResult();
+            o.displayName = displayName;
+            o.folderPath = folderPath;
+            o.id = id;
+            o.items = items;
+            o.pathsInSubtree = pathsInSubtree;
+            o.ref = ref;
+            o.repositoryId = repositoryId;
+            return o;
         }
     }
 }

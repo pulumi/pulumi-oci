@@ -18,52 +18,35 @@ public final class GetInternetGatewaysResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the internet gateway.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetInternetGatewaysFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetInternetGatewaysFilter> filters;
     /**
      * @return The list of gateways.
      * 
      */
-    private final List<GetInternetGatewaysGateway> gateways;
+    private List<GetInternetGatewaysGateway> gateways;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The internet gateway&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the Internet Gateway belongs to.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetInternetGatewaysResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetInternetGatewaysFilter> filters,
-        @CustomType.Parameter("gateways") List<GetInternetGatewaysGateway> gateways,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.gateways = gateways;
-        this.id = id;
-        this.state = state;
-        this.vcnId = vcnId;
-    }
-
+    private GetInternetGatewaysResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the internet gateway.
      * 
@@ -117,7 +100,7 @@ public final class GetInternetGatewaysResult {
     public static Builder builder(GetInternetGatewaysResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetInternetGatewaysResult {
         private String id;
         private @Nullable String state;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInternetGatewaysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetInternetGatewaysResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInternetGatewaysFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,6 +139,7 @@ public final class GetInternetGatewaysResult {
         public Builder filters(GetInternetGatewaysFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder gateways(List<GetInternetGatewaysGateway> gateways) {
             this.gateways = Objects.requireNonNull(gateways);
             return this;
@@ -164,19 +147,31 @@ public final class GetInternetGatewaysResult {
         public Builder gateways(GetInternetGatewaysGateway... gateways) {
             return gateways(List.of(gateways));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetInternetGatewaysResult build() {
-            return new GetInternetGatewaysResult(compartmentId, displayName, filters, gateways, id, state, vcnId);
+        }
+        public GetInternetGatewaysResult build() {
+            final var o = new GetInternetGatewaysResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.gateways = gateways;
+            o.id = id;
+            o.state = state;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

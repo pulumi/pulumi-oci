@@ -13,28 +13,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkLoadBalancersProtocolsResult {
-    private final @Nullable List<GetNetworkLoadBalancersProtocolsFilter> filters;
+    private @Nullable List<GetNetworkLoadBalancersProtocolsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of network_load_balancers_protocol_collection.
      * 
      */
-    private final List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections;
+    private List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections;
 
-    @CustomType.Constructor
-    private GetNetworkLoadBalancersProtocolsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetNetworkLoadBalancersProtocolsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("networkLoadBalancersProtocolCollections") List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections) {
-        this.filters = filters;
-        this.id = id;
-        this.networkLoadBalancersProtocolCollections = networkLoadBalancersProtocolCollections;
-    }
-
+    private GetNetworkLoadBalancersProtocolsResult() {}
     public List<GetNetworkLoadBalancersProtocolsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -60,16 +51,12 @@ public final class GetNetworkLoadBalancersProtocolsResult {
     public static Builder builder(GetNetworkLoadBalancersProtocolsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetNetworkLoadBalancersProtocolsFilter> filters;
         private String id;
         private List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkLoadBalancersProtocolsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -77,6 +64,7 @@ public final class GetNetworkLoadBalancersProtocolsResult {
     	      this.networkLoadBalancersProtocolCollections = defaults.networkLoadBalancersProtocolCollections;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkLoadBalancersProtocolsFilter> filters) {
             this.filters = filters;
             return this;
@@ -84,18 +72,25 @@ public final class GetNetworkLoadBalancersProtocolsResult {
         public Builder filters(GetNetworkLoadBalancersProtocolsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder networkLoadBalancersProtocolCollections(List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections) {
             this.networkLoadBalancersProtocolCollections = Objects.requireNonNull(networkLoadBalancersProtocolCollections);
             return this;
         }
         public Builder networkLoadBalancersProtocolCollections(GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection... networkLoadBalancersProtocolCollections) {
             return networkLoadBalancersProtocolCollections(List.of(networkLoadBalancersProtocolCollections));
-        }        public GetNetworkLoadBalancersProtocolsResult build() {
-            return new GetNetworkLoadBalancersProtocolsResult(filters, id, networkLoadBalancersProtocolCollections);
+        }
+        public GetNetworkLoadBalancersProtocolsResult build() {
+            final var o = new GetNetworkLoadBalancersProtocolsResult();
+            o.filters = filters;
+            o.id = id;
+            o.networkLoadBalancersProtocolCollections = networkLoadBalancersProtocolCollections;
+            return o;
         }
     }
 }

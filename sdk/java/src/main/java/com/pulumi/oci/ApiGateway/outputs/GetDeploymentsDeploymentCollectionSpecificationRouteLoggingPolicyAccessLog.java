@@ -13,13 +13,9 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPo
      * @return Whether this policy is currently enabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog(@CustomType.Parameter("isEnabled") Boolean isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog() {}
     /**
      * @return Whether this policy is currently enabled.
      * 
@@ -35,24 +31,24 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPo
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
-        }        public GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog(isEnabled);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog();
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

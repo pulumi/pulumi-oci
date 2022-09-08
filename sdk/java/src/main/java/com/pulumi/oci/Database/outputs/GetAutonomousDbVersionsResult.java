@@ -18,8 +18,8 @@ public final class GetAutonomousDbVersionsResult {
      * @return The list of autonomous_db_versions.
      * 
      */
-    private final List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions;
-    private final String compartmentId;
+    private List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions;
+    private String compartmentId;
     /**
      * @return The Autonomous Database workload type. The following values are valid:
      * * OLTP - indicates an Autonomous Transaction Processing database
@@ -28,28 +28,15 @@ public final class GetAutonomousDbVersionsResult {
      * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
      */
-    private final @Nullable String dbWorkload;
-    private final @Nullable List<GetAutonomousDbVersionsFilter> filters;
+    private @Nullable String dbWorkload;
+    private @Nullable List<GetAutonomousDbVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAutonomousDbVersionsResult(
-        @CustomType.Parameter("autonomousDbVersions") List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbWorkload") @Nullable String dbWorkload,
-        @CustomType.Parameter("filters") @Nullable List<GetAutonomousDbVersionsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.autonomousDbVersions = autonomousDbVersions;
-        this.compartmentId = compartmentId;
-        this.dbWorkload = dbWorkload;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAutonomousDbVersionsResult() {}
     /**
      * @return The list of autonomous_db_versions.
      * 
@@ -89,18 +76,14 @@ public final class GetAutonomousDbVersionsResult {
     public static Builder builder(GetAutonomousDbVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions;
         private String compartmentId;
         private @Nullable String dbWorkload;
         private @Nullable List<GetAutonomousDbVersionsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDbVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDbVersions = defaults.autonomousDbVersions;
@@ -110,6 +93,7 @@ public final class GetAutonomousDbVersionsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder autonomousDbVersions(List<GetAutonomousDbVersionsAutonomousDbVersion> autonomousDbVersions) {
             this.autonomousDbVersions = Objects.requireNonNull(autonomousDbVersions);
             return this;
@@ -117,14 +101,17 @@ public final class GetAutonomousDbVersionsResult {
         public Builder autonomousDbVersions(GetAutonomousDbVersionsAutonomousDbVersion... autonomousDbVersions) {
             return autonomousDbVersions(List.of(autonomousDbVersions));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbWorkload(@Nullable String dbWorkload) {
             this.dbWorkload = dbWorkload;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousDbVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -132,11 +119,19 @@ public final class GetAutonomousDbVersionsResult {
         public Builder filters(GetAutonomousDbVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAutonomousDbVersionsResult build() {
-            return new GetAutonomousDbVersionsResult(autonomousDbVersions, compartmentId, dbWorkload, filters, id);
+        }
+        public GetAutonomousDbVersionsResult build() {
+            final var o = new GetAutonomousDbVersionsResult();
+            o.autonomousDbVersions = autonomousDbVersions;
+            o.compartmentId = compartmentId;
+            o.dbWorkload = dbWorkload;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

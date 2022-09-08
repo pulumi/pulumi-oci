@@ -16,28 +16,19 @@ public final class CloudVmClusterIormConfigCachDbPlan {
      * @return The database name. For the default `DbPlan`, the `dbName` is `default`.
      * 
      */
-    private final @Nullable String dbName;
+    private @Nullable String dbName;
     /**
      * @return The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
      * 
      */
-    private final @Nullable String flashCacheLimit;
+    private @Nullable String flashCacheLimit;
     /**
      * @return The relative priority of this database.
      * 
      */
-    private final @Nullable Integer share;
+    private @Nullable Integer share;
 
-    @CustomType.Constructor
-    private CloudVmClusterIormConfigCachDbPlan(
-        @CustomType.Parameter("dbName") @Nullable String dbName,
-        @CustomType.Parameter("flashCacheLimit") @Nullable String flashCacheLimit,
-        @CustomType.Parameter("share") @Nullable Integer share) {
-        this.dbName = dbName;
-        this.flashCacheLimit = flashCacheLimit;
-        this.share = share;
-    }
-
+    private CloudVmClusterIormConfigCachDbPlan() {}
     /**
      * @return The database name. For the default `DbPlan`, the `dbName` is `default`.
      * 
@@ -67,16 +58,12 @@ public final class CloudVmClusterIormConfigCachDbPlan {
     public static Builder builder(CloudVmClusterIormConfigCachDbPlan defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String dbName;
         private @Nullable String flashCacheLimit;
         private @Nullable Integer share;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CloudVmClusterIormConfigCachDbPlan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbName = defaults.dbName;
@@ -84,19 +71,27 @@ public final class CloudVmClusterIormConfigCachDbPlan {
     	      this.share = defaults.share;
         }
 
+        @CustomType.Setter
         public Builder dbName(@Nullable String dbName) {
             this.dbName = dbName;
             return this;
         }
+        @CustomType.Setter
         public Builder flashCacheLimit(@Nullable String flashCacheLimit) {
             this.flashCacheLimit = flashCacheLimit;
             return this;
         }
+        @CustomType.Setter
         public Builder share(@Nullable Integer share) {
             this.share = share;
             return this;
-        }        public CloudVmClusterIormConfigCachDbPlan build() {
-            return new CloudVmClusterIormConfigCachDbPlan(dbName, flashCacheLimit, share);
+        }
+        public CloudVmClusterIormConfigCachDbPlan build() {
+            final var o = new CloudVmClusterIormConfigCachDbPlan();
+            o.dbName = dbName;
+            o.flashCacheLimit = flashCacheLimit;
+            o.share = share;
+            return o;
         }
     }
 }

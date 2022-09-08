@@ -15,42 +15,29 @@ public final class SubscriptionTaxInfo {
      * @return (Updatable) Tax exemption reason code.
      * 
      */
-    private final @Nullable String noTaxReasonCode;
+    private @Nullable String noTaxReasonCode;
     /**
      * @return (Updatable) Tax exemption reason description.
      * 
      */
-    private final @Nullable String noTaxReasonCodeDetails;
+    private @Nullable String noTaxReasonCodeDetails;
     /**
      * @return (Updatable) Brazilian companies&#39; CNPJ number.
      * 
      */
-    private final @Nullable String taxCnpj;
+    private @Nullable String taxCnpj;
     /**
      * @return (Updatable) Tay payer identifier.
      * 
      */
-    private final @Nullable String taxPayerId;
+    private @Nullable String taxPayerId;
     /**
      * @return (Updatable) Tax registration number.
      * 
      */
-    private final @Nullable String taxRegNumber;
+    private @Nullable String taxRegNumber;
 
-    @CustomType.Constructor
-    private SubscriptionTaxInfo(
-        @CustomType.Parameter("noTaxReasonCode") @Nullable String noTaxReasonCode,
-        @CustomType.Parameter("noTaxReasonCodeDetails") @Nullable String noTaxReasonCodeDetails,
-        @CustomType.Parameter("taxCnpj") @Nullable String taxCnpj,
-        @CustomType.Parameter("taxPayerId") @Nullable String taxPayerId,
-        @CustomType.Parameter("taxRegNumber") @Nullable String taxRegNumber) {
-        this.noTaxReasonCode = noTaxReasonCode;
-        this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
-        this.taxCnpj = taxCnpj;
-        this.taxPayerId = taxPayerId;
-        this.taxRegNumber = taxRegNumber;
-    }
-
+    private SubscriptionTaxInfo() {}
     /**
      * @return (Updatable) Tax exemption reason code.
      * 
@@ -94,18 +81,14 @@ public final class SubscriptionTaxInfo {
     public static Builder builder(SubscriptionTaxInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String noTaxReasonCode;
         private @Nullable String noTaxReasonCodeDetails;
         private @Nullable String taxCnpj;
         private @Nullable String taxPayerId;
         private @Nullable String taxRegNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SubscriptionTaxInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.noTaxReasonCode = defaults.noTaxReasonCode;
@@ -115,27 +98,39 @@ public final class SubscriptionTaxInfo {
     	      this.taxRegNumber = defaults.taxRegNumber;
         }
 
+        @CustomType.Setter
         public Builder noTaxReasonCode(@Nullable String noTaxReasonCode) {
             this.noTaxReasonCode = noTaxReasonCode;
             return this;
         }
+        @CustomType.Setter
         public Builder noTaxReasonCodeDetails(@Nullable String noTaxReasonCodeDetails) {
             this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder taxCnpj(@Nullable String taxCnpj) {
             this.taxCnpj = taxCnpj;
             return this;
         }
+        @CustomType.Setter
         public Builder taxPayerId(@Nullable String taxPayerId) {
             this.taxPayerId = taxPayerId;
             return this;
         }
+        @CustomType.Setter
         public Builder taxRegNumber(@Nullable String taxRegNumber) {
             this.taxRegNumber = taxRegNumber;
             return this;
-        }        public SubscriptionTaxInfo build() {
-            return new SubscriptionTaxInfo(noTaxReasonCode, noTaxReasonCodeDetails, taxCnpj, taxPayerId, taxRegNumber);
+        }
+        public SubscriptionTaxInfo build() {
+            final var o = new SubscriptionTaxInfo();
+            o.noTaxReasonCode = noTaxReasonCode;
+            o.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
+            o.taxCnpj = taxCnpj;
+            o.taxPayerId = taxPayerId;
+            o.taxRegNumber = taxRegNumber;
+            return o;
         }
     }
 }

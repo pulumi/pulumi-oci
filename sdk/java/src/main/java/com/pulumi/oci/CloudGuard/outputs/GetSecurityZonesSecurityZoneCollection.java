@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSecurityZonesSecurityZoneCollection {
-    private final List<GetSecurityZonesSecurityZoneCollectionItem> items;
+    private List<GetSecurityZonesSecurityZoneCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetSecurityZonesSecurityZoneCollection(@CustomType.Parameter("items") List<GetSecurityZonesSecurityZoneCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetSecurityZonesSecurityZoneCollection() {}
     public List<GetSecurityZonesSecurityZoneCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetSecurityZonesSecurityZoneCollection {
     public static Builder builder(GetSecurityZonesSecurityZoneCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSecurityZonesSecurityZoneCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityZonesSecurityZoneCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSecurityZonesSecurityZoneCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSecurityZonesSecurityZoneCollectionItem... items) {
             return items(List.of(items));
-        }        public GetSecurityZonesSecurityZoneCollection build() {
-            return new GetSecurityZonesSecurityZoneCollection(items);
+        }
+        public GetSecurityZonesSecurityZoneCollection build() {
+            final var o = new GetSecurityZonesSecurityZoneCollection();
+            o.items = items;
+            return o;
         }
     }
 }

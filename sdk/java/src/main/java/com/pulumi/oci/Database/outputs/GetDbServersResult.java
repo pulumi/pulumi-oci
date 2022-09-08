@@ -18,52 +18,35 @@ public final class GetDbServersResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of db_servers.
      * 
      */
-    private final List<GetDbServersDbServer> dbServers;
+    private List<GetDbServersDbServer> dbServers;
     /**
      * @return The user-friendly name for the Db server. The name does not need to be unique.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    private final String exadataInfrastructureId;
-    private final @Nullable List<GetDbServersFilter> filters;
+    private String exadataInfrastructureId;
+    private @Nullable List<GetDbServersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the Db server.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDbServersResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbServers") List<GetDbServersDbServer> dbServers,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("exadataInfrastructureId") String exadataInfrastructureId,
-        @CustomType.Parameter("filters") @Nullable List<GetDbServersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.dbServers = dbServers;
-        this.displayName = displayName;
-        this.exadataInfrastructureId = exadataInfrastructureId;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetDbServersResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetDbServersResult {
     public static Builder builder(GetDbServersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetDbServersDbServer> dbServers;
@@ -126,11 +109,7 @@ public final class GetDbServersResult {
         private @Nullable List<GetDbServersFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbServersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetDbServersResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbServers(List<GetDbServersDbServer> dbServers) {
             this.dbServers = Objects.requireNonNull(dbServers);
             return this;
@@ -153,14 +134,17 @@ public final class GetDbServersResult {
         public Builder dbServers(GetDbServersDbServer... dbServers) {
             return dbServers(List.of(dbServers));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbServersFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,15 +152,26 @@ public final class GetDbServersResult {
         public Builder filters(GetDbServersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDbServersResult build() {
-            return new GetDbServersResult(compartmentId, dbServers, displayName, exadataInfrastructureId, filters, id, state);
+        }
+        public GetDbServersResult build() {
+            final var o = new GetDbServersResult();
+            o.compartmentId = compartmentId;
+            o.dbServers = dbServers;
+            o.displayName = displayName;
+            o.exadataInfrastructureId = exadataInfrastructureId;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

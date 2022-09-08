@@ -12,105 +12,74 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAlertPolicyResult {
-    private final String alertPolicyId;
+    private String alertPolicyId;
     /**
      * @return Indicates the Data Safe feature to which the alert policy belongs.
      * 
      */
-    private final String alertPolicyType;
+    private String alertPolicyType;
     /**
      * @return The OCID of the compartment that contains the alert policy.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the alert policy.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The display name of the alert policy.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if the alert policy is user-defined (true) or pre-defined (false).
      * 
      */
-    private final Boolean isUserDefined;
+    private Boolean isUserDefined;
     /**
      * @return Severity level of the alert raised by this policy.
      * 
      */
-    private final String severity;
+    private String severity;
     /**
      * @return The current state of the alert.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetAlertPolicyResult(
-        @CustomType.Parameter("alertPolicyId") String alertPolicyId,
-        @CustomType.Parameter("alertPolicyType") String alertPolicyType,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isUserDefined") Boolean isUserDefined,
-        @CustomType.Parameter("severity") String severity,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.alertPolicyId = alertPolicyId;
-        this.alertPolicyType = alertPolicyType;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isUserDefined = isUserDefined;
-        this.severity = severity;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetAlertPolicyResult() {}
     public String alertPolicyId() {
         return this.alertPolicyId;
     }
@@ -213,7 +182,7 @@ public final class GetAlertPolicyResult {
     public static Builder builder(GetAlertPolicyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String alertPolicyId;
         private String alertPolicyType;
@@ -229,11 +198,7 @@ public final class GetAlertPolicyResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alertPolicyId = defaults.alertPolicyId;
@@ -252,63 +217,93 @@ public final class GetAlertPolicyResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder alertPolicyId(String alertPolicyId) {
             this.alertPolicyId = Objects.requireNonNull(alertPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder alertPolicyType(String alertPolicyType) {
             this.alertPolicyType = Objects.requireNonNull(alertPolicyType);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isUserDefined(Boolean isUserDefined) {
             this.isUserDefined = Objects.requireNonNull(isUserDefined);
             return this;
         }
+        @CustomType.Setter
         public Builder severity(String severity) {
             this.severity = Objects.requireNonNull(severity);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetAlertPolicyResult build() {
-            return new GetAlertPolicyResult(alertPolicyId, alertPolicyType, compartmentId, definedTags, description, displayName, freeformTags, id, isUserDefined, severity, state, systemTags, timeCreated, timeUpdated);
+        }
+        public GetAlertPolicyResult build() {
+            final var o = new GetAlertPolicyResult();
+            o.alertPolicyId = alertPolicyId;
+            o.alertPolicyType = alertPolicyType;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isUserDefined = isUserDefined;
+            o.severity = severity;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

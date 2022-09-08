@@ -16,28 +16,19 @@ public final class AutonomousDatabaseScheduledOperation {
      * @return (Updatable) Day of the week.
      * 
      */
-    private final AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek;
+    private AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek;
     /**
      * @return (Updatable) auto start time. value must be of ISO-8601 format &#34;HH:mm&#34;
      * 
      */
-    private final @Nullable String scheduledStartTime;
+    private @Nullable String scheduledStartTime;
     /**
      * @return (Updatable) auto stop time. value must be of ISO-8601 format &#34;HH:mm&#34;
      * 
      */
-    private final @Nullable String scheduledStopTime;
+    private @Nullable String scheduledStopTime;
 
-    @CustomType.Constructor
-    private AutonomousDatabaseScheduledOperation(
-        @CustomType.Parameter("dayOfWeek") AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek,
-        @CustomType.Parameter("scheduledStartTime") @Nullable String scheduledStartTime,
-        @CustomType.Parameter("scheduledStopTime") @Nullable String scheduledStopTime) {
-        this.dayOfWeek = dayOfWeek;
-        this.scheduledStartTime = scheduledStartTime;
-        this.scheduledStopTime = scheduledStopTime;
-    }
-
+    private AutonomousDatabaseScheduledOperation() {}
     /**
      * @return (Updatable) Day of the week.
      * 
@@ -67,16 +58,12 @@ public final class AutonomousDatabaseScheduledOperation {
     public static Builder builder(AutonomousDatabaseScheduledOperation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek;
         private @Nullable String scheduledStartTime;
         private @Nullable String scheduledStopTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousDatabaseScheduledOperation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dayOfWeek = defaults.dayOfWeek;
@@ -84,19 +71,27 @@ public final class AutonomousDatabaseScheduledOperation {
     	      this.scheduledStopTime = defaults.scheduledStopTime;
         }
 
+        @CustomType.Setter
         public Builder dayOfWeek(AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek) {
             this.dayOfWeek = Objects.requireNonNull(dayOfWeek);
             return this;
         }
+        @CustomType.Setter
         public Builder scheduledStartTime(@Nullable String scheduledStartTime) {
             this.scheduledStartTime = scheduledStartTime;
             return this;
         }
+        @CustomType.Setter
         public Builder scheduledStopTime(@Nullable String scheduledStopTime) {
             this.scheduledStopTime = scheduledStopTime;
             return this;
-        }        public AutonomousDatabaseScheduledOperation build() {
-            return new AutonomousDatabaseScheduledOperation(dayOfWeek, scheduledStartTime, scheduledStopTime);
+        }
+        public AutonomousDatabaseScheduledOperation build() {
+            final var o = new AutonomousDatabaseScheduledOperation();
+            o.dayOfWeek = dayOfWeek;
+            o.scheduledStartTime = scheduledStartTime;
+            o.scheduledStopTime = scheduledStopTime;
+            return o;
         }
     }
 }

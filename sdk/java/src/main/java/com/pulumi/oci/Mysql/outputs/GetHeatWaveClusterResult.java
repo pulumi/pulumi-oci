@@ -16,66 +16,45 @@ public final class GetHeatWaveClusterResult {
      * @return A HeatWave node is a compute host that is part of a HeatWave cluster.
      * 
      */
-    private final List<GetHeatWaveClusterClusterNode> clusterNodes;
+    private List<GetHeatWaveClusterClusterNode> clusterNodes;
     /**
      * @return The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
      * 
      */
-    private final Integer clusterSize;
+    private Integer clusterSize;
     /**
      * @return The OCID of the parent DB System this HeatWave cluster is attached to.
      * 
      */
-    private final String dbSystemId;
-    private final String id;
+    private String dbSystemId;
+    private String id;
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
      * 
      */
-    private final String shapeName;
+    private String shapeName;
     /**
      * @return The current state of the HeatWave cluster.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetHeatWaveClusterResult(
-        @CustomType.Parameter("clusterNodes") List<GetHeatWaveClusterClusterNode> clusterNodes,
-        @CustomType.Parameter("clusterSize") Integer clusterSize,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("shapeName") String shapeName,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.clusterNodes = clusterNodes;
-        this.clusterSize = clusterSize;
-        this.dbSystemId = dbSystemId;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.shapeName = shapeName;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetHeatWaveClusterResult() {}
     /**
      * @return A HeatWave node is a compute host that is part of a HeatWave cluster.
      * 
@@ -143,7 +122,7 @@ public final class GetHeatWaveClusterResult {
     public static Builder builder(GetHeatWaveClusterResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetHeatWaveClusterClusterNode> clusterNodes;
         private Integer clusterSize;
@@ -154,11 +133,7 @@ public final class GetHeatWaveClusterResult {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHeatWaveClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterNodes = defaults.clusterNodes;
@@ -172,6 +147,7 @@ public final class GetHeatWaveClusterResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder clusterNodes(List<GetHeatWaveClusterClusterNode> clusterNodes) {
             this.clusterNodes = Objects.requireNonNull(clusterNodes);
             return this;
@@ -179,39 +155,58 @@ public final class GetHeatWaveClusterResult {
         public Builder clusterNodes(GetHeatWaveClusterClusterNode... clusterNodes) {
             return clusterNodes(List.of(clusterNodes));
         }
+        @CustomType.Setter
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = Objects.requireNonNull(clusterSize);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetHeatWaveClusterResult build() {
-            return new GetHeatWaveClusterResult(clusterNodes, clusterSize, dbSystemId, id, lifecycleDetails, shapeName, state, timeCreated, timeUpdated);
+        }
+        public GetHeatWaveClusterResult build() {
+            final var o = new GetHeatWaveClusterResult();
+            o.clusterNodes = clusterNodes;
+            o.clusterSize = clusterSize;
+            o.dbSystemId = dbSystemId;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.shapeName = shapeName;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

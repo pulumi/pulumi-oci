@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSupportedSkusResult {
-    private final String compartmentId;
-    private final @Nullable List<GetSupportedSkusFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetSupportedSkusFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of the supported SKUs.
      * 
      */
-    private final List<GetSupportedSkusItem> items;
+    private List<GetSupportedSkusItem> items;
 
-    @CustomType.Constructor
-    private GetSupportedSkusResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetSupportedSkusFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetSupportedSkusItem> items) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetSupportedSkusResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetSupportedSkusResult {
     public static Builder builder(GetSupportedSkusResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSupportedSkusFilter> filters;
         private String id;
         private List<GetSupportedSkusItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSupportedSkusResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetSupportedSkusResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSupportedSkusFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetSupportedSkusResult {
         public Builder filters(GetSupportedSkusFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetSupportedSkusItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSupportedSkusItem... items) {
             return items(List.of(items));
-        }        public GetSupportedSkusResult build() {
-            return new GetSupportedSkusResult(compartmentId, filters, id, items);
+        }
+        public GetSupportedSkusResult build() {
+            final var o = new GetSupportedSkusResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

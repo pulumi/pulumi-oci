@@ -11,28 +11,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetOpensearchVersionResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A list of OpenSearch versions.
      * 
      */
-    private final List<GetOpensearchVersionItem> items;
+    private List<GetOpensearchVersionItem> items;
 
-    @CustomType.Constructor
-    private GetOpensearchVersionResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetOpensearchVersionItem> items) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetOpensearchVersionResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -58,16 +49,12 @@ public final class GetOpensearchVersionResult {
     public static Builder builder(GetOpensearchVersionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private List<GetOpensearchVersionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOpensearchVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -75,22 +62,30 @@ public final class GetOpensearchVersionResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetOpensearchVersionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetOpensearchVersionItem... items) {
             return items(List.of(items));
-        }        public GetOpensearchVersionResult build() {
-            return new GetOpensearchVersionResult(compartmentId, id, items);
+        }
+        public GetOpensearchVersionResult build() {
+            final var o = new GetOpensearchVersionResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

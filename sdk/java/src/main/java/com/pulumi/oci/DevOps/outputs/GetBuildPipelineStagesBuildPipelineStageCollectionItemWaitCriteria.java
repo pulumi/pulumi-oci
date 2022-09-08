@@ -13,21 +13,14 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCri
      * @return The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
      * 
      */
-    private final String waitDuration;
+    private String waitDuration;
     /**
      * @return Wait criteria type.
      * 
      */
-    private final String waitType;
+    private String waitType;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria(
-        @CustomType.Parameter("waitDuration") String waitDuration,
-        @CustomType.Parameter("waitType") String waitType) {
-        this.waitDuration = waitDuration;
-        this.waitType = waitType;
-    }
-
+    private GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria() {}
     /**
      * @return The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
      * 
@@ -50,30 +43,32 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCri
     public static Builder builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String waitDuration;
         private String waitType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.waitDuration = defaults.waitDuration;
     	      this.waitType = defaults.waitType;
         }
 
+        @CustomType.Setter
         public Builder waitDuration(String waitDuration) {
             this.waitDuration = Objects.requireNonNull(waitDuration);
             return this;
         }
+        @CustomType.Setter
         public Builder waitType(String waitType) {
             this.waitType = Objects.requireNonNull(waitType);
             return this;
-        }        public GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria build() {
-            return new GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria(waitDuration, waitType);
+        }
+        public GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria build() {
+            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria();
+            o.waitDuration = waitDuration;
+            o.waitType = waitType;
+            return o;
         }
     }
 }

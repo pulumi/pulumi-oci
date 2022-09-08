@@ -13,21 +13,14 @@ public final class GetDiscoveryAnalyticItemDimension {
      * @return A filter to return only the resources that match the specified sensitive data model OCID.
      * 
      */
-    private final String sensitiveDataModelId;
+    private String sensitiveDataModelId;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private final String targetId;
+    private String targetId;
 
-    @CustomType.Constructor
-    private GetDiscoveryAnalyticItemDimension(
-        @CustomType.Parameter("sensitiveDataModelId") String sensitiveDataModelId,
-        @CustomType.Parameter("targetId") String targetId) {
-        this.sensitiveDataModelId = sensitiveDataModelId;
-        this.targetId = targetId;
-    }
-
+    private GetDiscoveryAnalyticItemDimension() {}
     /**
      * @return A filter to return only the resources that match the specified sensitive data model OCID.
      * 
@@ -50,30 +43,32 @@ public final class GetDiscoveryAnalyticItemDimension {
     public static Builder builder(GetDiscoveryAnalyticItemDimension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String sensitiveDataModelId;
         private String targetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryAnalyticItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.sensitiveDataModelId = defaults.sensitiveDataModelId;
     	      this.targetId = defaults.targetId;
         }
 
+        @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
-        }        public GetDiscoveryAnalyticItemDimension build() {
-            return new GetDiscoveryAnalyticItemDimension(sensitiveDataModelId, targetId);
+        }
+        public GetDiscoveryAnalyticItemDimension build() {
+            final var o = new GetDiscoveryAnalyticItemDimension();
+            o.sensitiveDataModelId = sensitiveDataModelId;
+            o.targetId = targetId;
+            return o;
         }
     }
 }

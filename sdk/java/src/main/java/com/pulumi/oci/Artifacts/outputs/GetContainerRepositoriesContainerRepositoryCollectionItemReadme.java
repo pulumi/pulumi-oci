@@ -13,21 +13,14 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItemRead
      * @return Readme content. Avoid entering confidential information.
      * 
      */
-    private final String content;
+    private String content;
     /**
      * @return Readme format. Supported formats are text/plain and text/markdown.
      * 
      */
-    private final String format;
+    private String format;
 
-    @CustomType.Constructor
-    private GetContainerRepositoriesContainerRepositoryCollectionItemReadme(
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("format") String format) {
-        this.content = content;
-        this.format = format;
-    }
-
+    private GetContainerRepositoriesContainerRepositoryCollectionItemReadme() {}
     /**
      * @return Readme content. Avoid entering confidential information.
      * 
@@ -50,30 +43,32 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItemRead
     public static Builder builder(GetContainerRepositoriesContainerRepositoryCollectionItemReadme defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String content;
         private String format;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerRepositoriesContainerRepositoryCollectionItemReadme defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.content = defaults.content;
     	      this.format = defaults.format;
         }
 
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder format(String format) {
             this.format = Objects.requireNonNull(format);
             return this;
-        }        public GetContainerRepositoriesContainerRepositoryCollectionItemReadme build() {
-            return new GetContainerRepositoriesContainerRepositoryCollectionItemReadme(content, format);
+        }
+        public GetContainerRepositoriesContainerRepositoryCollectionItemReadme build() {
+            final var o = new GetContainerRepositoriesContainerRepositoryCollectionItemReadme();
+            o.content = content;
+            o.format = format;
+            return o;
         }
     }
 }

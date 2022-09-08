@@ -14,35 +14,24 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
      * @return The category name to which this resource belongs.
      * 
      */
-    private final String categoryName;
+    private String categoryName;
     /**
      * @return The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
      * 
      */
-    private final Boolean isSystem;
+    private Boolean isSystem;
     /**
      * @return The unique identifier of the resource, usually a name or ocid.
      * 
      */
-    private final String resourceId;
+    private String resourceId;
     /**
      * @return The resource type.
      * 
      */
-    private final String resourceType;
+    private String resourceType;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsResourceCategoriesListItem(
-        @CustomType.Parameter("categoryName") String categoryName,
-        @CustomType.Parameter("isSystem") Boolean isSystem,
-        @CustomType.Parameter("resourceId") String resourceId,
-        @CustomType.Parameter("resourceType") String resourceType) {
-        this.categoryName = categoryName;
-        this.isSystem = isSystem;
-        this.resourceId = resourceId;
-        this.resourceType = resourceType;
-    }
-
+    private GetLogAnalyticsResourceCategoriesListItem() {}
     /**
      * @return The category name to which this resource belongs.
      * 
@@ -79,17 +68,13 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
     public static Builder builder(GetLogAnalyticsResourceCategoriesListItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String categoryName;
         private Boolean isSystem;
         private String resourceId;
         private String resourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsResourceCategoriesListItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categoryName = defaults.categoryName;
@@ -98,23 +83,33 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
     	      this.resourceType = defaults.resourceType;
         }
 
+        @CustomType.Setter
         public Builder categoryName(String categoryName) {
             this.categoryName = Objects.requireNonNull(categoryName);
             return this;
         }
+        @CustomType.Setter
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = Objects.requireNonNull(isSystem);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceId(String resourceId) {
             this.resourceId = Objects.requireNonNull(resourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceType(String resourceType) {
             this.resourceType = Objects.requireNonNull(resourceType);
             return this;
-        }        public GetLogAnalyticsResourceCategoriesListItem build() {
-            return new GetLogAnalyticsResourceCategoriesListItem(categoryName, isSystem, resourceId, resourceType);
+        }
+        public GetLogAnalyticsResourceCategoriesListItem build() {
+            final var o = new GetLogAnalyticsResourceCategoriesListItem();
+            o.categoryName = categoryName;
+            o.isSystem = isSystem;
+            o.resourceId = resourceId;
+            o.resourceType = resourceType;
+            return o;
         }
     }
 }

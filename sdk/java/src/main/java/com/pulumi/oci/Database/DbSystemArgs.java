@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.DbSystemDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.DbSystemDbHomeArgs;
 import com.pulumi.oci.Database.inputs.DbSystemDbSystemOptionsArgs;
 import com.pulumi.oci.Database.inputs.DbSystemMaintenanceWindowDetailsArgs;
@@ -131,6 +132,21 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> cpuCoreCount() {
         return Optional.ofNullable(this.cpuCoreCount);
+    }
+
+    /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     * 
+     */
+    @Import(name="dataCollectionOptions")
+    private @Nullable Output<DbSystemDataCollectionOptionsArgs> dataCollectionOptions;
+
+    /**
+     * @return (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     * 
+     */
+    public Optional<Output<DbSystemDataCollectionOptionsArgs>> dataCollectionOptions() {
+        return Optional.ofNullable(this.dataCollectionOptions);
     }
 
     /**
@@ -568,6 +584,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.clusterName = $.clusterName;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
+        this.dataCollectionOptions = $.dataCollectionOptions;
         this.dataStoragePercentage = $.dataStoragePercentage;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
         this.databaseEdition = $.databaseEdition;
@@ -770,6 +787,27 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             return cpuCoreCount(Output.of(cpuCoreCount));
+        }
+
+        /**
+         * @param dataCollectionOptions (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(@Nullable Output<DbSystemDataCollectionOptionsArgs> dataCollectionOptions) {
+            $.dataCollectionOptions = dataCollectionOptions;
+            return this;
+        }
+
+        /**
+         * @param dataCollectionOptions (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(DbSystemDataCollectionOptionsArgs dataCollectionOptions) {
+            return dataCollectionOptions(Output.of(dataCollectionOptions));
         }
 
         /**

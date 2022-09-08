@@ -14,42 +14,29 @@ public final class GetManagementAgentCountItemDimension {
      * @return The availability status of managementAgent
      * 
      */
-    private final String availabilityStatus;
+    private String availabilityStatus;
     /**
      * @return When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
      * 
      */
-    private final Boolean hasPlugins;
+    private Boolean hasPlugins;
     /**
      * @return A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
      * 
      */
-    private final String installType;
+    private String installType;
     /**
      * @return Platform Type
      * 
      */
-    private final String platformType;
+    private String platformType;
     /**
      * @return Agent image version
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetManagementAgentCountItemDimension(
-        @CustomType.Parameter("availabilityStatus") String availabilityStatus,
-        @CustomType.Parameter("hasPlugins") Boolean hasPlugins,
-        @CustomType.Parameter("installType") String installType,
-        @CustomType.Parameter("platformType") String platformType,
-        @CustomType.Parameter("version") String version) {
-        this.availabilityStatus = availabilityStatus;
-        this.hasPlugins = hasPlugins;
-        this.installType = installType;
-        this.platformType = platformType;
-        this.version = version;
-    }
-
+    private GetManagementAgentCountItemDimension() {}
     /**
      * @return The availability status of managementAgent
      * 
@@ -93,18 +80,14 @@ public final class GetManagementAgentCountItemDimension {
     public static Builder builder(GetManagementAgentCountItemDimension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityStatus;
         private Boolean hasPlugins;
         private String installType;
         private String platformType;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentCountItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityStatus = defaults.availabilityStatus;
@@ -114,27 +97,39 @@ public final class GetManagementAgentCountItemDimension {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder availabilityStatus(String availabilityStatus) {
             this.availabilityStatus = Objects.requireNonNull(availabilityStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder hasPlugins(Boolean hasPlugins) {
             this.hasPlugins = Objects.requireNonNull(hasPlugins);
             return this;
         }
+        @CustomType.Setter
         public Builder installType(String installType) {
             this.installType = Objects.requireNonNull(installType);
             return this;
         }
+        @CustomType.Setter
         public Builder platformType(String platformType) {
             this.platformType = Objects.requireNonNull(platformType);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetManagementAgentCountItemDimension build() {
-            return new GetManagementAgentCountItemDimension(availabilityStatus, hasPlugins, installType, platformType, version);
+        }
+        public GetManagementAgentCountItemDimension build() {
+            final var o = new GetManagementAgentCountItemDimension();
+            o.availabilityStatus = availabilityStatus;
+            o.hasPlugins = hasPlugins;
+            o.installType = installType;
+            o.platformType = platformType;
+            o.version = version;
+            return o;
         }
     }
 }

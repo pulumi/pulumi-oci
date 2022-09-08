@@ -16,46 +16,33 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetRegistryTypesTypesSummaryCollectionItem {
     /**
-     * @return Map of connectionType as key and List of attributes as value
+     * @return Mapping the connectionType as the key to the list of attributes as the value.
      * 
      */
-    private final Map<String,Object> connectionAttributes;
+    private Map<String,Object> connectionAttributes;
     /**
-     * @return list of attributes for the dataAsset
+     * @return The list of attributes of the data asset.
      * 
      */
-    private final List<GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute> dataAssetAttributes;
-    private final @Nullable String description;
-    private final String key;
+    private List<GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute> dataAssetAttributes;
+    private @Nullable String description;
+    private String key;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetRegistryTypesTypesSummaryCollectionItem(
-        @CustomType.Parameter("connectionAttributes") Map<String,Object> connectionAttributes,
-        @CustomType.Parameter("dataAssetAttributes") List<GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute> dataAssetAttributes,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("name") String name) {
-        this.connectionAttributes = connectionAttributes;
-        this.dataAssetAttributes = dataAssetAttributes;
-        this.description = description;
-        this.key = key;
-        this.name = name;
-    }
-
+    private GetRegistryTypesTypesSummaryCollectionItem() {}
     /**
-     * @return Map of connectionType as key and List of attributes as value
+     * @return Mapping the connectionType as the key to the list of attributes as the value.
      * 
      */
     public Map<String,Object> connectionAttributes() {
         return this.connectionAttributes;
     }
     /**
-     * @return list of attributes for the dataAsset
+     * @return The list of attributes of the data asset.
      * 
      */
     public List<GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute> dataAssetAttributes() {
@@ -82,18 +69,14 @@ public final class GetRegistryTypesTypesSummaryCollectionItem {
     public static Builder builder(GetRegistryTypesTypesSummaryCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> connectionAttributes;
         private List<GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute> dataAssetAttributes;
         private @Nullable String description;
         private String key;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryTypesTypesSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectionAttributes = defaults.connectionAttributes;
@@ -103,10 +86,12 @@ public final class GetRegistryTypesTypesSummaryCollectionItem {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder connectionAttributes(Map<String,Object> connectionAttributes) {
             this.connectionAttributes = Objects.requireNonNull(connectionAttributes);
             return this;
         }
+        @CustomType.Setter
         public Builder dataAssetAttributes(List<GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute> dataAssetAttributes) {
             this.dataAssetAttributes = Objects.requireNonNull(dataAssetAttributes);
             return this;
@@ -114,19 +99,29 @@ public final class GetRegistryTypesTypesSummaryCollectionItem {
         public Builder dataAssetAttributes(GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute... dataAssetAttributes) {
             return dataAssetAttributes(List.of(dataAssetAttributes));
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetRegistryTypesTypesSummaryCollectionItem build() {
-            return new GetRegistryTypesTypesSummaryCollectionItem(connectionAttributes, dataAssetAttributes, description, key, name);
+        }
+        public GetRegistryTypesTypesSummaryCollectionItem build() {
+            final var o = new GetRegistryTypesTypesSummaryCollectionItem();
+            o.connectionAttributes = connectionAttributes;
+            o.dataAssetAttributes = dataAssetAttributes;
+            o.description = description;
+            o.key = key;
+            o.name = name;
+            return o;
         }
     }
 }

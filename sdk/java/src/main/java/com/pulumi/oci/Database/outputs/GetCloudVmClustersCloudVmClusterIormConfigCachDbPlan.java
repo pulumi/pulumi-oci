@@ -10,20 +10,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan {
-    private final String dbName;
-    private final String flashCacheLimit;
-    private final Integer share;
+    private String dbName;
+    private String flashCacheLimit;
+    private Integer share;
 
-    @CustomType.Constructor
-    private GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan(
-        @CustomType.Parameter("dbName") String dbName,
-        @CustomType.Parameter("flashCacheLimit") String flashCacheLimit,
-        @CustomType.Parameter("share") Integer share) {
-        this.dbName = dbName;
-        this.flashCacheLimit = flashCacheLimit;
-        this.share = share;
-    }
-
+    private GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan() {}
     public String dbName() {
         return this.dbName;
     }
@@ -41,16 +32,12 @@ public final class GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan {
     public static Builder builder(GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbName;
         private String flashCacheLimit;
         private Integer share;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbName = defaults.dbName;
@@ -58,19 +45,27 @@ public final class GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan {
     	      this.share = defaults.share;
         }
 
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
+        @CustomType.Setter
         public Builder flashCacheLimit(String flashCacheLimit) {
             this.flashCacheLimit = Objects.requireNonNull(flashCacheLimit);
             return this;
         }
+        @CustomType.Setter
         public Builder share(Integer share) {
             this.share = Objects.requireNonNull(share);
             return this;
-        }        public GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan build() {
-            return new GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan(dbName, flashCacheLimit, share);
+        }
+        public GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan build() {
+            final var o = new GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan();
+            o.dbName = dbName;
+            o.flashCacheLimit = flashCacheLimit;
+            o.share = share;
+            return o;
         }
     }
 }

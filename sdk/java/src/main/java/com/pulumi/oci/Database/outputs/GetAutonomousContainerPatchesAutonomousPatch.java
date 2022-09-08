@@ -13,77 +13,54 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
      * @return The text describing this patch package.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&amp;id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
      * 
      */
-    private final String patchModel;
+    private String patchModel;
     /**
      * @return First month of the quarter in which the patch was released.
      * 
      */
-    private final String quarter;
+    private String quarter;
     /**
      * @return The current state of the patch as a result of lastAction.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time that the patch was released.
      * 
      */
-    private final String timeReleased;
+    private String timeReleased;
     /**
      * @return The type of patch. BUNDLE is one example.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The version of this patch package.
      * 
      */
-    private final String version;
+    private String version;
     /**
      * @return Year in which the patch was released.
      * 
      */
-    private final String year;
+    private String year;
 
-    @CustomType.Constructor
-    private GetAutonomousContainerPatchesAutonomousPatch(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("patchModel") String patchModel,
-        @CustomType.Parameter("quarter") String quarter,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeReleased") String timeReleased,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("version") String version,
-        @CustomType.Parameter("year") String year) {
-        this.description = description;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.patchModel = patchModel;
-        this.quarter = quarter;
-        this.state = state;
-        this.timeReleased = timeReleased;
-        this.type = type;
-        this.version = version;
-        this.year = year;
-    }
-
+    private GetAutonomousContainerPatchesAutonomousPatch() {}
     /**
      * @return The text describing this patch package.
      * 
@@ -162,7 +139,7 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
     public static Builder builder(GetAutonomousContainerPatchesAutonomousPatch defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String id;
@@ -174,11 +151,7 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
         private String type;
         private String version;
         private String year;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousContainerPatchesAutonomousPatch defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -193,47 +166,69 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
     	      this.year = defaults.year;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder patchModel(String patchModel) {
             this.patchModel = Objects.requireNonNull(patchModel);
             return this;
         }
+        @CustomType.Setter
         public Builder quarter(String quarter) {
             this.quarter = Objects.requireNonNull(quarter);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
             this.timeReleased = Objects.requireNonNull(timeReleased);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
         }
+        @CustomType.Setter
         public Builder year(String year) {
             this.year = Objects.requireNonNull(year);
             return this;
-        }        public GetAutonomousContainerPatchesAutonomousPatch build() {
-            return new GetAutonomousContainerPatchesAutonomousPatch(description, id, lifecycleDetails, patchModel, quarter, state, timeReleased, type, version, year);
+        }
+        public GetAutonomousContainerPatchesAutonomousPatch build() {
+            final var o = new GetAutonomousContainerPatchesAutonomousPatch();
+            o.description = description;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.patchModel = patchModel;
+            o.quarter = quarter;
+            o.state = state;
+            o.timeReleased = timeReleased;
+            o.type = type;
+            o.version = version;
+            o.year = year;
+            return o;
         }
     }
 }

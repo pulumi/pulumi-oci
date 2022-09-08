@@ -15,21 +15,14 @@ public final class BdsInstanceComputeOnlyWorkerNodeShapeConfig {
      * @return The total amount of memory available to the node, in gigabytes
      * 
      */
-    private final @Nullable Integer memoryInGbs;
+    private @Nullable Integer memoryInGbs;
     /**
      * @return The total number of OCPUs available to the node.
      * 
      */
-    private final @Nullable Integer ocpus;
+    private @Nullable Integer ocpus;
 
-    @CustomType.Constructor
-    private BdsInstanceComputeOnlyWorkerNodeShapeConfig(
-        @CustomType.Parameter("memoryInGbs") @Nullable Integer memoryInGbs,
-        @CustomType.Parameter("ocpus") @Nullable Integer ocpus) {
-        this.memoryInGbs = memoryInGbs;
-        this.ocpus = ocpus;
-    }
-
+    private BdsInstanceComputeOnlyWorkerNodeShapeConfig() {}
     /**
      * @return The total amount of memory available to the node, in gigabytes
      * 
@@ -52,30 +45,32 @@ public final class BdsInstanceComputeOnlyWorkerNodeShapeConfig {
     public static Builder builder(BdsInstanceComputeOnlyWorkerNodeShapeConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer memoryInGbs;
         private @Nullable Integer ocpus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BdsInstanceComputeOnlyWorkerNodeShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
         public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
             this.memoryInGbs = memoryInGbs;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(@Nullable Integer ocpus) {
             this.ocpus = ocpus;
             return this;
-        }        public BdsInstanceComputeOnlyWorkerNodeShapeConfig build() {
-            return new BdsInstanceComputeOnlyWorkerNodeShapeConfig(memoryInGbs, ocpus);
+        }
+        public BdsInstanceComputeOnlyWorkerNodeShapeConfig build() {
+            final var o = new BdsInstanceComputeOnlyWorkerNodeShapeConfig();
+            o.memoryInGbs = memoryInGbs;
+            o.ocpus = ocpus;
+            return o;
         }
     }
 }

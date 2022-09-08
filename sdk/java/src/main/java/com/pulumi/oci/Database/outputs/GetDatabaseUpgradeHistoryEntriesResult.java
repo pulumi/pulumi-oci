@@ -14,41 +14,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseUpgradeHistoryEntriesResult {
-    private final String databaseId;
+    private String databaseId;
     /**
      * @return The list of database_upgrade_history_entries.
      * 
      */
-    private final List<GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry> databaseUpgradeHistoryEntries;
-    private final @Nullable List<GetDatabaseUpgradeHistoryEntriesFilter> filters;
+    private List<GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry> databaseUpgradeHistoryEntries;
+    private @Nullable List<GetDatabaseUpgradeHistoryEntriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String upgradeAction;
+    private @Nullable String state;
+    private @Nullable String upgradeAction;
 
-    @CustomType.Constructor
-    private GetDatabaseUpgradeHistoryEntriesResult(
-        @CustomType.Parameter("databaseId") String databaseId,
-        @CustomType.Parameter("databaseUpgradeHistoryEntries") List<GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry> databaseUpgradeHistoryEntries,
-        @CustomType.Parameter("filters") @Nullable List<GetDatabaseUpgradeHistoryEntriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("upgradeAction") @Nullable String upgradeAction) {
-        this.databaseId = databaseId;
-        this.databaseUpgradeHistoryEntries = databaseUpgradeHistoryEntries;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.upgradeAction = upgradeAction;
-    }
-
+    private GetDatabaseUpgradeHistoryEntriesResult() {}
     public String databaseId() {
         return this.databaseId;
     }
@@ -87,7 +72,7 @@ public final class GetDatabaseUpgradeHistoryEntriesResult {
     public static Builder builder(GetDatabaseUpgradeHistoryEntriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String databaseId;
         private List<GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry> databaseUpgradeHistoryEntries;
@@ -95,11 +80,7 @@ public final class GetDatabaseUpgradeHistoryEntriesResult {
         private String id;
         private @Nullable String state;
         private @Nullable String upgradeAction;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseUpgradeHistoryEntriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.databaseId = defaults.databaseId;
@@ -110,10 +91,12 @@ public final class GetDatabaseUpgradeHistoryEntriesResult {
     	      this.upgradeAction = defaults.upgradeAction;
         }
 
+        @CustomType.Setter
         public Builder databaseId(String databaseId) {
             this.databaseId = Objects.requireNonNull(databaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseUpgradeHistoryEntries(List<GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry> databaseUpgradeHistoryEntries) {
             this.databaseUpgradeHistoryEntries = Objects.requireNonNull(databaseUpgradeHistoryEntries);
             return this;
@@ -121,6 +104,7 @@ public final class GetDatabaseUpgradeHistoryEntriesResult {
         public Builder databaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry... databaseUpgradeHistoryEntries) {
             return databaseUpgradeHistoryEntries(List.of(databaseUpgradeHistoryEntries));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseUpgradeHistoryEntriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -128,19 +112,30 @@ public final class GetDatabaseUpgradeHistoryEntriesResult {
         public Builder filters(GetDatabaseUpgradeHistoryEntriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder upgradeAction(@Nullable String upgradeAction) {
             this.upgradeAction = upgradeAction;
             return this;
-        }        public GetDatabaseUpgradeHistoryEntriesResult build() {
-            return new GetDatabaseUpgradeHistoryEntriesResult(databaseId, databaseUpgradeHistoryEntries, filters, id, state, upgradeAction);
+        }
+        public GetDatabaseUpgradeHistoryEntriesResult build() {
+            final var o = new GetDatabaseUpgradeHistoryEntriesResult();
+            o.databaseId = databaseId;
+            o.databaseUpgradeHistoryEntries = databaseUpgradeHistoryEntries;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.upgradeAction = upgradeAction;
+            return o;
         }
     }
 }

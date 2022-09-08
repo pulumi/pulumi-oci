@@ -15,37 +15,22 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
      * @return The text string identifying the type of execution plan.
      * 
      */
-    private final String attribute;
+    private String attribute;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
+    private String id;
+    private String managedDatabaseId;
     /**
      * @return A SQL execution plan as a list of steps.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans;
-    private final String sqlObjectId;
-    private final String sqlTuningAdvisorTaskId;
+    private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans;
+    private String sqlObjectId;
+    private String sqlTuningAdvisorTaskId;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult(
-        @CustomType.Parameter("attribute") String attribute,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("plans") List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans,
-        @CustomType.Parameter("sqlObjectId") String sqlObjectId,
-        @CustomType.Parameter("sqlTuningAdvisorTaskId") String sqlTuningAdvisorTaskId) {
-        this.attribute = attribute;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.plans = plans;
-        this.sqlObjectId = sqlObjectId;
-        this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult() {}
     /**
      * @return The text string identifying the type of execution plan.
      * 
@@ -84,7 +69,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String attribute;
         private String id;
@@ -92,11 +77,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
         private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans;
         private String sqlObjectId;
         private String sqlTuningAdvisorTaskId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attribute = defaults.attribute;
@@ -107,18 +88,22 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
     	      this.sqlTuningAdvisorTaskId = defaults.sqlTuningAdvisorTaskId;
         }
 
+        @CustomType.Setter
         public Builder attribute(String attribute) {
             this.attribute = Objects.requireNonNull(attribute);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder plans(List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans) {
             this.plans = Objects.requireNonNull(plans);
             return this;
@@ -126,15 +111,25 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
         public Builder plans(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan... plans) {
             return plans(List.of(plans));
         }
+        @CustomType.Setter
         public Builder sqlObjectId(String sqlObjectId) {
             this.sqlObjectId = Objects.requireNonNull(sqlObjectId);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
             this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult(attribute, id, managedDatabaseId, plans, sqlObjectId, sqlTuningAdvisorTaskId);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult();
+            o.attribute = attribute;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.plans = plans;
+            o.sqlObjectId = sqlObjectId;
+            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            return o;
         }
     }
 }

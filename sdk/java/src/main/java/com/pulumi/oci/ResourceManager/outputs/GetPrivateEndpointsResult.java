@@ -18,48 +18,31 @@ public final class GetPrivateEndpointsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetPrivateEndpointsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetPrivateEndpointsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of private_endpoint_collection.
      * 
      */
-    private final List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections;
-    private final @Nullable String privateEndpointId;
+    private List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections;
+    private @Nullable String privateEndpointId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetPrivateEndpointsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetPrivateEndpointsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("privateEndpointCollections") List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections,
-        @CustomType.Parameter("privateEndpointId") @Nullable String privateEndpointId,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.privateEndpointCollections = privateEndpointCollections;
-        this.privateEndpointId = privateEndpointId;
-        this.vcnId = vcnId;
-    }
-
+    private GetPrivateEndpointsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
      * 
@@ -109,7 +92,7 @@ public final class GetPrivateEndpointsResult {
     public static Builder builder(GetPrivateEndpointsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
@@ -118,11 +101,7 @@ public final class GetPrivateEndpointsResult {
         private List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections;
         private @Nullable String privateEndpointId;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateEndpointsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,14 +113,17 @@ public final class GetPrivateEndpointsResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPrivateEndpointsFilter> filters) {
             this.filters = filters;
             return this;
@@ -149,10 +131,12 @@ public final class GetPrivateEndpointsResult {
         public Builder filters(GetPrivateEndpointsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpointCollections(List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections) {
             this.privateEndpointCollections = Objects.requireNonNull(privateEndpointCollections);
             return this;
@@ -160,15 +144,26 @@ public final class GetPrivateEndpointsResult {
         public Builder privateEndpointCollections(GetPrivateEndpointsPrivateEndpointCollection... privateEndpointCollections) {
             return privateEndpointCollections(List.of(privateEndpointCollections));
         }
+        @CustomType.Setter
         public Builder privateEndpointId(@Nullable String privateEndpointId) {
             this.privateEndpointId = privateEndpointId;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetPrivateEndpointsResult build() {
-            return new GetPrivateEndpointsResult(compartmentId, displayName, filters, id, privateEndpointCollections, privateEndpointId, vcnId);
+        }
+        public GetPrivateEndpointsResult build() {
+            final var o = new GetPrivateEndpointsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.privateEndpointCollections = privateEndpointCollections;
+            o.privateEndpointId = privateEndpointId;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

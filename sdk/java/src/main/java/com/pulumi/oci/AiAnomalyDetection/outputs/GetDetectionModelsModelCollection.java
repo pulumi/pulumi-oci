@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDetectionModelsModelCollection {
-    private final List<GetDetectionModelsModelCollectionItem> items;
+    private List<GetDetectionModelsModelCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDetectionModelsModelCollection(@CustomType.Parameter("items") List<GetDetectionModelsModelCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDetectionModelsModelCollection() {}
     public List<GetDetectionModelsModelCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDetectionModelsModelCollection {
     public static Builder builder(GetDetectionModelsModelCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDetectionModelsModelCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionModelsModelCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDetectionModelsModelCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDetectionModelsModelCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDetectionModelsModelCollection build() {
-            return new GetDetectionModelsModelCollection(items);
+        }
+        public GetDetectionModelsModelCollection build() {
+            final var o = new GetDetectionModelsModelCollection();
+            o.items = items;
+            return o;
         }
     }
 }

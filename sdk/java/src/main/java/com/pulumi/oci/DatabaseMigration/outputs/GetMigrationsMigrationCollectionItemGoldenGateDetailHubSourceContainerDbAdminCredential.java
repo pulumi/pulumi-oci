@@ -9,21 +9,14 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential {
-    private final String password;
+    private String password;
     /**
      * @return Administrator username
      * 
      */
-    private final String username;
+    private String username;
 
-    @CustomType.Constructor
-    private GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential(
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("username") String username) {
-        this.password = password;
-        this.username = username;
-    }
-
+    private GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential() {}
     public String password() {
         return this.password;
     }
@@ -42,30 +35,32 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailHubSource
     public static Builder builder(GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String password;
         private String username;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.password = defaults.password;
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder username(String username) {
             this.username = Objects.requireNonNull(username);
             return this;
-        }        public GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential build() {
-            return new GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential(password, username);
+        }
+        public GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential build() {
+            final var o = new GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential();
+            o.password = password;
+            o.username = username;
+            return o;
         }
     }
 }

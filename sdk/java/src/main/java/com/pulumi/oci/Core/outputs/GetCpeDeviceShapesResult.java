@@ -17,24 +17,15 @@ public final class GetCpeDeviceShapesResult {
      * @return The list of cpe_device_shapes.
      * 
      */
-    private final List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes;
-    private final @Nullable List<GetCpeDeviceShapesFilter> filters;
+    private List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes;
+    private @Nullable List<GetCpeDeviceShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetCpeDeviceShapesResult(
-        @CustomType.Parameter("cpeDeviceShapes") List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes,
-        @CustomType.Parameter("filters") @Nullable List<GetCpeDeviceShapesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.cpeDeviceShapes = cpeDeviceShapes;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetCpeDeviceShapesResult() {}
     /**
      * @return The list of cpe_device_shapes.
      * 
@@ -60,16 +51,12 @@ public final class GetCpeDeviceShapesResult {
     public static Builder builder(GetCpeDeviceShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes;
         private @Nullable List<GetCpeDeviceShapesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCpeDeviceShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cpeDeviceShapes = defaults.cpeDeviceShapes;
@@ -77,6 +64,7 @@ public final class GetCpeDeviceShapesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder cpeDeviceShapes(List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes) {
             this.cpeDeviceShapes = Objects.requireNonNull(cpeDeviceShapes);
             return this;
@@ -84,6 +72,7 @@ public final class GetCpeDeviceShapesResult {
         public Builder cpeDeviceShapes(GetCpeDeviceShapesCpeDeviceShape... cpeDeviceShapes) {
             return cpeDeviceShapes(List.of(cpeDeviceShapes));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCpeDeviceShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -91,11 +80,17 @@ public final class GetCpeDeviceShapesResult {
         public Builder filters(GetCpeDeviceShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetCpeDeviceShapesResult build() {
-            return new GetCpeDeviceShapesResult(cpeDeviceShapes, filters, id);
+        }
+        public GetCpeDeviceShapesResult build() {
+            final var o = new GetCpeDeviceShapesResult();
+            o.cpeDeviceShapes = cpeDeviceShapes;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

@@ -13,23 +13,12 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig {
-    private final Boolean autoBackupEnabled;
-    private final String autoBackupWindow;
-    private final List<GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
-    private final Integer recoveryWindowInDays;
+    private Boolean autoBackupEnabled;
+    private String autoBackupWindow;
+    private List<GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
+    private Integer recoveryWindowInDays;
 
-    @CustomType.Constructor
-    private GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig(
-        @CustomType.Parameter("autoBackupEnabled") Boolean autoBackupEnabled,
-        @CustomType.Parameter("autoBackupWindow") String autoBackupWindow,
-        @CustomType.Parameter("backupDestinationDetails") List<GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails,
-        @CustomType.Parameter("recoveryWindowInDays") Integer recoveryWindowInDays) {
-        this.autoBackupEnabled = autoBackupEnabled;
-        this.autoBackupWindow = autoBackupWindow;
-        this.backupDestinationDetails = backupDestinationDetails;
-        this.recoveryWindowInDays = recoveryWindowInDays;
-    }
-
+    private GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig() {}
     public Boolean autoBackupEnabled() {
         return this.autoBackupEnabled;
     }
@@ -50,17 +39,13 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig {
     public static Builder builder(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean autoBackupEnabled;
         private String autoBackupWindow;
         private List<GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
         private Integer recoveryWindowInDays;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoBackupEnabled = defaults.autoBackupEnabled;
@@ -69,14 +54,17 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig {
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
         }
 
+        @CustomType.Setter
         public Builder autoBackupEnabled(Boolean autoBackupEnabled) {
             this.autoBackupEnabled = Objects.requireNonNull(autoBackupEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder autoBackupWindow(String autoBackupWindow) {
             this.autoBackupWindow = Objects.requireNonNull(autoBackupWindow);
             return this;
         }
+        @CustomType.Setter
         public Builder backupDestinationDetails(List<GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails) {
             this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
             return this;
@@ -84,11 +72,18 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig {
         public Builder backupDestinationDetails(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
+        @CustomType.Setter
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
             this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
             return this;
-        }        public GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig build() {
-            return new GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig(autoBackupEnabled, autoBackupWindow, backupDestinationDetails, recoveryWindowInDays);
+        }
+        public GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig build() {
+            final var o = new GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig();
+            o.autoBackupEnabled = autoBackupEnabled;
+            o.autoBackupWindow = autoBackupWindow;
+            o.backupDestinationDetails = backupDestinationDetails;
+            o.recoveryWindowInDays = recoveryWindowInDays;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetManagedDatabasesAsmPropertiesAsmPropertyCollection {
      * @return An array of AsmPropertySummary resources.
      * 
      */
-    private final List<GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem> items;
+    private List<GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesAsmPropertiesAsmPropertyCollection(@CustomType.Parameter("items") List<GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabasesAsmPropertiesAsmPropertyCollection() {}
     /**
      * @return An array of AsmPropertySummary resources.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabasesAsmPropertiesAsmPropertyCollection {
     public static Builder builder(GetManagedDatabasesAsmPropertiesAsmPropertyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesAsmPropertiesAsmPropertyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabasesAsmPropertiesAsmPropertyCollection build() {
-            return new GetManagedDatabasesAsmPropertiesAsmPropertyCollection(items);
+        }
+        public GetManagedDatabasesAsmPropertiesAsmPropertyCollection build() {
+            final var o = new GetManagedDatabasesAsmPropertiesAsmPropertyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

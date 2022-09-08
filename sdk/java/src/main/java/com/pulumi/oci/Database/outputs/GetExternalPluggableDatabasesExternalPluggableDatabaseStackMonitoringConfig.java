@@ -13,21 +13,14 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabaseStackMo
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    private final String stackMonitoringConnectorId;
+    private String stackMonitoringConnectorId;
     /**
      * @return The status of Stack Monitoring.
      * 
      */
-    private final String stackMonitoringStatus;
+    private String stackMonitoringStatus;
 
-    @CustomType.Constructor
-    private GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig(
-        @CustomType.Parameter("stackMonitoringConnectorId") String stackMonitoringConnectorId,
-        @CustomType.Parameter("stackMonitoringStatus") String stackMonitoringStatus) {
-        this.stackMonitoringConnectorId = stackMonitoringConnectorId;
-        this.stackMonitoringStatus = stackMonitoringStatus;
-    }
-
+    private GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
@@ -50,30 +43,32 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabaseStackMo
     public static Builder builder(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String stackMonitoringConnectorId;
         private String stackMonitoringStatus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.stackMonitoringConnectorId = defaults.stackMonitoringConnectorId;
     	      this.stackMonitoringStatus = defaults.stackMonitoringStatus;
         }
 
+        @CustomType.Setter
         public Builder stackMonitoringConnectorId(String stackMonitoringConnectorId) {
             this.stackMonitoringConnectorId = Objects.requireNonNull(stackMonitoringConnectorId);
             return this;
         }
+        @CustomType.Setter
         public Builder stackMonitoringStatus(String stackMonitoringStatus) {
             this.stackMonitoringStatus = Objects.requireNonNull(stackMonitoringStatus);
             return this;
-        }        public GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig build() {
-            return new GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig(stackMonitoringConnectorId, stackMonitoringStatus);
+        }
+        public GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig build() {
+            final var o = new GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig();
+            o.stackMonitoringConnectorId = stackMonitoringConnectorId;
+            o.stackMonitoringStatus = stackMonitoringStatus;
+            return o;
         }
     }
 }

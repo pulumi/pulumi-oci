@@ -18,45 +18,30 @@ public final class GetAiPrivateEndpointsResult {
      * @return The list of ai_private_endpoint_collection.
      * 
      */
-    private final List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections;
+    private List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections;
     /**
      * @return Compartment Identifier.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Private Reverse Connection Endpoint display name.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAiPrivateEndpointsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAiPrivateEndpointsFilter> filters;
     /**
      * @return Unique identifier that is immutable.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the private endpoint resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetAiPrivateEndpointsResult(
-        @CustomType.Parameter("aiPrivateEndpointCollections") List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAiPrivateEndpointsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.aiPrivateEndpointCollections = aiPrivateEndpointCollections;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetAiPrivateEndpointsResult() {}
     /**
      * @return The list of ai_private_endpoint_collection.
      * 
@@ -103,7 +88,7 @@ public final class GetAiPrivateEndpointsResult {
     public static Builder builder(GetAiPrivateEndpointsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections;
         private String compartmentId;
@@ -111,11 +96,7 @@ public final class GetAiPrivateEndpointsResult {
         private @Nullable List<GetAiPrivateEndpointsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAiPrivateEndpointsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aiPrivateEndpointCollections = defaults.aiPrivateEndpointCollections;
@@ -126,6 +107,7 @@ public final class GetAiPrivateEndpointsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder aiPrivateEndpointCollections(List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections) {
             this.aiPrivateEndpointCollections = Objects.requireNonNull(aiPrivateEndpointCollections);
             return this;
@@ -133,14 +115,17 @@ public final class GetAiPrivateEndpointsResult {
         public Builder aiPrivateEndpointCollections(GetAiPrivateEndpointsAiPrivateEndpointCollection... aiPrivateEndpointCollections) {
             return aiPrivateEndpointCollections(List.of(aiPrivateEndpointCollections));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAiPrivateEndpointsFilter> filters) {
             this.filters = filters;
             return this;
@@ -148,15 +133,25 @@ public final class GetAiPrivateEndpointsResult {
         public Builder filters(GetAiPrivateEndpointsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetAiPrivateEndpointsResult build() {
-            return new GetAiPrivateEndpointsResult(aiPrivateEndpointCollections, compartmentId, displayName, filters, id, state);
+        }
+        public GetAiPrivateEndpointsResult build() {
+            final var o = new GetAiPrivateEndpointsResult();
+            o.aiPrivateEndpointCollections = aiPrivateEndpointCollections;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
      * 
      */
-    private final Boolean areLegacyImdsEndpointsDisabled;
+    private Boolean areLegacyImdsEndpointsDisabled;
 
-    @CustomType.Constructor
-    private GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption(@CustomType.Parameter("areLegacyImdsEndpointsDisabled") Boolean areLegacyImdsEndpointsDisabled) {
-        this.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
-    }
-
+    private GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption() {}
     /**
      * @return Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
      * 
@@ -35,24 +31,24 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     public static Builder builder(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean areLegacyImdsEndpointsDisabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areLegacyImdsEndpointsDisabled = defaults.areLegacyImdsEndpointsDisabled;
         }
 
+        @CustomType.Setter
         public Builder areLegacyImdsEndpointsDisabled(Boolean areLegacyImdsEndpointsDisabled) {
             this.areLegacyImdsEndpointsDisabled = Objects.requireNonNull(areLegacyImdsEndpointsDisabled);
             return this;
-        }        public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption build() {
-            return new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption(areLegacyImdsEndpointsDisabled);
+        }
+        public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption build() {
+            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption();
+            o.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
+            return o;
         }
     }
 }

@@ -16,13 +16,9 @@ public final class DiscoveryJobDiscoveryDetailsCredentialsItemProperties {
      * @return Key/Value pair of Property
      * 
      */
-    private final @Nullable Map<String,Object> propertiesMap;
+    private @Nullable Map<String,Object> propertiesMap;
 
-    @CustomType.Constructor
-    private DiscoveryJobDiscoveryDetailsCredentialsItemProperties(@CustomType.Parameter("propertiesMap") @Nullable Map<String,Object> propertiesMap) {
-        this.propertiesMap = propertiesMap;
-    }
-
+    private DiscoveryJobDiscoveryDetailsCredentialsItemProperties() {}
     /**
      * @return Key/Value pair of Property
      * 
@@ -38,24 +34,24 @@ public final class DiscoveryJobDiscoveryDetailsCredentialsItemProperties {
     public static Builder builder(DiscoveryJobDiscoveryDetailsCredentialsItemProperties defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> propertiesMap;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DiscoveryJobDiscoveryDetailsCredentialsItemProperties defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.propertiesMap = defaults.propertiesMap;
         }
 
+        @CustomType.Setter
         public Builder propertiesMap(@Nullable Map<String,Object> propertiesMap) {
             this.propertiesMap = propertiesMap;
             return this;
-        }        public DiscoveryJobDiscoveryDetailsCredentialsItemProperties build() {
-            return new DiscoveryJobDiscoveryDetailsCredentialsItemProperties(propertiesMap);
+        }
+        public DiscoveryJobDiscoveryDetailsCredentialsItemProperties build() {
+            final var o = new DiscoveryJobDiscoveryDetailsCredentialsItemProperties();
+            o.propertiesMap = propertiesMap;
+            return o;
         }
     }
 }

@@ -18,105 +18,74 @@ public final class GetApplicationsApplication {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the &#39;_&#39; (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{&#34;MY_FUNCTION_CONFIG&#34;: &#34;ConfVal&#34;}`
      * 
      */
-    private final Map<String,Object> config;
+    private Map<String,Object> config;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only applications with display names that match the display name string. Matching is exact.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return A filter to return only applications with the specified OCID.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Define the image signature verification policy for an application.
      * 
      */
-    private final List<GetApplicationsApplicationImagePolicyConfig> imagePolicyConfigs;
+    private List<GetApplicationsApplicationImagePolicyConfig> imagePolicyConfigs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      * 
      */
-    private final List<String> networkSecurityGroupIds;
+    private List<String> networkSecurityGroupIds;
     /**
      * @return A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
      * 
      */
-    private final List<String> subnetIds;
+    private List<String> subnetIds;
     /**
      * @return A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
      * 
      */
-    private final String syslogUrl;
+    private String syslogUrl;
     /**
      * @return The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Define the tracing configuration for an application.
      * 
      */
-    private final List<GetApplicationsApplicationTraceConfig> traceConfigs;
+    private List<GetApplicationsApplicationTraceConfig> traceConfigs;
 
-    @CustomType.Constructor
-    private GetApplicationsApplication(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("config") Map<String,Object> config,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imagePolicyConfigs") List<GetApplicationsApplicationImagePolicyConfig> imagePolicyConfigs,
-        @CustomType.Parameter("networkSecurityGroupIds") List<String> networkSecurityGroupIds,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetIds") List<String> subnetIds,
-        @CustomType.Parameter("syslogUrl") String syslogUrl,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("traceConfigs") List<GetApplicationsApplicationTraceConfig> traceConfigs) {
-        this.compartmentId = compartmentId;
-        this.config = config;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.imagePolicyConfigs = imagePolicyConfigs;
-        this.networkSecurityGroupIds = networkSecurityGroupIds;
-        this.state = state;
-        this.subnetIds = subnetIds;
-        this.syslogUrl = syslogUrl;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.traceConfigs = traceConfigs;
-    }
-
+    private GetApplicationsApplication() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
      * 
@@ -223,7 +192,7 @@ public final class GetApplicationsApplication {
     public static Builder builder(GetApplicationsApplication defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> config;
@@ -239,11 +208,7 @@ public final class GetApplicationsApplication {
         private String timeCreated;
         private String timeUpdated;
         private List<GetApplicationsApplicationTraceConfig> traceConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApplicationsApplication defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -262,30 +227,37 @@ public final class GetApplicationsApplication {
     	      this.traceConfigs = defaults.traceConfigs;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder config(Map<String,Object> config) {
             this.config = Objects.requireNonNull(config);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imagePolicyConfigs(List<GetApplicationsApplicationImagePolicyConfig> imagePolicyConfigs) {
             this.imagePolicyConfigs = Objects.requireNonNull(imagePolicyConfigs);
             return this;
@@ -293,6 +265,7 @@ public final class GetApplicationsApplication {
         public Builder imagePolicyConfigs(GetApplicationsApplicationImagePolicyConfig... imagePolicyConfigs) {
             return imagePolicyConfigs(List.of(imagePolicyConfigs));
         }
+        @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
             return this;
@@ -300,10 +273,12 @@ public final class GetApplicationsApplication {
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetIds(List<String> subnetIds) {
             this.subnetIds = Objects.requireNonNull(subnetIds);
             return this;
@@ -311,26 +286,46 @@ public final class GetApplicationsApplication {
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
         }
+        @CustomType.Setter
         public Builder syslogUrl(String syslogUrl) {
             this.syslogUrl = Objects.requireNonNull(syslogUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder traceConfigs(List<GetApplicationsApplicationTraceConfig> traceConfigs) {
             this.traceConfigs = Objects.requireNonNull(traceConfigs);
             return this;
         }
         public Builder traceConfigs(GetApplicationsApplicationTraceConfig... traceConfigs) {
             return traceConfigs(List.of(traceConfigs));
-        }        public GetApplicationsApplication build() {
-            return new GetApplicationsApplication(compartmentId, config, definedTags, displayName, freeformTags, id, imagePolicyConfigs, networkSecurityGroupIds, state, subnetIds, syslogUrl, timeCreated, timeUpdated, traceConfigs);
+        }
+        public GetApplicationsApplication build() {
+            final var o = new GetApplicationsApplication();
+            o.compartmentId = compartmentId;
+            o.config = config;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.imagePolicyConfigs = imagePolicyConfigs;
+            o.networkSecurityGroupIds = networkSecurityGroupIds;
+            o.state = state;
+            o.subnetIds = subnetIds;
+            o.syslogUrl = syslogUrl;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.traceConfigs = traceConfigs;
+            return o;
         }
     }
 }

@@ -16,68 +16,43 @@ public final class GetIndexResult {
      * @return Compartment Identifier.
      * 
      */
-    private final String compartmentId;
-    private final String id;
-    private final String indexName;
-    private final Boolean isIfNotExists;
+    private String compartmentId;
+    private String id;
+    private String indexName;
+    private Boolean isIfNotExists;
     /**
      * @return A set of keys for a secondary index.
      * 
      */
-    private final List<GetIndexKey> keys;
+    private List<GetIndexKey> keys;
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Index name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The state of an index.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return the OCID of the table to which this index belongs.
      * 
      */
-    private final String tableId;
+    private String tableId;
     /**
      * @return The name of the table to which this index belongs.
      * 
      */
-    private final String tableName;
-    private final String tableNameOrId;
+    private String tableName;
+    private String tableNameOrId;
 
-    @CustomType.Constructor
-    private GetIndexResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("indexName") String indexName,
-        @CustomType.Parameter("isIfNotExists") Boolean isIfNotExists,
-        @CustomType.Parameter("keys") List<GetIndexKey> keys,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("tableId") String tableId,
-        @CustomType.Parameter("tableName") String tableName,
-        @CustomType.Parameter("tableNameOrId") String tableNameOrId) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.indexName = indexName;
-        this.isIfNotExists = isIfNotExists;
-        this.keys = keys;
-        this.lifecycleDetails = lifecycleDetails;
-        this.name = name;
-        this.state = state;
-        this.tableId = tableId;
-        this.tableName = tableName;
-        this.tableNameOrId = tableNameOrId;
-    }
-
+    private GetIndexResult() {}
     /**
      * @return Compartment Identifier.
      * 
@@ -147,7 +122,7 @@ public final class GetIndexResult {
     public static Builder builder(GetIndexResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
@@ -160,11 +135,7 @@ public final class GetIndexResult {
         private String tableId;
         private String tableName;
         private String tableNameOrId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIndexResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -180,22 +151,27 @@ public final class GetIndexResult {
     	      this.tableNameOrId = defaults.tableNameOrId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder indexName(String indexName) {
             this.indexName = Objects.requireNonNull(indexName);
             return this;
         }
+        @CustomType.Setter
         public Builder isIfNotExists(Boolean isIfNotExists) {
             this.isIfNotExists = Objects.requireNonNull(isIfNotExists);
             return this;
         }
+        @CustomType.Setter
         public Builder keys(List<GetIndexKey> keys) {
             this.keys = Objects.requireNonNull(keys);
             return this;
@@ -203,31 +179,50 @@ public final class GetIndexResult {
         public Builder keys(GetIndexKey... keys) {
             return keys(List.of(keys));
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder tableId(String tableId) {
             this.tableId = Objects.requireNonNull(tableId);
             return this;
         }
+        @CustomType.Setter
         public Builder tableName(String tableName) {
             this.tableName = Objects.requireNonNull(tableName);
             return this;
         }
+        @CustomType.Setter
         public Builder tableNameOrId(String tableNameOrId) {
             this.tableNameOrId = Objects.requireNonNull(tableNameOrId);
             return this;
-        }        public GetIndexResult build() {
-            return new GetIndexResult(compartmentId, id, indexName, isIfNotExists, keys, lifecycleDetails, name, state, tableId, tableName, tableNameOrId);
+        }
+        public GetIndexResult build() {
+            final var o = new GetIndexResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.indexName = indexName;
+            o.isIfNotExists = isIfNotExists;
+            o.keys = keys;
+            o.lifecycleDetails = lifecycleDetails;
+            o.name = name;
+            o.state = state;
+            o.tableId = tableId;
+            o.tableName = tableName;
+            o.tableNameOrId = tableNameOrId;
+            return o;
         }
     }
 }

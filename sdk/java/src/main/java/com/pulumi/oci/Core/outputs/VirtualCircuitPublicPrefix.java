@@ -13,13 +13,9 @@ public final class VirtualCircuitPublicPrefix {
      * @return (Updatable) An individual public IP prefix (CIDR) to add to the public virtual circuit. All prefix sizes are allowed.
      * 
      */
-    private final String cidrBlock;
+    private String cidrBlock;
 
-    @CustomType.Constructor
-    private VirtualCircuitPublicPrefix(@CustomType.Parameter("cidrBlock") String cidrBlock) {
-        this.cidrBlock = cidrBlock;
-    }
-
+    private VirtualCircuitPublicPrefix() {}
     /**
      * @return (Updatable) An individual public IP prefix (CIDR) to add to the public virtual circuit. All prefix sizes are allowed.
      * 
@@ -35,24 +31,24 @@ public final class VirtualCircuitPublicPrefix {
     public static Builder builder(VirtualCircuitPublicPrefix defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cidrBlock;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VirtualCircuitPublicPrefix defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidrBlock = defaults.cidrBlock;
         }
 
+        @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = Objects.requireNonNull(cidrBlock);
             return this;
-        }        public VirtualCircuitPublicPrefix build() {
-            return new VirtualCircuitPublicPrefix(cidrBlock);
+        }
+        public VirtualCircuitPublicPrefix build() {
+            final var o = new VirtualCircuitPublicPrefix();
+            o.cidrBlock = cidrBlock;
+            return o;
         }
     }
 }

@@ -18,41 +18,26 @@ public final class GetPreauthrequestsResult {
      * @return The name of the bucket.  Example: `my-new-bucket1`
      * 
      */
-    private final String bucket;
-    private final @Nullable List<GetPreauthrequestsFilter> filters;
+    private String bucket;
+    private @Nullable List<GetPreauthrequestsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The Object Storage namespace used for the request.
      * 
      */
-    private final String namespace;
-    private final @Nullable String objectNamePrefix;
+    private String namespace;
+    private @Nullable String objectNamePrefix;
     /**
      * @return The list of preauthenticated_requests.
      * 
      */
-    private final List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests;
+    private List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests;
 
-    @CustomType.Constructor
-    private GetPreauthrequestsResult(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("filters") @Nullable List<GetPreauthrequestsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("objectNamePrefix") @Nullable String objectNamePrefix,
-        @CustomType.Parameter("preauthenticatedRequests") List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests) {
-        this.bucket = bucket;
-        this.filters = filters;
-        this.id = id;
-        this.namespace = namespace;
-        this.objectNamePrefix = objectNamePrefix;
-        this.preauthenticatedRequests = preauthenticatedRequests;
-    }
-
+    private GetPreauthrequestsResult() {}
     /**
      * @return The name of the bucket.  Example: `my-new-bucket1`
      * 
@@ -95,7 +80,7 @@ public final class GetPreauthrequestsResult {
     public static Builder builder(GetPreauthrequestsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private @Nullable List<GetPreauthrequestsFilter> filters;
@@ -103,11 +88,7 @@ public final class GetPreauthrequestsResult {
         private String namespace;
         private @Nullable String objectNamePrefix;
         private List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPreauthrequestsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -118,10 +99,12 @@ public final class GetPreauthrequestsResult {
     	      this.preauthenticatedRequests = defaults.preauthenticatedRequests;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPreauthrequestsFilter> filters) {
             this.filters = filters;
             return this;
@@ -129,26 +112,38 @@ public final class GetPreauthrequestsResult {
         public Builder filters(GetPreauthrequestsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder objectNamePrefix(@Nullable String objectNamePrefix) {
             this.objectNamePrefix = objectNamePrefix;
             return this;
         }
+        @CustomType.Setter
         public Builder preauthenticatedRequests(List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests) {
             this.preauthenticatedRequests = Objects.requireNonNull(preauthenticatedRequests);
             return this;
         }
         public Builder preauthenticatedRequests(GetPreauthrequestsPreauthenticatedRequest... preauthenticatedRequests) {
             return preauthenticatedRequests(List.of(preauthenticatedRequests));
-        }        public GetPreauthrequestsResult build() {
-            return new GetPreauthrequestsResult(bucket, filters, id, namespace, objectNamePrefix, preauthenticatedRequests);
+        }
+        public GetPreauthrequestsResult build() {
+            final var o = new GetPreauthrequestsResult();
+            o.bucket = bucket;
+            o.filters = filters;
+            o.id = id;
+            o.namespace = namespace;
+            o.objectNamePrefix = objectNamePrefix;
+            o.preauthenticatedRequests = preauthenticatedRequests;
+            return o;
         }
     }
 }

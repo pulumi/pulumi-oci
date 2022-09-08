@@ -15,63 +15,44 @@ public final class GetEventsAuditEvent {
      * @return The version of the CloudEvents specification. The structure of the envelope follows the  [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
      * 
      */
-    private final String cloudEventsVersion;
+    private String cloudEventsVersion;
     /**
      * @return The content type of the data contained in `data`.  Example: `application/json`
      * 
      */
-    private final String contentType;
+    private String contentType;
     /**
      * @return The payload of the event. Information within `data` comes from the resource emitting the event.
      * 
      */
-    private final List<GetEventsAuditEventData> datas;
+    private List<GetEventsAuditEventData> datas;
     /**
      * @return The GUID of the event.
      * 
      */
-    private final String eventId;
+    private String eventId;
     /**
      * @return The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.252Z`
      * 
      */
-    private final String eventTime;
+    private String eventTime;
     /**
      * @return The type of event that happened.
      * 
      */
-    private final String eventType;
+    private String eventType;
     /**
      * @return The version of the event type. This version applies to the payload of the event, not the envelope. Use `cloudEventsVersion` to determine the version of the envelope.  Example: `2.0`
      * 
      */
-    private final String eventTypeVersion;
+    private String eventTypeVersion;
     /**
      * @return The source of the event.  Example: `ComputeApi`
      * 
      */
-    private final String source;
+    private String source;
 
-    @CustomType.Constructor
-    private GetEventsAuditEvent(
-        @CustomType.Parameter("cloudEventsVersion") String cloudEventsVersion,
-        @CustomType.Parameter("contentType") String contentType,
-        @CustomType.Parameter("datas") List<GetEventsAuditEventData> datas,
-        @CustomType.Parameter("eventId") String eventId,
-        @CustomType.Parameter("eventTime") String eventTime,
-        @CustomType.Parameter("eventType") String eventType,
-        @CustomType.Parameter("eventTypeVersion") String eventTypeVersion,
-        @CustomType.Parameter("source") String source) {
-        this.cloudEventsVersion = cloudEventsVersion;
-        this.contentType = contentType;
-        this.datas = datas;
-        this.eventId = eventId;
-        this.eventTime = eventTime;
-        this.eventType = eventType;
-        this.eventTypeVersion = eventTypeVersion;
-        this.source = source;
-    }
-
+    private GetEventsAuditEvent() {}
     /**
      * @return The version of the CloudEvents specification. The structure of the envelope follows the  [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
      * 
@@ -136,7 +117,7 @@ public final class GetEventsAuditEvent {
     public static Builder builder(GetEventsAuditEvent defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cloudEventsVersion;
         private String contentType;
@@ -146,11 +127,7 @@ public final class GetEventsAuditEvent {
         private String eventType;
         private String eventTypeVersion;
         private String source;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEventsAuditEvent defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cloudEventsVersion = defaults.cloudEventsVersion;
@@ -163,14 +140,17 @@ public final class GetEventsAuditEvent {
     	      this.source = defaults.source;
         }
 
+        @CustomType.Setter
         public Builder cloudEventsVersion(String cloudEventsVersion) {
             this.cloudEventsVersion = Objects.requireNonNull(cloudEventsVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder contentType(String contentType) {
             this.contentType = Objects.requireNonNull(contentType);
             return this;
         }
+        @CustomType.Setter
         public Builder datas(List<GetEventsAuditEventData> datas) {
             this.datas = Objects.requireNonNull(datas);
             return this;
@@ -178,27 +158,42 @@ public final class GetEventsAuditEvent {
         public Builder datas(GetEventsAuditEventData... datas) {
             return datas(List.of(datas));
         }
+        @CustomType.Setter
         public Builder eventId(String eventId) {
             this.eventId = Objects.requireNonNull(eventId);
             return this;
         }
+        @CustomType.Setter
         public Builder eventTime(String eventTime) {
             this.eventTime = Objects.requireNonNull(eventTime);
             return this;
         }
+        @CustomType.Setter
         public Builder eventType(String eventType) {
             this.eventType = Objects.requireNonNull(eventType);
             return this;
         }
+        @CustomType.Setter
         public Builder eventTypeVersion(String eventTypeVersion) {
             this.eventTypeVersion = Objects.requireNonNull(eventTypeVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
-        }        public GetEventsAuditEvent build() {
-            return new GetEventsAuditEvent(cloudEventsVersion, contentType, datas, eventId, eventTime, eventType, eventTypeVersion, source);
+        }
+        public GetEventsAuditEvent build() {
+            final var o = new GetEventsAuditEvent();
+            o.cloudEventsVersion = cloudEventsVersion;
+            o.contentType = contentType;
+            o.datas = datas;
+            o.eventId = eventId;
+            o.eventTime = eventTime;
+            o.eventType = eventType;
+            o.eventTypeVersion = eventTypeVersion;
+            o.source = source;
+            return o;
         }
     }
 }

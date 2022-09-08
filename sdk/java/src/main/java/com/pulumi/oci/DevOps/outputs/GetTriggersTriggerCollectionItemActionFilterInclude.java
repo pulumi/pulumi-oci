@@ -4,7 +4,9 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DevOps.outputs.GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -13,27 +15,24 @@ public final class GetTriggersTriggerCollectionItemActionFilterInclude {
      * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
-    private final String baseRef;
+    private String baseRef;
+    private List<GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter> fileFilters;
     /**
      * @return Branch for push event; source branch for pull requests.
      * 
      */
-    private final String headRef;
+    private String headRef;
 
-    @CustomType.Constructor
-    private GetTriggersTriggerCollectionItemActionFilterInclude(
-        @CustomType.Parameter("baseRef") String baseRef,
-        @CustomType.Parameter("headRef") String headRef) {
-        this.baseRef = baseRef;
-        this.headRef = headRef;
-    }
-
+    private GetTriggersTriggerCollectionItemActionFilterInclude() {}
     /**
      * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
     public String baseRef() {
         return this.baseRef;
+    }
+    public List<GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter> fileFilters() {
+        return this.fileFilters;
     }
     /**
      * @return Branch for push event; source branch for pull requests.
@@ -50,30 +49,43 @@ public final class GetTriggersTriggerCollectionItemActionFilterInclude {
     public static Builder builder(GetTriggersTriggerCollectionItemActionFilterInclude defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String baseRef;
+        private List<GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter> fileFilters;
         private String headRef;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTriggersTriggerCollectionItemActionFilterInclude defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baseRef = defaults.baseRef;
+    	      this.fileFilters = defaults.fileFilters;
     	      this.headRef = defaults.headRef;
         }
 
+        @CustomType.Setter
         public Builder baseRef(String baseRef) {
             this.baseRef = Objects.requireNonNull(baseRef);
             return this;
         }
+        @CustomType.Setter
+        public Builder fileFilters(List<GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter> fileFilters) {
+            this.fileFilters = Objects.requireNonNull(fileFilters);
+            return this;
+        }
+        public Builder fileFilters(GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter... fileFilters) {
+            return fileFilters(List.of(fileFilters));
+        }
+        @CustomType.Setter
         public Builder headRef(String headRef) {
             this.headRef = Objects.requireNonNull(headRef);
             return this;
-        }        public GetTriggersTriggerCollectionItemActionFilterInclude build() {
-            return new GetTriggersTriggerCollectionItemActionFilterInclude(baseRef, headRef);
+        }
+        public GetTriggersTriggerCollectionItemActionFilterInclude build() {
+            final var o = new GetTriggersTriggerCollectionItemActionFilterInclude();
+            o.baseRef = baseRef;
+            o.fileFilters = fileFilters;
+            o.headRef = headRef;
+            return o;
         }
     }
 }

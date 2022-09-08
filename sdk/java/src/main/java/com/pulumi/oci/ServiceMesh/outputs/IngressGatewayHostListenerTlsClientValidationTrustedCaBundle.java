@@ -15,28 +15,19 @@ public final class IngressGatewayHostListenerTlsClientValidationTrustedCaBundle 
      * @return (Updatable) The OCID of the CA Bundle resource.
      * 
      */
-    private final @Nullable String caBundleId;
+    private @Nullable String caBundleId;
     /**
      * @return (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
      * 
      */
-    private final @Nullable String secretName;
+    private @Nullable String secretName;
     /**
      * @return (Updatable) Type of certificate.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private IngressGatewayHostListenerTlsClientValidationTrustedCaBundle(
-        @CustomType.Parameter("caBundleId") @Nullable String caBundleId,
-        @CustomType.Parameter("secretName") @Nullable String secretName,
-        @CustomType.Parameter("type") String type) {
-        this.caBundleId = caBundleId;
-        this.secretName = secretName;
-        this.type = type;
-    }
-
+    private IngressGatewayHostListenerTlsClientValidationTrustedCaBundle() {}
     /**
      * @return (Updatable) The OCID of the CA Bundle resource.
      * 
@@ -66,16 +57,12 @@ public final class IngressGatewayHostListenerTlsClientValidationTrustedCaBundle 
     public static Builder builder(IngressGatewayHostListenerTlsClientValidationTrustedCaBundle defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String caBundleId;
         private @Nullable String secretName;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IngressGatewayHostListenerTlsClientValidationTrustedCaBundle defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.caBundleId = defaults.caBundleId;
@@ -83,19 +70,27 @@ public final class IngressGatewayHostListenerTlsClientValidationTrustedCaBundle 
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder caBundleId(@Nullable String caBundleId) {
             this.caBundleId = caBundleId;
             return this;
         }
+        @CustomType.Setter
         public Builder secretName(@Nullable String secretName) {
             this.secretName = secretName;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public IngressGatewayHostListenerTlsClientValidationTrustedCaBundle build() {
-            return new IngressGatewayHostListenerTlsClientValidationTrustedCaBundle(caBundleId, secretName, type);
+        }
+        public IngressGatewayHostListenerTlsClientValidationTrustedCaBundle build() {
+            final var o = new IngressGatewayHostListenerTlsClientValidationTrustedCaBundle();
+            o.caBundleId = caBundleId;
+            o.secretName = secretName;
+            o.type = type;
+            return o;
         }
     }
 }

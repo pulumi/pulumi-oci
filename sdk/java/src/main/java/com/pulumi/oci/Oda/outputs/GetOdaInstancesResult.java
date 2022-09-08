@@ -18,45 +18,30 @@ public final class GetOdaInstancesResult {
      * @return Identifier of the compartment that the instance belongs to.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return User-defined name for the Digital Assistant instance. Avoid entering confidential information. You can change this value.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetOdaInstancesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetOdaInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of oda_instances.
      * 
      */
-    private final List<GetOdaInstancesOdaInstance> odaInstances;
+    private List<GetOdaInstancesOdaInstance> odaInstances;
     /**
      * @return The current state of the Digital Assistant instance.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetOdaInstancesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetOdaInstancesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("odaInstances") List<GetOdaInstancesOdaInstance> odaInstances,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.odaInstances = odaInstances;
-        this.state = state;
-    }
-
+    private GetOdaInstancesResult() {}
     /**
      * @return Identifier of the compartment that the instance belongs to.
      * 
@@ -103,7 +88,7 @@ public final class GetOdaInstancesResult {
     public static Builder builder(GetOdaInstancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetOdaInstancesResult {
         private String id;
         private List<GetOdaInstancesOdaInstance> odaInstances;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOdaInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetOdaInstancesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOdaInstancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetOdaInstancesResult {
         public Builder filters(GetOdaInstancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder odaInstances(List<GetOdaInstancesOdaInstance> odaInstances) {
             this.odaInstances = Objects.requireNonNull(odaInstances);
             return this;
@@ -152,11 +138,20 @@ public final class GetOdaInstancesResult {
         public Builder odaInstances(GetOdaInstancesOdaInstance... odaInstances) {
             return odaInstances(List.of(odaInstances));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetOdaInstancesResult build() {
-            return new GetOdaInstancesResult(compartmentId, displayName, filters, id, odaInstances, state);
+        }
+        public GetOdaInstancesResult build() {
+            final var o = new GetOdaInstancesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.odaInstances = odaInstances;
+            o.state = state;
+            return o;
         }
     }
 }

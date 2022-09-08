@@ -15,56 +15,39 @@ public final class GetBackendSetsBackendsetBackend {
      * @return Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
      * 
      */
-    private final Boolean backup;
+    private Boolean backup;
     /**
      * @return Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
      * 
      */
-    private final Boolean drain;
+    private Boolean drain;
     /**
      * @return The IP address of the backend server.  Example: `10.0.0.3`
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return A friendly name for the backend set. It must be unique and it cannot be changed.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
-    private final Boolean offline;
+    private Boolean offline;
     /**
      * @return The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
      */
-    private final Integer weight;
+    private Integer weight;
 
-    @CustomType.Constructor
-    private GetBackendSetsBackendsetBackend(
-        @CustomType.Parameter("backup") Boolean backup,
-        @CustomType.Parameter("drain") Boolean drain,
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("offline") Boolean offline,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("weight") Integer weight) {
-        this.backup = backup;
-        this.drain = drain;
-        this.ipAddress = ipAddress;
-        this.name = name;
-        this.offline = offline;
-        this.port = port;
-        this.weight = weight;
-    }
-
+    private GetBackendSetsBackendsetBackend() {}
     /**
      * @return Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
      * 
@@ -122,7 +105,7 @@ public final class GetBackendSetsBackendsetBackend {
     public static Builder builder(GetBackendSetsBackendsetBackend defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean backup;
         private Boolean drain;
@@ -131,11 +114,7 @@ public final class GetBackendSetsBackendsetBackend {
         private Boolean offline;
         private Integer port;
         private Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendSetsBackendsetBackend defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backup = defaults.backup;
@@ -147,35 +126,51 @@ public final class GetBackendSetsBackendsetBackend {
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder backup(Boolean backup) {
             this.backup = Objects.requireNonNull(backup);
             return this;
         }
+        @CustomType.Setter
         public Builder drain(Boolean drain) {
             this.drain = Objects.requireNonNull(drain);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder offline(Boolean offline) {
             this.offline = Objects.requireNonNull(offline);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(Integer weight) {
             this.weight = Objects.requireNonNull(weight);
             return this;
-        }        public GetBackendSetsBackendsetBackend build() {
-            return new GetBackendSetsBackendsetBackend(backup, drain, ipAddress, name, offline, port, weight);
+        }
+        public GetBackendSetsBackendsetBackend build() {
+            final var o = new GetBackendSetsBackendsetBackend();
+            o.backup = backup;
+            o.drain = drain;
+            o.ipAddress = ipAddress;
+            o.name = name;
+            o.offline = offline;
+            o.port = port;
+            o.weight = weight;
+            return o;
         }
     }
 }

@@ -19,41 +19,26 @@ public final class GetLogGroupsResult {
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetLogGroupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetLogGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isCompartmentIdInSubtree;
+    private String id;
+    private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return The list of log_groups.
      * 
      */
-    private final List<GetLogGroupsLogGroup> logGroups;
+    private List<GetLogGroupsLogGroup> logGroups;
 
-    @CustomType.Constructor
-    private GetLogGroupsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetLogGroupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCompartmentIdInSubtree") @Nullable Boolean isCompartmentIdInSubtree,
-        @CustomType.Parameter("logGroups") List<GetLogGroupsLogGroup> logGroups) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-        this.logGroups = logGroups;
-    }
-
+    private GetLogGroupsResult() {}
     /**
      * @return The OCID of the compartment that the resource belongs to.
      * 
@@ -96,7 +81,7 @@ public final class GetLogGroupsResult {
     public static Builder builder(GetLogGroupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -104,11 +89,7 @@ public final class GetLogGroupsResult {
         private String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
         private List<GetLogGroupsLogGroup> logGroups;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -119,14 +100,17 @@ public final class GetLogGroupsResult {
     	      this.logGroups = defaults.logGroups;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLogGroupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -134,22 +118,33 @@ public final class GetLogGroupsResult {
         public Builder filters(GetLogGroupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder logGroups(List<GetLogGroupsLogGroup> logGroups) {
             this.logGroups = Objects.requireNonNull(logGroups);
             return this;
         }
         public Builder logGroups(GetLogGroupsLogGroup... logGroups) {
             return logGroups(List.of(logGroups));
-        }        public GetLogGroupsResult build() {
-            return new GetLogGroupsResult(compartmentId, displayName, filters, id, isCompartmentIdInSubtree, logGroups);
+        }
+        public GetLogGroupsResult build() {
+            final var o = new GetLogGroupsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            o.logGroups = logGroups;
+            return o;
         }
     }
 }

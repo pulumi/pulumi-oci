@@ -19,195 +19,136 @@ public final class GetInvoiceResult {
      * @return Address details model
      * 
      */
-    private final List<GetInvoiceBillToAddress> billToAddresses;
-    private final String compartmentId;
+    private List<GetInvoiceBillToAddress> billToAddresses;
+    private String compartmentId;
     /**
      * @return Currency details model
      * 
      */
-    private final List<GetInvoiceCurrency> currencies;
+    private List<GetInvoiceCurrency> currencies;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Transaction identifier
      * 
      */
-    private final String internalInvoiceId;
+    private String internalInvoiceId;
     /**
      * @return Total amount of invoice
      * 
      */
-    private final Double invoiceAmount;
+    private Double invoiceAmount;
     /**
      * @return Invoice amount adjust
      * 
      */
-    private final Double invoiceAmountAdjusted;
+    private Double invoiceAmountAdjusted;
     /**
      * @return Invoice amount applied
      * 
      */
-    private final Double invoiceAmountApplied;
+    private Double invoiceAmountApplied;
     /**
      * @return Invoice amount credit
      * 
      */
-    private final Double invoiceAmountCredited;
+    private Double invoiceAmountCredited;
     /**
      * @return Balance of invoice
      * 
      */
-    private final Double invoiceAmountDue;
+    private Double invoiceAmountDue;
     /**
      * @return Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
      * 
      */
-    private final String invoiceId;
+    private String invoiceId;
     /**
      * @return Invoice external reference
      * 
      */
-    private final String invoiceNumber;
+    private String invoiceNumber;
     /**
      * @return Invoice PO number
      * 
      */
-    private final String invoicePoNumber;
+    private String invoicePoNumber;
     /**
      * @return Invoice reference number
      * 
      */
-    private final String invoiceRefNumber;
+    private String invoiceRefNumber;
     /**
      * @return Invoice status
      * 
      */
-    private final String invoiceStatus;
+    private String invoiceStatus;
     /**
      * @return Type of invoice
      * 
      */
-    private final String invoiceType;
+    private String invoiceType;
     /**
      * @return Is credit card payment eligible
      * 
      */
-    private final Boolean isCreditCardPayable;
+    private Boolean isCreditCardPayable;
     /**
      * @return Is pdf download access allowed
      * 
      */
-    private final Boolean isDisplayDownloadPdf;
+    private Boolean isDisplayDownloadPdf;
     /**
      * @return Whether invoice can be payed
      * 
      */
-    private final Boolean isPayable;
+    private Boolean isPayable;
     /**
      * @return Is emailing pdf allowed
      * 
      */
-    private final Boolean isPdfEmailAvailable;
+    private Boolean isPdfEmailAvailable;
     /**
      * @return Payment related details
      * 
      */
-    private final List<GetInvoiceLastPaymentDetail> lastPaymentDetails;
-    private final String ospHomeRegion;
+    private List<GetInvoiceLastPaymentDetail> lastPaymentDetails;
+    private String ospHomeRegion;
     /**
      * @return Payment terms
      * 
      */
-    private final String paymentTerms;
+    private String paymentTerms;
     /**
      * @return Preferred Email on the invoice
      * 
      */
-    private final String preferredEmail;
+    private String preferredEmail;
     /**
      * @return List of subscription identifiers
      * 
      */
-    private final List<String> subscriptionIds;
+    private List<String> subscriptionIds;
     /**
      * @return Tax of invoice amount
      * 
      */
-    private final Double tax;
+    private Double tax;
     /**
      * @return Date of invoice
      * 
      */
-    private final String timeInvoice;
+    private String timeInvoice;
     /**
      * @return Due date of invoice
      * 
      */
-    private final String timeInvoiceDue;
+    private String timeInvoiceDue;
 
-    @CustomType.Constructor
-    private GetInvoiceResult(
-        @CustomType.Parameter("billToAddresses") List<GetInvoiceBillToAddress> billToAddresses,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("currencies") List<GetInvoiceCurrency> currencies,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("internalInvoiceId") String internalInvoiceId,
-        @CustomType.Parameter("invoiceAmount") Double invoiceAmount,
-        @CustomType.Parameter("invoiceAmountAdjusted") Double invoiceAmountAdjusted,
-        @CustomType.Parameter("invoiceAmountApplied") Double invoiceAmountApplied,
-        @CustomType.Parameter("invoiceAmountCredited") Double invoiceAmountCredited,
-        @CustomType.Parameter("invoiceAmountDue") Double invoiceAmountDue,
-        @CustomType.Parameter("invoiceId") String invoiceId,
-        @CustomType.Parameter("invoiceNumber") String invoiceNumber,
-        @CustomType.Parameter("invoicePoNumber") String invoicePoNumber,
-        @CustomType.Parameter("invoiceRefNumber") String invoiceRefNumber,
-        @CustomType.Parameter("invoiceStatus") String invoiceStatus,
-        @CustomType.Parameter("invoiceType") String invoiceType,
-        @CustomType.Parameter("isCreditCardPayable") Boolean isCreditCardPayable,
-        @CustomType.Parameter("isDisplayDownloadPdf") Boolean isDisplayDownloadPdf,
-        @CustomType.Parameter("isPayable") Boolean isPayable,
-        @CustomType.Parameter("isPdfEmailAvailable") Boolean isPdfEmailAvailable,
-        @CustomType.Parameter("lastPaymentDetails") List<GetInvoiceLastPaymentDetail> lastPaymentDetails,
-        @CustomType.Parameter("ospHomeRegion") String ospHomeRegion,
-        @CustomType.Parameter("paymentTerms") String paymentTerms,
-        @CustomType.Parameter("preferredEmail") String preferredEmail,
-        @CustomType.Parameter("subscriptionIds") List<String> subscriptionIds,
-        @CustomType.Parameter("tax") Double tax,
-        @CustomType.Parameter("timeInvoice") String timeInvoice,
-        @CustomType.Parameter("timeInvoiceDue") String timeInvoiceDue) {
-        this.billToAddresses = billToAddresses;
-        this.compartmentId = compartmentId;
-        this.currencies = currencies;
-        this.id = id;
-        this.internalInvoiceId = internalInvoiceId;
-        this.invoiceAmount = invoiceAmount;
-        this.invoiceAmountAdjusted = invoiceAmountAdjusted;
-        this.invoiceAmountApplied = invoiceAmountApplied;
-        this.invoiceAmountCredited = invoiceAmountCredited;
-        this.invoiceAmountDue = invoiceAmountDue;
-        this.invoiceId = invoiceId;
-        this.invoiceNumber = invoiceNumber;
-        this.invoicePoNumber = invoicePoNumber;
-        this.invoiceRefNumber = invoiceRefNumber;
-        this.invoiceStatus = invoiceStatus;
-        this.invoiceType = invoiceType;
-        this.isCreditCardPayable = isCreditCardPayable;
-        this.isDisplayDownloadPdf = isDisplayDownloadPdf;
-        this.isPayable = isPayable;
-        this.isPdfEmailAvailable = isPdfEmailAvailable;
-        this.lastPaymentDetails = lastPaymentDetails;
-        this.ospHomeRegion = ospHomeRegion;
-        this.paymentTerms = paymentTerms;
-        this.preferredEmail = preferredEmail;
-        this.subscriptionIds = subscriptionIds;
-        this.tax = tax;
-        this.timeInvoice = timeInvoice;
-        this.timeInvoiceDue = timeInvoiceDue;
-    }
-
+    private GetInvoiceResult() {}
     /**
      * @return Address details model
      * 
@@ -404,7 +345,7 @@ public final class GetInvoiceResult {
     public static Builder builder(GetInvoiceResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetInvoiceBillToAddress> billToAddresses;
         private String compartmentId;
@@ -434,11 +375,7 @@ public final class GetInvoiceResult {
         private Double tax;
         private String timeInvoice;
         private String timeInvoiceDue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoiceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billToAddresses = defaults.billToAddresses;
@@ -471,6 +408,7 @@ public final class GetInvoiceResult {
     	      this.timeInvoiceDue = defaults.timeInvoiceDue;
         }
 
+        @CustomType.Setter
         public Builder billToAddresses(List<GetInvoiceBillToAddress> billToAddresses) {
             this.billToAddresses = Objects.requireNonNull(billToAddresses);
             return this;
@@ -478,10 +416,12 @@ public final class GetInvoiceResult {
         public Builder billToAddresses(GetInvoiceBillToAddress... billToAddresses) {
             return billToAddresses(List.of(billToAddresses));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder currencies(List<GetInvoiceCurrency> currencies) {
             this.currencies = Objects.requireNonNull(currencies);
             return this;
@@ -489,74 +429,92 @@ public final class GetInvoiceResult {
         public Builder currencies(GetInvoiceCurrency... currencies) {
             return currencies(List.of(currencies));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder internalInvoiceId(String internalInvoiceId) {
             this.internalInvoiceId = Objects.requireNonNull(internalInvoiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceAmount(Double invoiceAmount) {
             this.invoiceAmount = Objects.requireNonNull(invoiceAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceAmountAdjusted(Double invoiceAmountAdjusted) {
             this.invoiceAmountAdjusted = Objects.requireNonNull(invoiceAmountAdjusted);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceAmountApplied(Double invoiceAmountApplied) {
             this.invoiceAmountApplied = Objects.requireNonNull(invoiceAmountApplied);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceAmountCredited(Double invoiceAmountCredited) {
             this.invoiceAmountCredited = Objects.requireNonNull(invoiceAmountCredited);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceAmountDue(Double invoiceAmountDue) {
             this.invoiceAmountDue = Objects.requireNonNull(invoiceAmountDue);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceId(String invoiceId) {
             this.invoiceId = Objects.requireNonNull(invoiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceNumber(String invoiceNumber) {
             this.invoiceNumber = Objects.requireNonNull(invoiceNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder invoicePoNumber(String invoicePoNumber) {
             this.invoicePoNumber = Objects.requireNonNull(invoicePoNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceRefNumber(String invoiceRefNumber) {
             this.invoiceRefNumber = Objects.requireNonNull(invoiceRefNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceStatus(String invoiceStatus) {
             this.invoiceStatus = Objects.requireNonNull(invoiceStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceType(String invoiceType) {
             this.invoiceType = Objects.requireNonNull(invoiceType);
             return this;
         }
+        @CustomType.Setter
         public Builder isCreditCardPayable(Boolean isCreditCardPayable) {
             this.isCreditCardPayable = Objects.requireNonNull(isCreditCardPayable);
             return this;
         }
+        @CustomType.Setter
         public Builder isDisplayDownloadPdf(Boolean isDisplayDownloadPdf) {
             this.isDisplayDownloadPdf = Objects.requireNonNull(isDisplayDownloadPdf);
             return this;
         }
+        @CustomType.Setter
         public Builder isPayable(Boolean isPayable) {
             this.isPayable = Objects.requireNonNull(isPayable);
             return this;
         }
+        @CustomType.Setter
         public Builder isPdfEmailAvailable(Boolean isPdfEmailAvailable) {
             this.isPdfEmailAvailable = Objects.requireNonNull(isPdfEmailAvailable);
             return this;
         }
+        @CustomType.Setter
         public Builder lastPaymentDetails(List<GetInvoiceLastPaymentDetail> lastPaymentDetails) {
             this.lastPaymentDetails = Objects.requireNonNull(lastPaymentDetails);
             return this;
@@ -564,18 +522,22 @@ public final class GetInvoiceResult {
         public Builder lastPaymentDetails(GetInvoiceLastPaymentDetail... lastPaymentDetails) {
             return lastPaymentDetails(List.of(lastPaymentDetails));
         }
+        @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
             this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
             return this;
         }
+        @CustomType.Setter
         public Builder paymentTerms(String paymentTerms) {
             this.paymentTerms = Objects.requireNonNull(paymentTerms);
             return this;
         }
+        @CustomType.Setter
         public Builder preferredEmail(String preferredEmail) {
             this.preferredEmail = Objects.requireNonNull(preferredEmail);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionIds(List<String> subscriptionIds) {
             this.subscriptionIds = Objects.requireNonNull(subscriptionIds);
             return this;
@@ -583,19 +545,52 @@ public final class GetInvoiceResult {
         public Builder subscriptionIds(String... subscriptionIds) {
             return subscriptionIds(List.of(subscriptionIds));
         }
+        @CustomType.Setter
         public Builder tax(Double tax) {
             this.tax = Objects.requireNonNull(tax);
             return this;
         }
+        @CustomType.Setter
         public Builder timeInvoice(String timeInvoice) {
             this.timeInvoice = Objects.requireNonNull(timeInvoice);
             return this;
         }
+        @CustomType.Setter
         public Builder timeInvoiceDue(String timeInvoiceDue) {
             this.timeInvoiceDue = Objects.requireNonNull(timeInvoiceDue);
             return this;
-        }        public GetInvoiceResult build() {
-            return new GetInvoiceResult(billToAddresses, compartmentId, currencies, id, internalInvoiceId, invoiceAmount, invoiceAmountAdjusted, invoiceAmountApplied, invoiceAmountCredited, invoiceAmountDue, invoiceId, invoiceNumber, invoicePoNumber, invoiceRefNumber, invoiceStatus, invoiceType, isCreditCardPayable, isDisplayDownloadPdf, isPayable, isPdfEmailAvailable, lastPaymentDetails, ospHomeRegion, paymentTerms, preferredEmail, subscriptionIds, tax, timeInvoice, timeInvoiceDue);
+        }
+        public GetInvoiceResult build() {
+            final var o = new GetInvoiceResult();
+            o.billToAddresses = billToAddresses;
+            o.compartmentId = compartmentId;
+            o.currencies = currencies;
+            o.id = id;
+            o.internalInvoiceId = internalInvoiceId;
+            o.invoiceAmount = invoiceAmount;
+            o.invoiceAmountAdjusted = invoiceAmountAdjusted;
+            o.invoiceAmountApplied = invoiceAmountApplied;
+            o.invoiceAmountCredited = invoiceAmountCredited;
+            o.invoiceAmountDue = invoiceAmountDue;
+            o.invoiceId = invoiceId;
+            o.invoiceNumber = invoiceNumber;
+            o.invoicePoNumber = invoicePoNumber;
+            o.invoiceRefNumber = invoiceRefNumber;
+            o.invoiceStatus = invoiceStatus;
+            o.invoiceType = invoiceType;
+            o.isCreditCardPayable = isCreditCardPayable;
+            o.isDisplayDownloadPdf = isDisplayDownloadPdf;
+            o.isPayable = isPayable;
+            o.isPdfEmailAvailable = isPdfEmailAvailable;
+            o.lastPaymentDetails = lastPaymentDetails;
+            o.ospHomeRegion = ospHomeRegion;
+            o.paymentTerms = paymentTerms;
+            o.preferredEmail = preferredEmail;
+            o.subscriptionIds = subscriptionIds;
+            o.tax = tax;
+            o.timeInvoice = timeInvoice;
+            o.timeInvoiceDue = timeInvoiceDue;
+            return o;
         }
     }
 }

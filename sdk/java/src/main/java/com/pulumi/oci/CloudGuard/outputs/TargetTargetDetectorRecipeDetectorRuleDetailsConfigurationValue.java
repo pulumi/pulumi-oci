@@ -15,28 +15,19 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationVal
      * @return configuration list item type, either CUSTOM or MANAGED
      * 
      */
-    private final @Nullable String listType;
+    private @Nullable String listType;
     /**
      * @return type of the managed list
      * 
      */
-    private final @Nullable String managedListType;
+    private @Nullable String managedListType;
     /**
      * @return (Updatable) configuration value
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue(
-        @CustomType.Parameter("listType") @Nullable String listType,
-        @CustomType.Parameter("managedListType") @Nullable String managedListType,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.listType = listType;
-        this.managedListType = managedListType;
-        this.value = value;
-    }
-
+    private TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue() {}
     /**
      * @return configuration list item type, either CUSTOM or MANAGED
      * 
@@ -66,16 +57,12 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationVal
     public static Builder builder(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String listType;
         private @Nullable String managedListType;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.listType = defaults.listType;
@@ -83,19 +70,27 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationVal
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder listType(@Nullable String listType) {
             this.listType = listType;
             return this;
         }
+        @CustomType.Setter
         public Builder managedListType(@Nullable String managedListType) {
             this.managedListType = managedListType;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue build() {
-            return new TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue(listType, managedListType, value);
+        }
+        public TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue build() {
+            final var o = new TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue();
+            o.listType = listType;
+            o.managedListType = managedListType;
+            o.value = value;
+            return o;
         }
     }
 }

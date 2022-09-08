@@ -13,42 +13,29 @@ public final class GetJavaReleasesJavaReleaseCollectionItemArtifact {
      * @return Approximate compressed file size in bytes.
      * 
      */
-    private final String approximateFileSizeInBytes;
+    private String approximateFileSizeInBytes;
     /**
      * @return Product content type of this artifact.
      * 
      */
-    private final String artifactContentType;
+    private String artifactContentType;
     /**
      * @return Description of the binary artifact. Typically includes the OS, architecture, and installer type.
      * 
      */
-    private final String artifactDescription;
+    private String artifactDescription;
     /**
      * @return Unique identifier for the artifact.
      * 
      */
-    private final String artifactId;
+    private String artifactId;
     /**
      * @return SHA256 checksum of the artifact.
      * 
      */
-    private final String sha256;
+    private String sha256;
 
-    @CustomType.Constructor
-    private GetJavaReleasesJavaReleaseCollectionItemArtifact(
-        @CustomType.Parameter("approximateFileSizeInBytes") String approximateFileSizeInBytes,
-        @CustomType.Parameter("artifactContentType") String artifactContentType,
-        @CustomType.Parameter("artifactDescription") String artifactDescription,
-        @CustomType.Parameter("artifactId") String artifactId,
-        @CustomType.Parameter("sha256") String sha256) {
-        this.approximateFileSizeInBytes = approximateFileSizeInBytes;
-        this.artifactContentType = artifactContentType;
-        this.artifactDescription = artifactDescription;
-        this.artifactId = artifactId;
-        this.sha256 = sha256;
-    }
-
+    private GetJavaReleasesJavaReleaseCollectionItemArtifact() {}
     /**
      * @return Approximate compressed file size in bytes.
      * 
@@ -92,18 +79,14 @@ public final class GetJavaReleasesJavaReleaseCollectionItemArtifact {
     public static Builder builder(GetJavaReleasesJavaReleaseCollectionItemArtifact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String approximateFileSizeInBytes;
         private String artifactContentType;
         private String artifactDescription;
         private String artifactId;
         private String sha256;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJavaReleasesJavaReleaseCollectionItemArtifact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.approximateFileSizeInBytes = defaults.approximateFileSizeInBytes;
@@ -113,27 +96,39 @@ public final class GetJavaReleasesJavaReleaseCollectionItemArtifact {
     	      this.sha256 = defaults.sha256;
         }
 
+        @CustomType.Setter
         public Builder approximateFileSizeInBytes(String approximateFileSizeInBytes) {
             this.approximateFileSizeInBytes = Objects.requireNonNull(approximateFileSizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactContentType(String artifactContentType) {
             this.artifactContentType = Objects.requireNonNull(artifactContentType);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactDescription(String artifactDescription) {
             this.artifactDescription = Objects.requireNonNull(artifactDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactId(String artifactId) {
             this.artifactId = Objects.requireNonNull(artifactId);
             return this;
         }
+        @CustomType.Setter
         public Builder sha256(String sha256) {
             this.sha256 = Objects.requireNonNull(sha256);
             return this;
-        }        public GetJavaReleasesJavaReleaseCollectionItemArtifact build() {
-            return new GetJavaReleasesJavaReleaseCollectionItemArtifact(approximateFileSizeInBytes, artifactContentType, artifactDescription, artifactId, sha256);
+        }
+        public GetJavaReleasesJavaReleaseCollectionItemArtifact build() {
+            final var o = new GetJavaReleasesJavaReleaseCollectionItemArtifact();
+            o.approximateFileSizeInBytes = approximateFileSizeInBytes;
+            o.artifactContentType = artifactContentType;
+            o.artifactDescription = artifactDescription;
+            o.artifactId = artifactId;
+            o.sha256 = sha256;
+            return o;
         }
     }
 }

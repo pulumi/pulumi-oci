@@ -13,28 +13,19 @@ public final class CertificateCertificateRule {
      * @return (Updatable) A property specifying the period of time, in days, before the certificate&#39;s targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private final String advanceRenewalPeriod;
+    private String advanceRenewalPeriod;
     /**
      * @return (Updatable) A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private final String renewalInterval;
+    private String renewalInterval;
     /**
      * @return (Updatable) The type of rule.
      * 
      */
-    private final String ruleType;
+    private String ruleType;
 
-    @CustomType.Constructor
-    private CertificateCertificateRule(
-        @CustomType.Parameter("advanceRenewalPeriod") String advanceRenewalPeriod,
-        @CustomType.Parameter("renewalInterval") String renewalInterval,
-        @CustomType.Parameter("ruleType") String ruleType) {
-        this.advanceRenewalPeriod = advanceRenewalPeriod;
-        this.renewalInterval = renewalInterval;
-        this.ruleType = ruleType;
-    }
-
+    private CertificateCertificateRule() {}
     /**
      * @return (Updatable) A property specifying the period of time, in days, before the certificate&#39;s targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
@@ -64,16 +55,12 @@ public final class CertificateCertificateRule {
     public static Builder builder(CertificateCertificateRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String advanceRenewalPeriod;
         private String renewalInterval;
         private String ruleType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateCertificateRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advanceRenewalPeriod = defaults.advanceRenewalPeriod;
@@ -81,19 +68,27 @@ public final class CertificateCertificateRule {
     	      this.ruleType = defaults.ruleType;
         }
 
+        @CustomType.Setter
         public Builder advanceRenewalPeriod(String advanceRenewalPeriod) {
             this.advanceRenewalPeriod = Objects.requireNonNull(advanceRenewalPeriod);
             return this;
         }
+        @CustomType.Setter
         public Builder renewalInterval(String renewalInterval) {
             this.renewalInterval = Objects.requireNonNull(renewalInterval);
             return this;
         }
+        @CustomType.Setter
         public Builder ruleType(String ruleType) {
             this.ruleType = Objects.requireNonNull(ruleType);
             return this;
-        }        public CertificateCertificateRule build() {
-            return new CertificateCertificateRule(advanceRenewalPeriod, renewalInterval, ruleType);
+        }
+        public CertificateCertificateRule build() {
+            final var o = new CertificateCertificateRule();
+            o.advanceRenewalPeriod = advanceRenewalPeriod;
+            o.renewalInterval = renewalInterval;
+            o.ruleType = ruleType;
+            return o;
         }
     }
 }

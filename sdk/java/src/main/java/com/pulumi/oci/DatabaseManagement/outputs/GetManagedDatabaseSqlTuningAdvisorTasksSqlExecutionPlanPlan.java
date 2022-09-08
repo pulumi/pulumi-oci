@@ -15,210 +15,149 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan {
      * @return The predicates used to locate rows in an access structure. For example, start or stop predicates for an index range scan.
      * 
      */
-    private final String accessPredicates;
+    private String accessPredicates;
     /**
      * @return The attribute of the SQL execution plan.
      * 
      */
-    private final String attribute;
+    private String attribute;
     /**
      * @return The number of bytes returned by the current operation.
      * 
      */
-    private final String bytes;
+    private String bytes;
     /**
      * @return The number of rows returned by the current operation (estimated by the CBO).
      * 
      */
-    private final String cardinality;
+    private String cardinality;
     /**
      * @return The cost of the current operation estimated by the cost-based optimizer (CBO).
      * 
      */
-    private final Double cost;
+    private Double cost;
     /**
      * @return The CPU cost of the current operation.
      * 
      */
-    private final Double cpuCost;
+    private Double cpuCost;
     /**
      * @return The predicates used to filter rows before producing them.
      * 
      */
-    private final String filterPredicates;
+    private String filterPredicates;
     /**
      * @return The I/O cost of the current operation.
      * 
      */
-    private final Double ioCost;
+    private Double ioCost;
     /**
      * @return Number of index columns with start and stop keys (that is, the number of columns with matching predicates).
      * 
      */
-    private final Integer numberOfSearchColumn;
+    private Integer numberOfSearchColumn;
     /**
      * @return The name of the object.
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return The name of the database link used to reference the object.
      * 
      */
-    private final String objectNode;
+    private String objectNode;
     /**
      * @return The owner of the object.
      * 
      */
-    private final String objectOwner;
+    private String objectOwner;
     /**
      * @return The numbered position of the object name in the original SQL statement.
      * 
      */
-    private final Integer objectPosition;
+    private Integer objectPosition;
     /**
      * @return The descriptive modifier that further describes the type of object.
      * 
      */
-    private final String objectType;
+    private String objectType;
     /**
      * @return The name of the operation performed at this step.
      * 
      */
-    private final String operation;
+    private String operation;
     /**
      * @return The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
      * 
      */
-    private final String optimizerMode;
+    private String optimizerMode;
     /**
      * @return The options used for the operation performed at this step.
      * 
      */
-    private final String options;
+    private String options;
     /**
      * @return Information about parallel execution servers and parallel queries
      * 
      */
-    private final String other;
+    private String other;
     /**
      * @return Describes the function of the SQL text in the OTHER column.
      * 
      */
-    private final String otherTag;
+    private String otherTag;
     /**
      * @return The ID of the next step that operates on the results of this step. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final Integer parentStepId;
+    private Integer parentStepId;
     /**
      * @return The ID of the step in the execution plan that has computed the pair of values of partitionStart and partitionStop.
      * 
      */
-    private final Integer partitionId;
+    private Integer partitionId;
     /**
      * @return A step may get data from a range of partitions of a partitioned object, such as table or index, based on predicates and sorting order. The partionStart is the starting partition of the range. The partitionStop is the ending partition of the range.
      * 
      */
-    private final String partitionStart;
+    private String partitionStart;
     /**
      * @return A step may get data from a range of partitions of a partitioned object, such as table or index, based on predicates and sorting order. The partionStart is the starting partition of the range. The partitionStop is the ending partition of the range.
      * 
      */
-    private final String partitionStop;
+    private String partitionStop;
     /**
      * @return The numerical representation of the SQL execution plan.
      * 
      */
-    private final String planHashValue;
+    private String planHashValue;
     /**
      * @return The order of processing for steps with the same parent ID.
      * 
      */
-    private final Integer position;
+    private Integer position;
     /**
      * @return The place for comments that can be added to the steps of the execution plan.
      * 
      */
-    private final String remarks;
+    private String remarks;
     /**
      * @return The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final Integer stepId;
+    private Integer stepId;
     /**
      * @return The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
      * 
      */
-    private final String tempSpace;
+    private String tempSpace;
     /**
      * @return The elapsed time (in seconds) of the operation as estimated by the CBO.
      * 
      */
-    private final String time;
+    private String time;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan(
-        @CustomType.Parameter("accessPredicates") String accessPredicates,
-        @CustomType.Parameter("attribute") String attribute,
-        @CustomType.Parameter("bytes") String bytes,
-        @CustomType.Parameter("cardinality") String cardinality,
-        @CustomType.Parameter("cost") Double cost,
-        @CustomType.Parameter("cpuCost") Double cpuCost,
-        @CustomType.Parameter("filterPredicates") String filterPredicates,
-        @CustomType.Parameter("ioCost") Double ioCost,
-        @CustomType.Parameter("numberOfSearchColumn") Integer numberOfSearchColumn,
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("objectNode") String objectNode,
-        @CustomType.Parameter("objectOwner") String objectOwner,
-        @CustomType.Parameter("objectPosition") Integer objectPosition,
-        @CustomType.Parameter("objectType") String objectType,
-        @CustomType.Parameter("operation") String operation,
-        @CustomType.Parameter("optimizerMode") String optimizerMode,
-        @CustomType.Parameter("options") String options,
-        @CustomType.Parameter("other") String other,
-        @CustomType.Parameter("otherTag") String otherTag,
-        @CustomType.Parameter("parentStepId") Integer parentStepId,
-        @CustomType.Parameter("partitionId") Integer partitionId,
-        @CustomType.Parameter("partitionStart") String partitionStart,
-        @CustomType.Parameter("partitionStop") String partitionStop,
-        @CustomType.Parameter("planHashValue") String planHashValue,
-        @CustomType.Parameter("position") Integer position,
-        @CustomType.Parameter("remarks") String remarks,
-        @CustomType.Parameter("stepId") Integer stepId,
-        @CustomType.Parameter("tempSpace") String tempSpace,
-        @CustomType.Parameter("time") String time) {
-        this.accessPredicates = accessPredicates;
-        this.attribute = attribute;
-        this.bytes = bytes;
-        this.cardinality = cardinality;
-        this.cost = cost;
-        this.cpuCost = cpuCost;
-        this.filterPredicates = filterPredicates;
-        this.ioCost = ioCost;
-        this.numberOfSearchColumn = numberOfSearchColumn;
-        this.object = object;
-        this.objectNode = objectNode;
-        this.objectOwner = objectOwner;
-        this.objectPosition = objectPosition;
-        this.objectType = objectType;
-        this.operation = operation;
-        this.optimizerMode = optimizerMode;
-        this.options = options;
-        this.other = other;
-        this.otherTag = otherTag;
-        this.parentStepId = parentStepId;
-        this.partitionId = partitionId;
-        this.partitionStart = partitionStart;
-        this.partitionStop = partitionStop;
-        this.planHashValue = planHashValue;
-        this.position = position;
-        this.remarks = remarks;
-        this.stepId = stepId;
-        this.tempSpace = tempSpace;
-        this.time = time;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan() {}
     /**
      * @return The predicates used to locate rows in an access structure. For example, start or stop predicates for an index range scan.
      * 
@@ -430,7 +369,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan {
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String accessPredicates;
         private String attribute;
@@ -461,11 +400,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan {
         private Integer stepId;
         private String tempSpace;
         private String time;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessPredicates = defaults.accessPredicates;
@@ -499,123 +434,183 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan {
     	      this.time = defaults.time;
         }
 
+        @CustomType.Setter
         public Builder accessPredicates(String accessPredicates) {
             this.accessPredicates = Objects.requireNonNull(accessPredicates);
             return this;
         }
+        @CustomType.Setter
         public Builder attribute(String attribute) {
             this.attribute = Objects.requireNonNull(attribute);
             return this;
         }
+        @CustomType.Setter
         public Builder bytes(String bytes) {
             this.bytes = Objects.requireNonNull(bytes);
             return this;
         }
+        @CustomType.Setter
         public Builder cardinality(String cardinality) {
             this.cardinality = Objects.requireNonNull(cardinality);
             return this;
         }
+        @CustomType.Setter
         public Builder cost(Double cost) {
             this.cost = Objects.requireNonNull(cost);
             return this;
         }
+        @CustomType.Setter
         public Builder cpuCost(Double cpuCost) {
             this.cpuCost = Objects.requireNonNull(cpuCost);
             return this;
         }
+        @CustomType.Setter
         public Builder filterPredicates(String filterPredicates) {
             this.filterPredicates = Objects.requireNonNull(filterPredicates);
             return this;
         }
+        @CustomType.Setter
         public Builder ioCost(Double ioCost) {
             this.ioCost = Objects.requireNonNull(ioCost);
             return this;
         }
+        @CustomType.Setter
         public Builder numberOfSearchColumn(Integer numberOfSearchColumn) {
             this.numberOfSearchColumn = Objects.requireNonNull(numberOfSearchColumn);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder objectNode(String objectNode) {
             this.objectNode = Objects.requireNonNull(objectNode);
             return this;
         }
+        @CustomType.Setter
         public Builder objectOwner(String objectOwner) {
             this.objectOwner = Objects.requireNonNull(objectOwner);
             return this;
         }
+        @CustomType.Setter
         public Builder objectPosition(Integer objectPosition) {
             this.objectPosition = Objects.requireNonNull(objectPosition);
             return this;
         }
+        @CustomType.Setter
         public Builder objectType(String objectType) {
             this.objectType = Objects.requireNonNull(objectType);
             return this;
         }
+        @CustomType.Setter
         public Builder operation(String operation) {
             this.operation = Objects.requireNonNull(operation);
             return this;
         }
+        @CustomType.Setter
         public Builder optimizerMode(String optimizerMode) {
             this.optimizerMode = Objects.requireNonNull(optimizerMode);
             return this;
         }
+        @CustomType.Setter
         public Builder options(String options) {
             this.options = Objects.requireNonNull(options);
             return this;
         }
+        @CustomType.Setter
         public Builder other(String other) {
             this.other = Objects.requireNonNull(other);
             return this;
         }
+        @CustomType.Setter
         public Builder otherTag(String otherTag) {
             this.otherTag = Objects.requireNonNull(otherTag);
             return this;
         }
+        @CustomType.Setter
         public Builder parentStepId(Integer parentStepId) {
             this.parentStepId = Objects.requireNonNull(parentStepId);
             return this;
         }
+        @CustomType.Setter
         public Builder partitionId(Integer partitionId) {
             this.partitionId = Objects.requireNonNull(partitionId);
             return this;
         }
+        @CustomType.Setter
         public Builder partitionStart(String partitionStart) {
             this.partitionStart = Objects.requireNonNull(partitionStart);
             return this;
         }
+        @CustomType.Setter
         public Builder partitionStop(String partitionStop) {
             this.partitionStop = Objects.requireNonNull(partitionStop);
             return this;
         }
+        @CustomType.Setter
         public Builder planHashValue(String planHashValue) {
             this.planHashValue = Objects.requireNonNull(planHashValue);
             return this;
         }
+        @CustomType.Setter
         public Builder position(Integer position) {
             this.position = Objects.requireNonNull(position);
             return this;
         }
+        @CustomType.Setter
         public Builder remarks(String remarks) {
             this.remarks = Objects.requireNonNull(remarks);
             return this;
         }
+        @CustomType.Setter
         public Builder stepId(Integer stepId) {
             this.stepId = Objects.requireNonNull(stepId);
             return this;
         }
+        @CustomType.Setter
         public Builder tempSpace(String tempSpace) {
             this.tempSpace = Objects.requireNonNull(tempSpace);
             return this;
         }
+        @CustomType.Setter
         public Builder time(String time) {
             this.time = Objects.requireNonNull(time);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan(accessPredicates, attribute, bytes, cardinality, cost, cpuCost, filterPredicates, ioCost, numberOfSearchColumn, object, objectNode, objectOwner, objectPosition, objectType, operation, optimizerMode, options, other, otherTag, parentStepId, partitionId, partitionStart, partitionStop, planHashValue, position, remarks, stepId, tempSpace, time);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan();
+            o.accessPredicates = accessPredicates;
+            o.attribute = attribute;
+            o.bytes = bytes;
+            o.cardinality = cardinality;
+            o.cost = cost;
+            o.cpuCost = cpuCost;
+            o.filterPredicates = filterPredicates;
+            o.ioCost = ioCost;
+            o.numberOfSearchColumn = numberOfSearchColumn;
+            o.object = object;
+            o.objectNode = objectNode;
+            o.objectOwner = objectOwner;
+            o.objectPosition = objectPosition;
+            o.objectType = objectType;
+            o.operation = operation;
+            o.optimizerMode = optimizerMode;
+            o.options = options;
+            o.other = other;
+            o.otherTag = otherTag;
+            o.parentStepId = parentStepId;
+            o.partitionId = partitionId;
+            o.partitionStart = partitionStart;
+            o.partitionStop = partitionStop;
+            o.planHashValue = planHashValue;
+            o.position = position;
+            o.remarks = remarks;
+            o.stepId = stepId;
+            o.tempSpace = tempSpace;
+            o.time = time;
+            return o;
         }
     }
 }

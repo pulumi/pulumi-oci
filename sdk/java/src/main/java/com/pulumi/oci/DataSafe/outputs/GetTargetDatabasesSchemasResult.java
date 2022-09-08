@@ -15,48 +15,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabasesSchemasResult {
-    private final @Nullable List<GetTargetDatabasesSchemasFilter> filters;
+    private @Nullable List<GetTargetDatabasesSchemasFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if the schema is oracle supplied.
      * 
      */
-    private final @Nullable Boolean isOracleMaintained;
-    private final @Nullable String schemaNameContains;
+    private @Nullable Boolean isOracleMaintained;
+    private @Nullable String schemaNameContains;
     /**
      * @return Name of the schema.
      * 
      */
-    private final @Nullable List<String> schemaNames;
+    private @Nullable List<String> schemaNames;
     /**
      * @return The list of schemas.
      * 
      */
-    private final List<GetTargetDatabasesSchemasSchema> schemas;
-    private final String targetDatabaseId;
+    private List<GetTargetDatabasesSchemasSchema> schemas;
+    private String targetDatabaseId;
 
-    @CustomType.Constructor
-    private GetTargetDatabasesSchemasResult(
-        @CustomType.Parameter("filters") @Nullable List<GetTargetDatabasesSchemasFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isOracleMaintained") @Nullable Boolean isOracleMaintained,
-        @CustomType.Parameter("schemaNameContains") @Nullable String schemaNameContains,
-        @CustomType.Parameter("schemaNames") @Nullable List<String> schemaNames,
-        @CustomType.Parameter("schemas") List<GetTargetDatabasesSchemasSchema> schemas,
-        @CustomType.Parameter("targetDatabaseId") String targetDatabaseId) {
-        this.filters = filters;
-        this.id = id;
-        this.isOracleMaintained = isOracleMaintained;
-        this.schemaNameContains = schemaNameContains;
-        this.schemaNames = schemaNames;
-        this.schemas = schemas;
-        this.targetDatabaseId = targetDatabaseId;
-    }
-
+    private GetTargetDatabasesSchemasResult() {}
     public List<GetTargetDatabasesSchemasFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -102,7 +85,7 @@ public final class GetTargetDatabasesSchemasResult {
     public static Builder builder(GetTargetDatabasesSchemasResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetTargetDatabasesSchemasFilter> filters;
         private String id;
@@ -111,11 +94,7 @@ public final class GetTargetDatabasesSchemasResult {
         private @Nullable List<String> schemaNames;
         private List<GetTargetDatabasesSchemasSchema> schemas;
         private String targetDatabaseId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabasesSchemasResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -127,6 +106,7 @@ public final class GetTargetDatabasesSchemasResult {
     	      this.targetDatabaseId = defaults.targetDatabaseId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetDatabasesSchemasFilter> filters) {
             this.filters = filters;
             return this;
@@ -134,18 +114,22 @@ public final class GetTargetDatabasesSchemasResult {
         public Builder filters(GetTargetDatabasesSchemasFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isOracleMaintained(@Nullable Boolean isOracleMaintained) {
             this.isOracleMaintained = isOracleMaintained;
             return this;
         }
+        @CustomType.Setter
         public Builder schemaNameContains(@Nullable String schemaNameContains) {
             this.schemaNameContains = schemaNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
             this.schemaNames = schemaNames;
             return this;
@@ -153,6 +137,7 @@ public final class GetTargetDatabasesSchemasResult {
         public Builder schemaNames(String... schemaNames) {
             return schemaNames(List.of(schemaNames));
         }
+        @CustomType.Setter
         public Builder schemas(List<GetTargetDatabasesSchemasSchema> schemas) {
             this.schemas = Objects.requireNonNull(schemas);
             return this;
@@ -160,11 +145,21 @@ public final class GetTargetDatabasesSchemasResult {
         public Builder schemas(GetTargetDatabasesSchemasSchema... schemas) {
             return schemas(List.of(schemas));
         }
+        @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
             this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
             return this;
-        }        public GetTargetDatabasesSchemasResult build() {
-            return new GetTargetDatabasesSchemasResult(filters, id, isOracleMaintained, schemaNameContains, schemaNames, schemas, targetDatabaseId);
+        }
+        public GetTargetDatabasesSchemasResult build() {
+            final var o = new GetTargetDatabasesSchemasResult();
+            o.filters = filters;
+            o.id = id;
+            o.isOracleMaintained = isOracleMaintained;
+            o.schemaNameContains = schemaNameContains;
+            o.schemaNames = schemaNames;
+            o.schemas = schemas;
+            o.targetDatabaseId = targetDatabaseId;
+            return o;
         }
     }
 }

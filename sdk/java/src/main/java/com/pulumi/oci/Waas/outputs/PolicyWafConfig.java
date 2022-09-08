@@ -26,91 +26,64 @@ public final class PolicyWafConfig {
      * @return (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
      * 
      */
-    private final @Nullable List<PolicyWafConfigAccessRule> accessRules;
+    private @Nullable List<PolicyWafConfigAccessRule> accessRules;
     /**
      * @return (Updatable) The settings used to limit the number of requests from an IP address.
      * 
      */
-    private final @Nullable PolicyWafConfigAddressRateLimiting addressRateLimiting;
+    private @Nullable PolicyWafConfigAddressRateLimiting addressRateLimiting;
     /**
      * @return (Updatable) A list of caching rules applied to the web application.
      * 
      */
-    private final @Nullable List<PolicyWafConfigCachingRule> cachingRules;
+    private @Nullable List<PolicyWafConfigCachingRule> cachingRules;
     /**
      * @return (Updatable) A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
      * 
      */
-    private final @Nullable List<PolicyWafConfigCaptcha> captchas;
+    private @Nullable List<PolicyWafConfigCaptcha> captchas;
     /**
      * @return (Updatable) A list of the custom protection rule OCIDs and their actions.
      * 
      */
-    private final @Nullable List<PolicyWafConfigCustomProtectionRule> customProtectionRules;
+    private @Nullable List<PolicyWafConfigCustomProtectionRule> customProtectionRules;
     /**
      * @return (Updatable) The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
      * 
      */
-    private final @Nullable PolicyWafConfigDeviceFingerprintChallenge deviceFingerprintChallenge;
+    private @Nullable PolicyWafConfigDeviceFingerprintChallenge deviceFingerprintChallenge;
     /**
      * @return (Updatable) The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
      * 
      */
-    private final @Nullable PolicyWafConfigHumanInteractionChallenge humanInteractionChallenge;
+    private @Nullable PolicyWafConfigHumanInteractionChallenge humanInteractionChallenge;
     /**
      * @return (Updatable) The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
      * 
      */
-    private final @Nullable PolicyWafConfigJsChallenge jsChallenge;
+    private @Nullable PolicyWafConfigJsChallenge jsChallenge;
     /**
      * @return (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
      * 
      */
-    private final @Nullable String origin;
+    private @Nullable String origin;
     /**
      * @return (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      * 
      */
-    private final @Nullable List<String> originGroups;
+    private @Nullable List<String> originGroups;
     /**
      * @return (Updatable) The settings applied to protection rules.
      * 
      */
-    private final @Nullable PolicyWafConfigProtectionSettings protectionSettings;
+    private @Nullable PolicyWafConfigProtectionSettings protectionSettings;
     /**
      * @return (Updatable) A list of IP addresses that bypass the Web Application Firewall.
      * 
      */
-    private final @Nullable List<PolicyWafConfigWhitelist> whitelists;
+    private @Nullable List<PolicyWafConfigWhitelist> whitelists;
 
-    @CustomType.Constructor
-    private PolicyWafConfig(
-        @CustomType.Parameter("accessRules") @Nullable List<PolicyWafConfigAccessRule> accessRules,
-        @CustomType.Parameter("addressRateLimiting") @Nullable PolicyWafConfigAddressRateLimiting addressRateLimiting,
-        @CustomType.Parameter("cachingRules") @Nullable List<PolicyWafConfigCachingRule> cachingRules,
-        @CustomType.Parameter("captchas") @Nullable List<PolicyWafConfigCaptcha> captchas,
-        @CustomType.Parameter("customProtectionRules") @Nullable List<PolicyWafConfigCustomProtectionRule> customProtectionRules,
-        @CustomType.Parameter("deviceFingerprintChallenge") @Nullable PolicyWafConfigDeviceFingerprintChallenge deviceFingerprintChallenge,
-        @CustomType.Parameter("humanInteractionChallenge") @Nullable PolicyWafConfigHumanInteractionChallenge humanInteractionChallenge,
-        @CustomType.Parameter("jsChallenge") @Nullable PolicyWafConfigJsChallenge jsChallenge,
-        @CustomType.Parameter("origin") @Nullable String origin,
-        @CustomType.Parameter("originGroups") @Nullable List<String> originGroups,
-        @CustomType.Parameter("protectionSettings") @Nullable PolicyWafConfigProtectionSettings protectionSettings,
-        @CustomType.Parameter("whitelists") @Nullable List<PolicyWafConfigWhitelist> whitelists) {
-        this.accessRules = accessRules;
-        this.addressRateLimiting = addressRateLimiting;
-        this.cachingRules = cachingRules;
-        this.captchas = captchas;
-        this.customProtectionRules = customProtectionRules;
-        this.deviceFingerprintChallenge = deviceFingerprintChallenge;
-        this.humanInteractionChallenge = humanInteractionChallenge;
-        this.jsChallenge = jsChallenge;
-        this.origin = origin;
-        this.originGroups = originGroups;
-        this.protectionSettings = protectionSettings;
-        this.whitelists = whitelists;
-    }
-
+    private PolicyWafConfig() {}
     /**
      * @return (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
      * 
@@ -203,7 +176,7 @@ public final class PolicyWafConfig {
     public static Builder builder(PolicyWafConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<PolicyWafConfigAccessRule> accessRules;
         private @Nullable PolicyWafConfigAddressRateLimiting addressRateLimiting;
@@ -217,11 +190,7 @@ public final class PolicyWafConfig {
         private @Nullable List<String> originGroups;
         private @Nullable PolicyWafConfigProtectionSettings protectionSettings;
         private @Nullable List<PolicyWafConfigWhitelist> whitelists;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyWafConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessRules = defaults.accessRules;
@@ -238,6 +207,7 @@ public final class PolicyWafConfig {
     	      this.whitelists = defaults.whitelists;
         }
 
+        @CustomType.Setter
         public Builder accessRules(@Nullable List<PolicyWafConfigAccessRule> accessRules) {
             this.accessRules = accessRules;
             return this;
@@ -245,10 +215,12 @@ public final class PolicyWafConfig {
         public Builder accessRules(PolicyWafConfigAccessRule... accessRules) {
             return accessRules(List.of(accessRules));
         }
+        @CustomType.Setter
         public Builder addressRateLimiting(@Nullable PolicyWafConfigAddressRateLimiting addressRateLimiting) {
             this.addressRateLimiting = addressRateLimiting;
             return this;
         }
+        @CustomType.Setter
         public Builder cachingRules(@Nullable List<PolicyWafConfigCachingRule> cachingRules) {
             this.cachingRules = cachingRules;
             return this;
@@ -256,6 +228,7 @@ public final class PolicyWafConfig {
         public Builder cachingRules(PolicyWafConfigCachingRule... cachingRules) {
             return cachingRules(List.of(cachingRules));
         }
+        @CustomType.Setter
         public Builder captchas(@Nullable List<PolicyWafConfigCaptcha> captchas) {
             this.captchas = captchas;
             return this;
@@ -263,6 +236,7 @@ public final class PolicyWafConfig {
         public Builder captchas(PolicyWafConfigCaptcha... captchas) {
             return captchas(List.of(captchas));
         }
+        @CustomType.Setter
         public Builder customProtectionRules(@Nullable List<PolicyWafConfigCustomProtectionRule> customProtectionRules) {
             this.customProtectionRules = customProtectionRules;
             return this;
@@ -270,22 +244,27 @@ public final class PolicyWafConfig {
         public Builder customProtectionRules(PolicyWafConfigCustomProtectionRule... customProtectionRules) {
             return customProtectionRules(List.of(customProtectionRules));
         }
+        @CustomType.Setter
         public Builder deviceFingerprintChallenge(@Nullable PolicyWafConfigDeviceFingerprintChallenge deviceFingerprintChallenge) {
             this.deviceFingerprintChallenge = deviceFingerprintChallenge;
             return this;
         }
+        @CustomType.Setter
         public Builder humanInteractionChallenge(@Nullable PolicyWafConfigHumanInteractionChallenge humanInteractionChallenge) {
             this.humanInteractionChallenge = humanInteractionChallenge;
             return this;
         }
+        @CustomType.Setter
         public Builder jsChallenge(@Nullable PolicyWafConfigJsChallenge jsChallenge) {
             this.jsChallenge = jsChallenge;
             return this;
         }
+        @CustomType.Setter
         public Builder origin(@Nullable String origin) {
             this.origin = origin;
             return this;
         }
+        @CustomType.Setter
         public Builder originGroups(@Nullable List<String> originGroups) {
             this.originGroups = originGroups;
             return this;
@@ -293,18 +272,34 @@ public final class PolicyWafConfig {
         public Builder originGroups(String... originGroups) {
             return originGroups(List.of(originGroups));
         }
+        @CustomType.Setter
         public Builder protectionSettings(@Nullable PolicyWafConfigProtectionSettings protectionSettings) {
             this.protectionSettings = protectionSettings;
             return this;
         }
+        @CustomType.Setter
         public Builder whitelists(@Nullable List<PolicyWafConfigWhitelist> whitelists) {
             this.whitelists = whitelists;
             return this;
         }
         public Builder whitelists(PolicyWafConfigWhitelist... whitelists) {
             return whitelists(List.of(whitelists));
-        }        public PolicyWafConfig build() {
-            return new PolicyWafConfig(accessRules, addressRateLimiting, cachingRules, captchas, customProtectionRules, deviceFingerprintChallenge, humanInteractionChallenge, jsChallenge, origin, originGroups, protectionSettings, whitelists);
+        }
+        public PolicyWafConfig build() {
+            final var o = new PolicyWafConfig();
+            o.accessRules = accessRules;
+            o.addressRateLimiting = addressRateLimiting;
+            o.cachingRules = cachingRules;
+            o.captchas = captchas;
+            o.customProtectionRules = customProtectionRules;
+            o.deviceFingerprintChallenge = deviceFingerprintChallenge;
+            o.humanInteractionChallenge = humanInteractionChallenge;
+            o.jsChallenge = jsChallenge;
+            o.origin = origin;
+            o.originGroups = originGroups;
+            o.protectionSettings = protectionSettings;
+            o.whitelists = whitelists;
+            return o;
         }
     }
 }

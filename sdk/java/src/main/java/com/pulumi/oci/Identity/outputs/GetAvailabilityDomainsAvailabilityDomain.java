@@ -13,28 +13,19 @@ public final class GetAvailabilityDomainsAvailabilityDomain {
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the Availability Domain.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the Availability Domain.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetAvailabilityDomainsAvailabilityDomain(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.name = name;
-    }
-
+    private GetAvailabilityDomainsAvailabilityDomain() {}
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
@@ -64,16 +55,12 @@ public final class GetAvailabilityDomainsAvailabilityDomain {
     public static Builder builder(GetAvailabilityDomainsAvailabilityDomain defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAvailabilityDomainsAvailabilityDomain defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -81,19 +68,27 @@ public final class GetAvailabilityDomainsAvailabilityDomain {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetAvailabilityDomainsAvailabilityDomain build() {
-            return new GetAvailabilityDomainsAvailabilityDomain(compartmentId, id, name);
+        }
+        public GetAvailabilityDomainsAvailabilityDomain build() {
+            final var o = new GetAvailabilityDomainsAvailabilityDomain();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

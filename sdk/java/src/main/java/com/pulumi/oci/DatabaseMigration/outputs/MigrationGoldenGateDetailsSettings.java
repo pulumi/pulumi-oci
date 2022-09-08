@@ -17,28 +17,19 @@ public final class MigrationGoldenGateDetailsSettings {
      * @return (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
      * 
      */
-    private final @Nullable Integer acceptableLag;
+    private @Nullable Integer acceptableLag;
     /**
      * @return (Updatable) Parameters for GoldenGate Extract processes.
      * 
      */
-    private final @Nullable MigrationGoldenGateDetailsSettingsExtract extract;
+    private @Nullable MigrationGoldenGateDetailsSettingsExtract extract;
     /**
      * @return (Updatable) Parameters for GoldenGate Replicat processes.
      * 
      */
-    private final @Nullable MigrationGoldenGateDetailsSettingsReplicat replicat;
+    private @Nullable MigrationGoldenGateDetailsSettingsReplicat replicat;
 
-    @CustomType.Constructor
-    private MigrationGoldenGateDetailsSettings(
-        @CustomType.Parameter("acceptableLag") @Nullable Integer acceptableLag,
-        @CustomType.Parameter("extract") @Nullable MigrationGoldenGateDetailsSettingsExtract extract,
-        @CustomType.Parameter("replicat") @Nullable MigrationGoldenGateDetailsSettingsReplicat replicat) {
-        this.acceptableLag = acceptableLag;
-        this.extract = extract;
-        this.replicat = replicat;
-    }
-
+    private MigrationGoldenGateDetailsSettings() {}
     /**
      * @return (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
      * 
@@ -68,16 +59,12 @@ public final class MigrationGoldenGateDetailsSettings {
     public static Builder builder(MigrationGoldenGateDetailsSettings defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer acceptableLag;
         private @Nullable MigrationGoldenGateDetailsSettingsExtract extract;
         private @Nullable MigrationGoldenGateDetailsSettingsReplicat replicat;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationGoldenGateDetailsSettings defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.acceptableLag = defaults.acceptableLag;
@@ -85,19 +72,27 @@ public final class MigrationGoldenGateDetailsSettings {
     	      this.replicat = defaults.replicat;
         }
 
+        @CustomType.Setter
         public Builder acceptableLag(@Nullable Integer acceptableLag) {
             this.acceptableLag = acceptableLag;
             return this;
         }
+        @CustomType.Setter
         public Builder extract(@Nullable MigrationGoldenGateDetailsSettingsExtract extract) {
             this.extract = extract;
             return this;
         }
+        @CustomType.Setter
         public Builder replicat(@Nullable MigrationGoldenGateDetailsSettingsReplicat replicat) {
             this.replicat = replicat;
             return this;
-        }        public MigrationGoldenGateDetailsSettings build() {
-            return new MigrationGoldenGateDetailsSettings(acceptableLag, extract, replicat);
+        }
+        public MigrationGoldenGateDetailsSettings build() {
+            final var o = new MigrationGoldenGateDetailsSettings();
+            o.acceptableLag = acceptableLag;
+            o.extract = extract;
+            o.replicat = replicat;
+            return o;
         }
     }
 }

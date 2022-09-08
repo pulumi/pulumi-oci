@@ -19,42 +19,29 @@ public final class ConnectorSource {
      * @return (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
      * 
      */
-    private final @Nullable ConnectorSourceCursor cursor;
+    private @Nullable ConnectorSourceCursor cursor;
     /**
      * @return (Updatable) The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return (Updatable) The logs for this Logging source.
      * 
      */
-    private final @Nullable List<ConnectorSourceLogSource> logSources;
+    private @Nullable List<ConnectorSourceLogSource> logSources;
     /**
      * @return (Updatable) The list of metric namespaces to retrieve data from.
      * 
      */
-    private final @Nullable List<ConnectorSourceMonitoringSource> monitoringSources;
+    private @Nullable List<ConnectorSourceMonitoringSource> monitoringSources;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
-    private final @Nullable String streamId;
+    private @Nullable String streamId;
 
-    @CustomType.Constructor
-    private ConnectorSource(
-        @CustomType.Parameter("cursor") @Nullable ConnectorSourceCursor cursor,
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("logSources") @Nullable List<ConnectorSourceLogSource> logSources,
-        @CustomType.Parameter("monitoringSources") @Nullable List<ConnectorSourceMonitoringSource> monitoringSources,
-        @CustomType.Parameter("streamId") @Nullable String streamId) {
-        this.cursor = cursor;
-        this.kind = kind;
-        this.logSources = logSources;
-        this.monitoringSources = monitoringSources;
-        this.streamId = streamId;
-    }
-
+    private ConnectorSource() {}
     /**
      * @return (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
      * 
@@ -98,18 +85,14 @@ public final class ConnectorSource {
     public static Builder builder(ConnectorSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable ConnectorSourceCursor cursor;
         private String kind;
         private @Nullable List<ConnectorSourceLogSource> logSources;
         private @Nullable List<ConnectorSourceMonitoringSource> monitoringSources;
         private @Nullable String streamId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectorSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cursor = defaults.cursor;
@@ -119,14 +102,17 @@ public final class ConnectorSource {
     	      this.streamId = defaults.streamId;
         }
 
+        @CustomType.Setter
         public Builder cursor(@Nullable ConnectorSourceCursor cursor) {
             this.cursor = cursor;
             return this;
         }
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder logSources(@Nullable List<ConnectorSourceLogSource> logSources) {
             this.logSources = logSources;
             return this;
@@ -134,6 +120,7 @@ public final class ConnectorSource {
         public Builder logSources(ConnectorSourceLogSource... logSources) {
             return logSources(List.of(logSources));
         }
+        @CustomType.Setter
         public Builder monitoringSources(@Nullable List<ConnectorSourceMonitoringSource> monitoringSources) {
             this.monitoringSources = monitoringSources;
             return this;
@@ -141,11 +128,19 @@ public final class ConnectorSource {
         public Builder monitoringSources(ConnectorSourceMonitoringSource... monitoringSources) {
             return monitoringSources(List.of(monitoringSources));
         }
+        @CustomType.Setter
         public Builder streamId(@Nullable String streamId) {
             this.streamId = streamId;
             return this;
-        }        public ConnectorSource build() {
-            return new ConnectorSource(cursor, kind, logSources, monitoringSources, streamId);
+        }
+        public ConnectorSource build() {
+            final var o = new ConnectorSource();
+            o.cursor = cursor;
+            o.kind = kind;
+            o.logSources = logSources;
+            o.monitoringSources = monitoringSources;
+            o.streamId = streamId;
+            return o;
         }
     }
 }

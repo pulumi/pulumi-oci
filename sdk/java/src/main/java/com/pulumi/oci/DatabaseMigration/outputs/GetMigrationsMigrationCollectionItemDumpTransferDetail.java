@@ -15,21 +15,14 @@ public final class GetMigrationsMigrationCollectionItemDumpTransferDetail {
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
      */
-    private final List<GetMigrationsMigrationCollectionItemDumpTransferDetailSource> sources;
+    private List<GetMigrationsMigrationCollectionItemDumpTransferDetailSource> sources;
     /**
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
      */
-    private final List<GetMigrationsMigrationCollectionItemDumpTransferDetailTarget> targets;
+    private List<GetMigrationsMigrationCollectionItemDumpTransferDetailTarget> targets;
 
-    @CustomType.Constructor
-    private GetMigrationsMigrationCollectionItemDumpTransferDetail(
-        @CustomType.Parameter("sources") List<GetMigrationsMigrationCollectionItemDumpTransferDetailSource> sources,
-        @CustomType.Parameter("targets") List<GetMigrationsMigrationCollectionItemDumpTransferDetailTarget> targets) {
-        this.sources = sources;
-        this.targets = targets;
-    }
-
+    private GetMigrationsMigrationCollectionItemDumpTransferDetail() {}
     /**
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
@@ -52,21 +45,18 @@ public final class GetMigrationsMigrationCollectionItemDumpTransferDetail {
     public static Builder builder(GetMigrationsMigrationCollectionItemDumpTransferDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMigrationsMigrationCollectionItemDumpTransferDetailSource> sources;
         private List<GetMigrationsMigrationCollectionItemDumpTransferDetailTarget> targets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemDumpTransferDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.sources = defaults.sources;
     	      this.targets = defaults.targets;
         }
 
+        @CustomType.Setter
         public Builder sources(List<GetMigrationsMigrationCollectionItemDumpTransferDetailSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
@@ -74,14 +64,19 @@ public final class GetMigrationsMigrationCollectionItemDumpTransferDetail {
         public Builder sources(GetMigrationsMigrationCollectionItemDumpTransferDetailSource... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
         public Builder targets(List<GetMigrationsMigrationCollectionItemDumpTransferDetailTarget> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
         }
         public Builder targets(GetMigrationsMigrationCollectionItemDumpTransferDetailTarget... targets) {
             return targets(List.of(targets));
-        }        public GetMigrationsMigrationCollectionItemDumpTransferDetail build() {
-            return new GetMigrationsMigrationCollectionItemDumpTransferDetail(sources, targets);
+        }
+        public GetMigrationsMigrationCollectionItemDumpTransferDetail build() {
+            final var o = new GetMigrationsMigrationCollectionItemDumpTransferDetail();
+            o.sources = sources;
+            o.targets = targets;
+            return o;
         }
     }
 }

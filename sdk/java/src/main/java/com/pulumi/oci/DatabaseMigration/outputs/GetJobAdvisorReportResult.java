@@ -16,59 +16,40 @@ public final class GetJobAdvisorReportResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String jobId;
+    private String id;
+    private String jobId;
     /**
      * @return Number of Fatal results in the advisor report.
      * 
      */
-    private final Integer numberOfFatal;
+    private Integer numberOfFatal;
     /**
      * @return Number of Fatal Blocker results in the advisor report.
      * 
      */
-    private final Integer numberOfFatalBlockers;
+    private Integer numberOfFatalBlockers;
     /**
      * @return Number of Informational results in the advisor report.
      * 
      */
-    private final Integer numberOfInformationalResults;
+    private Integer numberOfInformationalResults;
     /**
      * @return Number of Warning results in the advisor report.
      * 
      */
-    private final Integer numberOfWarnings;
+    private Integer numberOfWarnings;
     /**
      * @return Details to access Pre-Migration Advisor report.
      * 
      */
-    private final List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails;
+    private List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails;
     /**
      * @return Pre-Migration advisor result.
      * 
      */
-    private final String result;
+    private String result;
 
-    @CustomType.Constructor
-    private GetJobAdvisorReportResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("jobId") String jobId,
-        @CustomType.Parameter("numberOfFatal") Integer numberOfFatal,
-        @CustomType.Parameter("numberOfFatalBlockers") Integer numberOfFatalBlockers,
-        @CustomType.Parameter("numberOfInformationalResults") Integer numberOfInformationalResults,
-        @CustomType.Parameter("numberOfWarnings") Integer numberOfWarnings,
-        @CustomType.Parameter("reportLocationDetails") List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails,
-        @CustomType.Parameter("result") String result) {
-        this.id = id;
-        this.jobId = jobId;
-        this.numberOfFatal = numberOfFatal;
-        this.numberOfFatalBlockers = numberOfFatalBlockers;
-        this.numberOfInformationalResults = numberOfInformationalResults;
-        this.numberOfWarnings = numberOfWarnings;
-        this.reportLocationDetails = reportLocationDetails;
-        this.result = result;
-    }
-
+    private GetJobAdvisorReportResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -129,7 +110,7 @@ public final class GetJobAdvisorReportResult {
     public static Builder builder(GetJobAdvisorReportResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String jobId;
@@ -139,11 +120,7 @@ public final class GetJobAdvisorReportResult {
         private Integer numberOfWarnings;
         private List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails;
         private String result;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobAdvisorReportResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -156,30 +133,37 @@ public final class GetJobAdvisorReportResult {
     	      this.result = defaults.result;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder jobId(String jobId) {
             this.jobId = Objects.requireNonNull(jobId);
             return this;
         }
+        @CustomType.Setter
         public Builder numberOfFatal(Integer numberOfFatal) {
             this.numberOfFatal = Objects.requireNonNull(numberOfFatal);
             return this;
         }
+        @CustomType.Setter
         public Builder numberOfFatalBlockers(Integer numberOfFatalBlockers) {
             this.numberOfFatalBlockers = Objects.requireNonNull(numberOfFatalBlockers);
             return this;
         }
+        @CustomType.Setter
         public Builder numberOfInformationalResults(Integer numberOfInformationalResults) {
             this.numberOfInformationalResults = Objects.requireNonNull(numberOfInformationalResults);
             return this;
         }
+        @CustomType.Setter
         public Builder numberOfWarnings(Integer numberOfWarnings) {
             this.numberOfWarnings = Objects.requireNonNull(numberOfWarnings);
             return this;
         }
+        @CustomType.Setter
         public Builder reportLocationDetails(List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails) {
             this.reportLocationDetails = Objects.requireNonNull(reportLocationDetails);
             return this;
@@ -187,11 +171,22 @@ public final class GetJobAdvisorReportResult {
         public Builder reportLocationDetails(GetJobAdvisorReportReportLocationDetail... reportLocationDetails) {
             return reportLocationDetails(List.of(reportLocationDetails));
         }
+        @CustomType.Setter
         public Builder result(String result) {
             this.result = Objects.requireNonNull(result);
             return this;
-        }        public GetJobAdvisorReportResult build() {
-            return new GetJobAdvisorReportResult(id, jobId, numberOfFatal, numberOfFatalBlockers, numberOfInformationalResults, numberOfWarnings, reportLocationDetails, result);
+        }
+        public GetJobAdvisorReportResult build() {
+            final var o = new GetJobAdvisorReportResult();
+            o.id = id;
+            o.jobId = jobId;
+            o.numberOfFatal = numberOfFatal;
+            o.numberOfFatalBlockers = numberOfFatalBlockers;
+            o.numberOfInformationalResults = numberOfInformationalResults;
+            o.numberOfWarnings = numberOfWarnings;
+            o.reportLocationDetails = reportLocationDetails;
+            o.result = result;
+            return o;
         }
     }
 }

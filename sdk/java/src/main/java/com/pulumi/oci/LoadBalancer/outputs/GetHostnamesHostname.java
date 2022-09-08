@@ -13,31 +13,20 @@ public final class GetHostnamesHostname {
      * @return A virtual hostname. For more information about virtual hostname string construction, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).  Example: `app.example.com`
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the hostnames to retrieve.
      * 
      */
-    private final String loadBalancerId;
+    private String loadBalancerId;
     /**
      * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
      * 
      */
-    private final String name;
-    private final String state;
+    private String name;
+    private String state;
 
-    @CustomType.Constructor
-    private GetHostnamesHostname(
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state) {
-        this.hostname = hostname;
-        this.loadBalancerId = loadBalancerId;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetHostnamesHostname() {}
     /**
      * @return A virtual hostname. For more information about virtual hostname string construction, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).  Example: `app.example.com`
      * 
@@ -70,17 +59,13 @@ public final class GetHostnamesHostname {
     public static Builder builder(GetHostnamesHostname defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostname;
         private String loadBalancerId;
         private String name;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHostnamesHostname defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
@@ -89,23 +74,33 @@ public final class GetHostnamesHostname {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetHostnamesHostname build() {
-            return new GetHostnamesHostname(hostname, loadBalancerId, name, state);
+        }
+        public GetHostnamesHostname build() {
+            final var o = new GetHostnamesHostname();
+            o.hostname = hostname;
+            o.loadBalancerId = loadBalancerId;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

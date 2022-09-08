@@ -15,49 +15,34 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
      * @return The name of a module.  This parameter is required if a streamName is specified.
      * 
      */
-    private final String moduleName;
+    private String moduleName;
     /**
      * @return The set of profiles that the module stream contains.
      * 
      */
-    private final List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles;
+    private List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles;
     /**
      * @return The OCID of the software source that provides this module stream.
      * 
      */
-    private final String softwareSourceId;
+    private String softwareSourceId;
     /**
      * @return The status of the stream
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
      * 
      */
-    private final String streamName;
+    private String streamName;
     /**
      * @return The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    private final String timeModified;
+    private String timeModified;
 
-    @CustomType.Constructor
-    private GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance(
-        @CustomType.Parameter("moduleName") String moduleName,
-        @CustomType.Parameter("profiles") List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles,
-        @CustomType.Parameter("softwareSourceId") String softwareSourceId,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("streamName") String streamName,
-        @CustomType.Parameter("timeModified") String timeModified) {
-        this.moduleName = moduleName;
-        this.profiles = profiles;
-        this.softwareSourceId = softwareSourceId;
-        this.status = status;
-        this.streamName = streamName;
-        this.timeModified = timeModified;
-    }
-
+    private GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance() {}
     /**
      * @return The name of a module.  This parameter is required if a streamName is specified.
      * 
@@ -108,7 +93,7 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
     public static Builder builder(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String moduleName;
         private List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles;
@@ -116,11 +101,7 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
         private String status;
         private String streamName;
         private String timeModified;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.moduleName = defaults.moduleName;
@@ -131,10 +112,12 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
     	      this.timeModified = defaults.timeModified;
         }
 
+        @CustomType.Setter
         public Builder moduleName(String moduleName) {
             this.moduleName = Objects.requireNonNull(moduleName);
             return this;
         }
+        @CustomType.Setter
         public Builder profiles(List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles) {
             this.profiles = Objects.requireNonNull(profiles);
             return this;
@@ -142,23 +125,35 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
         public Builder profiles(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile... profiles) {
             return profiles(List.of(profiles));
         }
+        @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder streamName(String streamName) {
             this.streamName = Objects.requireNonNull(streamName);
             return this;
         }
+        @CustomType.Setter
         public Builder timeModified(String timeModified) {
             this.timeModified = Objects.requireNonNull(timeModified);
             return this;
-        }        public GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance build() {
-            return new GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance(moduleName, profiles, softwareSourceId, status, streamName, timeModified);
+        }
+        public GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance build() {
+            final var o = new GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance();
+            o.moduleName = moduleName;
+            o.profiles = profiles;
+            o.softwareSourceId = softwareSourceId;
+            o.status = status;
+            o.streamName = streamName;
+            o.timeModified = timeModified;
+            return o;
         }
     }
 }

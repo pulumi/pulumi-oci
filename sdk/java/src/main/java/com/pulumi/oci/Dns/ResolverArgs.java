@@ -126,18 +126,18 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Value must be `PRIVATE` when creating private name resolvers.
+     * If specified, must be `PRIVATE` when creating private name resolvers.
      * 
      */
-    @Import(name="scope", required=true)
-    private Output<String> scope;
+    @Import(name="scope")
+    private @Nullable Output<String> scope;
 
     /**
-     * @return Value must be `PRIVATE` when creating private name resolvers.
+     * @return If specified, must be `PRIVATE` when creating private name resolvers.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Optional<Output<String>> scope() {
+        return Optional.ofNullable(this.scope);
     }
 
     private ResolverArgs() {}
@@ -339,18 +339,18 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope Value must be `PRIVATE` when creating private name resolvers.
+         * @param scope If specified, must be `PRIVATE` when creating private name resolvers.
          * 
          * @return builder
          * 
          */
-        public Builder scope(Output<String> scope) {
+        public Builder scope(@Nullable Output<String> scope) {
             $.scope = scope;
             return this;
         }
 
         /**
-         * @param scope Value must be `PRIVATE` when creating private name resolvers.
+         * @param scope If specified, must be `PRIVATE` when creating private name resolvers.
          * 
          * @return builder
          * 
@@ -361,7 +361,6 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
 
         public ResolverArgs build() {
             $.resolverId = Objects.requireNonNull($.resolverId, "expected parameter 'resolverId' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
             return $;
         }
     }

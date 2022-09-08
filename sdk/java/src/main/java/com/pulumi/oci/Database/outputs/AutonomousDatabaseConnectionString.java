@@ -19,49 +19,34 @@ public final class AutonomousDatabaseConnectionString {
      * @return Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
      */
-    private final @Nullable Map<String,Object> allConnectionStrings;
+    private @Nullable Map<String,Object> allConnectionStrings;
     /**
      * @return The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * 
      */
-    private final @Nullable String dedicated;
+    private @Nullable String dedicated;
     /**
      * @return The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
      * 
      */
-    private final @Nullable String high;
+    private @Nullable String high;
     /**
      * @return The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * 
      */
-    private final @Nullable String low;
+    private @Nullable String low;
     /**
      * @return The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
      * 
      */
-    private final @Nullable String medium;
+    private @Nullable String medium;
     /**
      * @return A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
      * 
      */
-    private final @Nullable List<AutonomousDatabaseConnectionStringProfile> profiles;
+    private @Nullable List<AutonomousDatabaseConnectionStringProfile> profiles;
 
-    @CustomType.Constructor
-    private AutonomousDatabaseConnectionString(
-        @CustomType.Parameter("allConnectionStrings") @Nullable Map<String,Object> allConnectionStrings,
-        @CustomType.Parameter("dedicated") @Nullable String dedicated,
-        @CustomType.Parameter("high") @Nullable String high,
-        @CustomType.Parameter("low") @Nullable String low,
-        @CustomType.Parameter("medium") @Nullable String medium,
-        @CustomType.Parameter("profiles") @Nullable List<AutonomousDatabaseConnectionStringProfile> profiles) {
-        this.allConnectionStrings = allConnectionStrings;
-        this.dedicated = dedicated;
-        this.high = high;
-        this.low = low;
-        this.medium = medium;
-        this.profiles = profiles;
-    }
-
+    private AutonomousDatabaseConnectionString() {}
     /**
      * @return Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
@@ -112,7 +97,7 @@ public final class AutonomousDatabaseConnectionString {
     public static Builder builder(AutonomousDatabaseConnectionString defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> allConnectionStrings;
         private @Nullable String dedicated;
@@ -120,11 +105,7 @@ public final class AutonomousDatabaseConnectionString {
         private @Nullable String low;
         private @Nullable String medium;
         private @Nullable List<AutonomousDatabaseConnectionStringProfile> profiles;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousDatabaseConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allConnectionStrings = defaults.allConnectionStrings;
@@ -135,34 +116,48 @@ public final class AutonomousDatabaseConnectionString {
     	      this.profiles = defaults.profiles;
         }
 
+        @CustomType.Setter
         public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
             this.allConnectionStrings = allConnectionStrings;
             return this;
         }
+        @CustomType.Setter
         public Builder dedicated(@Nullable String dedicated) {
             this.dedicated = dedicated;
             return this;
         }
+        @CustomType.Setter
         public Builder high(@Nullable String high) {
             this.high = high;
             return this;
         }
+        @CustomType.Setter
         public Builder low(@Nullable String low) {
             this.low = low;
             return this;
         }
+        @CustomType.Setter
         public Builder medium(@Nullable String medium) {
             this.medium = medium;
             return this;
         }
+        @CustomType.Setter
         public Builder profiles(@Nullable List<AutonomousDatabaseConnectionStringProfile> profiles) {
             this.profiles = profiles;
             return this;
         }
         public Builder profiles(AutonomousDatabaseConnectionStringProfile... profiles) {
             return profiles(List.of(profiles));
-        }        public AutonomousDatabaseConnectionString build() {
-            return new AutonomousDatabaseConnectionString(allConnectionStrings, dedicated, high, low, medium, profiles);
+        }
+        public AutonomousDatabaseConnectionString build() {
+            final var o = new AutonomousDatabaseConnectionString();
+            o.allConnectionStrings = allConnectionStrings;
+            o.dedicated = dedicated;
+            o.high = high;
+            o.low = low;
+            o.medium = medium;
+            o.profiles = profiles;
+            return o;
         }
     }
 }

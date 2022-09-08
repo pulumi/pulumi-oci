@@ -13,13 +13,9 @@ public final class VirtualServiceDefaultRoutingPolicy {
      * @return (Updatable) Type of the virtual service routing policy.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private VirtualServiceDefaultRoutingPolicy(@CustomType.Parameter("type") String type) {
-        this.type = type;
-    }
-
+    private VirtualServiceDefaultRoutingPolicy() {}
     /**
      * @return (Updatable) Type of the virtual service routing policy.
      * 
@@ -35,24 +31,24 @@ public final class VirtualServiceDefaultRoutingPolicy {
     public static Builder builder(VirtualServiceDefaultRoutingPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VirtualServiceDefaultRoutingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public VirtualServiceDefaultRoutingPolicy build() {
-            return new VirtualServiceDefaultRoutingPolicy(type);
+        }
+        public VirtualServiceDefaultRoutingPolicy build() {
+            final var o = new VirtualServiceDefaultRoutingPolicy();
+            o.type = type;
+            return o;
         }
     }
 }

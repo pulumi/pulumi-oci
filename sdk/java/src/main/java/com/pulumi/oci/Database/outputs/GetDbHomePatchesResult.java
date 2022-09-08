@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbHomePatchesResult {
-    private final String dbHomeId;
-    private final @Nullable List<GetDbHomePatchesFilter> filters;
+    private String dbHomeId;
+    private @Nullable List<GetDbHomePatchesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of patches.
      * 
      */
-    private final List<GetDbHomePatchesPatch> patches;
+    private List<GetDbHomePatchesPatch> patches;
 
-    @CustomType.Constructor
-    private GetDbHomePatchesResult(
-        @CustomType.Parameter("dbHomeId") String dbHomeId,
-        @CustomType.Parameter("filters") @Nullable List<GetDbHomePatchesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("patches") List<GetDbHomePatchesPatch> patches) {
-        this.dbHomeId = dbHomeId;
-        this.filters = filters;
-        this.id = id;
-        this.patches = patches;
-    }
-
+    private GetDbHomePatchesResult() {}
     public String dbHomeId() {
         return this.dbHomeId;
     }
@@ -66,17 +55,13 @@ public final class GetDbHomePatchesResult {
     public static Builder builder(GetDbHomePatchesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbHomeId;
         private @Nullable List<GetDbHomePatchesFilter> filters;
         private String id;
         private List<GetDbHomePatchesPatch> patches;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbHomePatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbHomeId = defaults.dbHomeId;
@@ -85,10 +70,12 @@ public final class GetDbHomePatchesResult {
     	      this.patches = defaults.patches;
         }
 
+        @CustomType.Setter
         public Builder dbHomeId(String dbHomeId) {
             this.dbHomeId = Objects.requireNonNull(dbHomeId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbHomePatchesFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetDbHomePatchesResult {
         public Builder filters(GetDbHomePatchesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder patches(List<GetDbHomePatchesPatch> patches) {
             this.patches = Objects.requireNonNull(patches);
             return this;
         }
         public Builder patches(GetDbHomePatchesPatch... patches) {
             return patches(List.of(patches));
-        }        public GetDbHomePatchesResult build() {
-            return new GetDbHomePatchesResult(dbHomeId, filters, id, patches);
+        }
+        public GetDbHomePatchesResult build() {
+            final var o = new GetDbHomePatchesResult();
+            o.dbHomeId = dbHomeId;
+            o.filters = filters;
+            o.id = id;
+            o.patches = patches;
+            return o;
         }
     }
 }

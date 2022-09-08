@@ -15,49 +15,34 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetRegistryTypeResult {
     /**
-     * @return Map of connectionType as key and List of attributes as value
+     * @return Mapping the connectionType as the key to the list of attributes as the value.
      * 
      */
-    private final Map<String,Object> connectionAttributes;
+    private Map<String,Object> connectionAttributes;
     /**
-     * @return list of attributes for the dataAsset
+     * @return The list of attributes of the data asset.
      * 
      */
-    private final List<GetRegistryTypeDataAssetAttribute> dataAssetAttributes;
-    private final @Nullable List<String> fields;
+    private List<GetRegistryTypeDataAssetAttribute> dataAssetAttributes;
+    private @Nullable List<String> fields;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String registryId;
-    private final String typeKey;
+    private String id;
+    private String registryId;
+    private String typeKey;
 
-    @CustomType.Constructor
-    private GetRegistryTypeResult(
-        @CustomType.Parameter("connectionAttributes") Map<String,Object> connectionAttributes,
-        @CustomType.Parameter("dataAssetAttributes") List<GetRegistryTypeDataAssetAttribute> dataAssetAttributes,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("registryId") String registryId,
-        @CustomType.Parameter("typeKey") String typeKey) {
-        this.connectionAttributes = connectionAttributes;
-        this.dataAssetAttributes = dataAssetAttributes;
-        this.fields = fields;
-        this.id = id;
-        this.registryId = registryId;
-        this.typeKey = typeKey;
-    }
-
+    private GetRegistryTypeResult() {}
     /**
-     * @return Map of connectionType as key and List of attributes as value
+     * @return Mapping the connectionType as the key to the list of attributes as the value.
      * 
      */
     public Map<String,Object> connectionAttributes() {
         return this.connectionAttributes;
     }
     /**
-     * @return list of attributes for the dataAsset
+     * @return The list of attributes of the data asset.
      * 
      */
     public List<GetRegistryTypeDataAssetAttribute> dataAssetAttributes() {
@@ -87,7 +72,7 @@ public final class GetRegistryTypeResult {
     public static Builder builder(GetRegistryTypeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> connectionAttributes;
         private List<GetRegistryTypeDataAssetAttribute> dataAssetAttributes;
@@ -95,11 +80,7 @@ public final class GetRegistryTypeResult {
         private String id;
         private String registryId;
         private String typeKey;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryTypeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectionAttributes = defaults.connectionAttributes;
@@ -110,10 +91,12 @@ public final class GetRegistryTypeResult {
     	      this.typeKey = defaults.typeKey;
         }
 
+        @CustomType.Setter
         public Builder connectionAttributes(Map<String,Object> connectionAttributes) {
             this.connectionAttributes = Objects.requireNonNull(connectionAttributes);
             return this;
         }
+        @CustomType.Setter
         public Builder dataAssetAttributes(List<GetRegistryTypeDataAssetAttribute> dataAssetAttributes) {
             this.dataAssetAttributes = Objects.requireNonNull(dataAssetAttributes);
             return this;
@@ -121,6 +104,7 @@ public final class GetRegistryTypeResult {
         public Builder dataAssetAttributes(GetRegistryTypeDataAssetAttribute... dataAssetAttributes) {
             return dataAssetAttributes(List.of(dataAssetAttributes));
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -128,19 +112,30 @@ public final class GetRegistryTypeResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder registryId(String registryId) {
             this.registryId = Objects.requireNonNull(registryId);
             return this;
         }
+        @CustomType.Setter
         public Builder typeKey(String typeKey) {
             this.typeKey = Objects.requireNonNull(typeKey);
             return this;
-        }        public GetRegistryTypeResult build() {
-            return new GetRegistryTypeResult(connectionAttributes, dataAssetAttributes, fields, id, registryId, typeKey);
+        }
+        public GetRegistryTypeResult build() {
+            final var o = new GetRegistryTypeResult();
+            o.connectionAttributes = connectionAttributes;
+            o.dataAssetAttributes = dataAssetAttributes;
+            o.fields = fields;
+            o.id = id;
+            o.registryId = registryId;
+            o.typeKey = typeKey;
+            return o;
         }
     }
 }

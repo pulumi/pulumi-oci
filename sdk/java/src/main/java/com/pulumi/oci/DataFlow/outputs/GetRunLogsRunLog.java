@@ -9,33 +9,18 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRunLogsRunLog {
-    private final String name;
+    private String name;
     /**
      * @return The unique ID for the run
      * 
      */
-    private final String runId;
-    private final String sizeInBytes;
-    private final String source;
-    private final String timeCreated;
-    private final String type;
+    private String runId;
+    private String sizeInBytes;
+    private String source;
+    private String timeCreated;
+    private String type;
 
-    @CustomType.Constructor
-    private GetRunLogsRunLog(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("runId") String runId,
-        @CustomType.Parameter("sizeInBytes") String sizeInBytes,
-        @CustomType.Parameter("source") String source,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("type") String type) {
-        this.name = name;
-        this.runId = runId;
-        this.sizeInBytes = sizeInBytes;
-        this.source = source;
-        this.timeCreated = timeCreated;
-        this.type = type;
-    }
-
+    private GetRunLogsRunLog() {}
     public String name() {
         return this.name;
     }
@@ -66,7 +51,7 @@ public final class GetRunLogsRunLog {
     public static Builder builder(GetRunLogsRunLog defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String runId;
@@ -74,11 +59,7 @@ public final class GetRunLogsRunLog {
         private String source;
         private String timeCreated;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRunLogsRunLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -89,31 +70,45 @@ public final class GetRunLogsRunLog {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder runId(String runId) {
             this.runId = Objects.requireNonNull(runId);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
             this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetRunLogsRunLog build() {
-            return new GetRunLogsRunLog(name, runId, sizeInBytes, source, timeCreated, type);
+        }
+        public GetRunLogsRunLog build() {
+            final var o = new GetRunLogsRunLog();
+            o.name = name;
+            o.runId = runId;
+            o.sizeInBytes = sizeInBytes;
+            o.source = source;
+            o.timeCreated = timeCreated;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -13,56 +13,39 @@ public final class GetCertificateSubjectName {
      * @return The fully qualified domain name used for DNS lookups of the server.
      * 
      */
-    private final String commonName;
+    private String commonName;
     /**
      * @return ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO&#39;s website](https://www.iso.org/obp/ui/#search/code/).
      * 
      */
-    private final String country;
+    private String country;
     /**
      * @return The email address of the server&#39;s administrator.
      * 
      */
-    private final String emailAddress;
+    private String emailAddress;
     /**
      * @return The city in which the organization is located.
      * 
      */
-    private final String locality;
+    private String locality;
     /**
      * @return The organization name.
      * 
      */
-    private final String organization;
+    private String organization;
     /**
      * @return The field to differentiate between divisions within an organization.
      * 
      */
-    private final String organizationalUnit;
+    private String organizationalUnit;
     /**
      * @return The province where the organization is located.
      * 
      */
-    private final String stateProvince;
+    private String stateProvince;
 
-    @CustomType.Constructor
-    private GetCertificateSubjectName(
-        @CustomType.Parameter("commonName") String commonName,
-        @CustomType.Parameter("country") String country,
-        @CustomType.Parameter("emailAddress") String emailAddress,
-        @CustomType.Parameter("locality") String locality,
-        @CustomType.Parameter("organization") String organization,
-        @CustomType.Parameter("organizationalUnit") String organizationalUnit,
-        @CustomType.Parameter("stateProvince") String stateProvince) {
-        this.commonName = commonName;
-        this.country = country;
-        this.emailAddress = emailAddress;
-        this.locality = locality;
-        this.organization = organization;
-        this.organizationalUnit = organizationalUnit;
-        this.stateProvince = stateProvince;
-    }
-
+    private GetCertificateSubjectName() {}
     /**
      * @return The fully qualified domain name used for DNS lookups of the server.
      * 
@@ -120,7 +103,7 @@ public final class GetCertificateSubjectName {
     public static Builder builder(GetCertificateSubjectName defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String commonName;
         private String country;
@@ -129,11 +112,7 @@ public final class GetCertificateSubjectName {
         private String organization;
         private String organizationalUnit;
         private String stateProvince;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateSubjectName defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.commonName = defaults.commonName;
@@ -145,35 +124,51 @@ public final class GetCertificateSubjectName {
     	      this.stateProvince = defaults.stateProvince;
         }
 
+        @CustomType.Setter
         public Builder commonName(String commonName) {
             this.commonName = Objects.requireNonNull(commonName);
             return this;
         }
+        @CustomType.Setter
         public Builder country(String country) {
             this.country = Objects.requireNonNull(country);
             return this;
         }
+        @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = Objects.requireNonNull(emailAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder locality(String locality) {
             this.locality = Objects.requireNonNull(locality);
             return this;
         }
+        @CustomType.Setter
         public Builder organization(String organization) {
             this.organization = Objects.requireNonNull(organization);
             return this;
         }
+        @CustomType.Setter
         public Builder organizationalUnit(String organizationalUnit) {
             this.organizationalUnit = Objects.requireNonNull(organizationalUnit);
             return this;
         }
+        @CustomType.Setter
         public Builder stateProvince(String stateProvince) {
             this.stateProvince = Objects.requireNonNull(stateProvince);
             return this;
-        }        public GetCertificateSubjectName build() {
-            return new GetCertificateSubjectName(commonName, country, emailAddress, locality, organization, organizationalUnit, stateProvince);
+        }
+        public GetCertificateSubjectName build() {
+            final var o = new GetCertificateSubjectName();
+            o.commonName = commonName;
+            o.country = country;
+            o.emailAddress = emailAddress;
+            o.locality = locality;
+            o.organization = organization;
+            o.organizationalUnit = organizationalUnit;
+            o.stateProvince = stateProvince;
+            return o;
         }
     }
 }

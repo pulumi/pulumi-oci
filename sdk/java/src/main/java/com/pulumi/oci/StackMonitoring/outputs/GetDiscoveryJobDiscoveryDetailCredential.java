@@ -14,13 +14,9 @@ public final class GetDiscoveryJobDiscoveryDetailCredential {
      * @return List of DiscoveryJob credentials.
      * 
      */
-    private final List<GetDiscoveryJobDiscoveryDetailCredentialItem> items;
+    private List<GetDiscoveryJobDiscoveryDetailCredentialItem> items;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobDiscoveryDetailCredential(@CustomType.Parameter("items") List<GetDiscoveryJobDiscoveryDetailCredentialItem> items) {
-        this.items = items;
-    }
-
+    private GetDiscoveryJobDiscoveryDetailCredential() {}
     /**
      * @return List of DiscoveryJob credentials.
      * 
@@ -36,27 +32,27 @@ public final class GetDiscoveryJobDiscoveryDetailCredential {
     public static Builder builder(GetDiscoveryJobDiscoveryDetailCredential defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDiscoveryJobDiscoveryDetailCredentialItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobDiscoveryDetailCredential defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDiscoveryJobDiscoveryDetailCredentialItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDiscoveryJobDiscoveryDetailCredentialItem... items) {
             return items(List.of(items));
-        }        public GetDiscoveryJobDiscoveryDetailCredential build() {
-            return new GetDiscoveryJobDiscoveryDetailCredential(items);
+        }
+        public GetDiscoveryJobDiscoveryDetailCredential build() {
+            final var o = new GetDiscoveryJobDiscoveryDetailCredential();
+            o.items = items;
+            return o;
         }
     }
 }

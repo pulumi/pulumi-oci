@@ -13,42 +13,29 @@ public final class GetInstancesInstanceSourceDetail {
      * @return The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
      * 
      */
-    private final String bootVolumeSizeInGbs;
+    private String bootVolumeSizeInGbs;
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
-    private final String bootVolumeVpusPerGb;
+    private String bootVolumeVpusPerGb;
     /**
      * @return The OCID of the Key Management key to assign as the master encryption key for the boot volume.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
      * 
      */
-    private final String sourceId;
+    private String sourceId;
     /**
      * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
 
-    @CustomType.Constructor
-    private GetInstancesInstanceSourceDetail(
-        @CustomType.Parameter("bootVolumeSizeInGbs") String bootVolumeSizeInGbs,
-        @CustomType.Parameter("bootVolumeVpusPerGb") String bootVolumeVpusPerGb,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("sourceId") String sourceId,
-        @CustomType.Parameter("sourceType") String sourceType) {
-        this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
-        this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
-        this.kmsKeyId = kmsKeyId;
-        this.sourceId = sourceId;
-        this.sourceType = sourceType;
-    }
-
+    private GetInstancesInstanceSourceDetail() {}
     /**
      * @return The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
      * 
@@ -92,18 +79,14 @@ public final class GetInstancesInstanceSourceDetail {
     public static Builder builder(GetInstancesInstanceSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bootVolumeSizeInGbs;
         private String bootVolumeVpusPerGb;
         private String kmsKeyId;
         private String sourceId;
         private String sourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstancesInstanceSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
@@ -113,27 +96,39 @@ public final class GetInstancesInstanceSourceDetail {
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
         public Builder bootVolumeSizeInGbs(String bootVolumeSizeInGbs) {
             this.bootVolumeSizeInGbs = Objects.requireNonNull(bootVolumeSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder bootVolumeVpusPerGb(String bootVolumeVpusPerGb) {
             this.bootVolumeVpusPerGb = Objects.requireNonNull(bootVolumeVpusPerGb);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceId(String sourceId) {
             this.sourceId = Objects.requireNonNull(sourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
-        }        public GetInstancesInstanceSourceDetail build() {
-            return new GetInstancesInstanceSourceDetail(bootVolumeSizeInGbs, bootVolumeVpusPerGb, kmsKeyId, sourceId, sourceType);
+        }
+        public GetInstancesInstanceSourceDetail build() {
+            final var o = new GetInstancesInstanceSourceDetail();
+            o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            o.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
+            o.kmsKeyId = kmsKeyId;
+            o.sourceId = sourceId;
+            o.sourceType = sourceType;
+            return o;
         }
     }
 }

@@ -17,42 +17,29 @@ public final class DeployStageRolloutPolicy {
      * @return (Updatable) The number that will be used to determine how many instances will be deployed concurrently.
      * 
      */
-    private final @Nullable Integer batchCount;
+    private @Nullable Integer batchCount;
     /**
      * @return (Updatable) The duration of delay between batch rollout. The default delay is 1 minute.
      * 
      */
-    private final @Nullable Integer batchDelayInSeconds;
+    private @Nullable Integer batchDelayInSeconds;
     /**
      * @return (Updatable) The percentage that will be used to determine how many instances will be deployed concurrently.
      * 
      */
-    private final @Nullable Integer batchPercentage;
+    private @Nullable Integer batchPercentage;
     /**
      * @return (Updatable) The type of policy used for rolling out a deployment stage.
      * 
      */
-    private final @Nullable String policyType;
+    private @Nullable String policyType;
     /**
      * @return (Updatable) Indicates the criteria to stop.
      * 
      */
-    private final @Nullable Double rampLimitPercent;
+    private @Nullable Double rampLimitPercent;
 
-    @CustomType.Constructor
-    private DeployStageRolloutPolicy(
-        @CustomType.Parameter("batchCount") @Nullable Integer batchCount,
-        @CustomType.Parameter("batchDelayInSeconds") @Nullable Integer batchDelayInSeconds,
-        @CustomType.Parameter("batchPercentage") @Nullable Integer batchPercentage,
-        @CustomType.Parameter("policyType") @Nullable String policyType,
-        @CustomType.Parameter("rampLimitPercent") @Nullable Double rampLimitPercent) {
-        this.batchCount = batchCount;
-        this.batchDelayInSeconds = batchDelayInSeconds;
-        this.batchPercentage = batchPercentage;
-        this.policyType = policyType;
-        this.rampLimitPercent = rampLimitPercent;
-    }
-
+    private DeployStageRolloutPolicy() {}
     /**
      * @return (Updatable) The number that will be used to determine how many instances will be deployed concurrently.
      * 
@@ -96,18 +83,14 @@ public final class DeployStageRolloutPolicy {
     public static Builder builder(DeployStageRolloutPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer batchCount;
         private @Nullable Integer batchDelayInSeconds;
         private @Nullable Integer batchPercentage;
         private @Nullable String policyType;
         private @Nullable Double rampLimitPercent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeployStageRolloutPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.batchCount = defaults.batchCount;
@@ -117,27 +100,39 @@ public final class DeployStageRolloutPolicy {
     	      this.rampLimitPercent = defaults.rampLimitPercent;
         }
 
+        @CustomType.Setter
         public Builder batchCount(@Nullable Integer batchCount) {
             this.batchCount = batchCount;
             return this;
         }
+        @CustomType.Setter
         public Builder batchDelayInSeconds(@Nullable Integer batchDelayInSeconds) {
             this.batchDelayInSeconds = batchDelayInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder batchPercentage(@Nullable Integer batchPercentage) {
             this.batchPercentage = batchPercentage;
             return this;
         }
+        @CustomType.Setter
         public Builder policyType(@Nullable String policyType) {
             this.policyType = policyType;
             return this;
         }
+        @CustomType.Setter
         public Builder rampLimitPercent(@Nullable Double rampLimitPercent) {
             this.rampLimitPercent = rampLimitPercent;
             return this;
-        }        public DeployStageRolloutPolicy build() {
-            return new DeployStageRolloutPolicy(batchCount, batchDelayInSeconds, batchPercentage, policyType, rampLimitPercent);
+        }
+        public DeployStageRolloutPolicy build() {
+            final var o = new DeployStageRolloutPolicy();
+            o.batchCount = batchCount;
+            o.batchDelayInSeconds = batchDelayInSeconds;
+            o.batchPercentage = batchPercentage;
+            o.policyType = policyType;
+            o.rampLimitPercent = rampLimitPercent;
+            return o;
         }
     }
 }

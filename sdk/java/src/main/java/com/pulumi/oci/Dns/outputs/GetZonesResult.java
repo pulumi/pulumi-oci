@@ -18,88 +18,55 @@ public final class GetZonesResult {
      * @return The OCID of the compartment containing the zone.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetZonesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetZonesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the zone.
      * 
      */
-    private final @Nullable String name;
-    private final @Nullable String nameContains;
+    private @Nullable String name;
+    private @Nullable String nameContains;
     /**
      * @return The scope of the zone.
      * 
      */
-    private final @Nullable String scope;
-    private final @Nullable String sortBy;
-    private final @Nullable String sortOrder;
+    private @Nullable String scope;
+    private @Nullable String sortBy;
+    private @Nullable String sortOrder;
     /**
      * @return The current state of the zone resource.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private @Nullable String state;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
     /**
      * @return The OCID of the TSIG key.
      * 
      */
-    private final @Nullable String tsigKeyId;
+    private @Nullable String tsigKeyId;
     /**
      * @return The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
      * 
      */
-    private final @Nullable String viewId;
+    private @Nullable String viewId;
     /**
      * @return The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      * 
      */
-    private final @Nullable String zoneType;
+    private @Nullable String zoneType;
     /**
      * @return The list of zones.
      * 
      */
-    private final List<GetZonesZone> zones;
+    private List<GetZonesZone> zones;
 
-    @CustomType.Constructor
-    private GetZonesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetZonesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("nameContains") @Nullable String nameContains,
-        @CustomType.Parameter("scope") @Nullable String scope,
-        @CustomType.Parameter("sortBy") @Nullable String sortBy,
-        @CustomType.Parameter("sortOrder") @Nullable String sortOrder,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan,
-        @CustomType.Parameter("tsigKeyId") @Nullable String tsigKeyId,
-        @CustomType.Parameter("viewId") @Nullable String viewId,
-        @CustomType.Parameter("zoneType") @Nullable String zoneType,
-        @CustomType.Parameter("zones") List<GetZonesZone> zones) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.nameContains = nameContains;
-        this.scope = scope;
-        this.sortBy = sortBy;
-        this.sortOrder = sortOrder;
-        this.state = state;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-        this.tsigKeyId = tsigKeyId;
-        this.viewId = viewId;
-        this.zoneType = zoneType;
-        this.zones = zones;
-    }
-
+    private GetZonesResult() {}
     /**
      * @return The OCID of the compartment containing the zone.
      * 
@@ -189,7 +156,7 @@ public final class GetZonesResult {
     public static Builder builder(GetZonesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetZonesFilter> filters;
@@ -206,11 +173,7 @@ public final class GetZonesResult {
         private @Nullable String viewId;
         private @Nullable String zoneType;
         private List<GetZonesZone> zones;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetZonesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -230,10 +193,12 @@ public final class GetZonesResult {
     	      this.zones = defaults.zones;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetZonesFilter> filters) {
             this.filters = filters;
             return this;
@@ -241,62 +206,92 @@ public final class GetZonesResult {
         public Builder filters(GetZonesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
             this.nameContains = nameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder scope(@Nullable String scope) {
             this.scope = scope;
             return this;
         }
+        @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
             this.sortBy = sortBy;
             return this;
         }
+        @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
             this.sortOrder = sortOrder;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder tsigKeyId(@Nullable String tsigKeyId) {
             this.tsigKeyId = tsigKeyId;
             return this;
         }
+        @CustomType.Setter
         public Builder viewId(@Nullable String viewId) {
             this.viewId = viewId;
             return this;
         }
+        @CustomType.Setter
         public Builder zoneType(@Nullable String zoneType) {
             this.zoneType = zoneType;
             return this;
         }
+        @CustomType.Setter
         public Builder zones(List<GetZonesZone> zones) {
             this.zones = Objects.requireNonNull(zones);
             return this;
         }
         public Builder zones(GetZonesZone... zones) {
             return zones(List.of(zones));
-        }        public GetZonesResult build() {
-            return new GetZonesResult(compartmentId, filters, id, name, nameContains, scope, sortBy, sortOrder, state, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, tsigKeyId, viewId, zoneType, zones);
+        }
+        public GetZonesResult build() {
+            final var o = new GetZonesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.nameContains = nameContains;
+            o.scope = scope;
+            o.sortBy = sortBy;
+            o.sortOrder = sortOrder;
+            o.state = state;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            o.tsigKeyId = tsigKeyId;
+            o.viewId = viewId;
+            o.zoneType = zoneType;
+            o.zones = zones;
+            return o;
         }
     }
 }

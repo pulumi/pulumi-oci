@@ -19,64 +19,45 @@ public final class AppFirewallPolicyResponseProtectionRule {
      * @return (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    private final String actionName;
+    private String actionName;
     /**
      * @return (Updatable) An expression that determines whether or not the rule action should be executed.
      * 
      */
-    private final @Nullable String condition;
+    private @Nullable String condition;
     /**
      * @return (Updatable) The language used to parse condition from field `condition`. Available languages:
      * * **JMESPATH** an extended JMESPath language syntax.
      * 
      */
-    private final @Nullable String conditionLanguage;
+    private @Nullable String conditionLanguage;
     /**
      * @return (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
      * 
      */
-    private final @Nullable Boolean isBodyInspectionEnabled;
+    private @Nullable Boolean isBodyInspectionEnabled;
     /**
      * @return (Updatable) Rule name. Must be unique within the module.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
      * 
      */
-    private final List<AppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities;
+    private List<AppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities;
     /**
      * @return (Updatable) Settings for protection capabilities
      * 
      */
-    private final @Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings protectionCapabilitySettings;
+    private @Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings protectionCapabilitySettings;
     /**
      * @return (Updatable) Type of WebAppFirewallPolicyRule.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyResponseProtectionRule(
-        @CustomType.Parameter("actionName") String actionName,
-        @CustomType.Parameter("condition") @Nullable String condition,
-        @CustomType.Parameter("conditionLanguage") @Nullable String conditionLanguage,
-        @CustomType.Parameter("isBodyInspectionEnabled") @Nullable Boolean isBodyInspectionEnabled,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("protectionCapabilities") List<AppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities,
-        @CustomType.Parameter("protectionCapabilitySettings") @Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings protectionCapabilitySettings,
-        @CustomType.Parameter("type") String type) {
-        this.actionName = actionName;
-        this.condition = condition;
-        this.conditionLanguage = conditionLanguage;
-        this.isBodyInspectionEnabled = isBodyInspectionEnabled;
-        this.name = name;
-        this.protectionCapabilities = protectionCapabilities;
-        this.protectionCapabilitySettings = protectionCapabilitySettings;
-        this.type = type;
-    }
-
+    private AppFirewallPolicyResponseProtectionRule() {}
     /**
      * @return (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
@@ -142,7 +123,7 @@ public final class AppFirewallPolicyResponseProtectionRule {
     public static Builder builder(AppFirewallPolicyResponseProtectionRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String actionName;
         private @Nullable String condition;
@@ -152,11 +133,7 @@ public final class AppFirewallPolicyResponseProtectionRule {
         private List<AppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities;
         private @Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings protectionCapabilitySettings;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyResponseProtectionRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionName = defaults.actionName;
@@ -169,26 +146,32 @@ public final class AppFirewallPolicyResponseProtectionRule {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder actionName(String actionName) {
             this.actionName = Objects.requireNonNull(actionName);
             return this;
         }
+        @CustomType.Setter
         public Builder condition(@Nullable String condition) {
             this.condition = condition;
             return this;
         }
+        @CustomType.Setter
         public Builder conditionLanguage(@Nullable String conditionLanguage) {
             this.conditionLanguage = conditionLanguage;
             return this;
         }
+        @CustomType.Setter
         public Builder isBodyInspectionEnabled(@Nullable Boolean isBodyInspectionEnabled) {
             this.isBodyInspectionEnabled = isBodyInspectionEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder protectionCapabilities(List<AppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities) {
             this.protectionCapabilities = Objects.requireNonNull(protectionCapabilities);
             return this;
@@ -196,15 +179,27 @@ public final class AppFirewallPolicyResponseProtectionRule {
         public Builder protectionCapabilities(AppFirewallPolicyResponseProtectionRuleProtectionCapability... protectionCapabilities) {
             return protectionCapabilities(List.of(protectionCapabilities));
         }
+        @CustomType.Setter
         public Builder protectionCapabilitySettings(@Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings protectionCapabilitySettings) {
             this.protectionCapabilitySettings = protectionCapabilitySettings;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public AppFirewallPolicyResponseProtectionRule build() {
-            return new AppFirewallPolicyResponseProtectionRule(actionName, condition, conditionLanguage, isBodyInspectionEnabled, name, protectionCapabilities, protectionCapabilitySettings, type);
+        }
+        public AppFirewallPolicyResponseProtectionRule build() {
+            final var o = new AppFirewallPolicyResponseProtectionRule();
+            o.actionName = actionName;
+            o.condition = condition;
+            o.conditionLanguage = conditionLanguage;
+            o.isBodyInspectionEnabled = isBodyInspectionEnabled;
+            o.name = name;
+            o.protectionCapabilities = protectionCapabilities;
+            o.protectionCapabilitySettings = protectionCapabilitySettings;
+            o.type = type;
+            return o;
         }
     }
 }

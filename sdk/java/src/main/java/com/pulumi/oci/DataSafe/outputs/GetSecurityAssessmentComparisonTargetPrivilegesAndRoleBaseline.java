@@ -15,56 +15,39 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselin
      * @return The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      * 
      */
-    private final List<String> details;
+    private List<String> details;
     /**
      * @return A unique identifier for the finding. This is common for the finding across targets.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
      * 
      */
-    private final List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference> references;
+    private List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference> references;
     /**
      * @return The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      * 
      */
-    private final String remarks;
+    private String remarks;
     /**
      * @return The severity of this diff.
      * 
      */
-    private final String severity;
+    private String severity;
     /**
      * @return The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      * 
      */
-    private final String summary;
+    private String summary;
     /**
      * @return The short title for the finding.
      * 
      */
-    private final String title;
+    private String title;
 
-    @CustomType.Constructor
-    private GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline(
-        @CustomType.Parameter("details") List<String> details,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("references") List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference> references,
-        @CustomType.Parameter("remarks") String remarks,
-        @CustomType.Parameter("severity") String severity,
-        @CustomType.Parameter("summary") String summary,
-        @CustomType.Parameter("title") String title) {
-        this.details = details;
-        this.key = key;
-        this.references = references;
-        this.remarks = remarks;
-        this.severity = severity;
-        this.summary = summary;
-        this.title = title;
-    }
-
+    private GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline() {}
     /**
      * @return The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      * 
@@ -122,7 +105,7 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselin
     public static Builder builder(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> details;
         private String key;
@@ -131,11 +114,7 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselin
         private String severity;
         private String summary;
         private String title;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.details = defaults.details;
@@ -147,6 +126,7 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselin
     	      this.title = defaults.title;
         }
 
+        @CustomType.Setter
         public Builder details(List<String> details) {
             this.details = Objects.requireNonNull(details);
             return this;
@@ -154,10 +134,12 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselin
         public Builder details(String... details) {
             return details(List.of(details));
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder references(List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference> references) {
             this.references = Objects.requireNonNull(references);
             return this;
@@ -165,23 +147,36 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselin
         public Builder references(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference... references) {
             return references(List.of(references));
         }
+        @CustomType.Setter
         public Builder remarks(String remarks) {
             this.remarks = Objects.requireNonNull(remarks);
             return this;
         }
+        @CustomType.Setter
         public Builder severity(String severity) {
             this.severity = Objects.requireNonNull(severity);
             return this;
         }
+        @CustomType.Setter
         public Builder summary(String summary) {
             this.summary = Objects.requireNonNull(summary);
             return this;
         }
+        @CustomType.Setter
         public Builder title(String title) {
             this.title = Objects.requireNonNull(title);
             return this;
-        }        public GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline build() {
-            return new GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline(details, key, references, remarks, severity, summary, title);
+        }
+        public GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline build() {
+            final var o = new GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline();
+            o.details = details;
+            o.key = key;
+            o.references = references;
+            o.remarks = remarks;
+            o.severity = severity;
+            o.summary = summary;
+            o.title = title;
+            return o;
         }
     }
 }

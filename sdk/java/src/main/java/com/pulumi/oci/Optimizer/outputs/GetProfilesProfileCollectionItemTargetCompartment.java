@@ -14,13 +14,9 @@ public final class GetProfilesProfileCollectionItemTargetCompartment {
      * @return The list of tags specified in the current profile override.
      * 
      */
-    private final List<String> items;
+    private List<String> items;
 
-    @CustomType.Constructor
-    private GetProfilesProfileCollectionItemTargetCompartment(@CustomType.Parameter("items") List<String> items) {
-        this.items = items;
-    }
-
+    private GetProfilesProfileCollectionItemTargetCompartment() {}
     /**
      * @return The list of tags specified in the current profile override.
      * 
@@ -36,27 +32,27 @@ public final class GetProfilesProfileCollectionItemTargetCompartment {
     public static Builder builder(GetProfilesProfileCollectionItemTargetCompartment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfilesProfileCollectionItemTargetCompartment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<String> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(String... items) {
             return items(List.of(items));
-        }        public GetProfilesProfileCollectionItemTargetCompartment build() {
-            return new GetProfilesProfileCollectionItemTargetCompartment(items);
+        }
+        public GetProfilesProfileCollectionItemTargetCompartment build() {
+            final var o = new GetProfilesProfileCollectionItemTargetCompartment();
+            o.items = items;
+            return o;
         }
     }
 }

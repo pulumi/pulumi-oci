@@ -19,70 +19,49 @@ public final class GatewayResponseCacheDetails {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
      * 
      */
-    private final @Nullable String authenticationSecretId;
+    private @Nullable String authenticationSecretId;
     /**
      * @return (Updatable) The version number of the authentication secret to use.
      * 
      */
-    private final @Nullable String authenticationSecretVersionNumber;
+    private @Nullable String authenticationSecretVersionNumber;
     /**
      * @return (Updatable) Defines the timeout for establishing a connection with the Response Cache.
      * 
      */
-    private final @Nullable Integer connectTimeoutInMs;
+    private @Nullable Integer connectTimeoutInMs;
     /**
      * @return (Updatable) Defines if the connection should be over SSL.
      * 
      */
-    private final @Nullable Boolean isSslEnabled;
+    private @Nullable Boolean isSslEnabled;
     /**
      * @return (Updatable) Defines whether or not to uphold SSL verification.
      * 
      */
-    private final @Nullable Boolean isSslVerifyDisabled;
+    private @Nullable Boolean isSslVerifyDisabled;
     /**
      * @return (Updatable) Defines the timeout for reading data from the Response Cache.
      * 
      */
-    private final @Nullable Integer readTimeoutInMs;
+    private @Nullable Integer readTimeoutInMs;
     /**
      * @return (Updatable) Defines the timeout for transmitting data to the Response Cache.
      * 
      */
-    private final @Nullable Integer sendTimeoutInMs;
+    private @Nullable Integer sendTimeoutInMs;
     /**
      * @return (Updatable) The set of cache store members to connect to. At present only a single server is supported.
      * 
      */
-    private final @Nullable List<GatewayResponseCacheDetailsServer> servers;
+    private @Nullable List<GatewayResponseCacheDetailsServer> servers;
     /**
      * @return (Updatable) Type of the Response Cache.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GatewayResponseCacheDetails(
-        @CustomType.Parameter("authenticationSecretId") @Nullable String authenticationSecretId,
-        @CustomType.Parameter("authenticationSecretVersionNumber") @Nullable String authenticationSecretVersionNumber,
-        @CustomType.Parameter("connectTimeoutInMs") @Nullable Integer connectTimeoutInMs,
-        @CustomType.Parameter("isSslEnabled") @Nullable Boolean isSslEnabled,
-        @CustomType.Parameter("isSslVerifyDisabled") @Nullable Boolean isSslVerifyDisabled,
-        @CustomType.Parameter("readTimeoutInMs") @Nullable Integer readTimeoutInMs,
-        @CustomType.Parameter("sendTimeoutInMs") @Nullable Integer sendTimeoutInMs,
-        @CustomType.Parameter("servers") @Nullable List<GatewayResponseCacheDetailsServer> servers,
-        @CustomType.Parameter("type") String type) {
-        this.authenticationSecretId = authenticationSecretId;
-        this.authenticationSecretVersionNumber = authenticationSecretVersionNumber;
-        this.connectTimeoutInMs = connectTimeoutInMs;
-        this.isSslEnabled = isSslEnabled;
-        this.isSslVerifyDisabled = isSslVerifyDisabled;
-        this.readTimeoutInMs = readTimeoutInMs;
-        this.sendTimeoutInMs = sendTimeoutInMs;
-        this.servers = servers;
-        this.type = type;
-    }
-
+    private GatewayResponseCacheDetails() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
      * 
@@ -154,7 +133,7 @@ public final class GatewayResponseCacheDetails {
     public static Builder builder(GatewayResponseCacheDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String authenticationSecretId;
         private @Nullable String authenticationSecretVersionNumber;
@@ -165,11 +144,7 @@ public final class GatewayResponseCacheDetails {
         private @Nullable Integer sendTimeoutInMs;
         private @Nullable List<GatewayResponseCacheDetailsServer> servers;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GatewayResponseCacheDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authenticationSecretId = defaults.authenticationSecretId;
@@ -183,34 +158,42 @@ public final class GatewayResponseCacheDetails {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder authenticationSecretId(@Nullable String authenticationSecretId) {
             this.authenticationSecretId = authenticationSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder authenticationSecretVersionNumber(@Nullable String authenticationSecretVersionNumber) {
             this.authenticationSecretVersionNumber = authenticationSecretVersionNumber;
             return this;
         }
+        @CustomType.Setter
         public Builder connectTimeoutInMs(@Nullable Integer connectTimeoutInMs) {
             this.connectTimeoutInMs = connectTimeoutInMs;
             return this;
         }
+        @CustomType.Setter
         public Builder isSslEnabled(@Nullable Boolean isSslEnabled) {
             this.isSslEnabled = isSslEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isSslVerifyDisabled(@Nullable Boolean isSslVerifyDisabled) {
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
+        @CustomType.Setter
         public Builder readTimeoutInMs(@Nullable Integer readTimeoutInMs) {
             this.readTimeoutInMs = readTimeoutInMs;
             return this;
         }
+        @CustomType.Setter
         public Builder sendTimeoutInMs(@Nullable Integer sendTimeoutInMs) {
             this.sendTimeoutInMs = sendTimeoutInMs;
             return this;
         }
+        @CustomType.Setter
         public Builder servers(@Nullable List<GatewayResponseCacheDetailsServer> servers) {
             this.servers = servers;
             return this;
@@ -218,11 +201,23 @@ public final class GatewayResponseCacheDetails {
         public Builder servers(GatewayResponseCacheDetailsServer... servers) {
             return servers(List.of(servers));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GatewayResponseCacheDetails build() {
-            return new GatewayResponseCacheDetails(authenticationSecretId, authenticationSecretVersionNumber, connectTimeoutInMs, isSslEnabled, isSslVerifyDisabled, readTimeoutInMs, sendTimeoutInMs, servers, type);
+        }
+        public GatewayResponseCacheDetails build() {
+            final var o = new GatewayResponseCacheDetails();
+            o.authenticationSecretId = authenticationSecretId;
+            o.authenticationSecretVersionNumber = authenticationSecretVersionNumber;
+            o.connectTimeoutInMs = connectTimeoutInMs;
+            o.isSslEnabled = isSslEnabled;
+            o.isSslVerifyDisabled = isSslVerifyDisabled;
+            o.readTimeoutInMs = readTimeoutInMs;
+            o.sendTimeoutInMs = sendTimeoutInMs;
+            o.servers = servers;
+            o.type = type;
+            return o;
         }
     }
 }

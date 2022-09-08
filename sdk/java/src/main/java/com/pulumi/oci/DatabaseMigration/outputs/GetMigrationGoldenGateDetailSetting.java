@@ -16,28 +16,19 @@ public final class GetMigrationGoldenGateDetailSetting {
      * @return ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
      * 
      */
-    private final Integer acceptableLag;
+    private Integer acceptableLag;
     /**
      * @return Parameters for Extract processes.
      * 
      */
-    private final List<GetMigrationGoldenGateDetailSettingExtract> extracts;
+    private List<GetMigrationGoldenGateDetailSettingExtract> extracts;
     /**
      * @return Parameters for Replicat processes.
      * 
      */
-    private final List<GetMigrationGoldenGateDetailSettingReplicat> replicats;
+    private List<GetMigrationGoldenGateDetailSettingReplicat> replicats;
 
-    @CustomType.Constructor
-    private GetMigrationGoldenGateDetailSetting(
-        @CustomType.Parameter("acceptableLag") Integer acceptableLag,
-        @CustomType.Parameter("extracts") List<GetMigrationGoldenGateDetailSettingExtract> extracts,
-        @CustomType.Parameter("replicats") List<GetMigrationGoldenGateDetailSettingReplicat> replicats) {
-        this.acceptableLag = acceptableLag;
-        this.extracts = extracts;
-        this.replicats = replicats;
-    }
-
+    private GetMigrationGoldenGateDetailSetting() {}
     /**
      * @return ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
      * 
@@ -67,16 +58,12 @@ public final class GetMigrationGoldenGateDetailSetting {
     public static Builder builder(GetMigrationGoldenGateDetailSetting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer acceptableLag;
         private List<GetMigrationGoldenGateDetailSettingExtract> extracts;
         private List<GetMigrationGoldenGateDetailSettingReplicat> replicats;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationGoldenGateDetailSetting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.acceptableLag = defaults.acceptableLag;
@@ -84,10 +71,12 @@ public final class GetMigrationGoldenGateDetailSetting {
     	      this.replicats = defaults.replicats;
         }
 
+        @CustomType.Setter
         public Builder acceptableLag(Integer acceptableLag) {
             this.acceptableLag = Objects.requireNonNull(acceptableLag);
             return this;
         }
+        @CustomType.Setter
         public Builder extracts(List<GetMigrationGoldenGateDetailSettingExtract> extracts) {
             this.extracts = Objects.requireNonNull(extracts);
             return this;
@@ -95,14 +84,20 @@ public final class GetMigrationGoldenGateDetailSetting {
         public Builder extracts(GetMigrationGoldenGateDetailSettingExtract... extracts) {
             return extracts(List.of(extracts));
         }
+        @CustomType.Setter
         public Builder replicats(List<GetMigrationGoldenGateDetailSettingReplicat> replicats) {
             this.replicats = Objects.requireNonNull(replicats);
             return this;
         }
         public Builder replicats(GetMigrationGoldenGateDetailSettingReplicat... replicats) {
             return replicats(List.of(replicats));
-        }        public GetMigrationGoldenGateDetailSetting build() {
-            return new GetMigrationGoldenGateDetailSetting(acceptableLag, extracts, replicats);
+        }
+        public GetMigrationGoldenGateDetailSetting build() {
+            final var o = new GetMigrationGoldenGateDetailSetting();
+            o.acceptableLag = acceptableLag;
+            o.extracts = extracts;
+            o.replicats = replicats;
+            return o;
         }
     }
 }

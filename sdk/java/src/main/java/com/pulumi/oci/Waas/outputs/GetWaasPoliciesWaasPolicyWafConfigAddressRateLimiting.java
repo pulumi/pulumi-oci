@@ -14,35 +14,24 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting {
      * @return The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
      * 
      */
-    private final Integer allowedRatePerAddress;
+    private Integer allowedRatePerAddress;
     /**
      * @return The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
-    private final Integer blockResponseCode;
+    private Integer blockResponseCode;
     /**
      * @return Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
      * 
      */
-    private final Integer maxDelayedCountPerAddress;
+    private Integer maxDelayedCountPerAddress;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting(
-        @CustomType.Parameter("allowedRatePerAddress") Integer allowedRatePerAddress,
-        @CustomType.Parameter("blockResponseCode") Integer blockResponseCode,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("maxDelayedCountPerAddress") Integer maxDelayedCountPerAddress) {
-        this.allowedRatePerAddress = allowedRatePerAddress;
-        this.blockResponseCode = blockResponseCode;
-        this.isEnabled = isEnabled;
-        this.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
-    }
-
+    private GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting() {}
     /**
      * @return The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
      * 
@@ -79,17 +68,13 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting {
     public static Builder builder(GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer allowedRatePerAddress;
         private Integer blockResponseCode;
         private Boolean isEnabled;
         private Integer maxDelayedCountPerAddress;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedRatePerAddress = defaults.allowedRatePerAddress;
@@ -98,23 +83,33 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting {
     	      this.maxDelayedCountPerAddress = defaults.maxDelayedCountPerAddress;
         }
 
+        @CustomType.Setter
         public Builder allowedRatePerAddress(Integer allowedRatePerAddress) {
             this.allowedRatePerAddress = Objects.requireNonNull(allowedRatePerAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder blockResponseCode(Integer blockResponseCode) {
             this.blockResponseCode = Objects.requireNonNull(blockResponseCode);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder maxDelayedCountPerAddress(Integer maxDelayedCountPerAddress) {
             this.maxDelayedCountPerAddress = Objects.requireNonNull(maxDelayedCountPerAddress);
             return this;
-        }        public GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting build() {
-            return new GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting(allowedRatePerAddress, blockResponseCode, isEnabled, maxDelayedCountPerAddress);
+        }
+        public GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting build() {
+            final var o = new GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting();
+            o.allowedRatePerAddress = allowedRatePerAddress;
+            o.blockResponseCode = blockResponseCode;
+            o.isEnabled = isEnabled;
+            o.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
+            return o;
         }
     }
 }

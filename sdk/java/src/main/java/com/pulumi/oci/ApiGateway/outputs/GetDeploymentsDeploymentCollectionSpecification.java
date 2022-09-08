@@ -16,28 +16,19 @@ public final class GetDeploymentsDeploymentCollectionSpecification {
      * @return Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy> loggingPolicies;
+    private List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy> loggingPolicies;
     /**
      * @return Behavior applied to any requests received by the API on this route.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicy> requestPolicies;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicy> requestPolicies;
     /**
      * @return A list of routes that this API exposes.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRoute> routes;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRoute> routes;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecification(
-        @CustomType.Parameter("loggingPolicies") List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy> loggingPolicies,
-        @CustomType.Parameter("requestPolicies") List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicy> requestPolicies,
-        @CustomType.Parameter("routes") List<GetDeploymentsDeploymentCollectionSpecificationRoute> routes) {
-        this.loggingPolicies = loggingPolicies;
-        this.requestPolicies = requestPolicies;
-        this.routes = routes;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecification() {}
     /**
      * @return Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
@@ -67,16 +58,12 @@ public final class GetDeploymentsDeploymentCollectionSpecification {
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecification defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy> loggingPolicies;
         private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicy> requestPolicies;
         private List<GetDeploymentsDeploymentCollectionSpecificationRoute> routes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecification defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.loggingPolicies = defaults.loggingPolicies;
@@ -84,6 +71,7 @@ public final class GetDeploymentsDeploymentCollectionSpecification {
     	      this.routes = defaults.routes;
         }
 
+        @CustomType.Setter
         public Builder loggingPolicies(List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy> loggingPolicies) {
             this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
             return this;
@@ -91,6 +79,7 @@ public final class GetDeploymentsDeploymentCollectionSpecification {
         public Builder loggingPolicies(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy... loggingPolicies) {
             return loggingPolicies(List.of(loggingPolicies));
         }
+        @CustomType.Setter
         public Builder requestPolicies(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicy> requestPolicies) {
             this.requestPolicies = Objects.requireNonNull(requestPolicies);
             return this;
@@ -98,14 +87,20 @@ public final class GetDeploymentsDeploymentCollectionSpecification {
         public Builder requestPolicies(GetDeploymentsDeploymentCollectionSpecificationRequestPolicy... requestPolicies) {
             return requestPolicies(List.of(requestPolicies));
         }
+        @CustomType.Setter
         public Builder routes(List<GetDeploymentsDeploymentCollectionSpecificationRoute> routes) {
             this.routes = Objects.requireNonNull(routes);
             return this;
         }
         public Builder routes(GetDeploymentsDeploymentCollectionSpecificationRoute... routes) {
             return routes(List.of(routes));
-        }        public GetDeploymentsDeploymentCollectionSpecification build() {
-            return new GetDeploymentsDeploymentCollectionSpecification(loggingPolicies, requestPolicies, routes);
+        }
+        public GetDeploymentsDeploymentCollectionSpecification build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecification();
+            o.loggingPolicies = loggingPolicies;
+            o.requestPolicies = requestPolicies;
+            o.routes = routes;
+            return o;
         }
     }
 }

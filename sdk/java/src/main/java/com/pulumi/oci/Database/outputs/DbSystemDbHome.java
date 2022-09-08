@@ -15,94 +15,65 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DbSystemDbHome {
-    private final @Nullable Boolean createAsync;
+    private @Nullable Boolean createAsync;
     /**
      * @return (Updatable) Details for creating a database by restoring from a source database system.
      * 
      */
-    private final DbSystemDbHomeDatabase database;
+    private DbSystemDbHomeDatabase database;
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
      * 
      */
-    private final @Nullable String databaseSoftwareImageId;
-    private final @Nullable String dbHomeLocation;
+    private @Nullable String databaseSoftwareImageId;
+    private @Nullable String dbHomeLocation;
     /**
      * @return A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    private final @Nullable String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    private final @Nullable String lastPatchHistoryEntryId;
+    private @Nullable String lastPatchHistoryEntryId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final @Nullable String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current state of the DB system.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The date and time the DB system was created.
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
 
-    @CustomType.Constructor
-    private DbSystemDbHome(
-        @CustomType.Parameter("createAsync") @Nullable Boolean createAsync,
-        @CustomType.Parameter("database") DbSystemDbHomeDatabase database,
-        @CustomType.Parameter("databaseSoftwareImageId") @Nullable String databaseSoftwareImageId,
-        @CustomType.Parameter("dbHomeLocation") @Nullable String dbHomeLocation,
-        @CustomType.Parameter("dbVersion") @Nullable String dbVersion,
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("lastPatchHistoryEntryId") @Nullable String lastPatchHistoryEntryId,
-        @CustomType.Parameter("lifecycleDetails") @Nullable String lifecycleDetails,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated) {
-        this.createAsync = createAsync;
-        this.database = database;
-        this.databaseSoftwareImageId = databaseSoftwareImageId;
-        this.dbHomeLocation = dbHomeLocation;
-        this.dbVersion = dbVersion;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private DbSystemDbHome() {}
     public Optional<Boolean> createAsync() {
         return Optional.ofNullable(this.createAsync);
     }
@@ -194,7 +165,7 @@ public final class DbSystemDbHome {
     public static Builder builder(DbSystemDbHome defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean createAsync;
         private DbSystemDbHomeDatabase database;
@@ -209,11 +180,7 @@ public final class DbSystemDbHome {
         private @Nullable String lifecycleDetails;
         private @Nullable String state;
         private @Nullable String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DbSystemDbHome defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.createAsync = defaults.createAsync;
@@ -231,59 +198,87 @@ public final class DbSystemDbHome {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder createAsync(@Nullable Boolean createAsync) {
             this.createAsync = createAsync;
             return this;
         }
+        @CustomType.Setter
         public Builder database(DbSystemDbHomeDatabase database) {
             this.database = Objects.requireNonNull(database);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbHomeLocation(@Nullable String dbHomeLocation) {
             this.dbHomeLocation = dbHomeLocation;
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
             this.dbVersion = dbVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder lastPatchHistoryEntryId(@Nullable String lastPatchHistoryEntryId) {
             this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
-        }        public DbSystemDbHome build() {
-            return new DbSystemDbHome(createAsync, database, databaseSoftwareImageId, dbHomeLocation, dbVersion, definedTags, displayName, freeformTags, id, lastPatchHistoryEntryId, lifecycleDetails, state, timeCreated);
+        }
+        public DbSystemDbHome build() {
+            final var o = new DbSystemDbHome();
+            o.createAsync = createAsync;
+            o.database = database;
+            o.databaseSoftwareImageId = databaseSoftwareImageId;
+            o.dbHomeLocation = dbHomeLocation;
+            o.dbVersion = dbVersion;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

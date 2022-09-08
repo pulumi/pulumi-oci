@@ -14,13 +14,9 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
      * @return The list of headers.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem> items;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem> items;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter(@CustomType.Parameter("items") List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem> items) {
-        this.items = items;
-    }
-
+    private GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter() {}
     /**
      * @return The list of headers.
      * 
@@ -36,27 +32,27 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
     public static Builder builder(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem... items) {
             return items(List.of(items));
-        }        public GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter build() {
-            return new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter(items);
+        }
+        public GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter build() {
+            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter();
+            o.items = items;
+            return o;
         }
     }
 }

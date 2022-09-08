@@ -18,52 +18,35 @@ public final class GetAutonomousDatabaseBackupsResult {
      * @return The list of autonomous_database_backups.
      * 
      */
-    private final List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups;
+    private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      * 
      */
-    private final @Nullable String autonomousDatabaseId;
+    private @Nullable String autonomousDatabaseId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The user-friendly name for the backup. The name does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAutonomousDatabaseBackupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAutonomousDatabaseBackupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the backup.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabaseBackupsResult(
-        @CustomType.Parameter("autonomousDatabaseBackups") List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups,
-        @CustomType.Parameter("autonomousDatabaseId") @Nullable String autonomousDatabaseId,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAutonomousDatabaseBackupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.autonomousDatabaseBackups = autonomousDatabaseBackups;
-        this.autonomousDatabaseId = autonomousDatabaseId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetAutonomousDatabaseBackupsResult() {}
     /**
      * @return The list of autonomous_database_backups.
      * 
@@ -117,7 +100,7 @@ public final class GetAutonomousDatabaseBackupsResult {
     public static Builder builder(GetAutonomousDatabaseBackupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups;
         private @Nullable String autonomousDatabaseId;
@@ -126,11 +109,7 @@ public final class GetAutonomousDatabaseBackupsResult {
         private @Nullable List<GetAutonomousDatabaseBackupsFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabaseBackupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseBackups = defaults.autonomousDatabaseBackups;
@@ -142,6 +121,7 @@ public final class GetAutonomousDatabaseBackupsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder autonomousDatabaseBackups(List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups) {
             this.autonomousDatabaseBackups = Objects.requireNonNull(autonomousDatabaseBackups);
             return this;
@@ -149,18 +129,22 @@ public final class GetAutonomousDatabaseBackupsResult {
         public Builder autonomousDatabaseBackups(GetAutonomousDatabaseBackupsAutonomousDatabaseBackup... autonomousDatabaseBackups) {
             return autonomousDatabaseBackups(List.of(autonomousDatabaseBackups));
         }
+        @CustomType.Setter
         public Builder autonomousDatabaseId(@Nullable String autonomousDatabaseId) {
             this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousDatabaseBackupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,15 +152,26 @@ public final class GetAutonomousDatabaseBackupsResult {
         public Builder filters(GetAutonomousDatabaseBackupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetAutonomousDatabaseBackupsResult build() {
-            return new GetAutonomousDatabaseBackupsResult(autonomousDatabaseBackups, autonomousDatabaseId, compartmentId, displayName, filters, id, state);
+        }
+        public GetAutonomousDatabaseBackupsResult build() {
+            final var o = new GetAutonomousDatabaseBackupsResult();
+            o.autonomousDatabaseBackups = autonomousDatabaseBackups;
+            o.autonomousDatabaseId = autonomousDatabaseId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

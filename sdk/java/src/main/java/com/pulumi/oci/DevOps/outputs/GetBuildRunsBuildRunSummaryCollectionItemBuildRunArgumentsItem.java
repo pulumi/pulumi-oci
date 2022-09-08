@@ -13,21 +13,14 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsIte
      * @return Name of the step.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Value of the argument.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem() {}
     /**
      * @return Name of the step.
      * 
@@ -50,30 +43,32 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsIte
     public static Builder builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem build() {
-            return new GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem(name, value);
+        }
+        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem build() {
+            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -15,13 +15,13 @@ public final class GetNetworkLoadBalancerHealthResult {
      * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set`
      * 
      */
-    private final List<String> criticalStateBackendSetNames;
+    private List<String> criticalStateBackendSetNames;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String networkLoadBalancerId;
+    private String id;
+    private String networkLoadBalancerId;
     /**
      * @return The overall health status of the network load balancer.
      * *  **OK:** All backend sets associated with the network load balancer return a status of `OK`.
@@ -34,41 +34,24 @@ public final class GetNetworkLoadBalancerHealthResult {
      * *  The system could not retrieve metrics for any reason.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The total number of backend sets associated with this network load balancer.  Example: `4`
      * 
      */
-    private final Integer totalBackendSetCount;
+    private Integer totalBackendSetCount;
     /**
      * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set2`
      * 
      */
-    private final List<String> unknownStateBackendSetNames;
+    private List<String> unknownStateBackendSetNames;
     /**
      * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set3`
      * 
      */
-    private final List<String> warningStateBackendSetNames;
+    private List<String> warningStateBackendSetNames;
 
-    @CustomType.Constructor
-    private GetNetworkLoadBalancerHealthResult(
-        @CustomType.Parameter("criticalStateBackendSetNames") List<String> criticalStateBackendSetNames,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("networkLoadBalancerId") String networkLoadBalancerId,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("totalBackendSetCount") Integer totalBackendSetCount,
-        @CustomType.Parameter("unknownStateBackendSetNames") List<String> unknownStateBackendSetNames,
-        @CustomType.Parameter("warningStateBackendSetNames") List<String> warningStateBackendSetNames) {
-        this.criticalStateBackendSetNames = criticalStateBackendSetNames;
-        this.id = id;
-        this.networkLoadBalancerId = networkLoadBalancerId;
-        this.status = status;
-        this.totalBackendSetCount = totalBackendSetCount;
-        this.unknownStateBackendSetNames = unknownStateBackendSetNames;
-        this.warningStateBackendSetNames = warningStateBackendSetNames;
-    }
-
+    private GetNetworkLoadBalancerHealthResult() {}
     /**
      * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set`
      * 
@@ -130,7 +113,7 @@ public final class GetNetworkLoadBalancerHealthResult {
     public static Builder builder(GetNetworkLoadBalancerHealthResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> criticalStateBackendSetNames;
         private String id;
@@ -139,11 +122,7 @@ public final class GetNetworkLoadBalancerHealthResult {
         private Integer totalBackendSetCount;
         private List<String> unknownStateBackendSetNames;
         private List<String> warningStateBackendSetNames;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkLoadBalancerHealthResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.criticalStateBackendSetNames = defaults.criticalStateBackendSetNames;
@@ -155,6 +134,7 @@ public final class GetNetworkLoadBalancerHealthResult {
     	      this.warningStateBackendSetNames = defaults.warningStateBackendSetNames;
         }
 
+        @CustomType.Setter
         public Builder criticalStateBackendSetNames(List<String> criticalStateBackendSetNames) {
             this.criticalStateBackendSetNames = Objects.requireNonNull(criticalStateBackendSetNames);
             return this;
@@ -162,22 +142,27 @@ public final class GetNetworkLoadBalancerHealthResult {
         public Builder criticalStateBackendSetNames(String... criticalStateBackendSetNames) {
             return criticalStateBackendSetNames(List.of(criticalStateBackendSetNames));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
             this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder totalBackendSetCount(Integer totalBackendSetCount) {
             this.totalBackendSetCount = Objects.requireNonNull(totalBackendSetCount);
             return this;
         }
+        @CustomType.Setter
         public Builder unknownStateBackendSetNames(List<String> unknownStateBackendSetNames) {
             this.unknownStateBackendSetNames = Objects.requireNonNull(unknownStateBackendSetNames);
             return this;
@@ -185,14 +170,24 @@ public final class GetNetworkLoadBalancerHealthResult {
         public Builder unknownStateBackendSetNames(String... unknownStateBackendSetNames) {
             return unknownStateBackendSetNames(List.of(unknownStateBackendSetNames));
         }
+        @CustomType.Setter
         public Builder warningStateBackendSetNames(List<String> warningStateBackendSetNames) {
             this.warningStateBackendSetNames = Objects.requireNonNull(warningStateBackendSetNames);
             return this;
         }
         public Builder warningStateBackendSetNames(String... warningStateBackendSetNames) {
             return warningStateBackendSetNames(List.of(warningStateBackendSetNames));
-        }        public GetNetworkLoadBalancerHealthResult build() {
-            return new GetNetworkLoadBalancerHealthResult(criticalStateBackendSetNames, id, networkLoadBalancerId, status, totalBackendSetCount, unknownStateBackendSetNames, warningStateBackendSetNames);
+        }
+        public GetNetworkLoadBalancerHealthResult build() {
+            final var o = new GetNetworkLoadBalancerHealthResult();
+            o.criticalStateBackendSetNames = criticalStateBackendSetNames;
+            o.id = id;
+            o.networkLoadBalancerId = networkLoadBalancerId;
+            o.status = status;
+            o.totalBackendSetCount = totalBackendSetCount;
+            o.unknownStateBackendSetNames = unknownStateBackendSetNames;
+            o.warningStateBackendSetNames = warningStateBackendSetNames;
+            return o;
         }
     }
 }

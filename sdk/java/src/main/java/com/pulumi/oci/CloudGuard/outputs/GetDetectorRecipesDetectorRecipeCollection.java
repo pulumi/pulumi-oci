@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDetectorRecipesDetectorRecipeCollection {
-    private final List<GetDetectorRecipesDetectorRecipeCollectionItem> items;
+    private List<GetDetectorRecipesDetectorRecipeCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDetectorRecipesDetectorRecipeCollection(@CustomType.Parameter("items") List<GetDetectorRecipesDetectorRecipeCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDetectorRecipesDetectorRecipeCollection() {}
     public List<GetDetectorRecipesDetectorRecipeCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDetectorRecipesDetectorRecipeCollection {
     public static Builder builder(GetDetectorRecipesDetectorRecipeCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDetectorRecipesDetectorRecipeCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectorRecipesDetectorRecipeCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDetectorRecipesDetectorRecipeCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDetectorRecipesDetectorRecipeCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDetectorRecipesDetectorRecipeCollection build() {
-            return new GetDetectorRecipesDetectorRecipeCollection(items);
+        }
+        public GetDetectorRecipesDetectorRecipeCollection build() {
+            final var o = new GetDetectorRecipesDetectorRecipeCollection();
+            o.items = items;
+            return o;
         }
     }
 }

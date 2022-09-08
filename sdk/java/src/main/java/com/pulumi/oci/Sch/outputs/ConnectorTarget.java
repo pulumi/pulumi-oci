@@ -19,119 +19,84 @@ public final class ConnectorTarget {
      * @return (Updatable) The batch rollover size in megabytes.
      * 
      */
-    private final @Nullable Integer batchRolloverSizeInMbs;
+    private @Nullable Integer batchRolloverSizeInMbs;
     /**
      * @return (Updatable) The batch rollover time in milliseconds.
      * 
      */
-    private final @Nullable Integer batchRolloverTimeInMs;
+    private @Nullable Integer batchRolloverTimeInMs;
     /**
      * @return (Updatable) The name of the bucket. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String bucket;
+    private @Nullable String bucket;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return (Updatable) List of dimension names and values.
      * 
      */
-    private final @Nullable List<ConnectorTargetDimension> dimensions;
+    private @Nullable List<ConnectorTargetDimension> dimensions;
     /**
      * @return (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
      * 
      */
-    private final @Nullable Boolean enableFormattedMessaging;
+    private @Nullable Boolean enableFormattedMessaging;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
      * 
      */
-    private final @Nullable String functionId;
+    private @Nullable String functionId;
     /**
      * @return (Updatable) The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
      * 
      */
-    private final @Nullable String logGroupId;
+    private @Nullable String logGroupId;
     /**
      * @return (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
      * 
      */
-    private final @Nullable String logSourceIdentifier;
+    private @Nullable String logSourceIdentifier;
     /**
      * @return (Updatable) The name of the metric.  Example: `CpuUtilization`
      * 
      */
-    private final @Nullable String metric;
+    private @Nullable String metric;
     /**
      * @return (Updatable) The namespace of the metric.  Example: `oci_computeagent`
      * 
      */
-    private final @Nullable String metricNamespace;
+    private @Nullable String metricNamespace;
     /**
      * @return (Updatable) The namespace.
      * 
      */
-    private final @Nullable String namespace;
+    private @Nullable String namespace;
     /**
      * @return (Updatable) The prefix of the objects. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String objectNamePrefix;
+    private @Nullable String objectNamePrefix;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
-    private final @Nullable String streamId;
+    private @Nullable String streamId;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      * 
      */
-    private final @Nullable String topicId;
+    private @Nullable String topicId;
 
-    @CustomType.Constructor
-    private ConnectorTarget(
-        @CustomType.Parameter("batchRolloverSizeInMbs") @Nullable Integer batchRolloverSizeInMbs,
-        @CustomType.Parameter("batchRolloverTimeInMs") @Nullable Integer batchRolloverTimeInMs,
-        @CustomType.Parameter("bucket") @Nullable String bucket,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("dimensions") @Nullable List<ConnectorTargetDimension> dimensions,
-        @CustomType.Parameter("enableFormattedMessaging") @Nullable Boolean enableFormattedMessaging,
-        @CustomType.Parameter("functionId") @Nullable String functionId,
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("logGroupId") @Nullable String logGroupId,
-        @CustomType.Parameter("logSourceIdentifier") @Nullable String logSourceIdentifier,
-        @CustomType.Parameter("metric") @Nullable String metric,
-        @CustomType.Parameter("metricNamespace") @Nullable String metricNamespace,
-        @CustomType.Parameter("namespace") @Nullable String namespace,
-        @CustomType.Parameter("objectNamePrefix") @Nullable String objectNamePrefix,
-        @CustomType.Parameter("streamId") @Nullable String streamId,
-        @CustomType.Parameter("topicId") @Nullable String topicId) {
-        this.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
-        this.batchRolloverTimeInMs = batchRolloverTimeInMs;
-        this.bucket = bucket;
-        this.compartmentId = compartmentId;
-        this.dimensions = dimensions;
-        this.enableFormattedMessaging = enableFormattedMessaging;
-        this.functionId = functionId;
-        this.kind = kind;
-        this.logGroupId = logGroupId;
-        this.logSourceIdentifier = logSourceIdentifier;
-        this.metric = metric;
-        this.metricNamespace = metricNamespace;
-        this.namespace = namespace;
-        this.objectNamePrefix = objectNamePrefix;
-        this.streamId = streamId;
-        this.topicId = topicId;
-    }
-
+    private ConnectorTarget() {}
     /**
      * @return (Updatable) The batch rollover size in megabytes.
      * 
@@ -252,7 +217,7 @@ public final class ConnectorTarget {
     public static Builder builder(ConnectorTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer batchRolloverSizeInMbs;
         private @Nullable Integer batchRolloverTimeInMs;
@@ -270,11 +235,7 @@ public final class ConnectorTarget {
         private @Nullable String objectNamePrefix;
         private @Nullable String streamId;
         private @Nullable String topicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectorTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.batchRolloverSizeInMbs = defaults.batchRolloverSizeInMbs;
@@ -295,22 +256,27 @@ public final class ConnectorTarget {
     	      this.topicId = defaults.topicId;
         }
 
+        @CustomType.Setter
         public Builder batchRolloverSizeInMbs(@Nullable Integer batchRolloverSizeInMbs) {
             this.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
             return this;
         }
+        @CustomType.Setter
         public Builder batchRolloverTimeInMs(@Nullable Integer batchRolloverTimeInMs) {
             this.batchRolloverTimeInMs = batchRolloverTimeInMs;
             return this;
         }
+        @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
             this.bucket = bucket;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(@Nullable List<ConnectorTargetDimension> dimensions) {
             this.dimensions = dimensions;
             return this;
@@ -318,51 +284,80 @@ public final class ConnectorTarget {
         public Builder dimensions(ConnectorTargetDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
+        @CustomType.Setter
         public Builder enableFormattedMessaging(@Nullable Boolean enableFormattedMessaging) {
             this.enableFormattedMessaging = enableFormattedMessaging;
             return this;
         }
+        @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
             this.functionId = functionId;
             return this;
         }
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder logGroupId(@Nullable String logGroupId) {
             this.logGroupId = logGroupId;
             return this;
         }
+        @CustomType.Setter
         public Builder logSourceIdentifier(@Nullable String logSourceIdentifier) {
             this.logSourceIdentifier = logSourceIdentifier;
             return this;
         }
+        @CustomType.Setter
         public Builder metric(@Nullable String metric) {
             this.metric = metric;
             return this;
         }
+        @CustomType.Setter
         public Builder metricNamespace(@Nullable String metricNamespace) {
             this.metricNamespace = metricNamespace;
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
             this.namespace = namespace;
             return this;
         }
+        @CustomType.Setter
         public Builder objectNamePrefix(@Nullable String objectNamePrefix) {
             this.objectNamePrefix = objectNamePrefix;
             return this;
         }
+        @CustomType.Setter
         public Builder streamId(@Nullable String streamId) {
             this.streamId = streamId;
             return this;
         }
+        @CustomType.Setter
         public Builder topicId(@Nullable String topicId) {
             this.topicId = topicId;
             return this;
-        }        public ConnectorTarget build() {
-            return new ConnectorTarget(batchRolloverSizeInMbs, batchRolloverTimeInMs, bucket, compartmentId, dimensions, enableFormattedMessaging, functionId, kind, logGroupId, logSourceIdentifier, metric, metricNamespace, namespace, objectNamePrefix, streamId, topicId);
+        }
+        public ConnectorTarget build() {
+            final var o = new ConnectorTarget();
+            o.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
+            o.batchRolloverTimeInMs = batchRolloverTimeInMs;
+            o.bucket = bucket;
+            o.compartmentId = compartmentId;
+            o.dimensions = dimensions;
+            o.enableFormattedMessaging = enableFormattedMessaging;
+            o.functionId = functionId;
+            o.kind = kind;
+            o.logGroupId = logGroupId;
+            o.logSourceIdentifier = logSourceIdentifier;
+            o.metric = metric;
+            o.metricNamespace = metricNamespace;
+            o.namespace = namespace;
+            o.objectNamePrefix = objectNamePrefix;
+            o.streamId = streamId;
+            o.topicId = topicId;
+            return o;
         }
     }
 }

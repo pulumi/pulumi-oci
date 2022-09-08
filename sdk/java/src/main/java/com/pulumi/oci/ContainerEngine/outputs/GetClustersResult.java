@@ -18,45 +18,30 @@ public final class GetClustersResult {
      * @return The list of clusters.
      * 
      */
-    private final List<GetClustersCluster> clusters;
+    private List<GetClustersCluster> clusters;
     /**
      * @return The OCID of the compartment in which the cluster exists.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetClustersFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetClustersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the cluster.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The state of the cluster masters.
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
 
-    @CustomType.Constructor
-    private GetClustersResult(
-        @CustomType.Parameter("clusters") List<GetClustersCluster> clusters,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetClustersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("states") @Nullable List<String> states) {
-        this.clusters = clusters;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.states = states;
-    }
-
+    private GetClustersResult() {}
     /**
      * @return The list of clusters.
      * 
@@ -103,7 +88,7 @@ public final class GetClustersResult {
     public static Builder builder(GetClustersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetClustersCluster> clusters;
         private String compartmentId;
@@ -111,11 +96,7 @@ public final class GetClustersResult {
         private String id;
         private @Nullable String name;
         private @Nullable List<String> states;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClustersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusters = defaults.clusters;
@@ -126,6 +107,7 @@ public final class GetClustersResult {
     	      this.states = defaults.states;
         }
 
+        @CustomType.Setter
         public Builder clusters(List<GetClustersCluster> clusters) {
             this.clusters = Objects.requireNonNull(clusters);
             return this;
@@ -133,10 +115,12 @@ public final class GetClustersResult {
         public Builder clusters(GetClustersCluster... clusters) {
             return clusters(List.of(clusters));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetClustersFilter> filters) {
             this.filters = filters;
             return this;
@@ -144,22 +128,33 @@ public final class GetClustersResult {
         public Builder filters(GetClustersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
         }
         public Builder states(String... states) {
             return states(List.of(states));
-        }        public GetClustersResult build() {
-            return new GetClustersResult(clusters, compartmentId, filters, id, name, states);
+        }
+        public GetClustersResult build() {
+            final var o = new GetClustersResult();
+            o.clusters = clusters;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.states = states;
+            return o;
         }
     }
 }

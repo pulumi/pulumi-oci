@@ -14,13 +14,9 @@ public final class GetRecommendationsRecommendationCollectionItemSupportedLevel 
      * @return The list of supported levels.
      * 
      */
-    private final List<GetRecommendationsRecommendationCollectionItemSupportedLevelItem> items;
+    private List<GetRecommendationsRecommendationCollectionItemSupportedLevelItem> items;
 
-    @CustomType.Constructor
-    private GetRecommendationsRecommendationCollectionItemSupportedLevel(@CustomType.Parameter("items") List<GetRecommendationsRecommendationCollectionItemSupportedLevelItem> items) {
-        this.items = items;
-    }
-
+    private GetRecommendationsRecommendationCollectionItemSupportedLevel() {}
     /**
      * @return The list of supported levels.
      * 
@@ -36,27 +32,27 @@ public final class GetRecommendationsRecommendationCollectionItemSupportedLevel 
     public static Builder builder(GetRecommendationsRecommendationCollectionItemSupportedLevel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRecommendationsRecommendationCollectionItemSupportedLevelItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationsRecommendationCollectionItemSupportedLevel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRecommendationsRecommendationCollectionItemSupportedLevelItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRecommendationsRecommendationCollectionItemSupportedLevelItem... items) {
             return items(List.of(items));
-        }        public GetRecommendationsRecommendationCollectionItemSupportedLevel build() {
-            return new GetRecommendationsRecommendationCollectionItemSupportedLevel(items);
+        }
+        public GetRecommendationsRecommendationCollectionItemSupportedLevel build() {
+            final var o = new GetRecommendationsRecommendationCollectionItemSupportedLevel();
+            o.items = items;
+            return o;
         }
     }
 }

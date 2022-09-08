@@ -13,13 +13,9 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlementTarget {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
      * 
      */
-    private final String deploymentId;
+    private String deploymentId;
 
-    @CustomType.Constructor
-    private GetUsagePlansUsagePlanCollectionItemEntitlementTarget(@CustomType.Parameter("deploymentId") String deploymentId) {
-        this.deploymentId = deploymentId;
-    }
-
+    private GetUsagePlansUsagePlanCollectionItemEntitlementTarget() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
      * 
@@ -35,24 +31,24 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlementTarget {
     public static Builder builder(GetUsagePlansUsagePlanCollectionItemEntitlementTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String deploymentId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUsagePlansUsagePlanCollectionItemEntitlementTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deploymentId = defaults.deploymentId;
         }
 
+        @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = Objects.requireNonNull(deploymentId);
             return this;
-        }        public GetUsagePlansUsagePlanCollectionItemEntitlementTarget build() {
-            return new GetUsagePlansUsagePlanCollectionItemEntitlementTarget(deploymentId);
+        }
+        public GetUsagePlansUsagePlanCollectionItemEntitlementTarget build() {
+            final var o = new GetUsagePlansUsagePlanCollectionItemEntitlementTarget();
+            o.deploymentId = deploymentId;
+            return o;
         }
     }
 }

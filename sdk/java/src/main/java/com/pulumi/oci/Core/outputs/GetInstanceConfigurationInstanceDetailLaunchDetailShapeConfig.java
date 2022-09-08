@@ -15,35 +15,24 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig
      * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
-    private final String baselineOcpuUtilization;
+    private String baselineOcpuUtilization;
     /**
      * @return The total amount of memory available to the instance, in gigabytes.
      * 
      */
-    private final Double memoryInGbs;
+    private Double memoryInGbs;
     /**
      * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
      * 
      */
-    private final Integer nvmes;
+    private Integer nvmes;
     /**
      * @return The total number of OCPUs available to the instance.
      * 
      */
-    private final Double ocpus;
+    private Double ocpus;
 
-    @CustomType.Constructor
-    private GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig(
-        @CustomType.Parameter("baselineOcpuUtilization") String baselineOcpuUtilization,
-        @CustomType.Parameter("memoryInGbs") Double memoryInGbs,
-        @CustomType.Parameter("nvmes") Integer nvmes,
-        @CustomType.Parameter("ocpus") Double ocpus) {
-        this.baselineOcpuUtilization = baselineOcpuUtilization;
-        this.memoryInGbs = memoryInGbs;
-        this.nvmes = nvmes;
-        this.ocpus = ocpus;
-    }
-
+    private GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig() {}
     /**
      * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
@@ -80,17 +69,13 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig
     public static Builder builder(GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String baselineOcpuUtilization;
         private Double memoryInGbs;
         private Integer nvmes;
         private Double ocpus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baselineOcpuUtilization = defaults.baselineOcpuUtilization;
@@ -99,23 +84,33 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
         public Builder baselineOcpuUtilization(String baselineOcpuUtilization) {
             this.baselineOcpuUtilization = Objects.requireNonNull(baselineOcpuUtilization);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
             this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder nvmes(Integer nvmes) {
             this.nvmes = Objects.requireNonNull(nvmes);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(Double ocpus) {
             this.ocpus = Objects.requireNonNull(ocpus);
             return this;
-        }        public GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig build() {
-            return new GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig(baselineOcpuUtilization, memoryInGbs, nvmes, ocpus);
+        }
+        public GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig build() {
+            final var o = new GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfig();
+            o.baselineOcpuUtilization = baselineOcpuUtilization;
+            o.memoryInGbs = memoryInGbs;
+            o.nvmes = nvmes;
+            o.ocpus = ocpus;
+            return o;
         }
     }
 }

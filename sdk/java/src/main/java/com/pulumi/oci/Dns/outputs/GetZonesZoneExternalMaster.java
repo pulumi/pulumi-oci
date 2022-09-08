@@ -14,28 +14,19 @@ public final class GetZonesZoneExternalMaster {
      * @return The server&#39;s IP address (IPv4 or IPv6).
      * 
      */
-    private final String address;
+    private String address;
     /**
      * @return The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return Search for zones that are associated with a TSIG key.
      * 
      */
-    private final String tsigKeyId;
+    private String tsigKeyId;
 
-    @CustomType.Constructor
-    private GetZonesZoneExternalMaster(
-        @CustomType.Parameter("address") String address,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("tsigKeyId") String tsigKeyId) {
-        this.address = address;
-        this.port = port;
-        this.tsigKeyId = tsigKeyId;
-    }
-
+    private GetZonesZoneExternalMaster() {}
     /**
      * @return The server&#39;s IP address (IPv4 or IPv6).
      * 
@@ -65,16 +56,12 @@ public final class GetZonesZoneExternalMaster {
     public static Builder builder(GetZonesZoneExternalMaster defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String address;
         private Integer port;
         private String tsigKeyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetZonesZoneExternalMaster defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.address = defaults.address;
@@ -82,19 +69,27 @@ public final class GetZonesZoneExternalMaster {
     	      this.tsigKeyId = defaults.tsigKeyId;
         }
 
+        @CustomType.Setter
         public Builder address(String address) {
             this.address = Objects.requireNonNull(address);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder tsigKeyId(String tsigKeyId) {
             this.tsigKeyId = Objects.requireNonNull(tsigKeyId);
             return this;
-        }        public GetZonesZoneExternalMaster build() {
-            return new GetZonesZoneExternalMaster(address, port, tsigKeyId);
+        }
+        public GetZonesZoneExternalMaster build() {
+            final var o = new GetZonesZoneExternalMaster();
+            o.address = address;
+            o.port = port;
+            o.tsigKeyId = tsigKeyId;
+            return o;
         }
     }
 }

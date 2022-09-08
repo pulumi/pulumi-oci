@@ -18,41 +18,26 @@ public final class GetLogAnalyticsLogGroupsResult {
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetLogAnalyticsLogGroupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetLogAnalyticsLogGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of log_analytics_log_group_summary_collection.
      * 
      */
-    private final List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection> logAnalyticsLogGroupSummaryCollections;
-    private final String namespace;
+    private List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection> logAnalyticsLogGroupSummaryCollections;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsLogGroupsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetLogAnalyticsLogGroupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("logAnalyticsLogGroupSummaryCollections") List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection> logAnalyticsLogGroupSummaryCollections,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.logAnalyticsLogGroupSummaryCollections = logAnalyticsLogGroupSummaryCollections;
-        this.namespace = namespace;
-    }
-
+    private GetLogAnalyticsLogGroupsResult() {}
     /**
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -95,7 +80,7 @@ public final class GetLogAnalyticsLogGroupsResult {
     public static Builder builder(GetLogAnalyticsLogGroupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -103,11 +88,7 @@ public final class GetLogAnalyticsLogGroupsResult {
         private String id;
         private List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection> logAnalyticsLogGroupSummaryCollections;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsLogGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,14 +99,17 @@ public final class GetLogAnalyticsLogGroupsResult {
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLogAnalyticsLogGroupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -133,10 +117,12 @@ public final class GetLogAnalyticsLogGroupsResult {
         public Builder filters(GetLogAnalyticsLogGroupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder logAnalyticsLogGroupSummaryCollections(List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection> logAnalyticsLogGroupSummaryCollections) {
             this.logAnalyticsLogGroupSummaryCollections = Objects.requireNonNull(logAnalyticsLogGroupSummaryCollections);
             return this;
@@ -144,11 +130,20 @@ public final class GetLogAnalyticsLogGroupsResult {
         public Builder logAnalyticsLogGroupSummaryCollections(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection... logAnalyticsLogGroupSummaryCollections) {
             return logAnalyticsLogGroupSummaryCollections(List.of(logAnalyticsLogGroupSummaryCollections));
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetLogAnalyticsLogGroupsResult build() {
-            return new GetLogAnalyticsLogGroupsResult(compartmentId, displayName, filters, id, logAnalyticsLogGroupSummaryCollections, namespace);
+        }
+        public GetLogAnalyticsLogGroupsResult build() {
+            final var o = new GetLogAnalyticsLogGroupsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.logAnalyticsLogGroupSummaryCollections = logAnalyticsLogGroupSummaryCollections;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

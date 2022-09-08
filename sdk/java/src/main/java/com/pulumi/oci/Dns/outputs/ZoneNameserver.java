@@ -15,13 +15,9 @@ public final class ZoneNameserver {
      * @return The hostname of the nameserver.
      * 
      */
-    private final @Nullable String hostname;
+    private @Nullable String hostname;
 
-    @CustomType.Constructor
-    private ZoneNameserver(@CustomType.Parameter("hostname") @Nullable String hostname) {
-        this.hostname = hostname;
-    }
-
+    private ZoneNameserver() {}
     /**
      * @return The hostname of the nameserver.
      * 
@@ -37,24 +33,24 @@ public final class ZoneNameserver {
     public static Builder builder(ZoneNameserver defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String hostname;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ZoneNameserver defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
         }
 
+        @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
             this.hostname = hostname;
             return this;
-        }        public ZoneNameserver build() {
-            return new ZoneNameserver(hostname);
+        }
+        public ZoneNameserver build() {
+            final var o = new ZoneNameserver();
+            o.hostname = hostname;
+            return o;
         }
     }
 }

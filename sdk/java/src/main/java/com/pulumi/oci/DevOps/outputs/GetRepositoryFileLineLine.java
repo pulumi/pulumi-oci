@@ -14,21 +14,14 @@ public final class GetRepositoryFileLineLine {
      * @return The content of the line.
      * 
      */
-    private final String lineContent;
+    private String lineContent;
     /**
      * @return The line number.
      * 
      */
-    private final Integer lineNumber;
+    private Integer lineNumber;
 
-    @CustomType.Constructor
-    private GetRepositoryFileLineLine(
-        @CustomType.Parameter("lineContent") String lineContent,
-        @CustomType.Parameter("lineNumber") Integer lineNumber) {
-        this.lineContent = lineContent;
-        this.lineNumber = lineNumber;
-    }
-
+    private GetRepositoryFileLineLine() {}
     /**
      * @return The content of the line.
      * 
@@ -51,30 +44,32 @@ public final class GetRepositoryFileLineLine {
     public static Builder builder(GetRepositoryFileLineLine defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String lineContent;
         private Integer lineNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryFileLineLine defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.lineContent = defaults.lineContent;
     	      this.lineNumber = defaults.lineNumber;
         }
 
+        @CustomType.Setter
         public Builder lineContent(String lineContent) {
             this.lineContent = Objects.requireNonNull(lineContent);
             return this;
         }
+        @CustomType.Setter
         public Builder lineNumber(Integer lineNumber) {
             this.lineNumber = Objects.requireNonNull(lineNumber);
             return this;
-        }        public GetRepositoryFileLineLine build() {
-            return new GetRepositoryFileLineLine(lineContent, lineNumber);
+        }
+        public GetRepositoryFileLineLine build() {
+            final var o = new GetRepositoryFileLineLine();
+            o.lineContent = lineContent;
+            o.lineNumber = lineNumber;
+            return o;
         }
     }
 }

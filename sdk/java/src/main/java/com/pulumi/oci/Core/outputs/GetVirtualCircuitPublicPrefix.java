@@ -9,13 +9,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetVirtualCircuitPublicPrefix {
-    private final String cidrBlock;
+    private String cidrBlock;
 
-    @CustomType.Constructor
-    private GetVirtualCircuitPublicPrefix(@CustomType.Parameter("cidrBlock") String cidrBlock) {
-        this.cidrBlock = cidrBlock;
-    }
-
+    private GetVirtualCircuitPublicPrefix() {}
     public String cidrBlock() {
         return this.cidrBlock;
     }
@@ -27,24 +23,24 @@ public final class GetVirtualCircuitPublicPrefix {
     public static Builder builder(GetVirtualCircuitPublicPrefix defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cidrBlock;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualCircuitPublicPrefix defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidrBlock = defaults.cidrBlock;
         }
 
+        @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = Objects.requireNonNull(cidrBlock);
             return this;
-        }        public GetVirtualCircuitPublicPrefix build() {
-            return new GetVirtualCircuitPublicPrefix(cidrBlock);
+        }
+        public GetVirtualCircuitPublicPrefix build() {
+            final var o = new GetVirtualCircuitPublicPrefix();
+            o.cidrBlock = cidrBlock;
+            return o;
         }
     }
 }

@@ -18,35 +18,24 @@ public final class TableSchema {
      * @return The columns of a table.
      * 
      */
-    private final @Nullable List<TableSchemaColumn> columns;
+    private @Nullable List<TableSchemaColumn> columns;
     /**
      * @return A list of column names that make up a key.
      * 
      */
-    private final @Nullable List<String> primaryKeys;
+    private @Nullable List<String> primaryKeys;
     /**
      * @return A list of column names that make up a key.
      * 
      */
-    private final @Nullable List<String> shardKeys;
+    private @Nullable List<String> shardKeys;
     /**
      * @return The default Time-to-Live for the table, in days.
      * 
      */
-    private final @Nullable Integer ttl;
+    private @Nullable Integer ttl;
 
-    @CustomType.Constructor
-    private TableSchema(
-        @CustomType.Parameter("columns") @Nullable List<TableSchemaColumn> columns,
-        @CustomType.Parameter("primaryKeys") @Nullable List<String> primaryKeys,
-        @CustomType.Parameter("shardKeys") @Nullable List<String> shardKeys,
-        @CustomType.Parameter("ttl") @Nullable Integer ttl) {
-        this.columns = columns;
-        this.primaryKeys = primaryKeys;
-        this.shardKeys = shardKeys;
-        this.ttl = ttl;
-    }
-
+    private TableSchema() {}
     /**
      * @return The columns of a table.
      * 
@@ -83,17 +72,13 @@ public final class TableSchema {
     public static Builder builder(TableSchema defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<TableSchemaColumn> columns;
         private @Nullable List<String> primaryKeys;
         private @Nullable List<String> shardKeys;
         private @Nullable Integer ttl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TableSchema defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columns = defaults.columns;
@@ -102,6 +87,7 @@ public final class TableSchema {
     	      this.ttl = defaults.ttl;
         }
 
+        @CustomType.Setter
         public Builder columns(@Nullable List<TableSchemaColumn> columns) {
             this.columns = columns;
             return this;
@@ -109,6 +95,7 @@ public final class TableSchema {
         public Builder columns(TableSchemaColumn... columns) {
             return columns(List.of(columns));
         }
+        @CustomType.Setter
         public Builder primaryKeys(@Nullable List<String> primaryKeys) {
             this.primaryKeys = primaryKeys;
             return this;
@@ -116,6 +103,7 @@ public final class TableSchema {
         public Builder primaryKeys(String... primaryKeys) {
             return primaryKeys(List.of(primaryKeys));
         }
+        @CustomType.Setter
         public Builder shardKeys(@Nullable List<String> shardKeys) {
             this.shardKeys = shardKeys;
             return this;
@@ -123,11 +111,18 @@ public final class TableSchema {
         public Builder shardKeys(String... shardKeys) {
             return shardKeys(List.of(shardKeys));
         }
+        @CustomType.Setter
         public Builder ttl(@Nullable Integer ttl) {
             this.ttl = ttl;
             return this;
-        }        public TableSchema build() {
-            return new TableSchema(columns, primaryKeys, shardKeys, ttl);
+        }
+        public TableSchema build() {
+            final var o = new TableSchema();
+            o.columns = columns;
+            o.primaryKeys = primaryKeys;
+            o.shardKeys = shardKeys;
+            o.ttl = ttl;
+            return o;
         }
     }
 }

@@ -9,27 +9,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMigrateToNativeVcnStatusResult {
-    private final String clusterId;
+    private String clusterId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String state;
-    private final String timeDecommissionScheduled;
+    private String id;
+    private String state;
+    private String timeDecommissionScheduled;
 
-    @CustomType.Constructor
-    private GetMigrateToNativeVcnStatusResult(
-        @CustomType.Parameter("clusterId") String clusterId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeDecommissionScheduled") String timeDecommissionScheduled) {
-        this.clusterId = clusterId;
-        this.id = id;
-        this.state = state;
-        this.timeDecommissionScheduled = timeDecommissionScheduled;
-    }
-
+    private GetMigrateToNativeVcnStatusResult() {}
     public String clusterId() {
         return this.clusterId;
     }
@@ -54,17 +43,13 @@ public final class GetMigrateToNativeVcnStatusResult {
     public static Builder builder(GetMigrateToNativeVcnStatusResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String clusterId;
         private String id;
         private String state;
         private String timeDecommissionScheduled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrateToNativeVcnStatusResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterId = defaults.clusterId;
@@ -73,23 +58,33 @@ public final class GetMigrateToNativeVcnStatusResult {
     	      this.timeDecommissionScheduled = defaults.timeDecommissionScheduled;
         }
 
+        @CustomType.Setter
         public Builder clusterId(String clusterId) {
             this.clusterId = Objects.requireNonNull(clusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeDecommissionScheduled(String timeDecommissionScheduled) {
             this.timeDecommissionScheduled = Objects.requireNonNull(timeDecommissionScheduled);
             return this;
-        }        public GetMigrateToNativeVcnStatusResult build() {
-            return new GetMigrateToNativeVcnStatusResult(clusterId, id, state, timeDecommissionScheduled);
+        }
+        public GetMigrateToNativeVcnStatusResult build() {
+            final var o = new GetMigrateToNativeVcnStatusResult();
+            o.clusterId = clusterId;
+            o.id = id;
+            o.state = state;
+            o.timeDecommissionScheduled = timeDecommissionScheduled;
+            return o;
         }
     }
 }

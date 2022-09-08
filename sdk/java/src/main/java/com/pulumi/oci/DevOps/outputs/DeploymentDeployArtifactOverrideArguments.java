@@ -15,13 +15,9 @@ public final class DeploymentDeployArtifactOverrideArguments {
      * @return List of arguments provided at the time of deployment.
      * 
      */
-    private final @Nullable List<DeploymentDeployArtifactOverrideArgumentsItem> items;
+    private @Nullable List<DeploymentDeployArtifactOverrideArgumentsItem> items;
 
-    @CustomType.Constructor
-    private DeploymentDeployArtifactOverrideArguments(@CustomType.Parameter("items") @Nullable List<DeploymentDeployArtifactOverrideArgumentsItem> items) {
-        this.items = items;
-    }
-
+    private DeploymentDeployArtifactOverrideArguments() {}
     /**
      * @return List of arguments provided at the time of deployment.
      * 
@@ -37,27 +33,27 @@ public final class DeploymentDeployArtifactOverrideArguments {
     public static Builder builder(DeploymentDeployArtifactOverrideArguments defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<DeploymentDeployArtifactOverrideArgumentsItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentDeployArtifactOverrideArguments defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<DeploymentDeployArtifactOverrideArgumentsItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(DeploymentDeployArtifactOverrideArgumentsItem... items) {
             return items(List.of(items));
-        }        public DeploymentDeployArtifactOverrideArguments build() {
-            return new DeploymentDeployArtifactOverrideArguments(items);
+        }
+        public DeploymentDeployArtifactOverrideArguments build() {
+            final var o = new DeploymentDeployArtifactOverrideArguments();
+            o.items = items;
+            return o;
         }
     }
 }

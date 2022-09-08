@@ -16,94 +16,65 @@ public final class GetVnicAttachmentsVnicAttachment {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails;
+    private String compartmentId;
+    private List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The OCID of the VNIC attachment.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the instance.
      * 
      */
-    private final String instanceId;
+    private String instanceId;
     /**
      * @return Which physical network interface card (NIC) the VNIC uses. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
-    private final Integer nicIndex;
+    private Integer nicIndex;
     /**
      * @return The current state of the VNIC attachment.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The OCID of the subnet to create the VNIC in.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      */
-    private final String vlanId;
+    private String vlanId;
     /**
      * @return The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
      * 
      */
-    private final Integer vlanTag;
+    private Integer vlanTag;
     /**
      * @return The OCID of the VNIC.
      * 
      */
-    private final String vnicId;
+    private String vnicId;
 
-    @CustomType.Constructor
-    private GetVnicAttachmentsVnicAttachment(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createVnicDetails") List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("nicIndex") Integer nicIndex,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vlanId") String vlanId,
-        @CustomType.Parameter("vlanTag") Integer vlanTag,
-        @CustomType.Parameter("vnicId") String vnicId) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.createVnicDetails = createVnicDetails;
-        this.displayName = displayName;
-        this.id = id;
-        this.instanceId = instanceId;
-        this.nicIndex = nicIndex;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.vlanId = vlanId;
-        this.vlanTag = vlanTag;
-        this.vnicId = vnicId;
-    }
-
+    private GetVnicAttachmentsVnicAttachment() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -199,7 +170,7 @@ public final class GetVnicAttachmentsVnicAttachment {
     public static Builder builder(GetVnicAttachmentsVnicAttachment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -214,11 +185,7 @@ public final class GetVnicAttachmentsVnicAttachment {
         private String vlanId;
         private Integer vlanTag;
         private String vnicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVnicAttachmentsVnicAttachment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -236,14 +203,17 @@ public final class GetVnicAttachmentsVnicAttachment {
     	      this.vnicId = defaults.vnicId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createVnicDetails(List<GetVnicAttachmentsVnicAttachmentCreateVnicDetail> createVnicDetails) {
             this.createVnicDetails = Objects.requireNonNull(createVnicDetails);
             return this;
@@ -251,47 +221,72 @@ public final class GetVnicAttachmentsVnicAttachment {
         public Builder createVnicDetails(GetVnicAttachmentsVnicAttachmentCreateVnicDetail... createVnicDetails) {
             return createVnicDetails(List.of(createVnicDetails));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder nicIndex(Integer nicIndex) {
             this.nicIndex = Objects.requireNonNull(nicIndex);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vlanId(String vlanId) {
             this.vlanId = Objects.requireNonNull(vlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder vlanTag(Integer vlanTag) {
             this.vlanTag = Objects.requireNonNull(vlanTag);
             return this;
         }
+        @CustomType.Setter
         public Builder vnicId(String vnicId) {
             this.vnicId = Objects.requireNonNull(vnicId);
             return this;
-        }        public GetVnicAttachmentsVnicAttachment build() {
-            return new GetVnicAttachmentsVnicAttachment(availabilityDomain, compartmentId, createVnicDetails, displayName, id, instanceId, nicIndex, state, subnetId, timeCreated, vlanId, vlanTag, vnicId);
+        }
+        public GetVnicAttachmentsVnicAttachment build() {
+            final var o = new GetVnicAttachmentsVnicAttachment();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.createVnicDetails = createVnicDetails;
+            o.displayName = displayName;
+            o.id = id;
+            o.instanceId = instanceId;
+            o.nicIndex = nicIndex;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.vlanId = vlanId;
+            o.vlanTag = vlanTag;
+            o.vnicId = vnicId;
+            return o;
         }
     }
 }

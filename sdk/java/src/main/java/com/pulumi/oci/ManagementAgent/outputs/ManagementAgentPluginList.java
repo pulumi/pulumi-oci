@@ -16,56 +16,39 @@ public final class ManagementAgentPluginList {
      * @return flag indicating whether the plugin is in enabled mode or disabled mode.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Management Agent Plugin Identifier, can be renamed
      * 
      */
-    private final @Nullable String pluginDisplayName;
+    private @Nullable String pluginDisplayName;
     /**
      * @return Plugin Id
      * 
      */
-    private final @Nullable String pluginId;
+    private @Nullable String pluginId;
     /**
      * @return Management Agent Plugin Name
      * 
      */
-    private final @Nullable String pluginName;
+    private @Nullable String pluginName;
     /**
      * @return Plugin Status
      * 
      */
-    private final @Nullable String pluginStatus;
+    private @Nullable String pluginStatus;
     /**
      * @return Status message of the Plugin
      * 
      */
-    private final @Nullable String pluginStatusMessage;
+    private @Nullable String pluginStatusMessage;
     /**
      * @return Plugin Version
      * 
      */
-    private final @Nullable String pluginVersion;
+    private @Nullable String pluginVersion;
 
-    @CustomType.Constructor
-    private ManagementAgentPluginList(
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("pluginDisplayName") @Nullable String pluginDisplayName,
-        @CustomType.Parameter("pluginId") @Nullable String pluginId,
-        @CustomType.Parameter("pluginName") @Nullable String pluginName,
-        @CustomType.Parameter("pluginStatus") @Nullable String pluginStatus,
-        @CustomType.Parameter("pluginStatusMessage") @Nullable String pluginStatusMessage,
-        @CustomType.Parameter("pluginVersion") @Nullable String pluginVersion) {
-        this.isEnabled = isEnabled;
-        this.pluginDisplayName = pluginDisplayName;
-        this.pluginId = pluginId;
-        this.pluginName = pluginName;
-        this.pluginStatus = pluginStatus;
-        this.pluginStatusMessage = pluginStatusMessage;
-        this.pluginVersion = pluginVersion;
-    }
-
+    private ManagementAgentPluginList() {}
     /**
      * @return flag indicating whether the plugin is in enabled mode or disabled mode.
      * 
@@ -123,7 +106,7 @@ public final class ManagementAgentPluginList {
     public static Builder builder(ManagementAgentPluginList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isEnabled;
         private @Nullable String pluginDisplayName;
@@ -132,11 +115,7 @@ public final class ManagementAgentPluginList {
         private @Nullable String pluginStatus;
         private @Nullable String pluginStatusMessage;
         private @Nullable String pluginVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ManagementAgentPluginList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
@@ -148,35 +127,51 @@ public final class ManagementAgentPluginList {
     	      this.pluginVersion = defaults.pluginVersion;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder pluginDisplayName(@Nullable String pluginDisplayName) {
             this.pluginDisplayName = pluginDisplayName;
             return this;
         }
+        @CustomType.Setter
         public Builder pluginId(@Nullable String pluginId) {
             this.pluginId = pluginId;
             return this;
         }
+        @CustomType.Setter
         public Builder pluginName(@Nullable String pluginName) {
             this.pluginName = pluginName;
             return this;
         }
+        @CustomType.Setter
         public Builder pluginStatus(@Nullable String pluginStatus) {
             this.pluginStatus = pluginStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder pluginStatusMessage(@Nullable String pluginStatusMessage) {
             this.pluginStatusMessage = pluginStatusMessage;
             return this;
         }
+        @CustomType.Setter
         public Builder pluginVersion(@Nullable String pluginVersion) {
             this.pluginVersion = pluginVersion;
             return this;
-        }        public ManagementAgentPluginList build() {
-            return new ManagementAgentPluginList(isEnabled, pluginDisplayName, pluginId, pluginName, pluginStatus, pluginStatusMessage, pluginVersion);
+        }
+        public ManagementAgentPluginList build() {
+            final var o = new ManagementAgentPluginList();
+            o.isEnabled = isEnabled;
+            o.pluginDisplayName = pluginDisplayName;
+            o.pluginId = pluginId;
+            o.pluginName = pluginName;
+            o.pluginStatus = pluginStatus;
+            o.pluginStatusMessage = pluginStatusMessage;
+            o.pluginVersion = pluginVersion;
+            return o;
         }
     }
 }

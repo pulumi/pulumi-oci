@@ -9,45 +9,30 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionItemOggData {
-    private final String adminPassword;
+    private String adminPassword;
     /**
      * @return The GoldenGate deployment console username.
      * 
      */
-    private final String adminUsername;
+    private String adminUsername;
     /**
      * @return A PEM-encoded SSL certificate.
      * 
      */
-    private final String certificate;
+    private String certificate;
     /**
      * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      * 
      */
-    private final String deploymentName;
-    private final String key;
+    private String deploymentName;
+    private String key;
     /**
      * @return Version of OGG
      * 
      */
-    private final String oggVersion;
+    private String oggVersion;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionItemOggData(
-        @CustomType.Parameter("adminPassword") String adminPassword,
-        @CustomType.Parameter("adminUsername") String adminUsername,
-        @CustomType.Parameter("certificate") String certificate,
-        @CustomType.Parameter("deploymentName") String deploymentName,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("oggVersion") String oggVersion) {
-        this.adminPassword = adminPassword;
-        this.adminUsername = adminUsername;
-        this.certificate = certificate;
-        this.deploymentName = deploymentName;
-        this.key = key;
-        this.oggVersion = oggVersion;
-    }
-
+    private GetDeploymentsDeploymentCollectionItemOggData() {}
     public String adminPassword() {
         return this.adminPassword;
     }
@@ -90,7 +75,7 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
     public static Builder builder(GetDeploymentsDeploymentCollectionItemOggData defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminPassword;
         private String adminUsername;
@@ -98,11 +83,7 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
         private String deploymentName;
         private String key;
         private String oggVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemOggData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
@@ -113,31 +94,45 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
     	      this.oggVersion = defaults.oggVersion;
         }
 
+        @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = Objects.requireNonNull(adminPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = Objects.requireNonNull(adminUsername);
             return this;
         }
+        @CustomType.Setter
         public Builder certificate(String certificate) {
             this.certificate = Objects.requireNonNull(certificate);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentName(String deploymentName) {
             this.deploymentName = Objects.requireNonNull(deploymentName);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = Objects.requireNonNull(oggVersion);
             return this;
-        }        public GetDeploymentsDeploymentCollectionItemOggData build() {
-            return new GetDeploymentsDeploymentCollectionItemOggData(adminPassword, adminUsername, certificate, deploymentName, key, oggVersion);
+        }
+        public GetDeploymentsDeploymentCollectionItemOggData build() {
+            final var o = new GetDeploymentsDeploymentCollectionItemOggData();
+            o.adminPassword = adminPassword;
+            o.adminUsername = adminUsername;
+            o.certificate = certificate;
+            o.deploymentName = deploymentName;
+            o.key = key;
+            o.oggVersion = oggVersion;
+            return o;
         }
     }
 }

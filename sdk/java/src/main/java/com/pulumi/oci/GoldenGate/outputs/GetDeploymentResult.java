@@ -19,220 +19,155 @@ public final class GetDeploymentResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The Minimum number of OCPUs to be made available for this Deployment.
      * 
      */
-    private final Integer cpuCoreCount;
+    private Integer cpuCoreCount;
     /**
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      * 
      */
-    private final String deploymentBackupId;
-    private final String deploymentId;
+    private String deploymentBackupId;
+    private String deploymentId;
     /**
      * @return The deployment type.
      * 
      */
-    private final String deploymentType;
+    private String deploymentType;
     /**
      * @return The URL of a resource.
      * 
      */
-    private final String deploymentUrl;
+    private String deploymentUrl;
     /**
      * @return Metadata about this specific object.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return An object&#39;s Display Name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
-    private final String fqdn;
+    private String fqdn;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
-    private final Boolean isAutoScalingEnabled;
+    private Boolean isAutoScalingEnabled;
     /**
      * @return True if all of the aggregate resources are working correctly.
      * 
      */
-    private final Boolean isHealthy;
+    private Boolean isHealthy;
     /**
      * @return Indicates if the resource is the the latest available version.
      * 
      */
-    private final Boolean isLatestVersion;
+    private Boolean isLatestVersion;
     /**
      * @return True if this object is publicly available.
      * 
      */
-    private final Boolean isPublic;
+    private Boolean isPublic;
     /**
      * @return Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
-    private final Boolean isStorageUtilizationLimitExceeded;
+    private Boolean isStorageUtilizationLimitExceeded;
     /**
      * @return The Oracle license model that applies to a Deployment.
      * 
      */
-    private final String licenseModel;
+    private String licenseModel;
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Possible GGS lifecycle sub-states.
      * 
      */
-    private final String lifecycleSubState;
+    private String lifecycleSubState;
     /**
      * @return An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
      * 
      */
-    private final List<String> nsgIds;
+    private List<String> nsgIds;
     /**
      * @return Deployment Data for an OggDeployment
      * 
      */
-    private final List<GetDeploymentOggData> oggDatas;
+    private List<GetDeploymentOggData> oggDatas;
     /**
      * @return The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      * 
      */
-    private final String privateIpAddress;
+    private String privateIpAddress;
     /**
      * @return The public IP address representing the access point for the Deployment.
      * 
      */
-    private final String publicIpAddress;
+    private String publicIpAddress;
     /**
      * @return Possible lifecycle states.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The amount of storage being utilized (in bytes)
      * 
      */
-    private final String storageUtilizationInBytes;
+    private String storageUtilizationInBytes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeUpgradeRequired;
+    private String timeUpgradeRequired;
 
-    @CustomType.Constructor
-    private GetDeploymentResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("cpuCoreCount") Integer cpuCoreCount,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("deploymentBackupId") String deploymentBackupId,
-        @CustomType.Parameter("deploymentId") String deploymentId,
-        @CustomType.Parameter("deploymentType") String deploymentType,
-        @CustomType.Parameter("deploymentUrl") String deploymentUrl,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("fqdn") String fqdn,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAutoScalingEnabled") Boolean isAutoScalingEnabled,
-        @CustomType.Parameter("isHealthy") Boolean isHealthy,
-        @CustomType.Parameter("isLatestVersion") Boolean isLatestVersion,
-        @CustomType.Parameter("isPublic") Boolean isPublic,
-        @CustomType.Parameter("isStorageUtilizationLimitExceeded") Boolean isStorageUtilizationLimitExceeded,
-        @CustomType.Parameter("licenseModel") String licenseModel,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("lifecycleSubState") String lifecycleSubState,
-        @CustomType.Parameter("nsgIds") List<String> nsgIds,
-        @CustomType.Parameter("oggDatas") List<GetDeploymentOggData> oggDatas,
-        @CustomType.Parameter("privateIpAddress") String privateIpAddress,
-        @CustomType.Parameter("publicIpAddress") String publicIpAddress,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("storageUtilizationInBytes") String storageUtilizationInBytes,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("timeUpgradeRequired") String timeUpgradeRequired) {
-        this.compartmentId = compartmentId;
-        this.cpuCoreCount = cpuCoreCount;
-        this.definedTags = definedTags;
-        this.deploymentBackupId = deploymentBackupId;
-        this.deploymentId = deploymentId;
-        this.deploymentType = deploymentType;
-        this.deploymentUrl = deploymentUrl;
-        this.description = description;
-        this.displayName = displayName;
-        this.fqdn = fqdn;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isAutoScalingEnabled = isAutoScalingEnabled;
-        this.isHealthy = isHealthy;
-        this.isLatestVersion = isLatestVersion;
-        this.isPublic = isPublic;
-        this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
-        this.licenseModel = licenseModel;
-        this.lifecycleDetails = lifecycleDetails;
-        this.lifecycleSubState = lifecycleSubState;
-        this.nsgIds = nsgIds;
-        this.oggDatas = oggDatas;
-        this.privateIpAddress = privateIpAddress;
-        this.publicIpAddress = publicIpAddress;
-        this.state = state;
-        this.storageUtilizationInBytes = storageUtilizationInBytes;
-        this.subnetId = subnetId;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.timeUpgradeRequired = timeUpgradeRequired;
-    }
-
+    private GetDeploymentResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
@@ -454,7 +389,7 @@ public final class GetDeploymentResult {
     public static Builder builder(GetDeploymentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Integer cpuCoreCount;
@@ -487,11 +422,7 @@ public final class GetDeploymentResult {
         private String timeCreated;
         private String timeUpdated;
         private String timeUpgradeRequired;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -527,86 +458,107 @@ public final class GetDeploymentResult {
     	      this.timeUpgradeRequired = defaults.timeUpgradeRequired;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentBackupId(String deploymentBackupId) {
             this.deploymentBackupId = Objects.requireNonNull(deploymentBackupId);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = Objects.requireNonNull(deploymentId);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
             this.deploymentType = Objects.requireNonNull(deploymentType);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentUrl(String deploymentUrl) {
             this.deploymentUrl = Objects.requireNonNull(deploymentUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder fqdn(String fqdn) {
             this.fqdn = Objects.requireNonNull(fqdn);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = Objects.requireNonNull(isAutoScalingEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isHealthy(Boolean isHealthy) {
             this.isHealthy = Objects.requireNonNull(isHealthy);
             return this;
         }
+        @CustomType.Setter
         public Builder isLatestVersion(Boolean isLatestVersion) {
             this.isLatestVersion = Objects.requireNonNull(isLatestVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = Objects.requireNonNull(isPublic);
             return this;
         }
+        @CustomType.Setter
         public Builder isStorageUtilizationLimitExceeded(Boolean isStorageUtilizationLimitExceeded) {
             this.isStorageUtilizationLimitExceeded = Objects.requireNonNull(isStorageUtilizationLimitExceeded);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
             this.licenseModel = Objects.requireNonNull(licenseModel);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleSubState(String lifecycleSubState) {
             this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -614,6 +566,7 @@ public final class GetDeploymentResult {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder oggDatas(List<GetDeploymentOggData> oggDatas) {
             this.oggDatas = Objects.requireNonNull(oggDatas);
             return this;
@@ -621,43 +574,85 @@ public final class GetDeploymentResult {
         public Builder oggDatas(GetDeploymentOggData... oggDatas) {
             return oggDatas(List.of(oggDatas));
         }
+        @CustomType.Setter
         public Builder privateIpAddress(String privateIpAddress) {
             this.privateIpAddress = Objects.requireNonNull(privateIpAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder publicIpAddress(String publicIpAddress) {
             this.publicIpAddress = Objects.requireNonNull(publicIpAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder storageUtilizationInBytes(String storageUtilizationInBytes) {
             this.storageUtilizationInBytes = Objects.requireNonNull(storageUtilizationInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpgradeRequired(String timeUpgradeRequired) {
             this.timeUpgradeRequired = Objects.requireNonNull(timeUpgradeRequired);
             return this;
-        }        public GetDeploymentResult build() {
-            return new GetDeploymentResult(compartmentId, cpuCoreCount, definedTags, deploymentBackupId, deploymentId, deploymentType, deploymentUrl, description, displayName, fqdn, freeformTags, id, isAutoScalingEnabled, isHealthy, isLatestVersion, isPublic, isStorageUtilizationLimitExceeded, licenseModel, lifecycleDetails, lifecycleSubState, nsgIds, oggDatas, privateIpAddress, publicIpAddress, state, storageUtilizationInBytes, subnetId, systemTags, timeCreated, timeUpdated, timeUpgradeRequired);
+        }
+        public GetDeploymentResult build() {
+            final var o = new GetDeploymentResult();
+            o.compartmentId = compartmentId;
+            o.cpuCoreCount = cpuCoreCount;
+            o.definedTags = definedTags;
+            o.deploymentBackupId = deploymentBackupId;
+            o.deploymentId = deploymentId;
+            o.deploymentType = deploymentType;
+            o.deploymentUrl = deploymentUrl;
+            o.description = description;
+            o.displayName = displayName;
+            o.fqdn = fqdn;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isAutoScalingEnabled = isAutoScalingEnabled;
+            o.isHealthy = isHealthy;
+            o.isLatestVersion = isLatestVersion;
+            o.isPublic = isPublic;
+            o.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
+            o.licenseModel = licenseModel;
+            o.lifecycleDetails = lifecycleDetails;
+            o.lifecycleSubState = lifecycleSubState;
+            o.nsgIds = nsgIds;
+            o.oggDatas = oggDatas;
+            o.privateIpAddress = privateIpAddress;
+            o.publicIpAddress = publicIpAddress;
+            o.state = state;
+            o.storageUtilizationInBytes = storageUtilizationInBytes;
+            o.subnetId = subnetId;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.timeUpgradeRequired = timeUpgradeRequired;
+            return o;
         }
     }
 }

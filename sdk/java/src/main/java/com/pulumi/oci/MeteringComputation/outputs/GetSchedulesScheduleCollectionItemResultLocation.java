@@ -13,35 +13,24 @@ public final class GetSchedulesScheduleCollectionItemResultLocation {
      * @return The bucket name where usage/cost CSVs will be uploaded
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return Defines the type of location where the usage/cost CSVs will be stored
      * 
      */
-    private final String locationType;
+    private String locationType;
     /**
      * @return The namespace needed to determine object storage bucket.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return The destination Object Store Region specified by customer
      * 
      */
-    private final String region;
+    private String region;
 
-    @CustomType.Constructor
-    private GetSchedulesScheduleCollectionItemResultLocation(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("locationType") String locationType,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("region") String region) {
-        this.bucket = bucket;
-        this.locationType = locationType;
-        this.namespace = namespace;
-        this.region = region;
-    }
-
+    private GetSchedulesScheduleCollectionItemResultLocation() {}
     /**
      * @return The bucket name where usage/cost CSVs will be uploaded
      * 
@@ -78,17 +67,13 @@ public final class GetSchedulesScheduleCollectionItemResultLocation {
     public static Builder builder(GetSchedulesScheduleCollectionItemResultLocation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String locationType;
         private String namespace;
         private String region;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSchedulesScheduleCollectionItemResultLocation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -97,23 +82,33 @@ public final class GetSchedulesScheduleCollectionItemResultLocation {
     	      this.region = defaults.region;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder locationType(String locationType) {
             this.locationType = Objects.requireNonNull(locationType);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
-        }        public GetSchedulesScheduleCollectionItemResultLocation build() {
-            return new GetSchedulesScheduleCollectionItemResultLocation(bucket, locationType, namespace, region);
+        }
+        public GetSchedulesScheduleCollectionItemResultLocation build() {
+            final var o = new GetSchedulesScheduleCollectionItemResultLocation();
+            o.bucket = bucket;
+            o.locationType = locationType;
+            o.namespace = namespace;
+            o.region = region;
+            return o;
         }
     }
 }

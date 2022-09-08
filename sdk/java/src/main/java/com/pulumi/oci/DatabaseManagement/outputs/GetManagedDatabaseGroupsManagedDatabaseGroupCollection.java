@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollection {
-    private final List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items;
+    private List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseGroupsManagedDatabaseGroupCollection(@CustomType.Parameter("items") List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseGroupsManagedDatabaseGroupCollection() {}
     public List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollection {
     public static Builder builder(GetManagedDatabaseGroupsManagedDatabaseGroupCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseGroupsManagedDatabaseGroupCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseGroupsManagedDatabaseGroupCollection build() {
-            return new GetManagedDatabaseGroupsManagedDatabaseGroupCollection(items);
+        }
+        public GetManagedDatabaseGroupsManagedDatabaseGroupCollection build() {
+            final var o = new GetManagedDatabaseGroupsManagedDatabaseGroupCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -17,28 +17,19 @@ public final class JobProgress {
      * @return Current phase of the job.
      * 
      */
-    private final @Nullable String currentPhase;
+    private @Nullable String currentPhase;
     /**
      * @return Current status of the job.
      * 
      */
-    private final @Nullable String currentStatus;
+    private @Nullable String currentStatus;
     /**
      * @return List of phase status for the job.
      * 
      */
-    private final @Nullable List<JobProgressPhase> phases;
+    private @Nullable List<JobProgressPhase> phases;
 
-    @CustomType.Constructor
-    private JobProgress(
-        @CustomType.Parameter("currentPhase") @Nullable String currentPhase,
-        @CustomType.Parameter("currentStatus") @Nullable String currentStatus,
-        @CustomType.Parameter("phases") @Nullable List<JobProgressPhase> phases) {
-        this.currentPhase = currentPhase;
-        this.currentStatus = currentStatus;
-        this.phases = phases;
-    }
-
+    private JobProgress() {}
     /**
      * @return Current phase of the job.
      * 
@@ -68,16 +59,12 @@ public final class JobProgress {
     public static Builder builder(JobProgress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String currentPhase;
         private @Nullable String currentStatus;
         private @Nullable List<JobProgressPhase> phases;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(JobProgress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currentPhase = defaults.currentPhase;
@@ -85,22 +72,30 @@ public final class JobProgress {
     	      this.phases = defaults.phases;
         }
 
+        @CustomType.Setter
         public Builder currentPhase(@Nullable String currentPhase) {
             this.currentPhase = currentPhase;
             return this;
         }
+        @CustomType.Setter
         public Builder currentStatus(@Nullable String currentStatus) {
             this.currentStatus = currentStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder phases(@Nullable List<JobProgressPhase> phases) {
             this.phases = phases;
             return this;
         }
         public Builder phases(JobProgressPhase... phases) {
             return phases(List.of(phases));
-        }        public JobProgress build() {
-            return new JobProgress(currentPhase, currentStatus, phases);
+        }
+        public JobProgress build() {
+            final var o = new JobProgress();
+            o.currentPhase = currentPhase;
+            o.currentStatus = currentStatus;
+            o.phases = phases;
+            return o;
         }
     }
 }

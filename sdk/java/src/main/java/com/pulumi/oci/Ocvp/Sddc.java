@@ -10,6 +10,8 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Ocvp.SddcArgs;
 import com.pulumi.oci.Ocvp.inputs.SddcState;
 import com.pulumi.oci.Ocvp.outputs.SddcHcxOnPremLicense;
+import com.pulumi.oci.Ocvp.outputs.SddcUpgradeLicense;
+import com.pulumi.oci.Ocvp.outputs.SddcVsphereUpgradeObject;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -733,6 +735,20 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
+     * The vSphere licenses to be used when upgrade SDDC.
+     * 
+     */
+    @Export(name="upgradeLicenses", type=List.class, parameters={SddcUpgradeLicense.class})
+    private Output<List<SddcUpgradeLicense>> upgradeLicenses;
+
+    /**
+     * @return The vSphere licenses to be used when upgrade SDDC.
+     * 
+     */
+    public Output<List<SddcUpgradeLicense>> upgradeLicenses() {
+        return this.upgradeLicenses;
+    }
+    /**
      * The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
@@ -829,6 +845,34 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      */
     public Output<String> vsanVlanId() {
         return this.vsanVlanId;
+    }
+    /**
+     * The link of guidance to upgrade vSphere.
+     * 
+     */
+    @Export(name="vsphereUpgradeGuide", type=String.class, parameters={})
+    private Output<String> vsphereUpgradeGuide;
+
+    /**
+     * @return The link of guidance to upgrade vSphere.
+     * 
+     */
+    public Output<String> vsphereUpgradeGuide() {
+        return this.vsphereUpgradeGuide;
+    }
+    /**
+     * The links of binary objects needed for upgrade vSphere.
+     * 
+     */
+    @Export(name="vsphereUpgradeObjects", type=List.class, parameters={SddcVsphereUpgradeObject.class})
+    private Output<List<SddcVsphereUpgradeObject>> vsphereUpgradeObjects;
+
+    /**
+     * @return The links of binary objects needed for upgrade vSphere.
+     * 
+     */
+    public Output<List<SddcVsphereUpgradeObject>> vsphereUpgradeObjects() {
+        return this.vsphereUpgradeObjects;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.

@@ -14,13 +14,9 @@ public final class GetBuildRunBuildOutputDeliveredArtifact {
      * @return List of exported variables.
      * 
      */
-    private final List<GetBuildRunBuildOutputDeliveredArtifactItem> items;
+    private List<GetBuildRunBuildOutputDeliveredArtifactItem> items;
 
-    @CustomType.Constructor
-    private GetBuildRunBuildOutputDeliveredArtifact(@CustomType.Parameter("items") List<GetBuildRunBuildOutputDeliveredArtifactItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildRunBuildOutputDeliveredArtifact() {}
     /**
      * @return List of exported variables.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildRunBuildOutputDeliveredArtifact {
     public static Builder builder(GetBuildRunBuildOutputDeliveredArtifact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildRunBuildOutputDeliveredArtifactItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunBuildOutputDeliveredArtifact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildRunBuildOutputDeliveredArtifactItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildRunBuildOutputDeliveredArtifactItem... items) {
             return items(List.of(items));
-        }        public GetBuildRunBuildOutputDeliveredArtifact build() {
-            return new GetBuildRunBuildOutputDeliveredArtifact(items);
+        }
+        public GetBuildRunBuildOutputDeliveredArtifact build() {
+            final var o = new GetBuildRunBuildOutputDeliveredArtifact();
+            o.items = items;
+            return o;
         }
     }
 }

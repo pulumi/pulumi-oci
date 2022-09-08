@@ -15,35 +15,24 @@ public final class GetFleetBlocklistsItem {
      * @return The unique identifier of this blocklist record.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The operation type.
      * 
      */
-    private final String operation;
+    private String operation;
     /**
      * @return The reason for why the operation is blocklisted
      * 
      */
-    private final String reason;
+    private String reason;
     /**
      * @return A resource to blocklist for certain operation.
      * 
      */
-    private final List<GetFleetBlocklistsItemTarget> targets;
+    private List<GetFleetBlocklistsItemTarget> targets;
 
-    @CustomType.Constructor
-    private GetFleetBlocklistsItem(
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("operation") String operation,
-        @CustomType.Parameter("reason") String reason,
-        @CustomType.Parameter("targets") List<GetFleetBlocklistsItemTarget> targets) {
-        this.key = key;
-        this.operation = operation;
-        this.reason = reason;
-        this.targets = targets;
-    }
-
+    private GetFleetBlocklistsItem() {}
     /**
      * @return The unique identifier of this blocklist record.
      * 
@@ -80,17 +69,13 @@ public final class GetFleetBlocklistsItem {
     public static Builder builder(GetFleetBlocklistsItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String key;
         private String operation;
         private String reason;
         private List<GetFleetBlocklistsItemTarget> targets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFleetBlocklistsItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
@@ -99,26 +84,36 @@ public final class GetFleetBlocklistsItem {
     	      this.targets = defaults.targets;
         }
 
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder operation(String operation) {
             this.operation = Objects.requireNonNull(operation);
             return this;
         }
+        @CustomType.Setter
         public Builder reason(String reason) {
             this.reason = Objects.requireNonNull(reason);
             return this;
         }
+        @CustomType.Setter
         public Builder targets(List<GetFleetBlocklistsItemTarget> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
         }
         public Builder targets(GetFleetBlocklistsItemTarget... targets) {
             return targets(List.of(targets));
-        }        public GetFleetBlocklistsItem build() {
-            return new GetFleetBlocklistsItem(key, operation, reason, targets);
+        }
+        public GetFleetBlocklistsItem build() {
+            final var o = new GetFleetBlocklistsItem();
+            o.key = key;
+            o.operation = operation;
+            o.reason = reason;
+            o.targets = targets;
+            return o;
         }
     }
 }

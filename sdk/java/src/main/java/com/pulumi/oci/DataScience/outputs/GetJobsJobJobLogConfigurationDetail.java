@@ -14,35 +14,24 @@ public final class GetJobsJobJobLogConfigurationDetail {
      * @return If automatic on-behalf-of log object creation is enabled for job runs.
      * 
      */
-    private final Boolean enableAutoLogCreation;
+    private Boolean enableAutoLogCreation;
     /**
      * @return If customer logging is enabled for job runs.
      * 
      */
-    private final Boolean enableLogging;
+    private Boolean enableLogging;
     /**
      * @return The log group id for where log objects are for job runs.
      * 
      */
-    private final String logGroupId;
+    private String logGroupId;
     /**
      * @return The log id the job run will push logs too.
      * 
      */
-    private final String logId;
+    private String logId;
 
-    @CustomType.Constructor
-    private GetJobsJobJobLogConfigurationDetail(
-        @CustomType.Parameter("enableAutoLogCreation") Boolean enableAutoLogCreation,
-        @CustomType.Parameter("enableLogging") Boolean enableLogging,
-        @CustomType.Parameter("logGroupId") String logGroupId,
-        @CustomType.Parameter("logId") String logId) {
-        this.enableAutoLogCreation = enableAutoLogCreation;
-        this.enableLogging = enableLogging;
-        this.logGroupId = logGroupId;
-        this.logId = logId;
-    }
-
+    private GetJobsJobJobLogConfigurationDetail() {}
     /**
      * @return If automatic on-behalf-of log object creation is enabled for job runs.
      * 
@@ -79,17 +68,13 @@ public final class GetJobsJobJobLogConfigurationDetail {
     public static Builder builder(GetJobsJobJobLogConfigurationDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean enableAutoLogCreation;
         private Boolean enableLogging;
         private String logGroupId;
         private String logId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobsJobJobLogConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.enableAutoLogCreation = defaults.enableAutoLogCreation;
@@ -98,23 +83,33 @@ public final class GetJobsJobJobLogConfigurationDetail {
     	      this.logId = defaults.logId;
         }
 
+        @CustomType.Setter
         public Builder enableAutoLogCreation(Boolean enableAutoLogCreation) {
             this.enableAutoLogCreation = Objects.requireNonNull(enableAutoLogCreation);
             return this;
         }
+        @CustomType.Setter
         public Builder enableLogging(Boolean enableLogging) {
             this.enableLogging = Objects.requireNonNull(enableLogging);
             return this;
         }
+        @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder logId(String logId) {
             this.logId = Objects.requireNonNull(logId);
             return this;
-        }        public GetJobsJobJobLogConfigurationDetail build() {
-            return new GetJobsJobJobLogConfigurationDetail(enableAutoLogCreation, enableLogging, logGroupId, logId);
+        }
+        public GetJobsJobJobLogConfigurationDetail build() {
+            final var o = new GetJobsJobJobLogConfigurationDetail();
+            o.enableAutoLogCreation = enableAutoLogCreation;
+            o.enableLogging = enableLogging;
+            o.logGroupId = logGroupId;
+            o.logId = logId;
+            return o;
         }
     }
 }

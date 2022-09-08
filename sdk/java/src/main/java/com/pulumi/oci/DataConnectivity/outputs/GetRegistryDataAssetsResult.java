@@ -18,62 +18,33 @@ public final class GetRegistryDataAssetsResult {
      * @return The list of data_asset_summary_collection.
      * 
      */
-    private final List<GetRegistryDataAssetsDataAssetSummaryCollection> dataAssetSummaryCollections;
-    private final @Nullable List<String> endpointIds;
-    private final @Nullable List<String> excludeEndpointIds;
-    private final @Nullable List<String> excludeTypes;
-    private final @Nullable String favoritesQueryParam;
-    private final @Nullable List<String> fields;
-    private final @Nullable List<GetRegistryDataAssetsFilter> filters;
-    private final @Nullable String folderId;
+    private List<GetRegistryDataAssetsDataAssetSummaryCollection> dataAssetSummaryCollections;
+    private @Nullable List<String> endpointIds;
+    private @Nullable List<String> excludeEndpointIds;
+    private @Nullable List<String> excludeTypes;
+    private @Nullable String favoritesQueryParam;
+    private @Nullable List<String> fields;
+    private @Nullable List<GetRegistryDataAssetsFilter> filters;
+    private @Nullable String folderId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable List<String> includeTypes;
+    private String id;
+    private @Nullable List<String> includeTypes;
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final @Nullable String name;
-    private final String registryId;
+    private @Nullable String name;
+    private String registryId;
     /**
      * @return Specific DataAsset Type
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private GetRegistryDataAssetsResult(
-        @CustomType.Parameter("dataAssetSummaryCollections") List<GetRegistryDataAssetsDataAssetSummaryCollection> dataAssetSummaryCollections,
-        @CustomType.Parameter("endpointIds") @Nullable List<String> endpointIds,
-        @CustomType.Parameter("excludeEndpointIds") @Nullable List<String> excludeEndpointIds,
-        @CustomType.Parameter("excludeTypes") @Nullable List<String> excludeTypes,
-        @CustomType.Parameter("favoritesQueryParam") @Nullable String favoritesQueryParam,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("filters") @Nullable List<GetRegistryDataAssetsFilter> filters,
-        @CustomType.Parameter("folderId") @Nullable String folderId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("includeTypes") @Nullable List<String> includeTypes,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("registryId") String registryId,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.dataAssetSummaryCollections = dataAssetSummaryCollections;
-        this.endpointIds = endpointIds;
-        this.excludeEndpointIds = excludeEndpointIds;
-        this.excludeTypes = excludeTypes;
-        this.favoritesQueryParam = favoritesQueryParam;
-        this.fields = fields;
-        this.filters = filters;
-        this.folderId = folderId;
-        this.id = id;
-        this.includeTypes = includeTypes;
-        this.name = name;
-        this.registryId = registryId;
-        this.type = type;
-    }
-
+    private GetRegistryDataAssetsResult() {}
     /**
      * @return The list of data_asset_summary_collection.
      * 
@@ -113,7 +84,7 @@ public final class GetRegistryDataAssetsResult {
         return this.includeTypes == null ? List.of() : this.includeTypes;
     }
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<String> name() {
@@ -137,7 +108,7 @@ public final class GetRegistryDataAssetsResult {
     public static Builder builder(GetRegistryDataAssetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRegistryDataAssetsDataAssetSummaryCollection> dataAssetSummaryCollections;
         private @Nullable List<String> endpointIds;
@@ -152,11 +123,7 @@ public final class GetRegistryDataAssetsResult {
         private @Nullable String name;
         private String registryId;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryDataAssetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dataAssetSummaryCollections = defaults.dataAssetSummaryCollections;
@@ -174,6 +141,7 @@ public final class GetRegistryDataAssetsResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder dataAssetSummaryCollections(List<GetRegistryDataAssetsDataAssetSummaryCollection> dataAssetSummaryCollections) {
             this.dataAssetSummaryCollections = Objects.requireNonNull(dataAssetSummaryCollections);
             return this;
@@ -181,6 +149,7 @@ public final class GetRegistryDataAssetsResult {
         public Builder dataAssetSummaryCollections(GetRegistryDataAssetsDataAssetSummaryCollection... dataAssetSummaryCollections) {
             return dataAssetSummaryCollections(List.of(dataAssetSummaryCollections));
         }
+        @CustomType.Setter
         public Builder endpointIds(@Nullable List<String> endpointIds) {
             this.endpointIds = endpointIds;
             return this;
@@ -188,6 +157,7 @@ public final class GetRegistryDataAssetsResult {
         public Builder endpointIds(String... endpointIds) {
             return endpointIds(List.of(endpointIds));
         }
+        @CustomType.Setter
         public Builder excludeEndpointIds(@Nullable List<String> excludeEndpointIds) {
             this.excludeEndpointIds = excludeEndpointIds;
             return this;
@@ -195,6 +165,7 @@ public final class GetRegistryDataAssetsResult {
         public Builder excludeEndpointIds(String... excludeEndpointIds) {
             return excludeEndpointIds(List.of(excludeEndpointIds));
         }
+        @CustomType.Setter
         public Builder excludeTypes(@Nullable List<String> excludeTypes) {
             this.excludeTypes = excludeTypes;
             return this;
@@ -202,10 +173,12 @@ public final class GetRegistryDataAssetsResult {
         public Builder excludeTypes(String... excludeTypes) {
             return excludeTypes(List.of(excludeTypes));
         }
+        @CustomType.Setter
         public Builder favoritesQueryParam(@Nullable String favoritesQueryParam) {
             this.favoritesQueryParam = favoritesQueryParam;
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -213,6 +186,7 @@ public final class GetRegistryDataAssetsResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRegistryDataAssetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -220,14 +194,17 @@ public final class GetRegistryDataAssetsResult {
         public Builder filters(GetRegistryDataAssetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder folderId(@Nullable String folderId) {
             this.folderId = folderId;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder includeTypes(@Nullable List<String> includeTypes) {
             this.includeTypes = includeTypes;
             return this;
@@ -235,19 +212,37 @@ public final class GetRegistryDataAssetsResult {
         public Builder includeTypes(String... includeTypes) {
             return includeTypes(List.of(includeTypes));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder registryId(String registryId) {
             this.registryId = Objects.requireNonNull(registryId);
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public GetRegistryDataAssetsResult build() {
-            return new GetRegistryDataAssetsResult(dataAssetSummaryCollections, endpointIds, excludeEndpointIds, excludeTypes, favoritesQueryParam, fields, filters, folderId, id, includeTypes, name, registryId, type);
+        }
+        public GetRegistryDataAssetsResult build() {
+            final var o = new GetRegistryDataAssetsResult();
+            o.dataAssetSummaryCollections = dataAssetSummaryCollections;
+            o.endpointIds = endpointIds;
+            o.excludeEndpointIds = excludeEndpointIds;
+            o.excludeTypes = excludeTypes;
+            o.favoritesQueryParam = favoritesQueryParam;
+            o.fields = fields;
+            o.filters = filters;
+            o.folderId = folderId;
+            o.id = id;
+            o.includeTypes = includeTypes;
+            o.name = name;
+            o.registryId = registryId;
+            o.type = type;
+            return o;
         }
     }
 }

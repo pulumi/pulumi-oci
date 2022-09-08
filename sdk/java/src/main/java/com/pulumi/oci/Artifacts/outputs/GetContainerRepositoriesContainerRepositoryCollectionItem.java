@@ -17,105 +17,74 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      * @return Total storage size in GBs that will be charged.
      * 
      */
-    private final String billableSizeInGbs;
+    private String billableSizeInGbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The id of the user or principal that created the resource.
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Total number of images.
      * 
      */
-    private final Integer imageCount;
+    private Integer imageCount;
     /**
      * @return Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      * 
      */
-    private final Boolean isImmutable;
+    private Boolean isImmutable;
     /**
      * @return A filter to return resources that match the isPublic value.
      * 
      */
-    private final Boolean isPublic;
+    private Boolean isPublic;
     /**
      * @return Total number of layers.
      * 
      */
-    private final Integer layerCount;
+    private Integer layerCount;
     /**
      * @return Total storage in bytes consumed by layers.
      * 
      */
-    private final String layersSizeInBytes;
+    private String layersSizeInBytes;
     /**
      * @return Container repository readme.
      * 
      */
-    private final List<GetContainerRepositoriesContainerRepositoryCollectionItemReadme> readmes;
+    private List<GetContainerRepositoriesContainerRepositoryCollectionItemReadme> readmes;
     /**
      * @return A filter to return only resources that match the given lifecycle state name exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return An RFC 3339 timestamp indicating when an image was last pushed to the repository.
      * 
      */
-    private final String timeLastPushed;
+    private String timeLastPushed;
 
-    @CustomType.Constructor
-    private GetContainerRepositoriesContainerRepositoryCollectionItem(
-        @CustomType.Parameter("billableSizeInGbs") String billableSizeInGbs,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageCount") Integer imageCount,
-        @CustomType.Parameter("isImmutable") Boolean isImmutable,
-        @CustomType.Parameter("isPublic") Boolean isPublic,
-        @CustomType.Parameter("layerCount") Integer layerCount,
-        @CustomType.Parameter("layersSizeInBytes") String layersSizeInBytes,
-        @CustomType.Parameter("readmes") List<GetContainerRepositoriesContainerRepositoryCollectionItemReadme> readmes,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastPushed") String timeLastPushed) {
-        this.billableSizeInGbs = billableSizeInGbs;
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.displayName = displayName;
-        this.id = id;
-        this.imageCount = imageCount;
-        this.isImmutable = isImmutable;
-        this.isPublic = isPublic;
-        this.layerCount = layerCount;
-        this.layersSizeInBytes = layersSizeInBytes;
-        this.readmes = readmes;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeLastPushed = timeLastPushed;
-    }
-
+    private GetContainerRepositoriesContainerRepositoryCollectionItem() {}
     /**
      * @return Total storage size in GBs that will be charged.
      * 
@@ -222,7 +191,7 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
     public static Builder builder(GetContainerRepositoriesContainerRepositoryCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String billableSizeInGbs;
         private String compartmentId;
@@ -238,11 +207,7 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         private String state;
         private String timeCreated;
         private String timeLastPushed;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerRepositoriesContainerRepositoryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billableSizeInGbs = defaults.billableSizeInGbs;
@@ -261,46 +226,57 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
     	      this.timeLastPushed = defaults.timeLastPushed;
         }
 
+        @CustomType.Setter
         public Builder billableSizeInGbs(String billableSizeInGbs) {
             this.billableSizeInGbs = Objects.requireNonNull(billableSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageCount(Integer imageCount) {
             this.imageCount = Objects.requireNonNull(imageCount);
             return this;
         }
+        @CustomType.Setter
         public Builder isImmutable(Boolean isImmutable) {
             this.isImmutable = Objects.requireNonNull(isImmutable);
             return this;
         }
+        @CustomType.Setter
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = Objects.requireNonNull(isPublic);
             return this;
         }
+        @CustomType.Setter
         public Builder layerCount(Integer layerCount) {
             this.layerCount = Objects.requireNonNull(layerCount);
             return this;
         }
+        @CustomType.Setter
         public Builder layersSizeInBytes(String layersSizeInBytes) {
             this.layersSizeInBytes = Objects.requireNonNull(layersSizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder readmes(List<GetContainerRepositoriesContainerRepositoryCollectionItemReadme> readmes) {
             this.readmes = Objects.requireNonNull(readmes);
             return this;
@@ -308,19 +284,38 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         public Builder readmes(GetContainerRepositoriesContainerRepositoryCollectionItemReadme... readmes) {
             return readmes(List.of(readmes));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastPushed(String timeLastPushed) {
             this.timeLastPushed = Objects.requireNonNull(timeLastPushed);
             return this;
-        }        public GetContainerRepositoriesContainerRepositoryCollectionItem build() {
-            return new GetContainerRepositoriesContainerRepositoryCollectionItem(billableSizeInGbs, compartmentId, createdBy, displayName, id, imageCount, isImmutable, isPublic, layerCount, layersSizeInBytes, readmes, state, timeCreated, timeLastPushed);
+        }
+        public GetContainerRepositoriesContainerRepositoryCollectionItem build() {
+            final var o = new GetContainerRepositoriesContainerRepositoryCollectionItem();
+            o.billableSizeInGbs = billableSizeInGbs;
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.displayName = displayName;
+            o.id = id;
+            o.imageCount = imageCount;
+            o.isImmutable = isImmutable;
+            o.isPublic = isPublic;
+            o.layerCount = layerCount;
+            o.layersSizeInBytes = layersSizeInBytes;
+            o.readmes = readmes;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeLastPushed = timeLastPushed;
+            return o;
         }
     }
 }

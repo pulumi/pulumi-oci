@@ -19,37 +19,26 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
      * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      * 
      */
-    private final List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition> conditions;
+    private List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition> conditions;
     /**
      * @return Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
      * * INTRUSION_DETECTION - Intrusion Detection.
      * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      * 
      */
-    private final String inspection;
+    private String inspection;
     /**
      * @return Name for the Security rule, must be unique within the policy.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("conditions") List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition> conditions,
-        @CustomType.Parameter("inspection") String inspection,
-        @CustomType.Parameter("name") String name) {
-        this.action = action;
-        this.conditions = conditions;
-        this.inspection = inspection;
-        this.name = name;
-    }
-
+    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule() {}
     /**
      * @return Types of Action on the Traffic flow.
      * * ALLOW - Allows the traffic.
@@ -92,17 +81,13 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     public static Builder builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition> conditions;
         private String inspection;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -111,10 +96,12 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder conditions(List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition> conditions) {
             this.conditions = Objects.requireNonNull(conditions);
             return this;
@@ -122,15 +109,23 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
         public Builder conditions(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition... conditions) {
             return conditions(List.of(conditions));
         }
+        @CustomType.Setter
         public Builder inspection(String inspection) {
             this.inspection = Objects.requireNonNull(inspection);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule build() {
-            return new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule(action, conditions, inspection, name);
+        }
+        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule build() {
+            final var o = new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule();
+            o.action = action;
+            o.conditions = conditions;
+            o.inspection = inspection;
+            o.name = name;
+            return o;
         }
     }
 }

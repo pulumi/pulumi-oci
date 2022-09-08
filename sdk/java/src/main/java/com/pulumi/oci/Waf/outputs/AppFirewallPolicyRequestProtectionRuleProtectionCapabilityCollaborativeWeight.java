@@ -14,21 +14,14 @@ public final class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCol
      * @return (Updatable) Unique key of referenced protection capability.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return (Updatable) The value of weight to set.
      * 
      */
-    private final Integer weight;
+    private Integer weight;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight(
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("weight") Integer weight) {
-        this.key = key;
-        this.weight = weight;
-    }
-
+    private AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight() {}
     /**
      * @return (Updatable) Unique key of referenced protection capability.
      * 
@@ -51,30 +44,32 @@ public final class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCol
     public static Builder builder(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String key;
         private Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(Integer weight) {
             this.weight = Objects.requireNonNull(weight);
             return this;
-        }        public AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight build() {
-            return new AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight(key, weight);
+        }
+        public AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight build() {
+            final var o = new AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight();
+            o.key = key;
+            o.weight = weight;
+            return o;
         }
     }
 }

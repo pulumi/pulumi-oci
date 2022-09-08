@@ -13,21 +13,14 @@ public final class GetBackendHealthHealthCheckResult {
      * @return The result of the most recent health check.
      * 
      */
-    private final String healthCheckStatus;
+    private String healthCheckStatus;
     /**
      * @return The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2020-05-01T18:28:11+00:00`
      * 
      */
-    private final String timestamp;
+    private String timestamp;
 
-    @CustomType.Constructor
-    private GetBackendHealthHealthCheckResult(
-        @CustomType.Parameter("healthCheckStatus") String healthCheckStatus,
-        @CustomType.Parameter("timestamp") String timestamp) {
-        this.healthCheckStatus = healthCheckStatus;
-        this.timestamp = timestamp;
-    }
-
+    private GetBackendHealthHealthCheckResult() {}
     /**
      * @return The result of the most recent health check.
      * 
@@ -50,30 +43,32 @@ public final class GetBackendHealthHealthCheckResult {
     public static Builder builder(GetBackendHealthHealthCheckResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String healthCheckStatus;
         private String timestamp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendHealthHealthCheckResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.healthCheckStatus = defaults.healthCheckStatus;
     	      this.timestamp = defaults.timestamp;
         }
 
+        @CustomType.Setter
         public Builder healthCheckStatus(String healthCheckStatus) {
             this.healthCheckStatus = Objects.requireNonNull(healthCheckStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder timestamp(String timestamp) {
             this.timestamp = Objects.requireNonNull(timestamp);
             return this;
-        }        public GetBackendHealthHealthCheckResult build() {
-            return new GetBackendHealthHealthCheckResult(healthCheckStatus, timestamp);
+        }
+        public GetBackendHealthHealthCheckResult build() {
+            final var o = new GetBackendHealthHealthCheckResult();
+            o.healthCheckStatus = healthCheckStatus;
+            o.timestamp = timestamp;
+            return o;
         }
     }
 }

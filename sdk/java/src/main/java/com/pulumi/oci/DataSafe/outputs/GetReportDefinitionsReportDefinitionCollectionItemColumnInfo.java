@@ -15,42 +15,29 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnInfo 
      * @return Specifies the data type of the column.
      * 
      */
-    private final String dataType;
+    private String dataType;
     /**
      * @return The name of the report definition to query.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Specifies the order in which the summary must be displayed.
      * 
      */
-    private final Integer displayOrder;
+    private Integer displayOrder;
     /**
      * @return Name of the column that must be sorted.
      * 
      */
-    private final String fieldName;
+    private String fieldName;
     /**
      * @return Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private final Boolean isHidden;
+    private Boolean isHidden;
 
-    @CustomType.Constructor
-    private GetReportDefinitionsReportDefinitionCollectionItemColumnInfo(
-        @CustomType.Parameter("dataType") String dataType,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("displayOrder") Integer displayOrder,
-        @CustomType.Parameter("fieldName") String fieldName,
-        @CustomType.Parameter("isHidden") Boolean isHidden) {
-        this.dataType = dataType;
-        this.displayName = displayName;
-        this.displayOrder = displayOrder;
-        this.fieldName = fieldName;
-        this.isHidden = isHidden;
-    }
-
+    private GetReportDefinitionsReportDefinitionCollectionItemColumnInfo() {}
     /**
      * @return Specifies the data type of the column.
      * 
@@ -94,18 +81,14 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnInfo 
     public static Builder builder(GetReportDefinitionsReportDefinitionCollectionItemColumnInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dataType;
         private String displayName;
         private Integer displayOrder;
         private String fieldName;
         private Boolean isHidden;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportDefinitionsReportDefinitionCollectionItemColumnInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dataType = defaults.dataType;
@@ -115,27 +98,39 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnInfo 
     	      this.isHidden = defaults.isHidden;
         }
 
+        @CustomType.Setter
         public Builder dataType(String dataType) {
             this.dataType = Objects.requireNonNull(dataType);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = Objects.requireNonNull(displayOrder);
             return this;
         }
+        @CustomType.Setter
         public Builder fieldName(String fieldName) {
             this.fieldName = Objects.requireNonNull(fieldName);
             return this;
         }
+        @CustomType.Setter
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = Objects.requireNonNull(isHidden);
             return this;
-        }        public GetReportDefinitionsReportDefinitionCollectionItemColumnInfo build() {
-            return new GetReportDefinitionsReportDefinitionCollectionItemColumnInfo(dataType, displayName, displayOrder, fieldName, isHidden);
+        }
+        public GetReportDefinitionsReportDefinitionCollectionItemColumnInfo build() {
+            final var o = new GetReportDefinitionsReportDefinitionCollectionItemColumnInfo();
+            o.dataType = dataType;
+            o.displayName = displayName;
+            o.displayOrder = displayOrder;
+            o.fieldName = fieldName;
+            o.isHidden = isHidden;
+            return o;
         }
     }
 }

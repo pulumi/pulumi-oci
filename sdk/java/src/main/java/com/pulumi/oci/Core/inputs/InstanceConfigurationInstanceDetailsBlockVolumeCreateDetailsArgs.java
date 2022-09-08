@@ -5,9 +5,11 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,6 +19,21 @@ import javax.annotation.Nullable;
 public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs Empty = new InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs();
+
+    /**
+     * The list of autotune policies enabled for this volume.
+     * 
+     */
+    @Import(name="autotunePolicies")
+    private @Nullable Output<List<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs>> autotunePolicies;
+
+    /**
+     * @return The list of autotune policies enabled for this volume.
+     * 
+     */
+    public Optional<Output<List<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs>>> autotunePolicies() {
+        return Optional.ofNullable(this.autotunePolicies);
+    }
 
     /**
      * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
@@ -163,6 +180,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
     private InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs() {}
 
     private InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs(InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs $) {
+        this.autotunePolicies = $.autotunePolicies;
         this.availabilityDomain = $.availabilityDomain;
         this.backupPolicyId = $.backupPolicyId;
         this.compartmentId = $.compartmentId;
@@ -191,6 +209,37 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
 
         public Builder(InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs defaults) {
             $ = new InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param autotunePolicies The list of autotune policies enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(@Nullable Output<List<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs>> autotunePolicies) {
+            $.autotunePolicies = autotunePolicies;
+            return this;
+        }
+
+        /**
+         * @param autotunePolicies The list of autotune policies enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(List<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs> autotunePolicies) {
+            return autotunePolicies(Output.of(autotunePolicies));
+        }
+
+        /**
+         * @param autotunePolicies The list of autotune policies enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs... autotunePolicies) {
+            return autotunePolicies(List.of(autotunePolicies));
         }
 
         /**

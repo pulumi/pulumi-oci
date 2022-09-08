@@ -18,46 +18,25 @@ public final class GetWaasPoliciesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy&#39;s compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<String> displayNames;
-    private final @Nullable List<GetWaasPoliciesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<String> displayNames;
+    private @Nullable List<GetWaasPoliciesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable List<String> ids;
-    private final @Nullable List<String> states;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private String id;
+    private @Nullable List<String> ids;
+    private @Nullable List<String> states;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
     /**
      * @return The list of waas_policies.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicy> waasPolicies;
+    private List<GetWaasPoliciesWaasPolicy> waasPolicies;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayNames") @Nullable List<String> displayNames,
-        @CustomType.Parameter("filters") @Nullable List<GetWaasPoliciesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ids") @Nullable List<String> ids,
-        @CustomType.Parameter("states") @Nullable List<String> states,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan,
-        @CustomType.Parameter("waasPolicies") List<GetWaasPoliciesWaasPolicy> waasPolicies) {
-        this.compartmentId = compartmentId;
-        this.displayNames = displayNames;
-        this.filters = filters;
-        this.id = id;
-        this.ids = ids;
-        this.states = states;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-        this.waasPolicies = waasPolicies;
-    }
-
+    private GetWaasPoliciesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy&#39;s compartment.
      * 
@@ -105,7 +84,7 @@ public final class GetWaasPoliciesResult {
     public static Builder builder(GetWaasPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<String> displayNames;
@@ -116,11 +95,7 @@ public final class GetWaasPoliciesResult {
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
         private List<GetWaasPoliciesWaasPolicy> waasPolicies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,10 +109,12 @@ public final class GetWaasPoliciesResult {
     	      this.waasPolicies = defaults.waasPolicies;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayNames(@Nullable List<String> displayNames) {
             this.displayNames = displayNames;
             return this;
@@ -145,6 +122,7 @@ public final class GetWaasPoliciesResult {
         public Builder displayNames(String... displayNames) {
             return displayNames(List.of(displayNames));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetWaasPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -152,10 +130,12 @@ public final class GetWaasPoliciesResult {
         public Builder filters(GetWaasPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ids(@Nullable List<String> ids) {
             this.ids = ids;
             return this;
@@ -163,6 +143,7 @@ public final class GetWaasPoliciesResult {
         public Builder ids(String... ids) {
             return ids(List.of(ids));
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
@@ -170,22 +151,36 @@ public final class GetWaasPoliciesResult {
         public Builder states(String... states) {
             return states(List.of(states));
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder waasPolicies(List<GetWaasPoliciesWaasPolicy> waasPolicies) {
             this.waasPolicies = Objects.requireNonNull(waasPolicies);
             return this;
         }
         public Builder waasPolicies(GetWaasPoliciesWaasPolicy... waasPolicies) {
             return waasPolicies(List.of(waasPolicies));
-        }        public GetWaasPoliciesResult build() {
-            return new GetWaasPoliciesResult(compartmentId, displayNames, filters, id, ids, states, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, waasPolicies);
+        }
+        public GetWaasPoliciesResult build() {
+            final var o = new GetWaasPoliciesResult();
+            o.compartmentId = compartmentId;
+            o.displayNames = displayNames;
+            o.filters = filters;
+            o.id = id;
+            o.ids = ids;
+            o.states = states;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            o.waasPolicies = waasPolicies;
+            return o;
         }
     }
 }

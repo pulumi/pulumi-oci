@@ -15,40 +15,23 @@ public final class GetLoadBalancerRoutingPolicyResult {
      * @return The version of the language in which `condition` of `rules` are composed.
      * 
      */
-    private final String conditionLanguageVersion;
-    private final String id;
-    private final String loadBalancerId;
+    private String conditionLanguageVersion;
+    private String id;
+    private String loadBalancerId;
     /**
      * @return A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    private final String name;
-    private final String routingPolicyName;
+    private String name;
+    private String routingPolicyName;
     /**
      * @return The ordered list of routing rules.
      * 
      */
-    private final List<GetLoadBalancerRoutingPolicyRule> rules;
-    private final String state;
+    private List<GetLoadBalancerRoutingPolicyRule> rules;
+    private String state;
 
-    @CustomType.Constructor
-    private GetLoadBalancerRoutingPolicyResult(
-        @CustomType.Parameter("conditionLanguageVersion") String conditionLanguageVersion,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("routingPolicyName") String routingPolicyName,
-        @CustomType.Parameter("rules") List<GetLoadBalancerRoutingPolicyRule> rules,
-        @CustomType.Parameter("state") String state) {
-        this.conditionLanguageVersion = conditionLanguageVersion;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-        this.name = name;
-        this.routingPolicyName = routingPolicyName;
-        this.rules = rules;
-        this.state = state;
-    }
-
+    private GetLoadBalancerRoutingPolicyResult() {}
     /**
      * @return The version of the language in which `condition` of `rules` are composed.
      * 
@@ -90,7 +73,7 @@ public final class GetLoadBalancerRoutingPolicyResult {
     public static Builder builder(GetLoadBalancerRoutingPolicyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String conditionLanguageVersion;
         private String id;
@@ -99,11 +82,7 @@ public final class GetLoadBalancerRoutingPolicyResult {
         private String routingPolicyName;
         private List<GetLoadBalancerRoutingPolicyRule> rules;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLoadBalancerRoutingPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.conditionLanguageVersion = defaults.conditionLanguageVersion;
@@ -115,26 +94,32 @@ public final class GetLoadBalancerRoutingPolicyResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder conditionLanguageVersion(String conditionLanguageVersion) {
             this.conditionLanguageVersion = Objects.requireNonNull(conditionLanguageVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder routingPolicyName(String routingPolicyName) {
             this.routingPolicyName = Objects.requireNonNull(routingPolicyName);
             return this;
         }
+        @CustomType.Setter
         public Builder rules(List<GetLoadBalancerRoutingPolicyRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
@@ -142,11 +127,21 @@ public final class GetLoadBalancerRoutingPolicyResult {
         public Builder rules(GetLoadBalancerRoutingPolicyRule... rules) {
             return rules(List.of(rules));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetLoadBalancerRoutingPolicyResult build() {
-            return new GetLoadBalancerRoutingPolicyResult(conditionLanguageVersion, id, loadBalancerId, name, routingPolicyName, rules, state);
+        }
+        public GetLoadBalancerRoutingPolicyResult build() {
+            final var o = new GetLoadBalancerRoutingPolicyResult();
+            o.conditionLanguageVersion = conditionLanguageVersion;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            o.name = name;
+            o.routingPolicyName = routingPolicyName;
+            o.rules = rules;
+            o.state = state;
+            return o;
         }
     }
 }

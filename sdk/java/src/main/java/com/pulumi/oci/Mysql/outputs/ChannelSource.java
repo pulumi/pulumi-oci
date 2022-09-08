@@ -17,56 +17,39 @@ public final class ChannelSource {
      * @return (Updatable) The network address of the MySQL instance.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      * 
      */
-    private final String password;
+    private String password;
     /**
      * @return (Updatable) The port the source MySQL instance listens on.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
     /**
      * @return (Updatable) The specific source identifier.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
     /**
      * @return (Updatable) The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
      * 
      */
-    private final @Nullable ChannelSourceSslCaCertificate sslCaCertificate;
+    private @Nullable ChannelSourceSslCaCertificate sslCaCertificate;
     /**
      * @return (Updatable) The SSL mode of the Channel.
      * 
      */
-    private final String sslMode;
+    private String sslMode;
     /**
      * @return (Updatable) The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
      * 
      */
-    private final String username;
+    private String username;
 
-    @CustomType.Constructor
-    private ChannelSource(
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("port") @Nullable Integer port,
-        @CustomType.Parameter("sourceType") String sourceType,
-        @CustomType.Parameter("sslCaCertificate") @Nullable ChannelSourceSslCaCertificate sslCaCertificate,
-        @CustomType.Parameter("sslMode") String sslMode,
-        @CustomType.Parameter("username") String username) {
-        this.hostname = hostname;
-        this.password = password;
-        this.port = port;
-        this.sourceType = sourceType;
-        this.sslCaCertificate = sslCaCertificate;
-        this.sslMode = sslMode;
-        this.username = username;
-    }
-
+    private ChannelSource() {}
     /**
      * @return (Updatable) The network address of the MySQL instance.
      * 
@@ -124,7 +107,7 @@ public final class ChannelSource {
     public static Builder builder(ChannelSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostname;
         private String password;
@@ -133,11 +116,7 @@ public final class ChannelSource {
         private @Nullable ChannelSourceSslCaCertificate sslCaCertificate;
         private String sslMode;
         private String username;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ChannelSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
@@ -149,35 +128,51 @@ public final class ChannelSource {
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder sslCaCertificate(@Nullable ChannelSourceSslCaCertificate sslCaCertificate) {
             this.sslCaCertificate = sslCaCertificate;
             return this;
         }
+        @CustomType.Setter
         public Builder sslMode(String sslMode) {
             this.sslMode = Objects.requireNonNull(sslMode);
             return this;
         }
+        @CustomType.Setter
         public Builder username(String username) {
             this.username = Objects.requireNonNull(username);
             return this;
-        }        public ChannelSource build() {
-            return new ChannelSource(hostname, password, port, sourceType, sslCaCertificate, sslMode, username);
+        }
+        public ChannelSource build() {
+            final var o = new ChannelSource();
+            o.hostname = hostname;
+            o.password = password;
+            o.port = port;
+            o.sourceType = sourceType;
+            o.sslCaCertificate = sslCaCertificate;
+            o.sslMode = sslMode;
+            o.username = username;
+            return o;
         }
     }
 }

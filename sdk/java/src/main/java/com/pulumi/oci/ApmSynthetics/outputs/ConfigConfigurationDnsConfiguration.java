@@ -16,21 +16,14 @@ public final class ConfigConfigurationDnsConfiguration {
      * @return (Updatable) If isOverrideDns is true, then dns will be overridden.
      * 
      */
-    private final @Nullable Boolean isOverrideDns;
+    private @Nullable Boolean isOverrideDns;
     /**
      * @return (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
      * 
      */
-    private final @Nullable String overrideDnsIp;
+    private @Nullable String overrideDnsIp;
 
-    @CustomType.Constructor
-    private ConfigConfigurationDnsConfiguration(
-        @CustomType.Parameter("isOverrideDns") @Nullable Boolean isOverrideDns,
-        @CustomType.Parameter("overrideDnsIp") @Nullable String overrideDnsIp) {
-        this.isOverrideDns = isOverrideDns;
-        this.overrideDnsIp = overrideDnsIp;
-    }
-
+    private ConfigConfigurationDnsConfiguration() {}
     /**
      * @return (Updatable) If isOverrideDns is true, then dns will be overridden.
      * 
@@ -53,30 +46,32 @@ public final class ConfigConfigurationDnsConfiguration {
     public static Builder builder(ConfigConfigurationDnsConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isOverrideDns;
         private @Nullable String overrideDnsIp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigConfigurationDnsConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isOverrideDns = defaults.isOverrideDns;
     	      this.overrideDnsIp = defaults.overrideDnsIp;
         }
 
+        @CustomType.Setter
         public Builder isOverrideDns(@Nullable Boolean isOverrideDns) {
             this.isOverrideDns = isOverrideDns;
             return this;
         }
+        @CustomType.Setter
         public Builder overrideDnsIp(@Nullable String overrideDnsIp) {
             this.overrideDnsIp = overrideDnsIp;
             return this;
-        }        public ConfigConfigurationDnsConfiguration build() {
-            return new ConfigConfigurationDnsConfiguration(isOverrideDns, overrideDnsIp);
+        }
+        public ConfigConfigurationDnsConfiguration build() {
+            final var o = new ConfigConfigurationDnsConfiguration();
+            o.isOverrideDns = isOverrideDns;
+            o.overrideDnsIp = overrideDnsIp;
+            return o;
         }
     }
 }

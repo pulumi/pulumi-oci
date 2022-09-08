@@ -17,22 +17,22 @@ public final class GetVolumeAttachmentsVolumeAttachment {
      * @return The type of volume attachment.
      * 
      */
-    private final String attachmentType;
+    private String attachmentType;
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the &#34;CHAP password&#34;.)
      * 
      */
-    private final String chapSecret;
+    private String chapSecret;
     /**
      * @return The volume&#39;s system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.&lt;unique_ID&gt;`
      * 
      */
-    private final String chapUsername;
+    private String chapUsername;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -41,147 +41,96 @@ public final class GetVolumeAttachmentsVolumeAttachment {
      * 
      */
     @Deprecated /* The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The device name.
      * 
      */
-    private final String device;
+    private String device;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      * 
      */
-    private final String encryptionInTransitType;
+    private String encryptionInTransitType;
     /**
      * @return The OCID of the volume attachment.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the instance.
      * 
      */
-    private final String instanceId;
+    private String instanceId;
     /**
      * @return The volume&#39;s iSCSI IP address.  Example: `169.254.2.2`
      * 
      */
-    private final String ipv4;
+    private String ipv4;
     /**
      * @return The target volume&#39;s iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      * 
      */
-    private final String iqn;
+    private String iqn;
     /**
      * @return Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      * 
      */
-    private final Boolean isAgentAutoIscsiLoginEnabled;
+    private Boolean isAgentAutoIscsiLoginEnabled;
     /**
      * @return Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      * 
      */
-    private final Boolean isMultipath;
+    private Boolean isMultipath;
     /**
      * @return Whether in-transit encryption for the data volume&#39;s paravirtualized attachment is enabled or not.
      * 
      */
-    private final Boolean isPvEncryptionInTransitEnabled;
+    private Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return Whether the attachment was created in read-only mode.
      * 
      */
-    private final Boolean isReadOnly;
-    private final Boolean isShareable;
+    private Boolean isReadOnly;
+    private Boolean isShareable;
     /**
      * @return The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      * 
      */
-    private final String iscsiLoginState;
+    private String iscsiLoginState;
     /**
      * @return A list of secondary multipath devices
      * 
      */
-    private final List<GetVolumeAttachmentsVolumeAttachmentMultipathDevice> multipathDevices;
+    private List<GetVolumeAttachmentsVolumeAttachmentMultipathDevice> multipathDevices;
     /**
      * @return The volume&#39;s iSCSI port, usually port 860 or 3260.  Example: `3260`
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The current state of the volume attachment.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
-    private final Boolean useChap;
+    private String timeCreated;
+    private Boolean useChap;
     /**
      * @return The OCID of the volume.
      * 
      */
-    private final String volumeId;
+    private String volumeId;
 
-    @CustomType.Constructor
-    private GetVolumeAttachmentsVolumeAttachment(
-        @CustomType.Parameter("attachmentType") String attachmentType,
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("chapSecret") String chapSecret,
-        @CustomType.Parameter("chapUsername") String chapUsername,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("device") String device,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("encryptionInTransitType") String encryptionInTransitType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("ipv4") String ipv4,
-        @CustomType.Parameter("iqn") String iqn,
-        @CustomType.Parameter("isAgentAutoIscsiLoginEnabled") Boolean isAgentAutoIscsiLoginEnabled,
-        @CustomType.Parameter("isMultipath") Boolean isMultipath,
-        @CustomType.Parameter("isPvEncryptionInTransitEnabled") Boolean isPvEncryptionInTransitEnabled,
-        @CustomType.Parameter("isReadOnly") Boolean isReadOnly,
-        @CustomType.Parameter("isShareable") Boolean isShareable,
-        @CustomType.Parameter("iscsiLoginState") String iscsiLoginState,
-        @CustomType.Parameter("multipathDevices") List<GetVolumeAttachmentsVolumeAttachmentMultipathDevice> multipathDevices,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("useChap") Boolean useChap,
-        @CustomType.Parameter("volumeId") String volumeId) {
-        this.attachmentType = attachmentType;
-        this.availabilityDomain = availabilityDomain;
-        this.chapSecret = chapSecret;
-        this.chapUsername = chapUsername;
-        this.compartmentId = compartmentId;
-        this.device = device;
-        this.displayName = displayName;
-        this.encryptionInTransitType = encryptionInTransitType;
-        this.id = id;
-        this.instanceId = instanceId;
-        this.ipv4 = ipv4;
-        this.iqn = iqn;
-        this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
-        this.isMultipath = isMultipath;
-        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-        this.isReadOnly = isReadOnly;
-        this.isShareable = isShareable;
-        this.iscsiLoginState = iscsiLoginState;
-        this.multipathDevices = multipathDevices;
-        this.port = port;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.useChap = useChap;
-        this.volumeId = volumeId;
-    }
-
+    private GetVolumeAttachmentsVolumeAttachment() {}
     /**
      * @return The type of volume attachment.
      * 
@@ -354,7 +303,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
     public static Builder builder(GetVolumeAttachmentsVolumeAttachment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String attachmentType;
         private String availabilityDomain;
@@ -380,11 +329,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         private String timeCreated;
         private Boolean useChap;
         private String volumeId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeAttachmentsVolumeAttachment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attachmentType = defaults.attachmentType;
@@ -413,78 +358,97 @@ public final class GetVolumeAttachmentsVolumeAttachment {
     	      this.volumeId = defaults.volumeId;
         }
 
+        @CustomType.Setter
         public Builder attachmentType(String attachmentType) {
             this.attachmentType = Objects.requireNonNull(attachmentType);
             return this;
         }
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder chapSecret(String chapSecret) {
             this.chapSecret = Objects.requireNonNull(chapSecret);
             return this;
         }
+        @CustomType.Setter
         public Builder chapUsername(String chapUsername) {
             this.chapUsername = Objects.requireNonNull(chapUsername);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder device(String device) {
             this.device = Objects.requireNonNull(device);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder encryptionInTransitType(String encryptionInTransitType) {
             this.encryptionInTransitType = Objects.requireNonNull(encryptionInTransitType);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder ipv4(String ipv4) {
             this.ipv4 = Objects.requireNonNull(ipv4);
             return this;
         }
+        @CustomType.Setter
         public Builder iqn(String iqn) {
             this.iqn = Objects.requireNonNull(iqn);
             return this;
         }
+        @CustomType.Setter
         public Builder isAgentAutoIscsiLoginEnabled(Boolean isAgentAutoIscsiLoginEnabled) {
             this.isAgentAutoIscsiLoginEnabled = Objects.requireNonNull(isAgentAutoIscsiLoginEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isMultipath(Boolean isMultipath) {
             this.isMultipath = Objects.requireNonNull(isMultipath);
             return this;
         }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isReadOnly(Boolean isReadOnly) {
             this.isReadOnly = Objects.requireNonNull(isReadOnly);
             return this;
         }
+        @CustomType.Setter
         public Builder isShareable(Boolean isShareable) {
             this.isShareable = Objects.requireNonNull(isShareable);
             return this;
         }
+        @CustomType.Setter
         public Builder iscsiLoginState(String iscsiLoginState) {
             this.iscsiLoginState = Objects.requireNonNull(iscsiLoginState);
             return this;
         }
+        @CustomType.Setter
         public Builder multipathDevices(List<GetVolumeAttachmentsVolumeAttachmentMultipathDevice> multipathDevices) {
             this.multipathDevices = Objects.requireNonNull(multipathDevices);
             return this;
@@ -492,27 +456,58 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         public Builder multipathDevices(GetVolumeAttachmentsVolumeAttachmentMultipathDevice... multipathDevices) {
             return multipathDevices(List.of(multipathDevices));
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder useChap(Boolean useChap) {
             this.useChap = Objects.requireNonNull(useChap);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeId(String volumeId) {
             this.volumeId = Objects.requireNonNull(volumeId);
             return this;
-        }        public GetVolumeAttachmentsVolumeAttachment build() {
-            return new GetVolumeAttachmentsVolumeAttachment(attachmentType, availabilityDomain, chapSecret, chapUsername, compartmentId, device, displayName, encryptionInTransitType, id, instanceId, ipv4, iqn, isAgentAutoIscsiLoginEnabled, isMultipath, isPvEncryptionInTransitEnabled, isReadOnly, isShareable, iscsiLoginState, multipathDevices, port, state, timeCreated, useChap, volumeId);
+        }
+        public GetVolumeAttachmentsVolumeAttachment build() {
+            final var o = new GetVolumeAttachmentsVolumeAttachment();
+            o.attachmentType = attachmentType;
+            o.availabilityDomain = availabilityDomain;
+            o.chapSecret = chapSecret;
+            o.chapUsername = chapUsername;
+            o.compartmentId = compartmentId;
+            o.device = device;
+            o.displayName = displayName;
+            o.encryptionInTransitType = encryptionInTransitType;
+            o.id = id;
+            o.instanceId = instanceId;
+            o.ipv4 = ipv4;
+            o.iqn = iqn;
+            o.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            o.isMultipath = isMultipath;
+            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            o.isReadOnly = isReadOnly;
+            o.isShareable = isShareable;
+            o.iscsiLoginState = iscsiLoginState;
+            o.multipathDevices = multipathDevices;
+            o.port = port;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.useChap = useChap;
+            o.volumeId = volumeId;
+            return o;
         }
     }
 }

@@ -17,31 +17,20 @@ public final class GetCustomerSecretKeysResult {
      * @return The list of customer_secret_keys.
      * 
      */
-    private final List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
-    private final @Nullable List<GetCustomerSecretKeysFilter> filters;
+    private List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
+    private @Nullable List<GetCustomerSecretKeysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the user the password belongs to.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetCustomerSecretKeysResult(
-        @CustomType.Parameter("customerSecretKeys") List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys,
-        @CustomType.Parameter("filters") @Nullable List<GetCustomerSecretKeysFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("userId") String userId) {
-        this.customerSecretKeys = customerSecretKeys;
-        this.filters = filters;
-        this.id = id;
-        this.userId = userId;
-    }
-
+    private GetCustomerSecretKeysResult() {}
     /**
      * @return The list of customer_secret_keys.
      * 
@@ -74,17 +63,13 @@ public final class GetCustomerSecretKeysResult {
     public static Builder builder(GetCustomerSecretKeysResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
         private @Nullable List<GetCustomerSecretKeysFilter> filters;
         private String id;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCustomerSecretKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customerSecretKeys = defaults.customerSecretKeys;
@@ -93,6 +78,7 @@ public final class GetCustomerSecretKeysResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder customerSecretKeys(List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys) {
             this.customerSecretKeys = Objects.requireNonNull(customerSecretKeys);
             return this;
@@ -100,6 +86,7 @@ public final class GetCustomerSecretKeysResult {
         public Builder customerSecretKeys(GetCustomerSecretKeysCustomerSecretKey... customerSecretKeys) {
             return customerSecretKeys(List.of(customerSecretKeys));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCustomerSecretKeysFilter> filters) {
             this.filters = filters;
             return this;
@@ -107,15 +94,23 @@ public final class GetCustomerSecretKeysResult {
         public Builder filters(GetCustomerSecretKeysFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetCustomerSecretKeysResult build() {
-            return new GetCustomerSecretKeysResult(customerSecretKeys, filters, id, userId);
+        }
+        public GetCustomerSecretKeysResult build() {
+            final var o = new GetCustomerSecretKeysResult();
+            o.customerSecretKeys = customerSecretKeys;
+            o.filters = filters;
+            o.id = id;
+            o.userId = userId;
+            return o;
         }
     }
 }

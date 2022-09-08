@@ -16,56 +16,39 @@ public final class GetAccessRequestHistoryItem {
      * @return List of operator actions for which approvals were requested by the operator.
      * 
      */
-    private final List<String> actionsLists;
+    private List<String> actionsLists;
     /**
      * @return Reason or description about the cause of change.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Duration for approval of request or extension depending on the type of action.
      * 
      */
-    private final Integer duration;
+    private Integer duration;
     /**
      * @return Whether the access request was automatically approved.
      * 
      */
-    private final Boolean isAutoApproved;
+    private Boolean isAutoApproved;
     /**
      * @return The current state of the AccessRequest.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private final String timeOfAction;
+    private String timeOfAction;
     /**
      * @return Approver who modified the access request.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetAccessRequestHistoryItem(
-        @CustomType.Parameter("actionsLists") List<String> actionsLists,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("duration") Integer duration,
-        @CustomType.Parameter("isAutoApproved") Boolean isAutoApproved,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeOfAction") String timeOfAction,
-        @CustomType.Parameter("userId") String userId) {
-        this.actionsLists = actionsLists;
-        this.description = description;
-        this.duration = duration;
-        this.isAutoApproved = isAutoApproved;
-        this.state = state;
-        this.timeOfAction = timeOfAction;
-        this.userId = userId;
-    }
-
+    private GetAccessRequestHistoryItem() {}
     /**
      * @return List of operator actions for which approvals were requested by the operator.
      * 
@@ -123,7 +106,7 @@ public final class GetAccessRequestHistoryItem {
     public static Builder builder(GetAccessRequestHistoryItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> actionsLists;
         private String description;
@@ -132,11 +115,7 @@ public final class GetAccessRequestHistoryItem {
         private String state;
         private String timeOfAction;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAccessRequestHistoryItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionsLists = defaults.actionsLists;
@@ -148,6 +127,7 @@ public final class GetAccessRequestHistoryItem {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder actionsLists(List<String> actionsLists) {
             this.actionsLists = Objects.requireNonNull(actionsLists);
             return this;
@@ -155,31 +135,46 @@ public final class GetAccessRequestHistoryItem {
         public Builder actionsLists(String... actionsLists) {
             return actionsLists(List.of(actionsLists));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder duration(Integer duration) {
             this.duration = Objects.requireNonNull(duration);
             return this;
         }
+        @CustomType.Setter
         public Builder isAutoApproved(Boolean isAutoApproved) {
             this.isAutoApproved = Objects.requireNonNull(isAutoApproved);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfAction(String timeOfAction) {
             this.timeOfAction = Objects.requireNonNull(timeOfAction);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetAccessRequestHistoryItem build() {
-            return new GetAccessRequestHistoryItem(actionsLists, description, duration, isAutoApproved, state, timeOfAction, userId);
+        }
+        public GetAccessRequestHistoryItem build() {
+            final var o = new GetAccessRequestHistoryItem();
+            o.actionsLists = actionsLists;
+            o.description = description;
+            o.duration = duration;
+            o.isAutoApproved = isAutoApproved;
+            o.state = state;
+            o.timeOfAction = timeOfAction;
+            o.userId = userId;
+            return o;
         }
     }
 }

@@ -15,24 +15,15 @@ public final class GetJobOutputResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Items in collection.
      * 
      */
-    private final List<GetJobOutputItem> items;
-    private final String jobId;
+    private List<GetJobOutputItem> items;
+    private String jobId;
 
-    @CustomType.Constructor
-    private GetJobOutputResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetJobOutputItem> items,
-        @CustomType.Parameter("jobId") String jobId) {
-        this.id = id;
-        this.items = items;
-        this.jobId = jobId;
-    }
-
+    private GetJobOutputResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -58,16 +49,12 @@ public final class GetJobOutputResult {
     public static Builder builder(GetJobOutputResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetJobOutputItem> items;
         private String jobId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobOutputResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -75,10 +62,12 @@ public final class GetJobOutputResult {
     	      this.jobId = defaults.jobId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetJobOutputItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -86,11 +75,17 @@ public final class GetJobOutputResult {
         public Builder items(GetJobOutputItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder jobId(String jobId) {
             this.jobId = Objects.requireNonNull(jobId);
             return this;
-        }        public GetJobOutputResult build() {
-            return new GetJobOutputResult(id, items, jobId);
+        }
+        public GetJobOutputResult build() {
+            final var o = new GetJobOutputResult();
+            o.id = id;
+            o.items = items;
+            o.jobId = jobId;
+            return o;
         }
     }
 }

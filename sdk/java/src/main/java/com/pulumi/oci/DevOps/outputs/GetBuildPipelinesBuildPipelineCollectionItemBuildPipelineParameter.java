@@ -14,13 +14,9 @@ public final class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelinePara
      * @return List of parameters defined for a build pipeline.
      * 
      */
-    private final List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items;
+    private List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items;
 
-    @CustomType.Constructor
-    private GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter(@CustomType.Parameter("items") List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter() {}
     /**
      * @return List of parameters defined for a build pipeline.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelinePara
     public static Builder builder(GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem... items) {
             return items(List.of(items));
-        }        public GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter build() {
-            return new GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter(items);
+        }
+        public GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter build() {
+            final var o = new GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter();
+            o.items = items;
+            return o;
         }
     }
 }

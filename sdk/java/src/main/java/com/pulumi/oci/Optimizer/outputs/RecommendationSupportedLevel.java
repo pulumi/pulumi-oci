@@ -15,13 +15,9 @@ public final class RecommendationSupportedLevel {
      * @return The list of supported levels.
      * 
      */
-    private final @Nullable List<RecommendationSupportedLevelItem> items;
+    private @Nullable List<RecommendationSupportedLevelItem> items;
 
-    @CustomType.Constructor
-    private RecommendationSupportedLevel(@CustomType.Parameter("items") @Nullable List<RecommendationSupportedLevelItem> items) {
-        this.items = items;
-    }
-
+    private RecommendationSupportedLevel() {}
     /**
      * @return The list of supported levels.
      * 
@@ -37,27 +33,27 @@ public final class RecommendationSupportedLevel {
     public static Builder builder(RecommendationSupportedLevel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<RecommendationSupportedLevelItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RecommendationSupportedLevel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<RecommendationSupportedLevelItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(RecommendationSupportedLevelItem... items) {
             return items(List.of(items));
-        }        public RecommendationSupportedLevel build() {
-            return new RecommendationSupportedLevel(items);
+        }
+        public RecommendationSupportedLevel build() {
+            final var o = new RecommendationSupportedLevel();
+            o.items = items;
+            return o;
         }
     }
 }

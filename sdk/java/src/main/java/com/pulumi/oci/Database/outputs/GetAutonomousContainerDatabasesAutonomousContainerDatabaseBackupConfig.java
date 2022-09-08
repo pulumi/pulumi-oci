@@ -15,21 +15,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseBac
      * @return Backup destination details.
      * 
      */
-    private final List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
+    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    private final Integer recoveryWindowInDays;
+    private Integer recoveryWindowInDays;
 
-    @CustomType.Constructor
-    private GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig(
-        @CustomType.Parameter("backupDestinationDetails") List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails,
-        @CustomType.Parameter("recoveryWindowInDays") Integer recoveryWindowInDays) {
-        this.backupDestinationDetails = backupDestinationDetails;
-        this.recoveryWindowInDays = recoveryWindowInDays;
-    }
-
+    private GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig() {}
     /**
      * @return Backup destination details.
      * 
@@ -52,21 +45,18 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseBac
     public static Builder builder(GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
         private Integer recoveryWindowInDays;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupDestinationDetails = defaults.backupDestinationDetails;
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
         }
 
+        @CustomType.Setter
         public Builder backupDestinationDetails(List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails) {
             this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
             return this;
@@ -74,11 +64,16 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseBac
         public Builder backupDestinationDetails(GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
+        @CustomType.Setter
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
             this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
             return this;
-        }        public GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig build() {
-            return new GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig(backupDestinationDetails, recoveryWindowInDays);
+        }
+        public GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig build() {
+            final var o = new GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig();
+            o.backupDestinationDetails = backupDestinationDetails;
+            o.recoveryWindowInDays = recoveryWindowInDays;
+            return o;
         }
     }
 }

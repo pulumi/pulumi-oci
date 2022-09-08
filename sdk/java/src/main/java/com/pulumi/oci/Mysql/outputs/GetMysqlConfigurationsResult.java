@@ -18,62 +18,41 @@ public final class GetMysqlConfigurationsResult {
      * @return OCID of the Compartment the Configuration exists in.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable String configurationId;
+    private String compartmentId;
+    private @Nullable String configurationId;
     /**
      * @return The list of configurations.
      * 
      */
-    private final List<GetMysqlConfigurationsConfiguration> configurations;
+    private List<GetMysqlConfigurationsConfiguration> configurations;
     /**
      * @return The display name of the Configuration.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetMysqlConfigurationsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetMysqlConfigurationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the associated Shape.
      * 
      */
-    private final @Nullable String shapeName;
+    private @Nullable String shapeName;
     /**
      * @return The current state of the Configuration.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The Configuration type, DEFAULT or CUSTOM.
      * 
      */
-    private final @Nullable List<String> types;
+    private @Nullable List<String> types;
 
-    @CustomType.Constructor
-    private GetMysqlConfigurationsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("configurationId") @Nullable String configurationId,
-        @CustomType.Parameter("configurations") List<GetMysqlConfigurationsConfiguration> configurations,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetMysqlConfigurationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("shapeName") @Nullable String shapeName,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("types") @Nullable List<String> types) {
-        this.compartmentId = compartmentId;
-        this.configurationId = configurationId;
-        this.configurations = configurations;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.shapeName = shapeName;
-        this.state = state;
-        this.types = types;
-    }
-
+    private GetMysqlConfigurationsResult() {}
     /**
      * @return OCID of the Compartment the Configuration exists in.
      * 
@@ -137,7 +116,7 @@ public final class GetMysqlConfigurationsResult {
     public static Builder builder(GetMysqlConfigurationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String configurationId;
@@ -148,11 +127,7 @@ public final class GetMysqlConfigurationsResult {
         private @Nullable String shapeName;
         private @Nullable String state;
         private @Nullable List<String> types;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlConfigurationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -166,14 +141,17 @@ public final class GetMysqlConfigurationsResult {
     	      this.types = defaults.types;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder configurationId(@Nullable String configurationId) {
             this.configurationId = configurationId;
             return this;
         }
+        @CustomType.Setter
         public Builder configurations(List<GetMysqlConfigurationsConfiguration> configurations) {
             this.configurations = Objects.requireNonNull(configurations);
             return this;
@@ -181,10 +159,12 @@ public final class GetMysqlConfigurationsResult {
         public Builder configurations(GetMysqlConfigurationsConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMysqlConfigurationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -192,26 +172,41 @@ public final class GetMysqlConfigurationsResult {
         public Builder filters(GetMysqlConfigurationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeName(@Nullable String shapeName) {
             this.shapeName = shapeName;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder types(@Nullable List<String> types) {
             this.types = types;
             return this;
         }
         public Builder types(String... types) {
             return types(List.of(types));
-        }        public GetMysqlConfigurationsResult build() {
-            return new GetMysqlConfigurationsResult(compartmentId, configurationId, configurations, displayName, filters, id, shapeName, state, types);
+        }
+        public GetMysqlConfigurationsResult build() {
+            final var o = new GetMysqlConfigurationsResult();
+            o.compartmentId = compartmentId;
+            o.configurationId = configurationId;
+            o.configurations = configurations;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.shapeName = shapeName;
+            o.state = state;
+            o.types = types;
+            return o;
         }
     }
 }

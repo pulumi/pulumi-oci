@@ -16,28 +16,19 @@ public final class DetectorRecipeEffectiveDetectorRuleCandidateResponderRule {
      * @return (Updatable) Detector recipe display name.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return Ocid for detector recipe
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return Preferred state
      * 
      */
-    private final @Nullable Boolean isPreferred;
+    private @Nullable Boolean isPreferred;
 
-    @CustomType.Constructor
-    private DetectorRecipeEffectiveDetectorRuleCandidateResponderRule(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("isPreferred") @Nullable Boolean isPreferred) {
-        this.displayName = displayName;
-        this.id = id;
-        this.isPreferred = isPreferred;
-    }
-
+    private DetectorRecipeEffectiveDetectorRuleCandidateResponderRule() {}
     /**
      * @return (Updatable) Detector recipe display name.
      * 
@@ -67,16 +58,12 @@ public final class DetectorRecipeEffectiveDetectorRuleCandidateResponderRule {
     public static Builder builder(DetectorRecipeEffectiveDetectorRuleCandidateResponderRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable String id;
         private @Nullable Boolean isPreferred;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DetectorRecipeEffectiveDetectorRuleCandidateResponderRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -84,19 +71,27 @@ public final class DetectorRecipeEffectiveDetectorRuleCandidateResponderRule {
     	      this.isPreferred = defaults.isPreferred;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder isPreferred(@Nullable Boolean isPreferred) {
             this.isPreferred = isPreferred;
             return this;
-        }        public DetectorRecipeEffectiveDetectorRuleCandidateResponderRule build() {
-            return new DetectorRecipeEffectiveDetectorRuleCandidateResponderRule(displayName, id, isPreferred);
+        }
+        public DetectorRecipeEffectiveDetectorRuleCandidateResponderRule build() {
+            final var o = new DetectorRecipeEffectiveDetectorRuleCandidateResponderRule();
+            o.displayName = displayName;
+            o.id = id;
+            o.isPreferred = isPreferred;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetVirtualDeploymentsVirtualDeploymentCollection {
-    private final List<GetVirtualDeploymentsVirtualDeploymentCollectionItem> items;
+    private List<GetVirtualDeploymentsVirtualDeploymentCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetVirtualDeploymentsVirtualDeploymentCollection(@CustomType.Parameter("items") List<GetVirtualDeploymentsVirtualDeploymentCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetVirtualDeploymentsVirtualDeploymentCollection() {}
     public List<GetVirtualDeploymentsVirtualDeploymentCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollection {
     public static Builder builder(GetVirtualDeploymentsVirtualDeploymentCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetVirtualDeploymentsVirtualDeploymentCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualDeploymentsVirtualDeploymentCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetVirtualDeploymentsVirtualDeploymentCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetVirtualDeploymentsVirtualDeploymentCollectionItem... items) {
             return items(List.of(items));
-        }        public GetVirtualDeploymentsVirtualDeploymentCollection build() {
-            return new GetVirtualDeploymentsVirtualDeploymentCollection(items);
+        }
+        public GetVirtualDeploymentsVirtualDeploymentCollection build() {
+            final var o = new GetVirtualDeploymentsVirtualDeploymentCollection();
+            o.items = items;
+            return o;
         }
     }
 }

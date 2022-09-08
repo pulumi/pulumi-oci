@@ -16,28 +16,19 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation
      * @return The content of the request body.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents;
     /**
      * @return Determines if the parameter is required in the request.
      * 
      */
-    private final Boolean required;
+    private Boolean required;
     /**
      * @return Validation behavior mode.
      * 
      */
-    private final String validationMode;
+    private String validationMode;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation(
-        @CustomType.Parameter("contents") List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents,
-        @CustomType.Parameter("required") Boolean required,
-        @CustomType.Parameter("validationMode") String validationMode) {
-        this.contents = contents;
-        this.required = required;
-        this.validationMode = validationMode;
-    }
-
+    private GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation() {}
     /**
      * @return The content of the request body.
      * 
@@ -67,16 +58,12 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation
     public static Builder builder(GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents;
         private Boolean required;
         private String validationMode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contents = defaults.contents;
@@ -84,6 +71,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation
     	      this.validationMode = defaults.validationMode;
         }
 
+        @CustomType.Setter
         public Builder contents(List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents) {
             this.contents = Objects.requireNonNull(contents);
             return this;
@@ -91,15 +79,22 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation
         public Builder contents(GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContent... contents) {
             return contents(List.of(contents));
         }
+        @CustomType.Setter
         public Builder required(Boolean required) {
             this.required = Objects.requireNonNull(required);
             return this;
         }
+        @CustomType.Setter
         public Builder validationMode(String validationMode) {
             this.validationMode = Objects.requireNonNull(validationMode);
             return this;
-        }        public GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation build() {
-            return new GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation(contents, required, validationMode);
+        }
+        public GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation build() {
+            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation();
+            o.contents = contents;
+            o.required = required;
+            o.validationMode = validationMode;
+            return o;
         }
     }
 }

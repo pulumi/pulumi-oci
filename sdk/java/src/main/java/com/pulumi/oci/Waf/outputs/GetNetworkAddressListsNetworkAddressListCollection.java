@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkAddressListsNetworkAddressListCollection {
-    private final List<GetNetworkAddressListsNetworkAddressListCollectionItem> items;
+    private List<GetNetworkAddressListsNetworkAddressListCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetNetworkAddressListsNetworkAddressListCollection(@CustomType.Parameter("items") List<GetNetworkAddressListsNetworkAddressListCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetNetworkAddressListsNetworkAddressListCollection() {}
     public List<GetNetworkAddressListsNetworkAddressListCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetNetworkAddressListsNetworkAddressListCollection {
     public static Builder builder(GetNetworkAddressListsNetworkAddressListCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetNetworkAddressListsNetworkAddressListCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkAddressListsNetworkAddressListCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetNetworkAddressListsNetworkAddressListCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetNetworkAddressListsNetworkAddressListCollectionItem... items) {
             return items(List.of(items));
-        }        public GetNetworkAddressListsNetworkAddressListCollection build() {
-            return new GetNetworkAddressListsNetworkAddressListCollection(items);
+        }
+        public GetNetworkAddressListsNetworkAddressListCollection build() {
+            final var o = new GetNetworkAddressListsNetworkAddressListCollection();
+            o.items = items;
+            return o;
         }
     }
 }

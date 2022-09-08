@@ -18,129 +18,90 @@ public final class GetDeployEnvironmentResult {
      * @return The OCID of the Kubernetes cluster.
      * 
      */
-    private final String clusterId;
+    private String clusterId;
     /**
      * @return The OCID of a compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A collection of selectors. The combination of instances matching the selectors are included in the instance group.
      * 
      */
-    private final List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors;
+    private List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
-    private final String deployEnvironmentId;
+    private Map<String,Object> definedTags;
+    private String deployEnvironmentId;
     /**
      * @return Deployment environment type.
      * 
      */
-    private final String deployEnvironmentType;
+    private String deployEnvironmentType;
     /**
      * @return Optional description about the deployment environment.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Deployment environment display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the Function.
      * 
      */
-    private final String functionId;
+    private String functionId;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
-    private final List<GetDeployEnvironmentNetworkChannel> networkChannels;
+    private List<GetDeployEnvironmentNetworkChannel> networkChannels;
     /**
      * @return The OCID of a project.
      * 
      */
-    private final String projectId;
+    private String projectId;
     /**
      * @return The current state of the deployment environment.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetDeployEnvironmentResult(
-        @CustomType.Parameter("clusterId") String clusterId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computeInstanceGroupSelectors") List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("deployEnvironmentId") String deployEnvironmentId,
-        @CustomType.Parameter("deployEnvironmentType") String deployEnvironmentType,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("functionId") String functionId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("networkChannels") List<GetDeployEnvironmentNetworkChannel> networkChannels,
-        @CustomType.Parameter("projectId") String projectId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.clusterId = clusterId;
-        this.compartmentId = compartmentId;
-        this.computeInstanceGroupSelectors = computeInstanceGroupSelectors;
-        this.definedTags = definedTags;
-        this.deployEnvironmentId = deployEnvironmentId;
-        this.deployEnvironmentType = deployEnvironmentType;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.functionId = functionId;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.networkChannels = networkChannels;
-        this.projectId = projectId;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetDeployEnvironmentResult() {}
     /**
      * @return The OCID of the Kubernetes cluster.
      * 
@@ -271,7 +232,7 @@ public final class GetDeployEnvironmentResult {
     public static Builder builder(GetDeployEnvironmentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String clusterId;
         private String compartmentId;
@@ -291,11 +252,7 @@ public final class GetDeployEnvironmentResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployEnvironmentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterId = defaults.clusterId;
@@ -318,14 +275,17 @@ public final class GetDeployEnvironmentResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder clusterId(String clusterId) {
             this.clusterId = Objects.requireNonNull(clusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeInstanceGroupSelectors(List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors) {
             this.computeInstanceGroupSelectors = Objects.requireNonNull(computeInstanceGroupSelectors);
             return this;
@@ -333,42 +293,52 @@ public final class GetDeployEnvironmentResult {
         public Builder computeInstanceGroupSelectors(GetDeployEnvironmentComputeInstanceGroupSelector... computeInstanceGroupSelectors) {
             return computeInstanceGroupSelectors(List.of(computeInstanceGroupSelectors));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder deployEnvironmentId(String deployEnvironmentId) {
             this.deployEnvironmentId = Objects.requireNonNull(deployEnvironmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder deployEnvironmentType(String deployEnvironmentType) {
             this.deployEnvironmentType = Objects.requireNonNull(deployEnvironmentType);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder functionId(String functionId) {
             this.functionId = Objects.requireNonNull(functionId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder networkChannels(List<GetDeployEnvironmentNetworkChannel> networkChannels) {
             this.networkChannels = Objects.requireNonNull(networkChannels);
             return this;
@@ -376,27 +346,52 @@ public final class GetDeployEnvironmentResult {
         public Builder networkChannels(GetDeployEnvironmentNetworkChannel... networkChannels) {
             return networkChannels(List.of(networkChannels));
         }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetDeployEnvironmentResult build() {
-            return new GetDeployEnvironmentResult(clusterId, compartmentId, computeInstanceGroupSelectors, definedTags, deployEnvironmentId, deployEnvironmentType, description, displayName, freeformTags, functionId, id, lifecycleDetails, networkChannels, projectId, state, systemTags, timeCreated, timeUpdated);
+        }
+        public GetDeployEnvironmentResult build() {
+            final var o = new GetDeployEnvironmentResult();
+            o.clusterId = clusterId;
+            o.compartmentId = compartmentId;
+            o.computeInstanceGroupSelectors = computeInstanceGroupSelectors;
+            o.definedTags = definedTags;
+            o.deployEnvironmentId = deployEnvironmentId;
+            o.deployEnvironmentType = deployEnvironmentType;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.functionId = functionId;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.networkChannels = networkChannels;
+            o.projectId = projectId;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

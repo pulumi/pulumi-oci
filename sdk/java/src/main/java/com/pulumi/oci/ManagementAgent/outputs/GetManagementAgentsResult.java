@@ -15,104 +15,71 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The current availability status of managementAgent
      * 
      */
-    private final @Nullable String availabilityStatus;
+    private @Nullable String availabilityStatus;
     /**
      * @return Compartment Identifier
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return Management Agent Name
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetManagementAgentsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetManagementAgentsFilter> filters;
     /**
      * @return Host resource ocid
      * 
      */
-    private final @Nullable String hostId;
+    private @Nullable String hostId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The install type, either AGENT or GATEWAY
      * 
      */
-    private final @Nullable String installType;
+    private @Nullable String installType;
     /**
      * @return true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      * 
      */
-    private final @Nullable Boolean isCustomerDeployed;
+    private @Nullable Boolean isCustomerDeployed;
     /**
      * @return The list of management_agents.
      * 
      */
-    private final List<GetManagementAgentsManagementAgent> managementAgents;
+    private List<GetManagementAgentsManagementAgent> managementAgents;
     /**
      * @return Platform Type
      * 
      */
-    private final @Nullable List<String> platformTypes;
+    private @Nullable List<String> platformTypes;
     /**
      * @return Management Agent Plugin Name
      * 
      */
-    private final @Nullable List<String> pluginNames;
+    private @Nullable List<String> pluginNames;
     /**
      * @return The current state of managementAgent
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return Management Agent Version
      * 
      */
-    private final @Nullable List<String> versions;
+    private @Nullable List<String> versions;
 
-    @CustomType.Constructor
-    private GetManagementAgentsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("availabilityStatus") @Nullable String availabilityStatus,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetManagementAgentsFilter> filters,
-        @CustomType.Parameter("hostId") @Nullable String hostId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("installType") @Nullable String installType,
-        @CustomType.Parameter("isCustomerDeployed") @Nullable Boolean isCustomerDeployed,
-        @CustomType.Parameter("managementAgents") List<GetManagementAgentsManagementAgent> managementAgents,
-        @CustomType.Parameter("platformTypes") @Nullable List<String> platformTypes,
-        @CustomType.Parameter("pluginNames") @Nullable List<String> pluginNames,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("versions") @Nullable List<String> versions) {
-        this.accessLevel = accessLevel;
-        this.availabilityStatus = availabilityStatus;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.hostId = hostId;
-        this.id = id;
-        this.installType = installType;
-        this.isCustomerDeployed = isCustomerDeployed;
-        this.managementAgents = managementAgents;
-        this.platformTypes = platformTypes;
-        this.pluginNames = pluginNames;
-        this.state = state;
-        this.versions = versions;
-    }
-
+    private GetManagementAgentsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -214,7 +181,7 @@ public final class GetManagementAgentsResult {
     public static Builder builder(GetManagementAgentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private @Nullable String availabilityStatus;
@@ -231,11 +198,7 @@ public final class GetManagementAgentsResult {
         private @Nullable List<String> pluginNames;
         private @Nullable String state;
         private @Nullable List<String> versions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -255,26 +218,32 @@ public final class GetManagementAgentsResult {
     	      this.versions = defaults.versions;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder availabilityStatus(@Nullable String availabilityStatus) {
             this.availabilityStatus = availabilityStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementAgentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -282,22 +251,27 @@ public final class GetManagementAgentsResult {
         public Builder filters(GetManagementAgentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder hostId(@Nullable String hostId) {
             this.hostId = hostId;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder installType(@Nullable String installType) {
             this.installType = installType;
             return this;
         }
+        @CustomType.Setter
         public Builder isCustomerDeployed(@Nullable Boolean isCustomerDeployed) {
             this.isCustomerDeployed = isCustomerDeployed;
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgents(List<GetManagementAgentsManagementAgent> managementAgents) {
             this.managementAgents = Objects.requireNonNull(managementAgents);
             return this;
@@ -305,6 +279,7 @@ public final class GetManagementAgentsResult {
         public Builder managementAgents(GetManagementAgentsManagementAgent... managementAgents) {
             return managementAgents(List.of(managementAgents));
         }
+        @CustomType.Setter
         public Builder platformTypes(@Nullable List<String> platformTypes) {
             this.platformTypes = platformTypes;
             return this;
@@ -312,6 +287,7 @@ public final class GetManagementAgentsResult {
         public Builder platformTypes(String... platformTypes) {
             return platformTypes(List.of(platformTypes));
         }
+        @CustomType.Setter
         public Builder pluginNames(@Nullable List<String> pluginNames) {
             this.pluginNames = pluginNames;
             return this;
@@ -319,18 +295,37 @@ public final class GetManagementAgentsResult {
         public Builder pluginNames(String... pluginNames) {
             return pluginNames(List.of(pluginNames));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder versions(@Nullable List<String> versions) {
             this.versions = versions;
             return this;
         }
         public Builder versions(String... versions) {
             return versions(List.of(versions));
-        }        public GetManagementAgentsResult build() {
-            return new GetManagementAgentsResult(accessLevel, availabilityStatus, compartmentId, compartmentIdInSubtree, displayName, filters, hostId, id, installType, isCustomerDeployed, managementAgents, platformTypes, pluginNames, state, versions);
+        }
+        public GetManagementAgentsResult build() {
+            final var o = new GetManagementAgentsResult();
+            o.accessLevel = accessLevel;
+            o.availabilityStatus = availabilityStatus;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.hostId = hostId;
+            o.id = id;
+            o.installType = installType;
+            o.isCustomerDeployed = isCustomerDeployed;
+            o.managementAgents = managementAgents;
+            o.platformTypes = platformTypes;
+            o.pluginNames = pluginNames;
+            o.state = state;
+            o.versions = versions;
+            return o;
         }
     }
 }

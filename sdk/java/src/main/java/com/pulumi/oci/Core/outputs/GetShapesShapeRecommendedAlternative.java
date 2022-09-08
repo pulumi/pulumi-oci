@@ -13,13 +13,9 @@ public final class GetShapesShapeRecommendedAlternative {
      * @return The name of the shape.
      * 
      */
-    private final String shapeName;
+    private String shapeName;
 
-    @CustomType.Constructor
-    private GetShapesShapeRecommendedAlternative(@CustomType.Parameter("shapeName") String shapeName) {
-        this.shapeName = shapeName;
-    }
-
+    private GetShapesShapeRecommendedAlternative() {}
     /**
      * @return The name of the shape.
      * 
@@ -35,24 +31,24 @@ public final class GetShapesShapeRecommendedAlternative {
     public static Builder builder(GetShapesShapeRecommendedAlternative defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String shapeName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapesShapeRecommendedAlternative defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.shapeName = defaults.shapeName;
         }
 
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
-        }        public GetShapesShapeRecommendedAlternative build() {
-            return new GetShapesShapeRecommendedAlternative(shapeName);
+        }
+        public GetShapesShapeRecommendedAlternative build() {
+            final var o = new GetShapesShapeRecommendedAlternative();
+            o.shapeName = shapeName;
+            return o;
         }
     }
 }

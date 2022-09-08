@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkFirewallsNetworkFirewallCollection {
-    private final List<GetNetworkFirewallsNetworkFirewallCollectionItem> items;
+    private List<GetNetworkFirewallsNetworkFirewallCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallsNetworkFirewallCollection(@CustomType.Parameter("items") List<GetNetworkFirewallsNetworkFirewallCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetNetworkFirewallsNetworkFirewallCollection() {}
     public List<GetNetworkFirewallsNetworkFirewallCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetNetworkFirewallsNetworkFirewallCollection {
     public static Builder builder(GetNetworkFirewallsNetworkFirewallCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetNetworkFirewallsNetworkFirewallCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallsNetworkFirewallCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetNetworkFirewallsNetworkFirewallCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetNetworkFirewallsNetworkFirewallCollectionItem... items) {
             return items(List.of(items));
-        }        public GetNetworkFirewallsNetworkFirewallCollection build() {
-            return new GetNetworkFirewallsNetworkFirewallCollection(items);
+        }
+        public GetNetworkFirewallsNetworkFirewallCollection build() {
+            final var o = new GetNetworkFirewallsNetworkFirewallCollection();
+            o.items = items;
+            return o;
         }
     }
 }

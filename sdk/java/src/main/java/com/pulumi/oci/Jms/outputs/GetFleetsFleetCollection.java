@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetFleetsFleetCollection {
-    private final List<GetFleetsFleetCollectionItem> items;
+    private List<GetFleetsFleetCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetFleetsFleetCollection(@CustomType.Parameter("items") List<GetFleetsFleetCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetFleetsFleetCollection() {}
     public List<GetFleetsFleetCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetFleetsFleetCollection {
     public static Builder builder(GetFleetsFleetCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetFleetsFleetCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFleetsFleetCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetFleetsFleetCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetFleetsFleetCollectionItem... items) {
             return items(List.of(items));
-        }        public GetFleetsFleetCollection build() {
-            return new GetFleetsFleetCollection(items);
+        }
+        public GetFleetsFleetCollection build() {
+            final var o = new GetFleetsFleetCollection();
+            o.items = items;
+            return o;
         }
     }
 }

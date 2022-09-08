@@ -292,14 +292,14 @@ public class RegistryDataAsset extends com.pulumi.resources.CustomResource {
         return this.defaultConnection;
     }
     /**
-     * (Updatable) A user defined description for the object.
+     * (Updatable) A user-defined description for the object.
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
     public Output<String> description() {
@@ -320,28 +320,28 @@ public class RegistryDataAsset extends com.pulumi.resources.CustomResource {
         return this.endPoints;
     }
     /**
-     * (Updatable) The external key for the object.
+     * (Updatable) The external key of the object.
      * 
      */
     @Export(name="externalKey", type=String.class, parameters={})
     private Output<String> externalKey;
 
     /**
-     * @return (Updatable) The external key for the object.
+     * @return (Updatable) The external key of the object.
      * 
      */
     public Output<String> externalKey() {
         return this.externalKey;
     }
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     @Export(name="identifier", type=String.class, parameters={})
     private Output<String> identifier;
 
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Output<String> identifier() {
@@ -362,28 +362,28 @@ public class RegistryDataAsset extends com.pulumi.resources.CustomResource {
         return this.key;
     }
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     @Export(name="metadata", type=RegistryDataAssetMetadata.class, parameters={})
     private Output<RegistryDataAssetMetadata> metadata;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public Output<RegistryDataAssetMetadata> metadata() {
         return this.metadata;
     }
     /**
-     * (Updatable) The property which disciminates the subtypes.
+     * (Updatable) The property which differentiates the subtypes.
      * 
      */
     @Export(name="modelType", type=String.class, parameters={})
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
     public Output<String> modelType() {
@@ -404,14 +404,14 @@ public class RegistryDataAsset extends com.pulumi.resources.CustomResource {
         return this.modelVersion;
     }
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Output<String> name() {
@@ -474,14 +474,14 @@ public class RegistryDataAsset extends com.pulumi.resources.CustomResource {
         return this.properties;
     }
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Export(name="registryId", type=String.class, parameters={})
     private Output<String> registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public Output<String> registryId() {

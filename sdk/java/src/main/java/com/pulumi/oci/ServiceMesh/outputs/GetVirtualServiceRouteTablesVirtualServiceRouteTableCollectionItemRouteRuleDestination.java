@@ -14,28 +14,19 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
      * @return Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The OCID of the virtual deployment where the request will be routed.
      * 
      */
-    private final String virtualDeploymentId;
+    private String virtualDeploymentId;
     /**
      * @return Weight of traffic target.
      * 
      */
-    private final Integer weight;
+    private Integer weight;
 
-    @CustomType.Constructor
-    private GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination(
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("virtualDeploymentId") String virtualDeploymentId,
-        @CustomType.Parameter("weight") Integer weight) {
-        this.port = port;
-        this.virtualDeploymentId = virtualDeploymentId;
-        this.weight = weight;
-    }
-
+    private GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination() {}
     /**
      * @return Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
      * 
@@ -65,16 +56,12 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
     public static Builder builder(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer port;
         private String virtualDeploymentId;
         private Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.port = defaults.port;
@@ -82,19 +69,27 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder virtualDeploymentId(String virtualDeploymentId) {
             this.virtualDeploymentId = Objects.requireNonNull(virtualDeploymentId);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(Integer weight) {
             this.weight = Objects.requireNonNull(weight);
             return this;
-        }        public GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination build() {
-            return new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination(port, virtualDeploymentId, weight);
+        }
+        public GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination build() {
+            final var o = new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination();
+            o.port = port;
+            o.virtualDeploymentId = virtualDeploymentId;
+            o.weight = weight;
+            return o;
         }
     }
 }

@@ -17,77 +17,54 @@ public final class MonitoredResourcesListMemberItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Monitored Resource Host
      * 
      */
-    private final @Nullable String hostName;
+    private @Nullable String hostName;
     /**
      * @return Parent monitored resource identifier
      * 
      */
-    private final @Nullable String parentId;
+    private @Nullable String parentId;
     /**
      * @return Monitored resource display name.
      * 
      */
-    private final @Nullable String resourceDisplayName;
+    private @Nullable String resourceDisplayName;
     /**
      * @return Monitored resource identifier
      * 
      */
-    private final @Nullable String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return Monitored resource name
      * 
      */
-    private final @Nullable String resourceName;
+    private @Nullable String resourceName;
     /**
      * @return Monitored resource type
      * 
      */
-    private final @Nullable String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The current state of the Resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
 
-    @CustomType.Constructor
-    private MonitoredResourcesListMemberItem(
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostName") @Nullable String hostName,
-        @CustomType.Parameter("parentId") @Nullable String parentId,
-        @CustomType.Parameter("resourceDisplayName") @Nullable String resourceDisplayName,
-        @CustomType.Parameter("resourceId") @Nullable String resourceId,
-        @CustomType.Parameter("resourceName") @Nullable String resourceName,
-        @CustomType.Parameter("resourceType") @Nullable String resourceType,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("systemTags") @Nullable Map<String,Object> systemTags) {
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.hostName = hostName;
-        this.parentId = parentId;
-        this.resourceDisplayName = resourceDisplayName;
-        this.resourceId = resourceId;
-        this.resourceName = resourceName;
-        this.resourceType = resourceType;
-        this.state = state;
-        this.systemTags = systemTags;
-    }
-
+    private MonitoredResourcesListMemberItem() {}
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -166,7 +143,7 @@ public final class MonitoredResourcesListMemberItem {
     public static Builder builder(MonitoredResourcesListMemberItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> definedTags;
         private @Nullable Map<String,Object> freeformTags;
@@ -178,11 +155,7 @@ public final class MonitoredResourcesListMemberItem {
         private @Nullable String resourceType;
         private @Nullable String state;
         private @Nullable Map<String,Object> systemTags;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MonitoredResourcesListMemberItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
@@ -197,47 +170,69 @@ public final class MonitoredResourcesListMemberItem {
     	      this.systemTags = defaults.systemTags;
         }
 
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
         public Builder hostName(@Nullable String hostName) {
             this.hostName = hostName;
             return this;
         }
+        @CustomType.Setter
         public Builder parentId(@Nullable String parentId) {
             this.parentId = parentId;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceDisplayName(@Nullable String resourceDisplayName) {
             this.resourceDisplayName = resourceDisplayName;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
             this.resourceId = resourceId;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
             this.resourceName = resourceName;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
             this.resourceType = resourceType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(@Nullable Map<String,Object> systemTags) {
             this.systemTags = systemTags;
             return this;
-        }        public MonitoredResourcesListMemberItem build() {
-            return new MonitoredResourcesListMemberItem(definedTags, freeformTags, hostName, parentId, resourceDisplayName, resourceId, resourceName, resourceType, state, systemTags);
+        }
+        public MonitoredResourcesListMemberItem build() {
+            final var o = new MonitoredResourcesListMemberItem();
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.hostName = hostName;
+            o.parentId = parentId;
+            o.resourceDisplayName = resourceDisplayName;
+            o.resourceId = resourceId;
+            o.resourceName = resourceName;
+            o.resourceType = resourceType;
+            o.state = state;
+            o.systemTags = systemTags;
+            return o;
         }
     }
 }

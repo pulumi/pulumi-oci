@@ -13,13 +13,9 @@ public final class MeshCertificateAuthority {
      * @return The OCID of the certificate authority resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private MeshCertificateAuthority(@CustomType.Parameter("id") String id) {
-        this.id = id;
-    }
-
+    private MeshCertificateAuthority() {}
     /**
      * @return The OCID of the certificate authority resource.
      * 
@@ -35,24 +31,24 @@ public final class MeshCertificateAuthority {
     public static Builder builder(MeshCertificateAuthority defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MeshCertificateAuthority defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public MeshCertificateAuthority build() {
-            return new MeshCertificateAuthority(id);
+        }
+        public MeshCertificateAuthority build() {
+            final var o = new MeshCertificateAuthority();
+            o.id = id;
+            return o;
         }
     }
 }

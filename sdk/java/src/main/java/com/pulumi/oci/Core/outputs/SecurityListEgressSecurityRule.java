@@ -19,65 +19,46 @@ public final class SecurityListEgressSecurityRule {
      * @return (Updatable) An optional description of your choice for the rule.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
      * 
      */
-    private final String destination;
+    private String destination;
     /**
      * @return (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
      * 
      */
-    private final @Nullable String destinationType;
+    private @Nullable String destinationType;
     /**
      * @return (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
      * 
      */
-    private final @Nullable SecurityListEgressSecurityRuleIcmpOptions icmpOptions;
+    private @Nullable SecurityListEgressSecurityRuleIcmpOptions icmpOptions;
     /**
      * @return (Updatable) The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP (&#34;1&#34;), TCP (&#34;6&#34;), UDP (&#34;17&#34;), and ICMPv6 (&#34;58&#34;).
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      * 
      */
-    private final @Nullable Boolean stateless;
+    private @Nullable Boolean stateless;
     /**
      * @return (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
-    private final @Nullable SecurityListEgressSecurityRuleTcpOptions tcpOptions;
+    private @Nullable SecurityListEgressSecurityRuleTcpOptions tcpOptions;
     /**
      * @return (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
-    private final @Nullable SecurityListEgressSecurityRuleUdpOptions udpOptions;
+    private @Nullable SecurityListEgressSecurityRuleUdpOptions udpOptions;
 
-    @CustomType.Constructor
-    private SecurityListEgressSecurityRule(
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("destination") String destination,
-        @CustomType.Parameter("destinationType") @Nullable String destinationType,
-        @CustomType.Parameter("icmpOptions") @Nullable SecurityListEgressSecurityRuleIcmpOptions icmpOptions,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("stateless") @Nullable Boolean stateless,
-        @CustomType.Parameter("tcpOptions") @Nullable SecurityListEgressSecurityRuleTcpOptions tcpOptions,
-        @CustomType.Parameter("udpOptions") @Nullable SecurityListEgressSecurityRuleUdpOptions udpOptions) {
-        this.description = description;
-        this.destination = destination;
-        this.destinationType = destinationType;
-        this.icmpOptions = icmpOptions;
-        this.protocol = protocol;
-        this.stateless = stateless;
-        this.tcpOptions = tcpOptions;
-        this.udpOptions = udpOptions;
-    }
-
+    private SecurityListEgressSecurityRule() {}
     /**
      * @return (Updatable) An optional description of your choice for the rule.
      * 
@@ -144,7 +125,7 @@ public final class SecurityListEgressSecurityRule {
     public static Builder builder(SecurityListEgressSecurityRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String description;
         private String destination;
@@ -154,11 +135,7 @@ public final class SecurityListEgressSecurityRule {
         private @Nullable Boolean stateless;
         private @Nullable SecurityListEgressSecurityRuleTcpOptions tcpOptions;
         private @Nullable SecurityListEgressSecurityRuleUdpOptions udpOptions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SecurityListEgressSecurityRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -171,39 +148,57 @@ public final class SecurityListEgressSecurityRule {
     	      this.udpOptions = defaults.udpOptions;
         }
 
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder destination(String destination) {
             this.destination = Objects.requireNonNull(destination);
             return this;
         }
+        @CustomType.Setter
         public Builder destinationType(@Nullable String destinationType) {
             this.destinationType = destinationType;
             return this;
         }
+        @CustomType.Setter
         public Builder icmpOptions(@Nullable SecurityListEgressSecurityRuleIcmpOptions icmpOptions) {
             this.icmpOptions = icmpOptions;
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder stateless(@Nullable Boolean stateless) {
             this.stateless = stateless;
             return this;
         }
+        @CustomType.Setter
         public Builder tcpOptions(@Nullable SecurityListEgressSecurityRuleTcpOptions tcpOptions) {
             this.tcpOptions = tcpOptions;
             return this;
         }
+        @CustomType.Setter
         public Builder udpOptions(@Nullable SecurityListEgressSecurityRuleUdpOptions udpOptions) {
             this.udpOptions = udpOptions;
             return this;
-        }        public SecurityListEgressSecurityRule build() {
-            return new SecurityListEgressSecurityRule(description, destination, destinationType, icmpOptions, protocol, stateless, tcpOptions, udpOptions);
+        }
+        public SecurityListEgressSecurityRule build() {
+            final var o = new SecurityListEgressSecurityRule();
+            o.description = description;
+            o.destination = destination;
+            o.destinationType = destinationType;
+            o.icmpOptions = icmpOptions;
+            o.protocol = protocol;
+            o.stateless = stateless;
+            o.tcpOptions = tcpOptions;
+            o.udpOptions = udpOptions;
+            return o;
         }
     }
 }

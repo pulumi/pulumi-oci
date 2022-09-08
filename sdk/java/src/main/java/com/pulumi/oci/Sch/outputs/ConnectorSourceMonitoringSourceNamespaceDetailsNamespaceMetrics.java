@@ -13,13 +13,9 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetri
      * @return (Updatable) The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
 
-    @CustomType.Constructor
-    private ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics(@CustomType.Parameter("kind") String kind) {
-        this.kind = kind;
-    }
-
+    private ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics() {}
     /**
      * @return (Updatable) The type descriminator.
      * 
@@ -35,24 +31,24 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetri
     public static Builder builder(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kind;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
         }
 
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
-        }        public ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics build() {
-            return new ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics(kind);
+        }
+        public ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics build() {
+            final var o = new ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics();
+            o.kind = kind;
+            return o;
         }
     }
 }

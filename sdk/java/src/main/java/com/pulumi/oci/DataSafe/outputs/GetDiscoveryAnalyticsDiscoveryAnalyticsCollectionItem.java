@@ -15,28 +15,19 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem {
      * @return The total count for the aggregation metric.
      * 
      */
-    private final String count;
+    private String count;
     /**
      * @return The scope of analytics data.
      * 
      */
-    private final List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension> dimensions;
+    private List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension> dimensions;
     /**
      * @return The name of the aggregation metric.
      * 
      */
-    private final String metricName;
+    private String metricName;
 
-    @CustomType.Constructor
-    private GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem(
-        @CustomType.Parameter("count") String count,
-        @CustomType.Parameter("dimensions") List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension> dimensions,
-        @CustomType.Parameter("metricName") String metricName) {
-        this.count = count;
-        this.dimensions = dimensions;
-        this.metricName = metricName;
-    }
-
+    private GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem() {}
     /**
      * @return The total count for the aggregation metric.
      * 
@@ -66,16 +57,12 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem {
     public static Builder builder(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String count;
         private List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension> dimensions;
         private String metricName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
@@ -83,10 +70,12 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem {
     	      this.metricName = defaults.metricName;
         }
 
+        @CustomType.Setter
         public Builder count(String count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
@@ -94,11 +83,17 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem {
         public Builder dimensions(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
+        @CustomType.Setter
         public Builder metricName(String metricName) {
             this.metricName = Objects.requireNonNull(metricName);
             return this;
-        }        public GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem build() {
-            return new GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem(count, dimensions, metricName);
+        }
+        public GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem build() {
+            final var o = new GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem();
+            o.count = count;
+            o.dimensions = dimensions;
+            o.metricName = metricName;
+            return o;
         }
     }
 }

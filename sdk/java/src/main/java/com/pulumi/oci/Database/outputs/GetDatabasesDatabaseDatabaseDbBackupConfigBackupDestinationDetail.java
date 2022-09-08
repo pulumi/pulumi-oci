@@ -13,24 +13,15 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDe
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Type of the database backup destination.
      * 
      */
-    private final String type;
-    private final String vpcUser;
+    private String type;
+    private String vpcUser;
 
-    @CustomType.Constructor
-    private GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vpcUser") String vpcUser) {
-        this.id = id;
-        this.type = type;
-        this.vpcUser = vpcUser;
-    }
-
+    private GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
@@ -56,16 +47,12 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDe
     public static Builder builder(GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String type;
         private String vpcUser;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -73,19 +60,27 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDe
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vpcUser(String vpcUser) {
             this.vpcUser = Objects.requireNonNull(vpcUser);
             return this;
-        }        public GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail build() {
-            return new GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail(id, type, vpcUser);
+        }
+        public GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail build() {
+            final var o = new GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail();
+            o.id = id;
+            o.type = type;
+            o.vpcUser = vpcUser;
+            return o;
         }
     }
 }

@@ -18,41 +18,26 @@ public final class GetNotificationTopicsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetNotificationTopicsFilter> filters;
-    private final @Nullable String id;
+    private String compartmentId;
+    private @Nullable List<GetNotificationTopicsFilter> filters;
+    private @Nullable String id;
     /**
      * @return The name of the topic.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of notification_topics.
      * 
      */
-    private final List<GetNotificationTopicsNotificationTopic> notificationTopics;
+    private List<GetNotificationTopicsNotificationTopic> notificationTopics;
     /**
      * @return The lifecycle state of the topic.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetNotificationTopicsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetNotificationTopicsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("notificationTopics") List<GetNotificationTopicsNotificationTopic> notificationTopics,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.notificationTopics = notificationTopics;
-        this.state = state;
-    }
-
+    private GetNotificationTopicsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
      * 
@@ -95,7 +80,7 @@ public final class GetNotificationTopicsResult {
     public static Builder builder(GetNotificationTopicsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetNotificationTopicsFilter> filters;
@@ -103,11 +88,7 @@ public final class GetNotificationTopicsResult {
         private @Nullable String name;
         private List<GetNotificationTopicsNotificationTopic> notificationTopics;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNotificationTopicsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,10 +99,12 @@ public final class GetNotificationTopicsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNotificationTopicsFilter> filters) {
             this.filters = filters;
             return this;
@@ -129,14 +112,17 @@ public final class GetNotificationTopicsResult {
         public Builder filters(GetNotificationTopicsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder notificationTopics(List<GetNotificationTopicsNotificationTopic> notificationTopics) {
             this.notificationTopics = Objects.requireNonNull(notificationTopics);
             return this;
@@ -144,11 +130,20 @@ public final class GetNotificationTopicsResult {
         public Builder notificationTopics(GetNotificationTopicsNotificationTopic... notificationTopics) {
             return notificationTopics(List.of(notificationTopics));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetNotificationTopicsResult build() {
-            return new GetNotificationTopicsResult(compartmentId, filters, id, name, notificationTopics, state);
+        }
+        public GetNotificationTopicsResult build() {
+            final var o = new GetNotificationTopicsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.notificationTopics = notificationTopics;
+            o.state = state;
+            return o;
         }
     }
 }

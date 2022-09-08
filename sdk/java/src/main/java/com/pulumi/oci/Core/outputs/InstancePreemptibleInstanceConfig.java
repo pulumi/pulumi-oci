@@ -13,13 +13,9 @@ public final class InstancePreemptibleInstanceConfig {
      * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    private final InstancePreemptibleInstanceConfigPreemptionAction preemptionAction;
+    private InstancePreemptibleInstanceConfigPreemptionAction preemptionAction;
 
-    @CustomType.Constructor
-    private InstancePreemptibleInstanceConfig(@CustomType.Parameter("preemptionAction") InstancePreemptibleInstanceConfigPreemptionAction preemptionAction) {
-        this.preemptionAction = preemptionAction;
-    }
-
+    private InstancePreemptibleInstanceConfig() {}
     /**
      * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
@@ -35,24 +31,24 @@ public final class InstancePreemptibleInstanceConfig {
     public static Builder builder(InstancePreemptibleInstanceConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private InstancePreemptibleInstanceConfigPreemptionAction preemptionAction;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstancePreemptibleInstanceConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.preemptionAction = defaults.preemptionAction;
         }
 
+        @CustomType.Setter
         public Builder preemptionAction(InstancePreemptibleInstanceConfigPreemptionAction preemptionAction) {
             this.preemptionAction = Objects.requireNonNull(preemptionAction);
             return this;
-        }        public InstancePreemptibleInstanceConfig build() {
-            return new InstancePreemptibleInstanceConfig(preemptionAction);
+        }
+        public InstancePreemptibleInstanceConfig build() {
+            final var o = new InstancePreemptibleInstanceConfig();
+            o.preemptionAction = preemptionAction;
+            return o;
         }
     }
 }

@@ -14,35 +14,24 @@ public final class GetRepositoryDiffChangeDiffSectionLine {
      * @return The number of a line in the base version.
      * 
      */
-    private final Integer baseLine;
+    private Integer baseLine;
     /**
      * @return Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
      * 
      */
-    private final String conflictMarker;
+    private String conflictMarker;
     /**
      * @return The contents of a line.
      * 
      */
-    private final String lineContent;
+    private String lineContent;
     /**
      * @return Line number in target version where changes begin.
      * 
      */
-    private final Integer targetLine;
+    private Integer targetLine;
 
-    @CustomType.Constructor
-    private GetRepositoryDiffChangeDiffSectionLine(
-        @CustomType.Parameter("baseLine") Integer baseLine,
-        @CustomType.Parameter("conflictMarker") String conflictMarker,
-        @CustomType.Parameter("lineContent") String lineContent,
-        @CustomType.Parameter("targetLine") Integer targetLine) {
-        this.baseLine = baseLine;
-        this.conflictMarker = conflictMarker;
-        this.lineContent = lineContent;
-        this.targetLine = targetLine;
-    }
-
+    private GetRepositoryDiffChangeDiffSectionLine() {}
     /**
      * @return The number of a line in the base version.
      * 
@@ -79,17 +68,13 @@ public final class GetRepositoryDiffChangeDiffSectionLine {
     public static Builder builder(GetRepositoryDiffChangeDiffSectionLine defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer baseLine;
         private String conflictMarker;
         private String lineContent;
         private Integer targetLine;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryDiffChangeDiffSectionLine defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baseLine = defaults.baseLine;
@@ -98,23 +83,33 @@ public final class GetRepositoryDiffChangeDiffSectionLine {
     	      this.targetLine = defaults.targetLine;
         }
 
+        @CustomType.Setter
         public Builder baseLine(Integer baseLine) {
             this.baseLine = Objects.requireNonNull(baseLine);
             return this;
         }
+        @CustomType.Setter
         public Builder conflictMarker(String conflictMarker) {
             this.conflictMarker = Objects.requireNonNull(conflictMarker);
             return this;
         }
+        @CustomType.Setter
         public Builder lineContent(String lineContent) {
             this.lineContent = Objects.requireNonNull(lineContent);
             return this;
         }
+        @CustomType.Setter
         public Builder targetLine(Integer targetLine) {
             this.targetLine = Objects.requireNonNull(targetLine);
             return this;
-        }        public GetRepositoryDiffChangeDiffSectionLine build() {
-            return new GetRepositoryDiffChangeDiffSectionLine(baseLine, conflictMarker, lineContent, targetLine);
+        }
+        public GetRepositoryDiffChangeDiffSectionLine build() {
+            final var o = new GetRepositoryDiffChangeDiffSectionLine();
+            o.baseLine = baseLine;
+            o.conflictMarker = conflictMarker;
+            o.lineContent = lineContent;
+            o.targetLine = targetLine;
+            return o;
         }
     }
 }

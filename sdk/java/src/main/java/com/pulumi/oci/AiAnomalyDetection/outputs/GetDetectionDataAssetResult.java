@@ -17,101 +17,70 @@ public final class GetDetectionDataAssetResult {
      * @return The OCID of the compartment containing the DataAsset.
      * 
      */
-    private final String compartmentId;
-    private final String dataAssetId;
+    private String compartmentId;
+    private String dataAssetId;
     /**
      * @return Possible data sources
      * 
      */
-    private final List<GetDetectionDataAssetDataSourceDetail> dataSourceDetails;
+    private List<GetDetectionDataAssetDataSourceDetail> dataSourceDetails;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A short description of the data asset.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The Unique Oracle ID (OCID) that is immutable on creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return OCID of Private Endpoint.
      * 
      */
-    private final String privateEndpointId;
+    private String privateEndpointId;
     /**
      * @return The Unique project id which is created at project creation that is immutable on creation.
      * 
      */
-    private final String projectId;
+    private String projectId;
     /**
      * @return The lifecycle state of the Data Asset.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the the DataAsset was created. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the the DataAsset was updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetDetectionDataAssetResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dataAssetId") String dataAssetId,
-        @CustomType.Parameter("dataSourceDetails") List<GetDetectionDataAssetDataSourceDetail> dataSourceDetails,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("privateEndpointId") String privateEndpointId,
-        @CustomType.Parameter("projectId") String projectId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.dataAssetId = dataAssetId;
-        this.dataSourceDetails = dataSourceDetails;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.privateEndpointId = privateEndpointId;
-        this.projectId = projectId;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetDetectionDataAssetResult() {}
     /**
      * @return The OCID of the compartment containing the DataAsset.
      * 
@@ -214,7 +183,7 @@ public final class GetDetectionDataAssetResult {
     public static Builder builder(GetDetectionDataAssetResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String dataAssetId;
@@ -230,11 +199,7 @@ public final class GetDetectionDataAssetResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionDataAssetResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -253,14 +218,17 @@ public final class GetDetectionDataAssetResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataAssetId(String dataAssetId) {
             this.dataAssetId = Objects.requireNonNull(dataAssetId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataSourceDetails(List<GetDetectionDataAssetDataSourceDetail> dataSourceDetails) {
             this.dataSourceDetails = Objects.requireNonNull(dataSourceDetails);
             return this;
@@ -268,51 +236,78 @@ public final class GetDetectionDataAssetResult {
         public Builder dataSourceDetails(GetDetectionDataAssetDataSourceDetail... dataSourceDetails) {
             return dataSourceDetails(List.of(dataSourceDetails));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetDetectionDataAssetResult build() {
-            return new GetDetectionDataAssetResult(compartmentId, dataAssetId, dataSourceDetails, definedTags, description, displayName, freeformTags, id, privateEndpointId, projectId, state, systemTags, timeCreated, timeUpdated);
+        }
+        public GetDetectionDataAssetResult build() {
+            final var o = new GetDetectionDataAssetResult();
+            o.compartmentId = compartmentId;
+            o.dataAssetId = dataAssetId;
+            o.dataSourceDetails = dataSourceDetails;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.privateEndpointId = privateEndpointId;
+            o.projectId = projectId;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

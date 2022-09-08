@@ -9,13 +9,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetResolversResolverAttachedView {
-    private final String viewId;
+    private String viewId;
 
-    @CustomType.Constructor
-    private GetResolversResolverAttachedView(@CustomType.Parameter("viewId") String viewId) {
-        this.viewId = viewId;
-    }
-
+    private GetResolversResolverAttachedView() {}
     public String viewId() {
         return this.viewId;
     }
@@ -27,24 +23,24 @@ public final class GetResolversResolverAttachedView {
     public static Builder builder(GetResolversResolverAttachedView defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String viewId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResolversResolverAttachedView defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.viewId = defaults.viewId;
         }
 
+        @CustomType.Setter
         public Builder viewId(String viewId) {
             this.viewId = Objects.requireNonNull(viewId);
             return this;
-        }        public GetResolversResolverAttachedView build() {
-            return new GetResolversResolverAttachedView(viewId);
+        }
+        public GetResolversResolverAttachedView build() {
+            final var o = new GetResolversResolverAttachedView();
+            o.viewId = viewId;
+            return o;
         }
     }
 }

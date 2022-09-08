@@ -16,28 +16,19 @@ public final class RepositoryMirrorRepositoryConfig {
      * @return (Updatable) Upstream git repository connection identifer.
      * 
      */
-    private final @Nullable String connectorId;
+    private @Nullable String connectorId;
     /**
      * @return (Updatable) URL of external repository you want to mirror.
      * 
      */
-    private final @Nullable String repositoryUrl;
+    private @Nullable String repositoryUrl;
     /**
      * @return (Updatable) Specifies a trigger schedule. Timing information for when to initiate automated syncs.
      * 
      */
-    private final @Nullable RepositoryMirrorRepositoryConfigTriggerSchedule triggerSchedule;
+    private @Nullable RepositoryMirrorRepositoryConfigTriggerSchedule triggerSchedule;
 
-    @CustomType.Constructor
-    private RepositoryMirrorRepositoryConfig(
-        @CustomType.Parameter("connectorId") @Nullable String connectorId,
-        @CustomType.Parameter("repositoryUrl") @Nullable String repositoryUrl,
-        @CustomType.Parameter("triggerSchedule") @Nullable RepositoryMirrorRepositoryConfigTriggerSchedule triggerSchedule) {
-        this.connectorId = connectorId;
-        this.repositoryUrl = repositoryUrl;
-        this.triggerSchedule = triggerSchedule;
-    }
-
+    private RepositoryMirrorRepositoryConfig() {}
     /**
      * @return (Updatable) Upstream git repository connection identifer.
      * 
@@ -67,16 +58,12 @@ public final class RepositoryMirrorRepositoryConfig {
     public static Builder builder(RepositoryMirrorRepositoryConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String connectorId;
         private @Nullable String repositoryUrl;
         private @Nullable RepositoryMirrorRepositoryConfigTriggerSchedule triggerSchedule;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RepositoryMirrorRepositoryConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectorId = defaults.connectorId;
@@ -84,19 +71,27 @@ public final class RepositoryMirrorRepositoryConfig {
     	      this.triggerSchedule = defaults.triggerSchedule;
         }
 
+        @CustomType.Setter
         public Builder connectorId(@Nullable String connectorId) {
             this.connectorId = connectorId;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryUrl(@Nullable String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder triggerSchedule(@Nullable RepositoryMirrorRepositoryConfigTriggerSchedule triggerSchedule) {
             this.triggerSchedule = triggerSchedule;
             return this;
-        }        public RepositoryMirrorRepositoryConfig build() {
-            return new RepositoryMirrorRepositoryConfig(connectorId, repositoryUrl, triggerSchedule);
+        }
+        public RepositoryMirrorRepositoryConfig build() {
+            final var o = new RepositoryMirrorRepositoryConfig();
+            o.connectorId = connectorId;
+            o.repositoryUrl = repositoryUrl;
+            o.triggerSchedule = triggerSchedule;
+            return o;
         }
     }
 }

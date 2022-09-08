@@ -13,13 +13,9 @@ public final class GetDeployStageDeployStagePredecessorCollectionItem {
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDeployStageDeployStagePredecessorCollectionItem(@CustomType.Parameter("id") String id) {
-        this.id = id;
-    }
-
+    private GetDeployStageDeployStagePredecessorCollectionItem() {}
     /**
      * @return Unique identifier that is immutable on creation.
      * 
@@ -35,24 +31,24 @@ public final class GetDeployStageDeployStagePredecessorCollectionItem {
     public static Builder builder(GetDeployStageDeployStagePredecessorCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStageDeployStagePredecessorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDeployStageDeployStagePredecessorCollectionItem build() {
-            return new GetDeployStageDeployStagePredecessorCollectionItem(id);
+        }
+        public GetDeployStageDeployStagePredecessorCollectionItem build() {
+            final var o = new GetDeployStageDeployStagePredecessorCollectionItem();
+            o.id = id;
+            return o;
         }
     }
 }

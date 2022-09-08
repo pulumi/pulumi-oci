@@ -21,289 +21,202 @@ public final class GetExadataInfrastructureResult {
      * @return The requested number of additional storage servers activated for the Exadata infrastructure.
      * 
      */
-    private final Integer activatedStorageCount;
-    private final String activationFile;
+    private Integer activatedStorageCount;
+    private String activationFile;
     /**
      * @return The requested number of additional storage servers for the Exadata infrastructure.
      * 
      */
-    private final Integer additionalStorageCount;
+    private Integer additionalStorageCount;
     /**
      * @return The CIDR block for the Exadata administration network.
      * 
      */
-    private final String adminNetworkCidr;
+    private String adminNetworkCidr;
     /**
      * @return The IP address for the first control plane server.
      * 
      */
-    private final String cloudControlPlaneServer1;
+    private String cloudControlPlaneServer1;
     /**
      * @return The IP address for the second control plane server.
      * 
      */
-    private final String cloudControlPlaneServer2;
+    private String cloudControlPlaneServer2;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The number of compute servers for the Exadata infrastructure.
      * 
      */
-    private final Integer computeCount;
+    private Integer computeCount;
     /**
      * @return The list of contacts for the Exadata infrastructure.
      * 
      */
-    private final List<GetExadataInfrastructureContact> contacts;
+    private List<GetExadataInfrastructureContact> contacts;
     /**
      * @return The corporate network proxy for access to the control plane network.
      * 
      */
-    private final String corporateProxy;
+    private String corporateProxy;
     /**
      * @return The number of enabled CPU cores.
      * 
      */
-    private final Integer cpusEnabled;
-    private final Boolean createAsync;
+    private Integer cpusEnabled;
+    private Boolean createAsync;
     /**
      * @return The CSI Number of the Exadata infrastructure.
      * 
      */
-    private final String csiNumber;
+    private String csiNumber;
     /**
      * @return Size, in terabytes, of the DATA disk group.
      * 
      */
-    private final Double dataStorageSizeInTbs;
+    private Double dataStorageSizeInTbs;
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    private final Integer dbNodeStorageSizeInGbs;
+    private Integer dbNodeStorageSizeInGbs;
     /**
      * @return The software version of the database servers (dom0) in the Exadata infrastructure.
      * 
      */
-    private final String dbServerVersion;
+    private String dbServerVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The list of DNS server IP addresses. Maximum of 3 allowed.
      * 
      */
-    private final List<String> dnsServers;
-    private final String exadataInfrastructureId;
+    private List<String> dnsServers;
+    private String exadataInfrastructureId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The gateway for the control plane network.
      * 
      */
-    private final String gateway;
+    private String gateway;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The CIDR block for the Exadata InfiniBand interconnect.
      * 
      */
-    private final String infiniBandNetworkCidr;
+    private String infiniBandNetworkCidr;
     /**
      * @return Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
      * 
      */
-    private final Boolean isCpsOfflineReportEnabled;
+    private Boolean isCpsOfflineReportEnabled;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
      * 
      */
-    private final String maintenanceSloStatus;
+    private String maintenanceSloStatus;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    private final List<GetExadataInfrastructureMaintenanceWindow> maintenanceWindows;
+    private List<GetExadataInfrastructureMaintenanceWindow> maintenanceWindows;
     /**
      * @return The total number of CPU cores available.
      * 
      */
-    private final Integer maxCpuCount;
+    private Integer maxCpuCount;
     /**
      * @return The total available DATA disk group size.
      * 
      */
-    private final Double maxDataStorageInTbs;
+    private Double maxDataStorageInTbs;
     /**
      * @return The total local node storage available in GBs.
      * 
      */
-    private final Integer maxDbNodeStorageInGbs;
+    private Integer maxDbNodeStorageInGbs;
     /**
      * @return The total memory available in GBs.
      * 
      */
-    private final Integer maxMemoryInGbs;
+    private Integer maxMemoryInGbs;
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    private final Integer memorySizeInGbs;
+    private Integer memorySizeInGbs;
     /**
      * @return The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      * 
      */
-    private final String monthlyDbServerVersion;
+    private String monthlyDbServerVersion;
     /**
      * @return The netmask for the control plane network.
      * 
      */
-    private final String netmask;
+    private String netmask;
     /**
      * @return The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
      */
-    private final List<String> ntpServers;
+    private List<String> ntpServers;
     /**
      * @return The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return The current lifecycle state of the Exadata infrastructure.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The number of Exadata storage servers for the Exadata infrastructure.
      * 
      */
-    private final Integer storageCount;
+    private Integer storageCount;
     /**
      * @return The software version of the storage servers (cells) in the Exadata infrastructure.
      * 
      */
-    private final String storageServerVersion;
+    private String storageServerVersion;
     /**
      * @return The date and time the Exadata infrastructure was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    private final String timeZone;
+    private String timeZone;
 
-    @CustomType.Constructor
-    private GetExadataInfrastructureResult(
-        @CustomType.Parameter("activatedStorageCount") Integer activatedStorageCount,
-        @CustomType.Parameter("activationFile") String activationFile,
-        @CustomType.Parameter("additionalStorageCount") Integer additionalStorageCount,
-        @CustomType.Parameter("adminNetworkCidr") String adminNetworkCidr,
-        @CustomType.Parameter("cloudControlPlaneServer1") String cloudControlPlaneServer1,
-        @CustomType.Parameter("cloudControlPlaneServer2") String cloudControlPlaneServer2,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computeCount") Integer computeCount,
-        @CustomType.Parameter("contacts") List<GetExadataInfrastructureContact> contacts,
-        @CustomType.Parameter("corporateProxy") String corporateProxy,
-        @CustomType.Parameter("cpusEnabled") Integer cpusEnabled,
-        @CustomType.Parameter("createAsync") Boolean createAsync,
-        @CustomType.Parameter("csiNumber") String csiNumber,
-        @CustomType.Parameter("dataStorageSizeInTbs") Double dataStorageSizeInTbs,
-        @CustomType.Parameter("dbNodeStorageSizeInGbs") Integer dbNodeStorageSizeInGbs,
-        @CustomType.Parameter("dbServerVersion") String dbServerVersion,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("dnsServers") List<String> dnsServers,
-        @CustomType.Parameter("exadataInfrastructureId") String exadataInfrastructureId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("gateway") String gateway,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("infiniBandNetworkCidr") String infiniBandNetworkCidr,
-        @CustomType.Parameter("isCpsOfflineReportEnabled") Boolean isCpsOfflineReportEnabled,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("maintenanceSloStatus") String maintenanceSloStatus,
-        @CustomType.Parameter("maintenanceWindows") List<GetExadataInfrastructureMaintenanceWindow> maintenanceWindows,
-        @CustomType.Parameter("maxCpuCount") Integer maxCpuCount,
-        @CustomType.Parameter("maxDataStorageInTbs") Double maxDataStorageInTbs,
-        @CustomType.Parameter("maxDbNodeStorageInGbs") Integer maxDbNodeStorageInGbs,
-        @CustomType.Parameter("maxMemoryInGbs") Integer maxMemoryInGbs,
-        @CustomType.Parameter("memorySizeInGbs") Integer memorySizeInGbs,
-        @CustomType.Parameter("monthlyDbServerVersion") String monthlyDbServerVersion,
-        @CustomType.Parameter("netmask") String netmask,
-        @CustomType.Parameter("ntpServers") List<String> ntpServers,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("storageCount") Integer storageCount,
-        @CustomType.Parameter("storageServerVersion") String storageServerVersion,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeZone") String timeZone) {
-        this.activatedStorageCount = activatedStorageCount;
-        this.activationFile = activationFile;
-        this.additionalStorageCount = additionalStorageCount;
-        this.adminNetworkCidr = adminNetworkCidr;
-        this.cloudControlPlaneServer1 = cloudControlPlaneServer1;
-        this.cloudControlPlaneServer2 = cloudControlPlaneServer2;
-        this.compartmentId = compartmentId;
-        this.computeCount = computeCount;
-        this.contacts = contacts;
-        this.corporateProxy = corporateProxy;
-        this.cpusEnabled = cpusEnabled;
-        this.createAsync = createAsync;
-        this.csiNumber = csiNumber;
-        this.dataStorageSizeInTbs = dataStorageSizeInTbs;
-        this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
-        this.dbServerVersion = dbServerVersion;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.dnsServers = dnsServers;
-        this.exadataInfrastructureId = exadataInfrastructureId;
-        this.freeformTags = freeformTags;
-        this.gateway = gateway;
-        this.id = id;
-        this.infiniBandNetworkCidr = infiniBandNetworkCidr;
-        this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
-        this.lifecycleDetails = lifecycleDetails;
-        this.maintenanceSloStatus = maintenanceSloStatus;
-        this.maintenanceWindows = maintenanceWindows;
-        this.maxCpuCount = maxCpuCount;
-        this.maxDataStorageInTbs = maxDataStorageInTbs;
-        this.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
-        this.maxMemoryInGbs = maxMemoryInGbs;
-        this.memorySizeInGbs = memorySizeInGbs;
-        this.monthlyDbServerVersion = monthlyDbServerVersion;
-        this.netmask = netmask;
-        this.ntpServers = ntpServers;
-        this.shape = shape;
-        this.state = state;
-        this.storageCount = storageCount;
-        this.storageServerVersion = storageServerVersion;
-        this.timeCreated = timeCreated;
-        this.timeZone = timeZone;
-    }
-
+    private GetExadataInfrastructureResult() {}
     /**
      * @return The requested number of additional storage servers activated for the Exadata infrastructure.
      * 
@@ -594,7 +507,7 @@ public final class GetExadataInfrastructureResult {
     public static Builder builder(GetExadataInfrastructureResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer activatedStorageCount;
         private String activationFile;
@@ -638,11 +551,7 @@ public final class GetExadataInfrastructureResult {
         private String storageServerVersion;
         private String timeCreated;
         private String timeZone;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExadataInfrastructureResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activatedStorageCount = defaults.activatedStorageCount;
@@ -689,38 +598,47 @@ public final class GetExadataInfrastructureResult {
     	      this.timeZone = defaults.timeZone;
         }
 
+        @CustomType.Setter
         public Builder activatedStorageCount(Integer activatedStorageCount) {
             this.activatedStorageCount = Objects.requireNonNull(activatedStorageCount);
             return this;
         }
+        @CustomType.Setter
         public Builder activationFile(String activationFile) {
             this.activationFile = Objects.requireNonNull(activationFile);
             return this;
         }
+        @CustomType.Setter
         public Builder additionalStorageCount(Integer additionalStorageCount) {
             this.additionalStorageCount = Objects.requireNonNull(additionalStorageCount);
             return this;
         }
+        @CustomType.Setter
         public Builder adminNetworkCidr(String adminNetworkCidr) {
             this.adminNetworkCidr = Objects.requireNonNull(adminNetworkCidr);
             return this;
         }
+        @CustomType.Setter
         public Builder cloudControlPlaneServer1(String cloudControlPlaneServer1) {
             this.cloudControlPlaneServer1 = Objects.requireNonNull(cloudControlPlaneServer1);
             return this;
         }
+        @CustomType.Setter
         public Builder cloudControlPlaneServer2(String cloudControlPlaneServer2) {
             this.cloudControlPlaneServer2 = Objects.requireNonNull(cloudControlPlaneServer2);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeCount(Integer computeCount) {
             this.computeCount = Objects.requireNonNull(computeCount);
             return this;
         }
+        @CustomType.Setter
         public Builder contacts(List<GetExadataInfrastructureContact> contacts) {
             this.contacts = Objects.requireNonNull(contacts);
             return this;
@@ -728,42 +646,52 @@ public final class GetExadataInfrastructureResult {
         public Builder contacts(GetExadataInfrastructureContact... contacts) {
             return contacts(List.of(contacts));
         }
+        @CustomType.Setter
         public Builder corporateProxy(String corporateProxy) {
             this.corporateProxy = Objects.requireNonNull(corporateProxy);
             return this;
         }
+        @CustomType.Setter
         public Builder cpusEnabled(Integer cpusEnabled) {
             this.cpusEnabled = Objects.requireNonNull(cpusEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder createAsync(Boolean createAsync) {
             this.createAsync = Objects.requireNonNull(createAsync);
             return this;
         }
+        @CustomType.Setter
         public Builder csiNumber(String csiNumber) {
             this.csiNumber = Objects.requireNonNull(csiNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
             this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
             return this;
         }
+        @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
             this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder dbServerVersion(String dbServerVersion) {
             this.dbServerVersion = Objects.requireNonNull(dbServerVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder dnsServers(List<String> dnsServers) {
             this.dnsServers = Objects.requireNonNull(dnsServers);
             return this;
@@ -771,38 +699,47 @@ public final class GetExadataInfrastructureResult {
         public Builder dnsServers(String... dnsServers) {
             return dnsServers(List.of(dnsServers));
         }
+        @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder gateway(String gateway) {
             this.gateway = Objects.requireNonNull(gateway);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder infiniBandNetworkCidr(String infiniBandNetworkCidr) {
             this.infiniBandNetworkCidr = Objects.requireNonNull(infiniBandNetworkCidr);
             return this;
         }
+        @CustomType.Setter
         public Builder isCpsOfflineReportEnabled(Boolean isCpsOfflineReportEnabled) {
             this.isCpsOfflineReportEnabled = Objects.requireNonNull(isCpsOfflineReportEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder maintenanceSloStatus(String maintenanceSloStatus) {
             this.maintenanceSloStatus = Objects.requireNonNull(maintenanceSloStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder maintenanceWindows(List<GetExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
             this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
             return this;
@@ -810,34 +747,42 @@ public final class GetExadataInfrastructureResult {
         public Builder maintenanceWindows(GetExadataInfrastructureMaintenanceWindow... maintenanceWindows) {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
+        @CustomType.Setter
         public Builder maxCpuCount(Integer maxCpuCount) {
             this.maxCpuCount = Objects.requireNonNull(maxCpuCount);
             return this;
         }
+        @CustomType.Setter
         public Builder maxDataStorageInTbs(Double maxDataStorageInTbs) {
             this.maxDataStorageInTbs = Objects.requireNonNull(maxDataStorageInTbs);
             return this;
         }
+        @CustomType.Setter
         public Builder maxDbNodeStorageInGbs(Integer maxDbNodeStorageInGbs) {
             this.maxDbNodeStorageInGbs = Objects.requireNonNull(maxDbNodeStorageInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder maxMemoryInGbs(Integer maxMemoryInGbs) {
             this.maxMemoryInGbs = Objects.requireNonNull(maxMemoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
             this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
             this.monthlyDbServerVersion = Objects.requireNonNull(monthlyDbServerVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder netmask(String netmask) {
             this.netmask = Objects.requireNonNull(netmask);
             return this;
         }
+        @CustomType.Setter
         public Builder ntpServers(List<String> ntpServers) {
             this.ntpServers = Objects.requireNonNull(ntpServers);
             return this;
@@ -845,31 +790,81 @@ public final class GetExadataInfrastructureResult {
         public Builder ntpServers(String... ntpServers) {
             return ntpServers(List.of(ntpServers));
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder storageCount(Integer storageCount) {
             this.storageCount = Objects.requireNonNull(storageCount);
             return this;
         }
+        @CustomType.Setter
         public Builder storageServerVersion(String storageServerVersion) {
             this.storageServerVersion = Objects.requireNonNull(storageServerVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeZone(String timeZone) {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
-        }        public GetExadataInfrastructureResult build() {
-            return new GetExadataInfrastructureResult(activatedStorageCount, activationFile, additionalStorageCount, adminNetworkCidr, cloudControlPlaneServer1, cloudControlPlaneServer2, compartmentId, computeCount, contacts, corporateProxy, cpusEnabled, createAsync, csiNumber, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, dbServerVersion, definedTags, displayName, dnsServers, exadataInfrastructureId, freeformTags, gateway, id, infiniBandNetworkCidr, isCpsOfflineReportEnabled, lifecycleDetails, maintenanceSloStatus, maintenanceWindows, maxCpuCount, maxDataStorageInTbs, maxDbNodeStorageInGbs, maxMemoryInGbs, memorySizeInGbs, monthlyDbServerVersion, netmask, ntpServers, shape, state, storageCount, storageServerVersion, timeCreated, timeZone);
+        }
+        public GetExadataInfrastructureResult build() {
+            final var o = new GetExadataInfrastructureResult();
+            o.activatedStorageCount = activatedStorageCount;
+            o.activationFile = activationFile;
+            o.additionalStorageCount = additionalStorageCount;
+            o.adminNetworkCidr = adminNetworkCidr;
+            o.cloudControlPlaneServer1 = cloudControlPlaneServer1;
+            o.cloudControlPlaneServer2 = cloudControlPlaneServer2;
+            o.compartmentId = compartmentId;
+            o.computeCount = computeCount;
+            o.contacts = contacts;
+            o.corporateProxy = corporateProxy;
+            o.cpusEnabled = cpusEnabled;
+            o.createAsync = createAsync;
+            o.csiNumber = csiNumber;
+            o.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            o.dbServerVersion = dbServerVersion;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.dnsServers = dnsServers;
+            o.exadataInfrastructureId = exadataInfrastructureId;
+            o.freeformTags = freeformTags;
+            o.gateway = gateway;
+            o.id = id;
+            o.infiniBandNetworkCidr = infiniBandNetworkCidr;
+            o.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
+            o.lifecycleDetails = lifecycleDetails;
+            o.maintenanceSloStatus = maintenanceSloStatus;
+            o.maintenanceWindows = maintenanceWindows;
+            o.maxCpuCount = maxCpuCount;
+            o.maxDataStorageInTbs = maxDataStorageInTbs;
+            o.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
+            o.maxMemoryInGbs = maxMemoryInGbs;
+            o.memorySizeInGbs = memorySizeInGbs;
+            o.monthlyDbServerVersion = monthlyDbServerVersion;
+            o.netmask = netmask;
+            o.ntpServers = ntpServers;
+            o.shape = shape;
+            o.state = state;
+            o.storageCount = storageCount;
+            o.storageServerVersion = storageServerVersion;
+            o.timeCreated = timeCreated;
+            o.timeZone = timeZone;
+            return o;
         }
     }
 }

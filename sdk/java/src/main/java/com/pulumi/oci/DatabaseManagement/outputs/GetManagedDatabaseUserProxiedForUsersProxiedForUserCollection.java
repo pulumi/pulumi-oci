@@ -14,13 +14,9 @@ public final class GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection
      * @return An array of user resources.
      * 
      */
-    private final List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItem> items;
+    private List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection(@CustomType.Parameter("items") List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection() {}
     /**
      * @return An array of user resources.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection
     public static Builder builder(GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection build() {
-            return new GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection(items);
+        }
+        public GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection build() {
+            final var o = new GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection();
+            o.items = items;
+            return o;
         }
     }
 }

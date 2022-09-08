@@ -14,71 +14,28 @@ import java.util.Objects;
 
 @CustomType
 public final class GetVirtualNetworksVirtualNetwork {
-    private final List<String> byoipv6cidrBlocks;
-    private final List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails;
-    private final String cidrBlock;
-    private final List<String> cidrBlocks;
-    private final String compartmentId;
-    private final String defaultDhcpOptionsId;
-    private final String defaultRouteTableId;
-    private final String defaultSecurityListId;
-    private final Map<String,Object> definedTags;
-    private final String displayName;
-    private final String dnsLabel;
-    private final Map<String,Object> freeformTags;
-    private final String id;
-    private final List<String> ipv6cidrBlocks;
-    private final List<String> ipv6privateCidrBlocks;
-    private final Boolean isIpv6enabled;
-    private final Boolean isOracleGuaAllocationEnabled;
-    private final String state;
-    private final String timeCreated;
-    private final String vcnDomainName;
+    private List<String> byoipv6cidrBlocks;
+    private List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails;
+    private String cidrBlock;
+    private List<String> cidrBlocks;
+    private String compartmentId;
+    private String defaultDhcpOptionsId;
+    private String defaultRouteTableId;
+    private String defaultSecurityListId;
+    private Map<String,Object> definedTags;
+    private String displayName;
+    private String dnsLabel;
+    private Map<String,Object> freeformTags;
+    private String id;
+    private List<String> ipv6cidrBlocks;
+    private List<String> ipv6privateCidrBlocks;
+    private Boolean isIpv6enabled;
+    private Boolean isOracleGuaAllocationEnabled;
+    private String state;
+    private String timeCreated;
+    private String vcnDomainName;
 
-    @CustomType.Constructor
-    private GetVirtualNetworksVirtualNetwork(
-        @CustomType.Parameter("byoipv6cidrBlocks") List<String> byoipv6cidrBlocks,
-        @CustomType.Parameter("byoipv6cidrDetails") List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails,
-        @CustomType.Parameter("cidrBlock") String cidrBlock,
-        @CustomType.Parameter("cidrBlocks") List<String> cidrBlocks,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("defaultDhcpOptionsId") String defaultDhcpOptionsId,
-        @CustomType.Parameter("defaultRouteTableId") String defaultRouteTableId,
-        @CustomType.Parameter("defaultSecurityListId") String defaultSecurityListId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("dnsLabel") String dnsLabel,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipv6cidrBlocks") List<String> ipv6cidrBlocks,
-        @CustomType.Parameter("ipv6privateCidrBlocks") List<String> ipv6privateCidrBlocks,
-        @CustomType.Parameter("isIpv6enabled") Boolean isIpv6enabled,
-        @CustomType.Parameter("isOracleGuaAllocationEnabled") Boolean isOracleGuaAllocationEnabled,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vcnDomainName") String vcnDomainName) {
-        this.byoipv6cidrBlocks = byoipv6cidrBlocks;
-        this.byoipv6cidrDetails = byoipv6cidrDetails;
-        this.cidrBlock = cidrBlock;
-        this.cidrBlocks = cidrBlocks;
-        this.compartmentId = compartmentId;
-        this.defaultDhcpOptionsId = defaultDhcpOptionsId;
-        this.defaultRouteTableId = defaultRouteTableId;
-        this.defaultSecurityListId = defaultSecurityListId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.dnsLabel = dnsLabel;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.ipv6cidrBlocks = ipv6cidrBlocks;
-        this.ipv6privateCidrBlocks = ipv6privateCidrBlocks;
-        this.isIpv6enabled = isIpv6enabled;
-        this.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.vcnDomainName = vcnDomainName;
-    }
-
+    private GetVirtualNetworksVirtualNetwork() {}
     public List<String> byoipv6cidrBlocks() {
         return this.byoipv6cidrBlocks;
     }
@@ -147,7 +104,7 @@ public final class GetVirtualNetworksVirtualNetwork {
     public static Builder builder(GetVirtualNetworksVirtualNetwork defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> byoipv6cidrBlocks;
         private List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails;
@@ -169,11 +126,7 @@ public final class GetVirtualNetworksVirtualNetwork {
         private String state;
         private String timeCreated;
         private String vcnDomainName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualNetworksVirtualNetwork defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.byoipv6cidrBlocks = defaults.byoipv6cidrBlocks;
@@ -198,6 +151,7 @@ public final class GetVirtualNetworksVirtualNetwork {
     	      this.vcnDomainName = defaults.vcnDomainName;
         }
 
+        @CustomType.Setter
         public Builder byoipv6cidrBlocks(List<String> byoipv6cidrBlocks) {
             this.byoipv6cidrBlocks = Objects.requireNonNull(byoipv6cidrBlocks);
             return this;
@@ -205,6 +159,7 @@ public final class GetVirtualNetworksVirtualNetwork {
         public Builder byoipv6cidrBlocks(String... byoipv6cidrBlocks) {
             return byoipv6cidrBlocks(List.of(byoipv6cidrBlocks));
         }
+        @CustomType.Setter
         public Builder byoipv6cidrDetails(List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails) {
             this.byoipv6cidrDetails = Objects.requireNonNull(byoipv6cidrDetails);
             return this;
@@ -212,10 +167,12 @@ public final class GetVirtualNetworksVirtualNetwork {
         public Builder byoipv6cidrDetails(GetVirtualNetworksVirtualNetworkByoipv6cidrDetail... byoipv6cidrDetails) {
             return byoipv6cidrDetails(List.of(byoipv6cidrDetails));
         }
+        @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = Objects.requireNonNull(cidrBlock);
             return this;
         }
+        @CustomType.Setter
         public Builder cidrBlocks(List<String> cidrBlocks) {
             this.cidrBlocks = Objects.requireNonNull(cidrBlocks);
             return this;
@@ -223,42 +180,52 @@ public final class GetVirtualNetworksVirtualNetwork {
         public Builder cidrBlocks(String... cidrBlocks) {
             return cidrBlocks(List.of(cidrBlocks));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder defaultDhcpOptionsId(String defaultDhcpOptionsId) {
             this.defaultDhcpOptionsId = Objects.requireNonNull(defaultDhcpOptionsId);
             return this;
         }
+        @CustomType.Setter
         public Builder defaultRouteTableId(String defaultRouteTableId) {
             this.defaultRouteTableId = Objects.requireNonNull(defaultRouteTableId);
             return this;
         }
+        @CustomType.Setter
         public Builder defaultSecurityListId(String defaultSecurityListId) {
             this.defaultSecurityListId = Objects.requireNonNull(defaultSecurityListId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder dnsLabel(String dnsLabel) {
             this.dnsLabel = Objects.requireNonNull(dnsLabel);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipv6cidrBlocks(List<String> ipv6cidrBlocks) {
             this.ipv6cidrBlocks = Objects.requireNonNull(ipv6cidrBlocks);
             return this;
@@ -266,6 +233,7 @@ public final class GetVirtualNetworksVirtualNetwork {
         public Builder ipv6cidrBlocks(String... ipv6cidrBlocks) {
             return ipv6cidrBlocks(List.of(ipv6cidrBlocks));
         }
+        @CustomType.Setter
         public Builder ipv6privateCidrBlocks(List<String> ipv6privateCidrBlocks) {
             this.ipv6privateCidrBlocks = Objects.requireNonNull(ipv6privateCidrBlocks);
             return this;
@@ -273,27 +241,54 @@ public final class GetVirtualNetworksVirtualNetwork {
         public Builder ipv6privateCidrBlocks(String... ipv6privateCidrBlocks) {
             return ipv6privateCidrBlocks(List.of(ipv6privateCidrBlocks));
         }
+        @CustomType.Setter
         public Builder isIpv6enabled(Boolean isIpv6enabled) {
             this.isIpv6enabled = Objects.requireNonNull(isIpv6enabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
             this.isOracleGuaAllocationEnabled = Objects.requireNonNull(isOracleGuaAllocationEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnDomainName(String vcnDomainName) {
             this.vcnDomainName = Objects.requireNonNull(vcnDomainName);
             return this;
-        }        public GetVirtualNetworksVirtualNetwork build() {
-            return new GetVirtualNetworksVirtualNetwork(byoipv6cidrBlocks, byoipv6cidrDetails, cidrBlock, cidrBlocks, compartmentId, defaultDhcpOptionsId, defaultRouteTableId, defaultSecurityListId, definedTags, displayName, dnsLabel, freeformTags, id, ipv6cidrBlocks, ipv6privateCidrBlocks, isIpv6enabled, isOracleGuaAllocationEnabled, state, timeCreated, vcnDomainName);
+        }
+        public GetVirtualNetworksVirtualNetwork build() {
+            final var o = new GetVirtualNetworksVirtualNetwork();
+            o.byoipv6cidrBlocks = byoipv6cidrBlocks;
+            o.byoipv6cidrDetails = byoipv6cidrDetails;
+            o.cidrBlock = cidrBlock;
+            o.cidrBlocks = cidrBlocks;
+            o.compartmentId = compartmentId;
+            o.defaultDhcpOptionsId = defaultDhcpOptionsId;
+            o.defaultRouteTableId = defaultRouteTableId;
+            o.defaultSecurityListId = defaultSecurityListId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.dnsLabel = dnsLabel;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.ipv6cidrBlocks = ipv6cidrBlocks;
+            o.ipv6privateCidrBlocks = ipv6privateCidrBlocks;
+            o.isIpv6enabled = isIpv6enabled;
+            o.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.vcnDomainName = vcnDomainName;
+            return o;
         }
     }
 }

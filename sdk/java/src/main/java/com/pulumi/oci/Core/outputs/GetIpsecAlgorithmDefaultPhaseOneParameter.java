@@ -14,28 +14,19 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
      * @return Default phase two authentication algorithms.
      * 
      */
-    private final List<String> defaultAuthenticationAlgorithms;
+    private List<String> defaultAuthenticationAlgorithms;
     /**
      * @return Default phase one Diffie-Hellman groups.
      * 
      */
-    private final List<String> defaultDhGroups;
+    private List<String> defaultDhGroups;
     /**
      * @return Default phase two encryption algorithms.
      * 
      */
-    private final List<String> defaultEncryptionAlgorithms;
+    private List<String> defaultEncryptionAlgorithms;
 
-    @CustomType.Constructor
-    private GetIpsecAlgorithmDefaultPhaseOneParameter(
-        @CustomType.Parameter("defaultAuthenticationAlgorithms") List<String> defaultAuthenticationAlgorithms,
-        @CustomType.Parameter("defaultDhGroups") List<String> defaultDhGroups,
-        @CustomType.Parameter("defaultEncryptionAlgorithms") List<String> defaultEncryptionAlgorithms) {
-        this.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
-        this.defaultDhGroups = defaultDhGroups;
-        this.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
-    }
-
+    private GetIpsecAlgorithmDefaultPhaseOneParameter() {}
     /**
      * @return Default phase two authentication algorithms.
      * 
@@ -65,16 +56,12 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
     public static Builder builder(GetIpsecAlgorithmDefaultPhaseOneParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> defaultAuthenticationAlgorithms;
         private List<String> defaultDhGroups;
         private List<String> defaultEncryptionAlgorithms;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecAlgorithmDefaultPhaseOneParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultAuthenticationAlgorithms = defaults.defaultAuthenticationAlgorithms;
@@ -82,6 +69,7 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
     	      this.defaultEncryptionAlgorithms = defaults.defaultEncryptionAlgorithms;
         }
 
+        @CustomType.Setter
         public Builder defaultAuthenticationAlgorithms(List<String> defaultAuthenticationAlgorithms) {
             this.defaultAuthenticationAlgorithms = Objects.requireNonNull(defaultAuthenticationAlgorithms);
             return this;
@@ -89,6 +77,7 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
         public Builder defaultAuthenticationAlgorithms(String... defaultAuthenticationAlgorithms) {
             return defaultAuthenticationAlgorithms(List.of(defaultAuthenticationAlgorithms));
         }
+        @CustomType.Setter
         public Builder defaultDhGroups(List<String> defaultDhGroups) {
             this.defaultDhGroups = Objects.requireNonNull(defaultDhGroups);
             return this;
@@ -96,14 +85,20 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
         public Builder defaultDhGroups(String... defaultDhGroups) {
             return defaultDhGroups(List.of(defaultDhGroups));
         }
+        @CustomType.Setter
         public Builder defaultEncryptionAlgorithms(List<String> defaultEncryptionAlgorithms) {
             this.defaultEncryptionAlgorithms = Objects.requireNonNull(defaultEncryptionAlgorithms);
             return this;
         }
         public Builder defaultEncryptionAlgorithms(String... defaultEncryptionAlgorithms) {
             return defaultEncryptionAlgorithms(List.of(defaultEncryptionAlgorithms));
-        }        public GetIpsecAlgorithmDefaultPhaseOneParameter build() {
-            return new GetIpsecAlgorithmDefaultPhaseOneParameter(defaultAuthenticationAlgorithms, defaultDhGroups, defaultEncryptionAlgorithms);
+        }
+        public GetIpsecAlgorithmDefaultPhaseOneParameter build() {
+            final var o = new GetIpsecAlgorithmDefaultPhaseOneParameter();
+            o.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
+            o.defaultDhGroups = defaultDhGroups;
+            o.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
+            return o;
         }
     }
 }

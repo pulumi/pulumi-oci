@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingTaxesResult {
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetListingTaxesFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetListingTaxesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String listingId;
+    private String id;
+    private String listingId;
     /**
      * @return The list of taxes.
      * 
      */
-    private final List<GetListingTaxesTax> taxes;
+    private List<GetListingTaxesTax> taxes;
 
-    @CustomType.Constructor
-    private GetListingTaxesResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetListingTaxesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("taxes") List<GetListingTaxesTax> taxes) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.listingId = listingId;
-        this.taxes = taxes;
-    }
-
+    private GetListingTaxesResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -73,18 +60,14 @@ public final class GetListingTaxesResult {
     public static Builder builder(GetListingTaxesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetListingTaxesFilter> filters;
         private String id;
         private String listingId;
         private List<GetListingTaxesTax> taxes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingTaxesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -94,10 +77,12 @@ public final class GetListingTaxesResult {
     	      this.taxes = defaults.taxes;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetListingTaxesFilter> filters) {
             this.filters = filters;
             return this;
@@ -105,22 +90,32 @@ public final class GetListingTaxesResult {
         public Builder filters(GetListingTaxesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder taxes(List<GetListingTaxesTax> taxes) {
             this.taxes = Objects.requireNonNull(taxes);
             return this;
         }
         public Builder taxes(GetListingTaxesTax... taxes) {
             return taxes(List.of(taxes));
-        }        public GetListingTaxesResult build() {
-            return new GetListingTaxesResult(compartmentId, filters, id, listingId, taxes);
+        }
+        public GetListingTaxesResult build() {
+            final var o = new GetListingTaxesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.listingId = listingId;
+            o.taxes = taxes;
+            return o;
         }
     }
 }

@@ -51,14 +51,14 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Detector recipe description.
+     * (Updatable) Description for DetectorRecipeDetectorRule.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Detector recipe description.
+     * @return (Updatable) Description for DetectorRecipeDetectorRule.
      * 
      */
     public Optional<Output<String>> description() {
@@ -201,6 +201,21 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The recipe attached to targets
+     * 
+     */
+    @Import(name="targetIds")
+    private @Nullable Output<List<String>> targetIds;
+
+    /**
+     * @return The recipe attached to targets
+     * 
+     */
+    public Optional<Output<List<String>>> targetIds() {
+        return Optional.ofNullable(this.targetIds);
+    }
+
+    /**
      * The date and time the detector recipe was created. Format defined by RFC3339.
      * 
      */
@@ -245,6 +260,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         this.sourceDetectorRecipeId = $.sourceDetectorRecipeId;
         this.state = $.state;
         this.systemTags = $.systemTags;
+        this.targetIds = $.targetIds;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -310,7 +326,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description (Updatable) Detector recipe description.
+         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
          * 
          * @return builder
          * 
@@ -321,7 +337,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description (Updatable) Detector recipe description.
+         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
          * 
          * @return builder
          * 
@@ -537,6 +553,37 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
          */
         public Builder systemTags(Map<String,Object> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param targetIds The recipe attached to targets
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(@Nullable Output<List<String>> targetIds) {
+            $.targetIds = targetIds;
+            return this;
+        }
+
+        /**
+         * @param targetIds The recipe attached to targets
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(List<String> targetIds) {
+            return targetIds(Output.of(targetIds));
+        }
+
+        /**
+         * @param targetIds The recipe attached to targets
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(String... targetIds) {
+            return targetIds(List.of(targetIds));
         }
 
         /**

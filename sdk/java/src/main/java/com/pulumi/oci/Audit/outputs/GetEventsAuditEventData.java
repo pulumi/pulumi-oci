@@ -20,105 +20,74 @@ public final class GetEventsAuditEventData {
      * @return A container object for attribues unique to the resource emitting the event.
      * 
      */
-    private final Map<String,Object> additionalDetails;
+    private Map<String,Object> additionalDetails;
     /**
      * @return The availability domain where the resource resides.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The name of the compartment. This value is the friendly name associated with compartmentId. This value can change, but the service logs the value that appeared at the time of the audit event.  Example: `CompartmentA`
      * 
      */
-    private final String compartmentName;
+    private String compartmentName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
      * 
      */
-    private final String eventGroupingId;
+    private String eventGroupingId;
     /**
      * @return Name of the API operation that generated this event.  Example: `GetInstance`
      * 
      */
-    private final String eventName;
+    private String eventName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return A container object for identity attributes.
      * 
      */
-    private final List<GetEventsAuditEventDataIdentity> identities;
+    private List<GetEventsAuditEventDataIdentity> identities;
     /**
      * @return A container object for request attributes.
      * 
      */
-    private final List<GetEventsAuditEventDataRequest> requests;
+    private List<GetEventsAuditEventDataRequest> requests;
     /**
      * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or some other ID for the resource emitting the event.
      * 
      */
-    private final String resourceId;
+    private String resourceId;
     /**
      * @return The name of the resource emitting the event.
      * 
      */
-    private final String resourceName;
+    private String resourceName;
     /**
      * @return A container object for response attributes.
      * 
      */
-    private final List<GetEventsAuditEventDataResponse> responses;
+    private List<GetEventsAuditEventDataResponse> responses;
     /**
      * @return A container object for state change attributes.
      * 
      */
-    private final List<GetEventsAuditEventDataStateChange> stateChanges;
+    private List<GetEventsAuditEventDataStateChange> stateChanges;
 
-    @CustomType.Constructor
-    private GetEventsAuditEventData(
-        @CustomType.Parameter("additionalDetails") Map<String,Object> additionalDetails,
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentName") String compartmentName,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("eventGroupingId") String eventGroupingId,
-        @CustomType.Parameter("eventName") String eventName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("identities") List<GetEventsAuditEventDataIdentity> identities,
-        @CustomType.Parameter("requests") List<GetEventsAuditEventDataRequest> requests,
-        @CustomType.Parameter("resourceId") String resourceId,
-        @CustomType.Parameter("resourceName") String resourceName,
-        @CustomType.Parameter("responses") List<GetEventsAuditEventDataResponse> responses,
-        @CustomType.Parameter("stateChanges") List<GetEventsAuditEventDataStateChange> stateChanges) {
-        this.additionalDetails = additionalDetails;
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.compartmentName = compartmentName;
-        this.definedTags = definedTags;
-        this.eventGroupingId = eventGroupingId;
-        this.eventName = eventName;
-        this.freeformTags = freeformTags;
-        this.identities = identities;
-        this.requests = requests;
-        this.resourceId = resourceId;
-        this.resourceName = resourceName;
-        this.responses = responses;
-        this.stateChanges = stateChanges;
-    }
-
+    private GetEventsAuditEventData() {}
     /**
      * @return A container object for attribues unique to the resource emitting the event.
      * 
@@ -225,7 +194,7 @@ public final class GetEventsAuditEventData {
     public static Builder builder(GetEventsAuditEventData defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> additionalDetails;
         private String availabilityDomain;
@@ -241,11 +210,7 @@ public final class GetEventsAuditEventData {
         private String resourceName;
         private List<GetEventsAuditEventDataResponse> responses;
         private List<GetEventsAuditEventDataStateChange> stateChanges;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEventsAuditEventData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalDetails = defaults.additionalDetails;
@@ -264,38 +229,47 @@ public final class GetEventsAuditEventData {
     	      this.stateChanges = defaults.stateChanges;
         }
 
+        @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
             this.additionalDetails = Objects.requireNonNull(additionalDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentName(String compartmentName) {
             this.compartmentName = Objects.requireNonNull(compartmentName);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder eventGroupingId(String eventGroupingId) {
             this.eventGroupingId = Objects.requireNonNull(eventGroupingId);
             return this;
         }
+        @CustomType.Setter
         public Builder eventName(String eventName) {
             this.eventName = Objects.requireNonNull(eventName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder identities(List<GetEventsAuditEventDataIdentity> identities) {
             this.identities = Objects.requireNonNull(identities);
             return this;
@@ -303,6 +277,7 @@ public final class GetEventsAuditEventData {
         public Builder identities(GetEventsAuditEventDataIdentity... identities) {
             return identities(List.of(identities));
         }
+        @CustomType.Setter
         public Builder requests(List<GetEventsAuditEventDataRequest> requests) {
             this.requests = Objects.requireNonNull(requests);
             return this;
@@ -310,14 +285,17 @@ public final class GetEventsAuditEventData {
         public Builder requests(GetEventsAuditEventDataRequest... requests) {
             return requests(List.of(requests));
         }
+        @CustomType.Setter
         public Builder resourceId(String resourceId) {
             this.resourceId = Objects.requireNonNull(resourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(String resourceName) {
             this.resourceName = Objects.requireNonNull(resourceName);
             return this;
         }
+        @CustomType.Setter
         public Builder responses(List<GetEventsAuditEventDataResponse> responses) {
             this.responses = Objects.requireNonNull(responses);
             return this;
@@ -325,14 +303,31 @@ public final class GetEventsAuditEventData {
         public Builder responses(GetEventsAuditEventDataResponse... responses) {
             return responses(List.of(responses));
         }
+        @CustomType.Setter
         public Builder stateChanges(List<GetEventsAuditEventDataStateChange> stateChanges) {
             this.stateChanges = Objects.requireNonNull(stateChanges);
             return this;
         }
         public Builder stateChanges(GetEventsAuditEventDataStateChange... stateChanges) {
             return stateChanges(List.of(stateChanges));
-        }        public GetEventsAuditEventData build() {
-            return new GetEventsAuditEventData(additionalDetails, availabilityDomain, compartmentId, compartmentName, definedTags, eventGroupingId, eventName, freeformTags, identities, requests, resourceId, resourceName, responses, stateChanges);
+        }
+        public GetEventsAuditEventData build() {
+            final var o = new GetEventsAuditEventData();
+            o.additionalDetails = additionalDetails;
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.compartmentName = compartmentName;
+            o.definedTags = definedTags;
+            o.eventGroupingId = eventGroupingId;
+            o.eventName = eventName;
+            o.freeformTags = freeformTags;
+            o.identities = identities;
+            o.requests = requests;
+            o.resourceId = resourceId;
+            o.resourceName = resourceName;
+            o.responses = responses;
+            o.stateChanges = stateChanges;
+            return o;
         }
     }
 }

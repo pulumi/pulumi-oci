@@ -13,34 +13,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReplicationPoliciesResult {
-    private final String bucket;
-    private final @Nullable List<GetReplicationPoliciesFilter> filters;
+    private String bucket;
+    private @Nullable List<GetReplicationPoliciesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String namespace;
+    private String id;
+    private String namespace;
     /**
      * @return The list of replication_policies.
      * 
      */
-    private final List<GetReplicationPoliciesReplicationPolicy> replicationPolicies;
+    private List<GetReplicationPoliciesReplicationPolicy> replicationPolicies;
 
-    @CustomType.Constructor
-    private GetReplicationPoliciesResult(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("filters") @Nullable List<GetReplicationPoliciesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("replicationPolicies") List<GetReplicationPoliciesReplicationPolicy> replicationPolicies) {
-        this.bucket = bucket;
-        this.filters = filters;
-        this.id = id;
-        this.namespace = namespace;
-        this.replicationPolicies = replicationPolicies;
-    }
-
+    private GetReplicationPoliciesResult() {}
     public String bucket() {
         return this.bucket;
     }
@@ -72,18 +59,14 @@ public final class GetReplicationPoliciesResult {
     public static Builder builder(GetReplicationPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private @Nullable List<GetReplicationPoliciesFilter> filters;
         private String id;
         private String namespace;
         private List<GetReplicationPoliciesReplicationPolicy> replicationPolicies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReplicationPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -93,10 +76,12 @@ public final class GetReplicationPoliciesResult {
     	      this.replicationPolicies = defaults.replicationPolicies;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetReplicationPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,22 +89,32 @@ public final class GetReplicationPoliciesResult {
         public Builder filters(GetReplicationPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder replicationPolicies(List<GetReplicationPoliciesReplicationPolicy> replicationPolicies) {
             this.replicationPolicies = Objects.requireNonNull(replicationPolicies);
             return this;
         }
         public Builder replicationPolicies(GetReplicationPoliciesReplicationPolicy... replicationPolicies) {
             return replicationPolicies(List.of(replicationPolicies));
-        }        public GetReplicationPoliciesResult build() {
-            return new GetReplicationPoliciesResult(bucket, filters, id, namespace, replicationPolicies);
+        }
+        public GetReplicationPoliciesResult build() {
+            final var o = new GetReplicationPoliciesResult();
+            o.bucket = bucket;
+            o.filters = filters;
+            o.id = id;
+            o.namespace = namespace;
+            o.replicationPolicies = replicationPolicies;
+            return o;
         }
     }
 }

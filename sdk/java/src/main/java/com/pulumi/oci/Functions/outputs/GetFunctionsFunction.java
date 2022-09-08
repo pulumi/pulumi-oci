@@ -19,126 +19,89 @@ public final class GetFunctionsFunction {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
      * 
      */
-    private final String applicationId;
+    private String applicationId;
     /**
      * @return The OCID of the compartment that contains the function.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the &#39;_&#39; (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{&#34;MY_FUNCTION_CONFIG&#34;: &#34;ConfVal&#34;}`
      * 
      */
-    private final Map<String,Object> config;
+    private Map<String,Object> config;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only functions with display names that match the display name string. Matching is exact.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return A filter to return only functions with the specified OCID.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
      */
-    private final String image;
+    private String image;
     /**
      * @return The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      * 
      */
-    private final String imageDigest;
+    private String imageDigest;
     /**
      * @return The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      * 
      */
-    private final String invokeEndpoint;
+    private String invokeEndpoint;
     /**
      * @return Maximum usable memory for the function (MiB).
      * 
      */
-    private final String memoryInMbs;
+    private String memoryInMbs;
     /**
      * @return Define the strategy for provisioned concurrency for the function.
      * 
      */
-    private final List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
+    private List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
     /**
      * @return A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Timeout for executions of the function. Value in seconds.
      * 
      */
-    private final Integer timeoutInSeconds;
+    private Integer timeoutInSeconds;
     /**
      * @return Define the tracing configuration for a function.
      * 
      */
-    private final List<GetFunctionsFunctionTraceConfig> traceConfigs;
+    private List<GetFunctionsFunctionTraceConfig> traceConfigs;
 
-    @CustomType.Constructor
-    private GetFunctionsFunction(
-        @CustomType.Parameter("applicationId") String applicationId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("config") Map<String,Object> config,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("image") String image,
-        @CustomType.Parameter("imageDigest") String imageDigest,
-        @CustomType.Parameter("invokeEndpoint") String invokeEndpoint,
-        @CustomType.Parameter("memoryInMbs") String memoryInMbs,
-        @CustomType.Parameter("provisionedConcurrencyConfigs") List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("timeoutInSeconds") Integer timeoutInSeconds,
-        @CustomType.Parameter("traceConfigs") List<GetFunctionsFunctionTraceConfig> traceConfigs) {
-        this.applicationId = applicationId;
-        this.compartmentId = compartmentId;
-        this.config = config;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.image = image;
-        this.imageDigest = imageDigest;
-        this.invokeEndpoint = invokeEndpoint;
-        this.memoryInMbs = memoryInMbs;
-        this.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.timeoutInSeconds = timeoutInSeconds;
-        this.traceConfigs = traceConfigs;
-    }
-
+    private GetFunctionsFunction() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
      * 
@@ -266,7 +229,7 @@ public final class GetFunctionsFunction {
     public static Builder builder(GetFunctionsFunction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String applicationId;
         private String compartmentId;
@@ -285,11 +248,7 @@ public final class GetFunctionsFunction {
         private String timeUpdated;
         private Integer timeoutInSeconds;
         private List<GetFunctionsFunctionTraceConfig> traceConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFunctionsFunction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationId = defaults.applicationId;
@@ -311,50 +270,62 @@ public final class GetFunctionsFunction {
     	      this.traceConfigs = defaults.traceConfigs;
         }
 
+        @CustomType.Setter
         public Builder applicationId(String applicationId) {
             this.applicationId = Objects.requireNonNull(applicationId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder config(Map<String,Object> config) {
             this.config = Objects.requireNonNull(config);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder image(String image) {
             this.image = Objects.requireNonNull(image);
             return this;
         }
+        @CustomType.Setter
         public Builder imageDigest(String imageDigest) {
             this.imageDigest = Objects.requireNonNull(imageDigest);
             return this;
         }
+        @CustomType.Setter
         public Builder invokeEndpoint(String invokeEndpoint) {
             this.invokeEndpoint = Objects.requireNonNull(invokeEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInMbs(String memoryInMbs) {
             this.memoryInMbs = Objects.requireNonNull(memoryInMbs);
             return this;
         }
+        @CustomType.Setter
         public Builder provisionedConcurrencyConfigs(List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs) {
             this.provisionedConcurrencyConfigs = Objects.requireNonNull(provisionedConcurrencyConfigs);
             return this;
@@ -362,30 +333,54 @@ public final class GetFunctionsFunction {
         public Builder provisionedConcurrencyConfigs(GetFunctionsFunctionProvisionedConcurrencyConfig... provisionedConcurrencyConfigs) {
             return provisionedConcurrencyConfigs(List.of(provisionedConcurrencyConfigs));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder traceConfigs(List<GetFunctionsFunctionTraceConfig> traceConfigs) {
             this.traceConfigs = Objects.requireNonNull(traceConfigs);
             return this;
         }
         public Builder traceConfigs(GetFunctionsFunctionTraceConfig... traceConfigs) {
             return traceConfigs(List.of(traceConfigs));
-        }        public GetFunctionsFunction build() {
-            return new GetFunctionsFunction(applicationId, compartmentId, config, definedTags, displayName, freeformTags, id, image, imageDigest, invokeEndpoint, memoryInMbs, provisionedConcurrencyConfigs, state, timeCreated, timeUpdated, timeoutInSeconds, traceConfigs);
+        }
+        public GetFunctionsFunction build() {
+            final var o = new GetFunctionsFunction();
+            o.applicationId = applicationId;
+            o.compartmentId = compartmentId;
+            o.config = config;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.image = image;
+            o.imageDigest = imageDigest;
+            o.invokeEndpoint = invokeEndpoint;
+            o.memoryInMbs = memoryInMbs;
+            o.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.timeoutInSeconds = timeoutInSeconds;
+            o.traceConfigs = traceConfigs;
+            return o;
         }
     }
 }

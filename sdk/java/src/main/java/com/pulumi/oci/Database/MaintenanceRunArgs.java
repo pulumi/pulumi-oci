@@ -153,6 +153,36 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) The target database server system software version for the patching operation.
+     * 
+     */
+    @Import(name="targetDbServerVersion")
+    private @Nullable Output<String> targetDbServerVersion;
+
+    /**
+     * @return (Updatable) The target database server system software version for the patching operation.
+     * 
+     */
+    public Optional<Output<String>> targetDbServerVersion() {
+        return Optional.ofNullable(this.targetDbServerVersion);
+    }
+
+    /**
+     * (Updatable) The target storage cell system software version for the patching operation.
+     * 
+     */
+    @Import(name="targetStorageServerVersion")
+    private @Nullable Output<String> targetStorageServerVersion;
+
+    /**
+     * @return (Updatable) The target storage cell system software version for the patching operation.
+     * 
+     */
+    public Optional<Output<String>> targetStorageServerVersion() {
+        return Optional.ofNullable(this.targetStorageServerVersion);
+    }
+
+    /**
      * (Updatable) The scheduled date and time of the maintenance run to update.
      * 
      */
@@ -179,6 +209,8 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
         this.maintenanceRunId = $.maintenanceRunId;
         this.patchId = $.patchId;
         this.patchingMode = $.patchingMode;
+        this.targetDbServerVersion = $.targetDbServerVersion;
+        this.targetStorageServerVersion = $.targetStorageServerVersion;
         this.timeScheduled = $.timeScheduled;
     }
 
@@ -387,6 +419,48 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder patchingMode(String patchingMode) {
             return patchingMode(Output.of(patchingMode));
+        }
+
+        /**
+         * @param targetDbServerVersion (Updatable) The target database server system software version for the patching operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDbServerVersion(@Nullable Output<String> targetDbServerVersion) {
+            $.targetDbServerVersion = targetDbServerVersion;
+            return this;
+        }
+
+        /**
+         * @param targetDbServerVersion (Updatable) The target database server system software version for the patching operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDbServerVersion(String targetDbServerVersion) {
+            return targetDbServerVersion(Output.of(targetDbServerVersion));
+        }
+
+        /**
+         * @param targetStorageServerVersion (Updatable) The target storage cell system software version for the patching operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetStorageServerVersion(@Nullable Output<String> targetStorageServerVersion) {
+            $.targetStorageServerVersion = targetStorageServerVersion;
+            return this;
+        }
+
+        /**
+         * @param targetStorageServerVersion (Updatable) The target storage cell system software version for the patching operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetStorageServerVersion(String targetStorageServerVersion) {
+            return targetStorageServerVersion(Output.of(targetStorageServerVersion));
         }
 
         /**

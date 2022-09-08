@@ -16,35 +16,24 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
      * @return (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
      * 
      */
-    private final @Nullable String capacityReservationId;
+    private @Nullable String capacityReservationId;
     /**
      * @return (Updatable) A list of fault domains in which to place nodes.
      * 
      */
-    private final @Nullable List<String> faultDomains;
+    private @Nullable List<String> faultDomains;
     /**
      * @return (Updatable) The OCID of the subnet in which to place nodes.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private NodePoolNodeConfigDetailsPlacementConfig(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("capacityReservationId") @Nullable String capacityReservationId,
-        @CustomType.Parameter("faultDomains") @Nullable List<String> faultDomains,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.availabilityDomain = availabilityDomain;
-        this.capacityReservationId = capacityReservationId;
-        this.faultDomains = faultDomains;
-        this.subnetId = subnetId;
-    }
-
+    private NodePoolNodeConfigDetailsPlacementConfig() {}
     /**
      * @return (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
      * 
@@ -81,17 +70,13 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
     public static Builder builder(NodePoolNodeConfigDetailsPlacementConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private @Nullable String capacityReservationId;
         private @Nullable List<String> faultDomains;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NodePoolNodeConfigDetailsPlacementConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -100,14 +85,17 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder capacityReservationId(@Nullable String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             return this;
         }
+        @CustomType.Setter
         public Builder faultDomains(@Nullable List<String> faultDomains) {
             this.faultDomains = faultDomains;
             return this;
@@ -115,11 +103,18 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
         public Builder faultDomains(String... faultDomains) {
             return faultDomains(List.of(faultDomains));
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public NodePoolNodeConfigDetailsPlacementConfig build() {
-            return new NodePoolNodeConfigDetailsPlacementConfig(availabilityDomain, capacityReservationId, faultDomains, subnetId);
+        }
+        public NodePoolNodeConfigDetailsPlacementConfig build() {
+            final var o = new NodePoolNodeConfigDetailsPlacementConfig();
+            o.availabilityDomain = availabilityDomain;
+            o.capacityReservationId = capacityReservationId;
+            o.faultDomains = faultDomains;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

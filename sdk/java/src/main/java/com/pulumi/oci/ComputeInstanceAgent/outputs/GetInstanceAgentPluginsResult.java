@@ -14,48 +14,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceAgentPluginsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetInstanceAgentPluginsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetInstanceAgentPluginsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of instance_agent_plugins.
      * 
      */
-    private final List<GetInstanceAgentPluginsInstanceAgentPlugin> instanceAgentPlugins;
-    private final String instanceagentId;
+    private List<GetInstanceAgentPluginsInstanceAgentPlugin> instanceAgentPlugins;
+    private String instanceagentId;
     /**
      * @return The plugin name
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
 
-    @CustomType.Constructor
-    private GetInstanceAgentPluginsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetInstanceAgentPluginsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceAgentPlugins") List<GetInstanceAgentPluginsInstanceAgentPlugin> instanceAgentPlugins,
-        @CustomType.Parameter("instanceagentId") String instanceagentId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("status") @Nullable String status) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.instanceAgentPlugins = instanceAgentPlugins;
-        this.instanceagentId = instanceagentId;
-        this.name = name;
-        this.status = status;
-    }
-
+    private GetInstanceAgentPluginsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -101,7 +84,7 @@ public final class GetInstanceAgentPluginsResult {
     public static Builder builder(GetInstanceAgentPluginsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetInstanceAgentPluginsFilter> filters;
@@ -110,11 +93,7 @@ public final class GetInstanceAgentPluginsResult {
         private String instanceagentId;
         private @Nullable String name;
         private @Nullable String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceAgentPluginsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +105,12 @@ public final class GetInstanceAgentPluginsResult {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInstanceAgentPluginsFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,10 +118,12 @@ public final class GetInstanceAgentPluginsResult {
         public Builder filters(GetInstanceAgentPluginsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceAgentPlugins(List<GetInstanceAgentPluginsInstanceAgentPlugin> instanceAgentPlugins) {
             this.instanceAgentPlugins = Objects.requireNonNull(instanceAgentPlugins);
             return this;
@@ -148,19 +131,31 @@ public final class GetInstanceAgentPluginsResult {
         public Builder instanceAgentPlugins(GetInstanceAgentPluginsInstanceAgentPlugin... instanceAgentPlugins) {
             return instanceAgentPlugins(List.of(instanceAgentPlugins));
         }
+        @CustomType.Setter
         public Builder instanceagentId(String instanceagentId) {
             this.instanceagentId = Objects.requireNonNull(instanceagentId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
-        }        public GetInstanceAgentPluginsResult build() {
-            return new GetInstanceAgentPluginsResult(compartmentId, filters, id, instanceAgentPlugins, instanceagentId, name, status);
+        }
+        public GetInstanceAgentPluginsResult build() {
+            final var o = new GetInstanceAgentPluginsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.instanceAgentPlugins = instanceAgentPlugins;
+            o.instanceagentId = instanceagentId;
+            o.name = name;
+            o.status = status;
+            return o;
         }
     }
 }

@@ -15,13 +15,9 @@ public final class AppAccelerationPolicyResponseCompressionPolicy {
      * @return (Updatable) An object that specifies the gzip compression policy.
      * 
      */
-    private final @Nullable AppAccelerationPolicyResponseCompressionPolicyGzipCompression gzipCompression;
+    private @Nullable AppAccelerationPolicyResponseCompressionPolicyGzipCompression gzipCompression;
 
-    @CustomType.Constructor
-    private AppAccelerationPolicyResponseCompressionPolicy(@CustomType.Parameter("gzipCompression") @Nullable AppAccelerationPolicyResponseCompressionPolicyGzipCompression gzipCompression) {
-        this.gzipCompression = gzipCompression;
-    }
-
+    private AppAccelerationPolicyResponseCompressionPolicy() {}
     /**
      * @return (Updatable) An object that specifies the gzip compression policy.
      * 
@@ -37,24 +33,24 @@ public final class AppAccelerationPolicyResponseCompressionPolicy {
     public static Builder builder(AppAccelerationPolicyResponseCompressionPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable AppAccelerationPolicyResponseCompressionPolicyGzipCompression gzipCompression;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppAccelerationPolicyResponseCompressionPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.gzipCompression = defaults.gzipCompression;
         }
 
+        @CustomType.Setter
         public Builder gzipCompression(@Nullable AppAccelerationPolicyResponseCompressionPolicyGzipCompression gzipCompression) {
             this.gzipCompression = gzipCompression;
             return this;
-        }        public AppAccelerationPolicyResponseCompressionPolicy build() {
-            return new AppAccelerationPolicyResponseCompressionPolicy(gzipCompression);
+        }
+        public AppAccelerationPolicyResponseCompressionPolicy build() {
+            final var o = new AppAccelerationPolicyResponseCompressionPolicy();
+            o.gzipCompression = gzipCompression;
+            return o;
         }
     }
 }

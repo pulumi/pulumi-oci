@@ -13,21 +13,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
      * @return (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private final String from;
+    private String from;
     /**
      * @return (Updatable) The new name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private final String to;
+    private String to;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem(
-        @CustomType.Parameter("from") String from,
-        @CustomType.Parameter("to") String to) {
-        this.from = from;
-        this.to = to;
-    }
-
+    private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem() {}
     /**
      * @return (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
@@ -50,30 +43,32 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
     public static Builder builder(DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String from;
         private String to;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.from = defaults.from;
     	      this.to = defaults.to;
         }
 
+        @CustomType.Setter
         public Builder from(String from) {
             this.from = Objects.requireNonNull(from);
             return this;
         }
+        @CustomType.Setter
         public Builder to(String to) {
             this.to = Objects.requireNonNull(to);
             return this;
-        }        public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem build() {
-            return new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem(from, to);
+        }
+        public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem build() {
+            final var o = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem();
+            o.from = from;
+            o.to = to;
+            return o;
         }
     }
 }

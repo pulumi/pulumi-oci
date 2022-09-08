@@ -21,111 +21,76 @@ public final class GetPublicationsPublication {
      * @return The unique identifier for the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The model for upload data for images and icons.
      * 
      */
-    private final List<GetPublicationsPublicationIcon> icons;
+    private List<GetPublicationsPublicationIcon> icons;
     /**
      * @return The unique identifier for the publication in Marketplace.
      * 
      */
-    private final String id;
-    private final Boolean isAgreementAcknowledged;
+    private String id;
+    private Boolean isAgreementAcknowledged;
     /**
      * @return The type of the listing.
      * 
      */
-    private final String listingType;
+    private String listingType;
     /**
      * @return A long description of the publication to use in the listing.
      * 
      */
-    private final String longDescription;
+    private String longDescription;
     /**
      * @return The name of the publication.
      * 
      */
-    private final String name;
-    private final List<GetPublicationsPublicationPackageDetail> packageDetails;
+    private String name;
+    private List<GetPublicationsPublicationPackageDetail> packageDetails;
     /**
      * @return The listing&#39;s package type.
      * 
      */
-    private final String packageType;
+    private String packageType;
     /**
      * @return A short description of the publication to use in the listing.
      * 
      */
-    private final String shortDescription;
+    private String shortDescription;
     /**
      * @return The lifecycle state of the publication.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Contact information for getting support from the publisher for the listing.
      * 
      */
-    private final List<GetPublicationsPublicationSupportContact> supportContacts;
+    private List<GetPublicationsPublicationSupportContact> supportContacts;
     /**
      * @return The list of operating systems supported by the listing.
      * 
      */
-    private final List<GetPublicationsPublicationSupportedOperatingSystem> supportedOperatingSystems;
+    private List<GetPublicationsPublicationSupportedOperatingSystem> supportedOperatingSystems;
     /**
      * @return The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetPublicationsPublication(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("icons") List<GetPublicationsPublicationIcon> icons,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAgreementAcknowledged") Boolean isAgreementAcknowledged,
-        @CustomType.Parameter("listingType") String listingType,
-        @CustomType.Parameter("longDescription") String longDescription,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("packageDetails") List<GetPublicationsPublicationPackageDetail> packageDetails,
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("shortDescription") String shortDescription,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("supportContacts") List<GetPublicationsPublicationSupportContact> supportContacts,
-        @CustomType.Parameter("supportedOperatingSystems") List<GetPublicationsPublicationSupportedOperatingSystem> supportedOperatingSystems,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.icons = icons;
-        this.id = id;
-        this.isAgreementAcknowledged = isAgreementAcknowledged;
-        this.listingType = listingType;
-        this.longDescription = longDescription;
-        this.name = name;
-        this.packageDetails = packageDetails;
-        this.packageType = packageType;
-        this.shortDescription = shortDescription;
-        this.state = state;
-        this.supportContacts = supportContacts;
-        this.supportedOperatingSystems = supportedOperatingSystems;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetPublicationsPublication() {}
     /**
      * @return The unique identifier for the compartment.
      * 
@@ -238,7 +203,7 @@ public final class GetPublicationsPublication {
     public static Builder builder(GetPublicationsPublication defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -256,11 +221,7 @@ public final class GetPublicationsPublication {
         private List<GetPublicationsPublicationSupportContact> supportContacts;
         private List<GetPublicationsPublicationSupportedOperatingSystem> supportedOperatingSystems;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationsPublication defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -281,18 +242,22 @@ public final class GetPublicationsPublication {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder icons(List<GetPublicationsPublicationIcon> icons) {
             this.icons = Objects.requireNonNull(icons);
             return this;
@@ -300,26 +265,32 @@ public final class GetPublicationsPublication {
         public Builder icons(GetPublicationsPublicationIcon... icons) {
             return icons(List.of(icons));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAgreementAcknowledged(Boolean isAgreementAcknowledged) {
             this.isAgreementAcknowledged = Objects.requireNonNull(isAgreementAcknowledged);
             return this;
         }
+        @CustomType.Setter
         public Builder listingType(String listingType) {
             this.listingType = Objects.requireNonNull(listingType);
             return this;
         }
+        @CustomType.Setter
         public Builder longDescription(String longDescription) {
             this.longDescription = Objects.requireNonNull(longDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder packageDetails(List<GetPublicationsPublicationPackageDetail> packageDetails) {
             this.packageDetails = Objects.requireNonNull(packageDetails);
             return this;
@@ -327,18 +298,22 @@ public final class GetPublicationsPublication {
         public Builder packageDetails(GetPublicationsPublicationPackageDetail... packageDetails) {
             return packageDetails(List.of(packageDetails));
         }
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder shortDescription(String shortDescription) {
             this.shortDescription = Objects.requireNonNull(shortDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder supportContacts(List<GetPublicationsPublicationSupportContact> supportContacts) {
             this.supportContacts = Objects.requireNonNull(supportContacts);
             return this;
@@ -346,6 +321,7 @@ public final class GetPublicationsPublication {
         public Builder supportContacts(GetPublicationsPublicationSupportContact... supportContacts) {
             return supportContacts(List.of(supportContacts));
         }
+        @CustomType.Setter
         public Builder supportedOperatingSystems(List<GetPublicationsPublicationSupportedOperatingSystem> supportedOperatingSystems) {
             this.supportedOperatingSystems = Objects.requireNonNull(supportedOperatingSystems);
             return this;
@@ -353,11 +329,30 @@ public final class GetPublicationsPublication {
         public Builder supportedOperatingSystems(GetPublicationsPublicationSupportedOperatingSystem... supportedOperatingSystems) {
             return supportedOperatingSystems(List.of(supportedOperatingSystems));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetPublicationsPublication build() {
-            return new GetPublicationsPublication(compartmentId, definedTags, freeformTags, icons, id, isAgreementAcknowledged, listingType, longDescription, name, packageDetails, packageType, shortDescription, state, supportContacts, supportedOperatingSystems, timeCreated);
+        }
+        public GetPublicationsPublication build() {
+            final var o = new GetPublicationsPublication();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.icons = icons;
+            o.id = id;
+            o.isAgreementAcknowledged = isAgreementAcknowledged;
+            o.listingType = listingType;
+            o.longDescription = longDescription;
+            o.name = name;
+            o.packageDetails = packageDetails;
+            o.packageType = packageType;
+            o.shortDescription = shortDescription;
+            o.state = state;
+            o.supportContacts = supportContacts;
+            o.supportedOperatingSystems = supportedOperatingSystems;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

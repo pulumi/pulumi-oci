@@ -15,28 +15,19 @@ public final class GetDeploymentDeploymentExecutionProgress {
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    private final Map<String,Object> deployStageExecutionProgress;
+    private Map<String,Object> deployStageExecutionProgress;
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeFinished;
+    private String timeFinished;
     /**
      * @return Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
 
-    @CustomType.Constructor
-    private GetDeploymentDeploymentExecutionProgress(
-        @CustomType.Parameter("deployStageExecutionProgress") Map<String,Object> deployStageExecutionProgress,
-        @CustomType.Parameter("timeFinished") String timeFinished,
-        @CustomType.Parameter("timeStarted") String timeStarted) {
-        this.deployStageExecutionProgress = deployStageExecutionProgress;
-        this.timeFinished = timeFinished;
-        this.timeStarted = timeStarted;
-    }
-
+    private GetDeploymentDeploymentExecutionProgress() {}
     /**
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
@@ -66,16 +57,12 @@ public final class GetDeploymentDeploymentExecutionProgress {
     public static Builder builder(GetDeploymentDeploymentExecutionProgress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> deployStageExecutionProgress;
         private String timeFinished;
         private String timeStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentDeploymentExecutionProgress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deployStageExecutionProgress = defaults.deployStageExecutionProgress;
@@ -83,19 +70,27 @@ public final class GetDeploymentDeploymentExecutionProgress {
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
         public Builder deployStageExecutionProgress(Map<String,Object> deployStageExecutionProgress) {
             this.deployStageExecutionProgress = Objects.requireNonNull(deployStageExecutionProgress);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
             this.timeFinished = Objects.requireNonNull(timeFinished);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
-        }        public GetDeploymentDeploymentExecutionProgress build() {
-            return new GetDeploymentDeploymentExecutionProgress(deployStageExecutionProgress, timeFinished, timeStarted);
+        }
+        public GetDeploymentDeploymentExecutionProgress build() {
+            final var o = new GetDeploymentDeploymentExecutionProgress();
+            o.deployStageExecutionProgress = deployStageExecutionProgress;
+            o.timeFinished = timeFinished;
+            o.timeStarted = timeStarted;
+            return o;
         }
     }
 }

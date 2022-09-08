@@ -5,7 +5,9 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DevOps.inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -30,6 +32,13 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs exte
         return Optional.ofNullable(this.baseRef);
     }
 
+    @Import(name="fileFilters")
+    private @Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs>> fileFilters;
+
+    public Optional<Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs>>> fileFilters() {
+        return Optional.ofNullable(this.fileFilters);
+    }
+
     /**
      * Branch for push event; source branch for pull requests.
      * 
@@ -49,6 +58,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs exte
 
     private BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs $) {
         this.baseRef = $.baseRef;
+        this.fileFilters = $.fileFilters;
         this.headRef = $.headRef;
     }
 
@@ -89,6 +99,19 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs exte
          */
         public Builder baseRef(String baseRef) {
             return baseRef(Output.of(baseRef));
+        }
+
+        public Builder fileFilters(@Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs>> fileFilters) {
+            $.fileFilters = fileFilters;
+            return this;
+        }
+
+        public Builder fileFilters(List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs> fileFilters) {
+            return fileFilters(Output.of(fileFilters));
+        }
+
+        public Builder fileFilters(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs... fileFilters) {
+            return fileFilters(List.of(fileFilters));
         }
 
         /**

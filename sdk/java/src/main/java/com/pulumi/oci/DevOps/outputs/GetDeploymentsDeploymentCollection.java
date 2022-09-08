@@ -14,13 +14,9 @@ public final class GetDeploymentsDeploymentCollection {
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionItem> items;
+    private List<GetDeploymentsDeploymentCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollection(@CustomType.Parameter("items") List<GetDeploymentsDeploymentCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDeploymentsDeploymentCollection() {}
     /**
      * @return A list of stage predecessors for a stage.
      * 
@@ -36,27 +32,27 @@ public final class GetDeploymentsDeploymentCollection {
     public static Builder builder(GetDeploymentsDeploymentCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentsDeploymentCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeploymentsDeploymentCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeploymentsDeploymentCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDeploymentsDeploymentCollection build() {
-            return new GetDeploymentsDeploymentCollection(items);
+        }
+        public GetDeploymentsDeploymentCollection build() {
+            final var o = new GetDeploymentsDeploymentCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -16,42 +16,29 @@ public final class GetDatabaseInsightConnectionDetail {
      * @return Name of the listener host that will be used to create the connect string to the database.
      * 
      */
-    private final String hostName;
+    private String hostName;
     /**
      * @return List of hosts and port for private endpoint accessed database resource.
      * 
      */
-    private final List<GetDatabaseInsightConnectionDetailHost> hosts;
+    private List<GetDatabaseInsightConnectionDetailHost> hosts;
     /**
      * @return Listener port number used for connection requests.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return Protocol used for connection requests for private endpoint accssed database resource.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return Database service name used for connection requests.
      * 
      */
-    private final String serviceName;
+    private String serviceName;
 
-    @CustomType.Constructor
-    private GetDatabaseInsightConnectionDetail(
-        @CustomType.Parameter("hostName") String hostName,
-        @CustomType.Parameter("hosts") List<GetDatabaseInsightConnectionDetailHost> hosts,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("serviceName") String serviceName) {
-        this.hostName = hostName;
-        this.hosts = hosts;
-        this.port = port;
-        this.protocol = protocol;
-        this.serviceName = serviceName;
-    }
-
+    private GetDatabaseInsightConnectionDetail() {}
     /**
      * @return Name of the listener host that will be used to create the connect string to the database.
      * 
@@ -95,18 +82,14 @@ public final class GetDatabaseInsightConnectionDetail {
     public static Builder builder(GetDatabaseInsightConnectionDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostName;
         private List<GetDatabaseInsightConnectionDetailHost> hosts;
         private Integer port;
         private String protocol;
         private String serviceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseInsightConnectionDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostName = defaults.hostName;
@@ -116,10 +99,12 @@ public final class GetDatabaseInsightConnectionDetail {
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
         public Builder hostName(String hostName) {
             this.hostName = Objects.requireNonNull(hostName);
             return this;
         }
+        @CustomType.Setter
         public Builder hosts(List<GetDatabaseInsightConnectionDetailHost> hosts) {
             this.hosts = Objects.requireNonNull(hosts);
             return this;
@@ -127,19 +112,29 @@ public final class GetDatabaseInsightConnectionDetail {
         public Builder hosts(GetDatabaseInsightConnectionDetailHost... hosts) {
             return hosts(List.of(hosts));
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(String serviceName) {
             this.serviceName = Objects.requireNonNull(serviceName);
             return this;
-        }        public GetDatabaseInsightConnectionDetail build() {
-            return new GetDatabaseInsightConnectionDetail(hostName, hosts, port, protocol, serviceName);
+        }
+        public GetDatabaseInsightConnectionDetail build() {
+            final var o = new GetDatabaseInsightConnectionDetail();
+            o.hostName = hostName;
+            o.hosts = hosts;
+            o.port = port;
+            o.protocol = protocol;
+            o.serviceName = serviceName;
+            return o;
         }
     }
 }

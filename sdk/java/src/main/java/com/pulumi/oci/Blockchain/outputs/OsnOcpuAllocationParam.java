@@ -13,13 +13,9 @@ public final class OsnOcpuAllocationParam {
      * @return (Updatable) Number of OCPU allocation
      * 
      */
-    private final Double ocpuAllocationNumber;
+    private Double ocpuAllocationNumber;
 
-    @CustomType.Constructor
-    private OsnOcpuAllocationParam(@CustomType.Parameter("ocpuAllocationNumber") Double ocpuAllocationNumber) {
-        this.ocpuAllocationNumber = ocpuAllocationNumber;
-    }
-
+    private OsnOcpuAllocationParam() {}
     /**
      * @return (Updatable) Number of OCPU allocation
      * 
@@ -35,24 +31,24 @@ public final class OsnOcpuAllocationParam {
     public static Builder builder(OsnOcpuAllocationParam defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double ocpuAllocationNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(OsnOcpuAllocationParam defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ocpuAllocationNumber = defaults.ocpuAllocationNumber;
         }
 
+        @CustomType.Setter
         public Builder ocpuAllocationNumber(Double ocpuAllocationNumber) {
             this.ocpuAllocationNumber = Objects.requireNonNull(ocpuAllocationNumber);
             return this;
-        }        public OsnOcpuAllocationParam build() {
-            return new OsnOcpuAllocationParam(ocpuAllocationNumber);
+        }
+        public OsnOcpuAllocationParam build() {
+            final var o = new OsnOcpuAllocationParam();
+            o.ocpuAllocationNumber = ocpuAllocationNumber;
+            return o;
         }
     }
 }

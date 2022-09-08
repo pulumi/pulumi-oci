@@ -18,59 +18,40 @@ public final class GetBootVolumeBackupsResult {
      * @return The list of boot_volume_backups.
      * 
      */
-    private final List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups;
+    private List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups;
     /**
      * @return The OCID of the boot volume.
      * 
      */
-    private final @Nullable String bootVolumeId;
+    private @Nullable String bootVolumeId;
     /**
      * @return The OCID of the compartment that contains the boot volume backup.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetBootVolumeBackupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetBootVolumeBackupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the source boot volume backup.
      * 
      */
-    private final @Nullable String sourceBootVolumeBackupId;
+    private @Nullable String sourceBootVolumeBackupId;
     /**
      * @return The current state of a boot volume backup.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetBootVolumeBackupsResult(
-        @CustomType.Parameter("bootVolumeBackups") List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups,
-        @CustomType.Parameter("bootVolumeId") @Nullable String bootVolumeId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetBootVolumeBackupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("sourceBootVolumeBackupId") @Nullable String sourceBootVolumeBackupId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.bootVolumeBackups = bootVolumeBackups;
-        this.bootVolumeId = bootVolumeId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.sourceBootVolumeBackupId = sourceBootVolumeBackupId;
-        this.state = state;
-    }
-
+    private GetBootVolumeBackupsResult() {}
     /**
      * @return The list of boot_volume_backups.
      * 
@@ -131,7 +112,7 @@ public final class GetBootVolumeBackupsResult {
     public static Builder builder(GetBootVolumeBackupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups;
         private @Nullable String bootVolumeId;
@@ -141,11 +122,7 @@ public final class GetBootVolumeBackupsResult {
         private String id;
         private @Nullable String sourceBootVolumeBackupId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBootVolumeBackupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeBackups = defaults.bootVolumeBackups;
@@ -158,6 +135,7 @@ public final class GetBootVolumeBackupsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder bootVolumeBackups(List<GetBootVolumeBackupsBootVolumeBackup> bootVolumeBackups) {
             this.bootVolumeBackups = Objects.requireNonNull(bootVolumeBackups);
             return this;
@@ -165,18 +143,22 @@ public final class GetBootVolumeBackupsResult {
         public Builder bootVolumeBackups(GetBootVolumeBackupsBootVolumeBackup... bootVolumeBackups) {
             return bootVolumeBackups(List.of(bootVolumeBackups));
         }
+        @CustomType.Setter
         public Builder bootVolumeId(@Nullable String bootVolumeId) {
             this.bootVolumeId = bootVolumeId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBootVolumeBackupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -184,19 +166,32 @@ public final class GetBootVolumeBackupsResult {
         public Builder filters(GetBootVolumeBackupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceBootVolumeBackupId(@Nullable String sourceBootVolumeBackupId) {
             this.sourceBootVolumeBackupId = sourceBootVolumeBackupId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetBootVolumeBackupsResult build() {
-            return new GetBootVolumeBackupsResult(bootVolumeBackups, bootVolumeId, compartmentId, displayName, filters, id, sourceBootVolumeBackupId, state);
+        }
+        public GetBootVolumeBackupsResult build() {
+            final var o = new GetBootVolumeBackupsResult();
+            o.bootVolumeBackups = bootVolumeBackups;
+            o.bootVolumeId = bootVolumeId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.sourceBootVolumeBackupId = sourceBootVolumeBackupId;
+            o.state = state;
+            return o;
         }
     }
 }

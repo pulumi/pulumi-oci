@@ -16,21 +16,14 @@ public final class DatasetDatasetFormatDetails {
      * @return It defines the format type of text files.
      * 
      */
-    private final String formatType;
+    private String formatType;
     /**
      * @return Metadata for files with text content.
      * 
      */
-    private final @Nullable DatasetDatasetFormatDetailsTextFileTypeMetadata textFileTypeMetadata;
+    private @Nullable DatasetDatasetFormatDetailsTextFileTypeMetadata textFileTypeMetadata;
 
-    @CustomType.Constructor
-    private DatasetDatasetFormatDetails(
-        @CustomType.Parameter("formatType") String formatType,
-        @CustomType.Parameter("textFileTypeMetadata") @Nullable DatasetDatasetFormatDetailsTextFileTypeMetadata textFileTypeMetadata) {
-        this.formatType = formatType;
-        this.textFileTypeMetadata = textFileTypeMetadata;
-    }
-
+    private DatasetDatasetFormatDetails() {}
     /**
      * @return It defines the format type of text files.
      * 
@@ -53,30 +46,32 @@ public final class DatasetDatasetFormatDetails {
     public static Builder builder(DatasetDatasetFormatDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String formatType;
         private @Nullable DatasetDatasetFormatDetailsTextFileTypeMetadata textFileTypeMetadata;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatasetDatasetFormatDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.formatType = defaults.formatType;
     	      this.textFileTypeMetadata = defaults.textFileTypeMetadata;
         }
 
+        @CustomType.Setter
         public Builder formatType(String formatType) {
             this.formatType = Objects.requireNonNull(formatType);
             return this;
         }
+        @CustomType.Setter
         public Builder textFileTypeMetadata(@Nullable DatasetDatasetFormatDetailsTextFileTypeMetadata textFileTypeMetadata) {
             this.textFileTypeMetadata = textFileTypeMetadata;
             return this;
-        }        public DatasetDatasetFormatDetails build() {
-            return new DatasetDatasetFormatDetails(formatType, textFileTypeMetadata);
+        }
+        public DatasetDatasetFormatDetails build() {
+            final var o = new DatasetDatasetFormatDetails();
+            o.formatType = formatType;
+            o.textFileTypeMetadata = textFileTypeMetadata;
+            return o;
         }
     }
 }

@@ -13,42 +13,29 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
      * @return The display name for the Java family.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Link to access the documentation for the release.
      * 
      */
-    private final String docUrl;
+    private String docUrl;
     /**
      * @return The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private final String endOfSupportLifeDate;
+    private String endOfSupportLifeDate;
     /**
      * @return The version identifier for the Java family.
      * 
      */
-    private final String familyVersion;
+    private String familyVersion;
     /**
      * @return This indicates the support category for the Java release family.
      * 
      */
-    private final String supportType;
+    private String supportType;
 
-    @CustomType.Constructor
-    private GetJavaFamiliesJavaFamilyCollectionItem(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("docUrl") String docUrl,
-        @CustomType.Parameter("endOfSupportLifeDate") String endOfSupportLifeDate,
-        @CustomType.Parameter("familyVersion") String familyVersion,
-        @CustomType.Parameter("supportType") String supportType) {
-        this.displayName = displayName;
-        this.docUrl = docUrl;
-        this.endOfSupportLifeDate = endOfSupportLifeDate;
-        this.familyVersion = familyVersion;
-        this.supportType = supportType;
-    }
-
+    private GetJavaFamiliesJavaFamilyCollectionItem() {}
     /**
      * @return The display name for the Java family.
      * 
@@ -92,18 +79,14 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
     public static Builder builder(GetJavaFamiliesJavaFamilyCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String docUrl;
         private String endOfSupportLifeDate;
         private String familyVersion;
         private String supportType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJavaFamiliesJavaFamilyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -113,27 +96,39 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
     	      this.supportType = defaults.supportType;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder docUrl(String docUrl) {
             this.docUrl = Objects.requireNonNull(docUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder endOfSupportLifeDate(String endOfSupportLifeDate) {
             this.endOfSupportLifeDate = Objects.requireNonNull(endOfSupportLifeDate);
             return this;
         }
+        @CustomType.Setter
         public Builder familyVersion(String familyVersion) {
             this.familyVersion = Objects.requireNonNull(familyVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder supportType(String supportType) {
             this.supportType = Objects.requireNonNull(supportType);
             return this;
-        }        public GetJavaFamiliesJavaFamilyCollectionItem build() {
-            return new GetJavaFamiliesJavaFamilyCollectionItem(displayName, docUrl, endOfSupportLifeDate, familyVersion, supportType);
+        }
+        public GetJavaFamiliesJavaFamilyCollectionItem build() {
+            final var o = new GetJavaFamiliesJavaFamilyCollectionItem();
+            o.displayName = displayName;
+            o.docUrl = docUrl;
+            o.endOfSupportLifeDate = endOfSupportLifeDate;
+            o.familyVersion = familyVersion;
+            o.supportType = supportType;
+            return o;
         }
     }
 }

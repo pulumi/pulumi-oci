@@ -19,69 +19,46 @@ public final class GetHostInsightsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    private final @Nullable String enterpriseManagerBridgeId;
+    private @Nullable String enterpriseManagerBridgeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * 
      */
-    private final @Nullable String exadataInsightId;
-    private final @Nullable List<GetHostInsightsFilter> filters;
+    private @Nullable String exadataInsightId;
+    private @Nullable List<GetHostInsightsFilter> filters;
     /**
      * @return The list of host_insight_summary_collection.
      * 
      */
-    private final List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections;
+    private List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections;
     /**
      * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
-    private final @Nullable List<String> hostTypes;
+    private @Nullable List<String> hostTypes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the host.
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
     /**
      * @return Indicates the status of a host insight in Operations Insights
      * 
      */
-    private final @Nullable List<String> statuses;
+    private @Nullable List<String> statuses;
 
-    @CustomType.Constructor
-    private GetHostInsightsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("enterpriseManagerBridgeId") @Nullable String enterpriseManagerBridgeId,
-        @CustomType.Parameter("exadataInsightId") @Nullable String exadataInsightId,
-        @CustomType.Parameter("filters") @Nullable List<GetHostInsightsFilter> filters,
-        @CustomType.Parameter("hostInsightSummaryCollections") List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections,
-        @CustomType.Parameter("hostTypes") @Nullable List<String> hostTypes,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("states") @Nullable List<String> states,
-        @CustomType.Parameter("statuses") @Nullable List<String> statuses) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
-        this.exadataInsightId = exadataInsightId;
-        this.filters = filters;
-        this.hostInsightSummaryCollections = hostInsightSummaryCollections;
-        this.hostTypes = hostTypes;
-        this.id = id;
-        this.states = states;
-        this.statuses = statuses;
-    }
-
+    private GetHostInsightsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -152,7 +129,7 @@ public final class GetHostInsightsResult {
     public static Builder builder(GetHostInsightsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -164,11 +141,7 @@ public final class GetHostInsightsResult {
         private @Nullable String id;
         private @Nullable List<String> states;
         private @Nullable List<String> statuses;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHostInsightsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -183,22 +156,27 @@ public final class GetHostInsightsResult {
     	      this.statuses = defaults.statuses;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder enterpriseManagerBridgeId(@Nullable String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
+        @CustomType.Setter
         public Builder exadataInsightId(@Nullable String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetHostInsightsFilter> filters) {
             this.filters = filters;
             return this;
@@ -206,6 +184,7 @@ public final class GetHostInsightsResult {
         public Builder filters(GetHostInsightsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder hostInsightSummaryCollections(List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections) {
             this.hostInsightSummaryCollections = Objects.requireNonNull(hostInsightSummaryCollections);
             return this;
@@ -213,6 +192,7 @@ public final class GetHostInsightsResult {
         public Builder hostInsightSummaryCollections(GetHostInsightsHostInsightSummaryCollection... hostInsightSummaryCollections) {
             return hostInsightSummaryCollections(List.of(hostInsightSummaryCollections));
         }
+        @CustomType.Setter
         public Builder hostTypes(@Nullable List<String> hostTypes) {
             this.hostTypes = hostTypes;
             return this;
@@ -220,10 +200,12 @@ public final class GetHostInsightsResult {
         public Builder hostTypes(String... hostTypes) {
             return hostTypes(List.of(hostTypes));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
@@ -231,14 +213,27 @@ public final class GetHostInsightsResult {
         public Builder states(String... states) {
             return states(List.of(states));
         }
+        @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
             this.statuses = statuses;
             return this;
         }
         public Builder statuses(String... statuses) {
             return statuses(List.of(statuses));
-        }        public GetHostInsightsResult build() {
-            return new GetHostInsightsResult(compartmentId, compartmentIdInSubtree, enterpriseManagerBridgeId, exadataInsightId, filters, hostInsightSummaryCollections, hostTypes, id, states, statuses);
+        }
+        public GetHostInsightsResult build() {
+            final var o = new GetHostInsightsResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            o.exadataInsightId = exadataInsightId;
+            o.filters = filters;
+            o.hostInsightSummaryCollections = hostInsightSummaryCollections;
+            o.hostTypes = hostTypes;
+            o.id = id;
+            o.states = states;
+            o.statuses = statuses;
+            return o;
         }
     }
 }

@@ -11,28 +11,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceResult {
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return (Computed) The name of the user&#39;s namespace.
      * 
      */
-    private final String namespace;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetNamespaceResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.namespace = namespace;
-    }
-
+    private GetNamespaceResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -58,16 +49,12 @@ public final class GetNamespaceResult {
     public static Builder builder(GetNamespaceResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private String id;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNamespaceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -75,19 +62,27 @@ public final class GetNamespaceResult {
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetNamespaceResult build() {
-            return new GetNamespaceResult(compartmentId, id, namespace);
+        }
+        public GetNamespaceResult build() {
+            final var o = new GetNamespaceResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

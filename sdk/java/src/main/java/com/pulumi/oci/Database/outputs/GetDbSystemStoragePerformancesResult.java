@@ -18,34 +18,21 @@ public final class GetDbSystemStoragePerformancesResult {
      * @return The list of db_system_storage_performances.
      * 
      */
-    private final List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances;
-    private final @Nullable List<GetDbSystemStoragePerformancesFilter> filters;
+    private List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances;
+    private @Nullable List<GetDbSystemStoragePerformancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return ShapeType of the DbSystems,INTEL or AMD
      * 
      */
-    private final @Nullable String shapeType;
-    private final String storageManagement;
+    private @Nullable String shapeType;
+    private String storageManagement;
 
-    @CustomType.Constructor
-    private GetDbSystemStoragePerformancesResult(
-        @CustomType.Parameter("dbSystemStoragePerformances") List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances,
-        @CustomType.Parameter("filters") @Nullable List<GetDbSystemStoragePerformancesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("shapeType") @Nullable String shapeType,
-        @CustomType.Parameter("storageManagement") String storageManagement) {
-        this.dbSystemStoragePerformances = dbSystemStoragePerformances;
-        this.filters = filters;
-        this.id = id;
-        this.shapeType = shapeType;
-        this.storageManagement = storageManagement;
-    }
-
+    private GetDbSystemStoragePerformancesResult() {}
     /**
      * @return The list of db_system_storage_performances.
      * 
@@ -81,18 +68,14 @@ public final class GetDbSystemStoragePerformancesResult {
     public static Builder builder(GetDbSystemStoragePerformancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances;
         private @Nullable List<GetDbSystemStoragePerformancesFilter> filters;
         private String id;
         private @Nullable String shapeType;
         private String storageManagement;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemStoragePerformancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbSystemStoragePerformances = defaults.dbSystemStoragePerformances;
@@ -102,6 +85,7 @@ public final class GetDbSystemStoragePerformancesResult {
     	      this.storageManagement = defaults.storageManagement;
         }
 
+        @CustomType.Setter
         public Builder dbSystemStoragePerformances(List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances) {
             this.dbSystemStoragePerformances = Objects.requireNonNull(dbSystemStoragePerformances);
             return this;
@@ -109,6 +93,7 @@ public final class GetDbSystemStoragePerformancesResult {
         public Builder dbSystemStoragePerformances(GetDbSystemStoragePerformancesDbSystemStoragePerformance... dbSystemStoragePerformances) {
             return dbSystemStoragePerformances(List.of(dbSystemStoragePerformances));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemStoragePerformancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -116,19 +101,29 @@ public final class GetDbSystemStoragePerformancesResult {
         public Builder filters(GetDbSystemStoragePerformancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeType(@Nullable String shapeType) {
             this.shapeType = shapeType;
             return this;
         }
+        @CustomType.Setter
         public Builder storageManagement(String storageManagement) {
             this.storageManagement = Objects.requireNonNull(storageManagement);
             return this;
-        }        public GetDbSystemStoragePerformancesResult build() {
-            return new GetDbSystemStoragePerformancesResult(dbSystemStoragePerformances, filters, id, shapeType, storageManagement);
+        }
+        public GetDbSystemStoragePerformancesResult build() {
+            final var o = new GetDbSystemStoragePerformancesResult();
+            o.dbSystemStoragePerformances = dbSystemStoragePerformances;
+            o.filters = filters;
+            o.id = id;
+            o.shapeType = shapeType;
+            o.storageManagement = storageManagement;
+            return o;
         }
     }
 }

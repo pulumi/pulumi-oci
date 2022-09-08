@@ -6,6 +6,8 @@ package com.pulumi.oci.Dns.inputs;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetViewPlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -16,30 +18,30 @@ public final class GetViewPlainArgs extends com.pulumi.resources.InvokeArgs {
      * Value must be `PRIVATE` when listing views for private zones.
      * 
      */
-    @Import(name="scope", required=true)
-    private String scope;
+    @Import(name="scope")
+    private @Nullable String scope;
 
     /**
      * @return Value must be `PRIVATE` when listing views for private zones.
      * 
      */
-    public String scope() {
-        return this.scope;
+    public Optional<String> scope() {
+        return Optional.ofNullable(this.scope);
     }
 
     /**
      * The OCID of the target view.
      * 
      */
-    @Import(name="viewId", required=true)
-    private String viewId;
+    @Import(name="viewId")
+    private @Nullable String viewId;
 
     /**
      * @return The OCID of the target view.
      * 
      */
-    public String viewId() {
-        return this.viewId;
+    public Optional<String> viewId() {
+        return Optional.ofNullable(this.viewId);
     }
 
     private GetViewPlainArgs() {}
@@ -73,7 +75,7 @@ public final class GetViewPlainArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          */
-        public Builder scope(String scope) {
+        public Builder scope(@Nullable String scope) {
             $.scope = scope;
             return this;
         }
@@ -84,14 +86,12 @@ public final class GetViewPlainArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          */
-        public Builder viewId(String viewId) {
+        public Builder viewId(@Nullable String viewId) {
             $.viewId = viewId;
             return this;
         }
 
         public GetViewPlainArgs build() {
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
-            $.viewId = Objects.requireNonNull($.viewId, "expected parameter 'viewId' to be non-null");
             return $;
         }
     }

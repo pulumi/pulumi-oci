@@ -13,35 +13,24 @@ public final class GetVaultReplicasVaultReplica {
      * @return The vault replica&#39;s crypto endpoint
      * 
      */
-    private final String cryptoEndpoint;
+    private String cryptoEndpoint;
     /**
      * @return The vault replica&#39;s management endpoint
      * 
      */
-    private final String managementEndpoint;
+    private String managementEndpoint;
     /**
      * @return Region to which vault is replicated to
      * 
      */
-    private final String region;
+    private String region;
     /**
      * @return The vault replica&#39;s status
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetVaultReplicasVaultReplica(
-        @CustomType.Parameter("cryptoEndpoint") String cryptoEndpoint,
-        @CustomType.Parameter("managementEndpoint") String managementEndpoint,
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("status") String status) {
-        this.cryptoEndpoint = cryptoEndpoint;
-        this.managementEndpoint = managementEndpoint;
-        this.region = region;
-        this.status = status;
-    }
-
+    private GetVaultReplicasVaultReplica() {}
     /**
      * @return The vault replica&#39;s crypto endpoint
      * 
@@ -78,17 +67,13 @@ public final class GetVaultReplicasVaultReplica {
     public static Builder builder(GetVaultReplicasVaultReplica defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cryptoEndpoint;
         private String managementEndpoint;
         private String region;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVaultReplicasVaultReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cryptoEndpoint = defaults.cryptoEndpoint;
@@ -97,23 +82,33 @@ public final class GetVaultReplicasVaultReplica {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder cryptoEndpoint(String cryptoEndpoint) {
             this.cryptoEndpoint = Objects.requireNonNull(cryptoEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
             this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetVaultReplicasVaultReplica build() {
-            return new GetVaultReplicasVaultReplica(cryptoEndpoint, managementEndpoint, region, status);
+        }
+        public GetVaultReplicasVaultReplica build() {
+            final var o = new GetVaultReplicasVaultReplica();
+            o.cryptoEndpoint = cryptoEndpoint;
+            o.managementEndpoint = managementEndpoint;
+            o.region = region;
+            o.status = status;
+            return o;
         }
     }
 }

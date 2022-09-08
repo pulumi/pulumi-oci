@@ -18,167 +18,116 @@ public final class GetUserAssessmentResult {
      * @return The OCID of the compartment that contains the user assessment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the user assessment.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The display name of the user assessment.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the user assessment.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    private final List<String> ignoredAssessmentIds;
+    private List<String> ignoredAssessmentIds;
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    private final List<GetUserAssessmentIgnoredTarget> ignoredTargets;
+    private List<GetUserAssessmentIgnoredTarget> ignoredTargets;
     /**
      * @return Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      * 
      */
-    private final Boolean isBaseline;
+    private Boolean isBaseline;
     /**
      * @return Indicates if the user assessment deviates from the baseline.
      * 
      */
-    private final Boolean isDeviatedFromBaseline;
+    private Boolean isDeviatedFromBaseline;
     /**
      * @return The OCID of the last user assessment baseline against which the latest assessment was compared.
      * 
      */
-    private final String lastComparedBaselineId;
+    private String lastComparedBaselineId;
     /**
      * @return Details about the current state of the user assessment.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Schedule of the assessment that runs periodically in this specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
-    private final String schedule;
+    private String schedule;
     /**
      * @return The OCID of the user assessment that is responsible for creating this scheduled save assessment.
      * 
      */
-    private final String scheduleAssessmentId;
+    private String scheduleAssessmentId;
     /**
      * @return The current state of the user assessment.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Map that contains maps of values. Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    private final String statistics;
+    private String statistics;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
-    private final String targetId;
+    private Map<String,Object> systemTags;
+    private String targetId;
     /**
      * @return Array of database target OCIDs.
      * 
      */
-    private final List<String> targetIds;
+    private List<String> targetIds;
     /**
      * @return The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Indicates whether the user assessment was created by system or user.
      * 
      */
-    private final String triggeredBy;
+    private String triggeredBy;
     /**
      * @return Type of user assessment. The possible types are:
      * 
      */
-    private final String type;
-    private final String userAssessmentId;
+    private String type;
+    private String userAssessmentId;
 
-    @CustomType.Constructor
-    private GetUserAssessmentResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ignoredAssessmentIds") List<String> ignoredAssessmentIds,
-        @CustomType.Parameter("ignoredTargets") List<GetUserAssessmentIgnoredTarget> ignoredTargets,
-        @CustomType.Parameter("isBaseline") Boolean isBaseline,
-        @CustomType.Parameter("isDeviatedFromBaseline") Boolean isDeviatedFromBaseline,
-        @CustomType.Parameter("lastComparedBaselineId") String lastComparedBaselineId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("schedule") String schedule,
-        @CustomType.Parameter("scheduleAssessmentId") String scheduleAssessmentId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("statistics") String statistics,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("targetIds") List<String> targetIds,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("triggeredBy") String triggeredBy,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("userAssessmentId") String userAssessmentId) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.ignoredAssessmentIds = ignoredAssessmentIds;
-        this.ignoredTargets = ignoredTargets;
-        this.isBaseline = isBaseline;
-        this.isDeviatedFromBaseline = isDeviatedFromBaseline;
-        this.lastComparedBaselineId = lastComparedBaselineId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.schedule = schedule;
-        this.scheduleAssessmentId = scheduleAssessmentId;
-        this.state = state;
-        this.statistics = statistics;
-        this.systemTags = systemTags;
-        this.targetId = targetId;
-        this.targetIds = targetIds;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.triggeredBy = triggeredBy;
-        this.type = type;
-        this.userAssessmentId = userAssessmentId;
-    }
-
+    private GetUserAssessmentResult() {}
     /**
      * @return The OCID of the compartment that contains the user assessment.
      * 
@@ -347,7 +296,7 @@ public final class GetUserAssessmentResult {
     public static Builder builder(GetUserAssessmentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -373,11 +322,7 @@ public final class GetUserAssessmentResult {
         private String triggeredBy;
         private String type;
         private String userAssessmentId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -406,30 +351,37 @@ public final class GetUserAssessmentResult {
     	      this.userAssessmentId = defaults.userAssessmentId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ignoredAssessmentIds(List<String> ignoredAssessmentIds) {
             this.ignoredAssessmentIds = Objects.requireNonNull(ignoredAssessmentIds);
             return this;
@@ -437,6 +389,7 @@ public final class GetUserAssessmentResult {
         public Builder ignoredAssessmentIds(String... ignoredAssessmentIds) {
             return ignoredAssessmentIds(List.of(ignoredAssessmentIds));
         }
+        @CustomType.Setter
         public Builder ignoredTargets(List<GetUserAssessmentIgnoredTarget> ignoredTargets) {
             this.ignoredTargets = Objects.requireNonNull(ignoredTargets);
             return this;
@@ -444,46 +397,57 @@ public final class GetUserAssessmentResult {
         public Builder ignoredTargets(GetUserAssessmentIgnoredTarget... ignoredTargets) {
             return ignoredTargets(List.of(ignoredTargets));
         }
+        @CustomType.Setter
         public Builder isBaseline(Boolean isBaseline) {
             this.isBaseline = Objects.requireNonNull(isBaseline);
             return this;
         }
+        @CustomType.Setter
         public Builder isDeviatedFromBaseline(Boolean isDeviatedFromBaseline) {
             this.isDeviatedFromBaseline = Objects.requireNonNull(isDeviatedFromBaseline);
             return this;
         }
+        @CustomType.Setter
         public Builder lastComparedBaselineId(String lastComparedBaselineId) {
             this.lastComparedBaselineId = Objects.requireNonNull(lastComparedBaselineId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder schedule(String schedule) {
             this.schedule = Objects.requireNonNull(schedule);
             return this;
         }
+        @CustomType.Setter
         public Builder scheduleAssessmentId(String scheduleAssessmentId) {
             this.scheduleAssessmentId = Objects.requireNonNull(scheduleAssessmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder statistics(String statistics) {
             this.statistics = Objects.requireNonNull(statistics);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetIds(List<String> targetIds) {
             this.targetIds = Objects.requireNonNull(targetIds);
             return this;
@@ -491,27 +455,58 @@ public final class GetUserAssessmentResult {
         public Builder targetIds(String... targetIds) {
             return targetIds(List.of(targetIds));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder triggeredBy(String triggeredBy) {
             this.triggeredBy = Objects.requireNonNull(triggeredBy);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
             this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
             return this;
-        }        public GetUserAssessmentResult build() {
-            return new GetUserAssessmentResult(compartmentId, definedTags, description, displayName, freeformTags, id, ignoredAssessmentIds, ignoredTargets, isBaseline, isDeviatedFromBaseline, lastComparedBaselineId, lifecycleDetails, schedule, scheduleAssessmentId, state, statistics, systemTags, targetId, targetIds, timeCreated, timeUpdated, triggeredBy, type, userAssessmentId);
+        }
+        public GetUserAssessmentResult build() {
+            final var o = new GetUserAssessmentResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.ignoredAssessmentIds = ignoredAssessmentIds;
+            o.ignoredTargets = ignoredTargets;
+            o.isBaseline = isBaseline;
+            o.isDeviatedFromBaseline = isDeviatedFromBaseline;
+            o.lastComparedBaselineId = lastComparedBaselineId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.schedule = schedule;
+            o.scheduleAssessmentId = scheduleAssessmentId;
+            o.state = state;
+            o.statistics = statistics;
+            o.systemTags = systemTags;
+            o.targetId = targetId;
+            o.targetIds = targetIds;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.triggeredBy = triggeredBy;
+            o.type = type;
+            o.userAssessmentId = userAssessmentId;
+            return o;
         }
     }
 }

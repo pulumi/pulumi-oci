@@ -15,12 +15,12 @@ public final class ModelCustomMetadataList {
      * @return (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
      * 
      */
-    private final @Nullable String category;
+    private @Nullable String category;
     /**
      * @return (Updatable) A short description of the model.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
      * * useCaseType
@@ -31,25 +31,14 @@ public final class ModelCustomMetadataList {
      * * testartifactresults
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private ModelCustomMetadataList(
-        @CustomType.Parameter("category") @Nullable String category,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.category = category;
-        this.description = description;
-        this.key = key;
-        this.value = value;
-    }
-
+    private ModelCustomMetadataList() {}
     /**
      * @return (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
      * 
@@ -92,17 +81,13 @@ public final class ModelCustomMetadataList {
     public static Builder builder(ModelCustomMetadataList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String category;
         private @Nullable String description;
         private @Nullable String key;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelCustomMetadataList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
@@ -111,23 +96,33 @@ public final class ModelCustomMetadataList {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder category(@Nullable String category) {
             this.category = category;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public ModelCustomMetadataList build() {
-            return new ModelCustomMetadataList(category, description, key, value);
+        }
+        public ModelCustomMetadataList build() {
+            final var o = new ModelCustomMetadataList();
+            o.category = category;
+            o.description = description;
+            o.key = key;
+            o.value = value;
+            return o;
         }
     }
 }

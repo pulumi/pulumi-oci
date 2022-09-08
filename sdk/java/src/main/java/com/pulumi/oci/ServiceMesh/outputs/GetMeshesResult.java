@@ -18,45 +18,30 @@ public final class GetMeshesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetMeshesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetMeshesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of mesh_collection.
      * 
      */
-    private final List<GetMeshesMeshCollection> meshCollections;
+    private List<GetMeshesMeshCollection> meshCollections;
     /**
      * @return The current state of the Resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetMeshesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetMeshesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("meshCollections") List<GetMeshesMeshCollection> meshCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.meshCollections = meshCollections;
-        this.state = state;
-    }
-
+    private GetMeshesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetMeshesResult {
     public static Builder builder(GetMeshesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetMeshesResult {
         private @Nullable String id;
         private List<GetMeshesMeshCollection> meshCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMeshesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetMeshesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMeshesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetMeshesResult {
         public Builder filters(GetMeshesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder meshCollections(List<GetMeshesMeshCollection> meshCollections) {
             this.meshCollections = Objects.requireNonNull(meshCollections);
             return this;
@@ -152,11 +138,20 @@ public final class GetMeshesResult {
         public Builder meshCollections(GetMeshesMeshCollection... meshCollections) {
             return meshCollections(List.of(meshCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetMeshesResult build() {
-            return new GetMeshesResult(compartmentId, displayName, filters, id, meshCollections, state);
+        }
+        public GetMeshesResult build() {
+            final var o = new GetMeshesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.meshCollections = meshCollections;
+            o.state = state;
+            return o;
         }
     }
 }

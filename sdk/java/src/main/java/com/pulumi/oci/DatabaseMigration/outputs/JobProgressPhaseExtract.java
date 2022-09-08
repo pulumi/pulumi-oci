@@ -15,21 +15,14 @@ public final class JobProgressPhaseExtract {
      * @return Message in entry.
      * 
      */
-    private final @Nullable String message;
+    private @Nullable String message;
     /**
      * @return Type of unsupported object
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private JobProgressPhaseExtract(
-        @CustomType.Parameter("message") @Nullable String message,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.message = message;
-        this.type = type;
-    }
-
+    private JobProgressPhaseExtract() {}
     /**
      * @return Message in entry.
      * 
@@ -52,30 +45,32 @@ public final class JobProgressPhaseExtract {
     public static Builder builder(JobProgressPhaseExtract defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String message;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(JobProgressPhaseExtract defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder message(@Nullable String message) {
             this.message = message;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public JobProgressPhaseExtract build() {
-            return new JobProgressPhaseExtract(message, type);
+        }
+        public JobProgressPhaseExtract build() {
+            final var o = new JobProgressPhaseExtract();
+            o.message = message;
+            o.type = type;
+            return o;
         }
     }
 }

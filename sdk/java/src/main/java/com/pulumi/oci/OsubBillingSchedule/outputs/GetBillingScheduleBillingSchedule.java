@@ -15,91 +15,64 @@ public final class GetBillingScheduleBillingSchedule {
      * @return Billing schedule line net amount
      * 
      */
-    private final String amount;
+    private String amount;
     /**
      * @return Indicates the associated AR Customer transaction id a unique identifier existing on AR.
      * 
      */
-    private final String arCustomerTransactionId;
+    private String arCustomerTransactionId;
     /**
      * @return Indicates the associated AR Invoice Number
      * 
      */
-    private final String arInvoiceNumber;
+    private String arInvoiceNumber;
     /**
      * @return Billing frequency
      * 
      */
-    private final String billingFrequency;
+    private String billingFrequency;
     /**
      * @return Billing schedule invoice status
      * 
      */
-    private final String invoiceStatus;
+    private String invoiceStatus;
     /**
      * @return Billing schedule net unit price
      * 
      */
-    private final String netUnitPrice;
+    private String netUnitPrice;
     /**
      * @return Order number associated with the Subscribed Service
      * 
      */
-    private final String orderNumber;
+    private String orderNumber;
     /**
      * @return Product description
      * 
      */
-    private final List<GetBillingScheduleBillingScheduleProduct> products;
+    private List<GetBillingScheduleBillingScheduleProduct> products;
     /**
      * @return Billing schedule quantity
      * 
      */
-    private final String quantity;
+    private String quantity;
     /**
      * @return Billing schedule end date
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Billing schedule invoicing date
      * 
      */
-    private final String timeInvoicing;
+    private String timeInvoicing;
     /**
      * @return Billing schedule start date
      * 
      */
-    private final String timeStart;
+    private String timeStart;
 
-    @CustomType.Constructor
-    private GetBillingScheduleBillingSchedule(
-        @CustomType.Parameter("amount") String amount,
-        @CustomType.Parameter("arCustomerTransactionId") String arCustomerTransactionId,
-        @CustomType.Parameter("arInvoiceNumber") String arInvoiceNumber,
-        @CustomType.Parameter("billingFrequency") String billingFrequency,
-        @CustomType.Parameter("invoiceStatus") String invoiceStatus,
-        @CustomType.Parameter("netUnitPrice") String netUnitPrice,
-        @CustomType.Parameter("orderNumber") String orderNumber,
-        @CustomType.Parameter("products") List<GetBillingScheduleBillingScheduleProduct> products,
-        @CustomType.Parameter("quantity") String quantity,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeInvoicing") String timeInvoicing,
-        @CustomType.Parameter("timeStart") String timeStart) {
-        this.amount = amount;
-        this.arCustomerTransactionId = arCustomerTransactionId;
-        this.arInvoiceNumber = arInvoiceNumber;
-        this.billingFrequency = billingFrequency;
-        this.invoiceStatus = invoiceStatus;
-        this.netUnitPrice = netUnitPrice;
-        this.orderNumber = orderNumber;
-        this.products = products;
-        this.quantity = quantity;
-        this.timeEnd = timeEnd;
-        this.timeInvoicing = timeInvoicing;
-        this.timeStart = timeStart;
-    }
-
+    private GetBillingScheduleBillingSchedule() {}
     /**
      * @return Billing schedule line net amount
      * 
@@ -192,7 +165,7 @@ public final class GetBillingScheduleBillingSchedule {
     public static Builder builder(GetBillingScheduleBillingSchedule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String amount;
         private String arCustomerTransactionId;
@@ -206,11 +179,7 @@ public final class GetBillingScheduleBillingSchedule {
         private String timeEnd;
         private String timeInvoicing;
         private String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBillingScheduleBillingSchedule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.amount = defaults.amount;
@@ -227,34 +196,42 @@ public final class GetBillingScheduleBillingSchedule {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder amount(String amount) {
             this.amount = Objects.requireNonNull(amount);
             return this;
         }
+        @CustomType.Setter
         public Builder arCustomerTransactionId(String arCustomerTransactionId) {
             this.arCustomerTransactionId = Objects.requireNonNull(arCustomerTransactionId);
             return this;
         }
+        @CustomType.Setter
         public Builder arInvoiceNumber(String arInvoiceNumber) {
             this.arInvoiceNumber = Objects.requireNonNull(arInvoiceNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder billingFrequency(String billingFrequency) {
             this.billingFrequency = Objects.requireNonNull(billingFrequency);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceStatus(String invoiceStatus) {
             this.invoiceStatus = Objects.requireNonNull(invoiceStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
             return this;
         }
+        @CustomType.Setter
         public Builder orderNumber(String orderNumber) {
             this.orderNumber = Objects.requireNonNull(orderNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder products(List<GetBillingScheduleBillingScheduleProduct> products) {
             this.products = Objects.requireNonNull(products);
             return this;
@@ -262,23 +239,41 @@ public final class GetBillingScheduleBillingSchedule {
         public Builder products(GetBillingScheduleBillingScheduleProduct... products) {
             return products(List.of(products));
         }
+        @CustomType.Setter
         public Builder quantity(String quantity) {
             this.quantity = Objects.requireNonNull(quantity);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeInvoicing(String timeInvoicing) {
             this.timeInvoicing = Objects.requireNonNull(timeInvoicing);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
-        }        public GetBillingScheduleBillingSchedule build() {
-            return new GetBillingScheduleBillingSchedule(amount, arCustomerTransactionId, arInvoiceNumber, billingFrequency, invoiceStatus, netUnitPrice, orderNumber, products, quantity, timeEnd, timeInvoicing, timeStart);
+        }
+        public GetBillingScheduleBillingSchedule build() {
+            final var o = new GetBillingScheduleBillingSchedule();
+            o.amount = amount;
+            o.arCustomerTransactionId = arCustomerTransactionId;
+            o.arInvoiceNumber = arInvoiceNumber;
+            o.billingFrequency = billingFrequency;
+            o.invoiceStatus = invoiceStatus;
+            o.netUnitPrice = netUnitPrice;
+            o.orderNumber = orderNumber;
+            o.products = products;
+            o.quantity = quantity;
+            o.timeEnd = timeEnd;
+            o.timeInvoicing = timeInvoicing;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

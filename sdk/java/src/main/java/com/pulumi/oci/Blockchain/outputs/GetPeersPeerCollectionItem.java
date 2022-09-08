@@ -14,63 +14,44 @@ public final class GetPeersPeerCollectionItem {
      * @return Availability Domain of peer
      * 
      */
-    private final String ad;
+    private String ad;
     /**
      * @return peer alias
      * 
      */
-    private final String alias;
+    private String alias;
     /**
      * @return Unique service identifier.
      * 
      */
-    private final String blockchainPlatformId;
+    private String blockchainPlatformId;
     /**
      * @return Host on which the Peer exists
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return OCPU allocation parameter
      * 
      */
-    private final GetPeersPeerCollectionItemOcpuAllocationParam ocpuAllocationParam;
+    private GetPeersPeerCollectionItemOcpuAllocationParam ocpuAllocationParam;
     /**
      * @return peer identifier
      * 
      */
-    private final String peerKey;
+    private String peerKey;
     /**
      * @return Peer role
      * 
      */
-    private final String role;
+    private String role;
     /**
      * @return The current state of the peer.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetPeersPeerCollectionItem(
-        @CustomType.Parameter("ad") String ad,
-        @CustomType.Parameter("alias") String alias,
-        @CustomType.Parameter("blockchainPlatformId") String blockchainPlatformId,
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("ocpuAllocationParam") GetPeersPeerCollectionItemOcpuAllocationParam ocpuAllocationParam,
-        @CustomType.Parameter("peerKey") String peerKey,
-        @CustomType.Parameter("role") String role,
-        @CustomType.Parameter("state") String state) {
-        this.ad = ad;
-        this.alias = alias;
-        this.blockchainPlatformId = blockchainPlatformId;
-        this.host = host;
-        this.ocpuAllocationParam = ocpuAllocationParam;
-        this.peerKey = peerKey;
-        this.role = role;
-        this.state = state;
-    }
-
+    private GetPeersPeerCollectionItem() {}
     /**
      * @return Availability Domain of peer
      * 
@@ -135,7 +116,7 @@ public final class GetPeersPeerCollectionItem {
     public static Builder builder(GetPeersPeerCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ad;
         private String alias;
@@ -145,11 +126,7 @@ public final class GetPeersPeerCollectionItem {
         private String peerKey;
         private String role;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPeersPeerCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ad = defaults.ad;
@@ -162,39 +139,57 @@ public final class GetPeersPeerCollectionItem {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder ad(String ad) {
             this.ad = Objects.requireNonNull(ad);
             return this;
         }
+        @CustomType.Setter
         public Builder alias(String alias) {
             this.alias = Objects.requireNonNull(alias);
             return this;
         }
+        @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
             this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
             return this;
         }
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuAllocationParam(GetPeersPeerCollectionItemOcpuAllocationParam ocpuAllocationParam) {
             this.ocpuAllocationParam = Objects.requireNonNull(ocpuAllocationParam);
             return this;
         }
+        @CustomType.Setter
         public Builder peerKey(String peerKey) {
             this.peerKey = Objects.requireNonNull(peerKey);
             return this;
         }
+        @CustomType.Setter
         public Builder role(String role) {
             this.role = Objects.requireNonNull(role);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetPeersPeerCollectionItem build() {
-            return new GetPeersPeerCollectionItem(ad, alias, blockchainPlatformId, host, ocpuAllocationParam, peerKey, role, state);
+        }
+        public GetPeersPeerCollectionItem build() {
+            final var o = new GetPeersPeerCollectionItem();
+            o.ad = ad;
+            o.alias = alias;
+            o.blockchainPlatformId = blockchainPlatformId;
+            o.host = host;
+            o.ocpuAllocationParam = ocpuAllocationParam;
+            o.peerKey = peerKey;
+            o.role = role;
+            o.state = state;
+            return o;
         }
     }
 }

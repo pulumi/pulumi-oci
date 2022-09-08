@@ -10,20 +10,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbSystemsDbSystemIormConfigCachDbPlan {
-    private final String dbName;
-    private final String flashCacheLimit;
-    private final Integer share;
+    private String dbName;
+    private String flashCacheLimit;
+    private Integer share;
 
-    @CustomType.Constructor
-    private GetDbSystemsDbSystemIormConfigCachDbPlan(
-        @CustomType.Parameter("dbName") String dbName,
-        @CustomType.Parameter("flashCacheLimit") String flashCacheLimit,
-        @CustomType.Parameter("share") Integer share) {
-        this.dbName = dbName;
-        this.flashCacheLimit = flashCacheLimit;
-        this.share = share;
-    }
-
+    private GetDbSystemsDbSystemIormConfigCachDbPlan() {}
     public String dbName() {
         return this.dbName;
     }
@@ -41,16 +32,12 @@ public final class GetDbSystemsDbSystemIormConfigCachDbPlan {
     public static Builder builder(GetDbSystemsDbSystemIormConfigCachDbPlan defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbName;
         private String flashCacheLimit;
         private Integer share;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemsDbSystemIormConfigCachDbPlan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbName = defaults.dbName;
@@ -58,19 +45,27 @@ public final class GetDbSystemsDbSystemIormConfigCachDbPlan {
     	      this.share = defaults.share;
         }
 
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
+        @CustomType.Setter
         public Builder flashCacheLimit(String flashCacheLimit) {
             this.flashCacheLimit = Objects.requireNonNull(flashCacheLimit);
             return this;
         }
+        @CustomType.Setter
         public Builder share(Integer share) {
             this.share = Objects.requireNonNull(share);
             return this;
-        }        public GetDbSystemsDbSystemIormConfigCachDbPlan build() {
-            return new GetDbSystemsDbSystemIormConfigCachDbPlan(dbName, flashCacheLimit, share);
+        }
+        public GetDbSystemsDbSystemIormConfigCachDbPlan build() {
+            final var o = new GetDbSystemsDbSystemIormConfigCachDbPlan();
+            o.dbName = dbName;
+            o.flashCacheLimit = flashCacheLimit;
+            o.share = share;
+            return o;
         }
     }
 }

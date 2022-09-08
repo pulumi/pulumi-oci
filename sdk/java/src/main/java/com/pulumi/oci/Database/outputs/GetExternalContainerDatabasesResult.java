@@ -18,45 +18,30 @@ public final class GetExternalContainerDatabasesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The user-friendly name for the external database. The name does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of external_container_databases.
      * 
      */
-    private final List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases;
-    private final @Nullable List<GetExternalContainerDatabasesFilter> filters;
+    private List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases;
+    private @Nullable List<GetExternalContainerDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetExternalContainerDatabasesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("externalContainerDatabases") List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases,
-        @CustomType.Parameter("filters") @Nullable List<GetExternalContainerDatabasesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.externalContainerDatabases = externalContainerDatabases;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetExternalContainerDatabasesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetExternalContainerDatabasesResult {
     public static Builder builder(GetExternalContainerDatabasesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetExternalContainerDatabasesResult {
         private @Nullable List<GetExternalContainerDatabasesFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExternalContainerDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetExternalContainerDatabasesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder externalContainerDatabases(List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases) {
             this.externalContainerDatabases = Objects.requireNonNull(externalContainerDatabases);
             return this;
@@ -141,6 +125,7 @@ public final class GetExternalContainerDatabasesResult {
         public Builder externalContainerDatabases(GetExternalContainerDatabasesExternalContainerDatabase... externalContainerDatabases) {
             return externalContainerDatabases(List.of(externalContainerDatabases));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalContainerDatabasesFilter> filters) {
             this.filters = filters;
             return this;
@@ -148,15 +133,25 @@ public final class GetExternalContainerDatabasesResult {
         public Builder filters(GetExternalContainerDatabasesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetExternalContainerDatabasesResult build() {
-            return new GetExternalContainerDatabasesResult(compartmentId, displayName, externalContainerDatabases, filters, id, state);
+        }
+        public GetExternalContainerDatabasesResult build() {
+            final var o = new GetExternalContainerDatabasesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.externalContainerDatabases = externalContainerDatabases;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

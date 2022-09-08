@@ -13,13 +13,9 @@ public final class GetVaultsVaultReplicaDetail {
      * @return ReplicationId associated with a vault operation
      * 
      */
-    private final String replicationId;
+    private String replicationId;
 
-    @CustomType.Constructor
-    private GetVaultsVaultReplicaDetail(@CustomType.Parameter("replicationId") String replicationId) {
-        this.replicationId = replicationId;
-    }
-
+    private GetVaultsVaultReplicaDetail() {}
     /**
      * @return ReplicationId associated with a vault operation
      * 
@@ -35,24 +31,24 @@ public final class GetVaultsVaultReplicaDetail {
     public static Builder builder(GetVaultsVaultReplicaDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String replicationId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVaultsVaultReplicaDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.replicationId = defaults.replicationId;
         }
 
+        @CustomType.Setter
         public Builder replicationId(String replicationId) {
             this.replicationId = Objects.requireNonNull(replicationId);
             return this;
-        }        public GetVaultsVaultReplicaDetail build() {
-            return new GetVaultsVaultReplicaDetail(replicationId);
+        }
+        public GetVaultsVaultReplicaDetail build() {
+            final var o = new GetVaultsVaultReplicaDetail();
+            o.replicationId = replicationId;
+            return o;
         }
     }
 }

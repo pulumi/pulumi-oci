@@ -13,28 +13,19 @@ public final class GetSddcsSddcCollectionHcxOnPremLicense {
      * @return HCX on-premise license key value.
      * 
      */
-    private final String activationKey;
+    private String activationKey;
     /**
      * @return status of HCX on-premise license.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return Name of the system that consumed the HCX on-premise license
      * 
      */
-    private final String systemName;
+    private String systemName;
 
-    @CustomType.Constructor
-    private GetSddcsSddcCollectionHcxOnPremLicense(
-        @CustomType.Parameter("activationKey") String activationKey,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("systemName") String systemName) {
-        this.activationKey = activationKey;
-        this.status = status;
-        this.systemName = systemName;
-    }
-
+    private GetSddcsSddcCollectionHcxOnPremLicense() {}
     /**
      * @return HCX on-premise license key value.
      * 
@@ -64,16 +55,12 @@ public final class GetSddcsSddcCollectionHcxOnPremLicense {
     public static Builder builder(GetSddcsSddcCollectionHcxOnPremLicense defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String activationKey;
         private String status;
         private String systemName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSddcsSddcCollectionHcxOnPremLicense defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activationKey = defaults.activationKey;
@@ -81,19 +68,27 @@ public final class GetSddcsSddcCollectionHcxOnPremLicense {
     	      this.systemName = defaults.systemName;
         }
 
+        @CustomType.Setter
         public Builder activationKey(String activationKey) {
             this.activationKey = Objects.requireNonNull(activationKey);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder systemName(String systemName) {
             this.systemName = Objects.requireNonNull(systemName);
             return this;
-        }        public GetSddcsSddcCollectionHcxOnPremLicense build() {
-            return new GetSddcsSddcCollectionHcxOnPremLicense(activationKey, status, systemName);
+        }
+        public GetSddcsSddcCollectionHcxOnPremLicense build() {
+            final var o = new GetSddcsSddcCollectionHcxOnPremLicense();
+            o.activationKey = activationKey;
+            o.status = status;
+            o.systemName = systemName;
+            return o;
         }
     }
 }

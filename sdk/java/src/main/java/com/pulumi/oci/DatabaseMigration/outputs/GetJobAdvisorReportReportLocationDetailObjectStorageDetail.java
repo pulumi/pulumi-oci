@@ -13,28 +13,19 @@ public final class GetJobAdvisorReportReportLocationDetailObjectStorageDetail {
      * @return Name of the bucket containing the Pre-Migration Advisor report.
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return Object Storage namespace.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return Pre-Migration Advisor report object name.
      * 
      */
-    private final String object;
+    private String object;
 
-    @CustomType.Constructor
-    private GetJobAdvisorReportReportLocationDetailObjectStorageDetail(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("object") String object) {
-        this.bucket = bucket;
-        this.namespace = namespace;
-        this.object = object;
-    }
-
+    private GetJobAdvisorReportReportLocationDetailObjectStorageDetail() {}
     /**
      * @return Name of the bucket containing the Pre-Migration Advisor report.
      * 
@@ -64,16 +55,12 @@ public final class GetJobAdvisorReportReportLocationDetailObjectStorageDetail {
     public static Builder builder(GetJobAdvisorReportReportLocationDetailObjectStorageDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String namespace;
         private String object;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobAdvisorReportReportLocationDetailObjectStorageDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -81,19 +68,27 @@ public final class GetJobAdvisorReportReportLocationDetailObjectStorageDetail {
     	      this.object = defaults.object;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
-        }        public GetJobAdvisorReportReportLocationDetailObjectStorageDetail build() {
-            return new GetJobAdvisorReportReportLocationDetailObjectStorageDetail(bucket, namespace, object);
+        }
+        public GetJobAdvisorReportReportLocationDetailObjectStorageDetail build() {
+            final var o = new GetJobAdvisorReportReportLocationDetailObjectStorageDetail();
+            o.bucket = bucket;
+            o.namespace = namespace;
+            o.object = object;
+            return o;
         }
     }
 }

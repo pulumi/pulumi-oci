@@ -13,13 +13,9 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceCurso
      * @return The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
 
-    @CustomType.Constructor
-    private GetServiceConnectorsServiceConnectorCollectionItemSourceCursor(@CustomType.Parameter("kind") String kind) {
-        this.kind = kind;
-    }
-
+    private GetServiceConnectorsServiceConnectorCollectionItemSourceCursor() {}
     /**
      * @return The type descriminator.
      * 
@@ -35,24 +31,24 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceCurso
     public static Builder builder(GetServiceConnectorsServiceConnectorCollectionItemSourceCursor defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kind;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemSourceCursor defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
         }
 
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
-        }        public GetServiceConnectorsServiceConnectorCollectionItemSourceCursor build() {
-            return new GetServiceConnectorsServiceConnectorCollectionItemSourceCursor(kind);
+        }
+        public GetServiceConnectorsServiceConnectorCollectionItemSourceCursor build() {
+            final var o = new GetServiceConnectorsServiceConnectorCollectionItemSourceCursor();
+            o.kind = kind;
+            return o;
         }
     }
 }

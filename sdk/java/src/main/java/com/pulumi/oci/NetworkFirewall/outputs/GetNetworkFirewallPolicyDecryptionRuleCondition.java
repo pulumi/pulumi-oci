@@ -14,21 +14,14 @@ public final class GetNetworkFirewallPolicyDecryptionRuleCondition {
      * @return An array of IP address list names to be evaluated against the traffic destination address.
      * 
      */
-    private final List<String> destinations;
+    private List<String> destinations;
     /**
      * @return An array of IP address list names to be evaluated against the traffic source address.
      * 
      */
-    private final List<String> sources;
+    private List<String> sources;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPolicyDecryptionRuleCondition(
-        @CustomType.Parameter("destinations") List<String> destinations,
-        @CustomType.Parameter("sources") List<String> sources) {
-        this.destinations = destinations;
-        this.sources = sources;
-    }
-
+    private GetNetworkFirewallPolicyDecryptionRuleCondition() {}
     /**
      * @return An array of IP address list names to be evaluated against the traffic destination address.
      * 
@@ -51,21 +44,18 @@ public final class GetNetworkFirewallPolicyDecryptionRuleCondition {
     public static Builder builder(GetNetworkFirewallPolicyDecryptionRuleCondition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> destinations;
         private List<String> sources;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPolicyDecryptionRuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinations = defaults.destinations;
     	      this.sources = defaults.sources;
         }
 
+        @CustomType.Setter
         public Builder destinations(List<String> destinations) {
             this.destinations = Objects.requireNonNull(destinations);
             return this;
@@ -73,14 +63,19 @@ public final class GetNetworkFirewallPolicyDecryptionRuleCondition {
         public Builder destinations(String... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder sources(List<String> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
         }
         public Builder sources(String... sources) {
             return sources(List.of(sources));
-        }        public GetNetworkFirewallPolicyDecryptionRuleCondition build() {
-            return new GetNetworkFirewallPolicyDecryptionRuleCondition(destinations, sources);
+        }
+        public GetNetworkFirewallPolicyDecryptionRuleCondition build() {
+            final var o = new GetNetworkFirewallPolicyDecryptionRuleCondition();
+            o.destinations = destinations;
+            o.sources = sources;
+            return o;
         }
     }
 }

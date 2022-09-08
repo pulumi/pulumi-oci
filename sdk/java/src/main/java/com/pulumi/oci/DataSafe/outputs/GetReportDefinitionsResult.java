@@ -15,76 +15,51 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReportDefinitionsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return Specifies the name of the category that this report belongs to.
      * 
      */
-    private final @Nullable String category;
+    private @Nullable String category;
     /**
      * @return The OCID of the compartment containing the report definition.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return Specifies the name of a resource that provides data for the report. For example alerts, events.
      * 
      */
-    private final @Nullable String dataSource;
+    private @Nullable String dataSource;
     /**
      * @return Name of the report definition.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetReportDefinitionsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetReportDefinitionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private final @Nullable Boolean isSeeded;
+    private @Nullable Boolean isSeeded;
     /**
      * @return The list of report_definition_collection.
      * 
      */
-    private final List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections;
+    private List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections;
     /**
      * @return The current state of the report.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetReportDefinitionsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("category") @Nullable String category,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("dataSource") @Nullable String dataSource,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetReportDefinitionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isSeeded") @Nullable Boolean isSeeded,
-        @CustomType.Parameter("reportDefinitionCollections") List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.accessLevel = accessLevel;
-        this.category = category;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.dataSource = dataSource;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isSeeded = isSeeded;
-        this.reportDefinitionCollections = reportDefinitionCollections;
-        this.state = state;
-    }
-
+    private GetReportDefinitionsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -158,7 +133,7 @@ public final class GetReportDefinitionsResult {
     public static Builder builder(GetReportDefinitionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private @Nullable String category;
@@ -171,11 +146,7 @@ public final class GetReportDefinitionsResult {
         private @Nullable Boolean isSeeded;
         private List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportDefinitionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -191,30 +162,37 @@ public final class GetReportDefinitionsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder category(@Nullable String category) {
             this.category = category;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder dataSource(@Nullable String dataSource) {
             this.dataSource = dataSource;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetReportDefinitionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -222,14 +200,17 @@ public final class GetReportDefinitionsResult {
         public Builder filters(GetReportDefinitionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isSeeded(@Nullable Boolean isSeeded) {
             this.isSeeded = isSeeded;
             return this;
         }
+        @CustomType.Setter
         public Builder reportDefinitionCollections(List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections) {
             this.reportDefinitionCollections = Objects.requireNonNull(reportDefinitionCollections);
             return this;
@@ -237,11 +218,25 @@ public final class GetReportDefinitionsResult {
         public Builder reportDefinitionCollections(GetReportDefinitionsReportDefinitionCollection... reportDefinitionCollections) {
             return reportDefinitionCollections(List.of(reportDefinitionCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetReportDefinitionsResult build() {
-            return new GetReportDefinitionsResult(accessLevel, category, compartmentId, compartmentIdInSubtree, dataSource, displayName, filters, id, isSeeded, reportDefinitionCollections, state);
+        }
+        public GetReportDefinitionsResult build() {
+            final var o = new GetReportDefinitionsResult();
+            o.accessLevel = accessLevel;
+            o.category = category;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.dataSource = dataSource;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isSeeded = isSeeded;
+            o.reportDefinitionCollections = reportDefinitionCollections;
+            o.state = state;
+            return o;
         }
     }
 }

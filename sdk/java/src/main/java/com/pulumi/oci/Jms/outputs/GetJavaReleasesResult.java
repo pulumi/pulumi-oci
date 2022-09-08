@@ -18,55 +18,36 @@ public final class GetJavaReleasesResult {
      * @return Java release family identifier.
      * 
      */
-    private final @Nullable String familyVersion;
-    private final @Nullable List<GetJavaReleasesFilter> filters;
+    private @Nullable String familyVersion;
+    private @Nullable List<GetJavaReleasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of java_release_collection.
      * 
      */
-    private final List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections;
-    private final @Nullable String jreSecurityStatus;
+    private List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections;
+    private @Nullable String jreSecurityStatus;
     /**
      * @return License type for the Java version.
      * 
      */
-    private final @Nullable String licenseType;
+    private @Nullable String licenseType;
     /**
      * @return Release category of the Java version.
      * 
      */
-    private final @Nullable String releaseType;
+    private @Nullable String releaseType;
     /**
      * @return Java release version identifier.
      * 
      */
-    private final @Nullable String releaseVersion;
+    private @Nullable String releaseVersion;
 
-    @CustomType.Constructor
-    private GetJavaReleasesResult(
-        @CustomType.Parameter("familyVersion") @Nullable String familyVersion,
-        @CustomType.Parameter("filters") @Nullable List<GetJavaReleasesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("javaReleaseCollections") List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections,
-        @CustomType.Parameter("jreSecurityStatus") @Nullable String jreSecurityStatus,
-        @CustomType.Parameter("licenseType") @Nullable String licenseType,
-        @CustomType.Parameter("releaseType") @Nullable String releaseType,
-        @CustomType.Parameter("releaseVersion") @Nullable String releaseVersion) {
-        this.familyVersion = familyVersion;
-        this.filters = filters;
-        this.id = id;
-        this.javaReleaseCollections = javaReleaseCollections;
-        this.jreSecurityStatus = jreSecurityStatus;
-        this.licenseType = licenseType;
-        this.releaseType = releaseType;
-        this.releaseVersion = releaseVersion;
-    }
-
+    private GetJavaReleasesResult() {}
     /**
      * @return Java release family identifier.
      * 
@@ -123,7 +104,7 @@ public final class GetJavaReleasesResult {
     public static Builder builder(GetJavaReleasesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String familyVersion;
         private @Nullable List<GetJavaReleasesFilter> filters;
@@ -133,11 +114,7 @@ public final class GetJavaReleasesResult {
         private @Nullable String licenseType;
         private @Nullable String releaseType;
         private @Nullable String releaseVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJavaReleasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.familyVersion = defaults.familyVersion;
@@ -150,10 +127,12 @@ public final class GetJavaReleasesResult {
     	      this.releaseVersion = defaults.releaseVersion;
         }
 
+        @CustomType.Setter
         public Builder familyVersion(@Nullable String familyVersion) {
             this.familyVersion = familyVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetJavaReleasesFilter> filters) {
             this.filters = filters;
             return this;
@@ -161,10 +140,12 @@ public final class GetJavaReleasesResult {
         public Builder filters(GetJavaReleasesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder javaReleaseCollections(List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections) {
             this.javaReleaseCollections = Objects.requireNonNull(javaReleaseCollections);
             return this;
@@ -172,23 +153,37 @@ public final class GetJavaReleasesResult {
         public Builder javaReleaseCollections(GetJavaReleasesJavaReleaseCollection... javaReleaseCollections) {
             return javaReleaseCollections(List.of(javaReleaseCollections));
         }
+        @CustomType.Setter
         public Builder jreSecurityStatus(@Nullable String jreSecurityStatus) {
             this.jreSecurityStatus = jreSecurityStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder licenseType(@Nullable String licenseType) {
             this.licenseType = licenseType;
             return this;
         }
+        @CustomType.Setter
         public Builder releaseType(@Nullable String releaseType) {
             this.releaseType = releaseType;
             return this;
         }
+        @CustomType.Setter
         public Builder releaseVersion(@Nullable String releaseVersion) {
             this.releaseVersion = releaseVersion;
             return this;
-        }        public GetJavaReleasesResult build() {
-            return new GetJavaReleasesResult(familyVersion, filters, id, javaReleaseCollections, jreSecurityStatus, licenseType, releaseType, releaseVersion);
+        }
+        public GetJavaReleasesResult build() {
+            final var o = new GetJavaReleasesResult();
+            o.familyVersion = familyVersion;
+            o.filters = filters;
+            o.id = id;
+            o.javaReleaseCollections = javaReleaseCollections;
+            o.jreSecurityStatus = jreSecurityStatus;
+            o.licenseType = licenseType;
+            o.releaseType = releaseType;
+            o.releaseVersion = releaseVersion;
+            return o;
         }
     }
 }

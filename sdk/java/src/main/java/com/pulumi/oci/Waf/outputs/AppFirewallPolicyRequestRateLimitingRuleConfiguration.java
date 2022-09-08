@@ -15,28 +15,19 @@ public final class AppFirewallPolicyRequestRateLimitingRuleConfiguration {
      * @return (Updatable) Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
      * 
      */
-    private final @Nullable Integer actionDurationInSeconds;
+    private @Nullable Integer actionDurationInSeconds;
     /**
      * @return (Updatable) Evaluation period in seconds.
      * 
      */
-    private final Integer periodInSeconds;
+    private Integer periodInSeconds;
     /**
      * @return (Updatable) Requests allowed per evaluation period.
      * 
      */
-    private final Integer requestsLimit;
+    private Integer requestsLimit;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyRequestRateLimitingRuleConfiguration(
-        @CustomType.Parameter("actionDurationInSeconds") @Nullable Integer actionDurationInSeconds,
-        @CustomType.Parameter("periodInSeconds") Integer periodInSeconds,
-        @CustomType.Parameter("requestsLimit") Integer requestsLimit) {
-        this.actionDurationInSeconds = actionDurationInSeconds;
-        this.periodInSeconds = periodInSeconds;
-        this.requestsLimit = requestsLimit;
-    }
-
+    private AppFirewallPolicyRequestRateLimitingRuleConfiguration() {}
     /**
      * @return (Updatable) Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
      * 
@@ -66,16 +57,12 @@ public final class AppFirewallPolicyRequestRateLimitingRuleConfiguration {
     public static Builder builder(AppFirewallPolicyRequestRateLimitingRuleConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer actionDurationInSeconds;
         private Integer periodInSeconds;
         private Integer requestsLimit;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyRequestRateLimitingRuleConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionDurationInSeconds = defaults.actionDurationInSeconds;
@@ -83,19 +70,27 @@ public final class AppFirewallPolicyRequestRateLimitingRuleConfiguration {
     	      this.requestsLimit = defaults.requestsLimit;
         }
 
+        @CustomType.Setter
         public Builder actionDurationInSeconds(@Nullable Integer actionDurationInSeconds) {
             this.actionDurationInSeconds = actionDurationInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder periodInSeconds(Integer periodInSeconds) {
             this.periodInSeconds = Objects.requireNonNull(periodInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder requestsLimit(Integer requestsLimit) {
             this.requestsLimit = Objects.requireNonNull(requestsLimit);
             return this;
-        }        public AppFirewallPolicyRequestRateLimitingRuleConfiguration build() {
-            return new AppFirewallPolicyRequestRateLimitingRuleConfiguration(actionDurationInSeconds, periodInSeconds, requestsLimit);
+        }
+        public AppFirewallPolicyRequestRateLimitingRuleConfiguration build() {
+            final var o = new AppFirewallPolicyRequestRateLimitingRuleConfiguration();
+            o.actionDurationInSeconds = actionDurationInSeconds;
+            o.periodInSeconds = periodInSeconds;
+            o.requestsLimit = requestsLimit;
+            return o;
         }
     }
 }

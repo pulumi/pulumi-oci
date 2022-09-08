@@ -17,35 +17,24 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
      * @return (Updatable) A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within ${} delimiters. Only the request context is available.
      * 
      */
-    private final @Nullable List<String> cacheKeyAdditions;
+    private @Nullable List<String> cacheKeyAdditions;
     /**
      * @return (Updatable) Whether this policy is currently enabled.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
      * 
      */
-    private final @Nullable Boolean isPrivateCachingEnabled;
+    private @Nullable Boolean isPrivateCachingEnabled;
     /**
      * @return (Updatable) Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup(
-        @CustomType.Parameter("cacheKeyAdditions") @Nullable List<String> cacheKeyAdditions,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("isPrivateCachingEnabled") @Nullable Boolean isPrivateCachingEnabled,
-        @CustomType.Parameter("type") String type) {
-        this.cacheKeyAdditions = cacheKeyAdditions;
-        this.isEnabled = isEnabled;
-        this.isPrivateCachingEnabled = isPrivateCachingEnabled;
-        this.type = type;
-    }
-
+    private DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup() {}
     /**
      * @return (Updatable) A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within ${} delimiters. Only the request context is available.
      * 
@@ -82,17 +71,13 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
     public static Builder builder(DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> cacheKeyAdditions;
         private @Nullable Boolean isEnabled;
         private @Nullable Boolean isPrivateCachingEnabled;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cacheKeyAdditions = defaults.cacheKeyAdditions;
@@ -101,6 +86,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder cacheKeyAdditions(@Nullable List<String> cacheKeyAdditions) {
             this.cacheKeyAdditions = cacheKeyAdditions;
             return this;
@@ -108,19 +94,28 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
         public Builder cacheKeyAdditions(String... cacheKeyAdditions) {
             return cacheKeyAdditions(List.of(cacheKeyAdditions));
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isPrivateCachingEnabled(@Nullable Boolean isPrivateCachingEnabled) {
             this.isPrivateCachingEnabled = isPrivateCachingEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup build() {
-            return new DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup(cacheKeyAdditions, isEnabled, isPrivateCachingEnabled, type);
+        }
+        public DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup build() {
+            final var o = new DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup();
+            o.cacheKeyAdditions = cacheKeyAdditions;
+            o.isEnabled = isEnabled;
+            o.isPrivateCachingEnabled = isPrivateCachingEnabled;
+            o.type = type;
+            return o;
         }
     }
 }

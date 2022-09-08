@@ -18,45 +18,30 @@ public final class GetOperationsInsightsWarehousesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return User-friedly name of Operations Insights Warehouse that does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetOperationsInsightsWarehousesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetOperationsInsightsWarehousesFilter> filters;
     /**
      * @return OPSI Warehouse OCID
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of operations_insights_warehouse_summary_collection.
      * 
      */
-    private final List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections;
+    private List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections;
     /**
      * @return Possible lifecycle states
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
 
-    @CustomType.Constructor
-    private GetOperationsInsightsWarehousesResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetOperationsInsightsWarehousesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("operationsInsightsWarehouseSummaryCollections") List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections,
-        @CustomType.Parameter("states") @Nullable List<String> states) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.operationsInsightsWarehouseSummaryCollections = operationsInsightsWarehouseSummaryCollections;
-        this.states = states;
-    }
-
+    private GetOperationsInsightsWarehousesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetOperationsInsightsWarehousesResult {
     public static Builder builder(GetOperationsInsightsWarehousesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetOperationsInsightsWarehousesResult {
         private @Nullable String id;
         private List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections;
         private @Nullable List<String> states;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOperationsInsightsWarehousesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetOperationsInsightsWarehousesResult {
     	      this.states = defaults.states;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOperationsInsightsWarehousesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetOperationsInsightsWarehousesResult {
         public Builder filters(GetOperationsInsightsWarehousesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsWarehouseSummaryCollections(List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections) {
             this.operationsInsightsWarehouseSummaryCollections = Objects.requireNonNull(operationsInsightsWarehouseSummaryCollections);
             return this;
@@ -152,14 +138,23 @@ public final class GetOperationsInsightsWarehousesResult {
         public Builder operationsInsightsWarehouseSummaryCollections(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection... operationsInsightsWarehouseSummaryCollections) {
             return operationsInsightsWarehouseSummaryCollections(List.of(operationsInsightsWarehouseSummaryCollections));
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
         }
         public Builder states(String... states) {
             return states(List.of(states));
-        }        public GetOperationsInsightsWarehousesResult build() {
-            return new GetOperationsInsightsWarehousesResult(compartmentId, displayName, filters, id, operationsInsightsWarehouseSummaryCollections, states);
+        }
+        public GetOperationsInsightsWarehousesResult build() {
+            final var o = new GetOperationsInsightsWarehousesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.operationsInsightsWarehouseSummaryCollections = operationsInsightsWarehouseSummaryCollections;
+            o.states = states;
+            return o;
         }
     }
 }

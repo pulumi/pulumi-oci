@@ -13,21 +13,14 @@ public final class GetAutoScalingConfigurationAutoScalingResource {
      * @return ID of the condition that is assigned after creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The type of action to take.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationAutoScalingResource(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("type") String type) {
-        this.id = id;
-        this.type = type;
-    }
-
+    private GetAutoScalingConfigurationAutoScalingResource() {}
     /**
      * @return ID of the condition that is assigned after creation.
      * 
@@ -50,30 +43,32 @@ public final class GetAutoScalingConfigurationAutoScalingResource {
     public static Builder builder(GetAutoScalingConfigurationAutoScalingResource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationAutoScalingResource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetAutoScalingConfigurationAutoScalingResource build() {
-            return new GetAutoScalingConfigurationAutoScalingResource(id, type);
+        }
+        public GetAutoScalingConfigurationAutoScalingResource build() {
+            final var o = new GetAutoScalingConfigurationAutoScalingResource();
+            o.id = id;
+            o.type = type;
+            return o;
         }
     }
 }

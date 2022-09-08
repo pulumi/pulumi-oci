@@ -14,13 +14,9 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
      * @return The list of headers.
      * 
      */
-    private final List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItem> items;
+    private List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItem> items;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeader(@CustomType.Parameter("items") List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItem> items) {
-        this.items = items;
-    }
-
+    private GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeader() {}
     /**
      * @return The list of headers.
      * 
@@ -36,27 +32,27 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
     public static Builder builder(GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItem... items) {
             return items(List.of(items));
-        }        public GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeader build() {
-            return new GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeader(items);
+        }
+        public GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeader build() {
+            final var o = new GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeader();
+            o.items = items;
+            return o;
         }
     }
 }

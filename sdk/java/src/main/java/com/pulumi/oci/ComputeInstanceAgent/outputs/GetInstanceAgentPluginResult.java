@@ -9,55 +9,36 @@ import java.util.Objects;
 
 @CustomType
 public final class GetInstanceAgentPluginResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String instanceagentId;
+    private String id;
+    private String instanceagentId;
     /**
      * @return The optional message from the agent plugin
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The plugin name
      * 
      */
-    private final String name;
-    private final String pluginName;
+    private String name;
+    private String pluginName;
     /**
      * @return The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The last update time of the plugin in UTC
      * 
      */
-    private final String timeLastUpdatedUtc;
+    private String timeLastUpdatedUtc;
 
-    @CustomType.Constructor
-    private GetInstanceAgentPluginResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceagentId") String instanceagentId,
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("pluginName") String pluginName,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("timeLastUpdatedUtc") String timeLastUpdatedUtc) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.instanceagentId = instanceagentId;
-        this.message = message;
-        this.name = name;
-        this.pluginName = pluginName;
-        this.status = status;
-        this.timeLastUpdatedUtc = timeLastUpdatedUtc;
-    }
-
+    private GetInstanceAgentPluginResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -110,7 +91,7 @@ public final class GetInstanceAgentPluginResult {
     public static Builder builder(GetInstanceAgentPluginResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
@@ -120,11 +101,7 @@ public final class GetInstanceAgentPluginResult {
         private String pluginName;
         private String status;
         private String timeLastUpdatedUtc;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceAgentPluginResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -137,39 +114,57 @@ public final class GetInstanceAgentPluginResult {
     	      this.timeLastUpdatedUtc = defaults.timeLastUpdatedUtc;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceagentId(String instanceagentId) {
             this.instanceagentId = Objects.requireNonNull(instanceagentId);
             return this;
         }
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder pluginName(String pluginName) {
             this.pluginName = Objects.requireNonNull(pluginName);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastUpdatedUtc(String timeLastUpdatedUtc) {
             this.timeLastUpdatedUtc = Objects.requireNonNull(timeLastUpdatedUtc);
             return this;
-        }        public GetInstanceAgentPluginResult build() {
-            return new GetInstanceAgentPluginResult(compartmentId, id, instanceagentId, message, name, pluginName, status, timeLastUpdatedUtc);
+        }
+        public GetInstanceAgentPluginResult build() {
+            final var o = new GetInstanceAgentPluginResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.instanceagentId = instanceagentId;
+            o.message = message;
+            o.name = name;
+            o.pluginName = pluginName;
+            o.status = status;
+            o.timeLastUpdatedUtc = timeLastUpdatedUtc;
+            return o;
         }
     }
 }

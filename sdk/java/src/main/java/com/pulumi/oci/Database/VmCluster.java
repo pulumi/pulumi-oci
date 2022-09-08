@@ -58,6 +58,8 @@ import javax.annotation.Nullable;
  *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
  *             .dataCollectionOptions(VmClusterDataCollectionOptionsArgs.builder()
  *                 .isDiagnosticsEventsEnabled(var_.vm_cluster_data_collection_options_is_diagnostics_events_enabled())
+ *                 .isHealthMonitoringEnabled(var_.vm_cluster_data_collection_options_is_health_monitoring_enabled())
+ *                 .isIncidentLogsEnabled(var_.vm_cluster_data_collection_options_is_incident_logs_enabled())
  *                 .build())
  *             .dataStorageSizeInTbs(var_.vm_cluster_data_storage_size_in_tbs())
  *             .dbNodeStorageSizeInGbs(var_.vm_cluster_db_node_storage_size_in_gbs())
@@ -121,22 +123,30 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
         return this.cpusEnabled;
     }
     /**
-     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     @Export(name="dataCollectionOptions", type=VmClusterDataCollectionOptions.class, parameters={})
     private Output<VmClusterDataCollectionOptions> dataCollectionOptions;
 
     /**
-     * @return (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * @return (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     public Output<VmClusterDataCollectionOptions> dataCollectionOptions() {
         return this.dataCollectionOptions;
     }
+    /**
+     * (Updatable) The data disk group size to be allocated in GBs.
+     * 
+     */
     @Export(name="dataStorageSizeInGb", type=Double.class, parameters={})
     private Output<Double> dataStorageSizeInGb;
 
+    /**
+     * @return (Updatable) The data disk group size to be allocated in GBs.
+     * 
+     */
     public Output<Double> dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
     }

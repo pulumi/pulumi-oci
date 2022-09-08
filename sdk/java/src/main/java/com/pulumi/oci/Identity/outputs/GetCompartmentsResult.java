@@ -15,55 +15,36 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCompartmentsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The OCID of the parent compartment containing the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The list of compartments.
      * 
      */
-    private final List<GetCompartmentsCompartment> compartments;
-    private final @Nullable List<GetCompartmentsFilter> filters;
+    private List<GetCompartmentsCompartment> compartments;
+    private @Nullable List<GetCompartmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The compartment&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetCompartmentsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("compartments") List<GetCompartmentsCompartment> compartments,
-        @CustomType.Parameter("filters") @Nullable List<GetCompartmentsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.compartments = compartments;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetCompartmentsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -116,7 +97,7 @@ public final class GetCompartmentsResult {
     public static Builder builder(GetCompartmentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -126,11 +107,7 @@ public final class GetCompartmentsResult {
         private String id;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCompartmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -143,18 +120,22 @@ public final class GetCompartmentsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder compartments(List<GetCompartmentsCompartment> compartments) {
             this.compartments = Objects.requireNonNull(compartments);
             return this;
@@ -162,6 +143,7 @@ public final class GetCompartmentsResult {
         public Builder compartments(GetCompartmentsCompartment... compartments) {
             return compartments(List.of(compartments));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCompartmentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -169,19 +151,32 @@ public final class GetCompartmentsResult {
         public Builder filters(GetCompartmentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetCompartmentsResult build() {
-            return new GetCompartmentsResult(accessLevel, compartmentId, compartmentIdInSubtree, compartments, filters, id, name, state);
+        }
+        public GetCompartmentsResult build() {
+            final var o = new GetCompartmentsResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.compartments = compartments;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

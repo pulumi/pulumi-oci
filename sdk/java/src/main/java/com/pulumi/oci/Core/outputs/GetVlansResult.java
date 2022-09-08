@@ -18,52 +18,35 @@ public final class GetVlansResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VLAN.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetVlansFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetVlansFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The VLAN&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the VLAN is in.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
     /**
      * @return The list of vlans.
      * 
      */
-    private final List<GetVlansVlan> vlans;
+    private List<GetVlansVlan> vlans;
 
-    @CustomType.Constructor
-    private GetVlansResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetVlansFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId,
-        @CustomType.Parameter("vlans") List<GetVlansVlan> vlans) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.vcnId = vcnId;
-        this.vlans = vlans;
-    }
-
+    private GetVlansResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VLAN.
      * 
@@ -117,7 +100,7 @@ public final class GetVlansResult {
     public static Builder builder(GetVlansResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetVlansResult {
         private @Nullable String state;
         private @Nullable String vcnId;
         private List<GetVlansVlan> vlans;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVlansResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetVlansResult {
     	      this.vlans = defaults.vlans;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVlansFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,26 +139,39 @@ public final class GetVlansResult {
         public Builder filters(GetVlansFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
         }
+        @CustomType.Setter
         public Builder vlans(List<GetVlansVlan> vlans) {
             this.vlans = Objects.requireNonNull(vlans);
             return this;
         }
         public Builder vlans(GetVlansVlan... vlans) {
             return vlans(List.of(vlans));
-        }        public GetVlansResult build() {
-            return new GetVlansResult(compartmentId, displayName, filters, id, state, vcnId, vlans);
+        }
+        public GetVlansResult build() {
+            final var o = new GetVlansResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.vcnId = vcnId;
+            o.vlans = vlans;
+            return o;
         }
     }
 }

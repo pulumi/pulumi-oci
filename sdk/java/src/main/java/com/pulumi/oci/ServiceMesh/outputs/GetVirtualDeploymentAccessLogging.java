@@ -13,13 +13,9 @@ public final class GetVirtualDeploymentAccessLogging {
      * @return Determines if the logging configuration is enabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
 
-    @CustomType.Constructor
-    private GetVirtualDeploymentAccessLogging(@CustomType.Parameter("isEnabled") Boolean isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
+    private GetVirtualDeploymentAccessLogging() {}
     /**
      * @return Determines if the logging configuration is enabled.
      * 
@@ -35,24 +31,24 @@ public final class GetVirtualDeploymentAccessLogging {
     public static Builder builder(GetVirtualDeploymentAccessLogging defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualDeploymentAccessLogging defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
-        }        public GetVirtualDeploymentAccessLogging build() {
-            return new GetVirtualDeploymentAccessLogging(isEnabled);
+        }
+        public GetVirtualDeploymentAccessLogging build() {
+            final var o = new GetVirtualDeploymentAccessLogging();
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

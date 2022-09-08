@@ -18,73 +18,50 @@ public final class GetDataSafeConfigurationResult {
      * @return The OCID of the tenancy used to enable Data Safe.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The Oracle Data Safe&#39;s NAT Gateway IP Address.
      * 
      */
-    private final String dataSafeNatGatewayIpAddress;
+    private String dataSafeNatGatewayIpAddress;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Details of the tenancy level global settings in Data Safe.
      * 
      */
-    private final List<GetDataSafeConfigurationGlobalSetting> globalSettings;
-    private final String id;
+    private List<GetDataSafeConfigurationGlobalSetting> globalSettings;
+    private String id;
     /**
      * @return Indicates if Data Safe is enabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return The current state of Data Safe.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeEnabled;
+    private String timeEnabled;
     /**
      * @return The URL of the Data Safe service.
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetDataSafeConfigurationResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dataSafeNatGatewayIpAddress") String dataSafeNatGatewayIpAddress,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("globalSettings") List<GetDataSafeConfigurationGlobalSetting> globalSettings,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeEnabled") String timeEnabled,
-        @CustomType.Parameter("url") String url) {
-        this.compartmentId = compartmentId;
-        this.dataSafeNatGatewayIpAddress = dataSafeNatGatewayIpAddress;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.globalSettings = globalSettings;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.state = state;
-        this.timeEnabled = timeEnabled;
-        this.url = url;
-    }
-
+    private GetDataSafeConfigurationResult() {}
     /**
      * @return The OCID of the tenancy used to enable Data Safe.
      * 
@@ -159,7 +136,7 @@ public final class GetDataSafeConfigurationResult {
     public static Builder builder(GetDataSafeConfigurationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String dataSafeNatGatewayIpAddress;
@@ -171,11 +148,7 @@ public final class GetDataSafeConfigurationResult {
         private String state;
         private String timeEnabled;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataSafeConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -190,22 +163,27 @@ public final class GetDataSafeConfigurationResult {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataSafeNatGatewayIpAddress(String dataSafeNatGatewayIpAddress) {
             this.dataSafeNatGatewayIpAddress = Objects.requireNonNull(dataSafeNatGatewayIpAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder globalSettings(List<GetDataSafeConfigurationGlobalSetting> globalSettings) {
             this.globalSettings = Objects.requireNonNull(globalSettings);
             return this;
@@ -213,27 +191,44 @@ public final class GetDataSafeConfigurationResult {
         public Builder globalSettings(GetDataSafeConfigurationGlobalSetting... globalSettings) {
             return globalSettings(List.of(globalSettings));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnabled(String timeEnabled) {
             this.timeEnabled = Objects.requireNonNull(timeEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetDataSafeConfigurationResult build() {
-            return new GetDataSafeConfigurationResult(compartmentId, dataSafeNatGatewayIpAddress, definedTags, freeformTags, globalSettings, id, isEnabled, state, timeEnabled, url);
+        }
+        public GetDataSafeConfigurationResult build() {
+            final var o = new GetDataSafeConfigurationResult();
+            o.compartmentId = compartmentId;
+            o.dataSafeNatGatewayIpAddress = dataSafeNatGatewayIpAddress;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.globalSettings = globalSettings;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.state = state;
+            o.timeEnabled = timeEnabled;
+            o.url = url;
+            return o;
         }
     }
 }

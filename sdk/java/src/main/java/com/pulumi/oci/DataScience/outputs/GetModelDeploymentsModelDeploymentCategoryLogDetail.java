@@ -15,21 +15,14 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetail {
      * @return The log details.
      * 
      */
-    private final List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses;
+    private List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses;
     /**
      * @return The log details.
      * 
      */
-    private final List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts;
+    private List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts;
 
-    @CustomType.Constructor
-    private GetModelDeploymentsModelDeploymentCategoryLogDetail(
-        @CustomType.Parameter("accesses") List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses,
-        @CustomType.Parameter("predicts") List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts) {
-        this.accesses = accesses;
-        this.predicts = predicts;
-    }
-
+    private GetModelDeploymentsModelDeploymentCategoryLogDetail() {}
     /**
      * @return The log details.
      * 
@@ -52,21 +45,18 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetail {
     public static Builder builder(GetModelDeploymentsModelDeploymentCategoryLogDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses;
         private List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentCategoryLogDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accesses = defaults.accesses;
     	      this.predicts = defaults.predicts;
         }
 
+        @CustomType.Setter
         public Builder accesses(List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses) {
             this.accesses = Objects.requireNonNull(accesses);
             return this;
@@ -74,14 +64,19 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetail {
         public Builder accesses(GetModelDeploymentsModelDeploymentCategoryLogDetailAccess... accesses) {
             return accesses(List.of(accesses));
         }
+        @CustomType.Setter
         public Builder predicts(List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts) {
             this.predicts = Objects.requireNonNull(predicts);
             return this;
         }
         public Builder predicts(GetModelDeploymentsModelDeploymentCategoryLogDetailPredict... predicts) {
             return predicts(List.of(predicts));
-        }        public GetModelDeploymentsModelDeploymentCategoryLogDetail build() {
-            return new GetModelDeploymentsModelDeploymentCategoryLogDetail(accesses, predicts);
+        }
+        public GetModelDeploymentsModelDeploymentCategoryLogDetail build() {
+            final var o = new GetModelDeploymentsModelDeploymentCategoryLogDetail();
+            o.accesses = accesses;
+            o.predicts = predicts;
+            return o;
         }
     }
 }

@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicy {
-    private final String policyType;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule> rules;
+    private String policyType;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule> rules;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicy(
-        @CustomType.Parameter("policyType") String policyType,
-        @CustomType.Parameter("rules") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule> rules) {
-        this.policyType = policyType;
-        this.rules = rules;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicy() {}
     public String policyType() {
         return this.policyType;
     }
@@ -36,33 +29,35 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicy {
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String policyType;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule> rules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.policyType = defaults.policyType;
     	      this.rules = defaults.rules;
         }
 
+        @CustomType.Setter
         public Builder policyType(String policyType) {
             this.policyType = Objects.requireNonNull(policyType);
             return this;
         }
+        @CustomType.Setter
         public Builder rules(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
         }
         public Builder rules(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule... rules) {
             return rules(List.of(rules));
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicy build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicy(policyType, rules);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicy build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicy();
+            o.policyType = policyType;
+            o.rules = rules;
+            return o;
         }
     }
 }

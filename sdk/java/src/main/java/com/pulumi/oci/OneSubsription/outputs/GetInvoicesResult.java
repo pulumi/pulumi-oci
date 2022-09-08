@@ -14,43 +14,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesResult {
-    private final String arCustomerTransactionId;
-    private final String compartmentId;
-    private final @Nullable List<String> fields;
-    private final @Nullable List<GetInvoicesFilter> filters;
+    private String arCustomerTransactionId;
+    private String compartmentId;
+    private @Nullable List<String> fields;
+    private @Nullable List<GetInvoicesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of invoices.
      * 
      */
-    private final List<GetInvoicesInvoice> invoices;
-    private final @Nullable String timeFrom;
-    private final @Nullable String timeTo;
+    private List<GetInvoicesInvoice> invoices;
+    private @Nullable String timeFrom;
+    private @Nullable String timeTo;
 
-    @CustomType.Constructor
-    private GetInvoicesResult(
-        @CustomType.Parameter("arCustomerTransactionId") String arCustomerTransactionId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("filters") @Nullable List<GetInvoicesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("invoices") List<GetInvoicesInvoice> invoices,
-        @CustomType.Parameter("timeFrom") @Nullable String timeFrom,
-        @CustomType.Parameter("timeTo") @Nullable String timeTo) {
-        this.arCustomerTransactionId = arCustomerTransactionId;
-        this.compartmentId = compartmentId;
-        this.fields = fields;
-        this.filters = filters;
-        this.id = id;
-        this.invoices = invoices;
-        this.timeFrom = timeFrom;
-        this.timeTo = timeTo;
-    }
-
+    private GetInvoicesResult() {}
     public String arCustomerTransactionId() {
         return this.arCustomerTransactionId;
     }
@@ -91,7 +72,7 @@ public final class GetInvoicesResult {
     public static Builder builder(GetInvoicesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String arCustomerTransactionId;
         private String compartmentId;
@@ -101,11 +82,7 @@ public final class GetInvoicesResult {
         private List<GetInvoicesInvoice> invoices;
         private @Nullable String timeFrom;
         private @Nullable String timeTo;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.arCustomerTransactionId = defaults.arCustomerTransactionId;
@@ -118,14 +95,17 @@ public final class GetInvoicesResult {
     	      this.timeTo = defaults.timeTo;
         }
 
+        @CustomType.Setter
         public Builder arCustomerTransactionId(String arCustomerTransactionId) {
             this.arCustomerTransactionId = Objects.requireNonNull(arCustomerTransactionId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -133,6 +113,7 @@ public final class GetInvoicesResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInvoicesFilter> filters) {
             this.filters = filters;
             return this;
@@ -140,10 +121,12 @@ public final class GetInvoicesResult {
         public Builder filters(GetInvoicesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder invoices(List<GetInvoicesInvoice> invoices) {
             this.invoices = Objects.requireNonNull(invoices);
             return this;
@@ -151,15 +134,27 @@ public final class GetInvoicesResult {
         public Builder invoices(GetInvoicesInvoice... invoices) {
             return invoices(List.of(invoices));
         }
+        @CustomType.Setter
         public Builder timeFrom(@Nullable String timeFrom) {
             this.timeFrom = timeFrom;
             return this;
         }
+        @CustomType.Setter
         public Builder timeTo(@Nullable String timeTo) {
             this.timeTo = timeTo;
             return this;
-        }        public GetInvoicesResult build() {
-            return new GetInvoicesResult(arCustomerTransactionId, compartmentId, fields, filters, id, invoices, timeFrom, timeTo);
+        }
+        public GetInvoicesResult build() {
+            final var o = new GetInvoicesResult();
+            o.arCustomerTransactionId = arCustomerTransactionId;
+            o.compartmentId = compartmentId;
+            o.fields = fields;
+            o.filters = filters;
+            o.id = id;
+            o.invoices = invoices;
+            o.timeFrom = timeFrom;
+            o.timeTo = timeTo;
+            return o;
         }
     }
 }

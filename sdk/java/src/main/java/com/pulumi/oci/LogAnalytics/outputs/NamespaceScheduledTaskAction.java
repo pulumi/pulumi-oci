@@ -16,56 +16,39 @@ public final class NamespaceScheduledTaskAction {
      * @return if true, purge child compartments data
      * 
      */
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return the type of the log data to be purged
      * 
      */
-    private final @Nullable String dataType;
+    private @Nullable String dataType;
     /**
      * @return the compartment OCID under which the data will be purged
      * 
      */
-    private final @Nullable String purgeCompartmentId;
+    private @Nullable String purgeCompartmentId;
     /**
      * @return The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
      * 
      */
-    private final @Nullable String purgeDuration;
+    private @Nullable String purgeDuration;
     /**
      * @return Purge query string.
      * 
      */
-    private final @Nullable String queryString;
+    private @Nullable String queryString;
     /**
      * @return The ManagementSavedSearch id [OCID] to be accelerated.
      * 
      */
-    private final @Nullable String savedSearchId;
+    private @Nullable String savedSearchId;
     /**
      * @return (Updatable) Schedule type discriminator.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private NamespaceScheduledTaskAction(
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("dataType") @Nullable String dataType,
-        @CustomType.Parameter("purgeCompartmentId") @Nullable String purgeCompartmentId,
-        @CustomType.Parameter("purgeDuration") @Nullable String purgeDuration,
-        @CustomType.Parameter("queryString") @Nullable String queryString,
-        @CustomType.Parameter("savedSearchId") @Nullable String savedSearchId,
-        @CustomType.Parameter("type") String type) {
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.dataType = dataType;
-        this.purgeCompartmentId = purgeCompartmentId;
-        this.purgeDuration = purgeDuration;
-        this.queryString = queryString;
-        this.savedSearchId = savedSearchId;
-        this.type = type;
-    }
-
+    private NamespaceScheduledTaskAction() {}
     /**
      * @return if true, purge child compartments data
      * 
@@ -123,7 +106,7 @@ public final class NamespaceScheduledTaskAction {
     public static Builder builder(NamespaceScheduledTaskAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String dataType;
@@ -132,11 +115,7 @@ public final class NamespaceScheduledTaskAction {
         private @Nullable String queryString;
         private @Nullable String savedSearchId;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NamespaceScheduledTaskAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
@@ -148,35 +127,51 @@ public final class NamespaceScheduledTaskAction {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
             this.dataType = dataType;
             return this;
         }
+        @CustomType.Setter
         public Builder purgeCompartmentId(@Nullable String purgeCompartmentId) {
             this.purgeCompartmentId = purgeCompartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder purgeDuration(@Nullable String purgeDuration) {
             this.purgeDuration = purgeDuration;
             return this;
         }
+        @CustomType.Setter
         public Builder queryString(@Nullable String queryString) {
             this.queryString = queryString;
             return this;
         }
+        @CustomType.Setter
         public Builder savedSearchId(@Nullable String savedSearchId) {
             this.savedSearchId = savedSearchId;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public NamespaceScheduledTaskAction build() {
-            return new NamespaceScheduledTaskAction(compartmentIdInSubtree, dataType, purgeCompartmentId, purgeDuration, queryString, savedSearchId, type);
+        }
+        public NamespaceScheduledTaskAction build() {
+            final var o = new NamespaceScheduledTaskAction();
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.dataType = dataType;
+            o.purgeCompartmentId = purgeCompartmentId;
+            o.purgeDuration = purgeDuration;
+            o.queryString = queryString;
+            o.savedSearchId = savedSearchId;
+            o.type = type;
+            return o;
         }
     }
 }

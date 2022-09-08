@@ -13,41 +13,26 @@ public final class GetFastConnectProviderServiceKeyResult {
      * @return The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
      * 
      */
-    private final String bandwidthShapeName;
+    private String bandwidthShapeName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. Use this value as the `providerServiceKeyName` query parameter for [GetFastConnectProviderServiceKey](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey).
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The provider&#39;s peering location.
      * 
      */
-    private final String peeringLocation;
-    private final String providerServiceId;
-    private final String providerServiceKeyName;
+    private String peeringLocation;
+    private String providerServiceId;
+    private String providerServiceKeyName;
 
-    @CustomType.Constructor
-    private GetFastConnectProviderServiceKeyResult(
-        @CustomType.Parameter("bandwidthShapeName") String bandwidthShapeName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("peeringLocation") String peeringLocation,
-        @CustomType.Parameter("providerServiceId") String providerServiceId,
-        @CustomType.Parameter("providerServiceKeyName") String providerServiceKeyName) {
-        this.bandwidthShapeName = bandwidthShapeName;
-        this.id = id;
-        this.name = name;
-        this.peeringLocation = peeringLocation;
-        this.providerServiceId = providerServiceId;
-        this.providerServiceKeyName = providerServiceKeyName;
-    }
-
+    private GetFastConnectProviderServiceKeyResult() {}
     /**
      * @return The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
      * 
@@ -90,7 +75,7 @@ public final class GetFastConnectProviderServiceKeyResult {
     public static Builder builder(GetFastConnectProviderServiceKeyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bandwidthShapeName;
         private String id;
@@ -98,11 +83,7 @@ public final class GetFastConnectProviderServiceKeyResult {
         private String peeringLocation;
         private String providerServiceId;
         private String providerServiceKeyName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFastConnectProviderServiceKeyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bandwidthShapeName = defaults.bandwidthShapeName;
@@ -113,31 +94,45 @@ public final class GetFastConnectProviderServiceKeyResult {
     	      this.providerServiceKeyName = defaults.providerServiceKeyName;
         }
 
+        @CustomType.Setter
         public Builder bandwidthShapeName(String bandwidthShapeName) {
             this.bandwidthShapeName = Objects.requireNonNull(bandwidthShapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder peeringLocation(String peeringLocation) {
             this.peeringLocation = Objects.requireNonNull(peeringLocation);
             return this;
         }
+        @CustomType.Setter
         public Builder providerServiceId(String providerServiceId) {
             this.providerServiceId = Objects.requireNonNull(providerServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder providerServiceKeyName(String providerServiceKeyName) {
             this.providerServiceKeyName = Objects.requireNonNull(providerServiceKeyName);
             return this;
-        }        public GetFastConnectProviderServiceKeyResult build() {
-            return new GetFastConnectProviderServiceKeyResult(bandwidthShapeName, id, name, peeringLocation, providerServiceId, providerServiceKeyName);
+        }
+        public GetFastConnectProviderServiceKeyResult build() {
+            final var o = new GetFastConnectProviderServiceKeyResult();
+            o.bandwidthShapeName = bandwidthShapeName;
+            o.id = id;
+            o.name = name;
+            o.peeringLocation = peeringLocation;
+            o.providerServiceId = providerServiceId;
+            o.providerServiceKeyName = providerServiceKeyName;
+            return o;
         }
     }
 }

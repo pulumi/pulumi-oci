@@ -15,31 +15,20 @@ public final class ScheduleQueryPropertiesDateRange {
      * @return Defines whether the schedule date range is STATIC or DYNAMIC
      * 
      */
-    private final String dateRangeType;
-    private final @Nullable String dynamicDateRangeType;
+    private String dateRangeType;
+    private @Nullable String dynamicDateRangeType;
     /**
      * @return The usage end time.
      * 
      */
-    private final @Nullable String timeUsageEnded;
+    private @Nullable String timeUsageEnded;
     /**
      * @return The usage start time.
      * 
      */
-    private final @Nullable String timeUsageStarted;
+    private @Nullable String timeUsageStarted;
 
-    @CustomType.Constructor
-    private ScheduleQueryPropertiesDateRange(
-        @CustomType.Parameter("dateRangeType") String dateRangeType,
-        @CustomType.Parameter("dynamicDateRangeType") @Nullable String dynamicDateRangeType,
-        @CustomType.Parameter("timeUsageEnded") @Nullable String timeUsageEnded,
-        @CustomType.Parameter("timeUsageStarted") @Nullable String timeUsageStarted) {
-        this.dateRangeType = dateRangeType;
-        this.dynamicDateRangeType = dynamicDateRangeType;
-        this.timeUsageEnded = timeUsageEnded;
-        this.timeUsageStarted = timeUsageStarted;
-    }
-
+    private ScheduleQueryPropertiesDateRange() {}
     /**
      * @return Defines whether the schedule date range is STATIC or DYNAMIC
      * 
@@ -72,17 +61,13 @@ public final class ScheduleQueryPropertiesDateRange {
     public static Builder builder(ScheduleQueryPropertiesDateRange defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dateRangeType;
         private @Nullable String dynamicDateRangeType;
         private @Nullable String timeUsageEnded;
         private @Nullable String timeUsageStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ScheduleQueryPropertiesDateRange defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dateRangeType = defaults.dateRangeType;
@@ -91,23 +76,33 @@ public final class ScheduleQueryPropertiesDateRange {
     	      this.timeUsageStarted = defaults.timeUsageStarted;
         }
 
+        @CustomType.Setter
         public Builder dateRangeType(String dateRangeType) {
             this.dateRangeType = Objects.requireNonNull(dateRangeType);
             return this;
         }
+        @CustomType.Setter
         public Builder dynamicDateRangeType(@Nullable String dynamicDateRangeType) {
             this.dynamicDateRangeType = dynamicDateRangeType;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUsageEnded(@Nullable String timeUsageEnded) {
             this.timeUsageEnded = timeUsageEnded;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUsageStarted(@Nullable String timeUsageStarted) {
             this.timeUsageStarted = timeUsageStarted;
             return this;
-        }        public ScheduleQueryPropertiesDateRange build() {
-            return new ScheduleQueryPropertiesDateRange(dateRangeType, dynamicDateRangeType, timeUsageEnded, timeUsageStarted);
+        }
+        public ScheduleQueryPropertiesDateRange build() {
+            final var o = new ScheduleQueryPropertiesDateRange();
+            o.dateRangeType = dateRangeType;
+            o.dynamicDateRangeType = dynamicDateRangeType;
+            o.timeUsageEnded = timeUsageEnded;
+            o.timeUsageStarted = timeUsageStarted;
+            return o;
         }
     }
 }

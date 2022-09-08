@@ -16,42 +16,29 @@ public final class SteeringPolicyAnswer {
      * @return Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer&#39;s `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
      * 
      */
-    private final @Nullable Boolean isDisabled;
+    private @Nullable Boolean isDisabled;
     /**
      * @return A user-friendly name for the answer, unique within the steering policy. An answer&#39;s `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The freeform name of a group of one or more records in which this record is included, such as &#34;LAX data center&#34;. An answer&#39;s `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
      * 
      */
-    private final @Nullable String pool;
+    private @Nullable String pool;
     /**
      * @return The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
      * 
      */
-    private final String rdata;
+    private String rdata;
     /**
      * @return The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
      * 
      */
-    private final String rtype;
+    private String rtype;
 
-    @CustomType.Constructor
-    private SteeringPolicyAnswer(
-        @CustomType.Parameter("isDisabled") @Nullable Boolean isDisabled,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("pool") @Nullable String pool,
-        @CustomType.Parameter("rdata") String rdata,
-        @CustomType.Parameter("rtype") String rtype) {
-        this.isDisabled = isDisabled;
-        this.name = name;
-        this.pool = pool;
-        this.rdata = rdata;
-        this.rtype = rtype;
-    }
-
+    private SteeringPolicyAnswer() {}
     /**
      * @return Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer&#39;s `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
      * 
@@ -95,18 +82,14 @@ public final class SteeringPolicyAnswer {
     public static Builder builder(SteeringPolicyAnswer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isDisabled;
         private String name;
         private @Nullable String pool;
         private String rdata;
         private String rtype;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SteeringPolicyAnswer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isDisabled = defaults.isDisabled;
@@ -116,27 +99,39 @@ public final class SteeringPolicyAnswer {
     	      this.rtype = defaults.rtype;
         }
 
+        @CustomType.Setter
         public Builder isDisabled(@Nullable Boolean isDisabled) {
             this.isDisabled = isDisabled;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder pool(@Nullable String pool) {
             this.pool = pool;
             return this;
         }
+        @CustomType.Setter
         public Builder rdata(String rdata) {
             this.rdata = Objects.requireNonNull(rdata);
             return this;
         }
+        @CustomType.Setter
         public Builder rtype(String rtype) {
             this.rtype = Objects.requireNonNull(rtype);
             return this;
-        }        public SteeringPolicyAnswer build() {
-            return new SteeringPolicyAnswer(isDisabled, name, pool, rdata, rtype);
+        }
+        public SteeringPolicyAnswer build() {
+            final var o = new SteeringPolicyAnswer();
+            o.isDisabled = isDisabled;
+            o.name = name;
+            o.pool = pool;
+            o.rdata = rdata;
+            o.rtype = rtype;
+            return o;
         }
     }
 }

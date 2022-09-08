@@ -18,133 +18,94 @@ public final class DatabaseDatabase {
      * @return A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
      */
-    private final String adminPassword;
+    private String adminPassword;
     /**
      * @return The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final @Nullable String backupId;
+    private @Nullable String backupId;
     /**
      * @return The password to open the TDE wallet.
      * 
      */
-    private final @Nullable String backupTdePassword;
+    private @Nullable String backupTdePassword;
     /**
      * @return The character set for the database.  The default is AL32UTF8. Allowed values are:
      * 
      */
-    private final @Nullable String characterSet;
+    private @Nullable String characterSet;
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private final @Nullable String databaseSoftwareImageId;
+    private @Nullable String databaseSoftwareImageId;
     /**
      * @return (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you&#39;re not authorized, talk to an administrator. If you&#39;re an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      */
-    private final @Nullable DatabaseDatabaseDbBackupConfig dbBackupConfig;
+    private @Nullable DatabaseDatabaseDbBackupConfig dbBackupConfig;
     /**
      * @return The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      * 
      */
-    private final String dbName;
+    private String dbName;
     /**
      * @return The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
      * 
      */
-    private final @Nullable String dbUniqueName;
+    private @Nullable String dbUniqueName;
     /**
      * @return The database workload type.
      * 
      */
-    private final @Nullable String dbWorkload;
+    private @Nullable String dbWorkload;
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private final @Nullable String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private final @Nullable String kmsKeyVersionId;
+    private @Nullable String kmsKeyVersionId;
     /**
      * @return The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
      */
-    private final @Nullable String ncharacterSet;
+    private @Nullable String ncharacterSet;
     /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
-    private final @Nullable String pdbName;
+    private @Nullable String pdbName;
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
-    private final @Nullable String sidPrefix;
+    private @Nullable String sidPrefix;
     /**
      * @return The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
      * 
      */
-    private final @Nullable String tdeWalletPassword;
+    private @Nullable String tdeWalletPassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final @Nullable String vaultId;
+    private @Nullable String vaultId;
 
-    @CustomType.Constructor
-    private DatabaseDatabase(
-        @CustomType.Parameter("adminPassword") String adminPassword,
-        @CustomType.Parameter("backupId") @Nullable String backupId,
-        @CustomType.Parameter("backupTdePassword") @Nullable String backupTdePassword,
-        @CustomType.Parameter("characterSet") @Nullable String characterSet,
-        @CustomType.Parameter("databaseSoftwareImageId") @Nullable String databaseSoftwareImageId,
-        @CustomType.Parameter("dbBackupConfig") @Nullable DatabaseDatabaseDbBackupConfig dbBackupConfig,
-        @CustomType.Parameter("dbName") String dbName,
-        @CustomType.Parameter("dbUniqueName") @Nullable String dbUniqueName,
-        @CustomType.Parameter("dbWorkload") @Nullable String dbWorkload,
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
-        @CustomType.Parameter("kmsKeyId") @Nullable String kmsKeyId,
-        @CustomType.Parameter("kmsKeyVersionId") @Nullable String kmsKeyVersionId,
-        @CustomType.Parameter("ncharacterSet") @Nullable String ncharacterSet,
-        @CustomType.Parameter("pdbName") @Nullable String pdbName,
-        @CustomType.Parameter("sidPrefix") @Nullable String sidPrefix,
-        @CustomType.Parameter("tdeWalletPassword") @Nullable String tdeWalletPassword,
-        @CustomType.Parameter("vaultId") @Nullable String vaultId) {
-        this.adminPassword = adminPassword;
-        this.backupId = backupId;
-        this.backupTdePassword = backupTdePassword;
-        this.characterSet = characterSet;
-        this.databaseSoftwareImageId = databaseSoftwareImageId;
-        this.dbBackupConfig = dbBackupConfig;
-        this.dbName = dbName;
-        this.dbUniqueName = dbUniqueName;
-        this.dbWorkload = dbWorkload;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.kmsKeyId = kmsKeyId;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.ncharacterSet = ncharacterSet;
-        this.pdbName = pdbName;
-        this.sidPrefix = sidPrefix;
-        this.tdeWalletPassword = tdeWalletPassword;
-        this.vaultId = vaultId;
-    }
-
+    private DatabaseDatabase() {}
     /**
      * @return A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
@@ -279,7 +240,7 @@ public final class DatabaseDatabase {
     public static Builder builder(DatabaseDatabase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminPassword;
         private @Nullable String backupId;
@@ -299,11 +260,7 @@ public final class DatabaseDatabase {
         private @Nullable String sidPrefix;
         private @Nullable String tdeWalletPassword;
         private @Nullable String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
@@ -326,79 +283,117 @@ public final class DatabaseDatabase {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = Objects.requireNonNull(adminPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
             this.backupId = backupId;
             return this;
         }
+        @CustomType.Setter
         public Builder backupTdePassword(@Nullable String backupTdePassword) {
             this.backupTdePassword = backupTdePassword;
             return this;
         }
+        @CustomType.Setter
         public Builder characterSet(@Nullable String characterSet) {
             this.characterSet = characterSet;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbBackupConfig(@Nullable DatabaseDatabaseDbBackupConfig dbBackupConfig) {
             this.dbBackupConfig = dbBackupConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
+        @CustomType.Setter
         public Builder dbUniqueName(@Nullable String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             return this;
         }
+        @CustomType.Setter
         public Builder dbWorkload(@Nullable String dbWorkload) {
             this.dbWorkload = dbWorkload;
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
             this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
+        @CustomType.Setter
         public Builder ncharacterSet(@Nullable String ncharacterSet) {
             this.ncharacterSet = ncharacterSet;
             return this;
         }
+        @CustomType.Setter
         public Builder pdbName(@Nullable String pdbName) {
             this.pdbName = pdbName;
             return this;
         }
+        @CustomType.Setter
         public Builder sidPrefix(@Nullable String sidPrefix) {
             this.sidPrefix = sidPrefix;
             return this;
         }
+        @CustomType.Setter
         public Builder tdeWalletPassword(@Nullable String tdeWalletPassword) {
             this.tdeWalletPassword = tdeWalletPassword;
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(@Nullable String vaultId) {
             this.vaultId = vaultId;
             return this;
-        }        public DatabaseDatabase build() {
-            return new DatabaseDatabase(adminPassword, backupId, backupTdePassword, characterSet, databaseSoftwareImageId, dbBackupConfig, dbName, dbUniqueName, dbWorkload, definedTags, freeformTags, kmsKeyId, kmsKeyVersionId, ncharacterSet, pdbName, sidPrefix, tdeWalletPassword, vaultId);
+        }
+        public DatabaseDatabase build() {
+            final var o = new DatabaseDatabase();
+            o.adminPassword = adminPassword;
+            o.backupId = backupId;
+            o.backupTdePassword = backupTdePassword;
+            o.characterSet = characterSet;
+            o.databaseSoftwareImageId = databaseSoftwareImageId;
+            o.dbBackupConfig = dbBackupConfig;
+            o.dbName = dbName;
+            o.dbUniqueName = dbUniqueName;
+            o.dbWorkload = dbWorkload;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.kmsKeyId = kmsKeyId;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.ncharacterSet = ncharacterSet;
+            o.pdbName = pdbName;
+            o.sidPrefix = sidPrefix;
+            o.tdeWalletPassword = tdeWalletPassword;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetOpensearchVersionItem {
      * @return The version of OpenSearch.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetOpensearchVersionItem(@CustomType.Parameter("version") String version) {
-        this.version = version;
-    }
-
+    private GetOpensearchVersionItem() {}
     /**
      * @return The version of OpenSearch.
      * 
@@ -35,24 +31,24 @@ public final class GetOpensearchVersionItem {
     public static Builder builder(GetOpensearchVersionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOpensearchVersionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetOpensearchVersionItem build() {
-            return new GetOpensearchVersionItem(version);
+        }
+        public GetOpensearchVersionItem build() {
+            final var o = new GetOpensearchVersionItem();
+            o.version = version;
+            return o;
         }
     }
 }

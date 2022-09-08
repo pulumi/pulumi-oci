@@ -16,42 +16,29 @@ public final class ConnectorTask {
      * @return (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
      * 
      */
-    private final @Nullable Integer batchSizeInKbs;
+    private @Nullable Integer batchSizeInKbs;
     /**
      * @return (Updatable) Time limit (seconds) for batch sent to invoke the function.
      * 
      */
-    private final @Nullable Integer batchTimeInSec;
+    private @Nullable Integer batchTimeInSec;
     /**
      * @return (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
      * 
      */
-    private final @Nullable String condition;
+    private @Nullable String condition;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
      * 
      */
-    private final @Nullable String functionId;
+    private @Nullable String functionId;
     /**
      * @return (Updatable) The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
 
-    @CustomType.Constructor
-    private ConnectorTask(
-        @CustomType.Parameter("batchSizeInKbs") @Nullable Integer batchSizeInKbs,
-        @CustomType.Parameter("batchTimeInSec") @Nullable Integer batchTimeInSec,
-        @CustomType.Parameter("condition") @Nullable String condition,
-        @CustomType.Parameter("functionId") @Nullable String functionId,
-        @CustomType.Parameter("kind") String kind) {
-        this.batchSizeInKbs = batchSizeInKbs;
-        this.batchTimeInSec = batchTimeInSec;
-        this.condition = condition;
-        this.functionId = functionId;
-        this.kind = kind;
-    }
-
+    private ConnectorTask() {}
     /**
      * @return (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
      * 
@@ -95,18 +82,14 @@ public final class ConnectorTask {
     public static Builder builder(ConnectorTask defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer batchSizeInKbs;
         private @Nullable Integer batchTimeInSec;
         private @Nullable String condition;
         private @Nullable String functionId;
         private String kind;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectorTask defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.batchSizeInKbs = defaults.batchSizeInKbs;
@@ -116,27 +99,39 @@ public final class ConnectorTask {
     	      this.kind = defaults.kind;
         }
 
+        @CustomType.Setter
         public Builder batchSizeInKbs(@Nullable Integer batchSizeInKbs) {
             this.batchSizeInKbs = batchSizeInKbs;
             return this;
         }
+        @CustomType.Setter
         public Builder batchTimeInSec(@Nullable Integer batchTimeInSec) {
             this.batchTimeInSec = batchTimeInSec;
             return this;
         }
+        @CustomType.Setter
         public Builder condition(@Nullable String condition) {
             this.condition = condition;
             return this;
         }
+        @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
             this.functionId = functionId;
             return this;
         }
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
-        }        public ConnectorTask build() {
-            return new ConnectorTask(batchSizeInKbs, batchTimeInSec, condition, functionId, kind);
+        }
+        public ConnectorTask build() {
+            final var o = new ConnectorTask();
+            o.batchSizeInKbs = batchSizeInKbs;
+            o.batchTimeInSec = batchTimeInSec;
+            o.condition = condition;
+            o.functionId = functionId;
+            o.kind = kind;
+            return o;
         }
     }
 }

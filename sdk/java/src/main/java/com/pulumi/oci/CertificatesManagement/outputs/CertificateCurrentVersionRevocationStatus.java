@@ -15,21 +15,14 @@ public final class CertificateCurrentVersionRevocationStatus {
      * @return The reason the certificate or certificate authority (CA) was revoked.
      * 
      */
-    private final @Nullable String revocationReason;
+    private @Nullable String revocationReason;
     /**
      * @return The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final @Nullable String timeOfRevocation;
+    private @Nullable String timeOfRevocation;
 
-    @CustomType.Constructor
-    private CertificateCurrentVersionRevocationStatus(
-        @CustomType.Parameter("revocationReason") @Nullable String revocationReason,
-        @CustomType.Parameter("timeOfRevocation") @Nullable String timeOfRevocation) {
-        this.revocationReason = revocationReason;
-        this.timeOfRevocation = timeOfRevocation;
-    }
-
+    private CertificateCurrentVersionRevocationStatus() {}
     /**
      * @return The reason the certificate or certificate authority (CA) was revoked.
      * 
@@ -52,30 +45,32 @@ public final class CertificateCurrentVersionRevocationStatus {
     public static Builder builder(CertificateCurrentVersionRevocationStatus defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String revocationReason;
         private @Nullable String timeOfRevocation;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateCurrentVersionRevocationStatus defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.revocationReason = defaults.revocationReason;
     	      this.timeOfRevocation = defaults.timeOfRevocation;
         }
 
+        @CustomType.Setter
         public Builder revocationReason(@Nullable String revocationReason) {
             this.revocationReason = revocationReason;
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfRevocation(@Nullable String timeOfRevocation) {
             this.timeOfRevocation = timeOfRevocation;
             return this;
-        }        public CertificateCurrentVersionRevocationStatus build() {
-            return new CertificateCurrentVersionRevocationStatus(revocationReason, timeOfRevocation);
+        }
+        public CertificateCurrentVersionRevocationStatus build() {
+            final var o = new CertificateCurrentVersionRevocationStatus();
+            o.revocationReason = revocationReason;
+            o.timeOfRevocation = timeOfRevocation;
+            return o;
         }
     }
 }

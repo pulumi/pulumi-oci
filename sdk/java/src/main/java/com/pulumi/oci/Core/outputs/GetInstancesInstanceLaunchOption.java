@@ -14,49 +14,34 @@ public final class GetInstancesInstanceLaunchOption {
      * @return Emulation type for the boot volume.
      * 
      */
-    private final String bootVolumeType;
+    private String bootVolumeType;
     /**
      * @return Firmware used to boot VM. Select the option that matches your operating system.
      * 
      */
-    private final String firmware;
+    private String firmware;
     /**
      * @return Whether to enable consistent volume naming feature. Defaults to false.
      * 
      */
-    private final Boolean isConsistentVolumeNamingEnabled;
+    private Boolean isConsistentVolumeNamingEnabled;
     /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
      * 
      */
-    private final Boolean isPvEncryptionInTransitEnabled;
+    private Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return Emulation type for the physical network interface card (NIC).
      * 
      */
-    private final String networkType;
+    private String networkType;
     /**
      * @return Emulation type for volume.
      * 
      */
-    private final String remoteDataVolumeType;
+    private String remoteDataVolumeType;
 
-    @CustomType.Constructor
-    private GetInstancesInstanceLaunchOption(
-        @CustomType.Parameter("bootVolumeType") String bootVolumeType,
-        @CustomType.Parameter("firmware") String firmware,
-        @CustomType.Parameter("isConsistentVolumeNamingEnabled") Boolean isConsistentVolumeNamingEnabled,
-        @CustomType.Parameter("isPvEncryptionInTransitEnabled") Boolean isPvEncryptionInTransitEnabled,
-        @CustomType.Parameter("networkType") String networkType,
-        @CustomType.Parameter("remoteDataVolumeType") String remoteDataVolumeType) {
-        this.bootVolumeType = bootVolumeType;
-        this.firmware = firmware;
-        this.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
-        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-        this.networkType = networkType;
-        this.remoteDataVolumeType = remoteDataVolumeType;
-    }
-
+    private GetInstancesInstanceLaunchOption() {}
     /**
      * @return Emulation type for the boot volume.
      * 
@@ -107,7 +92,7 @@ public final class GetInstancesInstanceLaunchOption {
     public static Builder builder(GetInstancesInstanceLaunchOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bootVolumeType;
         private String firmware;
@@ -115,11 +100,7 @@ public final class GetInstancesInstanceLaunchOption {
         private Boolean isPvEncryptionInTransitEnabled;
         private String networkType;
         private String remoteDataVolumeType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstancesInstanceLaunchOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeType = defaults.bootVolumeType;
@@ -130,31 +111,45 @@ public final class GetInstancesInstanceLaunchOption {
     	      this.remoteDataVolumeType = defaults.remoteDataVolumeType;
         }
 
+        @CustomType.Setter
         public Builder bootVolumeType(String bootVolumeType) {
             this.bootVolumeType = Objects.requireNonNull(bootVolumeType);
             return this;
         }
+        @CustomType.Setter
         public Builder firmware(String firmware) {
             this.firmware = Objects.requireNonNull(firmware);
             return this;
         }
+        @CustomType.Setter
         public Builder isConsistentVolumeNamingEnabled(Boolean isConsistentVolumeNamingEnabled) {
             this.isConsistentVolumeNamingEnabled = Objects.requireNonNull(isConsistentVolumeNamingEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder networkType(String networkType) {
             this.networkType = Objects.requireNonNull(networkType);
             return this;
         }
+        @CustomType.Setter
         public Builder remoteDataVolumeType(String remoteDataVolumeType) {
             this.remoteDataVolumeType = Objects.requireNonNull(remoteDataVolumeType);
             return this;
-        }        public GetInstancesInstanceLaunchOption build() {
-            return new GetInstancesInstanceLaunchOption(bootVolumeType, firmware, isConsistentVolumeNamingEnabled, isPvEncryptionInTransitEnabled, networkType, remoteDataVolumeType);
+        }
+        public GetInstancesInstanceLaunchOption build() {
+            final var o = new GetInstancesInstanceLaunchOption();
+            o.bootVolumeType = bootVolumeType;
+            o.firmware = firmware;
+            o.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
+            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            o.networkType = networkType;
+            o.remoteDataVolumeType = remoteDataVolumeType;
+            return o;
         }
     }
 }

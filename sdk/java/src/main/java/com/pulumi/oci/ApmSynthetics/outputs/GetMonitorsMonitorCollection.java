@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMonitorsMonitorCollection {
-    private final List<GetMonitorsMonitorCollectionItem> items;
+    private List<GetMonitorsMonitorCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetMonitorsMonitorCollection(@CustomType.Parameter("items") List<GetMonitorsMonitorCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetMonitorsMonitorCollection() {}
     public List<GetMonitorsMonitorCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetMonitorsMonitorCollection {
     public static Builder builder(GetMonitorsMonitorCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMonitorsMonitorCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorsMonitorCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetMonitorsMonitorCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetMonitorsMonitorCollectionItem... items) {
             return items(List.of(items));
-        }        public GetMonitorsMonitorCollection build() {
-            return new GetMonitorsMonitorCollection(items);
+        }
+        public GetMonitorsMonitorCollection build() {
+            final var o = new GetMonitorsMonitorCollection();
+            o.items = items;
+            return o;
         }
     }
 }

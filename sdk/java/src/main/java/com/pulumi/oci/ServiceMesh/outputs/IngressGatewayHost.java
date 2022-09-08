@@ -16,28 +16,19 @@ public final class IngressGatewayHost {
      * @return (Updatable) Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are &#34;www.example.com&#34;, &#34;*.example.com&#34;, &#34;*.com&#34;.
      * 
      */
-    private final @Nullable List<String> hostnames;
+    private @Nullable List<String> hostnames;
     /**
      * @return (Updatable) The listeners for the ingress gateway.
      * 
      */
-    private final List<IngressGatewayHostListener> listeners;
+    private List<IngressGatewayHostListener> listeners;
     /**
      * @return A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private IngressGatewayHost(
-        @CustomType.Parameter("hostnames") @Nullable List<String> hostnames,
-        @CustomType.Parameter("listeners") List<IngressGatewayHostListener> listeners,
-        @CustomType.Parameter("name") String name) {
-        this.hostnames = hostnames;
-        this.listeners = listeners;
-        this.name = name;
-    }
-
+    private IngressGatewayHost() {}
     /**
      * @return (Updatable) Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are &#34;www.example.com&#34;, &#34;*.example.com&#34;, &#34;*.com&#34;.
      * 
@@ -67,16 +58,12 @@ public final class IngressGatewayHost {
     public static Builder builder(IngressGatewayHost defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> hostnames;
         private List<IngressGatewayHostListener> listeners;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IngressGatewayHost defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostnames = defaults.hostnames;
@@ -84,6 +71,7 @@ public final class IngressGatewayHost {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder hostnames(@Nullable List<String> hostnames) {
             this.hostnames = hostnames;
             return this;
@@ -91,6 +79,7 @@ public final class IngressGatewayHost {
         public Builder hostnames(String... hostnames) {
             return hostnames(List.of(hostnames));
         }
+        @CustomType.Setter
         public Builder listeners(List<IngressGatewayHostListener> listeners) {
             this.listeners = Objects.requireNonNull(listeners);
             return this;
@@ -98,11 +87,17 @@ public final class IngressGatewayHost {
         public Builder listeners(IngressGatewayHostListener... listeners) {
             return listeners(List.of(listeners));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public IngressGatewayHost build() {
-            return new IngressGatewayHost(hostnames, listeners, name);
+        }
+        public IngressGatewayHost build() {
+            final var o = new IngressGatewayHost();
+            o.hostnames = hostnames;
+            o.listeners = listeners;
+            o.name = name;
+            return o;
         }
     }
 }

@@ -150,14 +150,14 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
      */
     @Export(name="failedEsxiHostId", type=String.class, parameters={})
     private Output<String> failedEsxiHostId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
      */
     public Output<String> failedEsxiHostId() {
@@ -234,6 +234,20 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.nextSku;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * 
+     */
+    @Export(name="nonUpgradedEsxiHostId", type=String.class, parameters={})
+    private Output<String> nonUpgradedEsxiHostId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * 
+     */
+    public Output<String> nonUpgradedEsxiHostId() {
+        return this.nonUpgradedEsxiHostId;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      * 
      */
@@ -302,6 +316,34 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+     * 
+     */
+    @Export(name="upgradedReplacementEsxiHostId", type=String.class, parameters={})
+    private Output<String> upgradedReplacementEsxiHostId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+     * 
+     */
+    public Output<String> upgradedReplacementEsxiHostId() {
+        return this.upgradedReplacementEsxiHostId;
+    }
+    /**
+     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * 
+     */
+    @Export(name="vmwareSoftwareVersion", type=String.class, parameters={})
+    private Output<String> vmwareSoftwareVersion;
+
+    /**
+     * @return The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * 
+     */
+    public Output<String> vmwareSoftwareVersion() {
+        return this.vmwareSoftwareVersion;
     }
 
     /**

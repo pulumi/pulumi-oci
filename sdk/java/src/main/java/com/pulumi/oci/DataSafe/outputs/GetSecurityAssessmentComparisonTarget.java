@@ -21,70 +21,49 @@ public final class GetSecurityAssessmentComparisonTarget {
      * @return A comparison between findings belonging to Auditing category.
      * 
      */
-    private final List<GetSecurityAssessmentComparisonTargetAuditing> auditings;
+    private List<GetSecurityAssessmentComparisonTargetAuditing> auditings;
     /**
      * @return A comparison between findings belonging to Authorization Control category.
      * 
      */
-    private final List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls;
+    private List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls;
     /**
      * @return The OCID of the target that is used as a baseline in this comparison.
      * 
      */
-    private final String baselineTargetId;
+    private String baselineTargetId;
     /**
      * @return The OCID of the target to be compared against the baseline target.
      * 
      */
-    private final String currentTargetId;
+    private String currentTargetId;
     /**
      * @return Comparison between findings belonging to Data Encryption category.
      * 
      */
-    private final List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions;
+    private List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions;
     /**
      * @return Comparison between findings belonging to Database Configuration category.
      * 
      */
-    private final List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations;
+    private List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations;
     /**
      * @return Comparison between findings belonging to Fine-Grained Access Control category.
      * 
      */
-    private final List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls;
+    private List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls;
     /**
      * @return Comparison between findings belonging to Privileges and Roles category.
      * 
      */
-    private final List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles;
+    private List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles;
     /**
      * @return Comparison between findings belonging to User Accounts category.
      * 
      */
-    private final List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts;
+    private List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts;
 
-    @CustomType.Constructor
-    private GetSecurityAssessmentComparisonTarget(
-        @CustomType.Parameter("auditings") List<GetSecurityAssessmentComparisonTargetAuditing> auditings,
-        @CustomType.Parameter("authorizationControls") List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls,
-        @CustomType.Parameter("baselineTargetId") String baselineTargetId,
-        @CustomType.Parameter("currentTargetId") String currentTargetId,
-        @CustomType.Parameter("dataEncryptions") List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions,
-        @CustomType.Parameter("dbConfigurations") List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations,
-        @CustomType.Parameter("fineGrainedAccessControls") List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls,
-        @CustomType.Parameter("privilegesAndRoles") List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles,
-        @CustomType.Parameter("userAccounts") List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts) {
-        this.auditings = auditings;
-        this.authorizationControls = authorizationControls;
-        this.baselineTargetId = baselineTargetId;
-        this.currentTargetId = currentTargetId;
-        this.dataEncryptions = dataEncryptions;
-        this.dbConfigurations = dbConfigurations;
-        this.fineGrainedAccessControls = fineGrainedAccessControls;
-        this.privilegesAndRoles = privilegesAndRoles;
-        this.userAccounts = userAccounts;
-    }
-
+    private GetSecurityAssessmentComparisonTarget() {}
     /**
      * @return A comparison between findings belonging to Auditing category.
      * 
@@ -156,7 +135,7 @@ public final class GetSecurityAssessmentComparisonTarget {
     public static Builder builder(GetSecurityAssessmentComparisonTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSecurityAssessmentComparisonTargetAuditing> auditings;
         private List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls;
@@ -167,11 +146,7 @@ public final class GetSecurityAssessmentComparisonTarget {
         private List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls;
         private List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles;
         private List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityAssessmentComparisonTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditings = defaults.auditings;
@@ -185,6 +160,7 @@ public final class GetSecurityAssessmentComparisonTarget {
     	      this.userAccounts = defaults.userAccounts;
         }
 
+        @CustomType.Setter
         public Builder auditings(List<GetSecurityAssessmentComparisonTargetAuditing> auditings) {
             this.auditings = Objects.requireNonNull(auditings);
             return this;
@@ -192,6 +168,7 @@ public final class GetSecurityAssessmentComparisonTarget {
         public Builder auditings(GetSecurityAssessmentComparisonTargetAuditing... auditings) {
             return auditings(List.of(auditings));
         }
+        @CustomType.Setter
         public Builder authorizationControls(List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls) {
             this.authorizationControls = Objects.requireNonNull(authorizationControls);
             return this;
@@ -199,14 +176,17 @@ public final class GetSecurityAssessmentComparisonTarget {
         public Builder authorizationControls(GetSecurityAssessmentComparisonTargetAuthorizationControl... authorizationControls) {
             return authorizationControls(List.of(authorizationControls));
         }
+        @CustomType.Setter
         public Builder baselineTargetId(String baselineTargetId) {
             this.baselineTargetId = Objects.requireNonNull(baselineTargetId);
             return this;
         }
+        @CustomType.Setter
         public Builder currentTargetId(String currentTargetId) {
             this.currentTargetId = Objects.requireNonNull(currentTargetId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataEncryptions(List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions) {
             this.dataEncryptions = Objects.requireNonNull(dataEncryptions);
             return this;
@@ -214,6 +194,7 @@ public final class GetSecurityAssessmentComparisonTarget {
         public Builder dataEncryptions(GetSecurityAssessmentComparisonTargetDataEncryption... dataEncryptions) {
             return dataEncryptions(List.of(dataEncryptions));
         }
+        @CustomType.Setter
         public Builder dbConfigurations(List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations) {
             this.dbConfigurations = Objects.requireNonNull(dbConfigurations);
             return this;
@@ -221,6 +202,7 @@ public final class GetSecurityAssessmentComparisonTarget {
         public Builder dbConfigurations(GetSecurityAssessmentComparisonTargetDbConfiguration... dbConfigurations) {
             return dbConfigurations(List.of(dbConfigurations));
         }
+        @CustomType.Setter
         public Builder fineGrainedAccessControls(List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls) {
             this.fineGrainedAccessControls = Objects.requireNonNull(fineGrainedAccessControls);
             return this;
@@ -228,6 +210,7 @@ public final class GetSecurityAssessmentComparisonTarget {
         public Builder fineGrainedAccessControls(GetSecurityAssessmentComparisonTargetFineGrainedAccessControl... fineGrainedAccessControls) {
             return fineGrainedAccessControls(List.of(fineGrainedAccessControls));
         }
+        @CustomType.Setter
         public Builder privilegesAndRoles(List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles) {
             this.privilegesAndRoles = Objects.requireNonNull(privilegesAndRoles);
             return this;
@@ -235,14 +218,26 @@ public final class GetSecurityAssessmentComparisonTarget {
         public Builder privilegesAndRoles(GetSecurityAssessmentComparisonTargetPrivilegesAndRole... privilegesAndRoles) {
             return privilegesAndRoles(List.of(privilegesAndRoles));
         }
+        @CustomType.Setter
         public Builder userAccounts(List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts) {
             this.userAccounts = Objects.requireNonNull(userAccounts);
             return this;
         }
         public Builder userAccounts(GetSecurityAssessmentComparisonTargetUserAccount... userAccounts) {
             return userAccounts(List.of(userAccounts));
-        }        public GetSecurityAssessmentComparisonTarget build() {
-            return new GetSecurityAssessmentComparisonTarget(auditings, authorizationControls, baselineTargetId, currentTargetId, dataEncryptions, dbConfigurations, fineGrainedAccessControls, privilegesAndRoles, userAccounts);
+        }
+        public GetSecurityAssessmentComparisonTarget build() {
+            final var o = new GetSecurityAssessmentComparisonTarget();
+            o.auditings = auditings;
+            o.authorizationControls = authorizationControls;
+            o.baselineTargetId = baselineTargetId;
+            o.currentTargetId = currentTargetId;
+            o.dataEncryptions = dataEncryptions;
+            o.dbConfigurations = dbConfigurations;
+            o.fineGrainedAccessControls = fineGrainedAccessControls;
+            o.privilegesAndRoles = privilegesAndRoles;
+            o.userAccounts = userAccounts;
+            return o;
         }
     }
 }

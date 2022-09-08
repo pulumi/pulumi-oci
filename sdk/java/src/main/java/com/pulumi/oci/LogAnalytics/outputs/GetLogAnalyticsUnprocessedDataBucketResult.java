@@ -14,49 +14,34 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
      * @return Name of the Object Storage bucket.
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Flag that specifies if this configuration is enabled or not.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return Object Storage namespace.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return The time when this record is created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The latest time when this record is updated. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsUnprocessedDataBucketResult(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.bucket = bucket;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.namespace = namespace;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetLogAnalyticsUnprocessedDataBucketResult() {}
     /**
      * @return Name of the Object Storage bucket.
      * 
@@ -107,7 +92,7 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
     public static Builder builder(GetLogAnalyticsUnprocessedDataBucketResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String id;
@@ -115,11 +100,7 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
         private String namespace;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsUnprocessedDataBucketResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -130,31 +111,45 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetLogAnalyticsUnprocessedDataBucketResult build() {
-            return new GetLogAnalyticsUnprocessedDataBucketResult(bucket, id, isEnabled, namespace, timeCreated, timeUpdated);
+        }
+        public GetLogAnalyticsUnprocessedDataBucketResult build() {
+            final var o = new GetLogAnalyticsUnprocessedDataBucketResult();
+            o.bucket = bucket;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.namespace = namespace;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

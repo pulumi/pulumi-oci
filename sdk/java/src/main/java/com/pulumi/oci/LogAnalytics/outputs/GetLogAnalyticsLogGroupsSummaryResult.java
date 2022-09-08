@@ -10,27 +10,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetLogAnalyticsLogGroupsSummaryResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final Integer logGroupCount;
-    private final String namespace;
+    private String id;
+    private Integer logGroupCount;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsLogGroupsSummaryResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("logGroupCount") Integer logGroupCount,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.logGroupCount = logGroupCount;
-        this.namespace = namespace;
-    }
-
+    private GetLogAnalyticsLogGroupsSummaryResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -55,17 +44,13 @@ public final class GetLogAnalyticsLogGroupsSummaryResult {
     public static Builder builder(GetLogAnalyticsLogGroupsSummaryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private Integer logGroupCount;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsLogGroupsSummaryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -74,23 +59,33 @@ public final class GetLogAnalyticsLogGroupsSummaryResult {
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder logGroupCount(Integer logGroupCount) {
             this.logGroupCount = Objects.requireNonNull(logGroupCount);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetLogAnalyticsLogGroupsSummaryResult build() {
-            return new GetLogAnalyticsLogGroupsSummaryResult(compartmentId, id, logGroupCount, namespace);
+        }
+        public GetLogAnalyticsLogGroupsSummaryResult build() {
+            final var o = new GetLogAnalyticsLogGroupsSummaryResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.logGroupCount = logGroupCount;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

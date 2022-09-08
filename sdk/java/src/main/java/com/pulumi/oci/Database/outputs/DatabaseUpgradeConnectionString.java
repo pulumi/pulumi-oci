@@ -17,28 +17,19 @@ public final class DatabaseUpgradeConnectionString {
      * @return All connection strings to use to connect to the Database.
      * 
      */
-    private final @Nullable Map<String,Object> allConnectionStrings;
+    private @Nullable Map<String,Object> allConnectionStrings;
     /**
      * @return Host name based CDB Connection String.
      * 
      */
-    private final @Nullable String cdbDefault;
+    private @Nullable String cdbDefault;
     /**
      * @return IP based CDB Connection String.
      * 
      */
-    private final @Nullable String cdbIpDefault;
+    private @Nullable String cdbIpDefault;
 
-    @CustomType.Constructor
-    private DatabaseUpgradeConnectionString(
-        @CustomType.Parameter("allConnectionStrings") @Nullable Map<String,Object> allConnectionStrings,
-        @CustomType.Parameter("cdbDefault") @Nullable String cdbDefault,
-        @CustomType.Parameter("cdbIpDefault") @Nullable String cdbIpDefault) {
-        this.allConnectionStrings = allConnectionStrings;
-        this.cdbDefault = cdbDefault;
-        this.cdbIpDefault = cdbIpDefault;
-    }
-
+    private DatabaseUpgradeConnectionString() {}
     /**
      * @return All connection strings to use to connect to the Database.
      * 
@@ -68,16 +59,12 @@ public final class DatabaseUpgradeConnectionString {
     public static Builder builder(DatabaseUpgradeConnectionString defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> allConnectionStrings;
         private @Nullable String cdbDefault;
         private @Nullable String cdbIpDefault;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseUpgradeConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allConnectionStrings = defaults.allConnectionStrings;
@@ -85,19 +72,27 @@ public final class DatabaseUpgradeConnectionString {
     	      this.cdbIpDefault = defaults.cdbIpDefault;
         }
 
+        @CustomType.Setter
         public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
             this.allConnectionStrings = allConnectionStrings;
             return this;
         }
+        @CustomType.Setter
         public Builder cdbDefault(@Nullable String cdbDefault) {
             this.cdbDefault = cdbDefault;
             return this;
         }
+        @CustomType.Setter
         public Builder cdbIpDefault(@Nullable String cdbIpDefault) {
             this.cdbIpDefault = cdbIpDefault;
             return this;
-        }        public DatabaseUpgradeConnectionString build() {
-            return new DatabaseUpgradeConnectionString(allConnectionStrings, cdbDefault, cdbIpDefault);
+        }
+        public DatabaseUpgradeConnectionString build() {
+            final var o = new DatabaseUpgradeConnectionString();
+            o.allConnectionStrings = allConnectionStrings;
+            o.cdbDefault = cdbDefault;
+            o.cdbIpDefault = cdbIpDefault;
+            return o;
         }
     }
 }

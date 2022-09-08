@@ -15,35 +15,24 @@ public final class AutonomousDatabaseKeyHistoryEntry {
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private final @Nullable String kmsKeyVersionId;
+    private @Nullable String kmsKeyVersionId;
     /**
      * @return The date and time the kms key activated.
      * 
      */
-    private final @Nullable String timeActivated;
+    private @Nullable String timeActivated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final @Nullable String vaultId;
+    private @Nullable String vaultId;
 
-    @CustomType.Constructor
-    private AutonomousDatabaseKeyHistoryEntry(
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("kmsKeyVersionId") @Nullable String kmsKeyVersionId,
-        @CustomType.Parameter("timeActivated") @Nullable String timeActivated,
-        @CustomType.Parameter("vaultId") @Nullable String vaultId) {
-        this.id = id;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.timeActivated = timeActivated;
-        this.vaultId = vaultId;
-    }
-
+    private AutonomousDatabaseKeyHistoryEntry() {}
     /**
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
@@ -80,17 +69,13 @@ public final class AutonomousDatabaseKeyHistoryEntry {
     public static Builder builder(AutonomousDatabaseKeyHistoryEntry defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
         private @Nullable String kmsKeyVersionId;
         private @Nullable String timeActivated;
         private @Nullable String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousDatabaseKeyHistoryEntry defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -99,23 +84,33 @@ public final class AutonomousDatabaseKeyHistoryEntry {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
             this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeActivated(@Nullable String timeActivated) {
             this.timeActivated = timeActivated;
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(@Nullable String vaultId) {
             this.vaultId = vaultId;
             return this;
-        }        public AutonomousDatabaseKeyHistoryEntry build() {
-            return new AutonomousDatabaseKeyHistoryEntry(id, kmsKeyVersionId, timeActivated, vaultId);
+        }
+        public AutonomousDatabaseKeyHistoryEntry build() {
+            final var o = new AutonomousDatabaseKeyHistoryEntry();
+            o.id = id;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.timeActivated = timeActivated;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

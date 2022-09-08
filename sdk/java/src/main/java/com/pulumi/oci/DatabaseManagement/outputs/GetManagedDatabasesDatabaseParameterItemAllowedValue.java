@@ -15,28 +15,19 @@ public final class GetManagedDatabasesDatabaseParameterItemAllowedValue {
      * @return Indicates whether the parameter is set to the default value (`TRUE`) or the parameter value was specified in the parameter file (`FALSE`).
      * 
      */
-    private final Boolean isDefault;
+    private Boolean isDefault;
     /**
      * @return The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
      * 
      */
-    private final Double ordinal;
+    private Double ordinal;
     /**
      * @return The parameter value.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesDatabaseParameterItemAllowedValue(
-        @CustomType.Parameter("isDefault") Boolean isDefault,
-        @CustomType.Parameter("ordinal") Double ordinal,
-        @CustomType.Parameter("value") String value) {
-        this.isDefault = isDefault;
-        this.ordinal = ordinal;
-        this.value = value;
-    }
-
+    private GetManagedDatabasesDatabaseParameterItemAllowedValue() {}
     /**
      * @return Indicates whether the parameter is set to the default value (`TRUE`) or the parameter value was specified in the parameter file (`FALSE`).
      * 
@@ -66,16 +57,12 @@ public final class GetManagedDatabasesDatabaseParameterItemAllowedValue {
     public static Builder builder(GetManagedDatabasesDatabaseParameterItemAllowedValue defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isDefault;
         private Double ordinal;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesDatabaseParameterItemAllowedValue defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isDefault = defaults.isDefault;
@@ -83,19 +70,27 @@ public final class GetManagedDatabasesDatabaseParameterItemAllowedValue {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = Objects.requireNonNull(isDefault);
             return this;
         }
+        @CustomType.Setter
         public Builder ordinal(Double ordinal) {
             this.ordinal = Objects.requireNonNull(ordinal);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetManagedDatabasesDatabaseParameterItemAllowedValue build() {
-            return new GetManagedDatabasesDatabaseParameterItemAllowedValue(isDefault, ordinal, value);
+        }
+        public GetManagedDatabasesDatabaseParameterItemAllowedValue build() {
+            final var o = new GetManagedDatabasesDatabaseParameterItemAllowedValue();
+            o.isDefault = isDefault;
+            o.ordinal = ordinal;
+            o.value = value;
+            return o;
         }
     }
 }

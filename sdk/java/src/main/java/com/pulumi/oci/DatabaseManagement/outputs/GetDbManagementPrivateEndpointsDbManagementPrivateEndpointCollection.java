@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection {
-    private final List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem> items;
+    private List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection(@CustomType.Parameter("items") List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection() {}
     public List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
     public static Builder builder(GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection build() {
-            return new GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection(items);
+        }
+        public GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection build() {
+            final var o = new GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection();
+            o.items = items;
+            return o;
         }
     }
 }

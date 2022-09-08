@@ -14,64 +14,39 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabasesColumnsResult {
-    private final @Nullable String columnNameContains;
+    private @Nullable String columnNameContains;
     /**
      * @return Name of the column.
      * 
      */
-    private final @Nullable List<String> columnNames;
+    private @Nullable List<String> columnNames;
     /**
      * @return The list of columns.
      * 
      */
-    private final List<GetTargetDatabasesColumnsColumn> columns;
-    private final @Nullable List<String> datatypes;
-    private final @Nullable List<GetTargetDatabasesColumnsFilter> filters;
+    private List<GetTargetDatabasesColumnsColumn> columns;
+    private @Nullable List<String> datatypes;
+    private @Nullable List<GetTargetDatabasesColumnsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String schemaNameContains;
+    private String id;
+    private @Nullable String schemaNameContains;
     /**
      * @return Name of the schema.
      * 
      */
-    private final @Nullable List<String> schemaNames;
-    private final @Nullable String tableNameContains;
+    private @Nullable List<String> schemaNames;
+    private @Nullable String tableNameContains;
     /**
      * @return Name of the table.
      * 
      */
-    private final @Nullable List<String> tableNames;
-    private final String targetDatabaseId;
+    private @Nullable List<String> tableNames;
+    private String targetDatabaseId;
 
-    @CustomType.Constructor
-    private GetTargetDatabasesColumnsResult(
-        @CustomType.Parameter("columnNameContains") @Nullable String columnNameContains,
-        @CustomType.Parameter("columnNames") @Nullable List<String> columnNames,
-        @CustomType.Parameter("columns") List<GetTargetDatabasesColumnsColumn> columns,
-        @CustomType.Parameter("datatypes") @Nullable List<String> datatypes,
-        @CustomType.Parameter("filters") @Nullable List<GetTargetDatabasesColumnsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("schemaNameContains") @Nullable String schemaNameContains,
-        @CustomType.Parameter("schemaNames") @Nullable List<String> schemaNames,
-        @CustomType.Parameter("tableNameContains") @Nullable String tableNameContains,
-        @CustomType.Parameter("tableNames") @Nullable List<String> tableNames,
-        @CustomType.Parameter("targetDatabaseId") String targetDatabaseId) {
-        this.columnNameContains = columnNameContains;
-        this.columnNames = columnNames;
-        this.columns = columns;
-        this.datatypes = datatypes;
-        this.filters = filters;
-        this.id = id;
-        this.schemaNameContains = schemaNameContains;
-        this.schemaNames = schemaNames;
-        this.tableNameContains = tableNameContains;
-        this.tableNames = tableNames;
-        this.targetDatabaseId = targetDatabaseId;
-    }
-
+    private GetTargetDatabasesColumnsResult() {}
     public Optional<String> columnNameContains() {
         return Optional.ofNullable(this.columnNameContains);
     }
@@ -133,7 +108,7 @@ public final class GetTargetDatabasesColumnsResult {
     public static Builder builder(GetTargetDatabasesColumnsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String columnNameContains;
         private @Nullable List<String> columnNames;
@@ -146,11 +121,7 @@ public final class GetTargetDatabasesColumnsResult {
         private @Nullable String tableNameContains;
         private @Nullable List<String> tableNames;
         private String targetDatabaseId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabasesColumnsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnNameContains = defaults.columnNameContains;
@@ -166,10 +137,12 @@ public final class GetTargetDatabasesColumnsResult {
     	      this.targetDatabaseId = defaults.targetDatabaseId;
         }
 
+        @CustomType.Setter
         public Builder columnNameContains(@Nullable String columnNameContains) {
             this.columnNameContains = columnNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
             this.columnNames = columnNames;
             return this;
@@ -177,6 +150,7 @@ public final class GetTargetDatabasesColumnsResult {
         public Builder columnNames(String... columnNames) {
             return columnNames(List.of(columnNames));
         }
+        @CustomType.Setter
         public Builder columns(List<GetTargetDatabasesColumnsColumn> columns) {
             this.columns = Objects.requireNonNull(columns);
             return this;
@@ -184,6 +158,7 @@ public final class GetTargetDatabasesColumnsResult {
         public Builder columns(GetTargetDatabasesColumnsColumn... columns) {
             return columns(List.of(columns));
         }
+        @CustomType.Setter
         public Builder datatypes(@Nullable List<String> datatypes) {
             this.datatypes = datatypes;
             return this;
@@ -191,6 +166,7 @@ public final class GetTargetDatabasesColumnsResult {
         public Builder datatypes(String... datatypes) {
             return datatypes(List.of(datatypes));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetDatabasesColumnsFilter> filters) {
             this.filters = filters;
             return this;
@@ -198,14 +174,17 @@ public final class GetTargetDatabasesColumnsResult {
         public Builder filters(GetTargetDatabasesColumnsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder schemaNameContains(@Nullable String schemaNameContains) {
             this.schemaNameContains = schemaNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
             this.schemaNames = schemaNames;
             return this;
@@ -213,10 +192,12 @@ public final class GetTargetDatabasesColumnsResult {
         public Builder schemaNames(String... schemaNames) {
             return schemaNames(List.of(schemaNames));
         }
+        @CustomType.Setter
         public Builder tableNameContains(@Nullable String tableNameContains) {
             this.tableNameContains = tableNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder tableNames(@Nullable List<String> tableNames) {
             this.tableNames = tableNames;
             return this;
@@ -224,11 +205,25 @@ public final class GetTargetDatabasesColumnsResult {
         public Builder tableNames(String... tableNames) {
             return tableNames(List.of(tableNames));
         }
+        @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
             this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
             return this;
-        }        public GetTargetDatabasesColumnsResult build() {
-            return new GetTargetDatabasesColumnsResult(columnNameContains, columnNames, columns, datatypes, filters, id, schemaNameContains, schemaNames, tableNameContains, tableNames, targetDatabaseId);
+        }
+        public GetTargetDatabasesColumnsResult build() {
+            final var o = new GetTargetDatabasesColumnsResult();
+            o.columnNameContains = columnNameContains;
+            o.columnNames = columnNames;
+            o.columns = columns;
+            o.datatypes = datatypes;
+            o.filters = filters;
+            o.id = id;
+            o.schemaNameContains = schemaNameContains;
+            o.schemaNames = schemaNames;
+            o.tableNameContains = tableNameContains;
+            o.tableNames = tableNames;
+            o.targetDatabaseId = targetDatabaseId;
+            return o;
         }
     }
 }

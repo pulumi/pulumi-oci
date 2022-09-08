@@ -22,15 +22,45 @@ public final class GetRecommendationsArgs extends com.pulumi.resources.InvokeArg
      * The unique OCID associated with the category.
      * 
      */
-    @Import(name="categoryId", required=true)
-    private Output<String> categoryId;
+    @Import(name="categoryId")
+    private @Nullable Output<String> categoryId;
 
     /**
      * @return The unique OCID associated with the category.
      * 
      */
-    public Output<String> categoryId() {
-        return this.categoryId;
+    public Optional<Output<String>> categoryId() {
+        return Optional.ofNullable(this.categoryId);
+    }
+
+    /**
+     * Optional. A filter that returns results that match the category name specified.
+     * 
+     */
+    @Import(name="categoryName")
+    private @Nullable Output<String> categoryName;
+
+    /**
+     * @return Optional. A filter that returns results that match the category name specified.
+     * 
+     */
+    public Optional<Output<String>> categoryName() {
+        return Optional.ofNullable(this.categoryName);
+    }
+
+    /**
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     * 
+     */
+    @Import(name="childTenancyIds")
+    private @Nullable Output<List<String>> childTenancyIds;
+
+    /**
+     * @return A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     * 
+     */
+    public Optional<Output<List<String>>> childTenancyIds() {
+        return Optional.ofNullable(this.childTenancyIds);
     }
 
     /**
@@ -68,6 +98,21 @@ public final class GetRecommendationsArgs extends com.pulumi.resources.InvokeArg
 
     public Optional<Output<List<GetRecommendationsFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     * 
+     */
+    @Import(name="includeOrganization")
+    private @Nullable Output<Boolean> includeOrganization;
+
+    /**
+     * @return When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     * 
+     */
+    public Optional<Output<Boolean>> includeOrganization() {
+        return Optional.ofNullable(this.includeOrganization);
     }
 
     /**
@@ -119,9 +164,12 @@ public final class GetRecommendationsArgs extends com.pulumi.resources.InvokeArg
 
     private GetRecommendationsArgs(GetRecommendationsArgs $) {
         this.categoryId = $.categoryId;
+        this.categoryName = $.categoryName;
+        this.childTenancyIds = $.childTenancyIds;
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
+        this.includeOrganization = $.includeOrganization;
         this.name = $.name;
         this.state = $.state;
         this.status = $.status;
@@ -151,7 +199,7 @@ public final class GetRecommendationsArgs extends com.pulumi.resources.InvokeArg
          * @return builder
          * 
          */
-        public Builder categoryId(Output<String> categoryId) {
+        public Builder categoryId(@Nullable Output<String> categoryId) {
             $.categoryId = categoryId;
             return this;
         }
@@ -164,6 +212,58 @@ public final class GetRecommendationsArgs extends com.pulumi.resources.InvokeArg
          */
         public Builder categoryId(String categoryId) {
             return categoryId(Output.of(categoryId));
+        }
+
+        /**
+         * @param categoryName Optional. A filter that returns results that match the category name specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder categoryName(@Nullable Output<String> categoryName) {
+            $.categoryName = categoryName;
+            return this;
+        }
+
+        /**
+         * @param categoryName Optional. A filter that returns results that match the category name specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder categoryName(String categoryName) {
+            return categoryName(Output.of(categoryName));
+        }
+
+        /**
+         * @param childTenancyIds A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder childTenancyIds(@Nullable Output<List<String>> childTenancyIds) {
+            $.childTenancyIds = childTenancyIds;
+            return this;
+        }
+
+        /**
+         * @param childTenancyIds A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder childTenancyIds(List<String> childTenancyIds) {
+            return childTenancyIds(Output.of(childTenancyIds));
+        }
+
+        /**
+         * @param childTenancyIds A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder childTenancyIds(String... childTenancyIds) {
+            return childTenancyIds(List.of(childTenancyIds));
         }
 
         /**
@@ -219,6 +319,27 @@ public final class GetRecommendationsArgs extends com.pulumi.resources.InvokeArg
 
         public Builder filters(GetRecommendationsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param includeOrganization When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeOrganization(@Nullable Output<Boolean> includeOrganization) {
+            $.includeOrganization = includeOrganization;
+            return this;
+        }
+
+        /**
+         * @param includeOrganization When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeOrganization(Boolean includeOrganization) {
+            return includeOrganization(Output.of(includeOrganization));
         }
 
         /**
@@ -285,7 +406,6 @@ public final class GetRecommendationsArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetRecommendationsArgs build() {
-            $.categoryId = Objects.requireNonNull($.categoryId, "expected parameter 'categoryId' to be non-null");
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.compartmentIdInSubtree = Objects.requireNonNull($.compartmentIdInSubtree, "expected parameter 'compartmentIdInSubtree' to be non-null");
             return $;

@@ -14,13 +14,9 @@ public final class GetDeployStagesDeployStageCollectionItemBlueBackendIp {
      * @return The IP address of the backend server. A server could be a compute instance or a load balancer.
      * 
      */
-    private final List<String> items;
+    private List<String> items;
 
-    @CustomType.Constructor
-    private GetDeployStagesDeployStageCollectionItemBlueBackendIp(@CustomType.Parameter("items") List<String> items) {
-        this.items = items;
-    }
-
+    private GetDeployStagesDeployStageCollectionItemBlueBackendIp() {}
     /**
      * @return The IP address of the backend server. A server could be a compute instance or a load balancer.
      * 
@@ -36,27 +32,27 @@ public final class GetDeployStagesDeployStageCollectionItemBlueBackendIp {
     public static Builder builder(GetDeployStagesDeployStageCollectionItemBlueBackendIp defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStagesDeployStageCollectionItemBlueBackendIp defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<String> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(String... items) {
             return items(List.of(items));
-        }        public GetDeployStagesDeployStageCollectionItemBlueBackendIp build() {
-            return new GetDeployStagesDeployStageCollectionItemBlueBackendIp(items);
+        }
+        public GetDeployStagesDeployStageCollectionItemBlueBackendIp build() {
+            final var o = new GetDeployStagesDeployStageCollectionItemBlueBackendIp();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail;
+import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -12,101 +13,89 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule {
     /**
+     * @return The id of the attached DataSource.
+     * 
+     */
+    private String dataSourceId;
+    /**
      * @return ResponderRule description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Details of ResponderRule.
      * 
      */
-    private final List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail> details;
+    private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail> details;
     /**
      * @return detector for the rule
      * 
      */
-    private final String detector;
+    private String detector;
     /**
      * @return The unique identifier of the detector rule.
      * 
      */
-    private final String detectorRuleId;
+    private String detectorRuleId;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
+    /**
+     * @return Data Source entities mapping for a Detector Rule
+     * 
+     */
+    private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return List of cloudguard managed list types related to this rule
      * 
      */
-    private final List<String> managedListTypes;
+    private List<String> managedListTypes;
     /**
      * @return Recommendation for TargetDetectorRecipeDetectorRule
      * 
      */
-    private final String recommendation;
+    private String recommendation;
     /**
      * @return resource type of the configuration to which the rule is applied
      * 
      */
-    private final String resourceType;
+    private String resourceType;
     /**
      * @return service type of the configuration to which the rule is applied
      * 
      */
-    private final String serviceType;
+    private String serviceType;
     /**
      * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("details") List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail> details,
-        @CustomType.Parameter("detector") String detector,
-        @CustomType.Parameter("detectorRuleId") String detectorRuleId,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("managedListTypes") List<String> managedListTypes,
-        @CustomType.Parameter("recommendation") String recommendation,
-        @CustomType.Parameter("resourceType") String resourceType,
-        @CustomType.Parameter("serviceType") String serviceType,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.description = description;
-        this.details = details;
-        this.detector = detector;
-        this.detectorRuleId = detectorRuleId;
-        this.displayName = displayName;
-        this.lifecycleDetails = lifecycleDetails;
-        this.managedListTypes = managedListTypes;
-        this.recommendation = recommendation;
-        this.resourceType = resourceType;
-        this.serviceType = serviceType;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
+    private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule() {}
+    /**
+     * @return The id of the attached DataSource.
+     * 
+     */
+    public String dataSourceId() {
+        return this.dataSourceId;
     }
-
     /**
      * @return ResponderRule description.
      * 
@@ -141,6 +130,13 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return Data Source entities mapping for a Detector Rule
+     * 
+     */
+    public List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings() {
+        return this.entitiesMappings;
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -206,13 +202,15 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
     public static Builder builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
+        private String dataSourceId;
         private String description;
         private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail> details;
         private String detector;
         private String detectorRuleId;
         private String displayName;
+        private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings;
         private String lifecycleDetails;
         private List<String> managedListTypes;
         private String recommendation;
@@ -221,18 +219,16 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dataSourceId = defaults.dataSourceId;
     	      this.description = defaults.description;
     	      this.details = defaults.details;
     	      this.detector = defaults.detector;
     	      this.detectorRuleId = defaults.detectorRuleId;
     	      this.displayName = defaults.displayName;
+    	      this.entitiesMappings = defaults.entitiesMappings;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managedListTypes = defaults.managedListTypes;
     	      this.recommendation = defaults.recommendation;
@@ -243,10 +239,17 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder dataSourceId(String dataSourceId) {
+            this.dataSourceId = Objects.requireNonNull(dataSourceId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder details(List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail> details) {
             this.details = Objects.requireNonNull(details);
             return this;
@@ -254,22 +257,35 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
         public Builder details(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail... details) {
             return details(List.of(details));
         }
+        @CustomType.Setter
         public Builder detector(String detector) {
             this.detector = Objects.requireNonNull(detector);
             return this;
         }
+        @CustomType.Setter
         public Builder detectorRuleId(String detectorRuleId) {
             this.detectorRuleId = Objects.requireNonNull(detectorRuleId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
+        public Builder entitiesMappings(List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings) {
+            this.entitiesMappings = Objects.requireNonNull(entitiesMappings);
+            return this;
+        }
+        public Builder entitiesMappings(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping... entitiesMappings) {
+            return entitiesMappings(List.of(entitiesMappings));
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder managedListTypes(List<String> managedListTypes) {
             this.managedListTypes = Objects.requireNonNull(managedListTypes);
             return this;
@@ -277,31 +293,54 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
         public Builder managedListTypes(String... managedListTypes) {
             return managedListTypes(List.of(managedListTypes));
         }
+        @CustomType.Setter
         public Builder recommendation(String recommendation) {
             this.recommendation = Objects.requireNonNull(recommendation);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceType(String resourceType) {
             this.resourceType = Objects.requireNonNull(resourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceType(String serviceType) {
             this.serviceType = Objects.requireNonNull(serviceType);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule build() {
-            return new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule(description, details, detector, detectorRuleId, displayName, lifecycleDetails, managedListTypes, recommendation, resourceType, serviceType, state, timeCreated, timeUpdated);
+        }
+        public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule build() {
+            final var o = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule();
+            o.dataSourceId = dataSourceId;
+            o.description = description;
+            o.details = details;
+            o.detector = detector;
+            o.detectorRuleId = detectorRuleId;
+            o.displayName = displayName;
+            o.entitiesMappings = entitiesMappings;
+            o.lifecycleDetails = lifecycleDetails;
+            o.managedListTypes = managedListTypes;
+            o.recommendation = recommendation;
+            o.resourceType = resourceType;
+            o.serviceType = serviceType;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

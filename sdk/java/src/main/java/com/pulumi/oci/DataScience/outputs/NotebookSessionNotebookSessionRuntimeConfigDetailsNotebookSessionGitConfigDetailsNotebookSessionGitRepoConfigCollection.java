@@ -13,13 +13,9 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSes
      * @return (Updatable) The repository URL
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection(@CustomType.Parameter("url") String url) {
-        this.url = url;
-    }
-
+    private NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection() {}
     /**
      * @return (Updatable) The repository URL
      * 
@@ -35,24 +31,24 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSes
     public static Builder builder(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection build() {
-            return new NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection(url);
+        }
+        public NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection build() {
+            final var o = new NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection();
+            o.url = url;
+            return o;
         }
     }
 }

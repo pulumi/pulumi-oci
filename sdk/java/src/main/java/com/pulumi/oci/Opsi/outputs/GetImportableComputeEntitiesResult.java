@@ -15,28 +15,19 @@ public final class GetImportableComputeEntitiesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Array of importable compute entity objects.
      * 
      */
-    private final List<GetImportableComputeEntitiesItem> items;
+    private List<GetImportableComputeEntitiesItem> items;
 
-    @CustomType.Constructor
-    private GetImportableComputeEntitiesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetImportableComputeEntitiesItem> items) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetImportableComputeEntitiesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -66,16 +57,12 @@ public final class GetImportableComputeEntitiesResult {
     public static Builder builder(GetImportableComputeEntitiesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private List<GetImportableComputeEntitiesItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImportableComputeEntitiesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -83,22 +70,30 @@ public final class GetImportableComputeEntitiesResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetImportableComputeEntitiesItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetImportableComputeEntitiesItem... items) {
             return items(List.of(items));
-        }        public GetImportableComputeEntitiesResult build() {
-            return new GetImportableComputeEntitiesResult(compartmentId, id, items);
+        }
+        public GetImportableComputeEntitiesResult build() {
+            final var o = new GetImportableComputeEntitiesResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

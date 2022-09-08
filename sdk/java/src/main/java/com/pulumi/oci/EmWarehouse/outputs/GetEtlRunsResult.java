@@ -18,41 +18,26 @@ public final class GetEtlRunsResult {
      * @return Compartment Identifier
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name of the ETLRun.
      * 
      */
-    private final @Nullable String displayName;
-    private final String emWarehouseId;
+    private @Nullable String displayName;
+    private String emWarehouseId;
     /**
      * @return The list of etl_run_collection.
      * 
      */
-    private final List<GetEtlRunsEtlRunCollection> etlRunCollections;
-    private final @Nullable List<GetEtlRunsFilter> filters;
+    private List<GetEtlRunsEtlRunCollection> etlRunCollections;
+    private @Nullable List<GetEtlRunsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetEtlRunsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("emWarehouseId") String emWarehouseId,
-        @CustomType.Parameter("etlRunCollections") List<GetEtlRunsEtlRunCollection> etlRunCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetEtlRunsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.emWarehouseId = emWarehouseId;
-        this.etlRunCollections = etlRunCollections;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetEtlRunsResult() {}
     /**
      * @return Compartment Identifier
      * 
@@ -95,7 +80,7 @@ public final class GetEtlRunsResult {
     public static Builder builder(GetEtlRunsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
@@ -103,11 +88,7 @@ public final class GetEtlRunsResult {
         private List<GetEtlRunsEtlRunCollection> etlRunCollections;
         private @Nullable List<GetEtlRunsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEtlRunsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,18 +99,22 @@ public final class GetEtlRunsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder emWarehouseId(String emWarehouseId) {
             this.emWarehouseId = Objects.requireNonNull(emWarehouseId);
             return this;
         }
+        @CustomType.Setter
         public Builder etlRunCollections(List<GetEtlRunsEtlRunCollection> etlRunCollections) {
             this.etlRunCollections = Objects.requireNonNull(etlRunCollections);
             return this;
@@ -137,6 +122,7 @@ public final class GetEtlRunsResult {
         public Builder etlRunCollections(GetEtlRunsEtlRunCollection... etlRunCollections) {
             return etlRunCollections(List.of(etlRunCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetEtlRunsFilter> filters) {
             this.filters = filters;
             return this;
@@ -144,11 +130,20 @@ public final class GetEtlRunsResult {
         public Builder filters(GetEtlRunsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetEtlRunsResult build() {
-            return new GetEtlRunsResult(compartmentId, displayName, emWarehouseId, etlRunCollections, filters, id);
+        }
+        public GetEtlRunsResult build() {
+            final var o = new GetEtlRunsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.emWarehouseId = emWarehouseId;
+            o.etlRunCollections = etlRunCollections;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

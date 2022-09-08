@@ -34,6 +34,13 @@ public final class TriggerArgs extends com.pulumi.resources.ResourceArgs {
         return this.actions;
     }
 
+    @Import(name="connectionId")
+    private @Nullable Output<String> connectionId;
+
+    public Optional<Output<String>> connectionId() {
+        return Optional.ofNullable(this.connectionId);
+    }
+
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -143,6 +150,7 @@ public final class TriggerArgs extends com.pulumi.resources.ResourceArgs {
 
     private TriggerArgs(TriggerArgs $) {
         this.actions = $.actions;
+        this.connectionId = $.connectionId;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
@@ -199,6 +207,15 @@ public final class TriggerArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder actions(TriggerActionArgs... actions) {
             return actions(List.of(actions));
+        }
+
+        public Builder connectionId(@Nullable Output<String> connectionId) {
+            $.connectionId = connectionId;
+            return this;
+        }
+
+        public Builder connectionId(String connectionId) {
+            return connectionId(Output.of(connectionId));
         }
 
         /**

@@ -14,82 +14,53 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbSystemsDbSystemDbHome {
-    private final Boolean createAsync;
-    private final String databaseSoftwareImageId;
-    private final List<GetDbSystemsDbSystemDbHomeDatabase> databases;
-    private final String dbHomeLocation;
-    private final String dbVersion;
+    private Boolean createAsync;
+    private String databaseSoftwareImageId;
+    private List<GetDbSystemsDbSystemDbHomeDatabase> databases;
+    private String dbHomeLocation;
+    private String dbVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    private final String lastPatchHistoryEntryId;
+    private String lastPatchHistoryEntryId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the DB system was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetDbSystemsDbSystemDbHome(
-        @CustomType.Parameter("createAsync") Boolean createAsync,
-        @CustomType.Parameter("databaseSoftwareImageId") String databaseSoftwareImageId,
-        @CustomType.Parameter("databases") List<GetDbSystemsDbSystemDbHomeDatabase> databases,
-        @CustomType.Parameter("dbHomeLocation") String dbHomeLocation,
-        @CustomType.Parameter("dbVersion") String dbVersion,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lastPatchHistoryEntryId") String lastPatchHistoryEntryId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.createAsync = createAsync;
-        this.databaseSoftwareImageId = databaseSoftwareImageId;
-        this.databases = databases;
-        this.dbHomeLocation = dbHomeLocation;
-        this.dbVersion = dbVersion;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetDbSystemsDbSystemDbHome() {}
     public Boolean createAsync() {
         return this.createAsync;
     }
@@ -169,7 +140,7 @@ public final class GetDbSystemsDbSystemDbHome {
     public static Builder builder(GetDbSystemsDbSystemDbHome defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean createAsync;
         private String databaseSoftwareImageId;
@@ -184,11 +155,7 @@ public final class GetDbSystemsDbSystemDbHome {
         private String lifecycleDetails;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemsDbSystemDbHome defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.createAsync = defaults.createAsync;
@@ -206,14 +173,17 @@ public final class GetDbSystemsDbSystemDbHome {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder createAsync(Boolean createAsync) {
             this.createAsync = Objects.requireNonNull(createAsync);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
             return this;
         }
+        @CustomType.Setter
         public Builder databases(List<GetDbSystemsDbSystemDbHomeDatabase> databases) {
             this.databases = Objects.requireNonNull(databases);
             return this;
@@ -221,47 +191,72 @@ public final class GetDbSystemsDbSystemDbHome {
         public Builder databases(GetDbSystemsDbSystemDbHomeDatabase... databases) {
             return databases(List.of(databases));
         }
+        @CustomType.Setter
         public Builder dbHomeLocation(String dbHomeLocation) {
             this.dbHomeLocation = Objects.requireNonNull(dbHomeLocation);
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = Objects.requireNonNull(dbVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
             this.lastPatchHistoryEntryId = Objects.requireNonNull(lastPatchHistoryEntryId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetDbSystemsDbSystemDbHome build() {
-            return new GetDbSystemsDbSystemDbHome(createAsync, databaseSoftwareImageId, databases, dbHomeLocation, dbVersion, definedTags, displayName, freeformTags, id, lastPatchHistoryEntryId, lifecycleDetails, state, timeCreated);
+        }
+        public GetDbSystemsDbSystemDbHome build() {
+            final var o = new GetDbSystemsDbSystemDbHome();
+            o.createAsync = createAsync;
+            o.databaseSoftwareImageId = databaseSoftwareImageId;
+            o.databases = databases;
+            o.dbHomeLocation = dbHomeLocation;
+            o.dbVersion = dbVersion;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

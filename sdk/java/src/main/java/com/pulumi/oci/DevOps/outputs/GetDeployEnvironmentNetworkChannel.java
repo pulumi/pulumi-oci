@@ -14,28 +14,19 @@ public final class GetDeployEnvironmentNetworkChannel {
      * @return Network channel type.
      * 
      */
-    private final String networkChannelType;
+    private String networkChannelType;
     /**
      * @return An array of network security group OCIDs.
      * 
      */
-    private final List<String> nsgIds;
+    private List<String> nsgIds;
     /**
      * @return The OCID of the subnet where VNIC resources will be created for private endpoint.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private GetDeployEnvironmentNetworkChannel(
-        @CustomType.Parameter("networkChannelType") String networkChannelType,
-        @CustomType.Parameter("nsgIds") List<String> nsgIds,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.networkChannelType = networkChannelType;
-        this.nsgIds = nsgIds;
-        this.subnetId = subnetId;
-    }
-
+    private GetDeployEnvironmentNetworkChannel() {}
     /**
      * @return Network channel type.
      * 
@@ -65,16 +56,12 @@ public final class GetDeployEnvironmentNetworkChannel {
     public static Builder builder(GetDeployEnvironmentNetworkChannel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String networkChannelType;
         private List<String> nsgIds;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployEnvironmentNetworkChannel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.networkChannelType = defaults.networkChannelType;
@@ -82,10 +69,12 @@ public final class GetDeployEnvironmentNetworkChannel {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder networkChannelType(String networkChannelType) {
             this.networkChannelType = Objects.requireNonNull(networkChannelType);
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -93,11 +82,17 @@ public final class GetDeployEnvironmentNetworkChannel {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public GetDeployEnvironmentNetworkChannel build() {
-            return new GetDeployEnvironmentNetworkChannel(networkChannelType, nsgIds, subnetId);
+        }
+        public GetDeployEnvironmentNetworkChannel build() {
+            final var o = new GetDeployEnvironmentNetworkChannel();
+            o.networkChannelType = networkChannelType;
+            o.nsgIds = nsgIds;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

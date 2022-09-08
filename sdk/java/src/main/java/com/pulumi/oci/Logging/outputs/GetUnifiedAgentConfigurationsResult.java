@@ -19,54 +19,33 @@ public final class GetUnifiedAgentConfigurationsResult {
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetUnifiedAgentConfigurationsFilter> filters;
-    private final @Nullable String groupId;
+    private @Nullable String displayName;
+    private @Nullable List<GetUnifiedAgentConfigurationsFilter> filters;
+    private @Nullable String groupId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isCompartmentIdInSubtree;
-    private final @Nullable String logId;
+    private String id;
+    private @Nullable Boolean isCompartmentIdInSubtree;
+    private @Nullable String logId;
     /**
      * @return The pipeline state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of unified_agent_configuration_collection.
      * 
      */
-    private final List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections;
+    private List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections;
 
-    @CustomType.Constructor
-    private GetUnifiedAgentConfigurationsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetUnifiedAgentConfigurationsFilter> filters,
-        @CustomType.Parameter("groupId") @Nullable String groupId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCompartmentIdInSubtree") @Nullable Boolean isCompartmentIdInSubtree,
-        @CustomType.Parameter("logId") @Nullable String logId,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("unifiedAgentConfigurationCollections") List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.groupId = groupId;
-        this.id = id;
-        this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-        this.logId = logId;
-        this.state = state;
-        this.unifiedAgentConfigurationCollections = unifiedAgentConfigurationCollections;
-    }
-
+    private GetUnifiedAgentConfigurationsResult() {}
     /**
      * @return The OCID of the compartment that the resource belongs to.
      * 
@@ -122,7 +101,7 @@ public final class GetUnifiedAgentConfigurationsResult {
     public static Builder builder(GetUnifiedAgentConfigurationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -133,11 +112,7 @@ public final class GetUnifiedAgentConfigurationsResult {
         private @Nullable String logId;
         private @Nullable String state;
         private List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUnifiedAgentConfigurationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -151,14 +126,17 @@ public final class GetUnifiedAgentConfigurationsResult {
     	      this.unifiedAgentConfigurationCollections = defaults.unifiedAgentConfigurationCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetUnifiedAgentConfigurationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -166,34 +144,51 @@ public final class GetUnifiedAgentConfigurationsResult {
         public Builder filters(GetUnifiedAgentConfigurationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder groupId(@Nullable String groupId) {
             this.groupId = groupId;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder logId(@Nullable String logId) {
             this.logId = logId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder unifiedAgentConfigurationCollections(List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections) {
             this.unifiedAgentConfigurationCollections = Objects.requireNonNull(unifiedAgentConfigurationCollections);
             return this;
         }
         public Builder unifiedAgentConfigurationCollections(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection... unifiedAgentConfigurationCollections) {
             return unifiedAgentConfigurationCollections(List.of(unifiedAgentConfigurationCollections));
-        }        public GetUnifiedAgentConfigurationsResult build() {
-            return new GetUnifiedAgentConfigurationsResult(compartmentId, displayName, filters, groupId, id, isCompartmentIdInSubtree, logId, state, unifiedAgentConfigurationCollections);
+        }
+        public GetUnifiedAgentConfigurationsResult build() {
+            final var o = new GetUnifiedAgentConfigurationsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.groupId = groupId;
+            o.id = id;
+            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            o.logId = logId;
+            o.state = state;
+            o.unifiedAgentConfigurationCollections = unifiedAgentConfigurationCollections;
+            return o;
         }
     }
 }

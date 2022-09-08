@@ -16,21 +16,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
      * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) Determines if the parameter is required in the request.
      * 
      */
-    private final @Nullable Boolean required;
+    private @Nullable Boolean required;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("required") @Nullable Boolean required) {
-        this.name = name;
-        this.required = required;
-    }
-
+    private DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter() {}
     /**
      * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
@@ -53,30 +46,32 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
     public static Builder builder(DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private @Nullable Boolean required;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.required = defaults.required;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder required(@Nullable Boolean required) {
             this.required = required;
             return this;
-        }        public DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter build() {
-            return new DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter(name, required);
+        }
+        public DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter build() {
+            final var o = new DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter();
+            o.name = name;
+            o.required = required;
+            return o;
         }
     }
 }

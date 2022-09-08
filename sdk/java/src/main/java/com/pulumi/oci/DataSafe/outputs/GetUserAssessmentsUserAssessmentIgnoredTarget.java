@@ -9,24 +9,15 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUserAssessmentsUserAssessmentIgnoredTarget {
-    private final String lifecycleState;
+    private String lifecycleState;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private final String targetId;
-    private final String userAssessmentId;
+    private String targetId;
+    private String userAssessmentId;
 
-    @CustomType.Constructor
-    private GetUserAssessmentsUserAssessmentIgnoredTarget(
-        @CustomType.Parameter("lifecycleState") String lifecycleState,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("userAssessmentId") String userAssessmentId) {
-        this.lifecycleState = lifecycleState;
-        this.targetId = targetId;
-        this.userAssessmentId = userAssessmentId;
-    }
-
+    private GetUserAssessmentsUserAssessmentIgnoredTarget() {}
     public String lifecycleState() {
         return this.lifecycleState;
     }
@@ -48,16 +39,12 @@ public final class GetUserAssessmentsUserAssessmentIgnoredTarget {
     public static Builder builder(GetUserAssessmentsUserAssessmentIgnoredTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String lifecycleState;
         private String targetId;
         private String userAssessmentId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentsUserAssessmentIgnoredTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.lifecycleState = defaults.lifecycleState;
@@ -65,19 +52,27 @@ public final class GetUserAssessmentsUserAssessmentIgnoredTarget {
     	      this.userAssessmentId = defaults.userAssessmentId;
         }
 
+        @CustomType.Setter
         public Builder lifecycleState(String lifecycleState) {
             this.lifecycleState = Objects.requireNonNull(lifecycleState);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
             this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
             return this;
-        }        public GetUserAssessmentsUserAssessmentIgnoredTarget build() {
-            return new GetUserAssessmentsUserAssessmentIgnoredTarget(lifecycleState, targetId, userAssessmentId);
+        }
+        public GetUserAssessmentsUserAssessmentIgnoredTarget build() {
+            final var o = new GetUserAssessmentsUserAssessmentIgnoredTarget();
+            o.lifecycleState = lifecycleState;
+            o.targetId = targetId;
+            o.userAssessmentId = userAssessmentId;
+            return o;
         }
     }
 }

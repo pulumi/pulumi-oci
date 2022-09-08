@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAlertPoliciesAlertPolicyCollection {
-    private final List<GetAlertPoliciesAlertPolicyCollectionItem> items;
+    private List<GetAlertPoliciesAlertPolicyCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAlertPoliciesAlertPolicyCollection(@CustomType.Parameter("items") List<GetAlertPoliciesAlertPolicyCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAlertPoliciesAlertPolicyCollection() {}
     public List<GetAlertPoliciesAlertPolicyCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAlertPoliciesAlertPolicyCollection {
     public static Builder builder(GetAlertPoliciesAlertPolicyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAlertPoliciesAlertPolicyCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertPoliciesAlertPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAlertPoliciesAlertPolicyCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAlertPoliciesAlertPolicyCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAlertPoliciesAlertPolicyCollection build() {
-            return new GetAlertPoliciesAlertPolicyCollection(items);
+        }
+        public GetAlertPoliciesAlertPolicyCollection build() {
+            final var o = new GetAlertPoliciesAlertPolicyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

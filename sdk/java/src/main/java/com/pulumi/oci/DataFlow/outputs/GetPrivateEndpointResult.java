@@ -17,122 +17,85 @@ public final class GetPrivateEndpointResult {
      * @return The OCID of a compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly description. Avoid entering confidential information.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return An array of DNS zone names. Example: `[ &#34;app.examplecorp.com&#34;, &#34;app.examplecorp2.com&#34; ]`
      * 
      */
-    private final List<String> dnsZones;
+    private List<String> dnsZones;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of a private endpoint.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The detailed messages about the lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
      * 
      */
-    private final Integer maxHostCount;
+    private Integer maxHostCount;
     /**
      * @return An array of network security group OCIDs.
      * 
      */
-    private final List<String> nsgIds;
+    private List<String> nsgIds;
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    private final String ownerPrincipalId;
+    private String ownerPrincipalId;
     /**
      * @return The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    private final String ownerUserName;
-    private final String privateEndpointId;
+    private String ownerUserName;
+    private String privateEndpointId;
     /**
      * @return The current state of this private endpoint.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The OCID of a subnet.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetPrivateEndpointResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("dnsZones") List<String> dnsZones,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("maxHostCount") Integer maxHostCount,
-        @CustomType.Parameter("nsgIds") List<String> nsgIds,
-        @CustomType.Parameter("ownerPrincipalId") String ownerPrincipalId,
-        @CustomType.Parameter("ownerUserName") String ownerUserName,
-        @CustomType.Parameter("privateEndpointId") String privateEndpointId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.dnsZones = dnsZones;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.maxHostCount = maxHostCount;
-        this.nsgIds = nsgIds;
-        this.ownerPrincipalId = ownerPrincipalId;
-        this.ownerUserName = ownerUserName;
-        this.privateEndpointId = privateEndpointId;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetPrivateEndpointResult() {}
     /**
      * @return The OCID of a compartment.
      * 
@@ -256,7 +219,7 @@ public final class GetPrivateEndpointResult {
     public static Builder builder(GetPrivateEndpointResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -275,11 +238,7 @@ public final class GetPrivateEndpointResult {
         private String subnetId;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateEndpointResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -301,22 +260,27 @@ public final class GetPrivateEndpointResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder dnsZones(List<String> dnsZones) {
             this.dnsZones = Objects.requireNonNull(dnsZones);
             return this;
@@ -324,22 +288,27 @@ public final class GetPrivateEndpointResult {
         public Builder dnsZones(String... dnsZones) {
             return dnsZones(List.of(dnsZones));
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder maxHostCount(Integer maxHostCount) {
             this.maxHostCount = Objects.requireNonNull(maxHostCount);
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -347,35 +316,61 @@ public final class GetPrivateEndpointResult {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder ownerPrincipalId(String ownerPrincipalId) {
             this.ownerPrincipalId = Objects.requireNonNull(ownerPrincipalId);
             return this;
         }
+        @CustomType.Setter
         public Builder ownerUserName(String ownerUserName) {
             this.ownerUserName = Objects.requireNonNull(ownerUserName);
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetPrivateEndpointResult build() {
-            return new GetPrivateEndpointResult(compartmentId, definedTags, description, displayName, dnsZones, freeformTags, id, lifecycleDetails, maxHostCount, nsgIds, ownerPrincipalId, ownerUserName, privateEndpointId, state, subnetId, timeCreated, timeUpdated);
+        }
+        public GetPrivateEndpointResult build() {
+            final var o = new GetPrivateEndpointResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.dnsZones = dnsZones;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.maxHostCount = maxHostCount;
+            o.nsgIds = nsgIds;
+            o.ownerPrincipalId = ownerPrincipalId;
+            o.ownerUserName = ownerUserName;
+            o.privateEndpointId = privateEndpointId;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

@@ -17,143 +17,100 @@ public final class GetControlResult {
      * @return List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
      * 
      */
-    private final List<String> approvalRequiredOpActionLists;
+    private List<String> approvalRequiredOpActionLists;
     /**
      * @return List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
      * 
      */
-    private final List<String> approverGroupsLists;
+    private List<String> approverGroupsLists;
     /**
      * @return List of users who can approve an access request associated with a target resource under the governance of this operator control.
      * 
      */
-    private final List<String> approversLists;
+    private List<String> approversLists;
     /**
      * @return The OCID of the compartment that contains the operator control.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description of operator control.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return List of emailId.
      * 
      */
-    private final List<String> emailIdLists;
+    private List<String> emailIdLists;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the operator control.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      * 
      */
-    private final Boolean isFullyPreApproved;
+    private Boolean isFullyPreApproved;
     /**
      * @return Description associated with the latest modification of the operator control.
      * 
      */
-    private final String lastModifiedInfo;
-    private final String operatorControlId;
+    private String lastModifiedInfo;
+    private String operatorControlId;
     /**
      * @return Name of the operator control. The name must be unique.
      * 
      */
-    private final String operatorControlName;
+    private String operatorControlName;
     /**
      * @return List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
      * 
      */
-    private final List<String> preApprovedOpActionLists;
+    private List<String> preApprovedOpActionLists;
     /**
      * @return resourceType for which the OperatorControl is applicable
      * 
      */
-    private final String resourceType;
+    private String resourceType;
     /**
      * @return The current lifecycle state of the operator control.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
      * 
      */
-    private final String systemMessage;
+    private String systemMessage;
     /**
      * @return Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private final String timeOfCreation;
+    private String timeOfCreation;
     /**
      * @return Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
      * 
      */
-    private final String timeOfDeletion;
+    private String timeOfDeletion;
     /**
      * @return Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private final String timeOfModification;
+    private String timeOfModification;
 
-    @CustomType.Constructor
-    private GetControlResult(
-        @CustomType.Parameter("approvalRequiredOpActionLists") List<String> approvalRequiredOpActionLists,
-        @CustomType.Parameter("approverGroupsLists") List<String> approverGroupsLists,
-        @CustomType.Parameter("approversLists") List<String> approversLists,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("emailIdLists") List<String> emailIdLists,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isFullyPreApproved") Boolean isFullyPreApproved,
-        @CustomType.Parameter("lastModifiedInfo") String lastModifiedInfo,
-        @CustomType.Parameter("operatorControlId") String operatorControlId,
-        @CustomType.Parameter("operatorControlName") String operatorControlName,
-        @CustomType.Parameter("preApprovedOpActionLists") List<String> preApprovedOpActionLists,
-        @CustomType.Parameter("resourceType") String resourceType,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemMessage") String systemMessage,
-        @CustomType.Parameter("timeOfCreation") String timeOfCreation,
-        @CustomType.Parameter("timeOfDeletion") String timeOfDeletion,
-        @CustomType.Parameter("timeOfModification") String timeOfModification) {
-        this.approvalRequiredOpActionLists = approvalRequiredOpActionLists;
-        this.approverGroupsLists = approverGroupsLists;
-        this.approversLists = approversLists;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.emailIdLists = emailIdLists;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isFullyPreApproved = isFullyPreApproved;
-        this.lastModifiedInfo = lastModifiedInfo;
-        this.operatorControlId = operatorControlId;
-        this.operatorControlName = operatorControlName;
-        this.preApprovedOpActionLists = preApprovedOpActionLists;
-        this.resourceType = resourceType;
-        this.state = state;
-        this.systemMessage = systemMessage;
-        this.timeOfCreation = timeOfCreation;
-        this.timeOfDeletion = timeOfDeletion;
-        this.timeOfModification = timeOfModification;
-    }
-
+    private GetControlResult() {}
     /**
      * @return List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
      * 
@@ -298,7 +255,7 @@ public final class GetControlResult {
     public static Builder builder(GetControlResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> approvalRequiredOpActionLists;
         private List<String> approverGroupsLists;
@@ -320,11 +277,7 @@ public final class GetControlResult {
         private String timeOfCreation;
         private String timeOfDeletion;
         private String timeOfModification;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetControlResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.approvalRequiredOpActionLists = defaults.approvalRequiredOpActionLists;
@@ -349,6 +302,7 @@ public final class GetControlResult {
     	      this.timeOfModification = defaults.timeOfModification;
         }
 
+        @CustomType.Setter
         public Builder approvalRequiredOpActionLists(List<String> approvalRequiredOpActionLists) {
             this.approvalRequiredOpActionLists = Objects.requireNonNull(approvalRequiredOpActionLists);
             return this;
@@ -356,6 +310,7 @@ public final class GetControlResult {
         public Builder approvalRequiredOpActionLists(String... approvalRequiredOpActionLists) {
             return approvalRequiredOpActionLists(List.of(approvalRequiredOpActionLists));
         }
+        @CustomType.Setter
         public Builder approverGroupsLists(List<String> approverGroupsLists) {
             this.approverGroupsLists = Objects.requireNonNull(approverGroupsLists);
             return this;
@@ -363,6 +318,7 @@ public final class GetControlResult {
         public Builder approverGroupsLists(String... approverGroupsLists) {
             return approverGroupsLists(List.of(approverGroupsLists));
         }
+        @CustomType.Setter
         public Builder approversLists(List<String> approversLists) {
             this.approversLists = Objects.requireNonNull(approversLists);
             return this;
@@ -370,18 +326,22 @@ public final class GetControlResult {
         public Builder approversLists(String... approversLists) {
             return approversLists(List.of(approversLists));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder emailIdLists(List<String> emailIdLists) {
             this.emailIdLists = Objects.requireNonNull(emailIdLists);
             return this;
@@ -389,30 +349,37 @@ public final class GetControlResult {
         public Builder emailIdLists(String... emailIdLists) {
             return emailIdLists(List.of(emailIdLists));
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isFullyPreApproved(Boolean isFullyPreApproved) {
             this.isFullyPreApproved = Objects.requireNonNull(isFullyPreApproved);
             return this;
         }
+        @CustomType.Setter
         public Builder lastModifiedInfo(String lastModifiedInfo) {
             this.lastModifiedInfo = Objects.requireNonNull(lastModifiedInfo);
             return this;
         }
+        @CustomType.Setter
         public Builder operatorControlId(String operatorControlId) {
             this.operatorControlId = Objects.requireNonNull(operatorControlId);
             return this;
         }
+        @CustomType.Setter
         public Builder operatorControlName(String operatorControlName) {
             this.operatorControlName = Objects.requireNonNull(operatorControlName);
             return this;
         }
+        @CustomType.Setter
         public Builder preApprovedOpActionLists(List<String> preApprovedOpActionLists) {
             this.preApprovedOpActionLists = Objects.requireNonNull(preApprovedOpActionLists);
             return this;
@@ -420,31 +387,59 @@ public final class GetControlResult {
         public Builder preApprovedOpActionLists(String... preApprovedOpActionLists) {
             return preApprovedOpActionLists(List.of(preApprovedOpActionLists));
         }
+        @CustomType.Setter
         public Builder resourceType(String resourceType) {
             this.resourceType = Objects.requireNonNull(resourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemMessage(String systemMessage) {
             this.systemMessage = Objects.requireNonNull(systemMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfCreation(String timeOfCreation) {
             this.timeOfCreation = Objects.requireNonNull(timeOfCreation);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
             this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfModification(String timeOfModification) {
             this.timeOfModification = Objects.requireNonNull(timeOfModification);
             return this;
-        }        public GetControlResult build() {
-            return new GetControlResult(approvalRequiredOpActionLists, approverGroupsLists, approversLists, compartmentId, definedTags, description, emailIdLists, freeformTags, id, isFullyPreApproved, lastModifiedInfo, operatorControlId, operatorControlName, preApprovedOpActionLists, resourceType, state, systemMessage, timeOfCreation, timeOfDeletion, timeOfModification);
+        }
+        public GetControlResult build() {
+            final var o = new GetControlResult();
+            o.approvalRequiredOpActionLists = approvalRequiredOpActionLists;
+            o.approverGroupsLists = approverGroupsLists;
+            o.approversLists = approversLists;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.emailIdLists = emailIdLists;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isFullyPreApproved = isFullyPreApproved;
+            o.lastModifiedInfo = lastModifiedInfo;
+            o.operatorControlId = operatorControlId;
+            o.operatorControlName = operatorControlName;
+            o.preApprovedOpActionLists = preApprovedOpActionLists;
+            o.resourceType = resourceType;
+            o.state = state;
+            o.systemMessage = systemMessage;
+            o.timeOfCreation = timeOfCreation;
+            o.timeOfDeletion = timeOfDeletion;
+            o.timeOfModification = timeOfModification;
+            return o;
         }
     }
 }

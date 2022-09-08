@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertPolicyRulesResult {
-    private final String alertPolicyId;
+    private String alertPolicyId;
     /**
      * @return The list of alert_policy_rule_collection.
      * 
      */
-    private final List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections;
-    private final @Nullable List<GetAlertPolicyRulesFilter> filters;
+    private List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections;
+    private @Nullable List<GetAlertPolicyRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAlertPolicyRulesResult(
-        @CustomType.Parameter("alertPolicyId") String alertPolicyId,
-        @CustomType.Parameter("alertPolicyRuleCollections") List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetAlertPolicyRulesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.alertPolicyId = alertPolicyId;
-        this.alertPolicyRuleCollections = alertPolicyRuleCollections;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAlertPolicyRulesResult() {}
     public String alertPolicyId() {
         return this.alertPolicyId;
     }
@@ -66,17 +55,13 @@ public final class GetAlertPolicyRulesResult {
     public static Builder builder(GetAlertPolicyRulesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String alertPolicyId;
         private List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections;
         private @Nullable List<GetAlertPolicyRulesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertPolicyRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alertPolicyId = defaults.alertPolicyId;
@@ -85,10 +70,12 @@ public final class GetAlertPolicyRulesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder alertPolicyId(String alertPolicyId) {
             this.alertPolicyId = Objects.requireNonNull(alertPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder alertPolicyRuleCollections(List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections) {
             this.alertPolicyRuleCollections = Objects.requireNonNull(alertPolicyRuleCollections);
             return this;
@@ -96,6 +83,7 @@ public final class GetAlertPolicyRulesResult {
         public Builder alertPolicyRuleCollections(GetAlertPolicyRulesAlertPolicyRuleCollection... alertPolicyRuleCollections) {
             return alertPolicyRuleCollections(List.of(alertPolicyRuleCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAlertPolicyRulesFilter> filters) {
             this.filters = filters;
             return this;
@@ -103,11 +91,18 @@ public final class GetAlertPolicyRulesResult {
         public Builder filters(GetAlertPolicyRulesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAlertPolicyRulesResult build() {
-            return new GetAlertPolicyRulesResult(alertPolicyId, alertPolicyRuleCollections, filters, id);
+        }
+        public GetAlertPolicyRulesResult build() {
+            final var o = new GetAlertPolicyRulesResult();
+            o.alertPolicyId = alertPolicyId;
+            o.alertPolicyRuleCollections = alertPolicyRuleCollections;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

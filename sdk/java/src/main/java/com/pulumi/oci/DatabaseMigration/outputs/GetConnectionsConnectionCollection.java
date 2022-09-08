@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetConnectionsConnectionCollection {
-    private final List<GetConnectionsConnectionCollectionItem> items;
+    private List<GetConnectionsConnectionCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetConnectionsConnectionCollection(@CustomType.Parameter("items") List<GetConnectionsConnectionCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetConnectionsConnectionCollection() {}
     public List<GetConnectionsConnectionCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetConnectionsConnectionCollection {
     public static Builder builder(GetConnectionsConnectionCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetConnectionsConnectionCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionsConnectionCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetConnectionsConnectionCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetConnectionsConnectionCollectionItem... items) {
             return items(List.of(items));
-        }        public GetConnectionsConnectionCollection build() {
-            return new GetConnectionsConnectionCollection(items);
+        }
+        public GetConnectionsConnectionCollection build() {
+            final var o = new GetConnectionsConnectionCollection();
+            o.items = items;
+            return o;
         }
     }
 }

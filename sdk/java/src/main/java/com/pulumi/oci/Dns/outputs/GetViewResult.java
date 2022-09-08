@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetViewResult {
@@ -16,83 +18,56 @@ public final class GetViewResult {
      * @return The OCID of the owning compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The display name of the view.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the view.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    private final Boolean isProtected;
-    private final String scope;
+    private Boolean isProtected;
+    private @Nullable String scope;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private final String self;
+    private String self;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private final String timeUpdated;
-    private final String viewId;
+    private String timeUpdated;
+    private @Nullable String viewId;
 
-    @CustomType.Constructor
-    private GetViewResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isProtected") Boolean isProtected,
-        @CustomType.Parameter("scope") String scope,
-        @CustomType.Parameter("self") String self,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("viewId") String viewId) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isProtected = isProtected;
-        this.scope = scope;
-        this.self = self;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.viewId = viewId;
-    }
-
+    private GetViewResult() {}
     /**
      * @return The OCID of the owning compartment.
      * 
@@ -135,8 +110,8 @@ public final class GetViewResult {
     public Boolean isProtected() {
         return this.isProtected;
     }
-    public String scope() {
-        return this.scope;
+    public Optional<String> scope() {
+        return Optional.ofNullable(this.scope);
     }
     /**
      * @return The canonical absolute URL of the resource.
@@ -166,8 +141,8 @@ public final class GetViewResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
-    public String viewId() {
-        return this.viewId;
+    public Optional<String> viewId() {
+        return Optional.ofNullable(this.viewId);
     }
 
     public static Builder builder() {
@@ -177,7 +152,7 @@ public final class GetViewResult {
     public static Builder builder(GetViewResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -185,17 +160,13 @@ public final class GetViewResult {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isProtected;
-        private String scope;
+        private @Nullable String scope;
         private String self;
         private String state;
         private String timeCreated;
         private String timeUpdated;
-        private String viewId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        private @Nullable String viewId;
+        public Builder() {}
         public Builder(GetViewResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -212,55 +183,81 @@ public final class GetViewResult {
     	      this.viewId = defaults.viewId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isProtected(Boolean isProtected) {
             this.isProtected = Objects.requireNonNull(isProtected);
             return this;
         }
-        public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+        @CustomType.Setter
+        public Builder scope(@Nullable String scope) {
+            this.scope = scope;
             return this;
         }
+        @CustomType.Setter
         public Builder self(String self) {
             this.self = Objects.requireNonNull(self);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
-        public Builder viewId(String viewId) {
-            this.viewId = Objects.requireNonNull(viewId);
+        @CustomType.Setter
+        public Builder viewId(@Nullable String viewId) {
+            this.viewId = viewId;
             return this;
-        }        public GetViewResult build() {
-            return new GetViewResult(compartmentId, definedTags, displayName, freeformTags, id, isProtected, scope, self, state, timeCreated, timeUpdated, viewId);
+        }
+        public GetViewResult build() {
+            final var o = new GetViewResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isProtected = isProtected;
+            o.scope = scope;
+            o.self = self;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.viewId = viewId;
+            return o;
         }
     }
 }

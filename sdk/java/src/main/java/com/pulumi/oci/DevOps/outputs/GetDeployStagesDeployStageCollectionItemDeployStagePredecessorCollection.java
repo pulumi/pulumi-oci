@@ -14,13 +14,9 @@ public final class GetDeployStagesDeployStageCollectionItemDeployStagePredecesso
      * @return The IP address of the backend server. A server could be a compute instance or a load balancer.
      * 
      */
-    private final List<GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItem> items;
+    private List<GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection(@CustomType.Parameter("items") List<GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection() {}
     /**
      * @return The IP address of the backend server. A server could be a compute instance or a load balancer.
      * 
@@ -36,27 +32,27 @@ public final class GetDeployStagesDeployStageCollectionItemDeployStagePredecesso
     public static Builder builder(GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection build() {
-            return new GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection(items);
+        }
+        public GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection build() {
+            final var o = new GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection();
+            o.items = items;
+            return o;
         }
     }
 }

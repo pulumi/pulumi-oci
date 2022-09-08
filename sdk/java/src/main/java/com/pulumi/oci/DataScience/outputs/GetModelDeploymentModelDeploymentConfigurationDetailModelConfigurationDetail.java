@@ -17,35 +17,24 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
      * @return The network bandwidth for the model.
      * 
      */
-    private final Integer bandwidthMbps;
+    private Integer bandwidthMbps;
     /**
      * @return The model deployment instance configuration
      * 
      */
-    private final List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations;
+    private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations;
     /**
      * @return The OCID of the model you want to deploy.
      * 
      */
-    private final String modelId;
+    private String modelId;
     /**
      * @return The scaling policy to apply to each model of the deployment.
      * 
      */
-    private final List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies;
+    private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies;
 
-    @CustomType.Constructor
-    private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail(
-        @CustomType.Parameter("bandwidthMbps") Integer bandwidthMbps,
-        @CustomType.Parameter("instanceConfigurations") List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations,
-        @CustomType.Parameter("modelId") String modelId,
-        @CustomType.Parameter("scalingPolicies") List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies) {
-        this.bandwidthMbps = bandwidthMbps;
-        this.instanceConfigurations = instanceConfigurations;
-        this.modelId = modelId;
-        this.scalingPolicies = scalingPolicies;
-    }
-
+    private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail() {}
     /**
      * @return The network bandwidth for the model.
      * 
@@ -82,17 +71,13 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
     public static Builder builder(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer bandwidthMbps;
         private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations;
         private String modelId;
         private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bandwidthMbps = defaults.bandwidthMbps;
@@ -101,10 +86,12 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
     	      this.scalingPolicies = defaults.scalingPolicies;
         }
 
+        @CustomType.Setter
         public Builder bandwidthMbps(Integer bandwidthMbps) {
             this.bandwidthMbps = Objects.requireNonNull(bandwidthMbps);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceConfigurations(List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations) {
             this.instanceConfigurations = Objects.requireNonNull(instanceConfigurations);
             return this;
@@ -112,18 +99,26 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
         public Builder instanceConfigurations(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration... instanceConfigurations) {
             return instanceConfigurations(List.of(instanceConfigurations));
         }
+        @CustomType.Setter
         public Builder modelId(String modelId) {
             this.modelId = Objects.requireNonNull(modelId);
             return this;
         }
+        @CustomType.Setter
         public Builder scalingPolicies(List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies) {
             this.scalingPolicies = Objects.requireNonNull(scalingPolicies);
             return this;
         }
         public Builder scalingPolicies(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy... scalingPolicies) {
             return scalingPolicies(List.of(scalingPolicies));
-        }        public GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail build() {
-            return new GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail(bandwidthMbps, instanceConfigurations, modelId, scalingPolicies);
+        }
+        public GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail build() {
+            final var o = new GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail();
+            o.bandwidthMbps = bandwidthMbps;
+            o.instanceConfigurations = instanceConfigurations;
+            o.modelId = modelId;
+            o.scalingPolicies = scalingPolicies;
+            return o;
         }
     }
 }

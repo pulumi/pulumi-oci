@@ -16,28 +16,19 @@ public final class AutoScalingConfigurationPolicyDetailsScaleOutConfig {
      * @return (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
      * 
      */
-    private final @Nullable Integer maxNodeCount;
+    private @Nullable Integer maxNodeCount;
     /**
      * @return (Updatable) Metric and threshold details for triggering an autoscale action.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric metric;
+    private @Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric metric;
     /**
      * @return (Updatable) This value is the number of nodes to add during a scale-out event.
      * 
      */
-    private final @Nullable Integer stepSize;
+    private @Nullable Integer stepSize;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyDetailsScaleOutConfig(
-        @CustomType.Parameter("maxNodeCount") @Nullable Integer maxNodeCount,
-        @CustomType.Parameter("metric") @Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric metric,
-        @CustomType.Parameter("stepSize") @Nullable Integer stepSize) {
-        this.maxNodeCount = maxNodeCount;
-        this.metric = metric;
-        this.stepSize = stepSize;
-    }
-
+    private AutoScalingConfigurationPolicyDetailsScaleOutConfig() {}
     /**
      * @return (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
      * 
@@ -67,16 +58,12 @@ public final class AutoScalingConfigurationPolicyDetailsScaleOutConfig {
     public static Builder builder(AutoScalingConfigurationPolicyDetailsScaleOutConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer maxNodeCount;
         private @Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric metric;
         private @Nullable Integer stepSize;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyDetailsScaleOutConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.maxNodeCount = defaults.maxNodeCount;
@@ -84,19 +71,27 @@ public final class AutoScalingConfigurationPolicyDetailsScaleOutConfig {
     	      this.stepSize = defaults.stepSize;
         }
 
+        @CustomType.Setter
         public Builder maxNodeCount(@Nullable Integer maxNodeCount) {
             this.maxNodeCount = maxNodeCount;
             return this;
         }
+        @CustomType.Setter
         public Builder metric(@Nullable AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric metric) {
             this.metric = metric;
             return this;
         }
+        @CustomType.Setter
         public Builder stepSize(@Nullable Integer stepSize) {
             this.stepSize = stepSize;
             return this;
-        }        public AutoScalingConfigurationPolicyDetailsScaleOutConfig build() {
-            return new AutoScalingConfigurationPolicyDetailsScaleOutConfig(maxNodeCount, metric, stepSize);
+        }
+        public AutoScalingConfigurationPolicyDetailsScaleOutConfig build() {
+            final var o = new AutoScalingConfigurationPolicyDetailsScaleOutConfig();
+            o.maxNodeCount = maxNodeCount;
+            o.metric = metric;
+            o.stepSize = stepSize;
+            return o;
         }
     }
 }

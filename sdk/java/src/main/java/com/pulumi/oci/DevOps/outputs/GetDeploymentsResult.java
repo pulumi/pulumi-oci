@@ -18,65 +18,42 @@ public final class GetDeploymentsResult {
      * @return The OCID of a compartment.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of a pipeline.
      * 
      */
-    private final @Nullable String deployPipelineId;
+    private @Nullable String deployPipelineId;
     /**
      * @return The list of deployment_collection.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollection> deploymentCollections;
+    private List<GetDeploymentsDeploymentCollection> deploymentCollections;
     /**
      * @return Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDeploymentsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDeploymentsFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of a project.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The current state of the deployment.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private @Nullable String state;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
 
-    @CustomType.Constructor
-    private GetDeploymentsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("deployPipelineId") @Nullable String deployPipelineId,
-        @CustomType.Parameter("deploymentCollections") List<GetDeploymentsDeploymentCollection> deploymentCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDeploymentsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan) {
-        this.compartmentId = compartmentId;
-        this.deployPipelineId = deployPipelineId;
-        this.deploymentCollections = deploymentCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.projectId = projectId;
-        this.state = state;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-    }
-
+    private GetDeploymentsResult() {}
     /**
      * @return The OCID of a compartment.
      * 
@@ -143,7 +120,7 @@ public final class GetDeploymentsResult {
     public static Builder builder(GetDeploymentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String deployPipelineId;
@@ -155,11 +132,7 @@ public final class GetDeploymentsResult {
         private @Nullable String state;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -174,14 +147,17 @@ public final class GetDeploymentsResult {
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder deployPipelineId(@Nullable String deployPipelineId) {
             this.deployPipelineId = deployPipelineId;
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentCollections(List<GetDeploymentsDeploymentCollection> deploymentCollections) {
             this.deploymentCollections = Objects.requireNonNull(deploymentCollections);
             return this;
@@ -189,10 +165,12 @@ public final class GetDeploymentsResult {
         public Builder deploymentCollections(GetDeploymentsDeploymentCollection... deploymentCollections) {
             return deploymentCollections(List.of(deploymentCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDeploymentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -200,27 +178,44 @@ public final class GetDeploymentsResult {
         public Builder filters(GetDeploymentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
-        }        public GetDeploymentsResult build() {
-            return new GetDeploymentsResult(compartmentId, deployPipelineId, deploymentCollections, displayName, filters, id, projectId, state, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan);
+        }
+        public GetDeploymentsResult build() {
+            final var o = new GetDeploymentsResult();
+            o.compartmentId = compartmentId;
+            o.deployPipelineId = deployPipelineId;
+            o.deploymentCollections = deploymentCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.projectId = projectId;
+            o.state = state;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            return o;
         }
     }
 }

@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDataAssetsDataAssetCollection {
-    private final Integer count;
-    private final List<GetDataAssetsDataAssetCollectionItem> items;
+    private Integer count;
+    private List<GetDataAssetsDataAssetCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDataAssetsDataAssetCollection(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("items") List<GetDataAssetsDataAssetCollectionItem> items) {
-        this.count = count;
-        this.items = items;
-    }
-
+    private GetDataAssetsDataAssetCollection() {}
     public Integer count() {
         return this.count;
     }
@@ -36,33 +29,35 @@ public final class GetDataAssetsDataAssetCollection {
     public static Builder builder(GetDataAssetsDataAssetCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private List<GetDataAssetsDataAssetCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataAssetsDataAssetCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetDataAssetsDataAssetCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDataAssetsDataAssetCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDataAssetsDataAssetCollection build() {
-            return new GetDataAssetsDataAssetCollection(count, items);
+        }
+        public GetDataAssetsDataAssetCollection build() {
+            final var o = new GetDataAssetsDataAssetCollection();
+            o.count = count;
+            o.items = items;
+            return o;
         }
     }
 }

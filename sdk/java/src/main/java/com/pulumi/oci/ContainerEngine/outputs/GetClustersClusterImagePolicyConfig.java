@@ -15,21 +15,14 @@ public final class GetClustersClusterImagePolicyConfig {
      * @return Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
      * 
      */
-    private final Boolean isPolicyEnabled;
+    private Boolean isPolicyEnabled;
     /**
      * @return A list of KMS key details.
      * 
      */
-    private final List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails;
+    private List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails;
 
-    @CustomType.Constructor
-    private GetClustersClusterImagePolicyConfig(
-        @CustomType.Parameter("isPolicyEnabled") Boolean isPolicyEnabled,
-        @CustomType.Parameter("keyDetails") List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails) {
-        this.isPolicyEnabled = isPolicyEnabled;
-        this.keyDetails = keyDetails;
-    }
-
+    private GetClustersClusterImagePolicyConfig() {}
     /**
      * @return Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
      * 
@@ -52,33 +45,35 @@ public final class GetClustersClusterImagePolicyConfig {
     public static Builder builder(GetClustersClusterImagePolicyConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isPolicyEnabled;
         private List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClustersClusterImagePolicyConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isPolicyEnabled = defaults.isPolicyEnabled;
     	      this.keyDetails = defaults.keyDetails;
         }
 
+        @CustomType.Setter
         public Builder isPolicyEnabled(Boolean isPolicyEnabled) {
             this.isPolicyEnabled = Objects.requireNonNull(isPolicyEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder keyDetails(List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails) {
             this.keyDetails = Objects.requireNonNull(keyDetails);
             return this;
         }
         public Builder keyDetails(GetClustersClusterImagePolicyConfigKeyDetail... keyDetails) {
             return keyDetails(List.of(keyDetails));
-        }        public GetClustersClusterImagePolicyConfig build() {
-            return new GetClustersClusterImagePolicyConfig(isPolicyEnabled, keyDetails);
+        }
+        public GetClustersClusterImagePolicyConfig build() {
+            final var o = new GetClustersClusterImagePolicyConfig();
+            o.isPolicyEnabled = isPolicyEnabled;
+            o.keyDetails = keyDetails;
+            return o;
         }
     }
 }

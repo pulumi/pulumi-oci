@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DevOps.outputs.BuildRunBuildRunSourceTriggerInfoActionFilterExclude;
 import com.pulumi.oci.DevOps.outputs.BuildRunBuildRunSourceTriggerInfoActionFilterInclude;
 import java.lang.String;
 import java.util.List;
@@ -17,34 +18,29 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
      * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
      * 
      */
-    private final @Nullable List<String> events;
+    private @Nullable List<String> events;
+    private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterExclude> excludes;
     /**
      * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
-    private final @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterInclude> includes;
+    private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterInclude> includes;
     /**
      * @return Source of the trigger. Allowed values are, GITHUB and GITLAB.
      * 
      */
-    private final @Nullable String triggerSource;
+    private @Nullable String triggerSource;
 
-    @CustomType.Constructor
-    private BuildRunBuildRunSourceTriggerInfoActionFilter(
-        @CustomType.Parameter("events") @Nullable List<String> events,
-        @CustomType.Parameter("includes") @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterInclude> includes,
-        @CustomType.Parameter("triggerSource") @Nullable String triggerSource) {
-        this.events = events;
-        this.includes = includes;
-        this.triggerSource = triggerSource;
-    }
-
+    private BuildRunBuildRunSourceTriggerInfoActionFilter() {}
     /**
      * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
      * 
      */
     public List<String> events() {
         return this.events == null ? List.of() : this.events;
+    }
+    public List<BuildRunBuildRunSourceTriggerInfoActionFilterExclude> excludes() {
+        return this.excludes == null ? List.of() : this.excludes;
     }
     /**
      * @return Attributes to filter GitLab self-hosted server events.
@@ -68,23 +64,22 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
     public static Builder builder(BuildRunBuildRunSourceTriggerInfoActionFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> events;
+        private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterExclude> excludes;
         private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterInclude> includes;
         private @Nullable String triggerSource;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildRunSourceTriggerInfoActionFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.events = defaults.events;
+    	      this.excludes = defaults.excludes;
     	      this.includes = defaults.includes;
     	      this.triggerSource = defaults.triggerSource;
         }
 
+        @CustomType.Setter
         public Builder events(@Nullable List<String> events) {
             this.events = events;
             return this;
@@ -92,6 +87,15 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
         public Builder events(String... events) {
             return events(List.of(events));
         }
+        @CustomType.Setter
+        public Builder excludes(@Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterExclude> excludes) {
+            this.excludes = excludes;
+            return this;
+        }
+        public Builder excludes(BuildRunBuildRunSourceTriggerInfoActionFilterExclude... excludes) {
+            return excludes(List.of(excludes));
+        }
+        @CustomType.Setter
         public Builder includes(@Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterInclude> includes) {
             this.includes = includes;
             return this;
@@ -99,11 +103,18 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
         public Builder includes(BuildRunBuildRunSourceTriggerInfoActionFilterInclude... includes) {
             return includes(List.of(includes));
         }
+        @CustomType.Setter
         public Builder triggerSource(@Nullable String triggerSource) {
             this.triggerSource = triggerSource;
             return this;
-        }        public BuildRunBuildRunSourceTriggerInfoActionFilter build() {
-            return new BuildRunBuildRunSourceTriggerInfoActionFilter(events, includes, triggerSource);
+        }
+        public BuildRunBuildRunSourceTriggerInfoActionFilter build() {
+            final var o = new BuildRunBuildRunSourceTriggerInfoActionFilter();
+            o.events = events;
+            o.excludes = excludes;
+            o.includes = includes;
+            o.triggerSource = triggerSource;
+            return o;
         }
     }
 }

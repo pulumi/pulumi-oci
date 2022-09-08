@@ -13,13 +13,9 @@ public final class GetRegistryConnectionPrimarySchemaParentRef {
      * @return Key of the parent object.
      * 
      */
-    private final String parent;
+    private String parent;
 
-    @CustomType.Constructor
-    private GetRegistryConnectionPrimarySchemaParentRef(@CustomType.Parameter("parent") String parent) {
-        this.parent = parent;
-    }
-
+    private GetRegistryConnectionPrimarySchemaParentRef() {}
     /**
      * @return Key of the parent object.
      * 
@@ -35,24 +31,24 @@ public final class GetRegistryConnectionPrimarySchemaParentRef {
     public static Builder builder(GetRegistryConnectionPrimarySchemaParentRef defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String parent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryConnectionPrimarySchemaParentRef defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parent = defaults.parent;
         }
 
+        @CustomType.Setter
         public Builder parent(String parent) {
             this.parent = Objects.requireNonNull(parent);
             return this;
-        }        public GetRegistryConnectionPrimarySchemaParentRef build() {
-            return new GetRegistryConnectionPrimarySchemaParentRef(parent);
+        }
+        public GetRegistryConnectionPrimarySchemaParentRef build() {
+            final var o = new GetRegistryConnectionPrimarySchemaParentRef();
+            o.parent = parent;
+            return o;
         }
     }
 }

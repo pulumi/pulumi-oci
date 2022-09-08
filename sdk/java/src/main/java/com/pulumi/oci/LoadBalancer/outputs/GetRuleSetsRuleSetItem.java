@@ -18,101 +18,72 @@ public final class GetRuleSetsRuleSetItem {
      * @return The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return The list of HTTP methods allowed for this listener.
      * 
      */
-    private final List<String> allowedMethods;
+    private List<String> allowedMethods;
     /**
      * @return Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If &#34;true&#34;, invalid characters are allowed in the HTTP header. If &#34;false&#34;, invalid characters are not allowed in the HTTP header
      * * `conditions` -
      * 
      */
-    private final Boolean areInvalidCharactersAllowed;
-    private final List<GetRuleSetsRuleSetItemCondition> conditions;
+    private Boolean areInvalidCharactersAllowed;
+    private List<GetRuleSetsRuleSetItemCondition> conditions;
     /**
      * @return A brief description of the access control rule. Avoid entering confidential information.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A header name that conforms to RFC 7230.  Example: `example_header_name`
      * 
      */
-    private final String header;
+    private String header;
     /**
      * @return The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
      * 
      */
-    private final Integer httpLargeHeaderSizeInKb;
+    private Integer httpLargeHeaderSizeInKb;
     /**
      * @return A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
-    private final String prefix;
+    private String prefix;
     /**
      * @return An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
      * 
      */
-    private final List<GetRuleSetsRuleSetItemRedirectUri> redirectUris;
+    private List<GetRuleSetsRuleSetItemRedirectUri> redirectUris;
     /**
      * @return The HTTP status code to return when the incoming request is redirected.
      * 
      */
-    private final Integer responseCode;
+    private Integer responseCode;
     /**
      * @return The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
      * 
      */
-    private final Integer statusCode;
+    private Integer statusCode;
     /**
      * @return A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
-    private final String suffix;
+    private String suffix;
     /**
      * @return A header value that conforms to RFC 7230. With the following exceptions:
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetRuleSetsRuleSetItem(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("allowedMethods") List<String> allowedMethods,
-        @CustomType.Parameter("areInvalidCharactersAllowed") Boolean areInvalidCharactersAllowed,
-        @CustomType.Parameter("conditions") List<GetRuleSetsRuleSetItemCondition> conditions,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("header") String header,
-        @CustomType.Parameter("httpLargeHeaderSizeInKb") Integer httpLargeHeaderSizeInKb,
-        @CustomType.Parameter("prefix") String prefix,
-        @CustomType.Parameter("redirectUris") List<GetRuleSetsRuleSetItemRedirectUri> redirectUris,
-        @CustomType.Parameter("responseCode") Integer responseCode,
-        @CustomType.Parameter("statusCode") Integer statusCode,
-        @CustomType.Parameter("suffix") String suffix,
-        @CustomType.Parameter("value") String value) {
-        this.action = action;
-        this.allowedMethods = allowedMethods;
-        this.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
-        this.conditions = conditions;
-        this.description = description;
-        this.header = header;
-        this.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
-        this.prefix = prefix;
-        this.redirectUris = redirectUris;
-        this.responseCode = responseCode;
-        this.statusCode = statusCode;
-        this.suffix = suffix;
-        this.value = value;
-    }
-
+    private GetRuleSetsRuleSetItem() {}
     /**
      * @return The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
@@ -215,7 +186,7 @@ public final class GetRuleSetsRuleSetItem {
     public static Builder builder(GetRuleSetsRuleSetItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private List<String> allowedMethods;
@@ -230,11 +201,7 @@ public final class GetRuleSetsRuleSetItem {
         private Integer statusCode;
         private String suffix;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRuleSetsRuleSetItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -252,10 +219,12 @@ public final class GetRuleSetsRuleSetItem {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder allowedMethods(List<String> allowedMethods) {
             this.allowedMethods = Objects.requireNonNull(allowedMethods);
             return this;
@@ -263,10 +232,12 @@ public final class GetRuleSetsRuleSetItem {
         public Builder allowedMethods(String... allowedMethods) {
             return allowedMethods(List.of(allowedMethods));
         }
+        @CustomType.Setter
         public Builder areInvalidCharactersAllowed(Boolean areInvalidCharactersAllowed) {
             this.areInvalidCharactersAllowed = Objects.requireNonNull(areInvalidCharactersAllowed);
             return this;
         }
+        @CustomType.Setter
         public Builder conditions(List<GetRuleSetsRuleSetItemCondition> conditions) {
             this.conditions = Objects.requireNonNull(conditions);
             return this;
@@ -274,22 +245,27 @@ public final class GetRuleSetsRuleSetItem {
         public Builder conditions(GetRuleSetsRuleSetItemCondition... conditions) {
             return conditions(List.of(conditions));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder header(String header) {
             this.header = Objects.requireNonNull(header);
             return this;
         }
+        @CustomType.Setter
         public Builder httpLargeHeaderSizeInKb(Integer httpLargeHeaderSizeInKb) {
             this.httpLargeHeaderSizeInKb = Objects.requireNonNull(httpLargeHeaderSizeInKb);
             return this;
         }
+        @CustomType.Setter
         public Builder prefix(String prefix) {
             this.prefix = Objects.requireNonNull(prefix);
             return this;
         }
+        @CustomType.Setter
         public Builder redirectUris(List<GetRuleSetsRuleSetItemRedirectUri> redirectUris) {
             this.redirectUris = Objects.requireNonNull(redirectUris);
             return this;
@@ -297,23 +273,42 @@ public final class GetRuleSetsRuleSetItem {
         public Builder redirectUris(GetRuleSetsRuleSetItemRedirectUri... redirectUris) {
             return redirectUris(List.of(redirectUris));
         }
+        @CustomType.Setter
         public Builder responseCode(Integer responseCode) {
             this.responseCode = Objects.requireNonNull(responseCode);
             return this;
         }
+        @CustomType.Setter
         public Builder statusCode(Integer statusCode) {
             this.statusCode = Objects.requireNonNull(statusCode);
             return this;
         }
+        @CustomType.Setter
         public Builder suffix(String suffix) {
             this.suffix = Objects.requireNonNull(suffix);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetRuleSetsRuleSetItem build() {
-            return new GetRuleSetsRuleSetItem(action, allowedMethods, areInvalidCharactersAllowed, conditions, description, header, httpLargeHeaderSizeInKb, prefix, redirectUris, responseCode, statusCode, suffix, value);
+        }
+        public GetRuleSetsRuleSetItem build() {
+            final var o = new GetRuleSetsRuleSetItem();
+            o.action = action;
+            o.allowedMethods = allowedMethods;
+            o.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
+            o.conditions = conditions;
+            o.description = description;
+            o.header = header;
+            o.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
+            o.prefix = prefix;
+            o.redirectUris = redirectUris;
+            o.responseCode = responseCode;
+            o.statusCode = statusCode;
+            o.suffix = suffix;
+            o.value = value;
+            return o;
         }
     }
 }

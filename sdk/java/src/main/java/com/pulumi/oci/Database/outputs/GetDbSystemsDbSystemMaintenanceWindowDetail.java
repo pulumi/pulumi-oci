@@ -18,71 +18,55 @@ public final class GetDbSystemsDbSystemMaintenanceWindowDetail {
      * @return Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
      * 
      */
-    private final Integer customActionTimeoutInMins;
+    private Integer customActionTimeoutInMins;
     /**
      * @return Days during the week when maintenance should be performed.
      * 
      */
-    private final List<GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
+    private List<GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
     /**
      * @return The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
      * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
-    private final List<Integer> hoursOfDays;
+    private List<Integer> hoursOfDays;
     /**
      * @return If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
      * 
      */
-    private final Boolean isCustomActionTimeoutEnabled;
+    private Boolean isCustomActionTimeoutEnabled;
+    /**
+     * @return If true, enables the monthly patching option.
+     * 
+     */
+    private Boolean isMonthlyPatchingEnabled;
     /**
      * @return Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
-    private final Integer leadTimeInWeeks;
+    private Integer leadTimeInWeeks;
     /**
      * @return Months during the year when maintenance should be performed.
      * 
      */
-    private final List<GetDbSystemsDbSystemMaintenanceWindowDetailMonth> months;
+    private List<GetDbSystemsDbSystemMaintenanceWindowDetailMonth> months;
     /**
      * @return Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
      * 
      */
-    private final String patchingMode;
+    private String patchingMode;
     /**
      * @return The maintenance window scheduling preference.
      * 
      */
-    private final String preference;
+    private String preference;
     /**
      * @return Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
      * 
      */
-    private final List<Integer> weeksOfMonths;
+    private List<Integer> weeksOfMonths;
 
-    @CustomType.Constructor
-    private GetDbSystemsDbSystemMaintenanceWindowDetail(
-        @CustomType.Parameter("customActionTimeoutInMins") Integer customActionTimeoutInMins,
-        @CustomType.Parameter("daysOfWeeks") List<GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek> daysOfWeeks,
-        @CustomType.Parameter("hoursOfDays") List<Integer> hoursOfDays,
-        @CustomType.Parameter("isCustomActionTimeoutEnabled") Boolean isCustomActionTimeoutEnabled,
-        @CustomType.Parameter("leadTimeInWeeks") Integer leadTimeInWeeks,
-        @CustomType.Parameter("months") List<GetDbSystemsDbSystemMaintenanceWindowDetailMonth> months,
-        @CustomType.Parameter("patchingMode") String patchingMode,
-        @CustomType.Parameter("preference") String preference,
-        @CustomType.Parameter("weeksOfMonths") List<Integer> weeksOfMonths) {
-        this.customActionTimeoutInMins = customActionTimeoutInMins;
-        this.daysOfWeeks = daysOfWeeks;
-        this.hoursOfDays = hoursOfDays;
-        this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
-        this.leadTimeInWeeks = leadTimeInWeeks;
-        this.months = months;
-        this.patchingMode = patchingMode;
-        this.preference = preference;
-        this.weeksOfMonths = weeksOfMonths;
-    }
-
+    private GetDbSystemsDbSystemMaintenanceWindowDetail() {}
     /**
      * @return Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
      * 
@@ -111,6 +95,13 @@ public final class GetDbSystemsDbSystemMaintenanceWindowDetail {
      */
     public Boolean isCustomActionTimeoutEnabled() {
         return this.isCustomActionTimeoutEnabled;
+    }
+    /**
+     * @return If true, enables the monthly patching option.
+     * 
+     */
+    public Boolean isMonthlyPatchingEnabled() {
+        return this.isMonthlyPatchingEnabled;
     }
     /**
      * @return Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -155,28 +146,26 @@ public final class GetDbSystemsDbSystemMaintenanceWindowDetail {
     public static Builder builder(GetDbSystemsDbSystemMaintenanceWindowDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer customActionTimeoutInMins;
         private List<GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
         private List<Integer> hoursOfDays;
         private Boolean isCustomActionTimeoutEnabled;
+        private Boolean isMonthlyPatchingEnabled;
         private Integer leadTimeInWeeks;
         private List<GetDbSystemsDbSystemMaintenanceWindowDetailMonth> months;
         private String patchingMode;
         private String preference;
         private List<Integer> weeksOfMonths;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemsDbSystemMaintenanceWindowDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customActionTimeoutInMins = defaults.customActionTimeoutInMins;
     	      this.daysOfWeeks = defaults.daysOfWeeks;
     	      this.hoursOfDays = defaults.hoursOfDays;
     	      this.isCustomActionTimeoutEnabled = defaults.isCustomActionTimeoutEnabled;
+    	      this.isMonthlyPatchingEnabled = defaults.isMonthlyPatchingEnabled;
     	      this.leadTimeInWeeks = defaults.leadTimeInWeeks;
     	      this.months = defaults.months;
     	      this.patchingMode = defaults.patchingMode;
@@ -184,10 +173,12 @@ public final class GetDbSystemsDbSystemMaintenanceWindowDetail {
     	      this.weeksOfMonths = defaults.weeksOfMonths;
         }
 
+        @CustomType.Setter
         public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
             this.customActionTimeoutInMins = Objects.requireNonNull(customActionTimeoutInMins);
             return this;
         }
+        @CustomType.Setter
         public Builder daysOfWeeks(List<GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek> daysOfWeeks) {
             this.daysOfWeeks = Objects.requireNonNull(daysOfWeeks);
             return this;
@@ -195,6 +186,7 @@ public final class GetDbSystemsDbSystemMaintenanceWindowDetail {
         public Builder daysOfWeeks(GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek... daysOfWeeks) {
             return daysOfWeeks(List.of(daysOfWeeks));
         }
+        @CustomType.Setter
         public Builder hoursOfDays(List<Integer> hoursOfDays) {
             this.hoursOfDays = Objects.requireNonNull(hoursOfDays);
             return this;
@@ -202,14 +194,22 @@ public final class GetDbSystemsDbSystemMaintenanceWindowDetail {
         public Builder hoursOfDays(Integer... hoursOfDays) {
             return hoursOfDays(List.of(hoursOfDays));
         }
+        @CustomType.Setter
         public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
             this.isCustomActionTimeoutEnabled = Objects.requireNonNull(isCustomActionTimeoutEnabled);
             return this;
         }
+        @CustomType.Setter
+        public Builder isMonthlyPatchingEnabled(Boolean isMonthlyPatchingEnabled) {
+            this.isMonthlyPatchingEnabled = Objects.requireNonNull(isMonthlyPatchingEnabled);
+            return this;
+        }
+        @CustomType.Setter
         public Builder leadTimeInWeeks(Integer leadTimeInWeeks) {
             this.leadTimeInWeeks = Objects.requireNonNull(leadTimeInWeeks);
             return this;
         }
+        @CustomType.Setter
         public Builder months(List<GetDbSystemsDbSystemMaintenanceWindowDetailMonth> months) {
             this.months = Objects.requireNonNull(months);
             return this;
@@ -217,22 +217,37 @@ public final class GetDbSystemsDbSystemMaintenanceWindowDetail {
         public Builder months(GetDbSystemsDbSystemMaintenanceWindowDetailMonth... months) {
             return months(List.of(months));
         }
+        @CustomType.Setter
         public Builder patchingMode(String patchingMode) {
             this.patchingMode = Objects.requireNonNull(patchingMode);
             return this;
         }
+        @CustomType.Setter
         public Builder preference(String preference) {
             this.preference = Objects.requireNonNull(preference);
             return this;
         }
+        @CustomType.Setter
         public Builder weeksOfMonths(List<Integer> weeksOfMonths) {
             this.weeksOfMonths = Objects.requireNonNull(weeksOfMonths);
             return this;
         }
         public Builder weeksOfMonths(Integer... weeksOfMonths) {
             return weeksOfMonths(List.of(weeksOfMonths));
-        }        public GetDbSystemsDbSystemMaintenanceWindowDetail build() {
-            return new GetDbSystemsDbSystemMaintenanceWindowDetail(customActionTimeoutInMins, daysOfWeeks, hoursOfDays, isCustomActionTimeoutEnabled, leadTimeInWeeks, months, patchingMode, preference, weeksOfMonths);
+        }
+        public GetDbSystemsDbSystemMaintenanceWindowDetail build() {
+            final var o = new GetDbSystemsDbSystemMaintenanceWindowDetail();
+            o.customActionTimeoutInMins = customActionTimeoutInMins;
+            o.daysOfWeeks = daysOfWeeks;
+            o.hoursOfDays = hoursOfDays;
+            o.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            o.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
+            o.leadTimeInWeeks = leadTimeInWeeks;
+            o.months = months;
+            o.patchingMode = patchingMode;
+            o.preference = preference;
+            o.weeksOfMonths = weeksOfMonths;
+            return o;
         }
     }
 }

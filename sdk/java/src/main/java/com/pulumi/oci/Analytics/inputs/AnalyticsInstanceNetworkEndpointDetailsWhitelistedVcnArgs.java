@@ -32,14 +32,14 @@ public final class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs ext
     }
 
     /**
-     * Source IP addresses or IP address ranges igress rules.
+     * Source IP addresses or IP address ranges in ingress rules.
      * 
      */
     @Import(name="whitelistedIps")
     private @Nullable Output<List<String>> whitelistedIps;
 
     /**
-     * @return Source IP addresses or IP address ranges igress rules.
+     * @return Source IP addresses or IP address ranges in ingress rules.
      * 
      */
     public Optional<Output<List<String>>> whitelistedIps() {
@@ -93,7 +93,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs ext
         }
 
         /**
-         * @param whitelistedIps Source IP addresses or IP address ranges igress rules.
+         * @param whitelistedIps Source IP addresses or IP address ranges in ingress rules.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs ext
         }
 
         /**
-         * @param whitelistedIps Source IP addresses or IP address ranges igress rules.
+         * @param whitelistedIps Source IP addresses or IP address ranges in ingress rules.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs ext
         }
 
         /**
-         * @param whitelistedIps Source IP addresses or IP address ranges igress rules.
+         * @param whitelistedIps Source IP addresses or IP address ranges in ingress rules.
          * 
          * @return builder
          * 

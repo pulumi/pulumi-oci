@@ -13,21 +13,14 @@ public final class GetConnectionTlsVerifyConfig {
      * @return The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
      * 
      */
-    private final String caCertificateBundleId;
+    private String caCertificateBundleId;
     /**
      * @return The type of TLS verification.
      * 
      */
-    private final String tlsVerifyMode;
+    private String tlsVerifyMode;
 
-    @CustomType.Constructor
-    private GetConnectionTlsVerifyConfig(
-        @CustomType.Parameter("caCertificateBundleId") String caCertificateBundleId,
-        @CustomType.Parameter("tlsVerifyMode") String tlsVerifyMode) {
-        this.caCertificateBundleId = caCertificateBundleId;
-        this.tlsVerifyMode = tlsVerifyMode;
-    }
-
+    private GetConnectionTlsVerifyConfig() {}
     /**
      * @return The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
      * 
@@ -50,30 +43,32 @@ public final class GetConnectionTlsVerifyConfig {
     public static Builder builder(GetConnectionTlsVerifyConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String caCertificateBundleId;
         private String tlsVerifyMode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionTlsVerifyConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.caCertificateBundleId = defaults.caCertificateBundleId;
     	      this.tlsVerifyMode = defaults.tlsVerifyMode;
         }
 
+        @CustomType.Setter
         public Builder caCertificateBundleId(String caCertificateBundleId) {
             this.caCertificateBundleId = Objects.requireNonNull(caCertificateBundleId);
             return this;
         }
+        @CustomType.Setter
         public Builder tlsVerifyMode(String tlsVerifyMode) {
             this.tlsVerifyMode = Objects.requireNonNull(tlsVerifyMode);
             return this;
-        }        public GetConnectionTlsVerifyConfig build() {
-            return new GetConnectionTlsVerifyConfig(caCertificateBundleId, tlsVerifyMode);
+        }
+        public GetConnectionTlsVerifyConfig build() {
+            final var o = new GetConnectionTlsVerifyConfig();
+            o.caCertificateBundleId = caCertificateBundleId;
+            o.tlsVerifyMode = tlsVerifyMode;
+            return o;
         }
     }
 }

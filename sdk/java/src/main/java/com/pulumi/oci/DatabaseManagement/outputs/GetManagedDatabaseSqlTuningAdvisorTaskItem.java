@@ -14,91 +14,64 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskItem {
      * @return The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
      * 
      */
-    private final Integer daysToExpire;
+    private Integer daysToExpire;
     /**
      * @return The description of the SQL Tuning Advisor task.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The instance ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final Integer instanceId;
+    private Integer instanceId;
     /**
      * @return The optional query parameter to filter the SQL Tuning Advisor task list by name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The owner of the SQL Tuning Advisor task.
      * 
      */
-    private final String owner;
+    private String owner;
     /**
      * @return The number of recommendations provided for the SQL Tuning Advisor task.
      * 
      */
-    private final Integer recommendationCount;
+    private Integer recommendationCount;
     /**
      * @return The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String sqlTuningAdvisorTaskId;
+    private String sqlTuningAdvisorTaskId;
     /**
      * @return The status of the SQL Tuning Advisor task.
      * 
      */
-    private final String taskStatus;
+    private String taskStatus;
     /**
      * @return The Creation date of the SQL Tuning Advisor task.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The end time of the task execution.
      * 
      */
-    private final String timeExecutionEnded;
+    private String timeExecutionEnded;
     /**
      * @return The start time of the task execution.
      * 
      */
-    private final String timeExecutionStarted;
+    private String timeExecutionStarted;
     /**
      * @return The total number of SQL statements related to the SQL Tuning Advisor task.
      * 
      */
-    private final Integer totalSqlStatements;
+    private Integer totalSqlStatements;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTaskItem(
-        @CustomType.Parameter("daysToExpire") Integer daysToExpire,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("instanceId") Integer instanceId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("owner") String owner,
-        @CustomType.Parameter("recommendationCount") Integer recommendationCount,
-        @CustomType.Parameter("sqlTuningAdvisorTaskId") String sqlTuningAdvisorTaskId,
-        @CustomType.Parameter("taskStatus") String taskStatus,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeExecutionEnded") String timeExecutionEnded,
-        @CustomType.Parameter("timeExecutionStarted") String timeExecutionStarted,
-        @CustomType.Parameter("totalSqlStatements") Integer totalSqlStatements) {
-        this.daysToExpire = daysToExpire;
-        this.description = description;
-        this.instanceId = instanceId;
-        this.name = name;
-        this.owner = owner;
-        this.recommendationCount = recommendationCount;
-        this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-        this.taskStatus = taskStatus;
-        this.timeCreated = timeCreated;
-        this.timeExecutionEnded = timeExecutionEnded;
-        this.timeExecutionStarted = timeExecutionStarted;
-        this.totalSqlStatements = totalSqlStatements;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTaskItem() {}
     /**
      * @return The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
      * 
@@ -191,7 +164,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskItem {
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTaskItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer daysToExpire;
         private String description;
@@ -205,11 +178,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskItem {
         private String timeExecutionEnded;
         private String timeExecutionStarted;
         private Integer totalSqlStatements;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTaskItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.daysToExpire = defaults.daysToExpire;
@@ -226,55 +195,81 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskItem {
     	      this.totalSqlStatements = defaults.totalSqlStatements;
         }
 
+        @CustomType.Setter
         public Builder daysToExpire(Integer daysToExpire) {
             this.daysToExpire = Objects.requireNonNull(daysToExpire);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(Integer instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder owner(String owner) {
             this.owner = Objects.requireNonNull(owner);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationCount(Integer recommendationCount) {
             this.recommendationCount = Objects.requireNonNull(recommendationCount);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
             this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
             return this;
         }
+        @CustomType.Setter
         public Builder taskStatus(String taskStatus) {
             this.taskStatus = Objects.requireNonNull(taskStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeExecutionEnded(String timeExecutionEnded) {
             this.timeExecutionEnded = Objects.requireNonNull(timeExecutionEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeExecutionStarted(String timeExecutionStarted) {
             this.timeExecutionStarted = Objects.requireNonNull(timeExecutionStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder totalSqlStatements(Integer totalSqlStatements) {
             this.totalSqlStatements = Objects.requireNonNull(totalSqlStatements);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTaskItem build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTaskItem(daysToExpire, description, instanceId, name, owner, recommendationCount, sqlTuningAdvisorTaskId, taskStatus, timeCreated, timeExecutionEnded, timeExecutionStarted, totalSqlStatements);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTaskItem build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTaskItem();
+            o.daysToExpire = daysToExpire;
+            o.description = description;
+            o.instanceId = instanceId;
+            o.name = name;
+            o.owner = owner;
+            o.recommendationCount = recommendationCount;
+            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            o.taskStatus = taskStatus;
+            o.timeCreated = timeCreated;
+            o.timeExecutionEnded = timeExecutionEnded;
+            o.timeExecutionStarted = timeExecutionStarted;
+            o.totalSqlStatements = totalSqlStatements;
+            return o;
         }
     }
 }

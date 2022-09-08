@@ -18,50 +18,29 @@ public final class GetAggregatedComputedUsagesResult {
      * @return Aggregation of computed usages for the subscribed service.
      * 
      */
-    private final List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages;
-    private final String compartmentId;
-    private final @Nullable List<GetAggregatedComputedUsagesFilter> filters;
-    private final @Nullable String grouping;
+    private List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages;
+    private String compartmentId;
+    private @Nullable List<GetAggregatedComputedUsagesFilter> filters;
+    private @Nullable String grouping;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Product description
      * 
      */
-    private final @Nullable String parentProduct;
+    private @Nullable String parentProduct;
     /**
      * @return Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
      * 
      */
-    private final String subscriptionId;
-    private final String timeFrom;
-    private final String timeTo;
+    private String subscriptionId;
+    private String timeFrom;
+    private String timeTo;
 
-    @CustomType.Constructor
-    private GetAggregatedComputedUsagesResult(
-        @CustomType.Parameter("aggregatedComputedUsages") List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetAggregatedComputedUsagesFilter> filters,
-        @CustomType.Parameter("grouping") @Nullable String grouping,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("parentProduct") @Nullable String parentProduct,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("timeFrom") String timeFrom,
-        @CustomType.Parameter("timeTo") String timeTo) {
-        this.aggregatedComputedUsages = aggregatedComputedUsages;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.grouping = grouping;
-        this.id = id;
-        this.parentProduct = parentProduct;
-        this.subscriptionId = subscriptionId;
-        this.timeFrom = timeFrom;
-        this.timeTo = timeTo;
-    }
-
+    private GetAggregatedComputedUsagesResult() {}
     /**
      * @return Aggregation of computed usages for the subscribed service.
      * 
@@ -113,7 +92,7 @@ public final class GetAggregatedComputedUsagesResult {
     public static Builder builder(GetAggregatedComputedUsagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages;
         private String compartmentId;
@@ -124,11 +103,7 @@ public final class GetAggregatedComputedUsagesResult {
         private String subscriptionId;
         private String timeFrom;
         private String timeTo;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAggregatedComputedUsagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aggregatedComputedUsages = defaults.aggregatedComputedUsages;
@@ -142,6 +117,7 @@ public final class GetAggregatedComputedUsagesResult {
     	      this.timeTo = defaults.timeTo;
         }
 
+        @CustomType.Setter
         public Builder aggregatedComputedUsages(List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages) {
             this.aggregatedComputedUsages = Objects.requireNonNull(aggregatedComputedUsages);
             return this;
@@ -149,10 +125,12 @@ public final class GetAggregatedComputedUsagesResult {
         public Builder aggregatedComputedUsages(GetAggregatedComputedUsagesAggregatedComputedUsage... aggregatedComputedUsages) {
             return aggregatedComputedUsages(List.of(aggregatedComputedUsages));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAggregatedComputedUsagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -160,31 +138,48 @@ public final class GetAggregatedComputedUsagesResult {
         public Builder filters(GetAggregatedComputedUsagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder grouping(@Nullable String grouping) {
             this.grouping = grouping;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder parentProduct(@Nullable String parentProduct) {
             this.parentProduct = parentProduct;
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFrom(String timeFrom) {
             this.timeFrom = Objects.requireNonNull(timeFrom);
             return this;
         }
+        @CustomType.Setter
         public Builder timeTo(String timeTo) {
             this.timeTo = Objects.requireNonNull(timeTo);
             return this;
-        }        public GetAggregatedComputedUsagesResult build() {
-            return new GetAggregatedComputedUsagesResult(aggregatedComputedUsages, compartmentId, filters, grouping, id, parentProduct, subscriptionId, timeFrom, timeTo);
+        }
+        public GetAggregatedComputedUsagesResult build() {
+            final var o = new GetAggregatedComputedUsagesResult();
+            o.aggregatedComputedUsages = aggregatedComputedUsages;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.grouping = grouping;
+            o.id = id;
+            o.parentProduct = parentProduct;
+            o.subscriptionId = subscriptionId;
+            o.timeFrom = timeFrom;
+            o.timeTo = timeTo;
+            return o;
         }
     }
 }

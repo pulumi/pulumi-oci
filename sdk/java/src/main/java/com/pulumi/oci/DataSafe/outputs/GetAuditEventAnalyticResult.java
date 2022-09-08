@@ -14,60 +14,35 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditEventAnalyticResult {
-    private final @Nullable String accessLevel;
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
-    private final @Nullable List<String> groupBies;
+    private @Nullable String accessLevel;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable List<String> groupBies;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The aggregated data point items.
      * 
      */
-    private final List<GetAuditEventAnalyticItem> items;
-    private final @Nullable String queryTimeZone;
-    private final @Nullable String scimQuery;
-    private final @Nullable List<String> summaryFields;
+    private List<GetAuditEventAnalyticItem> items;
+    private @Nullable String queryTimeZone;
+    private @Nullable String scimQuery;
+    private @Nullable List<String> summaryFields;
     /**
      * @return The time at which the aggregation ended.
      * 
      */
-    private final @Nullable String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return The time at which the aggregation started.
      * 
      */
-    private final @Nullable String timeStarted;
+    private @Nullable String timeStarted;
 
-    @CustomType.Constructor
-    private GetAuditEventAnalyticResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("groupBies") @Nullable List<String> groupBies,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetAuditEventAnalyticItem> items,
-        @CustomType.Parameter("queryTimeZone") @Nullable String queryTimeZone,
-        @CustomType.Parameter("scimQuery") @Nullable String scimQuery,
-        @CustomType.Parameter("summaryFields") @Nullable List<String> summaryFields,
-        @CustomType.Parameter("timeEnded") @Nullable String timeEnded,
-        @CustomType.Parameter("timeStarted") @Nullable String timeStarted) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.groupBies = groupBies;
-        this.id = id;
-        this.items = items;
-        this.queryTimeZone = queryTimeZone;
-        this.scimQuery = scimQuery;
-        this.summaryFields = summaryFields;
-        this.timeEnded = timeEnded;
-        this.timeStarted = timeStarted;
-    }
-
+    private GetAuditEventAnalyticResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -125,7 +100,7 @@ public final class GetAuditEventAnalyticResult {
     public static Builder builder(GetAuditEventAnalyticResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -138,11 +113,7 @@ public final class GetAuditEventAnalyticResult {
         private @Nullable List<String> summaryFields;
         private @Nullable String timeEnded;
         private @Nullable String timeStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditEventAnalyticResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -158,18 +129,22 @@ public final class GetAuditEventAnalyticResult {
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
             this.groupBies = groupBies;
             return this;
@@ -177,10 +152,12 @@ public final class GetAuditEventAnalyticResult {
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetAuditEventAnalyticItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -188,14 +165,17 @@ public final class GetAuditEventAnalyticResult {
         public Builder items(GetAuditEventAnalyticItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder queryTimeZone(@Nullable String queryTimeZone) {
             this.queryTimeZone = queryTimeZone;
             return this;
         }
+        @CustomType.Setter
         public Builder scimQuery(@Nullable String scimQuery) {
             this.scimQuery = scimQuery;
             return this;
         }
+        @CustomType.Setter
         public Builder summaryFields(@Nullable List<String> summaryFields) {
             this.summaryFields = summaryFields;
             return this;
@@ -203,15 +183,30 @@ public final class GetAuditEventAnalyticResult {
         public Builder summaryFields(String... summaryFields) {
             return summaryFields(List.of(summaryFields));
         }
+        @CustomType.Setter
         public Builder timeEnded(@Nullable String timeEnded) {
             this.timeEnded = timeEnded;
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(@Nullable String timeStarted) {
             this.timeStarted = timeStarted;
             return this;
-        }        public GetAuditEventAnalyticResult build() {
-            return new GetAuditEventAnalyticResult(accessLevel, compartmentId, compartmentIdInSubtree, groupBies, id, items, queryTimeZone, scimQuery, summaryFields, timeEnded, timeStarted);
+        }
+        public GetAuditEventAnalyticResult build() {
+            final var o = new GetAuditEventAnalyticResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.groupBies = groupBies;
+            o.id = id;
+            o.items = items;
+            o.queryTimeZone = queryTimeZone;
+            o.scimQuery = scimQuery;
+            o.summaryFields = summaryFields;
+            o.timeEnded = timeEnded;
+            o.timeStarted = timeStarted;
+            return o;
         }
     }
 }

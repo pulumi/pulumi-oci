@@ -16,42 +16,29 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
      * @return The destination of the request.
      * 
      */
-    private final List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination> destinations;
+    private List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination> destinations;
     /**
      * @return If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
      * 
      */
-    private final Boolean isGrpc;
+    private Boolean isGrpc;
     /**
      * @return Route to match
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return Match type for the route
      * 
      */
-    private final String pathType;
+    private String pathType;
     /**
      * @return Type of protocol.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule(
-        @CustomType.Parameter("destinations") List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination> destinations,
-        @CustomType.Parameter("isGrpc") Boolean isGrpc,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("pathType") String pathType,
-        @CustomType.Parameter("type") String type) {
-        this.destinations = destinations;
-        this.isGrpc = isGrpc;
-        this.path = path;
-        this.pathType = pathType;
-        this.type = type;
-    }
-
+    private GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule() {}
     /**
      * @return The destination of the request.
      * 
@@ -95,18 +82,14 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
     public static Builder builder(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination> destinations;
         private Boolean isGrpc;
         private String path;
         private String pathType;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinations = defaults.destinations;
@@ -116,6 +99,7 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder destinations(List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination> destinations) {
             this.destinations = Objects.requireNonNull(destinations);
             return this;
@@ -123,23 +107,34 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
         public Builder destinations(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder isGrpc(Boolean isGrpc) {
             this.isGrpc = Objects.requireNonNull(isGrpc);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder pathType(String pathType) {
             this.pathType = Objects.requireNonNull(pathType);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule build() {
-            return new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule(destinations, isGrpc, path, pathType, type);
+        }
+        public GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule build() {
+            final var o = new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule();
+            o.destinations = destinations;
+            o.isGrpc = isGrpc;
+            o.path = path;
+            o.pathType = pathType;
+            o.type = type;
+            return o;
         }
     }
 }

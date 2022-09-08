@@ -14,28 +14,19 @@ public final class GetVirtualServicesVirtualServiceCollectionItemMtl {
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
-    private final String certificateId;
+    private String certificateId;
     /**
      * @return The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
      * 
      */
-    private final Integer maximumValidity;
+    private Integer maximumValidity;
     /**
      * @return DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
      * 
      */
-    private final String mode;
+    private String mode;
 
-    @CustomType.Constructor
-    private GetVirtualServicesVirtualServiceCollectionItemMtl(
-        @CustomType.Parameter("certificateId") String certificateId,
-        @CustomType.Parameter("maximumValidity") Integer maximumValidity,
-        @CustomType.Parameter("mode") String mode) {
-        this.certificateId = certificateId;
-        this.maximumValidity = maximumValidity;
-        this.mode = mode;
-    }
-
+    private GetVirtualServicesVirtualServiceCollectionItemMtl() {}
     /**
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
@@ -65,16 +56,12 @@ public final class GetVirtualServicesVirtualServiceCollectionItemMtl {
     public static Builder builder(GetVirtualServicesVirtualServiceCollectionItemMtl defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificateId;
         private Integer maximumValidity;
         private String mode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualServicesVirtualServiceCollectionItemMtl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateId = defaults.certificateId;
@@ -82,19 +69,27 @@ public final class GetVirtualServicesVirtualServiceCollectionItemMtl {
     	      this.mode = defaults.mode;
         }
 
+        @CustomType.Setter
         public Builder certificateId(String certificateId) {
             this.certificateId = Objects.requireNonNull(certificateId);
             return this;
         }
+        @CustomType.Setter
         public Builder maximumValidity(Integer maximumValidity) {
             this.maximumValidity = Objects.requireNonNull(maximumValidity);
             return this;
         }
+        @CustomType.Setter
         public Builder mode(String mode) {
             this.mode = Objects.requireNonNull(mode);
             return this;
-        }        public GetVirtualServicesVirtualServiceCollectionItemMtl build() {
-            return new GetVirtualServicesVirtualServiceCollectionItemMtl(certificateId, maximumValidity, mode);
+        }
+        public GetVirtualServicesVirtualServiceCollectionItemMtl build() {
+            final var o = new GetVirtualServicesVirtualServiceCollectionItemMtl();
+            o.certificateId = certificateId;
+            o.maximumValidity = maximumValidity;
+            o.mode = mode;
+            return o;
         }
     }
 }

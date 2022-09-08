@@ -19,210 +19,149 @@ public final class UsageItem {
      * @return The availability domain of the usage.
      * 
      */
-    private final @Nullable String ad;
+    private @Nullable String ad;
     /**
      * @return The compartment OCID.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The compartment name.
      * 
      */
-    private final @Nullable String compartmentName;
+    private @Nullable String compartmentName;
     /**
      * @return The compartment path, starting from root.
      * 
      */
-    private final @Nullable String compartmentPath;
+    private @Nullable String compartmentPath;
     /**
      * @return The computed cost.
      * 
      */
-    private final @Nullable Double computedAmount;
+    private @Nullable Double computedAmount;
     /**
      * @return The usage number.
      * 
      */
-    private final @Nullable Double computedQuantity;
+    private @Nullable Double computedQuantity;
     /**
      * @return The price currency.
      * 
      */
-    private final @Nullable String currency;
+    private @Nullable String currency;
     /**
      * @return The discretionary discount applied to the SKU.
      * 
      */
-    private final @Nullable Double discount;
+    private @Nullable Double discount;
     /**
      * @return The forecasted data.
      * 
      */
-    private final @Nullable Boolean isForecast;
+    private @Nullable Boolean isForecast;
     /**
      * @return The SKU list rate (not discount).
      * 
      */
-    private final @Nullable Double listRate;
+    private @Nullable Double listRate;
     /**
      * @return The overage usage.
      * 
      */
-    private final @Nullable String overage;
+    private @Nullable String overage;
     /**
      * @return The SPM OverageFlag.
      * 
      */
-    private final @Nullable String overagesFlag;
+    private @Nullable String overagesFlag;
     /**
      * @return Platform for the cost.
      * 
      */
-    private final @Nullable String platform;
+    private @Nullable String platform;
     /**
      * @return The region of the usage.
      * 
      */
-    private final @Nullable String region;
+    private @Nullable String region;
     /**
      * @return The resource OCID that is incurring the cost.
      * 
      */
-    private final @Nullable String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return The resource name that is incurring the cost.
      * 
      */
-    private final @Nullable String resourceName;
+    private @Nullable String resourceName;
     /**
      * @return The service name that is incurring the cost.
      * 
      */
-    private final @Nullable String service;
+    private @Nullable String service;
     /**
      * @return The resource shape.
      * 
      */
-    private final @Nullable String shape;
+    private @Nullable String shape;
     /**
      * @return The SKU friendly name.
      * 
      */
-    private final @Nullable String skuName;
+    private @Nullable String skuName;
     /**
      * @return The SKU part number.
      * 
      */
-    private final @Nullable String skuPartNumber;
+    private @Nullable String skuPartNumber;
     /**
      * @return The subscription ID.
      * 
      */
-    private final @Nullable String subscriptionId;
+    private @Nullable String subscriptionId;
     /**
      * @return For grouping, a tag definition. For filtering, a definition and key.
      * 
      */
-    private final @Nullable List<UsageItemTag> tags;
+    private @Nullable List<UsageItemTag> tags;
     /**
      * @return Tenant ID.
      * 
      */
-    private final @Nullable String tenantId;
+    private @Nullable String tenantId;
     /**
      * @return The tenancy name.
      * 
      */
-    private final @Nullable String tenantName;
+    private @Nullable String tenantName;
     /**
      * @return The usage end time.
      * 
      */
-    private final @Nullable String timeUsageEnded;
+    private @Nullable String timeUsageEnded;
     /**
      * @return The usage start time.
      * 
      */
-    private final @Nullable String timeUsageStarted;
+    private @Nullable String timeUsageStarted;
     /**
      * @return The usage unit.
      * 
      */
-    private final @Nullable String unit;
+    private @Nullable String unit;
     /**
      * @return The price per unit.
      * 
      */
-    private final @Nullable Double unitPrice;
+    private @Nullable Double unitPrice;
     /**
      * @return The resource size being metered.
      * 
      */
-    private final @Nullable Double weight;
+    private @Nullable Double weight;
 
-    @CustomType.Constructor
-    private UsageItem(
-        @CustomType.Parameter("ad") @Nullable String ad,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("compartmentName") @Nullable String compartmentName,
-        @CustomType.Parameter("compartmentPath") @Nullable String compartmentPath,
-        @CustomType.Parameter("computedAmount") @Nullable Double computedAmount,
-        @CustomType.Parameter("computedQuantity") @Nullable Double computedQuantity,
-        @CustomType.Parameter("currency") @Nullable String currency,
-        @CustomType.Parameter("discount") @Nullable Double discount,
-        @CustomType.Parameter("isForecast") @Nullable Boolean isForecast,
-        @CustomType.Parameter("listRate") @Nullable Double listRate,
-        @CustomType.Parameter("overage") @Nullable String overage,
-        @CustomType.Parameter("overagesFlag") @Nullable String overagesFlag,
-        @CustomType.Parameter("platform") @Nullable String platform,
-        @CustomType.Parameter("region") @Nullable String region,
-        @CustomType.Parameter("resourceId") @Nullable String resourceId,
-        @CustomType.Parameter("resourceName") @Nullable String resourceName,
-        @CustomType.Parameter("service") @Nullable String service,
-        @CustomType.Parameter("shape") @Nullable String shape,
-        @CustomType.Parameter("skuName") @Nullable String skuName,
-        @CustomType.Parameter("skuPartNumber") @Nullable String skuPartNumber,
-        @CustomType.Parameter("subscriptionId") @Nullable String subscriptionId,
-        @CustomType.Parameter("tags") @Nullable List<UsageItemTag> tags,
-        @CustomType.Parameter("tenantId") @Nullable String tenantId,
-        @CustomType.Parameter("tenantName") @Nullable String tenantName,
-        @CustomType.Parameter("timeUsageEnded") @Nullable String timeUsageEnded,
-        @CustomType.Parameter("timeUsageStarted") @Nullable String timeUsageStarted,
-        @CustomType.Parameter("unit") @Nullable String unit,
-        @CustomType.Parameter("unitPrice") @Nullable Double unitPrice,
-        @CustomType.Parameter("weight") @Nullable Double weight) {
-        this.ad = ad;
-        this.compartmentId = compartmentId;
-        this.compartmentName = compartmentName;
-        this.compartmentPath = compartmentPath;
-        this.computedAmount = computedAmount;
-        this.computedQuantity = computedQuantity;
-        this.currency = currency;
-        this.discount = discount;
-        this.isForecast = isForecast;
-        this.listRate = listRate;
-        this.overage = overage;
-        this.overagesFlag = overagesFlag;
-        this.platform = platform;
-        this.region = region;
-        this.resourceId = resourceId;
-        this.resourceName = resourceName;
-        this.service = service;
-        this.shape = shape;
-        this.skuName = skuName;
-        this.skuPartNumber = skuPartNumber;
-        this.subscriptionId = subscriptionId;
-        this.tags = tags;
-        this.tenantId = tenantId;
-        this.tenantName = tenantName;
-        this.timeUsageEnded = timeUsageEnded;
-        this.timeUsageStarted = timeUsageStarted;
-        this.unit = unit;
-        this.unitPrice = unitPrice;
-        this.weight = weight;
-    }
-
+    private UsageItem() {}
     /**
      * @return The availability domain of the usage.
      * 
@@ -434,7 +373,7 @@ public final class UsageItem {
     public static Builder builder(UsageItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String ad;
         private @Nullable String compartmentId;
@@ -465,11 +404,7 @@ public final class UsageItem {
         private @Nullable String unit;
         private @Nullable Double unitPrice;
         private @Nullable Double weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(UsageItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ad = defaults.ad;
@@ -503,90 +438,112 @@ public final class UsageItem {
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder ad(@Nullable String ad) {
             this.ad = ad;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentName(@Nullable String compartmentName) {
             this.compartmentName = compartmentName;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentPath(@Nullable String compartmentPath) {
             this.compartmentPath = compartmentPath;
             return this;
         }
+        @CustomType.Setter
         public Builder computedAmount(@Nullable Double computedAmount) {
             this.computedAmount = computedAmount;
             return this;
         }
+        @CustomType.Setter
         public Builder computedQuantity(@Nullable Double computedQuantity) {
             this.computedQuantity = computedQuantity;
             return this;
         }
+        @CustomType.Setter
         public Builder currency(@Nullable String currency) {
             this.currency = currency;
             return this;
         }
+        @CustomType.Setter
         public Builder discount(@Nullable Double discount) {
             this.discount = discount;
             return this;
         }
+        @CustomType.Setter
         public Builder isForecast(@Nullable Boolean isForecast) {
             this.isForecast = isForecast;
             return this;
         }
+        @CustomType.Setter
         public Builder listRate(@Nullable Double listRate) {
             this.listRate = listRate;
             return this;
         }
+        @CustomType.Setter
         public Builder overage(@Nullable String overage) {
             this.overage = overage;
             return this;
         }
+        @CustomType.Setter
         public Builder overagesFlag(@Nullable String overagesFlag) {
             this.overagesFlag = overagesFlag;
             return this;
         }
+        @CustomType.Setter
         public Builder platform(@Nullable String platform) {
             this.platform = platform;
             return this;
         }
+        @CustomType.Setter
         public Builder region(@Nullable String region) {
             this.region = region;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
             this.resourceId = resourceId;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
             this.resourceName = resourceName;
             return this;
         }
+        @CustomType.Setter
         public Builder service(@Nullable String service) {
             this.service = service;
             return this;
         }
+        @CustomType.Setter
         public Builder shape(@Nullable String shape) {
             this.shape = shape;
             return this;
         }
+        @CustomType.Setter
         public Builder skuName(@Nullable String skuName) {
             this.skuName = skuName;
             return this;
         }
+        @CustomType.Setter
         public Builder skuPartNumber(@Nullable String skuPartNumber) {
             this.skuPartNumber = skuPartNumber;
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(@Nullable String subscriptionId) {
             this.subscriptionId = subscriptionId;
             return this;
         }
+        @CustomType.Setter
         public Builder tags(@Nullable List<UsageItemTag> tags) {
             this.tags = tags;
             return this;
@@ -594,35 +551,73 @@ public final class UsageItem {
         public Builder tags(UsageItemTag... tags) {
             return tags(List.of(tags));
         }
+        @CustomType.Setter
         public Builder tenantId(@Nullable String tenantId) {
             this.tenantId = tenantId;
             return this;
         }
+        @CustomType.Setter
         public Builder tenantName(@Nullable String tenantName) {
             this.tenantName = tenantName;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUsageEnded(@Nullable String timeUsageEnded) {
             this.timeUsageEnded = timeUsageEnded;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUsageStarted(@Nullable String timeUsageStarted) {
             this.timeUsageStarted = timeUsageStarted;
             return this;
         }
+        @CustomType.Setter
         public Builder unit(@Nullable String unit) {
             this.unit = unit;
             return this;
         }
+        @CustomType.Setter
         public Builder unitPrice(@Nullable Double unitPrice) {
             this.unitPrice = unitPrice;
             return this;
         }
+        @CustomType.Setter
         public Builder weight(@Nullable Double weight) {
             this.weight = weight;
             return this;
-        }        public UsageItem build() {
-            return new UsageItem(ad, compartmentId, compartmentName, compartmentPath, computedAmount, computedQuantity, currency, discount, isForecast, listRate, overage, overagesFlag, platform, region, resourceId, resourceName, service, shape, skuName, skuPartNumber, subscriptionId, tags, tenantId, tenantName, timeUsageEnded, timeUsageStarted, unit, unitPrice, weight);
+        }
+        public UsageItem build() {
+            final var o = new UsageItem();
+            o.ad = ad;
+            o.compartmentId = compartmentId;
+            o.compartmentName = compartmentName;
+            o.compartmentPath = compartmentPath;
+            o.computedAmount = computedAmount;
+            o.computedQuantity = computedQuantity;
+            o.currency = currency;
+            o.discount = discount;
+            o.isForecast = isForecast;
+            o.listRate = listRate;
+            o.overage = overage;
+            o.overagesFlag = overagesFlag;
+            o.platform = platform;
+            o.region = region;
+            o.resourceId = resourceId;
+            o.resourceName = resourceName;
+            o.service = service;
+            o.shape = shape;
+            o.skuName = skuName;
+            o.skuPartNumber = skuPartNumber;
+            o.subscriptionId = subscriptionId;
+            o.tags = tags;
+            o.tenantId = tenantId;
+            o.tenantName = tenantName;
+            o.timeUsageEnded = timeUsageEnded;
+            o.timeUsageStarted = timeUsageStarted;
+            o.unit = unit;
+            o.unitPrice = unitPrice;
+            o.weight = weight;
+            return o;
         }
     }
 }

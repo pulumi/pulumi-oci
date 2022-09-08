@@ -15,42 +15,29 @@ public final class GetIntegrationInstanceAttachment {
      * * If role == `CHILD`, this instance was created from attached instance on behalf of a user
      * 
      */
-    private final Boolean isImplicit;
+    private Boolean isImplicit;
     /**
      * @return The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return The dataplane instance URL of the attached instance
      * 
      */
-    private final String targetInstanceUrl;
+    private String targetInstanceUrl;
     /**
      * @return The role of the target attachment.
      * 
      */
-    private final String targetRole;
+    private String targetRole;
     /**
      * @return The type of the target instance, such as &#34;FUSION&#34;.
      * 
      */
-    private final String targetServiceType;
+    private String targetServiceType;
 
-    @CustomType.Constructor
-    private GetIntegrationInstanceAttachment(
-        @CustomType.Parameter("isImplicit") Boolean isImplicit,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("targetInstanceUrl") String targetInstanceUrl,
-        @CustomType.Parameter("targetRole") String targetRole,
-        @CustomType.Parameter("targetServiceType") String targetServiceType) {
-        this.isImplicit = isImplicit;
-        this.targetId = targetId;
-        this.targetInstanceUrl = targetInstanceUrl;
-        this.targetRole = targetRole;
-        this.targetServiceType = targetServiceType;
-    }
-
+    private GetIntegrationInstanceAttachment() {}
     /**
      * @return * If role == `PARENT`, the attached instance was created by this service instance
      * * If role == `CHILD`, this instance was created from attached instance on behalf of a user
@@ -95,18 +82,14 @@ public final class GetIntegrationInstanceAttachment {
     public static Builder builder(GetIntegrationInstanceAttachment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isImplicit;
         private String targetId;
         private String targetInstanceUrl;
         private String targetRole;
         private String targetServiceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIntegrationInstanceAttachment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isImplicit = defaults.isImplicit;
@@ -116,27 +99,39 @@ public final class GetIntegrationInstanceAttachment {
     	      this.targetServiceType = defaults.targetServiceType;
         }
 
+        @CustomType.Setter
         public Builder isImplicit(Boolean isImplicit) {
             this.isImplicit = Objects.requireNonNull(isImplicit);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetInstanceUrl(String targetInstanceUrl) {
             this.targetInstanceUrl = Objects.requireNonNull(targetInstanceUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder targetRole(String targetRole) {
             this.targetRole = Objects.requireNonNull(targetRole);
             return this;
         }
+        @CustomType.Setter
         public Builder targetServiceType(String targetServiceType) {
             this.targetServiceType = Objects.requireNonNull(targetServiceType);
             return this;
-        }        public GetIntegrationInstanceAttachment build() {
-            return new GetIntegrationInstanceAttachment(isImplicit, targetId, targetInstanceUrl, targetRole, targetServiceType);
+        }
+        public GetIntegrationInstanceAttachment build() {
+            final var o = new GetIntegrationInstanceAttachment();
+            o.isImplicit = isImplicit;
+            o.targetId = targetId;
+            o.targetInstanceUrl = targetInstanceUrl;
+            o.targetRole = targetRole;
+            o.targetServiceType = targetServiceType;
+            return o;
         }
     }
 }

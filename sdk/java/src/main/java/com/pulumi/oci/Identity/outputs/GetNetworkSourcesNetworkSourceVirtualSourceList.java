@@ -10,17 +10,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkSourcesNetworkSourceVirtualSourceList {
-    private final List<String> ipRanges;
-    private final String vcnId;
+    private List<String> ipRanges;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetNetworkSourcesNetworkSourceVirtualSourceList(
-        @CustomType.Parameter("ipRanges") List<String> ipRanges,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.ipRanges = ipRanges;
-        this.vcnId = vcnId;
-    }
-
+    private GetNetworkSourcesNetworkSourceVirtualSourceList() {}
     public List<String> ipRanges() {
         return this.ipRanges;
     }
@@ -35,21 +28,18 @@ public final class GetNetworkSourcesNetworkSourceVirtualSourceList {
     public static Builder builder(GetNetworkSourcesNetworkSourceVirtualSourceList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> ipRanges;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkSourcesNetworkSourceVirtualSourceList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipRanges = defaults.ipRanges;
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder ipRanges(List<String> ipRanges) {
             this.ipRanges = Objects.requireNonNull(ipRanges);
             return this;
@@ -57,11 +47,16 @@ public final class GetNetworkSourcesNetworkSourceVirtualSourceList {
         public Builder ipRanges(String... ipRanges) {
             return ipRanges(List.of(ipRanges));
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetNetworkSourcesNetworkSourceVirtualSourceList build() {
-            return new GetNetworkSourcesNetworkSourceVirtualSourceList(ipRanges, vcnId);
+        }
+        public GetNetworkSourcesNetworkSourceVirtualSourceList build() {
+            final var o = new GetNetworkSourcesNetworkSourceVirtualSourceList();
+            o.ipRanges = ipRanges;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

@@ -15,13 +15,9 @@ public final class KeyVersionReplicaDetail {
      * @return ReplicationId associated with a key version operation
      * 
      */
-    private final @Nullable String replicationId;
+    private @Nullable String replicationId;
 
-    @CustomType.Constructor
-    private KeyVersionReplicaDetail(@CustomType.Parameter("replicationId") @Nullable String replicationId) {
-        this.replicationId = replicationId;
-    }
-
+    private KeyVersionReplicaDetail() {}
     /**
      * @return ReplicationId associated with a key version operation
      * 
@@ -37,24 +33,24 @@ public final class KeyVersionReplicaDetail {
     public static Builder builder(KeyVersionReplicaDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String replicationId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(KeyVersionReplicaDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.replicationId = defaults.replicationId;
         }
 
+        @CustomType.Setter
         public Builder replicationId(@Nullable String replicationId) {
             this.replicationId = replicationId;
             return this;
-        }        public KeyVersionReplicaDetail build() {
-            return new KeyVersionReplicaDetail(replicationId);
+        }
+        public KeyVersionReplicaDetail build() {
+            final var o = new KeyVersionReplicaDetail();
+            o.replicationId = replicationId;
+            return o;
         }
     }
 }

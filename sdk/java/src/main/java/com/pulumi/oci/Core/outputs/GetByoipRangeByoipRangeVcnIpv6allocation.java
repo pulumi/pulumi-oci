@@ -13,35 +13,24 @@ public final class GetByoipRangeByoipRangeVcnIpv6allocation {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
      * 
      */
-    private final String byoipRangeId;
+    private String byoipRangeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      * 
      */
-    private final String ipv6cidrBlock;
+    private String ipv6cidrBlock;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Vcn` resource to which the ByoipRange belongs.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetByoipRangeByoipRangeVcnIpv6allocation(
-        @CustomType.Parameter("byoipRangeId") String byoipRangeId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("ipv6cidrBlock") String ipv6cidrBlock,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.byoipRangeId = byoipRangeId;
-        this.compartmentId = compartmentId;
-        this.ipv6cidrBlock = ipv6cidrBlock;
-        this.vcnId = vcnId;
-    }
-
+    private GetByoipRangeByoipRangeVcnIpv6allocation() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
      * 
@@ -78,17 +67,13 @@ public final class GetByoipRangeByoipRangeVcnIpv6allocation {
     public static Builder builder(GetByoipRangeByoipRangeVcnIpv6allocation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String byoipRangeId;
         private String compartmentId;
         private String ipv6cidrBlock;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetByoipRangeByoipRangeVcnIpv6allocation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.byoipRangeId = defaults.byoipRangeId;
@@ -97,23 +82,33 @@ public final class GetByoipRangeByoipRangeVcnIpv6allocation {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder byoipRangeId(String byoipRangeId) {
             this.byoipRangeId = Objects.requireNonNull(byoipRangeId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
             this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetByoipRangeByoipRangeVcnIpv6allocation build() {
-            return new GetByoipRangeByoipRangeVcnIpv6allocation(byoipRangeId, compartmentId, ipv6cidrBlock, vcnId);
+        }
+        public GetByoipRangeByoipRangeVcnIpv6allocation build() {
+            final var o = new GetByoipRangeByoipRangeVcnIpv6allocation();
+            o.byoipRangeId = byoipRangeId;
+            o.compartmentId = compartmentId;
+            o.ipv6cidrBlock = ipv6cidrBlock;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

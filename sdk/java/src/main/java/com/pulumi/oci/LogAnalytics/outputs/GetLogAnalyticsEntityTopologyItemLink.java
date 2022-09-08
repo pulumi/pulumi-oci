@@ -14,13 +14,9 @@ public final class GetLogAnalyticsEntityTopologyItemLink {
      * @return Array of log analytics entity summary.
      * 
      */
-    private final List<GetLogAnalyticsEntityTopologyItemLinkItem> items;
+    private List<GetLogAnalyticsEntityTopologyItemLinkItem> items;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsEntityTopologyItemLink(@CustomType.Parameter("items") List<GetLogAnalyticsEntityTopologyItemLinkItem> items) {
-        this.items = items;
-    }
-
+    private GetLogAnalyticsEntityTopologyItemLink() {}
     /**
      * @return Array of log analytics entity summary.
      * 
@@ -36,27 +32,27 @@ public final class GetLogAnalyticsEntityTopologyItemLink {
     public static Builder builder(GetLogAnalyticsEntityTopologyItemLink defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetLogAnalyticsEntityTopologyItemLinkItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsEntityTopologyItemLink defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetLogAnalyticsEntityTopologyItemLinkItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetLogAnalyticsEntityTopologyItemLinkItem... items) {
             return items(List.of(items));
-        }        public GetLogAnalyticsEntityTopologyItemLink build() {
-            return new GetLogAnalyticsEntityTopologyItemLink(items);
+        }
+        public GetLogAnalyticsEntityTopologyItemLink build() {
+            final var o = new GetLogAnalyticsEntityTopologyItemLink();
+            o.items = items;
+            return o;
         }
     }
 }

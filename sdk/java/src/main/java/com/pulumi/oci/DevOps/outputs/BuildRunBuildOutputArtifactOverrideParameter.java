@@ -15,13 +15,9 @@ public final class BuildRunBuildOutputArtifactOverrideParameter {
      * @return List of arguments provided at the time of running the build.
      * 
      */
-    private final @Nullable List<BuildRunBuildOutputArtifactOverrideParameterItem> items;
+    private @Nullable List<BuildRunBuildOutputArtifactOverrideParameterItem> items;
 
-    @CustomType.Constructor
-    private BuildRunBuildOutputArtifactOverrideParameter(@CustomType.Parameter("items") @Nullable List<BuildRunBuildOutputArtifactOverrideParameterItem> items) {
-        this.items = items;
-    }
-
+    private BuildRunBuildOutputArtifactOverrideParameter() {}
     /**
      * @return List of arguments provided at the time of running the build.
      * 
@@ -37,27 +33,27 @@ public final class BuildRunBuildOutputArtifactOverrideParameter {
     public static Builder builder(BuildRunBuildOutputArtifactOverrideParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<BuildRunBuildOutputArtifactOverrideParameterItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildOutputArtifactOverrideParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<BuildRunBuildOutputArtifactOverrideParameterItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(BuildRunBuildOutputArtifactOverrideParameterItem... items) {
             return items(List.of(items));
-        }        public BuildRunBuildOutputArtifactOverrideParameter build() {
-            return new BuildRunBuildOutputArtifactOverrideParameter(items);
+        }
+        public BuildRunBuildOutputArtifactOverrideParameter build() {
+            final var o = new BuildRunBuildOutputArtifactOverrideParameter();
+            o.items = items;
+            return o;
         }
     }
 }

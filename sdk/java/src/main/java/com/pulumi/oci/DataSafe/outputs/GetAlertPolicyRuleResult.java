@@ -11,28 +11,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAlertPolicyRuleResult {
-    private final String alertPolicyId;
+    private String alertPolicyId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Array of alert policy rules summary
      * 
      */
-    private final List<GetAlertPolicyRuleItem> items;
+    private List<GetAlertPolicyRuleItem> items;
 
-    @CustomType.Constructor
-    private GetAlertPolicyRuleResult(
-        @CustomType.Parameter("alertPolicyId") String alertPolicyId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetAlertPolicyRuleItem> items) {
-        this.alertPolicyId = alertPolicyId;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetAlertPolicyRuleResult() {}
     public String alertPolicyId() {
         return this.alertPolicyId;
     }
@@ -58,16 +49,12 @@ public final class GetAlertPolicyRuleResult {
     public static Builder builder(GetAlertPolicyRuleResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String alertPolicyId;
         private String id;
         private List<GetAlertPolicyRuleItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertPolicyRuleResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alertPolicyId = defaults.alertPolicyId;
@@ -75,22 +62,30 @@ public final class GetAlertPolicyRuleResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder alertPolicyId(String alertPolicyId) {
             this.alertPolicyId = Objects.requireNonNull(alertPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetAlertPolicyRuleItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAlertPolicyRuleItem... items) {
             return items(List.of(items));
-        }        public GetAlertPolicyRuleResult build() {
-            return new GetAlertPolicyRuleResult(alertPolicyId, id, items);
+        }
+        public GetAlertPolicyRuleResult build() {
+            final var o = new GetAlertPolicyRuleResult();
+            o.alertPolicyId = alertPolicyId;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

@@ -17,77 +17,54 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
      * @return The summary of the Managed Database resource.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases;
     /**
      * @return The errors in the Optimizer Statistics Advisor execution, if any.
      * 
      */
-    private final String errorMessage;
+    private String errorMessage;
     /**
      * @return The name of the Optimizer Statistics Advisor execution.
      * 
      */
-    private final String executionName;
+    private String executionName;
     /**
      * @return The list of findings for the rule.
      * 
      */
-    private final Integer findings;
+    private Integer findings;
     /**
      * @return A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports;
     /**
      * @return The status of the Optimizer Statistics Advisor execution.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The Optimizer Statistics Advisor execution status message, if any.
      * 
      */
-    private final String statusMessage;
+    private String statusMessage;
     /**
      * @return The name of the Optimizer Statistics Advisor task.
      * 
      */
-    private final String taskName;
+    private String taskName;
     /**
      * @return The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is &#34;yyyy-MM-dd&#39;T&#39;hh:mm:ss.sss&#39;Z&#39;&#34;.
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is &#34;yyyy-MM-dd&#39;T&#39;hh:mm:ss.sss&#39;Z&#39;&#34;.
      * 
      */
-    private final String timeStart;
+    private String timeStart;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem(
-        @CustomType.Parameter("databases") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases,
-        @CustomType.Parameter("errorMessage") String errorMessage,
-        @CustomType.Parameter("executionName") String executionName,
-        @CustomType.Parameter("findings") Integer findings,
-        @CustomType.Parameter("reports") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("statusMessage") String statusMessage,
-        @CustomType.Parameter("taskName") String taskName,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart) {
-        this.databases = databases;
-        this.errorMessage = errorMessage;
-        this.executionName = executionName;
-        this.findings = findings;
-        this.reports = reports;
-        this.status = status;
-        this.statusMessage = statusMessage;
-        this.taskName = taskName;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem() {}
     /**
      * @return The summary of the Managed Database resource.
      * 
@@ -166,7 +143,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases;
         private String errorMessage;
@@ -178,11 +155,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         private String taskName;
         private String timeEnd;
         private String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.databases = defaults.databases;
@@ -197,6 +170,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder databases(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase> databases) {
             this.databases = Objects.requireNonNull(databases);
             return this;
@@ -204,18 +178,22 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         public Builder databases(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase... databases) {
             return databases(List.of(databases));
         }
+        @CustomType.Setter
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = Objects.requireNonNull(errorMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder executionName(String executionName) {
             this.executionName = Objects.requireNonNull(executionName);
             return this;
         }
+        @CustomType.Setter
         public Builder findings(Integer findings) {
             this.findings = Objects.requireNonNull(findings);
             return this;
         }
+        @CustomType.Setter
         public Builder reports(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport> reports) {
             this.reports = Objects.requireNonNull(reports);
             return this;
@@ -223,27 +201,44 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         public Builder reports(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport... reports) {
             return reports(List.of(reports));
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder statusMessage(String statusMessage) {
             this.statusMessage = Objects.requireNonNull(statusMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder taskName(String taskName) {
             this.taskName = Objects.requireNonNull(taskName);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem(databases, errorMessage, executionName, findings, reports, status, statusMessage, taskName, timeEnd, timeStart);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem();
+            o.databases = databases;
+            o.errorMessage = errorMessage;
+            o.executionName = executionName;
+            o.findings = findings;
+            o.reports = reports;
+            o.status = status;
+            o.statusMessage = statusMessage;
+            o.taskName = taskName;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

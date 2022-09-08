@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSensitiveTypesSensitiveTypeCollection {
-    private final List<GetSensitiveTypesSensitiveTypeCollectionItem> items;
+    private List<GetSensitiveTypesSensitiveTypeCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetSensitiveTypesSensitiveTypeCollection(@CustomType.Parameter("items") List<GetSensitiveTypesSensitiveTypeCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetSensitiveTypesSensitiveTypeCollection() {}
     public List<GetSensitiveTypesSensitiveTypeCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetSensitiveTypesSensitiveTypeCollection {
     public static Builder builder(GetSensitiveTypesSensitiveTypeCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSensitiveTypesSensitiveTypeCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSensitiveTypesSensitiveTypeCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSensitiveTypesSensitiveTypeCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSensitiveTypesSensitiveTypeCollectionItem... items) {
             return items(List.of(items));
-        }        public GetSensitiveTypesSensitiveTypeCollection build() {
-            return new GetSensitiveTypesSensitiveTypeCollection(items);
+        }
+        public GetSensitiveTypesSensitiveTypeCollection build() {
+            final var o = new GetSensitiveTypesSensitiveTypeCollection();
+            o.items = items;
+            return o;
         }
     }
 }

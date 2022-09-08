@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection {
-    private final List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem> items;
+    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection(@CustomType.Parameter("items") List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection() {}
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection {
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem... items) {
             return items(List.of(items));
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection(items);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

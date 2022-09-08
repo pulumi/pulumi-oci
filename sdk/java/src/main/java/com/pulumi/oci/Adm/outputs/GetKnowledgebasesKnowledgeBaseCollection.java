@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetKnowledgebasesKnowledgeBaseCollection {
-    private final List<GetKnowledgebasesKnowledgeBaseCollectionItem> items;
+    private List<GetKnowledgebasesKnowledgeBaseCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetKnowledgebasesKnowledgeBaseCollection(@CustomType.Parameter("items") List<GetKnowledgebasesKnowledgeBaseCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetKnowledgebasesKnowledgeBaseCollection() {}
     public List<GetKnowledgebasesKnowledgeBaseCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetKnowledgebasesKnowledgeBaseCollection {
     public static Builder builder(GetKnowledgebasesKnowledgeBaseCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetKnowledgebasesKnowledgeBaseCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetKnowledgebasesKnowledgeBaseCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetKnowledgebasesKnowledgeBaseCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetKnowledgebasesKnowledgeBaseCollectionItem... items) {
             return items(List.of(items));
-        }        public GetKnowledgebasesKnowledgeBaseCollection build() {
-            return new GetKnowledgebasesKnowledgeBaseCollection(items);
+        }
+        public GetKnowledgebasesKnowledgeBaseCollection build() {
+            final var o = new GetKnowledgebasesKnowledgeBaseCollection();
+            o.items = items;
+            return o;
         }
     }
 }

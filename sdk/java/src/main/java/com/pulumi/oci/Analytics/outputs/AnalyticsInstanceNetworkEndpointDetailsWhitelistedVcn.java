@@ -16,21 +16,14 @@ public final class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn {
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
-     * @return Source IP addresses or IP address ranges igress rules.
+     * @return Source IP addresses or IP address ranges in ingress rules.
      * 
      */
-    private final @Nullable List<String> whitelistedIps;
+    private @Nullable List<String> whitelistedIps;
 
-    @CustomType.Constructor
-    private AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn(
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("whitelistedIps") @Nullable List<String> whitelistedIps) {
-        this.id = id;
-        this.whitelistedIps = whitelistedIps;
-    }
-
+    private AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn() {}
     /**
      * @return The Virtual Cloud Network OCID.
      * 
@@ -39,7 +32,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return Source IP addresses or IP address ranges igress rules.
+     * @return Source IP addresses or IP address ranges in ingress rules.
      * 
      */
     public List<String> whitelistedIps() {
@@ -53,33 +46,35 @@ public final class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn {
     public static Builder builder(AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
         private @Nullable List<String> whitelistedIps;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.whitelistedIps = defaults.whitelistedIps;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder whitelistedIps(@Nullable List<String> whitelistedIps) {
             this.whitelistedIps = whitelistedIps;
             return this;
         }
         public Builder whitelistedIps(String... whitelistedIps) {
             return whitelistedIps(List.of(whitelistedIps));
-        }        public AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn build() {
-            return new AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn(id, whitelistedIps);
+        }
+        public AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn build() {
+            final var o = new AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn();
+            o.id = id;
+            o.whitelistedIps = whitelistedIps;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection {
-    private final List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items;
+    private List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection(@CustomType.Parameter("items") List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection() {}
     public List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
     public static Builder builder(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem... items) {
             return items(List.of(items));
-        }        public GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection build() {
-            return new GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection(items);
+        }
+        public GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection build() {
+            final var o = new GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection();
+            o.items = items;
+            return o;
         }
     }
 }

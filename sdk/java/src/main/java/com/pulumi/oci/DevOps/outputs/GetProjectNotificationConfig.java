@@ -13,13 +13,9 @@ public final class GetProjectNotificationConfig {
      * @return The topic ID for notifications.
      * 
      */
-    private final String topicId;
+    private String topicId;
 
-    @CustomType.Constructor
-    private GetProjectNotificationConfig(@CustomType.Parameter("topicId") String topicId) {
-        this.topicId = topicId;
-    }
-
+    private GetProjectNotificationConfig() {}
     /**
      * @return The topic ID for notifications.
      * 
@@ -35,24 +31,24 @@ public final class GetProjectNotificationConfig {
     public static Builder builder(GetProjectNotificationConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String topicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProjectNotificationConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.topicId = defaults.topicId;
         }
 
+        @CustomType.Setter
         public Builder topicId(String topicId) {
             this.topicId = Objects.requireNonNull(topicId);
             return this;
-        }        public GetProjectNotificationConfig build() {
-            return new GetProjectNotificationConfig(topicId);
+        }
+        public GetProjectNotificationConfig build() {
+            final var o = new GetProjectNotificationConfig();
+            o.topicId = topicId;
+            return o;
         }
     }
 }

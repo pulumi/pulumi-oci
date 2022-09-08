@@ -13,13 +13,9 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
      * @return When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
 
-    @CustomType.Constructor
-    private GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression(@CustomType.Parameter("isEnabled") Boolean isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
+    private GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression() {}
     /**
      * @return When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
      * 
@@ -35,24 +31,24 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
     public static Builder builder(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
-        }        public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression build() {
-            return new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression(isEnabled);
+        }
+        public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression build() {
+            final var o = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression();
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

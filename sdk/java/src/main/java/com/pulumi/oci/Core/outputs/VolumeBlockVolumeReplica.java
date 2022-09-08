@@ -15,28 +15,19 @@ public final class VolumeBlockVolumeReplica {
      * @return (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The block volume replica&#39;s Oracle ID (OCID).
      * 
      */
-    private final @Nullable String blockVolumeReplicaId;
+    private @Nullable String blockVolumeReplicaId;
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
 
-    @CustomType.Constructor
-    private VolumeBlockVolumeReplica(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("blockVolumeReplicaId") @Nullable String blockVolumeReplicaId,
-        @CustomType.Parameter("displayName") @Nullable String displayName) {
-        this.availabilityDomain = availabilityDomain;
-        this.blockVolumeReplicaId = blockVolumeReplicaId;
-        this.displayName = displayName;
-    }
-
+    private VolumeBlockVolumeReplica() {}
     /**
      * @return (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
@@ -66,16 +57,12 @@ public final class VolumeBlockVolumeReplica {
     public static Builder builder(VolumeBlockVolumeReplica defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private @Nullable String blockVolumeReplicaId;
         private @Nullable String displayName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VolumeBlockVolumeReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -83,19 +70,27 @@ public final class VolumeBlockVolumeReplica {
     	      this.displayName = defaults.displayName;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder blockVolumeReplicaId(@Nullable String blockVolumeReplicaId) {
             this.blockVolumeReplicaId = blockVolumeReplicaId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
-        }        public VolumeBlockVolumeReplica build() {
-            return new VolumeBlockVolumeReplica(availabilityDomain, blockVolumeReplicaId, displayName);
+        }
+        public VolumeBlockVolumeReplica build() {
+            final var o = new VolumeBlockVolumeReplica();
+            o.availabilityDomain = availabilityDomain;
+            o.blockVolumeReplicaId = blockVolumeReplicaId;
+            o.displayName = displayName;
+            return o;
         }
     }
 }

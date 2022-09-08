@@ -9,17 +9,10 @@ import java.util.Objects;
 
 @CustomType
 public final class DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange {
-    private final Integer max;
-    private final Integer min;
+    private Integer max;
+    private Integer min;
 
-    @CustomType.Constructor
-    private DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange(
-        @CustomType.Parameter("max") Integer max,
-        @CustomType.Parameter("min") Integer min) {
-        this.max = max;
-        this.min = min;
-    }
-
+    private DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange() {}
     public Integer max() {
         return this.max;
     }
@@ -34,30 +27,32 @@ public final class DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRang
     public static Builder builder(DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer max;
         private Integer min;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.max = defaults.max;
     	      this.min = defaults.min;
         }
 
+        @CustomType.Setter
         public Builder max(Integer max) {
             this.max = Objects.requireNonNull(max);
             return this;
         }
+        @CustomType.Setter
         public Builder min(Integer min) {
             this.min = Objects.requireNonNull(min);
             return this;
-        }        public DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange build() {
-            return new DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange(max, min);
+        }
+        public DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange build() {
+            final var o = new DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange();
+            o.max = max;
+            o.min = min;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
      * @return A set of transformations to apply to HTTP headers that pass through the gateway.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations;
     /**
      * @return Base policy for how a response from a backend is cached in the Response Cache.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy(
-        @CustomType.Parameter("headerTransformations") List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations,
-        @CustomType.Parameter("responseCacheStores") List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores) {
-        this.headerTransformations = headerTransformations;
-        this.responseCacheStores = responseCacheStores;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy() {}
     /**
      * @return A set of transformations to apply to HTTP headers that pass through the gateway.
      * 
@@ -52,21 +45,18 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations;
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.headerTransformations = defaults.headerTransformations;
     	      this.responseCacheStores = defaults.responseCacheStores;
         }
 
+        @CustomType.Setter
         public Builder headerTransformations(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations) {
             this.headerTransformations = Objects.requireNonNull(headerTransformations);
             return this;
@@ -74,14 +64,19 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
         public Builder headerTransformations(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation... headerTransformations) {
             return headerTransformations(List.of(headerTransformations));
         }
+        @CustomType.Setter
         public Builder responseCacheStores(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores) {
             this.responseCacheStores = Objects.requireNonNull(responseCacheStores);
             return this;
         }
         public Builder responseCacheStores(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore... responseCacheStores) {
             return responseCacheStores(List.of(responseCacheStores));
-        }        public GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy(headerTransformations, responseCacheStores);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy();
+            o.headerTransformations = headerTransformations;
+            o.responseCacheStores = responseCacheStores;
+            return o;
         }
     }
 }

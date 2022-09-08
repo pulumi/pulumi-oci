@@ -73,15 +73,15 @@ public final class GetViewsArgs extends com.pulumi.resources.InvokeArgs {
      * Value must be `PRIVATE` when listing private views.
      * 
      */
-    @Import(name="scope", required=true)
-    private Output<String> scope;
+    @Import(name="scope")
+    private @Nullable Output<String> scope;
 
     /**
      * @return Value must be `PRIVATE` when listing private views.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Optional<Output<String>> scope() {
+        return Optional.ofNullable(this.scope);
     }
 
     /**
@@ -210,7 +210,7 @@ public final class GetViewsArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          */
-        public Builder scope(Output<String> scope) {
+        public Builder scope(@Nullable Output<String> scope) {
             $.scope = scope;
             return this;
         }
@@ -248,7 +248,6 @@ public final class GetViewsArgs extends com.pulumi.resources.InvokeArgs {
 
         public GetViewsArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
             return $;
         }
     }

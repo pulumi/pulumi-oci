@@ -14,13 +14,9 @@ public final class GetDiscoveryJobsDiscoveryJobCollection {
      * @return List of DiscoveryJob credentials.
      * 
      */
-    private final List<GetDiscoveryJobsDiscoveryJobCollectionItem> items;
+    private List<GetDiscoveryJobsDiscoveryJobCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobsDiscoveryJobCollection(@CustomType.Parameter("items") List<GetDiscoveryJobsDiscoveryJobCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDiscoveryJobsDiscoveryJobCollection() {}
     /**
      * @return List of DiscoveryJob credentials.
      * 
@@ -36,27 +32,27 @@ public final class GetDiscoveryJobsDiscoveryJobCollection {
     public static Builder builder(GetDiscoveryJobsDiscoveryJobCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDiscoveryJobsDiscoveryJobCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobsDiscoveryJobCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDiscoveryJobsDiscoveryJobCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDiscoveryJobsDiscoveryJobCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDiscoveryJobsDiscoveryJobCollection build() {
-            return new GetDiscoveryJobsDiscoveryJobCollection(items);
+        }
+        public GetDiscoveryJobsDiscoveryJobCollection build() {
+            final var o = new GetDiscoveryJobsDiscoveryJobCollection();
+            o.items = items;
+            return o;
         }
     }
 }

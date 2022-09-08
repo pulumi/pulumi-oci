@@ -13,21 +13,14 @@ public final class GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddr
      * @return A private IP address or CIDR IP address range.
      * 
      */
-    private final String addresses;
+    private String addresses;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress(
-        @CustomType.Parameter("addresses") String addresses,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.addresses = addresses;
-        this.vcnId = vcnId;
-    }
-
+    private GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress() {}
     /**
      * @return A private IP address or CIDR IP address range.
      * 
@@ -50,30 +43,32 @@ public final class GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddr
     public static Builder builder(GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String addresses;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addresses = defaults.addresses;
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder addresses(String addresses) {
             this.addresses = Objects.requireNonNull(addresses);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress build() {
-            return new GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress(addresses, vcnId);
+        }
+        public GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress build() {
+            final var o = new GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress();
+            o.addresses = addresses;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

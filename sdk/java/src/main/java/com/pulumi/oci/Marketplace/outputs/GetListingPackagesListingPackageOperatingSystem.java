@@ -13,13 +13,9 @@ public final class GetListingPackagesListingPackageOperatingSystem {
      * @return The name of the variable.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetListingPackagesListingPackageOperatingSystem(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetListingPackagesListingPackageOperatingSystem() {}
     /**
      * @return The name of the variable.
      * 
@@ -35,24 +31,24 @@ public final class GetListingPackagesListingPackageOperatingSystem {
     public static Builder builder(GetListingPackagesListingPackageOperatingSystem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPackagesListingPackageOperatingSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetListingPackagesListingPackageOperatingSystem build() {
-            return new GetListingPackagesListingPackageOperatingSystem(name);
+        }
+        public GetListingPackagesListingPackageOperatingSystem build() {
+            final var o = new GetListingPackagesListingPackageOperatingSystem();
+            o.name = name;
+            return o;
         }
     }
 }

@@ -14,35 +14,24 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
      * @return Compute instance OCID identifiers that are members of this group.
      * 
      */
-    private final List<String> computeInstanceIds;
+    private List<String> computeInstanceIds;
     /**
      * @return Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
      * 
      */
-    private final String query;
+    private String query;
     /**
      * @return Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
      * 
      */
-    private final String region;
+    private String region;
     /**
      * @return Defines the type of the instance selector for the group.
      * 
      */
-    private final String selectorType;
+    private String selectorType;
 
-    @CustomType.Constructor
-    private GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem(
-        @CustomType.Parameter("computeInstanceIds") List<String> computeInstanceIds,
-        @CustomType.Parameter("query") String query,
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("selectorType") String selectorType) {
-        this.computeInstanceIds = computeInstanceIds;
-        this.query = query;
-        this.region = region;
-        this.selectorType = selectorType;
-    }
-
+    private GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem() {}
     /**
      * @return Compute instance OCID identifiers that are members of this group.
      * 
@@ -79,17 +68,13 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
     public static Builder builder(GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> computeInstanceIds;
         private String query;
         private String region;
         private String selectorType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.computeInstanceIds = defaults.computeInstanceIds;
@@ -98,6 +83,7 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
     	      this.selectorType = defaults.selectorType;
         }
 
+        @CustomType.Setter
         public Builder computeInstanceIds(List<String> computeInstanceIds) {
             this.computeInstanceIds = Objects.requireNonNull(computeInstanceIds);
             return this;
@@ -105,19 +91,28 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
         public Builder computeInstanceIds(String... computeInstanceIds) {
             return computeInstanceIds(List.of(computeInstanceIds));
         }
+        @CustomType.Setter
         public Builder query(String query) {
             this.query = Objects.requireNonNull(query);
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder selectorType(String selectorType) {
             this.selectorType = Objects.requireNonNull(selectorType);
             return this;
-        }        public GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem build() {
-            return new GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem(computeInstanceIds, query, region, selectorType);
+        }
+        public GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem build() {
+            final var o = new GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem();
+            o.computeInstanceIds = computeInstanceIds;
+            o.query = query;
+            o.region = region;
+            o.selectorType = selectorType;
+            return o;
         }
     }
 }

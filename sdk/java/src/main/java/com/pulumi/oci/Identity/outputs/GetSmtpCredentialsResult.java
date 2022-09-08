@@ -13,35 +13,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSmtpCredentialsResult {
-    private final @Nullable List<GetSmtpCredentialsFilter> filters;
+    private @Nullable List<GetSmtpCredentialsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of smtp_credentials.
      * 
      */
-    private final List<GetSmtpCredentialsSmtpCredential> smtpCredentials;
+    private List<GetSmtpCredentialsSmtpCredential> smtpCredentials;
     /**
      * @return The OCID of the user the SMTP credential belongs to.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetSmtpCredentialsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetSmtpCredentialsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("smtpCredentials") List<GetSmtpCredentialsSmtpCredential> smtpCredentials,
-        @CustomType.Parameter("userId") String userId) {
-        this.filters = filters;
-        this.id = id;
-        this.smtpCredentials = smtpCredentials;
-        this.userId = userId;
-    }
-
+    private GetSmtpCredentialsResult() {}
     public List<GetSmtpCredentialsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -74,17 +63,13 @@ public final class GetSmtpCredentialsResult {
     public static Builder builder(GetSmtpCredentialsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSmtpCredentialsFilter> filters;
         private String id;
         private List<GetSmtpCredentialsSmtpCredential> smtpCredentials;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSmtpCredentialsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -93,6 +78,7 @@ public final class GetSmtpCredentialsResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSmtpCredentialsFilter> filters) {
             this.filters = filters;
             return this;
@@ -100,10 +86,12 @@ public final class GetSmtpCredentialsResult {
         public Builder filters(GetSmtpCredentialsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder smtpCredentials(List<GetSmtpCredentialsSmtpCredential> smtpCredentials) {
             this.smtpCredentials = Objects.requireNonNull(smtpCredentials);
             return this;
@@ -111,11 +99,18 @@ public final class GetSmtpCredentialsResult {
         public Builder smtpCredentials(GetSmtpCredentialsSmtpCredential... smtpCredentials) {
             return smtpCredentials(List.of(smtpCredentials));
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetSmtpCredentialsResult build() {
-            return new GetSmtpCredentialsResult(filters, id, smtpCredentials, userId);
+        }
+        public GetSmtpCredentialsResult build() {
+            final var o = new GetSmtpCredentialsResult();
+            o.filters = filters;
+            o.id = id;
+            o.smtpCredentials = smtpCredentials;
+            o.userId = userId;
+            return o;
         }
     }
 }

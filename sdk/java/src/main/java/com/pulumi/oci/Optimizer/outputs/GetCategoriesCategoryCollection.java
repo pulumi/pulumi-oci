@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCategoriesCategoryCollection {
-    private final List<GetCategoriesCategoryCollectionItem> items;
+    private List<GetCategoriesCategoryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetCategoriesCategoryCollection(@CustomType.Parameter("items") List<GetCategoriesCategoryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetCategoriesCategoryCollection() {}
     public List<GetCategoriesCategoryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetCategoriesCategoryCollection {
     public static Builder builder(GetCategoriesCategoryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCategoriesCategoryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCategoriesCategoryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetCategoriesCategoryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetCategoriesCategoryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetCategoriesCategoryCollection build() {
-            return new GetCategoriesCategoryCollection(items);
+        }
+        public GetCategoriesCategoryCollection build() {
+            final var o = new GetCategoriesCategoryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

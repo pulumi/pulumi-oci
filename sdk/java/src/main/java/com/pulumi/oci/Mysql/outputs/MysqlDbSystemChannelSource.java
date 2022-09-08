@@ -18,49 +18,34 @@ public final class MysqlDbSystemChannelSource {
      * @return The network address of the DB System.
      * 
      */
-    private final @Nullable String hostname;
+    private @Nullable String hostname;
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
     /**
      * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
      * 
      */
-    private final @Nullable String sourceType;
+    private @Nullable String sourceType;
     /**
      * @return The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
      * 
      */
-    private final @Nullable List<MysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates;
+    private @Nullable List<MysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates;
     /**
      * @return The SSL mode of the Channel.
      * 
      */
-    private final @Nullable String sslMode;
+    private @Nullable String sslMode;
     /**
      * @return The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
      * 
      */
-    private final @Nullable String username;
+    private @Nullable String username;
 
-    @CustomType.Constructor
-    private MysqlDbSystemChannelSource(
-        @CustomType.Parameter("hostname") @Nullable String hostname,
-        @CustomType.Parameter("port") @Nullable Integer port,
-        @CustomType.Parameter("sourceType") @Nullable String sourceType,
-        @CustomType.Parameter("sslCaCertificates") @Nullable List<MysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates,
-        @CustomType.Parameter("sslMode") @Nullable String sslMode,
-        @CustomType.Parameter("username") @Nullable String username) {
-        this.hostname = hostname;
-        this.port = port;
-        this.sourceType = sourceType;
-        this.sslCaCertificates = sslCaCertificates;
-        this.sslMode = sslMode;
-        this.username = username;
-    }
-
+    private MysqlDbSystemChannelSource() {}
     /**
      * @return The network address of the DB System.
      * 
@@ -111,7 +96,7 @@ public final class MysqlDbSystemChannelSource {
     public static Builder builder(MysqlDbSystemChannelSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String hostname;
         private @Nullable Integer port;
@@ -119,11 +104,7 @@ public final class MysqlDbSystemChannelSource {
         private @Nullable List<MysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates;
         private @Nullable String sslMode;
         private @Nullable String username;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MysqlDbSystemChannelSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
@@ -134,18 +115,22 @@ public final class MysqlDbSystemChannelSource {
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
             this.hostname = hostname;
             return this;
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(@Nullable String sourceType) {
             this.sourceType = sourceType;
             return this;
         }
+        @CustomType.Setter
         public Builder sslCaCertificates(@Nullable List<MysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates) {
             this.sslCaCertificates = sslCaCertificates;
             return this;
@@ -153,15 +138,25 @@ public final class MysqlDbSystemChannelSource {
         public Builder sslCaCertificates(MysqlDbSystemChannelSourceSslCaCertificate... sslCaCertificates) {
             return sslCaCertificates(List.of(sslCaCertificates));
         }
+        @CustomType.Setter
         public Builder sslMode(@Nullable String sslMode) {
             this.sslMode = sslMode;
             return this;
         }
+        @CustomType.Setter
         public Builder username(@Nullable String username) {
             this.username = username;
             return this;
-        }        public MysqlDbSystemChannelSource build() {
-            return new MysqlDbSystemChannelSource(hostname, port, sourceType, sslCaCertificates, sslMode, username);
+        }
+        public MysqlDbSystemChannelSource build() {
+            final var o = new MysqlDbSystemChannelSource();
+            o.hostname = hostname;
+            o.port = port;
+            o.sourceType = sourceType;
+            o.sslCaCertificates = sslCaCertificates;
+            o.sslMode = sslMode;
+            o.username = username;
+            return o;
         }
     }
 }

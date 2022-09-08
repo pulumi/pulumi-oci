@@ -13,35 +13,24 @@ public final class GetDatasetsDatasetCollectionItemDatasetSourceDetail {
      * @return The object storage bucket that contains the dataset data source.
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return The namespace of the bucket that contains the dataset data source.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * 
      */
-    private final String prefix;
+    private String prefix;
     /**
      * @return The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
 
-    @CustomType.Constructor
-    private GetDatasetsDatasetCollectionItemDatasetSourceDetail(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("prefix") String prefix,
-        @CustomType.Parameter("sourceType") String sourceType) {
-        this.bucket = bucket;
-        this.namespace = namespace;
-        this.prefix = prefix;
-        this.sourceType = sourceType;
-    }
-
+    private GetDatasetsDatasetCollectionItemDatasetSourceDetail() {}
     /**
      * @return The object storage bucket that contains the dataset data source.
      * 
@@ -78,17 +67,13 @@ public final class GetDatasetsDatasetCollectionItemDatasetSourceDetail {
     public static Builder builder(GetDatasetsDatasetCollectionItemDatasetSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String namespace;
         private String prefix;
         private String sourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatasetsDatasetCollectionItemDatasetSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -97,23 +82,33 @@ public final class GetDatasetsDatasetCollectionItemDatasetSourceDetail {
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder prefix(String prefix) {
             this.prefix = Objects.requireNonNull(prefix);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
-        }        public GetDatasetsDatasetCollectionItemDatasetSourceDetail build() {
-            return new GetDatasetsDatasetCollectionItemDatasetSourceDetail(bucket, namespace, prefix, sourceType);
+        }
+        public GetDatasetsDatasetCollectionItemDatasetSourceDetail build() {
+            final var o = new GetDatasetsDatasetCollectionItemDatasetSourceDetail();
+            o.bucket = bucket;
+            o.namespace = namespace;
+            o.prefix = prefix;
+            o.sourceType = sourceType;
+            return o;
         }
     }
 }

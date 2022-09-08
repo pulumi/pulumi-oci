@@ -18,59 +18,40 @@ public final class GetJobRunsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
      * 
      */
-    private final @Nullable String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return A user-friendly display name for the resource.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetJobRunsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetJobRunsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      * 
      */
-    private final @Nullable String jobId;
+    private @Nullable String jobId;
     /**
      * @return The list of job_runs.
      * 
      */
-    private final List<GetJobRunsJobRun> jobRuns;
+    private List<GetJobRunsJobRun> jobRuns;
     /**
      * @return The state of the job run.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetJobRunsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") @Nullable String createdBy,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetJobRunsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("jobId") @Nullable String jobId,
-        @CustomType.Parameter("jobRuns") List<GetJobRunsJobRun> jobRuns,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.jobId = jobId;
-        this.jobRuns = jobRuns;
-        this.state = state;
-    }
-
+    private GetJobRunsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      * 
@@ -131,7 +112,7 @@ public final class GetJobRunsResult {
     public static Builder builder(GetJobRunsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String createdBy;
@@ -141,11 +122,7 @@ public final class GetJobRunsResult {
         private @Nullable String jobId;
         private List<GetJobRunsJobRun> jobRuns;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobRunsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -158,18 +135,22 @@ public final class GetJobRunsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
             this.createdBy = createdBy;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetJobRunsFilter> filters) {
             this.filters = filters;
             return this;
@@ -177,14 +158,17 @@ public final class GetJobRunsResult {
         public Builder filters(GetJobRunsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder jobId(@Nullable String jobId) {
             this.jobId = jobId;
             return this;
         }
+        @CustomType.Setter
         public Builder jobRuns(List<GetJobRunsJobRun> jobRuns) {
             this.jobRuns = Objects.requireNonNull(jobRuns);
             return this;
@@ -192,11 +176,22 @@ public final class GetJobRunsResult {
         public Builder jobRuns(GetJobRunsJobRun... jobRuns) {
             return jobRuns(List.of(jobRuns));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetJobRunsResult build() {
-            return new GetJobRunsResult(compartmentId, createdBy, displayName, filters, id, jobId, jobRuns, state);
+        }
+        public GetJobRunsResult build() {
+            final var o = new GetJobRunsResult();
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.jobId = jobId;
+            o.jobRuns = jobRuns;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -83,6 +83,21 @@ public final class DbSystemMaintenanceWindowDetailsArgs extends com.pulumi.resou
     }
 
     /**
+     * (Updatable) If true, enables the monthly patching option.
+     * 
+     */
+    @Import(name="isMonthlyPatchingEnabled")
+    private @Nullable Output<Boolean> isMonthlyPatchingEnabled;
+
+    /**
+     * @return (Updatable) If true, enables the monthly patching option.
+     * 
+     */
+    public Optional<Output<Boolean>> isMonthlyPatchingEnabled() {
+        return Optional.ofNullable(this.isMonthlyPatchingEnabled);
+    }
+
+    /**
      * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
@@ -164,6 +179,7 @@ public final class DbSystemMaintenanceWindowDetailsArgs extends com.pulumi.resou
         this.daysOfWeeks = $.daysOfWeeks;
         this.hoursOfDays = $.hoursOfDays;
         this.isCustomActionTimeoutEnabled = $.isCustomActionTimeoutEnabled;
+        this.isMonthlyPatchingEnabled = $.isMonthlyPatchingEnabled;
         this.leadTimeInWeeks = $.leadTimeInWeeks;
         this.months = $.months;
         this.patchingMode = $.patchingMode;
@@ -294,6 +310,27 @@ public final class DbSystemMaintenanceWindowDetailsArgs extends com.pulumi.resou
          */
         public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
             return isCustomActionTimeoutEnabled(Output.of(isCustomActionTimeoutEnabled));
+        }
+
+        /**
+         * @param isMonthlyPatchingEnabled (Updatable) If true, enables the monthly patching option.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMonthlyPatchingEnabled(@Nullable Output<Boolean> isMonthlyPatchingEnabled) {
+            $.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
+            return this;
+        }
+
+        /**
+         * @param isMonthlyPatchingEnabled (Updatable) If true, enables the monthly patching option.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMonthlyPatchingEnabled(Boolean isMonthlyPatchingEnabled) {
+            return isMonthlyPatchingEnabled(Output.of(isMonthlyPatchingEnabled));
         }
 
         /**

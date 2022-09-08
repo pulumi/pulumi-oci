@@ -18,52 +18,35 @@ public final class GetIngressGatewaysResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetIngressGatewaysFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetIngressGatewaysFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of ingress_gateway_collection.
      * 
      */
-    private final List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections;
+    private List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections;
     /**
      * @return The OCID of the service mesh in which this ingress gateway is created.
      * 
      */
-    private final @Nullable String meshId;
+    private @Nullable String meshId;
     /**
      * @return A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the Resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetIngressGatewaysResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetIngressGatewaysFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("ingressGatewayCollections") List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections,
-        @CustomType.Parameter("meshId") @Nullable String meshId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.ingressGatewayCollections = ingressGatewayCollections;
-        this.meshId = meshId;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetIngressGatewaysResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetIngressGatewaysResult {
     public static Builder builder(GetIngressGatewaysResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetIngressGatewaysFilter> filters;
@@ -126,11 +109,7 @@ public final class GetIngressGatewaysResult {
         private @Nullable String meshId;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewaysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetIngressGatewaysResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIngressGatewaysFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,10 +134,12 @@ public final class GetIngressGatewaysResult {
         public Builder filters(GetIngressGatewaysFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder ingressGatewayCollections(List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections) {
             this.ingressGatewayCollections = Objects.requireNonNull(ingressGatewayCollections);
             return this;
@@ -164,19 +147,31 @@ public final class GetIngressGatewaysResult {
         public Builder ingressGatewayCollections(GetIngressGatewaysIngressGatewayCollection... ingressGatewayCollections) {
             return ingressGatewayCollections(List.of(ingressGatewayCollections));
         }
+        @CustomType.Setter
         public Builder meshId(@Nullable String meshId) {
             this.meshId = meshId;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetIngressGatewaysResult build() {
-            return new GetIngressGatewaysResult(compartmentId, filters, id, ingressGatewayCollections, meshId, name, state);
+        }
+        public GetIngressGatewaysResult build() {
+            final var o = new GetIngressGatewaysResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.ingressGatewayCollections = ingressGatewayCollections;
+            o.meshId = meshId;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

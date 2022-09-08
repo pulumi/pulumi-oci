@@ -18,77 +18,54 @@ public final class RegistryDataAssetNativeTypeSystemType {
      * @return (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
      * 
      */
-    private final @Nullable RegistryDataAssetNativeTypeSystemTypeConfigDefinition configDefinition;
+    private @Nullable RegistryDataAssetNativeTypeSystemTypeConfigDefinition configDefinition;
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) The data type.
      * 
      */
-    private final @Nullable String dtType;
+    private @Nullable String dtType;
     /**
      * @return (Updatable) The identifying key for the object.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
      * @return (Updatable) The model version of an object.
      * 
      */
-    private final @Nullable String modelVersion;
+    private @Nullable String modelVersion;
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final @Nullable Integer objectStatus;
+    private @Nullable Integer objectStatus;
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
-    private final @Nullable RegistryDataAssetNativeTypeSystemTypeParentRef parentRef;
+    private @Nullable RegistryDataAssetNativeTypeSystemTypeParentRef parentRef;
     /**
      * @return (Updatable) The data type system name.
      * 
      */
-    private final @Nullable String typeSystemName;
+    private @Nullable String typeSystemName;
 
-    @CustomType.Constructor
-    private RegistryDataAssetNativeTypeSystemType(
-        @CustomType.Parameter("configDefinition") @Nullable RegistryDataAssetNativeTypeSystemTypeConfigDefinition configDefinition,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("dtType") @Nullable String dtType,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") @Nullable String modelVersion,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("objectStatus") @Nullable Integer objectStatus,
-        @CustomType.Parameter("parentRef") @Nullable RegistryDataAssetNativeTypeSystemTypeParentRef parentRef,
-        @CustomType.Parameter("typeSystemName") @Nullable String typeSystemName) {
-        this.configDefinition = configDefinition;
-        this.description = description;
-        this.dtType = dtType;
-        this.key = key;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.parentRef = parentRef;
-        this.typeSystemName = typeSystemName;
-    }
-
+    private RegistryDataAssetNativeTypeSystemType() {}
     /**
      * @return (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
      * 
@@ -97,7 +74,7 @@ public final class RegistryDataAssetNativeTypeSystemType {
         return Optional.ofNullable(this.configDefinition);
     }
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
     public Optional<String> description() {
@@ -118,7 +95,7 @@ public final class RegistryDataAssetNativeTypeSystemType {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
     public String modelType() {
@@ -132,7 +109,7 @@ public final class RegistryDataAssetNativeTypeSystemType {
         return Optional.ofNullable(this.modelVersion);
     }
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<String> name() {
@@ -146,7 +123,7 @@ public final class RegistryDataAssetNativeTypeSystemType {
         return Optional.ofNullable(this.objectStatus);
     }
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<RegistryDataAssetNativeTypeSystemTypeParentRef> parentRef() {
@@ -167,7 +144,7 @@ public final class RegistryDataAssetNativeTypeSystemType {
     public static Builder builder(RegistryDataAssetNativeTypeSystemType defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable RegistryDataAssetNativeTypeSystemTypeConfigDefinition configDefinition;
         private @Nullable String description;
@@ -179,11 +156,7 @@ public final class RegistryDataAssetNativeTypeSystemType {
         private @Nullable Integer objectStatus;
         private @Nullable RegistryDataAssetNativeTypeSystemTypeParentRef parentRef;
         private @Nullable String typeSystemName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryDataAssetNativeTypeSystemType defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configDefinition = defaults.configDefinition;
@@ -198,47 +171,69 @@ public final class RegistryDataAssetNativeTypeSystemType {
     	      this.typeSystemName = defaults.typeSystemName;
         }
 
+        @CustomType.Setter
         public Builder configDefinition(@Nullable RegistryDataAssetNativeTypeSystemTypeConfigDefinition configDefinition) {
             this.configDefinition = configDefinition;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder dtType(@Nullable String dtType) {
             this.dtType = dtType;
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(@Nullable String modelVersion) {
             this.modelVersion = modelVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(@Nullable Integer objectStatus) {
             this.objectStatus = objectStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(@Nullable RegistryDataAssetNativeTypeSystemTypeParentRef parentRef) {
             this.parentRef = parentRef;
             return this;
         }
+        @CustomType.Setter
         public Builder typeSystemName(@Nullable String typeSystemName) {
             this.typeSystemName = typeSystemName;
             return this;
-        }        public RegistryDataAssetNativeTypeSystemType build() {
-            return new RegistryDataAssetNativeTypeSystemType(configDefinition, description, dtType, key, modelType, modelVersion, name, objectStatus, parentRef, typeSystemName);
+        }
+        public RegistryDataAssetNativeTypeSystemType build() {
+            final var o = new RegistryDataAssetNativeTypeSystemType();
+            o.configDefinition = configDefinition;
+            o.description = description;
+            o.dtType = dtType;
+            o.key = key;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.parentRef = parentRef;
+            o.typeSystemName = typeSystemName;
+            return o;
         }
     }
 }

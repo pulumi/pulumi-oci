@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpensearchVersionsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetOpensearchVersionsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetOpensearchVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of opensearch_versions_collection.
      * 
      */
-    private final List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections;
+    private List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections;
 
-    @CustomType.Constructor
-    private GetOpensearchVersionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetOpensearchVersionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("opensearchVersionsCollections") List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.opensearchVersionsCollections = opensearchVersionsCollections;
-    }
-
+    private GetOpensearchVersionsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetOpensearchVersionsResult {
     public static Builder builder(GetOpensearchVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetOpensearchVersionsFilter> filters;
         private String id;
         private List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOpensearchVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetOpensearchVersionsResult {
     	      this.opensearchVersionsCollections = defaults.opensearchVersionsCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOpensearchVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetOpensearchVersionsResult {
         public Builder filters(GetOpensearchVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder opensearchVersionsCollections(List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections) {
             this.opensearchVersionsCollections = Objects.requireNonNull(opensearchVersionsCollections);
             return this;
         }
         public Builder opensearchVersionsCollections(GetOpensearchVersionsOpensearchVersionsCollection... opensearchVersionsCollections) {
             return opensearchVersionsCollections(List.of(opensearchVersionsCollections));
-        }        public GetOpensearchVersionsResult build() {
-            return new GetOpensearchVersionsResult(compartmentId, filters, id, opensearchVersionsCollections);
+        }
+        public GetOpensearchVersionsResult build() {
+            final var o = new GetOpensearchVersionsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.opensearchVersionsCollections = opensearchVersionsCollections;
+            return o;
         }
     }
 }

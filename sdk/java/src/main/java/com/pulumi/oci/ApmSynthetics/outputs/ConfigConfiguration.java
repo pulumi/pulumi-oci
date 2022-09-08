@@ -23,112 +23,79 @@ public final class ConfigConfiguration {
      * @return (Updatable) Type of configuration.
      * 
      */
-    private final @Nullable String configType;
+    private @Nullable String configType;
     /**
      * @return (Updatable) Dns settings.
      * 
      */
-    private final @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration;
+    private @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration;
     /**
      * @return (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
      * 
      */
-    private final @Nullable Boolean isCertificateValidationEnabled;
+    private @Nullable Boolean isCertificateValidationEnabled;
     /**
      * @return (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
      * 
      */
-    private final @Nullable Boolean isFailureRetried;
+    private @Nullable Boolean isFailureRetried;
     /**
      * @return (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
      * 
      */
-    private final @Nullable Boolean isRedirectionEnabled;
+    private @Nullable Boolean isRedirectionEnabled;
     /**
      * @return (Updatable) Details of the network configuration.
      * 
      */
-    private final @Nullable ConfigConfigurationNetworkConfiguration networkConfiguration;
+    private @Nullable ConfigConfigurationNetworkConfiguration networkConfiguration;
     /**
      * @return (Updatable) Details for request HTTP authentication.
      * 
      */
-    private final @Nullable ConfigConfigurationReqAuthenticationDetails reqAuthenticationDetails;
+    private @Nullable ConfigConfigurationReqAuthenticationDetails reqAuthenticationDetails;
     /**
      * @return (Updatable) Request http authentication scheme.
      * 
      */
-    private final @Nullable String reqAuthenticationScheme;
+    private @Nullable String reqAuthenticationScheme;
     /**
      * @return (Updatable) List of request headers. Example: `[{&#34;headerName&#34;: &#34;content-type&#34;, &#34;headerValue&#34;:&#34;json&#34;}]`
      * 
      */
-    private final @Nullable List<ConfigConfigurationRequestHeader> requestHeaders;
+    private @Nullable List<ConfigConfigurationRequestHeader> requestHeaders;
     /**
      * @return (Updatable) Request HTTP method.
      * 
      */
-    private final @Nullable String requestMethod;
+    private @Nullable String requestMethod;
     /**
      * @return (Updatable) Request post body content.
      * 
      */
-    private final @Nullable String requestPostBody;
+    private @Nullable String requestPostBody;
     /**
      * @return (Updatable) List of request query params. Example: `[{&#34;paramName&#34;: &#34;sortOrder&#34;, &#34;paramValue&#34;: &#34;asc&#34;}]`
      * 
      */
-    private final @Nullable List<ConfigConfigurationRequestQueryParam> requestQueryParams;
+    private @Nullable List<ConfigConfigurationRequestQueryParam> requestQueryParams;
     /**
      * @return (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
      * 
      */
-    private final @Nullable List<String> verifyResponseCodes;
+    private @Nullable List<String> verifyResponseCodes;
     /**
      * @return (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
      * 
      */
-    private final @Nullable String verifyResponseContent;
+    private @Nullable String verifyResponseContent;
     /**
      * @return (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
      * 
      */
-    private final @Nullable List<ConfigConfigurationVerifyText> verifyTexts;
+    private @Nullable List<ConfigConfigurationVerifyText> verifyTexts;
 
-    @CustomType.Constructor
-    private ConfigConfiguration(
-        @CustomType.Parameter("configType") @Nullable String configType,
-        @CustomType.Parameter("dnsConfiguration") @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration,
-        @CustomType.Parameter("isCertificateValidationEnabled") @Nullable Boolean isCertificateValidationEnabled,
-        @CustomType.Parameter("isFailureRetried") @Nullable Boolean isFailureRetried,
-        @CustomType.Parameter("isRedirectionEnabled") @Nullable Boolean isRedirectionEnabled,
-        @CustomType.Parameter("networkConfiguration") @Nullable ConfigConfigurationNetworkConfiguration networkConfiguration,
-        @CustomType.Parameter("reqAuthenticationDetails") @Nullable ConfigConfigurationReqAuthenticationDetails reqAuthenticationDetails,
-        @CustomType.Parameter("reqAuthenticationScheme") @Nullable String reqAuthenticationScheme,
-        @CustomType.Parameter("requestHeaders") @Nullable List<ConfigConfigurationRequestHeader> requestHeaders,
-        @CustomType.Parameter("requestMethod") @Nullable String requestMethod,
-        @CustomType.Parameter("requestPostBody") @Nullable String requestPostBody,
-        @CustomType.Parameter("requestQueryParams") @Nullable List<ConfigConfigurationRequestQueryParam> requestQueryParams,
-        @CustomType.Parameter("verifyResponseCodes") @Nullable List<String> verifyResponseCodes,
-        @CustomType.Parameter("verifyResponseContent") @Nullable String verifyResponseContent,
-        @CustomType.Parameter("verifyTexts") @Nullable List<ConfigConfigurationVerifyText> verifyTexts) {
-        this.configType = configType;
-        this.dnsConfiguration = dnsConfiguration;
-        this.isCertificateValidationEnabled = isCertificateValidationEnabled;
-        this.isFailureRetried = isFailureRetried;
-        this.isRedirectionEnabled = isRedirectionEnabled;
-        this.networkConfiguration = networkConfiguration;
-        this.reqAuthenticationDetails = reqAuthenticationDetails;
-        this.reqAuthenticationScheme = reqAuthenticationScheme;
-        this.requestHeaders = requestHeaders;
-        this.requestMethod = requestMethod;
-        this.requestPostBody = requestPostBody;
-        this.requestQueryParams = requestQueryParams;
-        this.verifyResponseCodes = verifyResponseCodes;
-        this.verifyResponseContent = verifyResponseContent;
-        this.verifyTexts = verifyTexts;
-    }
-
+    private ConfigConfiguration() {}
     /**
      * @return (Updatable) Type of configuration.
      * 
@@ -242,7 +209,7 @@ public final class ConfigConfiguration {
     public static Builder builder(ConfigConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String configType;
         private @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration;
@@ -259,11 +226,7 @@ public final class ConfigConfiguration {
         private @Nullable List<String> verifyResponseCodes;
         private @Nullable String verifyResponseContent;
         private @Nullable List<ConfigConfigurationVerifyText> verifyTexts;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configType = defaults.configType;
@@ -283,38 +246,47 @@ public final class ConfigConfiguration {
     	      this.verifyTexts = defaults.verifyTexts;
         }
 
+        @CustomType.Setter
         public Builder configType(@Nullable String configType) {
             this.configType = configType;
             return this;
         }
+        @CustomType.Setter
         public Builder dnsConfiguration(@Nullable ConfigConfigurationDnsConfiguration dnsConfiguration) {
             this.dnsConfiguration = dnsConfiguration;
             return this;
         }
+        @CustomType.Setter
         public Builder isCertificateValidationEnabled(@Nullable Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = isCertificateValidationEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isFailureRetried(@Nullable Boolean isFailureRetried) {
             this.isFailureRetried = isFailureRetried;
             return this;
         }
+        @CustomType.Setter
         public Builder isRedirectionEnabled(@Nullable Boolean isRedirectionEnabled) {
             this.isRedirectionEnabled = isRedirectionEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder networkConfiguration(@Nullable ConfigConfigurationNetworkConfiguration networkConfiguration) {
             this.networkConfiguration = networkConfiguration;
             return this;
         }
+        @CustomType.Setter
         public Builder reqAuthenticationDetails(@Nullable ConfigConfigurationReqAuthenticationDetails reqAuthenticationDetails) {
             this.reqAuthenticationDetails = reqAuthenticationDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder reqAuthenticationScheme(@Nullable String reqAuthenticationScheme) {
             this.reqAuthenticationScheme = reqAuthenticationScheme;
             return this;
         }
+        @CustomType.Setter
         public Builder requestHeaders(@Nullable List<ConfigConfigurationRequestHeader> requestHeaders) {
             this.requestHeaders = requestHeaders;
             return this;
@@ -322,14 +294,17 @@ public final class ConfigConfiguration {
         public Builder requestHeaders(ConfigConfigurationRequestHeader... requestHeaders) {
             return requestHeaders(List.of(requestHeaders));
         }
+        @CustomType.Setter
         public Builder requestMethod(@Nullable String requestMethod) {
             this.requestMethod = requestMethod;
             return this;
         }
+        @CustomType.Setter
         public Builder requestPostBody(@Nullable String requestPostBody) {
             this.requestPostBody = requestPostBody;
             return this;
         }
+        @CustomType.Setter
         public Builder requestQueryParams(@Nullable List<ConfigConfigurationRequestQueryParam> requestQueryParams) {
             this.requestQueryParams = requestQueryParams;
             return this;
@@ -337,6 +312,7 @@ public final class ConfigConfiguration {
         public Builder requestQueryParams(ConfigConfigurationRequestQueryParam... requestQueryParams) {
             return requestQueryParams(List.of(requestQueryParams));
         }
+        @CustomType.Setter
         public Builder verifyResponseCodes(@Nullable List<String> verifyResponseCodes) {
             this.verifyResponseCodes = verifyResponseCodes;
             return this;
@@ -344,18 +320,37 @@ public final class ConfigConfiguration {
         public Builder verifyResponseCodes(String... verifyResponseCodes) {
             return verifyResponseCodes(List.of(verifyResponseCodes));
         }
+        @CustomType.Setter
         public Builder verifyResponseContent(@Nullable String verifyResponseContent) {
             this.verifyResponseContent = verifyResponseContent;
             return this;
         }
+        @CustomType.Setter
         public Builder verifyTexts(@Nullable List<ConfigConfigurationVerifyText> verifyTexts) {
             this.verifyTexts = verifyTexts;
             return this;
         }
         public Builder verifyTexts(ConfigConfigurationVerifyText... verifyTexts) {
             return verifyTexts(List.of(verifyTexts));
-        }        public ConfigConfiguration build() {
-            return new ConfigConfiguration(configType, dnsConfiguration, isCertificateValidationEnabled, isFailureRetried, isRedirectionEnabled, networkConfiguration, reqAuthenticationDetails, reqAuthenticationScheme, requestHeaders, requestMethod, requestPostBody, requestQueryParams, verifyResponseCodes, verifyResponseContent, verifyTexts);
+        }
+        public ConfigConfiguration build() {
+            final var o = new ConfigConfiguration();
+            o.configType = configType;
+            o.dnsConfiguration = dnsConfiguration;
+            o.isCertificateValidationEnabled = isCertificateValidationEnabled;
+            o.isFailureRetried = isFailureRetried;
+            o.isRedirectionEnabled = isRedirectionEnabled;
+            o.networkConfiguration = networkConfiguration;
+            o.reqAuthenticationDetails = reqAuthenticationDetails;
+            o.reqAuthenticationScheme = reqAuthenticationScheme;
+            o.requestHeaders = requestHeaders;
+            o.requestMethod = requestMethod;
+            o.requestPostBody = requestPostBody;
+            o.requestQueryParams = requestQueryParams;
+            o.verifyResponseCodes = verifyResponseCodes;
+            o.verifyResponseContent = verifyResponseContent;
+            o.verifyTexts = verifyTexts;
+            return o;
         }
     }
 }

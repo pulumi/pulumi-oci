@@ -17,49 +17,34 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySe
      * @return (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
      * 
      */
-    private final @Nullable List<String> allowedHttpMethods;
+    private @Nullable List<String> allowedHttpMethods;
     /**
      * @return (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
      * 
      */
-    private final @Nullable Integer maxHttpRequestHeaderLength;
+    private @Nullable Integer maxHttpRequestHeaderLength;
     /**
      * @return (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
      * 
      */
-    private final @Nullable Integer maxHttpRequestHeaders;
+    private @Nullable Integer maxHttpRequestHeaders;
     /**
      * @return (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
      * 
      */
-    private final @Nullable Integer maxNumberOfArguments;
+    private @Nullable Integer maxNumberOfArguments;
     /**
      * @return (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
      * 
      */
-    private final @Nullable Integer maxSingleArgumentLength;
+    private @Nullable Integer maxSingleArgumentLength;
     /**
      * @return (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
      * 
      */
-    private final @Nullable Integer maxTotalArgumentLength;
+    private @Nullable Integer maxTotalArgumentLength;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings(
-        @CustomType.Parameter("allowedHttpMethods") @Nullable List<String> allowedHttpMethods,
-        @CustomType.Parameter("maxHttpRequestHeaderLength") @Nullable Integer maxHttpRequestHeaderLength,
-        @CustomType.Parameter("maxHttpRequestHeaders") @Nullable Integer maxHttpRequestHeaders,
-        @CustomType.Parameter("maxNumberOfArguments") @Nullable Integer maxNumberOfArguments,
-        @CustomType.Parameter("maxSingleArgumentLength") @Nullable Integer maxSingleArgumentLength,
-        @CustomType.Parameter("maxTotalArgumentLength") @Nullable Integer maxTotalArgumentLength) {
-        this.allowedHttpMethods = allowedHttpMethods;
-        this.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
-        this.maxHttpRequestHeaders = maxHttpRequestHeaders;
-        this.maxNumberOfArguments = maxNumberOfArguments;
-        this.maxSingleArgumentLength = maxSingleArgumentLength;
-        this.maxTotalArgumentLength = maxTotalArgumentLength;
-    }
-
+    private AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings() {}
     /**
      * @return (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
      * 
@@ -110,7 +95,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySe
     public static Builder builder(AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> allowedHttpMethods;
         private @Nullable Integer maxHttpRequestHeaderLength;
@@ -118,11 +103,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySe
         private @Nullable Integer maxNumberOfArguments;
         private @Nullable Integer maxSingleArgumentLength;
         private @Nullable Integer maxTotalArgumentLength;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedHttpMethods = defaults.allowedHttpMethods;
@@ -133,6 +114,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySe
     	      this.maxTotalArgumentLength = defaults.maxTotalArgumentLength;
         }
 
+        @CustomType.Setter
         public Builder allowedHttpMethods(@Nullable List<String> allowedHttpMethods) {
             this.allowedHttpMethods = allowedHttpMethods;
             return this;
@@ -140,27 +122,40 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySe
         public Builder allowedHttpMethods(String... allowedHttpMethods) {
             return allowedHttpMethods(List.of(allowedHttpMethods));
         }
+        @CustomType.Setter
         public Builder maxHttpRequestHeaderLength(@Nullable Integer maxHttpRequestHeaderLength) {
             this.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
             return this;
         }
+        @CustomType.Setter
         public Builder maxHttpRequestHeaders(@Nullable Integer maxHttpRequestHeaders) {
             this.maxHttpRequestHeaders = maxHttpRequestHeaders;
             return this;
         }
+        @CustomType.Setter
         public Builder maxNumberOfArguments(@Nullable Integer maxNumberOfArguments) {
             this.maxNumberOfArguments = maxNumberOfArguments;
             return this;
         }
+        @CustomType.Setter
         public Builder maxSingleArgumentLength(@Nullable Integer maxSingleArgumentLength) {
             this.maxSingleArgumentLength = maxSingleArgumentLength;
             return this;
         }
+        @CustomType.Setter
         public Builder maxTotalArgumentLength(@Nullable Integer maxTotalArgumentLength) {
             this.maxTotalArgumentLength = maxTotalArgumentLength;
             return this;
-        }        public AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings build() {
-            return new AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings(allowedHttpMethods, maxHttpRequestHeaderLength, maxHttpRequestHeaders, maxNumberOfArguments, maxSingleArgumentLength, maxTotalArgumentLength);
+        }
+        public AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings build() {
+            final var o = new AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings();
+            o.allowedHttpMethods = allowedHttpMethods;
+            o.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
+            o.maxHttpRequestHeaders = maxHttpRequestHeaders;
+            o.maxNumberOfArguments = maxNumberOfArguments;
+            o.maxSingleArgumentLength = maxSingleArgumentLength;
+            o.maxTotalArgumentLength = maxTotalArgumentLength;
+            return o;
         }
     }
 }

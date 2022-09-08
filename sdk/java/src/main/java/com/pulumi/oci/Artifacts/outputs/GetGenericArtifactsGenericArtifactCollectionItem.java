@@ -11,98 +11,69 @@ import java.util.Objects;
 
 @CustomType
 public final class GetGenericArtifactsGenericArtifactCollectionItem {
-    private final String artifactId;
+    private String artifactId;
     /**
      * @return Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
      * 
      */
-    private final String artifactPath;
+    private String artifactPath;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return A filter to return the resources for the specified OCID.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A filter to return the artifacts only for the specified repository OCID.
      * 
      */
-    private final String repositoryId;
+    private String repositoryId;
     /**
      * @return Filter results by a specified SHA256 digest for the artifact.
      * 
      */
-    private final String sha256;
+    private String sha256;
     /**
      * @return The size of the artifact in bytes.
      * 
      */
-    private final String sizeInBytes;
+    private String sizeInBytes;
     /**
      * @return A filter to return only resources that match the given lifecycle state name exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetGenericArtifactsGenericArtifactCollectionItem(
-        @CustomType.Parameter("artifactId") String artifactId,
-        @CustomType.Parameter("artifactPath") String artifactPath,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("sha256") String sha256,
-        @CustomType.Parameter("sizeInBytes") String sizeInBytes,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("version") String version) {
-        this.artifactId = artifactId;
-        this.artifactPath = artifactPath;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.repositoryId = repositoryId;
-        this.sha256 = sha256;
-        this.sizeInBytes = sizeInBytes;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.version = version;
-    }
-
+    private GetGenericArtifactsGenericArtifactCollectionItem() {}
     public String artifactId() {
         return this.artifactId;
     }
@@ -198,7 +169,7 @@ public final class GetGenericArtifactsGenericArtifactCollectionItem {
     public static Builder builder(GetGenericArtifactsGenericArtifactCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String artifactId;
         private String artifactPath;
@@ -213,11 +184,7 @@ public final class GetGenericArtifactsGenericArtifactCollectionItem {
         private String state;
         private String timeCreated;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGenericArtifactsGenericArtifactCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.artifactId = defaults.artifactId;
@@ -235,59 +202,87 @@ public final class GetGenericArtifactsGenericArtifactCollectionItem {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder artifactId(String artifactId) {
             this.artifactId = Objects.requireNonNull(artifactId);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactPath(String artifactPath) {
             this.artifactPath = Objects.requireNonNull(artifactPath);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder sha256(String sha256) {
             this.sha256 = Objects.requireNonNull(sha256);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
             this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetGenericArtifactsGenericArtifactCollectionItem build() {
-            return new GetGenericArtifactsGenericArtifactCollectionItem(artifactId, artifactPath, compartmentId, definedTags, displayName, freeformTags, id, repositoryId, sha256, sizeInBytes, state, timeCreated, version);
+        }
+        public GetGenericArtifactsGenericArtifactCollectionItem build() {
+            final var o = new GetGenericArtifactsGenericArtifactCollectionItem();
+            o.artifactId = artifactId;
+            o.artifactPath = artifactPath;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.repositoryId = repositoryId;
+            o.sha256 = sha256;
+            o.sizeInBytes = sizeInBytes;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.version = version;
+            return o;
         }
     }
 }

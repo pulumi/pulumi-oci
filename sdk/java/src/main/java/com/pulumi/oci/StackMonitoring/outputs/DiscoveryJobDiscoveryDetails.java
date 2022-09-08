@@ -18,49 +18,34 @@ public final class DiscoveryJobDiscoveryDetails {
      * @return The OCID of Management Agent
      * 
      */
-    private final String agentId;
+    private String agentId;
     /**
      * @return List of DiscoveryJob Credential Details.
      * 
      */
-    private final @Nullable DiscoveryJobDiscoveryDetailsCredentials credentials;
+    private @Nullable DiscoveryJobDiscoveryDetailsCredentials credentials;
     /**
      * @return Property Details
      * 
      */
-    private final DiscoveryJobDiscoveryDetailsProperties properties;
+    private DiscoveryJobDiscoveryDetailsProperties properties;
     /**
      * @return The Name of resource type
      * 
      */
-    private final String resourceName;
+    private String resourceName;
     /**
      * @return Resource Type.
      * 
      */
-    private final String resourceType;
+    private String resourceType;
     /**
      * @return Property Details
      * 
      */
-    private final @Nullable DiscoveryJobDiscoveryDetailsTags tags;
+    private @Nullable DiscoveryJobDiscoveryDetailsTags tags;
 
-    @CustomType.Constructor
-    private DiscoveryJobDiscoveryDetails(
-        @CustomType.Parameter("agentId") String agentId,
-        @CustomType.Parameter("credentials") @Nullable DiscoveryJobDiscoveryDetailsCredentials credentials,
-        @CustomType.Parameter("properties") DiscoveryJobDiscoveryDetailsProperties properties,
-        @CustomType.Parameter("resourceName") String resourceName,
-        @CustomType.Parameter("resourceType") String resourceType,
-        @CustomType.Parameter("tags") @Nullable DiscoveryJobDiscoveryDetailsTags tags) {
-        this.agentId = agentId;
-        this.credentials = credentials;
-        this.properties = properties;
-        this.resourceName = resourceName;
-        this.resourceType = resourceType;
-        this.tags = tags;
-    }
-
+    private DiscoveryJobDiscoveryDetails() {}
     /**
      * @return The OCID of Management Agent
      * 
@@ -111,7 +96,7 @@ public final class DiscoveryJobDiscoveryDetails {
     public static Builder builder(DiscoveryJobDiscoveryDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String agentId;
         private @Nullable DiscoveryJobDiscoveryDetailsCredentials credentials;
@@ -119,11 +104,7 @@ public final class DiscoveryJobDiscoveryDetails {
         private String resourceName;
         private String resourceType;
         private @Nullable DiscoveryJobDiscoveryDetailsTags tags;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DiscoveryJobDiscoveryDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.agentId = defaults.agentId;
@@ -134,31 +115,45 @@ public final class DiscoveryJobDiscoveryDetails {
     	      this.tags = defaults.tags;
         }
 
+        @CustomType.Setter
         public Builder agentId(String agentId) {
             this.agentId = Objects.requireNonNull(agentId);
             return this;
         }
+        @CustomType.Setter
         public Builder credentials(@Nullable DiscoveryJobDiscoveryDetailsCredentials credentials) {
             this.credentials = credentials;
             return this;
         }
+        @CustomType.Setter
         public Builder properties(DiscoveryJobDiscoveryDetailsProperties properties) {
             this.properties = Objects.requireNonNull(properties);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(String resourceName) {
             this.resourceName = Objects.requireNonNull(resourceName);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceType(String resourceType) {
             this.resourceType = Objects.requireNonNull(resourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder tags(@Nullable DiscoveryJobDiscoveryDetailsTags tags) {
             this.tags = tags;
             return this;
-        }        public DiscoveryJobDiscoveryDetails build() {
-            return new DiscoveryJobDiscoveryDetails(agentId, credentials, properties, resourceName, resourceType, tags);
+        }
+        public DiscoveryJobDiscoveryDetails build() {
+            final var o = new DiscoveryJobDiscoveryDetails();
+            o.agentId = agentId;
+            o.credentials = credentials;
+            o.properties = properties;
+            o.resourceName = resourceName;
+            o.resourceType = resourceType;
+            o.tags = tags;
+            return o;
         }
     }
 }

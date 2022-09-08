@@ -14,21 +14,14 @@ public final class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionI
      * @return The number of job executions of a particular status.
      * 
      */
-    private final Integer count;
+    private Integer count;
     /**
      * @return The status of the job execution.
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("status") String status) {
-        this.count = count;
-        this.status = status;
-    }
-
+    private GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem() {}
     /**
      * @return The number of job executions of a particular status.
      * 
@@ -51,30 +44,32 @@ public final class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionI
     public static Builder builder(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem build() {
-            return new GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem(count, status);
+        }
+        public GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem build() {
+            final var o = new GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem();
+            o.count = count;
+            o.status = status;
+            return o;
         }
     }
 }

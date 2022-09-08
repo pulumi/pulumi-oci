@@ -16,21 +16,14 @@ public final class ListenerConnectionConfiguration {
      * @return (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
      * 
      */
-    private final @Nullable Integer backendTcpProxyProtocolVersion;
+    private @Nullable Integer backendTcpProxyProtocolVersion;
     /**
      * @return (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
      * 
      */
-    private final String idleTimeoutInSeconds;
+    private String idleTimeoutInSeconds;
 
-    @CustomType.Constructor
-    private ListenerConnectionConfiguration(
-        @CustomType.Parameter("backendTcpProxyProtocolVersion") @Nullable Integer backendTcpProxyProtocolVersion,
-        @CustomType.Parameter("idleTimeoutInSeconds") String idleTimeoutInSeconds) {
-        this.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
-        this.idleTimeoutInSeconds = idleTimeoutInSeconds;
-    }
-
+    private ListenerConnectionConfiguration() {}
     /**
      * @return (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
      * 
@@ -53,30 +46,32 @@ public final class ListenerConnectionConfiguration {
     public static Builder builder(ListenerConnectionConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer backendTcpProxyProtocolVersion;
         private String idleTimeoutInSeconds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ListenerConnectionConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendTcpProxyProtocolVersion = defaults.backendTcpProxyProtocolVersion;
     	      this.idleTimeoutInSeconds = defaults.idleTimeoutInSeconds;
         }
 
+        @CustomType.Setter
         public Builder backendTcpProxyProtocolVersion(@Nullable Integer backendTcpProxyProtocolVersion) {
             this.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder idleTimeoutInSeconds(String idleTimeoutInSeconds) {
             this.idleTimeoutInSeconds = Objects.requireNonNull(idleTimeoutInSeconds);
             return this;
-        }        public ListenerConnectionConfiguration build() {
-            return new ListenerConnectionConfiguration(backendTcpProxyProtocolVersion, idleTimeoutInSeconds);
+        }
+        public ListenerConnectionConfiguration build() {
+            final var o = new ListenerConnectionConfiguration();
+            o.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
+            o.idleTimeoutInSeconds = idleTimeoutInSeconds;
+            return o;
         }
     }
 }

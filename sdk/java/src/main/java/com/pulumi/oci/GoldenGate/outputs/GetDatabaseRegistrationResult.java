@@ -15,184 +15,127 @@ public final class GetDatabaseRegistrationResult {
      * @return Credential store alias.
      * 
      */
-    private final String aliasName;
+    private String aliasName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
      * 
      */
-    private final String connectionString;
+    private String connectionString;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      * 
      */
-    private final String databaseId;
-    private final String databaseRegistrationId;
+    private String databaseId;
+    private String databaseRegistrationId;
     /**
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Metadata about this specific object.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return An object&#39;s Display Name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
-    private final String fqdn;
+    private String fqdn;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The private IP address in the customer&#39;s VCN of the customer&#39;s endpoint, typically a database.
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer &#34;Master&#34; key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
      * 
      */
-    private final String keyId;
+    private String keyId;
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private final String lifecycleDetails;
-    private final String password;
+    private String lifecycleDetails;
+    private String password;
     /**
      * @return A Private Endpoint IP Address created in the customer&#39;s subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
      * 
      */
-    private final String rcePrivateIp;
+    private String rcePrivateIp;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
      * 
      */
-    private final String secretCompartmentId;
+    private String secretCompartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
      * 
      */
-    private final String secretId;
+    private String secretId;
     /**
      * @return The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
-    private final String sessionMode;
+    private String sessionMode;
     /**
      * @return Possible lifecycle states.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
      * 
      */
-    private final String username;
+    private String username;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
      * 
      */
-    private final String vaultId;
-    private final String wallet;
+    private String vaultId;
+    private String wallet;
 
-    @CustomType.Constructor
-    private GetDatabaseRegistrationResult(
-        @CustomType.Parameter("aliasName") String aliasName,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectionString") String connectionString,
-        @CustomType.Parameter("databaseId") String databaseId,
-        @CustomType.Parameter("databaseRegistrationId") String databaseRegistrationId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("fqdn") String fqdn,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("keyId") String keyId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("rcePrivateIp") String rcePrivateIp,
-        @CustomType.Parameter("secretCompartmentId") String secretCompartmentId,
-        @CustomType.Parameter("secretId") String secretId,
-        @CustomType.Parameter("sessionMode") String sessionMode,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("username") String username,
-        @CustomType.Parameter("vaultId") String vaultId,
-        @CustomType.Parameter("wallet") String wallet) {
-        this.aliasName = aliasName;
-        this.compartmentId = compartmentId;
-        this.connectionString = connectionString;
-        this.databaseId = databaseId;
-        this.databaseRegistrationId = databaseRegistrationId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.fqdn = fqdn;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.ipAddress = ipAddress;
-        this.keyId = keyId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.password = password;
-        this.rcePrivateIp = rcePrivateIp;
-        this.secretCompartmentId = secretCompartmentId;
-        this.secretId = secretId;
-        this.sessionMode = sessionMode;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.username = username;
-        this.vaultId = vaultId;
-        this.wallet = wallet;
-    }
-
+    private GetDatabaseRegistrationResult() {}
     /**
      * @return Credential store alias.
      * 
@@ -378,7 +321,7 @@ public final class GetDatabaseRegistrationResult {
     public static Builder builder(GetDatabaseRegistrationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String aliasName;
         private String compartmentId;
@@ -407,11 +350,7 @@ public final class GetDatabaseRegistrationResult {
         private String username;
         private String vaultId;
         private String wallet;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseRegistrationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aliasName = defaults.aliasName;
@@ -443,115 +382,171 @@ public final class GetDatabaseRegistrationResult {
     	      this.wallet = defaults.wallet;
         }
 
+        @CustomType.Setter
         public Builder aliasName(String aliasName) {
             this.aliasName = Objects.requireNonNull(aliasName);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionString(String connectionString) {
             this.connectionString = Objects.requireNonNull(connectionString);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseId(String databaseId) {
             this.databaseId = Objects.requireNonNull(databaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseRegistrationId(String databaseRegistrationId) {
             this.databaseRegistrationId = Objects.requireNonNull(databaseRegistrationId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder fqdn(String fqdn) {
             this.fqdn = Objects.requireNonNull(fqdn);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder keyId(String keyId) {
             this.keyId = Objects.requireNonNull(keyId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder rcePrivateIp(String rcePrivateIp) {
             this.rcePrivateIp = Objects.requireNonNull(rcePrivateIp);
             return this;
         }
+        @CustomType.Setter
         public Builder secretCompartmentId(String secretCompartmentId) {
             this.secretCompartmentId = Objects.requireNonNull(secretCompartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder secretId(String secretId) {
             this.secretId = Objects.requireNonNull(secretId);
             return this;
         }
+        @CustomType.Setter
         public Builder sessionMode(String sessionMode) {
             this.sessionMode = Objects.requireNonNull(sessionMode);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder username(String username) {
             this.username = Objects.requireNonNull(username);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
         }
+        @CustomType.Setter
         public Builder wallet(String wallet) {
             this.wallet = Objects.requireNonNull(wallet);
             return this;
-        }        public GetDatabaseRegistrationResult build() {
-            return new GetDatabaseRegistrationResult(aliasName, compartmentId, connectionString, databaseId, databaseRegistrationId, definedTags, description, displayName, fqdn, freeformTags, id, ipAddress, keyId, lifecycleDetails, password, rcePrivateIp, secretCompartmentId, secretId, sessionMode, state, subnetId, systemTags, timeCreated, timeUpdated, username, vaultId, wallet);
+        }
+        public GetDatabaseRegistrationResult build() {
+            final var o = new GetDatabaseRegistrationResult();
+            o.aliasName = aliasName;
+            o.compartmentId = compartmentId;
+            o.connectionString = connectionString;
+            o.databaseId = databaseId;
+            o.databaseRegistrationId = databaseRegistrationId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.fqdn = fqdn;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.ipAddress = ipAddress;
+            o.keyId = keyId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.password = password;
+            o.rcePrivateIp = rcePrivateIp;
+            o.secretCompartmentId = secretCompartmentId;
+            o.secretId = secretId;
+            o.sessionMode = sessionMode;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.username = username;
+            o.vaultId = vaultId;
+            o.wallet = wallet;
+            return o;
         }
     }
 }

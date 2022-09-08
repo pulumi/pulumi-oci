@@ -15,21 +15,14 @@ public final class ConfigConfigurationReqAuthenticationDetailsAuthHeader {
      * @return (Updatable) Name of the header.
      * 
      */
-    private final @Nullable String headerName;
+    private @Nullable String headerName;
     /**
      * @return (Updatable) Value of the header.
      * 
      */
-    private final @Nullable String headerValue;
+    private @Nullable String headerValue;
 
-    @CustomType.Constructor
-    private ConfigConfigurationReqAuthenticationDetailsAuthHeader(
-        @CustomType.Parameter("headerName") @Nullable String headerName,
-        @CustomType.Parameter("headerValue") @Nullable String headerValue) {
-        this.headerName = headerName;
-        this.headerValue = headerValue;
-    }
-
+    private ConfigConfigurationReqAuthenticationDetailsAuthHeader() {}
     /**
      * @return (Updatable) Name of the header.
      * 
@@ -52,30 +45,32 @@ public final class ConfigConfigurationReqAuthenticationDetailsAuthHeader {
     public static Builder builder(ConfigConfigurationReqAuthenticationDetailsAuthHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String headerName;
         private @Nullable String headerValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigConfigurationReqAuthenticationDetailsAuthHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.headerName = defaults.headerName;
     	      this.headerValue = defaults.headerValue;
         }
 
+        @CustomType.Setter
         public Builder headerName(@Nullable String headerName) {
             this.headerName = headerName;
             return this;
         }
+        @CustomType.Setter
         public Builder headerValue(@Nullable String headerValue) {
             this.headerValue = headerValue;
             return this;
-        }        public ConfigConfigurationReqAuthenticationDetailsAuthHeader build() {
-            return new ConfigConfigurationReqAuthenticationDetailsAuthHeader(headerName, headerValue);
+        }
+        public ConfigConfigurationReqAuthenticationDetailsAuthHeader build() {
+            final var o = new ConfigConfigurationReqAuthenticationDetailsAuthHeader();
+            o.headerName = headerName;
+            o.headerValue = headerValue;
+            return o;
         }
     }
 }

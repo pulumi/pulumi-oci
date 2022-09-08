@@ -15,63 +15,44 @@ public final class ManagedDatabaseGroupManagedDatabase {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      * 
      */
-    private final @Nullable String databaseSubType;
+    private @Nullable String databaseSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private final @Nullable String databaseType;
+    private @Nullable String databaseType;
     /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
-    private final @Nullable String deploymentType;
+    private @Nullable String deploymentType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and &#34;_&#34;. The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The date and time the Managed Database was added to the group.
      * 
      */
-    private final @Nullable String timeAdded;
+    private @Nullable String timeAdded;
     /**
      * @return The workload type of the Autonomous Database.
      * 
      */
-    private final @Nullable String workloadType;
+    private @Nullable String workloadType;
 
-    @CustomType.Constructor
-    private ManagedDatabaseGroupManagedDatabase(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("databaseSubType") @Nullable String databaseSubType,
-        @CustomType.Parameter("databaseType") @Nullable String databaseType,
-        @CustomType.Parameter("deploymentType") @Nullable String deploymentType,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("timeAdded") @Nullable String timeAdded,
-        @CustomType.Parameter("workloadType") @Nullable String workloadType) {
-        this.compartmentId = compartmentId;
-        this.databaseSubType = databaseSubType;
-        this.databaseType = databaseType;
-        this.deploymentType = deploymentType;
-        this.id = id;
-        this.name = name;
-        this.timeAdded = timeAdded;
-        this.workloadType = workloadType;
-    }
-
+    private ManagedDatabaseGroupManagedDatabase() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      * 
@@ -136,7 +117,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
     public static Builder builder(ManagedDatabaseGroupManagedDatabase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String databaseSubType;
@@ -146,11 +127,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
         private @Nullable String name;
         private @Nullable String timeAdded;
         private @Nullable String workloadType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ManagedDatabaseGroupManagedDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -163,39 +140,57 @@ public final class ManagedDatabaseGroupManagedDatabase {
     	      this.workloadType = defaults.workloadType;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSubType(@Nullable String databaseSubType) {
             this.databaseSubType = databaseSubType;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseType(@Nullable String databaseType) {
             this.databaseType = databaseType;
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentType(@Nullable String deploymentType) {
             this.deploymentType = deploymentType;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder timeAdded(@Nullable String timeAdded) {
             this.timeAdded = timeAdded;
             return this;
         }
+        @CustomType.Setter
         public Builder workloadType(@Nullable String workloadType) {
             this.workloadType = workloadType;
             return this;
-        }        public ManagedDatabaseGroupManagedDatabase build() {
-            return new ManagedDatabaseGroupManagedDatabase(compartmentId, databaseSubType, databaseType, deploymentType, id, name, timeAdded, workloadType);
+        }
+        public ManagedDatabaseGroupManagedDatabase build() {
+            final var o = new ManagedDatabaseGroupManagedDatabase();
+            o.compartmentId = compartmentId;
+            o.databaseSubType = databaseSubType;
+            o.databaseType = databaseType;
+            o.deploymentType = deploymentType;
+            o.id = id;
+            o.name = name;
+            o.timeAdded = timeAdded;
+            o.workloadType = workloadType;
+            return o;
         }
     }
 }

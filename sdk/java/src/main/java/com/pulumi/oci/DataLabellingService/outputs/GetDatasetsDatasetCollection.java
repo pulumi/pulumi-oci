@@ -14,13 +14,9 @@ public final class GetDatasetsDatasetCollection {
      * @return An ordered collection of labels that are unique by name.
      * 
      */
-    private final List<GetDatasetsDatasetCollectionItem> items;
+    private List<GetDatasetsDatasetCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDatasetsDatasetCollection(@CustomType.Parameter("items") List<GetDatasetsDatasetCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDatasetsDatasetCollection() {}
     /**
      * @return An ordered collection of labels that are unique by name.
      * 
@@ -36,27 +32,27 @@ public final class GetDatasetsDatasetCollection {
     public static Builder builder(GetDatasetsDatasetCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDatasetsDatasetCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatasetsDatasetCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDatasetsDatasetCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDatasetsDatasetCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDatasetsDatasetCollection build() {
-            return new GetDatasetsDatasetCollection(items);
+        }
+        public GetDatasetsDatasetCollection build() {
+            final var o = new GetDatasetsDatasetCollection();
+            o.items = items;
+            return o;
         }
     }
 }

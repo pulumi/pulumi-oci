@@ -13,35 +13,24 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseKey
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private final String kmsKeyVersionId;
+    private String kmsKeyVersionId;
     /**
      * @return The date and time the kms key activated.
      * 
      */
-    private final String timeActivated;
+    private String timeActivated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final String vaultId;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("kmsKeyVersionId") String kmsKeyVersionId,
-        @CustomType.Parameter("timeActivated") String timeActivated,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.id = id;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.timeActivated = timeActivated;
-        this.vaultId = vaultId;
-    }
-
+    private GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry() {}
     /**
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
@@ -78,17 +67,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseKey
     public static Builder builder(GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String kmsKeyVersionId;
         private String timeActivated;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -97,23 +82,33 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseKey
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeActivated(String timeActivated) {
             this.timeActivated = Objects.requireNonNull(timeActivated);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry build() {
-            return new GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry(id, kmsKeyVersionId, timeActivated, vaultId);
+        }
+        public GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry build() {
+            final var o = new GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry();
+            o.id = id;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.timeActivated = timeActivated;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

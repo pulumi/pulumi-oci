@@ -14,70 +14,49 @@ public final class GetLimitDefinitionsLimitDefinition {
      * @return If true, quota policies can be created on top of this resource limit.
      * 
      */
-    private final Boolean areQuotasSupported;
+    private Boolean areQuotasSupported;
     /**
      * @return The limit description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Indicates if the limit has been deprecated.
      * 
      */
-    private final Boolean isDeprecated;
+    private Boolean isDeprecated;
     /**
      * @return The limit for this resource has a dynamic value that is based on consumption across all Oracle Cloud Infrastructure services.
      * 
      */
-    private final Boolean isDynamic;
+    private Boolean isDynamic;
     /**
      * @return Indicates if the customer can request a limit increase for this resource.
      * 
      */
-    private final Boolean isEligibleForLimitIncrease;
+    private Boolean isEligibleForLimitIncrease;
     /**
      * @return Reflects whether or not the GetResourceAvailability API is supported for this limit. If not, the API returns an empty JSON response.
      * 
      */
-    private final Boolean isResourceAvailabilitySupported;
+    private Boolean isResourceAvailabilitySupported;
     /**
      * @return Optional field, filter for a specific resource limit.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
      * 
      */
-    private final String scopeType;
+    private String scopeType;
     /**
      * @return The target service name.
      * 
      */
-    private final String serviceName;
+    private String serviceName;
 
-    @CustomType.Constructor
-    private GetLimitDefinitionsLimitDefinition(
-        @CustomType.Parameter("areQuotasSupported") Boolean areQuotasSupported,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("isDeprecated") Boolean isDeprecated,
-        @CustomType.Parameter("isDynamic") Boolean isDynamic,
-        @CustomType.Parameter("isEligibleForLimitIncrease") Boolean isEligibleForLimitIncrease,
-        @CustomType.Parameter("isResourceAvailabilitySupported") Boolean isResourceAvailabilitySupported,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("scopeType") String scopeType,
-        @CustomType.Parameter("serviceName") String serviceName) {
-        this.areQuotasSupported = areQuotasSupported;
-        this.description = description;
-        this.isDeprecated = isDeprecated;
-        this.isDynamic = isDynamic;
-        this.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
-        this.isResourceAvailabilitySupported = isResourceAvailabilitySupported;
-        this.name = name;
-        this.scopeType = scopeType;
-        this.serviceName = serviceName;
-    }
-
+    private GetLimitDefinitionsLimitDefinition() {}
     /**
      * @return If true, quota policies can be created on top of this resource limit.
      * 
@@ -149,7 +128,7 @@ public final class GetLimitDefinitionsLimitDefinition {
     public static Builder builder(GetLimitDefinitionsLimitDefinition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean areQuotasSupported;
         private String description;
@@ -160,11 +139,7 @@ public final class GetLimitDefinitionsLimitDefinition {
         private String name;
         private String scopeType;
         private String serviceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLimitDefinitionsLimitDefinition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areQuotasSupported = defaults.areQuotasSupported;
@@ -178,43 +153,63 @@ public final class GetLimitDefinitionsLimitDefinition {
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
         public Builder areQuotasSupported(Boolean areQuotasSupported) {
             this.areQuotasSupported = Objects.requireNonNull(areQuotasSupported);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder isDeprecated(Boolean isDeprecated) {
             this.isDeprecated = Objects.requireNonNull(isDeprecated);
             return this;
         }
+        @CustomType.Setter
         public Builder isDynamic(Boolean isDynamic) {
             this.isDynamic = Objects.requireNonNull(isDynamic);
             return this;
         }
+        @CustomType.Setter
         public Builder isEligibleForLimitIncrease(Boolean isEligibleForLimitIncrease) {
             this.isEligibleForLimitIncrease = Objects.requireNonNull(isEligibleForLimitIncrease);
             return this;
         }
+        @CustomType.Setter
         public Builder isResourceAvailabilitySupported(Boolean isResourceAvailabilitySupported) {
             this.isResourceAvailabilitySupported = Objects.requireNonNull(isResourceAvailabilitySupported);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder scopeType(String scopeType) {
             this.scopeType = Objects.requireNonNull(scopeType);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(String serviceName) {
             this.serviceName = Objects.requireNonNull(serviceName);
             return this;
-        }        public GetLimitDefinitionsLimitDefinition build() {
-            return new GetLimitDefinitionsLimitDefinition(areQuotasSupported, description, isDeprecated, isDynamic, isEligibleForLimitIncrease, isResourceAvailabilitySupported, name, scopeType, serviceName);
+        }
+        public GetLimitDefinitionsLimitDefinition build() {
+            final var o = new GetLimitDefinitionsLimitDefinition();
+            o.areQuotasSupported = areQuotasSupported;
+            o.description = description;
+            o.isDeprecated = isDeprecated;
+            o.isDynamic = isDynamic;
+            o.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
+            o.isResourceAvailabilitySupported = isResourceAvailabilitySupported;
+            o.name = name;
+            o.scopeType = scopeType;
+            o.serviceName = serviceName;
+            return o;
         }
     }
 }

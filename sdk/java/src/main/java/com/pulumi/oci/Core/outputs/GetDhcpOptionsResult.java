@@ -18,52 +18,35 @@ public final class GetDhcpOptionsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the set of DHCP options.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDhcpOptionsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDhcpOptionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The collection of individual DHCP options.
      * 
      */
-    private final List<GetDhcpOptionsOption> options;
+    private List<GetDhcpOptionsOption> options;
     /**
      * @return The current state of the set of DHCP options.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the set of DHCP options belongs to.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetDhcpOptionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDhcpOptionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("options") List<GetDhcpOptionsOption> options,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.options = options;
-        this.state = state;
-        this.vcnId = vcnId;
-    }
-
+    private GetDhcpOptionsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the set of DHCP options.
      * 
@@ -117,7 +100,7 @@ public final class GetDhcpOptionsResult {
     public static Builder builder(GetDhcpOptionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetDhcpOptionsResult {
         private List<GetDhcpOptionsOption> options;
         private @Nullable String state;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDhcpOptionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetDhcpOptionsResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDhcpOptionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,10 +139,12 @@ public final class GetDhcpOptionsResult {
         public Builder filters(GetDhcpOptionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder options(List<GetDhcpOptionsOption> options) {
             this.options = Objects.requireNonNull(options);
             return this;
@@ -168,15 +152,26 @@ public final class GetDhcpOptionsResult {
         public Builder options(GetDhcpOptionsOption... options) {
             return options(List.of(options));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetDhcpOptionsResult build() {
-            return new GetDhcpOptionsResult(compartmentId, displayName, filters, id, options, state, vcnId);
+        }
+        public GetDhcpOptionsResult build() {
+            final var o = new GetDhcpOptionsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.options = options;
+            o.state = state;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

@@ -14,45 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningSetsResult {
-    private final @Nullable List<GetManagedDatabaseSqlTuningSetsFilter> filters;
+    private @Nullable List<GetManagedDatabaseSqlTuningSetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    private final String managedDatabaseId;
-    private final @Nullable String nameContains;
+    private String managedDatabaseId;
+    private @Nullable String nameContains;
     /**
      * @return The owner of the SQL tuning set.
      * 
      */
-    private final @Nullable String owner;
+    private @Nullable String owner;
     /**
      * @return The list of sql_tuning_set_collection.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection> sqlTuningSetCollections;
+    private List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection> sqlTuningSetCollections;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningSetsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseSqlTuningSetsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("nameContains") @Nullable String nameContains,
-        @CustomType.Parameter("owner") @Nullable String owner,
-        @CustomType.Parameter("sqlTuningSetCollections") List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection> sqlTuningSetCollections) {
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.nameContains = nameContains;
-        this.owner = owner;
-        this.sqlTuningSetCollections = sqlTuningSetCollections;
-    }
-
+    private GetManagedDatabaseSqlTuningSetsResult() {}
     public List<GetManagedDatabaseSqlTuningSetsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -95,7 +80,7 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
     public static Builder builder(GetManagedDatabaseSqlTuningSetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseSqlTuningSetsFilter> filters;
         private String id;
@@ -103,11 +88,7 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
         private @Nullable String nameContains;
         private @Nullable String owner;
         private List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection> sqlTuningSetCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningSetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -118,6 +99,7 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
     	      this.sqlTuningSetCollections = defaults.sqlTuningSetCollections;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseSqlTuningSetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -125,30 +107,43 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
         public Builder filters(GetManagedDatabaseSqlTuningSetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
             this.nameContains = nameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder owner(@Nullable String owner) {
             this.owner = owner;
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningSetCollections(List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection> sqlTuningSetCollections) {
             this.sqlTuningSetCollections = Objects.requireNonNull(sqlTuningSetCollections);
             return this;
         }
         public Builder sqlTuningSetCollections(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection... sqlTuningSetCollections) {
             return sqlTuningSetCollections(List.of(sqlTuningSetCollections));
-        }        public GetManagedDatabaseSqlTuningSetsResult build() {
-            return new GetManagedDatabaseSqlTuningSetsResult(filters, id, managedDatabaseId, nameContains, owner, sqlTuningSetCollections);
+        }
+        public GetManagedDatabaseSqlTuningSetsResult build() {
+            final var o = new GetManagedDatabaseSqlTuningSetsResult();
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.nameContains = nameContains;
+            o.owner = owner;
+            o.sqlTuningSetCollections = sqlTuningSetCollections;
+            return o;
         }
     }
 }

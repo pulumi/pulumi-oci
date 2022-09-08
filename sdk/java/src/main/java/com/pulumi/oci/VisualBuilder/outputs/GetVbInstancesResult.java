@@ -18,45 +18,30 @@ public final class GetVbInstancesResult {
      * @return Compartment Identifier.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Vb Instance Identifier, can be renamed.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetVbInstancesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetVbInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the vb instance.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of vb_instance_summary_collection.
      * 
      */
-    private final List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections;
+    private List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections;
 
-    @CustomType.Constructor
-    private GetVbInstancesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetVbInstancesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vbInstanceSummaryCollections") List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.vbInstanceSummaryCollections = vbInstanceSummaryCollections;
-    }
-
+    private GetVbInstancesResult() {}
     /**
      * @return Compartment Identifier.
      * 
@@ -103,7 +88,7 @@ public final class GetVbInstancesResult {
     public static Builder builder(GetVbInstancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetVbInstancesResult {
         private String id;
         private @Nullable String state;
         private List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVbInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetVbInstancesResult {
     	      this.vbInstanceSummaryCollections = defaults.vbInstanceSummaryCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVbInstancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,22 +125,33 @@ public final class GetVbInstancesResult {
         public Builder filters(GetVbInstancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vbInstanceSummaryCollections(List<GetVbInstancesVbInstanceSummaryCollection> vbInstanceSummaryCollections) {
             this.vbInstanceSummaryCollections = Objects.requireNonNull(vbInstanceSummaryCollections);
             return this;
         }
         public Builder vbInstanceSummaryCollections(GetVbInstancesVbInstanceSummaryCollection... vbInstanceSummaryCollections) {
             return vbInstanceSummaryCollections(List.of(vbInstanceSummaryCollections));
-        }        public GetVbInstancesResult build() {
-            return new GetVbInstancesResult(compartmentId, displayName, filters, id, state, vbInstanceSummaryCollections);
+        }
+        public GetVbInstancesResult build() {
+            final var o = new GetVbInstancesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.vbInstanceSummaryCollections = vbInstanceSummaryCollections;
+            return o;
         }
     }
 }

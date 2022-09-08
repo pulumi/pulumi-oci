@@ -6,6 +6,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleDetailsConfigurationArgs;
+import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -46,6 +47,51 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
      */
     public Optional<Output<List<DetectorRecipeDetectorRuleDetailsConfigurationArgs>>> configurations() {
         return Optional.ofNullable(this.configurations);
+    }
+
+    /**
+     * (Updatable) The id of the attached DataSource.
+     * 
+     */
+    @Import(name="dataSourceId")
+    private @Nullable Output<String> dataSourceId;
+
+    /**
+     * @return (Updatable) The id of the attached DataSource.
+     * 
+     */
+    public Optional<Output<String>> dataSourceId() {
+        return Optional.ofNullable(this.dataSourceId);
+    }
+
+    /**
+     * (Updatable) Description for DetectorRecipeDetectorRule.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
+     * (Updatable) Data Source entities mapping for a Detector Rule
+     * 
+     */
+    @Import(name="entitiesMappings")
+    private @Nullable Output<List<DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs>> entitiesMappings;
+
+    /**
+     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * 
+     */
+    public Optional<Output<List<DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs>>> entitiesMappings() {
+        return Optional.ofNullable(this.entitiesMappings);
     }
 
     /**
@@ -94,6 +140,21 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     }
 
     /**
+     * (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * 
+     */
+    @Import(name="recommendation")
+    private @Nullable Output<String> recommendation;
+
+    /**
+     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * 
+     */
+    public Optional<Output<String>> recommendation() {
+        return Optional.ofNullable(this.recommendation);
+    }
+
+    /**
      * (Updatable) The Risk Level
      * 
      */
@@ -113,9 +174,13 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     private DetectorRecipeDetectorRuleDetailsArgs(DetectorRecipeDetectorRuleDetailsArgs $) {
         this.condition = $.condition;
         this.configurations = $.configurations;
+        this.dataSourceId = $.dataSourceId;
+        this.description = $.description;
+        this.entitiesMappings = $.entitiesMappings;
         this.isConfigurationAllowed = $.isConfigurationAllowed;
         this.isEnabled = $.isEnabled;
         this.labels = $.labels;
+        this.recommendation = $.recommendation;
         this.riskLevel = $.riskLevel;
     }
 
@@ -190,6 +255,79 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
+         * @param dataSourceId (Updatable) The id of the attached DataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceId(@Nullable Output<String> dataSourceId) {
+            $.dataSourceId = dataSourceId;
+            return this;
+        }
+
+        /**
+         * @param dataSourceId (Updatable) The id of the attached DataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceId(String dataSourceId) {
+            return dataSourceId(Output.of(dataSourceId));
+        }
+
+        /**
+         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
+        }
+
+        /**
+         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(@Nullable Output<List<DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs>> entitiesMappings) {
+            $.entitiesMappings = entitiesMappings;
+            return this;
+        }
+
+        /**
+         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(List<DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs> entitiesMappings) {
+            return entitiesMappings(Output.of(entitiesMappings));
+        }
+
+        /**
+         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs... entitiesMappings) {
+            return entitiesMappings(List.of(entitiesMappings));
+        }
+
+        /**
          * @param isConfigurationAllowed configuration allowed or not
          * 
          * @return builder
@@ -260,6 +398,27 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
          */
         public Builder labels(String... labels) {
             return labels(List.of(labels));
+        }
+
+        /**
+         * @param recommendation (Updatable) Recommendation for DetectorRecipeDetectorRule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recommendation(@Nullable Output<String> recommendation) {
+            $.recommendation = recommendation;
+            return this;
+        }
+
+        /**
+         * @param recommendation (Updatable) Recommendation for DetectorRecipeDetectorRule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recommendation(String recommendation) {
+            return recommendation(Output.of(recommendation));
         }
 
         /**

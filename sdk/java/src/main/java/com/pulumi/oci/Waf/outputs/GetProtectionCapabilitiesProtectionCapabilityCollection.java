@@ -14,13 +14,9 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollection {
      * @return List of protection capabilities.
      * 
      */
-    private final List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items;
+    private List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetProtectionCapabilitiesProtectionCapabilityCollection(@CustomType.Parameter("items") List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetProtectionCapabilitiesProtectionCapabilityCollection() {}
     /**
      * @return List of protection capabilities.
      * 
@@ -36,27 +32,27 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollection {
     public static Builder builder(GetProtectionCapabilitiesProtectionCapabilityCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProtectionCapabilitiesProtectionCapabilityCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetProtectionCapabilitiesProtectionCapabilityCollectionItem... items) {
             return items(List.of(items));
-        }        public GetProtectionCapabilitiesProtectionCapabilityCollection build() {
-            return new GetProtectionCapabilitiesProtectionCapabilityCollection(items);
+        }
+        public GetProtectionCapabilitiesProtectionCapabilityCollection build() {
+            final var o = new GetProtectionCapabilitiesProtectionCapabilityCollection();
+            o.items = items;
+            return o;
         }
     }
 }

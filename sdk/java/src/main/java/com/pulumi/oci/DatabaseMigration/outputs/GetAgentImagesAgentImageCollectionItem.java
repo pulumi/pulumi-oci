@@ -13,21 +13,14 @@ public final class GetAgentImagesAgentImageCollectionItem {
      * @return URL to download Agent Image of the ODMS Agent.
      * 
      */
-    private final String downloadUrl;
+    private String downloadUrl;
     /**
      * @return ODMS Agent Image version.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetAgentImagesAgentImageCollectionItem(
-        @CustomType.Parameter("downloadUrl") String downloadUrl,
-        @CustomType.Parameter("version") String version) {
-        this.downloadUrl = downloadUrl;
-        this.version = version;
-    }
-
+    private GetAgentImagesAgentImageCollectionItem() {}
     /**
      * @return URL to download Agent Image of the ODMS Agent.
      * 
@@ -50,30 +43,32 @@ public final class GetAgentImagesAgentImageCollectionItem {
     public static Builder builder(GetAgentImagesAgentImageCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String downloadUrl;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAgentImagesAgentImageCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.downloadUrl = defaults.downloadUrl;
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder downloadUrl(String downloadUrl) {
             this.downloadUrl = Objects.requireNonNull(downloadUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetAgentImagesAgentImageCollectionItem build() {
-            return new GetAgentImagesAgentImageCollectionItem(downloadUrl, version);
+        }
+        public GetAgentImagesAgentImageCollectionItem build() {
+            final var o = new GetAgentImagesAgentImageCollectionItem();
+            o.downloadUrl = downloadUrl;
+            o.version = version;
+            return o;
         }
     }
 }

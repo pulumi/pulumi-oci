@@ -18,52 +18,35 @@ public final class GetVirtualServiceRouteTablesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetVirtualServiceRouteTablesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetVirtualServiceRouteTablesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the Resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the virtual service in which this virtual service route table is created.
      * 
      */
-    private final @Nullable String virtualServiceId;
+    private @Nullable String virtualServiceId;
     /**
      * @return The list of virtual_service_route_table_collection.
      * 
      */
-    private final List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections;
+    private List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections;
 
-    @CustomType.Constructor
-    private GetVirtualServiceRouteTablesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetVirtualServiceRouteTablesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("virtualServiceId") @Nullable String virtualServiceId,
-        @CustomType.Parameter("virtualServiceRouteTableCollections") List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-        this.virtualServiceId = virtualServiceId;
-        this.virtualServiceRouteTableCollections = virtualServiceRouteTableCollections;
-    }
-
+    private GetVirtualServiceRouteTablesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetVirtualServiceRouteTablesResult {
     public static Builder builder(GetVirtualServiceRouteTablesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetVirtualServiceRouteTablesFilter> filters;
@@ -126,11 +109,7 @@ public final class GetVirtualServiceRouteTablesResult {
         private @Nullable String state;
         private @Nullable String virtualServiceId;
         private List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualServiceRouteTablesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetVirtualServiceRouteTablesResult {
     	      this.virtualServiceRouteTableCollections = defaults.virtualServiceRouteTableCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualServiceRouteTablesFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,30 +134,44 @@ public final class GetVirtualServiceRouteTablesResult {
         public Builder filters(GetVirtualServiceRouteTablesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder virtualServiceId(@Nullable String virtualServiceId) {
             this.virtualServiceId = virtualServiceId;
             return this;
         }
+        @CustomType.Setter
         public Builder virtualServiceRouteTableCollections(List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections) {
             this.virtualServiceRouteTableCollections = Objects.requireNonNull(virtualServiceRouteTableCollections);
             return this;
         }
         public Builder virtualServiceRouteTableCollections(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection... virtualServiceRouteTableCollections) {
             return virtualServiceRouteTableCollections(List.of(virtualServiceRouteTableCollections));
-        }        public GetVirtualServiceRouteTablesResult build() {
-            return new GetVirtualServiceRouteTablesResult(compartmentId, filters, id, name, state, virtualServiceId, virtualServiceRouteTableCollections);
+        }
+        public GetVirtualServiceRouteTablesResult build() {
+            final var o = new GetVirtualServiceRouteTablesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            o.virtualServiceId = virtualServiceId;
+            o.virtualServiceRouteTableCollections = virtualServiceRouteTableCollections;
+            return o;
         }
     }
 }

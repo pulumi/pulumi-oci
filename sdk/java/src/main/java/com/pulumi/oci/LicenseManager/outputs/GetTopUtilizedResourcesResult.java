@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTopUtilizedResourcesResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isCompartmentIdInSubtree;
+    private String id;
+    private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return The top utilized resource summary collection.
      * 
      */
-    private final List<GetTopUtilizedResourcesItem> items;
-    private final @Nullable String resourceUnitType;
+    private List<GetTopUtilizedResourcesItem> items;
+    private @Nullable String resourceUnitType;
 
-    @CustomType.Constructor
-    private GetTopUtilizedResourcesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCompartmentIdInSubtree") @Nullable Boolean isCompartmentIdInSubtree,
-        @CustomType.Parameter("items") List<GetTopUtilizedResourcesItem> items,
-        @CustomType.Parameter("resourceUnitType") @Nullable String resourceUnitType) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-        this.items = items;
-        this.resourceUnitType = resourceUnitType;
-    }
-
+    private GetTopUtilizedResourcesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -73,18 +60,14 @@ public final class GetTopUtilizedResourcesResult {
     public static Builder builder(GetTopUtilizedResourcesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
         private List<GetTopUtilizedResourcesItem> items;
         private @Nullable String resourceUnitType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTopUtilizedResourcesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -94,18 +77,22 @@ public final class GetTopUtilizedResourcesResult {
     	      this.resourceUnitType = defaults.resourceUnitType;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetTopUtilizedResourcesItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -113,11 +100,19 @@ public final class GetTopUtilizedResourcesResult {
         public Builder items(GetTopUtilizedResourcesItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder resourceUnitType(@Nullable String resourceUnitType) {
             this.resourceUnitType = resourceUnitType;
             return this;
-        }        public GetTopUtilizedResourcesResult build() {
-            return new GetTopUtilizedResourcesResult(compartmentId, id, isCompartmentIdInSubtree, items, resourceUnitType);
+        }
+        public GetTopUtilizedResourcesResult build() {
+            final var o = new GetTopUtilizedResourcesResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            o.items = items;
+            o.resourceUnitType = resourceUnitType;
+            return o;
         }
     }
 }

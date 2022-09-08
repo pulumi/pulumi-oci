@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetByoipRangesByoipRangeCollection {
-    private final List<GetByoipRangesByoipRangeCollectionItem> items;
+    private List<GetByoipRangesByoipRangeCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetByoipRangesByoipRangeCollection(@CustomType.Parameter("items") List<GetByoipRangesByoipRangeCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetByoipRangesByoipRangeCollection() {}
     public List<GetByoipRangesByoipRangeCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetByoipRangesByoipRangeCollection {
     public static Builder builder(GetByoipRangesByoipRangeCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetByoipRangesByoipRangeCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetByoipRangesByoipRangeCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetByoipRangesByoipRangeCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetByoipRangesByoipRangeCollectionItem... items) {
             return items(List.of(items));
-        }        public GetByoipRangesByoipRangeCollection build() {
-            return new GetByoipRangesByoipRangeCollection(items);
+        }
+        public GetByoipRangesByoipRangeCollection build() {
+            final var o = new GetByoipRangesByoipRangeCollection();
+            o.items = items;
+            return o;
         }
     }
 }

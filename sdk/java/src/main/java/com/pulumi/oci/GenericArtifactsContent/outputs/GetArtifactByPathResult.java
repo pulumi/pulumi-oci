@@ -11,56 +11,23 @@ import java.util.Objects;
 
 @CustomType
 public final class GetArtifactByPathResult {
-    private final String artifactId;
-    private final String artifactPath;
-    private final String compartmentId;
-    private final String content;
-    private final Map<String,Object> definedTags;
-    private final String displayName;
-    private final Map<String,Object> freeformTags;
-    private final String id;
-    private final String repositoryId;
-    private final String sha256;
-    private final String sizeInBytes;
-    private final String source;
-    private final String state;
-    private final String timeCreated;
-    private final String version;
+    private String artifactId;
+    private String artifactPath;
+    private String compartmentId;
+    private String content;
+    private Map<String,Object> definedTags;
+    private String displayName;
+    private Map<String,Object> freeformTags;
+    private String id;
+    private String repositoryId;
+    private String sha256;
+    private String sizeInBytes;
+    private String source;
+    private String state;
+    private String timeCreated;
+    private String version;
 
-    @CustomType.Constructor
-    private GetArtifactByPathResult(
-        @CustomType.Parameter("artifactId") String artifactId,
-        @CustomType.Parameter("artifactPath") String artifactPath,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("sha256") String sha256,
-        @CustomType.Parameter("sizeInBytes") String sizeInBytes,
-        @CustomType.Parameter("source") String source,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("version") String version) {
-        this.artifactId = artifactId;
-        this.artifactPath = artifactPath;
-        this.compartmentId = compartmentId;
-        this.content = content;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.repositoryId = repositoryId;
-        this.sha256 = sha256;
-        this.sizeInBytes = sizeInBytes;
-        this.source = source;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.version = version;
-    }
-
+    private GetArtifactByPathResult() {}
     public String artifactId() {
         return this.artifactId;
     }
@@ -114,7 +81,7 @@ public final class GetArtifactByPathResult {
     public static Builder builder(GetArtifactByPathResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String artifactId;
         private String artifactPath;
@@ -131,11 +98,7 @@ public final class GetArtifactByPathResult {
         private String state;
         private String timeCreated;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetArtifactByPathResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.artifactId = defaults.artifactId;
@@ -155,67 +118,99 @@ public final class GetArtifactByPathResult {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder artifactId(String artifactId) {
             this.artifactId = Objects.requireNonNull(artifactId);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactPath(String artifactPath) {
             this.artifactPath = Objects.requireNonNull(artifactPath);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder sha256(String sha256) {
             this.sha256 = Objects.requireNonNull(sha256);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
             this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetArtifactByPathResult build() {
-            return new GetArtifactByPathResult(artifactId, artifactPath, compartmentId, content, definedTags, displayName, freeformTags, id, repositoryId, sha256, sizeInBytes, source, state, timeCreated, version);
+        }
+        public GetArtifactByPathResult build() {
+            final var o = new GetArtifactByPathResult();
+            o.artifactId = artifactId;
+            o.artifactPath = artifactPath;
+            o.compartmentId = compartmentId;
+            o.content = content;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.repositoryId = repositoryId;
+            o.sha256 = sha256;
+            o.sizeInBytes = sizeInBytes;
+            o.source = source;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.version = version;
+            return o;
         }
     }
 }

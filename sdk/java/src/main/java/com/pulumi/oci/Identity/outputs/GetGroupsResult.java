@@ -18,45 +18,30 @@ public final class GetGroupsResult {
      * @return The OCID of the tenancy containing the group.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetGroupsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetGroupsFilter> filters;
     /**
      * @return The list of groups.
      * 
      */
-    private final List<GetGroupsGroup> groups;
+    private List<GetGroupsGroup> groups;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The group&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetGroupsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetGroupsFilter> filters,
-        @CustomType.Parameter("groups") List<GetGroupsGroup> groups,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.groups = groups;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetGroupsResult() {}
     /**
      * @return The OCID of the tenancy containing the group.
      * 
@@ -103,7 +88,7 @@ public final class GetGroupsResult {
     public static Builder builder(GetGroupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetGroupsFilter> filters;
@@ -111,11 +96,7 @@ public final class GetGroupsResult {
         private String id;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetGroupsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetGroupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,6 +120,7 @@ public final class GetGroupsResult {
         public Builder filters(GetGroupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder groups(List<GetGroupsGroup> groups) {
             this.groups = Objects.requireNonNull(groups);
             return this;
@@ -144,19 +128,30 @@ public final class GetGroupsResult {
         public Builder groups(GetGroupsGroup... groups) {
             return groups(List.of(groups));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetGroupsResult build() {
-            return new GetGroupsResult(compartmentId, filters, groups, id, name, state);
+        }
+        public GetGroupsResult build() {
+            final var o = new GetGroupsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.groups = groups;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

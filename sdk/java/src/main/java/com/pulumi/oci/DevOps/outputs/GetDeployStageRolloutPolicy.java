@@ -15,42 +15,29 @@ public final class GetDeployStageRolloutPolicy {
      * @return The number that will be used to determine how many instances will be deployed concurrently.
      * 
      */
-    private final Integer batchCount;
+    private Integer batchCount;
     /**
      * @return The duration of delay between batch rollout. The default delay is 1 minute.
      * 
      */
-    private final Integer batchDelayInSeconds;
+    private Integer batchDelayInSeconds;
     /**
      * @return The percentage that will be used to determine how many instances will be deployed concurrently.
      * 
      */
-    private final Integer batchPercentage;
+    private Integer batchPercentage;
     /**
      * @return The type of policy used for rolling out a deployment stage.
      * 
      */
-    private final String policyType;
+    private String policyType;
     /**
      * @return Indicates the criteria to stop.
      * 
      */
-    private final Double rampLimitPercent;
+    private Double rampLimitPercent;
 
-    @CustomType.Constructor
-    private GetDeployStageRolloutPolicy(
-        @CustomType.Parameter("batchCount") Integer batchCount,
-        @CustomType.Parameter("batchDelayInSeconds") Integer batchDelayInSeconds,
-        @CustomType.Parameter("batchPercentage") Integer batchPercentage,
-        @CustomType.Parameter("policyType") String policyType,
-        @CustomType.Parameter("rampLimitPercent") Double rampLimitPercent) {
-        this.batchCount = batchCount;
-        this.batchDelayInSeconds = batchDelayInSeconds;
-        this.batchPercentage = batchPercentage;
-        this.policyType = policyType;
-        this.rampLimitPercent = rampLimitPercent;
-    }
-
+    private GetDeployStageRolloutPolicy() {}
     /**
      * @return The number that will be used to determine how many instances will be deployed concurrently.
      * 
@@ -94,18 +81,14 @@ public final class GetDeployStageRolloutPolicy {
     public static Builder builder(GetDeployStageRolloutPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer batchCount;
         private Integer batchDelayInSeconds;
         private Integer batchPercentage;
         private String policyType;
         private Double rampLimitPercent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStageRolloutPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.batchCount = defaults.batchCount;
@@ -115,27 +98,39 @@ public final class GetDeployStageRolloutPolicy {
     	      this.rampLimitPercent = defaults.rampLimitPercent;
         }
 
+        @CustomType.Setter
         public Builder batchCount(Integer batchCount) {
             this.batchCount = Objects.requireNonNull(batchCount);
             return this;
         }
+        @CustomType.Setter
         public Builder batchDelayInSeconds(Integer batchDelayInSeconds) {
             this.batchDelayInSeconds = Objects.requireNonNull(batchDelayInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder batchPercentage(Integer batchPercentage) {
             this.batchPercentage = Objects.requireNonNull(batchPercentage);
             return this;
         }
+        @CustomType.Setter
         public Builder policyType(String policyType) {
             this.policyType = Objects.requireNonNull(policyType);
             return this;
         }
+        @CustomType.Setter
         public Builder rampLimitPercent(Double rampLimitPercent) {
             this.rampLimitPercent = Objects.requireNonNull(rampLimitPercent);
             return this;
-        }        public GetDeployStageRolloutPolicy build() {
-            return new GetDeployStageRolloutPolicy(batchCount, batchDelayInSeconds, batchPercentage, policyType, rampLimitPercent);
+        }
+        public GetDeployStageRolloutPolicy build() {
+            final var o = new GetDeployStageRolloutPolicy();
+            o.batchCount = batchCount;
+            o.batchDelayInSeconds = batchDelayInSeconds;
+            o.batchPercentage = batchPercentage;
+            o.policyType = policyType;
+            o.rampLimitPercent = rampLimitPercent;
+            return o;
         }
     }
 }

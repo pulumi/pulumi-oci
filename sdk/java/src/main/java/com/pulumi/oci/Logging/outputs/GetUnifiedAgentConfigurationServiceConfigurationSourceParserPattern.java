@@ -13,42 +13,29 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserP
      * @return Process value using the specified format. This is available only when time_type is a string.
      * 
      */
-    private final String fieldTimeFormat;
+    private String fieldTimeFormat;
     /**
      * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
-    private final String fieldTimeKey;
+    private String fieldTimeKey;
     /**
      * @return Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
      * 
      */
-    private final String fieldTimeZone;
+    private String fieldTimeZone;
     /**
      * @return The name key to tag this grok pattern.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The grok pattern.
      * 
      */
-    private final String pattern;
+    private String pattern;
 
-    @CustomType.Constructor
-    private GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern(
-        @CustomType.Parameter("fieldTimeFormat") String fieldTimeFormat,
-        @CustomType.Parameter("fieldTimeKey") String fieldTimeKey,
-        @CustomType.Parameter("fieldTimeZone") String fieldTimeZone,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("pattern") String pattern) {
-        this.fieldTimeFormat = fieldTimeFormat;
-        this.fieldTimeKey = fieldTimeKey;
-        this.fieldTimeZone = fieldTimeZone;
-        this.name = name;
-        this.pattern = pattern;
-    }
-
+    private GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern() {}
     /**
      * @return Process value using the specified format. This is available only when time_type is a string.
      * 
@@ -92,18 +79,14 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserP
     public static Builder builder(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String fieldTimeFormat;
         private String fieldTimeKey;
         private String fieldTimeZone;
         private String name;
         private String pattern;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fieldTimeFormat = defaults.fieldTimeFormat;
@@ -113,27 +96,39 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserP
     	      this.pattern = defaults.pattern;
         }
 
+        @CustomType.Setter
         public Builder fieldTimeFormat(String fieldTimeFormat) {
             this.fieldTimeFormat = Objects.requireNonNull(fieldTimeFormat);
             return this;
         }
+        @CustomType.Setter
         public Builder fieldTimeKey(String fieldTimeKey) {
             this.fieldTimeKey = Objects.requireNonNull(fieldTimeKey);
             return this;
         }
+        @CustomType.Setter
         public Builder fieldTimeZone(String fieldTimeZone) {
             this.fieldTimeZone = Objects.requireNonNull(fieldTimeZone);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder pattern(String pattern) {
             this.pattern = Objects.requireNonNull(pattern);
             return this;
-        }        public GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern build() {
-            return new GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern(fieldTimeFormat, fieldTimeKey, fieldTimeZone, name, pattern);
+        }
+        public GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern build() {
+            final var o = new GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern();
+            o.fieldTimeFormat = fieldTimeFormat;
+            o.fieldTimeKey = fieldTimeKey;
+            o.fieldTimeZone = fieldTimeZone;
+            o.name = name;
+            o.pattern = pattern;
+            return o;
         }
     }
 }

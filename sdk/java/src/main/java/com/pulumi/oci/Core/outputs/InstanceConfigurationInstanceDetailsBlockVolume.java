@@ -17,28 +17,19 @@ public final class InstanceConfigurationInstanceDetailsBlockVolume {
      * @return Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
      * 
      */
-    private final @Nullable InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails attachDetails;
+    private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails attachDetails;
     /**
      * @return Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
      * 
      */
-    private final @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails createDetails;
+    private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails createDetails;
     /**
      * @return The OCID of the volume.
      * 
      */
-    private final @Nullable String volumeId;
+    private @Nullable String volumeId;
 
-    @CustomType.Constructor
-    private InstanceConfigurationInstanceDetailsBlockVolume(
-        @CustomType.Parameter("attachDetails") @Nullable InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails attachDetails,
-        @CustomType.Parameter("createDetails") @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails createDetails,
-        @CustomType.Parameter("volumeId") @Nullable String volumeId) {
-        this.attachDetails = attachDetails;
-        this.createDetails = createDetails;
-        this.volumeId = volumeId;
-    }
-
+    private InstanceConfigurationInstanceDetailsBlockVolume() {}
     /**
      * @return Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
      * 
@@ -68,16 +59,12 @@ public final class InstanceConfigurationInstanceDetailsBlockVolume {
     public static Builder builder(InstanceConfigurationInstanceDetailsBlockVolume defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails attachDetails;
         private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails createDetails;
         private @Nullable String volumeId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsBlockVolume defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attachDetails = defaults.attachDetails;
@@ -85,19 +72,27 @@ public final class InstanceConfigurationInstanceDetailsBlockVolume {
     	      this.volumeId = defaults.volumeId;
         }
 
+        @CustomType.Setter
         public Builder attachDetails(@Nullable InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails attachDetails) {
             this.attachDetails = attachDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder createDetails(@Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails createDetails) {
             this.createDetails = createDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder volumeId(@Nullable String volumeId) {
             this.volumeId = volumeId;
             return this;
-        }        public InstanceConfigurationInstanceDetailsBlockVolume build() {
-            return new InstanceConfigurationInstanceDetailsBlockVolume(attachDetails, createDetails, volumeId);
+        }
+        public InstanceConfigurationInstanceDetailsBlockVolume build() {
+            final var o = new InstanceConfigurationInstanceDetailsBlockVolume();
+            o.attachDetails = attachDetails;
+            o.createDetails = createDetails;
+            o.volumeId = volumeId;
+            return o;
         }
     }
 }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.DataGuardAssociationDataCollectionOptionsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -115,6 +116,21 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
      */
     public Optional<Output<String>> creationType() {
         return Optional.ofNullable(this.creationType);
+    }
+
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     * 
+     */
+    @Import(name="dataCollectionOptions")
+    private @Nullable Output<DataGuardAssociationDataCollectionOptionsArgs> dataCollectionOptions;
+
+    /**
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     * 
+     */
+    public Optional<Output<DataGuardAssociationDataCollectionOptionsArgs>> dataCollectionOptions() {
+        return Optional.ofNullable(this.dataCollectionOptions);
     }
 
     /**
@@ -639,6 +655,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         this.cpuCoreCount = $.cpuCoreCount;
         this.createAsync = $.createAsync;
         this.creationType = $.creationType;
+        this.dataCollectionOptions = $.dataCollectionOptions;
         this.databaseAdminPassword = $.databaseAdminPassword;
         this.databaseDefinedTags = $.databaseDefinedTags;
         this.databaseFreeformTags = $.databaseFreeformTags;
@@ -836,6 +853,27 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          */
         public Builder creationType(String creationType) {
             return creationType(Output.of(creationType));
+        }
+
+        /**
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(@Nullable Output<DataGuardAssociationDataCollectionOptionsArgs> dataCollectionOptions) {
+            $.dataCollectionOptions = dataCollectionOptions;
+            return this;
+        }
+
+        /**
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(DataGuardAssociationDataCollectionOptionsArgs dataCollectionOptions) {
+            return dataCollectionOptions(Output.of(dataCollectionOptions));
         }
 
         /**

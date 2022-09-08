@@ -14,28 +14,19 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
      * @return The port of the ingress gateway host listener. Leave empty to match all ports for the host.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The OCID of the virtual service where the request will be routed.
      * 
      */
-    private final String virtualServiceId;
+    private String virtualServiceId;
     /**
      * @return Weight of traffic target.
      * 
      */
-    private final Integer weight;
+    private Integer weight;
 
-    @CustomType.Constructor
-    private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination(
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("virtualServiceId") String virtualServiceId,
-        @CustomType.Parameter("weight") Integer weight) {
-        this.port = port;
-        this.virtualServiceId = virtualServiceId;
-        this.weight = weight;
-    }
-
+    private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination() {}
     /**
      * @return The port of the ingress gateway host listener. Leave empty to match all ports for the host.
      * 
@@ -65,16 +56,12 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
     public static Builder builder(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer port;
         private String virtualServiceId;
         private Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.port = defaults.port;
@@ -82,19 +69,27 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder virtualServiceId(String virtualServiceId) {
             this.virtualServiceId = Objects.requireNonNull(virtualServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(Integer weight) {
             this.weight = Objects.requireNonNull(weight);
             return this;
-        }        public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination build() {
-            return new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination(port, virtualServiceId, weight);
+        }
+        public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination build() {
+            final var o = new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination();
+            o.port = port;
+            o.virtualServiceId = virtualServiceId;
+            o.weight = weight;
+            return o;
         }
     }
 }

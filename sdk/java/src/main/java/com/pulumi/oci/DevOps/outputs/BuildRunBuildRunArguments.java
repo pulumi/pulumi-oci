@@ -14,13 +14,9 @@ public final class BuildRunBuildRunArguments {
      * @return List of arguments provided at the time of running the build.
      * 
      */
-    private final List<BuildRunBuildRunArgumentsItem> items;
+    private List<BuildRunBuildRunArgumentsItem> items;
 
-    @CustomType.Constructor
-    private BuildRunBuildRunArguments(@CustomType.Parameter("items") List<BuildRunBuildRunArgumentsItem> items) {
-        this.items = items;
-    }
-
+    private BuildRunBuildRunArguments() {}
     /**
      * @return List of arguments provided at the time of running the build.
      * 
@@ -36,27 +32,27 @@ public final class BuildRunBuildRunArguments {
     public static Builder builder(BuildRunBuildRunArguments defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<BuildRunBuildRunArgumentsItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildRunArguments defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<BuildRunBuildRunArgumentsItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(BuildRunBuildRunArgumentsItem... items) {
             return items(List.of(items));
-        }        public BuildRunBuildRunArguments build() {
-            return new BuildRunBuildRunArguments(items);
+        }
+        public BuildRunBuildRunArguments build() {
+            final var o = new BuildRunBuildRunArguments();
+            o.items = items;
+            return o;
         }
     }
 }

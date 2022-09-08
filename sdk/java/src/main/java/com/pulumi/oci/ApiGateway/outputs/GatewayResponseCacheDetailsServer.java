@@ -16,21 +16,14 @@ public final class GatewayResponseCacheDetailsServer {
      * @return (Updatable) Hostname or IP address (IPv4 only) where the cache store is running.
      * 
      */
-    private final @Nullable String host;
+    private @Nullable String host;
     /**
      * @return (Updatable) The port the cache store is exposed on.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
 
-    @CustomType.Constructor
-    private GatewayResponseCacheDetailsServer(
-        @CustomType.Parameter("host") @Nullable String host,
-        @CustomType.Parameter("port") @Nullable Integer port) {
-        this.host = host;
-        this.port = port;
-    }
-
+    private GatewayResponseCacheDetailsServer() {}
     /**
      * @return (Updatable) Hostname or IP address (IPv4 only) where the cache store is running.
      * 
@@ -53,30 +46,32 @@ public final class GatewayResponseCacheDetailsServer {
     public static Builder builder(GatewayResponseCacheDetailsServer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String host;
         private @Nullable Integer port;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GatewayResponseCacheDetailsServer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.host = defaults.host;
     	      this.port = defaults.port;
         }
 
+        @CustomType.Setter
         public Builder host(@Nullable String host) {
             this.host = host;
             return this;
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
-        }        public GatewayResponseCacheDetailsServer build() {
-            return new GatewayResponseCacheDetailsServer(host, port);
+        }
+        public GatewayResponseCacheDetailsServer build() {
+            final var o = new GatewayResponseCacheDetailsServer();
+            o.host = host;
+            o.port = port;
+            return o;
         }
     }
 }

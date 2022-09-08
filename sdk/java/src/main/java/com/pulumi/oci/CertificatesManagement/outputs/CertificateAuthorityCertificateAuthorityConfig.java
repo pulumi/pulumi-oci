@@ -17,49 +17,34 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
      * @return (Updatable) The origin of the CA.
      * 
      */
-    private final String configType;
+    private String configType;
     /**
      * @return The OCID of the private CA.
      * 
      */
-    private final @Nullable String issuerCertificateAuthorityId;
+    private @Nullable String issuerCertificateAuthorityId;
     /**
      * @return The algorithm used to sign public key certificates that the CA issues.
      * 
      */
-    private final @Nullable String signingAlgorithm;
+    private @Nullable String signingAlgorithm;
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    private final CertificateAuthorityCertificateAuthorityConfigSubject subject;
+    private CertificateAuthorityCertificateAuthorityConfigSubject subject;
     /**
      * @return (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
-    private final @Nullable CertificateAuthorityCertificateAuthorityConfigValidity validity;
+    private @Nullable CertificateAuthorityCertificateAuthorityConfigValidity validity;
     /**
      * @return (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
      * 
      */
-    private final @Nullable String versionName;
+    private @Nullable String versionName;
 
-    @CustomType.Constructor
-    private CertificateAuthorityCertificateAuthorityConfig(
-        @CustomType.Parameter("configType") String configType,
-        @CustomType.Parameter("issuerCertificateAuthorityId") @Nullable String issuerCertificateAuthorityId,
-        @CustomType.Parameter("signingAlgorithm") @Nullable String signingAlgorithm,
-        @CustomType.Parameter("subject") CertificateAuthorityCertificateAuthorityConfigSubject subject,
-        @CustomType.Parameter("validity") @Nullable CertificateAuthorityCertificateAuthorityConfigValidity validity,
-        @CustomType.Parameter("versionName") @Nullable String versionName) {
-        this.configType = configType;
-        this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-        this.signingAlgorithm = signingAlgorithm;
-        this.subject = subject;
-        this.validity = validity;
-        this.versionName = versionName;
-    }
-
+    private CertificateAuthorityCertificateAuthorityConfig() {}
     /**
      * @return (Updatable) The origin of the CA.
      * 
@@ -110,7 +95,7 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
     public static Builder builder(CertificateAuthorityCertificateAuthorityConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String configType;
         private @Nullable String issuerCertificateAuthorityId;
@@ -118,11 +103,7 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
         private CertificateAuthorityCertificateAuthorityConfigSubject subject;
         private @Nullable CertificateAuthorityCertificateAuthorityConfigValidity validity;
         private @Nullable String versionName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateAuthorityCertificateAuthorityConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configType = defaults.configType;
@@ -133,31 +114,45 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
     	      this.versionName = defaults.versionName;
         }
 
+        @CustomType.Setter
         public Builder configType(String configType) {
             this.configType = Objects.requireNonNull(configType);
             return this;
         }
+        @CustomType.Setter
         public Builder issuerCertificateAuthorityId(@Nullable String issuerCertificateAuthorityId) {
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
+        @CustomType.Setter
         public Builder signingAlgorithm(@Nullable String signingAlgorithm) {
             this.signingAlgorithm = signingAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder subject(CertificateAuthorityCertificateAuthorityConfigSubject subject) {
             this.subject = Objects.requireNonNull(subject);
             return this;
         }
+        @CustomType.Setter
         public Builder validity(@Nullable CertificateAuthorityCertificateAuthorityConfigValidity validity) {
             this.validity = validity;
             return this;
         }
+        @CustomType.Setter
         public Builder versionName(@Nullable String versionName) {
             this.versionName = versionName;
             return this;
-        }        public CertificateAuthorityCertificateAuthorityConfig build() {
-            return new CertificateAuthorityCertificateAuthorityConfig(configType, issuerCertificateAuthorityId, signingAlgorithm, subject, validity, versionName);
+        }
+        public CertificateAuthorityCertificateAuthorityConfig build() {
+            final var o = new CertificateAuthorityCertificateAuthorityConfig();
+            o.configType = configType;
+            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            o.signingAlgorithm = signingAlgorithm;
+            o.subject = subject;
+            o.validity = validity;
+            o.versionName = versionName;
+            return o;
         }
     }
 }

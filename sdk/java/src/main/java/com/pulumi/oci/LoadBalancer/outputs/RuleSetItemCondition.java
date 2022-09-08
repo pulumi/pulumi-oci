@@ -15,7 +15,7 @@ public final class RuleSetItemCondition {
      * @return (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
      * 
      */
-    private final String attributeName;
+    private String attributeName;
     /**
      * @return (Updatable) Depends on `attribute_name`:
      * - when `attribute_name` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
@@ -23,7 +23,7 @@ public final class RuleSetItemCondition {
      * - when `attribute_name` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
      * 
      */
-    private final String attributeValue;
+    private String attributeValue;
     /**
      * @return (Updatable) A string that specifies how to compare the PathMatchCondition object&#39;s `attributeValue` string to the incoming URI.
      * *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
@@ -32,18 +32,9 @@ public final class RuleSetItemCondition {
      * *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
      * 
      */
-    private final @Nullable String operator;
+    private @Nullable String operator;
 
-    @CustomType.Constructor
-    private RuleSetItemCondition(
-        @CustomType.Parameter("attributeName") String attributeName,
-        @CustomType.Parameter("attributeValue") String attributeValue,
-        @CustomType.Parameter("operator") @Nullable String operator) {
-        this.attributeName = attributeName;
-        this.attributeValue = attributeValue;
-        this.operator = operator;
-    }
-
+    private RuleSetItemCondition() {}
     /**
      * @return (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
      * 
@@ -80,16 +71,12 @@ public final class RuleSetItemCondition {
     public static Builder builder(RuleSetItemCondition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String attributeName;
         private String attributeValue;
         private @Nullable String operator;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RuleSetItemCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attributeName = defaults.attributeName;
@@ -97,19 +84,27 @@ public final class RuleSetItemCondition {
     	      this.operator = defaults.operator;
         }
 
+        @CustomType.Setter
         public Builder attributeName(String attributeName) {
             this.attributeName = Objects.requireNonNull(attributeName);
             return this;
         }
+        @CustomType.Setter
         public Builder attributeValue(String attributeValue) {
             this.attributeValue = Objects.requireNonNull(attributeValue);
             return this;
         }
+        @CustomType.Setter
         public Builder operator(@Nullable String operator) {
             this.operator = operator;
             return this;
-        }        public RuleSetItemCondition build() {
-            return new RuleSetItemCondition(attributeName, attributeValue, operator);
+        }
+        public RuleSetItemCondition build() {
+            final var o = new RuleSetItemCondition();
+            o.attributeName = attributeName;
+            o.attributeValue = attributeValue;
+            o.operator = operator;
+            return o;
         }
     }
 }

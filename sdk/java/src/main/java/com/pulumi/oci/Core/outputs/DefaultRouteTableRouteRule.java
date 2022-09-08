@@ -17,29 +17,14 @@ public final class DefaultRouteTableRouteRule {
      * 
      */
     @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
-    private final @Nullable String cidrBlock;
-    private final @Nullable String description;
-    private final @Nullable String destination;
-    private final @Nullable String destinationType;
-    private final String networkEntityId;
-    private final @Nullable String routeType;
+    private @Nullable String cidrBlock;
+    private @Nullable String description;
+    private @Nullable String destination;
+    private @Nullable String destinationType;
+    private String networkEntityId;
+    private @Nullable String routeType;
 
-    @CustomType.Constructor
-    private DefaultRouteTableRouteRule(
-        @CustomType.Parameter("cidrBlock") @Nullable String cidrBlock,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("destination") @Nullable String destination,
-        @CustomType.Parameter("destinationType") @Nullable String destinationType,
-        @CustomType.Parameter("networkEntityId") String networkEntityId,
-        @CustomType.Parameter("routeType") @Nullable String routeType) {
-        this.cidrBlock = cidrBlock;
-        this.description = description;
-        this.destination = destination;
-        this.destinationType = destinationType;
-        this.networkEntityId = networkEntityId;
-        this.routeType = routeType;
-    }
-
+    private DefaultRouteTableRouteRule() {}
     /**
      * @deprecated
      * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
@@ -72,7 +57,7 @@ public final class DefaultRouteTableRouteRule {
     public static Builder builder(DefaultRouteTableRouteRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String cidrBlock;
         private @Nullable String description;
@@ -80,11 +65,7 @@ public final class DefaultRouteTableRouteRule {
         private @Nullable String destinationType;
         private String networkEntityId;
         private @Nullable String routeType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DefaultRouteTableRouteRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidrBlock = defaults.cidrBlock;
@@ -95,31 +76,45 @@ public final class DefaultRouteTableRouteRule {
     	      this.routeType = defaults.routeType;
         }
 
+        @CustomType.Setter
         public Builder cidrBlock(@Nullable String cidrBlock) {
             this.cidrBlock = cidrBlock;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder destination(@Nullable String destination) {
             this.destination = destination;
             return this;
         }
+        @CustomType.Setter
         public Builder destinationType(@Nullable String destinationType) {
             this.destinationType = destinationType;
             return this;
         }
+        @CustomType.Setter
         public Builder networkEntityId(String networkEntityId) {
             this.networkEntityId = Objects.requireNonNull(networkEntityId);
             return this;
         }
+        @CustomType.Setter
         public Builder routeType(@Nullable String routeType) {
             this.routeType = routeType;
             return this;
-        }        public DefaultRouteTableRouteRule build() {
-            return new DefaultRouteTableRouteRule(cidrBlock, description, destination, destinationType, networkEntityId, routeType);
+        }
+        public DefaultRouteTableRouteRule build() {
+            final var o = new DefaultRouteTableRouteRule();
+            o.cidrBlock = cidrBlock;
+            o.description = description;
+            o.destination = destination;
+            o.destinationType = destinationType;
+            o.networkEntityId = networkEntityId;
+            o.routeType = routeType;
+            return o;
         }
     }
 }

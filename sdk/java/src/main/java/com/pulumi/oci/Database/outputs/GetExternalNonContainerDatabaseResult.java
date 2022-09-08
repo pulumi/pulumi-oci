@@ -19,150 +19,105 @@ public final class GetExternalNonContainerDatabaseResult {
      * @return The character set of the external database.
      * 
      */
-    private final String characterSet;
+    private String characterSet;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The Oracle Database configuration
      * 
      */
-    private final String databaseConfiguration;
+    private String databaseConfiguration;
     /**
      * @return The Oracle Database edition.
      * 
      */
-    private final String databaseEdition;
+    private String databaseEdition;
     /**
      * @return The configuration of the Database Management service.
      * 
      */
-    private final List<GetExternalNonContainerDatabaseDatabaseManagementConfig> databaseManagementConfigs;
+    private List<GetExternalNonContainerDatabaseDatabaseManagementConfig> databaseManagementConfigs;
     /**
      * @return The Oracle Database version.
      * 
      */
-    private final String databaseVersion;
+    private String databaseVersion;
     /**
      * @return The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      * 
      */
-    private final String dbId;
+    private String dbId;
     /**
      * @return The database packs licensed for the external Oracle Database.
      * 
      */
-    private final String dbPacks;
+    private String dbPacks;
     /**
      * @return The `DB_UNIQUE_NAME` of the external database.
      * 
      */
-    private final String dbUniqueName;
+    private String dbUniqueName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the external database. The name does not have to be unique.
      * 
      */
-    private final String displayName;
-    private final String externalNonContainerDatabaseId;
+    private String displayName;
+    private String externalNonContainerDatabaseId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The national character of the external database.
      * 
      */
-    private final String ncharacterSet;
+    private String ncharacterSet;
     /**
      * @return The configuration of Operations Insights for the external database
      * 
      */
-    private final List<GetExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
+    private List<GetExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
     /**
      * @return The configuration of Stack Monitoring for the external database.
      * 
      */
-    private final List<GetExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs;
+    private List<GetExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs;
     /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the database was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time zone of the external database. It is a time zone offset (a character type in the format &#39;[+|-]TZH:TZM&#39;) or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
      * 
      */
-    private final String timeZone;
+    private String timeZone;
 
-    @CustomType.Constructor
-    private GetExternalNonContainerDatabaseResult(
-        @CustomType.Parameter("characterSet") String characterSet,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("databaseConfiguration") String databaseConfiguration,
-        @CustomType.Parameter("databaseEdition") String databaseEdition,
-        @CustomType.Parameter("databaseManagementConfigs") List<GetExternalNonContainerDatabaseDatabaseManagementConfig> databaseManagementConfigs,
-        @CustomType.Parameter("databaseVersion") String databaseVersion,
-        @CustomType.Parameter("dbId") String dbId,
-        @CustomType.Parameter("dbPacks") String dbPacks,
-        @CustomType.Parameter("dbUniqueName") String dbUniqueName,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("externalNonContainerDatabaseId") String externalNonContainerDatabaseId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("ncharacterSet") String ncharacterSet,
-        @CustomType.Parameter("operationsInsightsConfigs") List<GetExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs,
-        @CustomType.Parameter("stackMonitoringConfigs") List<GetExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeZone") String timeZone) {
-        this.characterSet = characterSet;
-        this.compartmentId = compartmentId;
-        this.databaseConfiguration = databaseConfiguration;
-        this.databaseEdition = databaseEdition;
-        this.databaseManagementConfigs = databaseManagementConfigs;
-        this.databaseVersion = databaseVersion;
-        this.dbId = dbId;
-        this.dbPacks = dbPacks;
-        this.dbUniqueName = dbUniqueName;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.externalNonContainerDatabaseId = externalNonContainerDatabaseId;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.ncharacterSet = ncharacterSet;
-        this.operationsInsightsConfigs = operationsInsightsConfigs;
-        this.stackMonitoringConfigs = stackMonitoringConfigs;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeZone = timeZone;
-    }
-
+    private GetExternalNonContainerDatabaseResult() {}
     /**
      * @return The character set of the external database.
      * 
@@ -314,7 +269,7 @@ public final class GetExternalNonContainerDatabaseResult {
     public static Builder builder(GetExternalNonContainerDatabaseResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String characterSet;
         private String compartmentId;
@@ -337,11 +292,7 @@ public final class GetExternalNonContainerDatabaseResult {
         private String state;
         private String timeCreated;
         private String timeZone;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExternalNonContainerDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.characterSet = defaults.characterSet;
@@ -367,22 +318,27 @@ public final class GetExternalNonContainerDatabaseResult {
     	      this.timeZone = defaults.timeZone;
         }
 
+        @CustomType.Setter
         public Builder characterSet(String characterSet) {
             this.characterSet = Objects.requireNonNull(characterSet);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseConfiguration(String databaseConfiguration) {
             this.databaseConfiguration = Objects.requireNonNull(databaseConfiguration);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseEdition(String databaseEdition) {
             this.databaseEdition = Objects.requireNonNull(databaseEdition);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseManagementConfigs(List<GetExternalNonContainerDatabaseDatabaseManagementConfig> databaseManagementConfigs) {
             this.databaseManagementConfigs = Objects.requireNonNull(databaseManagementConfigs);
             return this;
@@ -390,50 +346,62 @@ public final class GetExternalNonContainerDatabaseResult {
         public Builder databaseManagementConfigs(GetExternalNonContainerDatabaseDatabaseManagementConfig... databaseManagementConfigs) {
             return databaseManagementConfigs(List.of(databaseManagementConfigs));
         }
+        @CustomType.Setter
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = Objects.requireNonNull(databaseVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder dbId(String dbId) {
             this.dbId = Objects.requireNonNull(dbId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbPacks(String dbPacks) {
             this.dbPacks = Objects.requireNonNull(dbPacks);
             return this;
         }
+        @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder externalNonContainerDatabaseId(String externalNonContainerDatabaseId) {
             this.externalNonContainerDatabaseId = Objects.requireNonNull(externalNonContainerDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsConfigs(List<GetExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs) {
             this.operationsInsightsConfigs = Objects.requireNonNull(operationsInsightsConfigs);
             return this;
@@ -441,6 +409,7 @@ public final class GetExternalNonContainerDatabaseResult {
         public Builder operationsInsightsConfigs(GetExternalNonContainerDatabaseOperationsInsightsConfig... operationsInsightsConfigs) {
             return operationsInsightsConfigs(List.of(operationsInsightsConfigs));
         }
+        @CustomType.Setter
         public Builder stackMonitoringConfigs(List<GetExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
             this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
             return this;
@@ -448,19 +417,45 @@ public final class GetExternalNonContainerDatabaseResult {
         public Builder stackMonitoringConfigs(GetExternalNonContainerDatabaseStackMonitoringConfig... stackMonitoringConfigs) {
             return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeZone(String timeZone) {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
-        }        public GetExternalNonContainerDatabaseResult build() {
-            return new GetExternalNonContainerDatabaseResult(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, externalNonContainerDatabaseId, freeformTags, id, lifecycleDetails, ncharacterSet, operationsInsightsConfigs, stackMonitoringConfigs, state, timeCreated, timeZone);
+        }
+        public GetExternalNonContainerDatabaseResult build() {
+            final var o = new GetExternalNonContainerDatabaseResult();
+            o.characterSet = characterSet;
+            o.compartmentId = compartmentId;
+            o.databaseConfiguration = databaseConfiguration;
+            o.databaseEdition = databaseEdition;
+            o.databaseManagementConfigs = databaseManagementConfigs;
+            o.databaseVersion = databaseVersion;
+            o.dbId = dbId;
+            o.dbPacks = dbPacks;
+            o.dbUniqueName = dbUniqueName;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.externalNonContainerDatabaseId = externalNonContainerDatabaseId;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.ncharacterSet = ncharacterSet;
+            o.operationsInsightsConfigs = operationsInsightsConfigs;
+            o.stackMonitoringConfigs = stackMonitoringConfigs;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeZone = timeZone;
+            return o;
         }
     }
 }

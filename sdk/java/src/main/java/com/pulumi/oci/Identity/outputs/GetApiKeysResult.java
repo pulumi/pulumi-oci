@@ -17,31 +17,20 @@ public final class GetApiKeysResult {
      * @return The list of api_keys.
      * 
      */
-    private final List<GetApiKeysApiKey> apiKeys;
-    private final @Nullable List<GetApiKeysFilter> filters;
+    private List<GetApiKeysApiKey> apiKeys;
+    private @Nullable List<GetApiKeysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the user the key belongs to.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetApiKeysResult(
-        @CustomType.Parameter("apiKeys") List<GetApiKeysApiKey> apiKeys,
-        @CustomType.Parameter("filters") @Nullable List<GetApiKeysFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("userId") String userId) {
-        this.apiKeys = apiKeys;
-        this.filters = filters;
-        this.id = id;
-        this.userId = userId;
-    }
-
+    private GetApiKeysResult() {}
     /**
      * @return The list of api_keys.
      * 
@@ -74,17 +63,13 @@ public final class GetApiKeysResult {
     public static Builder builder(GetApiKeysResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiKeysApiKey> apiKeys;
         private @Nullable List<GetApiKeysFilter> filters;
         private String id;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apiKeys = defaults.apiKeys;
@@ -93,6 +78,7 @@ public final class GetApiKeysResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder apiKeys(List<GetApiKeysApiKey> apiKeys) {
             this.apiKeys = Objects.requireNonNull(apiKeys);
             return this;
@@ -100,6 +86,7 @@ public final class GetApiKeysResult {
         public Builder apiKeys(GetApiKeysApiKey... apiKeys) {
             return apiKeys(List.of(apiKeys));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetApiKeysFilter> filters) {
             this.filters = filters;
             return this;
@@ -107,15 +94,23 @@ public final class GetApiKeysResult {
         public Builder filters(GetApiKeysFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetApiKeysResult build() {
-            return new GetApiKeysResult(apiKeys, filters, id, userId);
+        }
+        public GetApiKeysResult build() {
+            final var o = new GetApiKeysResult();
+            o.apiKeys = apiKeys;
+            o.filters = filters;
+            o.id = id;
+            o.userId = userId;
+            return o;
         }
     }
 }

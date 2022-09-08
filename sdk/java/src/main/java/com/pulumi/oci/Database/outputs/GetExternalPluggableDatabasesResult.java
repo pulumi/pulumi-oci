@@ -18,52 +18,35 @@ public final class GetExternalPluggableDatabasesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The user-friendly name for the external database. The name does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalContainerDatabaseDetails) that contains the specified [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
      * 
      */
-    private final @Nullable String externalContainerDatabaseId;
+    private @Nullable String externalContainerDatabaseId;
     /**
      * @return The list of external_pluggable_databases.
      * 
      */
-    private final List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases;
-    private final @Nullable List<GetExternalPluggableDatabasesFilter> filters;
+    private List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases;
+    private @Nullable List<GetExternalPluggableDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetExternalPluggableDatabasesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("externalContainerDatabaseId") @Nullable String externalContainerDatabaseId,
-        @CustomType.Parameter("externalPluggableDatabases") List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases,
-        @CustomType.Parameter("filters") @Nullable List<GetExternalPluggableDatabasesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.externalContainerDatabaseId = externalContainerDatabaseId;
-        this.externalPluggableDatabases = externalPluggableDatabases;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetExternalPluggableDatabasesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetExternalPluggableDatabasesResult {
     public static Builder builder(GetExternalPluggableDatabasesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetExternalPluggableDatabasesResult {
         private @Nullable List<GetExternalPluggableDatabasesFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExternalPluggableDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,18 +121,22 @@ public final class GetExternalPluggableDatabasesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder externalContainerDatabaseId(@Nullable String externalContainerDatabaseId) {
             this.externalContainerDatabaseId = externalContainerDatabaseId;
             return this;
         }
+        @CustomType.Setter
         public Builder externalPluggableDatabases(List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases) {
             this.externalPluggableDatabases = Objects.requireNonNull(externalPluggableDatabases);
             return this;
@@ -161,6 +144,7 @@ public final class GetExternalPluggableDatabasesResult {
         public Builder externalPluggableDatabases(GetExternalPluggableDatabasesExternalPluggableDatabase... externalPluggableDatabases) {
             return externalPluggableDatabases(List.of(externalPluggableDatabases));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalPluggableDatabasesFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,15 +152,26 @@ public final class GetExternalPluggableDatabasesResult {
         public Builder filters(GetExternalPluggableDatabasesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetExternalPluggableDatabasesResult build() {
-            return new GetExternalPluggableDatabasesResult(compartmentId, displayName, externalContainerDatabaseId, externalPluggableDatabases, filters, id, state);
+        }
+        public GetExternalPluggableDatabasesResult build() {
+            final var o = new GetExternalPluggableDatabasesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.externalContainerDatabaseId = externalContainerDatabaseId;
+            o.externalPluggableDatabases = externalPluggableDatabases;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

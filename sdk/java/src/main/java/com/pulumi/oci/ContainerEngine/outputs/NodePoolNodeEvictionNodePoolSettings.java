@@ -16,21 +16,14 @@ public final class NodePoolNodeEvictionNodePoolSettings {
      * @return (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
      * 
      */
-    private final @Nullable String evictionGraceDuration;
+    private @Nullable String evictionGraceDuration;
     /**
      * @return (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
      * 
      */
-    private final @Nullable Boolean isForceDeleteAfterGraceDuration;
+    private @Nullable Boolean isForceDeleteAfterGraceDuration;
 
-    @CustomType.Constructor
-    private NodePoolNodeEvictionNodePoolSettings(
-        @CustomType.Parameter("evictionGraceDuration") @Nullable String evictionGraceDuration,
-        @CustomType.Parameter("isForceDeleteAfterGraceDuration") @Nullable Boolean isForceDeleteAfterGraceDuration) {
-        this.evictionGraceDuration = evictionGraceDuration;
-        this.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
-    }
-
+    private NodePoolNodeEvictionNodePoolSettings() {}
     /**
      * @return (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
      * 
@@ -53,30 +46,32 @@ public final class NodePoolNodeEvictionNodePoolSettings {
     public static Builder builder(NodePoolNodeEvictionNodePoolSettings defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String evictionGraceDuration;
         private @Nullable Boolean isForceDeleteAfterGraceDuration;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NodePoolNodeEvictionNodePoolSettings defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.evictionGraceDuration = defaults.evictionGraceDuration;
     	      this.isForceDeleteAfterGraceDuration = defaults.isForceDeleteAfterGraceDuration;
         }
 
+        @CustomType.Setter
         public Builder evictionGraceDuration(@Nullable String evictionGraceDuration) {
             this.evictionGraceDuration = evictionGraceDuration;
             return this;
         }
+        @CustomType.Setter
         public Builder isForceDeleteAfterGraceDuration(@Nullable Boolean isForceDeleteAfterGraceDuration) {
             this.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
             return this;
-        }        public NodePoolNodeEvictionNodePoolSettings build() {
-            return new NodePoolNodeEvictionNodePoolSettings(evictionGraceDuration, isForceDeleteAfterGraceDuration);
+        }
+        public NodePoolNodeEvictionNodePoolSettings build() {
+            final var o = new NodePoolNodeEvictionNodePoolSettings();
+            o.evictionGraceDuration = evictionGraceDuration;
+            o.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
+            return o;
         }
     }
 }

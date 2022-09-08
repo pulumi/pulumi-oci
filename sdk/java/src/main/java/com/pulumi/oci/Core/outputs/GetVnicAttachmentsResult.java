@@ -18,52 +18,35 @@ public final class GetVnicAttachmentsResult {
      * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetVnicAttachmentsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetVnicAttachmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the instance.
      * 
      */
-    private final @Nullable String instanceId;
+    private @Nullable String instanceId;
     /**
      * @return The list of vnic_attachments.
      * 
      */
-    private final List<GetVnicAttachmentsVnicAttachment> vnicAttachments;
+    private List<GetVnicAttachmentsVnicAttachment> vnicAttachments;
     /**
      * @return The OCID of the VNIC. Available after the attachment process is complete.
      * 
      */
-    private final @Nullable String vnicId;
+    private @Nullable String vnicId;
 
-    @CustomType.Constructor
-    private GetVnicAttachmentsResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetVnicAttachmentsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") @Nullable String instanceId,
-        @CustomType.Parameter("vnicAttachments") List<GetVnicAttachmentsVnicAttachment> vnicAttachments,
-        @CustomType.Parameter("vnicId") @Nullable String vnicId) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.instanceId = instanceId;
-        this.vnicAttachments = vnicAttachments;
-        this.vnicId = vnicId;
-    }
-
+    private GetVnicAttachmentsResult() {}
     /**
      * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
@@ -117,7 +100,7 @@ public final class GetVnicAttachmentsResult {
     public static Builder builder(GetVnicAttachmentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -126,11 +109,7 @@ public final class GetVnicAttachmentsResult {
         private @Nullable String instanceId;
         private List<GetVnicAttachmentsVnicAttachment> vnicAttachments;
         private @Nullable String vnicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVnicAttachmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -142,14 +121,17 @@ public final class GetVnicAttachmentsResult {
     	      this.vnicId = defaults.vnicId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVnicAttachmentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,14 +139,17 @@ public final class GetVnicAttachmentsResult {
         public Builder filters(GetVnicAttachmentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
             this.instanceId = instanceId;
             return this;
         }
+        @CustomType.Setter
         public Builder vnicAttachments(List<GetVnicAttachmentsVnicAttachment> vnicAttachments) {
             this.vnicAttachments = Objects.requireNonNull(vnicAttachments);
             return this;
@@ -172,11 +157,21 @@ public final class GetVnicAttachmentsResult {
         public Builder vnicAttachments(GetVnicAttachmentsVnicAttachment... vnicAttachments) {
             return vnicAttachments(List.of(vnicAttachments));
         }
+        @CustomType.Setter
         public Builder vnicId(@Nullable String vnicId) {
             this.vnicId = vnicId;
             return this;
-        }        public GetVnicAttachmentsResult build() {
-            return new GetVnicAttachmentsResult(availabilityDomain, compartmentId, filters, id, instanceId, vnicAttachments, vnicId);
+        }
+        public GetVnicAttachmentsResult build() {
+            final var o = new GetVnicAttachmentsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.instanceId = instanceId;
+            o.vnicAttachments = vnicAttachments;
+            o.vnicId = vnicId;
+            return o;
         }
     }
 }

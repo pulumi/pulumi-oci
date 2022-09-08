@@ -14,41 +14,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRegistryTypesResult {
-    private final @Nullable List<GetRegistryTypesFilter> filters;
+    private @Nullable List<GetRegistryTypesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
-     * @return The name of of the Attribute.
+     * @return The name of of the attribute.
      * 
      */
-    private final @Nullable String name;
-    private final String registryId;
-    private final @Nullable String type;
+    private @Nullable String name;
+    private String registryId;
+    private @Nullable String type;
     /**
      * @return The list of types_summary_collection.
      * 
      */
-    private final List<GetRegistryTypesTypesSummaryCollection> typesSummaryCollections;
+    private List<GetRegistryTypesTypesSummaryCollection> typesSummaryCollections;
 
-    @CustomType.Constructor
-    private GetRegistryTypesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetRegistryTypesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("registryId") String registryId,
-        @CustomType.Parameter("type") @Nullable String type,
-        @CustomType.Parameter("typesSummaryCollections") List<GetRegistryTypesTypesSummaryCollection> typesSummaryCollections) {
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.registryId = registryId;
-        this.type = type;
-        this.typesSummaryCollections = typesSummaryCollections;
-    }
-
+    private GetRegistryTypesResult() {}
     public List<GetRegistryTypesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -60,7 +45,7 @@ public final class GetRegistryTypesResult {
         return this.id;
     }
     /**
-     * @return The name of of the Attribute.
+     * @return The name of of the attribute.
      * 
      */
     public Optional<String> name() {
@@ -87,7 +72,7 @@ public final class GetRegistryTypesResult {
     public static Builder builder(GetRegistryTypesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRegistryTypesFilter> filters;
         private String id;
@@ -95,11 +80,7 @@ public final class GetRegistryTypesResult {
         private String registryId;
         private @Nullable String type;
         private List<GetRegistryTypesTypesSummaryCollection> typesSummaryCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryTypesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -110,6 +91,7 @@ public final class GetRegistryTypesResult {
     	      this.typesSummaryCollections = defaults.typesSummaryCollections;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRegistryTypesFilter> filters) {
             this.filters = filters;
             return this;
@@ -117,30 +99,43 @@ public final class GetRegistryTypesResult {
         public Builder filters(GetRegistryTypesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder registryId(String registryId) {
             this.registryId = Objects.requireNonNull(registryId);
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
         }
+        @CustomType.Setter
         public Builder typesSummaryCollections(List<GetRegistryTypesTypesSummaryCollection> typesSummaryCollections) {
             this.typesSummaryCollections = Objects.requireNonNull(typesSummaryCollections);
             return this;
         }
         public Builder typesSummaryCollections(GetRegistryTypesTypesSummaryCollection... typesSummaryCollections) {
             return typesSummaryCollections(List.of(typesSummaryCollections));
-        }        public GetRegistryTypesResult build() {
-            return new GetRegistryTypesResult(filters, id, name, registryId, type, typesSummaryCollections);
+        }
+        public GetRegistryTypesResult build() {
+            final var o = new GetRegistryTypesResult();
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.registryId = registryId;
+            o.type = type;
+            o.typesSummaryCollections = typesSummaryCollections;
+            return o;
         }
     }
 }

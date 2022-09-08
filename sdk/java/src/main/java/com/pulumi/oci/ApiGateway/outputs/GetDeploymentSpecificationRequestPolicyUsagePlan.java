@@ -18,13 +18,9 @@ public final class GetDeploymentSpecificationRequestPolicyUsagePlan {
      * * &#34;request.path[TOKEN]&#34;
      * 
      */
-    private final List<String> tokenLocations;
+    private List<String> tokenLocations;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRequestPolicyUsagePlan(@CustomType.Parameter("tokenLocations") List<String> tokenLocations) {
-        this.tokenLocations = tokenLocations;
-    }
-
+    private GetDeploymentSpecificationRequestPolicyUsagePlan() {}
     /**
      * @return A list of context variables specifying where API tokens may be located in a request. Example locations:
      * * &#34;request.headers[token]&#34;
@@ -44,27 +40,27 @@ public final class GetDeploymentSpecificationRequestPolicyUsagePlan {
     public static Builder builder(GetDeploymentSpecificationRequestPolicyUsagePlan defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> tokenLocations;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyUsagePlan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.tokenLocations = defaults.tokenLocations;
         }
 
+        @CustomType.Setter
         public Builder tokenLocations(List<String> tokenLocations) {
             this.tokenLocations = Objects.requireNonNull(tokenLocations);
             return this;
         }
         public Builder tokenLocations(String... tokenLocations) {
             return tokenLocations(List.of(tokenLocations));
-        }        public GetDeploymentSpecificationRequestPolicyUsagePlan build() {
-            return new GetDeploymentSpecificationRequestPolicyUsagePlan(tokenLocations);
+        }
+        public GetDeploymentSpecificationRequestPolicyUsagePlan build() {
+            final var o = new GetDeploymentSpecificationRequestPolicyUsagePlan();
+            o.tokenLocations = tokenLocations;
+            return o;
         }
     }
 }

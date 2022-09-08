@@ -14,42 +14,29 @@ public final class GetMysqlDbSystemsDbSystemAnalyticsCluster {
      * @return The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
      * 
      */
-    private final Integer clusterSize;
+    private Integer clusterSize;
     /**
      * @return The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      * 
      */
-    private final String shapeName;
+    private String shapeName;
     /**
      * @return DbSystem Lifecycle State
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the DB System was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the DB System was last updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetMysqlDbSystemsDbSystemAnalyticsCluster(
-        @CustomType.Parameter("clusterSize") Integer clusterSize,
-        @CustomType.Parameter("shapeName") String shapeName,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.clusterSize = clusterSize;
-        this.shapeName = shapeName;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetMysqlDbSystemsDbSystemAnalyticsCluster() {}
     /**
      * @return The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
      * 
@@ -93,18 +80,14 @@ public final class GetMysqlDbSystemsDbSystemAnalyticsCluster {
     public static Builder builder(GetMysqlDbSystemsDbSystemAnalyticsCluster defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer clusterSize;
         private String shapeName;
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemAnalyticsCluster defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterSize = defaults.clusterSize;
@@ -114,27 +97,39 @@ public final class GetMysqlDbSystemsDbSystemAnalyticsCluster {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = Objects.requireNonNull(clusterSize);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetMysqlDbSystemsDbSystemAnalyticsCluster build() {
-            return new GetMysqlDbSystemsDbSystemAnalyticsCluster(clusterSize, shapeName, state, timeCreated, timeUpdated);
+        }
+        public GetMysqlDbSystemsDbSystemAnalyticsCluster build() {
+            final var o = new GetMysqlDbSystemsDbSystemAnalyticsCluster();
+            o.clusterSize = clusterSize;
+            o.shapeName = shapeName;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

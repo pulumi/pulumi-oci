@@ -13,21 +13,14 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
      * @return Static response body text.
      * 
      */
-    private final String text;
+    private String text;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody(
-        @CustomType.Parameter("text") String text,
-        @CustomType.Parameter("type") String type) {
-        this.text = text;
-        this.type = type;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody() {}
     /**
      * @return Static response body text.
      * 
@@ -50,30 +43,32 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String text;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.text = defaults.text;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder text(String text) {
             this.text = Objects.requireNonNull(text);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody(text, type);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody();
+            o.text = text;
+            o.type = type;
+            return o;
         }
     }
 }

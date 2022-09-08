@@ -17,72 +17,47 @@ public final class GetStackResult {
      * @return Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
      * 
      */
-    private final String compartmentId;
-    private final List<GetStackConfigSource> configSources;
+    private String compartmentId;
+    private List<GetStackConfigSource> configSources;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return General description of the stack.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Human-readable display name for the stack.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String stackId;
+    private String id;
+    private String stackId;
     /**
      * @return The current lifecycle state of the stack.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time at which the stack was created.
      * 
      */
-    private final String timeCreated;
-    private final Map<String,Object> variables;
+    private String timeCreated;
+    private Map<String,Object> variables;
 
-    @CustomType.Constructor
-    private GetStackResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("configSources") List<GetStackConfigSource> configSources,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("stackId") String stackId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("variables") Map<String,Object> variables) {
-        this.compartmentId = compartmentId;
-        this.configSources = configSources;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.stackId = stackId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.variables = variables;
-    }
-
+    private GetStackResult() {}
     /**
      * @return Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
      * 
@@ -156,7 +131,7 @@ public final class GetStackResult {
     public static Builder builder(GetStackResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetStackConfigSource> configSources;
@@ -169,11 +144,7 @@ public final class GetStackResult {
         private String state;
         private String timeCreated;
         private Map<String,Object> variables;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetStackResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -189,10 +160,12 @@ public final class GetStackResult {
     	      this.variables = defaults.variables;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder configSources(List<GetStackConfigSource> configSources) {
             this.configSources = Objects.requireNonNull(configSources);
             return this;
@@ -200,43 +173,65 @@ public final class GetStackResult {
         public Builder configSources(GetStackConfigSource... configSources) {
             return configSources(List.of(configSources));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder stackId(String stackId) {
             this.stackId = Objects.requireNonNull(stackId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder variables(Map<String,Object> variables) {
             this.variables = Objects.requireNonNull(variables);
             return this;
-        }        public GetStackResult build() {
-            return new GetStackResult(compartmentId, configSources, definedTags, description, displayName, freeformTags, id, stackId, state, timeCreated, variables);
+        }
+        public GetStackResult build() {
+            final var o = new GetStackResult();
+            o.compartmentId = compartmentId;
+            o.configSources = configSources;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.stackId = stackId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.variables = variables;
+            return o;
         }
     }
 }

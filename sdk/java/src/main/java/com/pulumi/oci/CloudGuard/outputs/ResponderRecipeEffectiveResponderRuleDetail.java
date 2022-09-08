@@ -18,35 +18,24 @@ public final class ResponderRecipeEffectiveResponderRuleDetail {
      * @return Base condition object
      * 
      */
-    private final @Nullable String condition;
+    private @Nullable String condition;
     /**
      * @return ResponderRule configurations
      * 
      */
-    private final @Nullable List<ResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
+    private @Nullable List<ResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
     /**
      * @return (Updatable) Identifies state for ResponderRule
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Execution Mode for ResponderRule
      * 
      */
-    private final @Nullable String mode;
+    private @Nullable String mode;
 
-    @CustomType.Constructor
-    private ResponderRecipeEffectiveResponderRuleDetail(
-        @CustomType.Parameter("condition") @Nullable String condition,
-        @CustomType.Parameter("configurations") @Nullable List<ResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("mode") @Nullable String mode) {
-        this.condition = condition;
-        this.configurations = configurations;
-        this.isEnabled = isEnabled;
-        this.mode = mode;
-    }
-
+    private ResponderRecipeEffectiveResponderRuleDetail() {}
     /**
      * @return Base condition object
      * 
@@ -83,17 +72,13 @@ public final class ResponderRecipeEffectiveResponderRuleDetail {
     public static Builder builder(ResponderRecipeEffectiveResponderRuleDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String condition;
         private @Nullable List<ResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
         private @Nullable Boolean isEnabled;
         private @Nullable String mode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ResponderRecipeEffectiveResponderRuleDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
@@ -102,10 +87,12 @@ public final class ResponderRecipeEffectiveResponderRuleDetail {
     	      this.mode = defaults.mode;
         }
 
+        @CustomType.Setter
         public Builder condition(@Nullable String condition) {
             this.condition = condition;
             return this;
         }
+        @CustomType.Setter
         public Builder configurations(@Nullable List<ResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations) {
             this.configurations = configurations;
             return this;
@@ -113,15 +100,23 @@ public final class ResponderRecipeEffectiveResponderRuleDetail {
         public Builder configurations(ResponderRecipeEffectiveResponderRuleDetailConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder mode(@Nullable String mode) {
             this.mode = mode;
             return this;
-        }        public ResponderRecipeEffectiveResponderRuleDetail build() {
-            return new ResponderRecipeEffectiveResponderRuleDetail(condition, configurations, isEnabled, mode);
+        }
+        public ResponderRecipeEffectiveResponderRuleDetail build() {
+            final var o = new ResponderRecipeEffectiveResponderRuleDetail();
+            o.condition = condition;
+            o.configurations = configurations;
+            o.isEnabled = isEnabled;
+            o.mode = mode;
+            return o;
         }
     }
 }

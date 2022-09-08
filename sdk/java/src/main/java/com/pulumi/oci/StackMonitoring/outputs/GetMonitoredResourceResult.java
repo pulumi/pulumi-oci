@@ -20,146 +20,101 @@ public final class GetMonitoredResourceResult {
      * @return Monitored Resource Alias Credential Details
      * 
      */
-    private final List<GetMonitoredResourceAlias> aliases;
+    private List<GetMonitoredResourceAlias> aliases;
     /**
      * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Monitored Resource Credential Details
      * 
      */
-    private final List<GetMonitoredResourceCredential> credentials;
+    private List<GetMonitoredResourceCredential> credentials;
     /**
      * @return Connection details to connect to the database. HostName, protocol, and port should be specified.
      * 
      */
-    private final List<GetMonitoredResourceDatabaseConnectionDetail> databaseConnectionDetails;
+    private List<GetMonitoredResourceDatabaseConnectionDetail> databaseConnectionDetails;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Monitored resource display name.
      * 
      */
-    private final String displayName;
-    private final String externalResourceId;
+    private String displayName;
+    private String externalResourceId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Monitored resource host name.
      * 
      */
-    private final String hostName;
+    private String hostName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String managementAgentId;
-    private final String monitoredResourceId;
+    private String managementAgentId;
+    private String monitoredResourceId;
     /**
      * @return property name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return List of monitored resource properties
      * 
      */
-    private final List<GetMonitoredResourceProperty> properties;
+    private List<GetMonitoredResourceProperty> properties;
     /**
      * @return Time zone in the form of tz database canonical zone ID.
      * 
      */
-    private final String resourceTimeZone;
+    private String resourceTimeZone;
     /**
      * @return Lifecycle state of the monitored resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private final String tenantId;
+    private String tenantId;
     /**
      * @return The time the the resource was created. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the the resource was updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Monitored resource type
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetMonitoredResourceResult(
-        @CustomType.Parameter("aliases") List<GetMonitoredResourceAlias> aliases,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("credentials") List<GetMonitoredResourceCredential> credentials,
-        @CustomType.Parameter("databaseConnectionDetails") List<GetMonitoredResourceDatabaseConnectionDetail> databaseConnectionDetails,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("externalResourceId") String externalResourceId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostName") String hostName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managementAgentId") String managementAgentId,
-        @CustomType.Parameter("monitoredResourceId") String monitoredResourceId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("properties") List<GetMonitoredResourceProperty> properties,
-        @CustomType.Parameter("resourceTimeZone") String resourceTimeZone,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("tenantId") String tenantId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("type") String type) {
-        this.aliases = aliases;
-        this.compartmentId = compartmentId;
-        this.credentials = credentials;
-        this.databaseConnectionDetails = databaseConnectionDetails;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.externalResourceId = externalResourceId;
-        this.freeformTags = freeformTags;
-        this.hostName = hostName;
-        this.id = id;
-        this.managementAgentId = managementAgentId;
-        this.monitoredResourceId = monitoredResourceId;
-        this.name = name;
-        this.properties = properties;
-        this.resourceTimeZone = resourceTimeZone;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.tenantId = tenantId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.type = type;
-    }
-
+    private GetMonitoredResourceResult() {}
     /**
      * @return Monitored Resource Alias Credential Details
      * 
@@ -307,7 +262,7 @@ public final class GetMonitoredResourceResult {
     public static Builder builder(GetMonitoredResourceResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMonitoredResourceAlias> aliases;
         private String compartmentId;
@@ -330,11 +285,7 @@ public final class GetMonitoredResourceResult {
         private String timeCreated;
         private String timeUpdated;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitoredResourceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aliases = defaults.aliases;
@@ -360,6 +311,7 @@ public final class GetMonitoredResourceResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder aliases(List<GetMonitoredResourceAlias> aliases) {
             this.aliases = Objects.requireNonNull(aliases);
             return this;
@@ -367,10 +319,12 @@ public final class GetMonitoredResourceResult {
         public Builder aliases(GetMonitoredResourceAlias... aliases) {
             return aliases(List.of(aliases));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder credentials(List<GetMonitoredResourceCredential> credentials) {
             this.credentials = Objects.requireNonNull(credentials);
             return this;
@@ -378,6 +332,7 @@ public final class GetMonitoredResourceResult {
         public Builder credentials(GetMonitoredResourceCredential... credentials) {
             return credentials(List.of(credentials));
         }
+        @CustomType.Setter
         public Builder databaseConnectionDetails(List<GetMonitoredResourceDatabaseConnectionDetail> databaseConnectionDetails) {
             this.databaseConnectionDetails = Objects.requireNonNull(databaseConnectionDetails);
             return this;
@@ -385,42 +340,52 @@ public final class GetMonitoredResourceResult {
         public Builder databaseConnectionDetails(GetMonitoredResourceDatabaseConnectionDetail... databaseConnectionDetails) {
             return databaseConnectionDetails(List.of(databaseConnectionDetails));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder externalResourceId(String externalResourceId) {
             this.externalResourceId = Objects.requireNonNull(externalResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hostName(String hostName) {
             this.hostName = Objects.requireNonNull(hostName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = Objects.requireNonNull(managementAgentId);
             return this;
         }
+        @CustomType.Setter
         public Builder monitoredResourceId(String monitoredResourceId) {
             this.monitoredResourceId = Objects.requireNonNull(monitoredResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder properties(List<GetMonitoredResourceProperty> properties) {
             this.properties = Objects.requireNonNull(properties);
             return this;
@@ -428,35 +393,65 @@ public final class GetMonitoredResourceResult {
         public Builder properties(GetMonitoredResourceProperty... properties) {
             return properties(List.of(properties));
         }
+        @CustomType.Setter
         public Builder resourceTimeZone(String resourceTimeZone) {
             this.resourceTimeZone = Objects.requireNonNull(resourceTimeZone);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder tenantId(String tenantId) {
             this.tenantId = Objects.requireNonNull(tenantId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetMonitoredResourceResult build() {
-            return new GetMonitoredResourceResult(aliases, compartmentId, credentials, databaseConnectionDetails, definedTags, displayName, externalResourceId, freeformTags, hostName, id, managementAgentId, monitoredResourceId, name, properties, resourceTimeZone, state, systemTags, tenantId, timeCreated, timeUpdated, type);
+        }
+        public GetMonitoredResourceResult build() {
+            final var o = new GetMonitoredResourceResult();
+            o.aliases = aliases;
+            o.compartmentId = compartmentId;
+            o.credentials = credentials;
+            o.databaseConnectionDetails = databaseConnectionDetails;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.externalResourceId = externalResourceId;
+            o.freeformTags = freeformTags;
+            o.hostName = hostName;
+            o.id = id;
+            o.managementAgentId = managementAgentId;
+            o.monitoredResourceId = monitoredResourceId;
+            o.name = name;
+            o.properties = properties;
+            o.resourceTimeZone = resourceTimeZone;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.tenantId = tenantId;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.type = type;
+            return o;
         }
     }
 }

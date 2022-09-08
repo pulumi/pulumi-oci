@@ -13,21 +13,14 @@ public final class GetConfigDimension {
      * @return The name of the metric. This must be a known metric name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return This must not be set.
      * 
      */
-    private final String valueSource;
+    private String valueSource;
 
-    @CustomType.Constructor
-    private GetConfigDimension(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("valueSource") String valueSource) {
-        this.name = name;
-        this.valueSource = valueSource;
-    }
-
+    private GetConfigDimension() {}
     /**
      * @return The name of the metric. This must be a known metric name.
      * 
@@ -50,30 +43,32 @@ public final class GetConfigDimension {
     public static Builder builder(GetConfigDimension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String valueSource;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConfigDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.valueSource = defaults.valueSource;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder valueSource(String valueSource) {
             this.valueSource = Objects.requireNonNull(valueSource);
             return this;
-        }        public GetConfigDimension build() {
-            return new GetConfigDimension(name, valueSource);
+        }
+        public GetConfigDimension build() {
+            final var o = new GetConfigDimension();
+            o.name = name;
+            o.valueSource = valueSource;
+            return o;
         }
     }
 }

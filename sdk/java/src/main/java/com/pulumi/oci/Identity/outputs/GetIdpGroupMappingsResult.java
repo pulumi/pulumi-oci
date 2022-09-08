@@ -13,35 +13,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIdpGroupMappingsResult {
-    private final @Nullable List<GetIdpGroupMappingsFilter> filters;
+    private @Nullable List<GetIdpGroupMappingsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the `IdentityProvider` this mapping belongs to.
      * 
      */
-    private final String identityProviderId;
+    private String identityProviderId;
     /**
      * @return The list of idp_group_mappings.
      * 
      */
-    private final List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings;
+    private List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings;
 
-    @CustomType.Constructor
-    private GetIdpGroupMappingsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetIdpGroupMappingsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("identityProviderId") String identityProviderId,
-        @CustomType.Parameter("idpGroupMappings") List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings) {
-        this.filters = filters;
-        this.id = id;
-        this.identityProviderId = identityProviderId;
-        this.idpGroupMappings = idpGroupMappings;
-    }
-
+    private GetIdpGroupMappingsResult() {}
     public List<GetIdpGroupMappingsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -74,17 +63,13 @@ public final class GetIdpGroupMappingsResult {
     public static Builder builder(GetIdpGroupMappingsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetIdpGroupMappingsFilter> filters;
         private String id;
         private String identityProviderId;
         private List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIdpGroupMappingsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -93,6 +78,7 @@ public final class GetIdpGroupMappingsResult {
     	      this.idpGroupMappings = defaults.idpGroupMappings;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIdpGroupMappingsFilter> filters) {
             this.filters = filters;
             return this;
@@ -100,22 +86,31 @@ public final class GetIdpGroupMappingsResult {
         public Builder filters(GetIdpGroupMappingsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder identityProviderId(String identityProviderId) {
             this.identityProviderId = Objects.requireNonNull(identityProviderId);
             return this;
         }
+        @CustomType.Setter
         public Builder idpGroupMappings(List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings) {
             this.idpGroupMappings = Objects.requireNonNull(idpGroupMappings);
             return this;
         }
         public Builder idpGroupMappings(GetIdpGroupMappingsIdpGroupMapping... idpGroupMappings) {
             return idpGroupMappings(List.of(idpGroupMappings));
-        }        public GetIdpGroupMappingsResult build() {
-            return new GetIdpGroupMappingsResult(filters, id, identityProviderId, idpGroupMappings);
+        }
+        public GetIdpGroupMappingsResult build() {
+            final var o = new GetIdpGroupMappingsResult();
+            o.filters = filters;
+            o.id = id;
+            o.identityProviderId = identityProviderId;
+            o.idpGroupMappings = idpGroupMappings;
+            return o;
         }
     }
 }

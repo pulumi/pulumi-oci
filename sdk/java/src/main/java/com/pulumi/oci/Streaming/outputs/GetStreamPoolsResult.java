@@ -18,45 +18,30 @@ public final class GetStreamPoolsResult {
      * @return Compartment OCID that the pool belongs to.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetStreamPoolsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetStreamPoolsFilter> filters;
     /**
      * @return The OCID of the stream pool.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The name of the stream pool.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the stream pool.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of stream_pools.
      * 
      */
-    private final List<GetStreamPoolsStreamPool> streamPools;
+    private List<GetStreamPoolsStreamPool> streamPools;
 
-    @CustomType.Constructor
-    private GetStreamPoolsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetStreamPoolsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("streamPools") List<GetStreamPoolsStreamPool> streamPools) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-        this.streamPools = streamPools;
-    }
-
+    private GetStreamPoolsResult() {}
     /**
      * @return Compartment OCID that the pool belongs to.
      * 
@@ -103,7 +88,7 @@ public final class GetStreamPoolsResult {
     public static Builder builder(GetStreamPoolsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetStreamPoolsFilter> filters;
@@ -111,11 +96,7 @@ public final class GetStreamPoolsResult {
         private @Nullable String name;
         private @Nullable String state;
         private List<GetStreamPoolsStreamPool> streamPools;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetStreamPoolsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetStreamPoolsResult {
     	      this.streamPools = defaults.streamPools;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetStreamPoolsFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,26 +120,38 @@ public final class GetStreamPoolsResult {
         public Builder filters(GetStreamPoolsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder streamPools(List<GetStreamPoolsStreamPool> streamPools) {
             this.streamPools = Objects.requireNonNull(streamPools);
             return this;
         }
         public Builder streamPools(GetStreamPoolsStreamPool... streamPools) {
             return streamPools(List.of(streamPools));
-        }        public GetStreamPoolsResult build() {
-            return new GetStreamPoolsResult(compartmentId, filters, id, name, state, streamPools);
+        }
+        public GetStreamPoolsResult build() {
+            final var o = new GetStreamPoolsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            o.streamPools = streamPools;
+            return o;
         }
     }
 }

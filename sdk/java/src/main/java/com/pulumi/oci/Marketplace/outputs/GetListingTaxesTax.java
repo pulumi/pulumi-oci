@@ -13,35 +13,24 @@ public final class GetListingTaxesTax {
      * @return Unique code for the tax.
      * 
      */
-    private final String code;
+    private String code;
     /**
      * @return Country, which imposes the tax.
      * 
      */
-    private final String country;
+    private String country;
     /**
      * @return Name of the tax code.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The URL with more details about this tax.
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetListingTaxesTax(
-        @CustomType.Parameter("code") String code,
-        @CustomType.Parameter("country") String country,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("url") String url) {
-        this.code = code;
-        this.country = country;
-        this.name = name;
-        this.url = url;
-    }
-
+    private GetListingTaxesTax() {}
     /**
      * @return Unique code for the tax.
      * 
@@ -78,17 +67,13 @@ public final class GetListingTaxesTax {
     public static Builder builder(GetListingTaxesTax defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String code;
         private String country;
         private String name;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingTaxesTax defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
@@ -97,23 +82,33 @@ public final class GetListingTaxesTax {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder code(String code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder country(String country) {
             this.country = Objects.requireNonNull(country);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetListingTaxesTax build() {
-            return new GetListingTaxesTax(code, country, name, url);
+        }
+        public GetListingTaxesTax build() {
+            final var o = new GetListingTaxesTax();
+            o.code = code;
+            o.country = country;
+            o.name = name;
+            o.url = url;
+            return o;
         }
     }
 }

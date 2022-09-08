@@ -11,33 +11,18 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBucketSummariesBucketSummaryRetentionRule {
-    private final String displayName;
-    private final List<GetBucketSummariesBucketSummaryRetentionRuleDuration> durations;
-    private final String retentionRuleId;
+    private String displayName;
+    private List<GetBucketSummariesBucketSummaryRetentionRuleDuration> durations;
+    private String retentionRuleId;
     /**
      * @return The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    private final String timeCreated;
-    private final String timeModified;
-    private final String timeRuleLocked;
+    private String timeCreated;
+    private String timeModified;
+    private String timeRuleLocked;
 
-    @CustomType.Constructor
-    private GetBucketSummariesBucketSummaryRetentionRule(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("durations") List<GetBucketSummariesBucketSummaryRetentionRuleDuration> durations,
-        @CustomType.Parameter("retentionRuleId") String retentionRuleId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeModified") String timeModified,
-        @CustomType.Parameter("timeRuleLocked") String timeRuleLocked) {
-        this.displayName = displayName;
-        this.durations = durations;
-        this.retentionRuleId = retentionRuleId;
-        this.timeCreated = timeCreated;
-        this.timeModified = timeModified;
-        this.timeRuleLocked = timeRuleLocked;
-    }
-
+    private GetBucketSummariesBucketSummaryRetentionRule() {}
     public String displayName() {
         return this.displayName;
     }
@@ -68,7 +53,7 @@ public final class GetBucketSummariesBucketSummaryRetentionRule {
     public static Builder builder(GetBucketSummariesBucketSummaryRetentionRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private List<GetBucketSummariesBucketSummaryRetentionRuleDuration> durations;
@@ -76,11 +61,7 @@ public final class GetBucketSummariesBucketSummaryRetentionRule {
         private String timeCreated;
         private String timeModified;
         private String timeRuleLocked;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBucketSummariesBucketSummaryRetentionRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -91,10 +72,12 @@ public final class GetBucketSummariesBucketSummaryRetentionRule {
     	      this.timeRuleLocked = defaults.timeRuleLocked;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder durations(List<GetBucketSummariesBucketSummaryRetentionRuleDuration> durations) {
             this.durations = Objects.requireNonNull(durations);
             return this;
@@ -102,23 +85,35 @@ public final class GetBucketSummariesBucketSummaryRetentionRule {
         public Builder durations(GetBucketSummariesBucketSummaryRetentionRuleDuration... durations) {
             return durations(List.of(durations));
         }
+        @CustomType.Setter
         public Builder retentionRuleId(String retentionRuleId) {
             this.retentionRuleId = Objects.requireNonNull(retentionRuleId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeModified(String timeModified) {
             this.timeModified = Objects.requireNonNull(timeModified);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRuleLocked(String timeRuleLocked) {
             this.timeRuleLocked = Objects.requireNonNull(timeRuleLocked);
             return this;
-        }        public GetBucketSummariesBucketSummaryRetentionRule build() {
-            return new GetBucketSummariesBucketSummaryRetentionRule(displayName, durations, retentionRuleId, timeCreated, timeModified, timeRuleLocked);
+        }
+        public GetBucketSummariesBucketSummaryRetentionRule build() {
+            final var o = new GetBucketSummariesBucketSummaryRetentionRule();
+            o.displayName = displayName;
+            o.durations = durations;
+            o.retentionRuleId = retentionRuleId;
+            o.timeCreated = timeCreated;
+            o.timeModified = timeModified;
+            o.timeRuleLocked = timeRuleLocked;
+            return o;
         }
     }
 }

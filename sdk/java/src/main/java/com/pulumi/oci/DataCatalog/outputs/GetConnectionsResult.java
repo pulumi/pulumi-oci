@@ -15,107 +15,72 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionsResult {
-    private final String catalogId;
+    private String catalogId;
     /**
      * @return The list of connection_collection.
      * 
      */
-    private final List<GetConnectionsConnectionCollection> connectionCollections;
+    private List<GetConnectionsConnectionCollection> connectionCollections;
     /**
      * @return OCID of the user who created the connection.
      * 
      */
-    private final @Nullable String createdById;
+    private @Nullable String createdById;
     /**
      * @return Unique key of the parent data asset.
      * 
      */
-    private final String dataAssetKey;
+    private String dataAssetKey;
     /**
      * @return A user-friendly display name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable String displayNameContains;
+    private @Nullable String displayName;
+    private @Nullable String displayNameContains;
     /**
      * @return Unique external key of this object from the source system.
      * 
      */
-    private final @Nullable String externalKey;
-    private final @Nullable List<String> fields;
-    private final @Nullable List<GetConnectionsFilter> filters;
+    private @Nullable String externalKey;
+    private @Nullable List<String> fields;
+    private @Nullable List<GetConnectionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether this connection is the default connection.
      * 
      */
-    private final @Nullable Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return The current state of the connection.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private final @Nullable String timeStatusUpdated;
+    private @Nullable String timeStatusUpdated;
     /**
      * @return The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private final @Nullable String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return OCID of the user who modified the connection.
      * 
      */
-    private final @Nullable String updatedById;
+    private @Nullable String updatedById;
 
-    @CustomType.Constructor
-    private GetConnectionsResult(
-        @CustomType.Parameter("catalogId") String catalogId,
-        @CustomType.Parameter("connectionCollections") List<GetConnectionsConnectionCollection> connectionCollections,
-        @CustomType.Parameter("createdById") @Nullable String createdById,
-        @CustomType.Parameter("dataAssetKey") String dataAssetKey,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("displayNameContains") @Nullable String displayNameContains,
-        @CustomType.Parameter("externalKey") @Nullable String externalKey,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("filters") @Nullable List<GetConnectionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isDefault") @Nullable Boolean isDefault,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeStatusUpdated") @Nullable String timeStatusUpdated,
-        @CustomType.Parameter("timeUpdated") @Nullable String timeUpdated,
-        @CustomType.Parameter("updatedById") @Nullable String updatedById) {
-        this.catalogId = catalogId;
-        this.connectionCollections = connectionCollections;
-        this.createdById = createdById;
-        this.dataAssetKey = dataAssetKey;
-        this.displayName = displayName;
-        this.displayNameContains = displayNameContains;
-        this.externalKey = externalKey;
-        this.fields = fields;
-        this.filters = filters;
-        this.id = id;
-        this.isDefault = isDefault;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeStatusUpdated = timeStatusUpdated;
-        this.timeUpdated = timeUpdated;
-        this.updatedById = updatedById;
-    }
-
+    private GetConnectionsResult() {}
     public String catalogId() {
         return this.catalogId;
     }
@@ -220,7 +185,7 @@ public final class GetConnectionsResult {
     public static Builder builder(GetConnectionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String catalogId;
         private List<GetConnectionsConnectionCollection> connectionCollections;
@@ -238,11 +203,7 @@ public final class GetConnectionsResult {
         private @Nullable String timeStatusUpdated;
         private @Nullable String timeUpdated;
         private @Nullable String updatedById;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.catalogId = defaults.catalogId;
@@ -263,10 +224,12 @@ public final class GetConnectionsResult {
     	      this.updatedById = defaults.updatedById;
         }
 
+        @CustomType.Setter
         public Builder catalogId(String catalogId) {
             this.catalogId = Objects.requireNonNull(catalogId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionCollections(List<GetConnectionsConnectionCollection> connectionCollections) {
             this.connectionCollections = Objects.requireNonNull(connectionCollections);
             return this;
@@ -274,26 +237,32 @@ public final class GetConnectionsResult {
         public Builder connectionCollections(GetConnectionsConnectionCollection... connectionCollections) {
             return connectionCollections(List.of(connectionCollections));
         }
+        @CustomType.Setter
         public Builder createdById(@Nullable String createdById) {
             this.createdById = createdById;
             return this;
         }
+        @CustomType.Setter
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = Objects.requireNonNull(dataAssetKey);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
             this.displayNameContains = displayNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder externalKey(@Nullable String externalKey) {
             this.externalKey = externalKey;
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -301,6 +270,7 @@ public final class GetConnectionsResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetConnectionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -308,35 +278,60 @@ public final class GetConnectionsResult {
         public Builder filters(GetConnectionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isDefault(@Nullable Boolean isDefault) {
             this.isDefault = isDefault;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeStatusUpdated(@Nullable String timeStatusUpdated) {
             this.timeStatusUpdated = timeStatusUpdated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
         public Builder updatedById(@Nullable String updatedById) {
             this.updatedById = updatedById;
             return this;
-        }        public GetConnectionsResult build() {
-            return new GetConnectionsResult(catalogId, connectionCollections, createdById, dataAssetKey, displayName, displayNameContains, externalKey, fields, filters, id, isDefault, state, timeCreated, timeStatusUpdated, timeUpdated, updatedById);
+        }
+        public GetConnectionsResult build() {
+            final var o = new GetConnectionsResult();
+            o.catalogId = catalogId;
+            o.connectionCollections = connectionCollections;
+            o.createdById = createdById;
+            o.dataAssetKey = dataAssetKey;
+            o.displayName = displayName;
+            o.displayNameContains = displayNameContains;
+            o.externalKey = externalKey;
+            o.fields = fields;
+            o.filters = filters;
+            o.id = id;
+            o.isDefault = isDefault;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeStatusUpdated = timeStatusUpdated;
+            o.timeUpdated = timeUpdated;
+            o.updatedById = updatedById;
+            return o;
         }
     }
 }

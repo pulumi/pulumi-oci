@@ -11,23 +11,12 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class LogAnalyticsObjectCollectionRuleOverride {
-    private final @Nullable String matchType;
-    private final @Nullable String matchValue;
-    private final @Nullable String propertyName;
-    private final @Nullable String propertyValue;
+    private @Nullable String matchType;
+    private @Nullable String matchValue;
+    private @Nullable String propertyName;
+    private @Nullable String propertyValue;
 
-    @CustomType.Constructor
-    private LogAnalyticsObjectCollectionRuleOverride(
-        @CustomType.Parameter("matchType") @Nullable String matchType,
-        @CustomType.Parameter("matchValue") @Nullable String matchValue,
-        @CustomType.Parameter("propertyName") @Nullable String propertyName,
-        @CustomType.Parameter("propertyValue") @Nullable String propertyValue) {
-        this.matchType = matchType;
-        this.matchValue = matchValue;
-        this.propertyName = propertyName;
-        this.propertyValue = propertyValue;
-    }
-
+    private LogAnalyticsObjectCollectionRuleOverride() {}
     public Optional<String> matchType() {
         return Optional.ofNullable(this.matchType);
     }
@@ -48,17 +37,13 @@ public final class LogAnalyticsObjectCollectionRuleOverride {
     public static Builder builder(LogAnalyticsObjectCollectionRuleOverride defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String matchType;
         private @Nullable String matchValue;
         private @Nullable String propertyName;
         private @Nullable String propertyValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(LogAnalyticsObjectCollectionRuleOverride defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.matchType = defaults.matchType;
@@ -67,23 +52,33 @@ public final class LogAnalyticsObjectCollectionRuleOverride {
     	      this.propertyValue = defaults.propertyValue;
         }
 
+        @CustomType.Setter
         public Builder matchType(@Nullable String matchType) {
             this.matchType = matchType;
             return this;
         }
+        @CustomType.Setter
         public Builder matchValue(@Nullable String matchValue) {
             this.matchValue = matchValue;
             return this;
         }
+        @CustomType.Setter
         public Builder propertyName(@Nullable String propertyName) {
             this.propertyName = propertyName;
             return this;
         }
+        @CustomType.Setter
         public Builder propertyValue(@Nullable String propertyValue) {
             this.propertyValue = propertyValue;
             return this;
-        }        public LogAnalyticsObjectCollectionRuleOverride build() {
-            return new LogAnalyticsObjectCollectionRuleOverride(matchType, matchValue, propertyName, propertyValue);
+        }
+        public LogAnalyticsObjectCollectionRuleOverride build() {
+            final var o = new LogAnalyticsObjectCollectionRuleOverride();
+            o.matchType = matchType;
+            o.matchValue = matchValue;
+            o.propertyName = propertyName;
+            o.propertyValue = propertyValue;
+            return o;
         }
     }
 }

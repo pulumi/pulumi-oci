@@ -14,21 +14,14 @@ public final class GetDatabaseInsightConnectionDetailHost {
      * @return Host IP used for connection requests for Cloud DB resource.
      * 
      */
-    private final String hostIp;
+    private String hostIp;
     /**
      * @return Listener port number used for connection requests.
      * 
      */
-    private final Integer port;
+    private Integer port;
 
-    @CustomType.Constructor
-    private GetDatabaseInsightConnectionDetailHost(
-        @CustomType.Parameter("hostIp") String hostIp,
-        @CustomType.Parameter("port") Integer port) {
-        this.hostIp = hostIp;
-        this.port = port;
-    }
-
+    private GetDatabaseInsightConnectionDetailHost() {}
     /**
      * @return Host IP used for connection requests for Cloud DB resource.
      * 
@@ -51,30 +44,32 @@ public final class GetDatabaseInsightConnectionDetailHost {
     public static Builder builder(GetDatabaseInsightConnectionDetailHost defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostIp;
         private Integer port;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseInsightConnectionDetailHost defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostIp = defaults.hostIp;
     	      this.port = defaults.port;
         }
 
+        @CustomType.Setter
         public Builder hostIp(String hostIp) {
             this.hostIp = Objects.requireNonNull(hostIp);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
-        }        public GetDatabaseInsightConnectionDetailHost build() {
-            return new GetDatabaseInsightConnectionDetailHost(hostIp, port);
+        }
+        public GetDatabaseInsightConnectionDetailHost build() {
+            final var o = new GetDatabaseInsightConnectionDetailHost();
+            o.hostIp = hostIp;
+            o.port = port;
+            return o;
         }
     }
 }

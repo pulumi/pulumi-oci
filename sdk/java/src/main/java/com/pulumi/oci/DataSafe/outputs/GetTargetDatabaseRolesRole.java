@@ -14,56 +14,39 @@ public final class GetTargetDatabaseRolesRole {
      * @return A filter to return roles based on authentication type.
      * 
      */
-    private final String authenticationType;
+    private String authenticationType;
     /**
      * @return Is the role common.
      * 
      */
-    private final Boolean isCommon;
+    private Boolean isCommon;
     /**
      * @return Is the role implicit.
      * 
      */
-    private final Boolean isImplicit;
+    private Boolean isImplicit;
     /**
      * @return Is the role inherited.
      * 
      */
-    private final Boolean isInherited;
+    private Boolean isInherited;
     /**
      * @return A filter to return roles based on whether they are maintained by oracle or not.
      * 
      */
-    private final Boolean isOracleMaintained;
+    private Boolean isOracleMaintained;
     /**
      * @return Is password required.
      * 
      */
-    private final Boolean isPasswordRequired;
+    private Boolean isPasswordRequired;
     /**
      * @return A filter to return only a specific role based on role name.
      * 
      */
-    private final String roleName;
+    private String roleName;
 
-    @CustomType.Constructor
-    private GetTargetDatabaseRolesRole(
-        @CustomType.Parameter("authenticationType") String authenticationType,
-        @CustomType.Parameter("isCommon") Boolean isCommon,
-        @CustomType.Parameter("isImplicit") Boolean isImplicit,
-        @CustomType.Parameter("isInherited") Boolean isInherited,
-        @CustomType.Parameter("isOracleMaintained") Boolean isOracleMaintained,
-        @CustomType.Parameter("isPasswordRequired") Boolean isPasswordRequired,
-        @CustomType.Parameter("roleName") String roleName) {
-        this.authenticationType = authenticationType;
-        this.isCommon = isCommon;
-        this.isImplicit = isImplicit;
-        this.isInherited = isInherited;
-        this.isOracleMaintained = isOracleMaintained;
-        this.isPasswordRequired = isPasswordRequired;
-        this.roleName = roleName;
-    }
-
+    private GetTargetDatabaseRolesRole() {}
     /**
      * @return A filter to return roles based on authentication type.
      * 
@@ -121,7 +104,7 @@ public final class GetTargetDatabaseRolesRole {
     public static Builder builder(GetTargetDatabaseRolesRole defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String authenticationType;
         private Boolean isCommon;
@@ -130,11 +113,7 @@ public final class GetTargetDatabaseRolesRole {
         private Boolean isOracleMaintained;
         private Boolean isPasswordRequired;
         private String roleName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabaseRolesRole defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authenticationType = defaults.authenticationType;
@@ -146,35 +125,51 @@ public final class GetTargetDatabaseRolesRole {
     	      this.roleName = defaults.roleName;
         }
 
+        @CustomType.Setter
         public Builder authenticationType(String authenticationType) {
             this.authenticationType = Objects.requireNonNull(authenticationType);
             return this;
         }
+        @CustomType.Setter
         public Builder isCommon(Boolean isCommon) {
             this.isCommon = Objects.requireNonNull(isCommon);
             return this;
         }
+        @CustomType.Setter
         public Builder isImplicit(Boolean isImplicit) {
             this.isImplicit = Objects.requireNonNull(isImplicit);
             return this;
         }
+        @CustomType.Setter
         public Builder isInherited(Boolean isInherited) {
             this.isInherited = Objects.requireNonNull(isInherited);
             return this;
         }
+        @CustomType.Setter
         public Builder isOracleMaintained(Boolean isOracleMaintained) {
             this.isOracleMaintained = Objects.requireNonNull(isOracleMaintained);
             return this;
         }
+        @CustomType.Setter
         public Builder isPasswordRequired(Boolean isPasswordRequired) {
             this.isPasswordRequired = Objects.requireNonNull(isPasswordRequired);
             return this;
         }
+        @CustomType.Setter
         public Builder roleName(String roleName) {
             this.roleName = Objects.requireNonNull(roleName);
             return this;
-        }        public GetTargetDatabaseRolesRole build() {
-            return new GetTargetDatabaseRolesRole(authenticationType, isCommon, isImplicit, isInherited, isOracleMaintained, isPasswordRequired, roleName);
+        }
+        public GetTargetDatabaseRolesRole build() {
+            final var o = new GetTargetDatabaseRolesRole();
+            o.authenticationType = authenticationType;
+            o.isCommon = isCommon;
+            o.isImplicit = isImplicit;
+            o.isInherited = isInherited;
+            o.isOracleMaintained = isOracleMaintained;
+            o.isPasswordRequired = isPasswordRequired;
+            o.roleName = roleName;
+            return o;
         }
     }
 }

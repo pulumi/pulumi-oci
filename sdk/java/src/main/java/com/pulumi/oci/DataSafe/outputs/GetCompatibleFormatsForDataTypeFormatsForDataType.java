@@ -15,21 +15,14 @@ public final class GetCompatibleFormatsForDataTypeFormatsForDataType {
      * @return The data type category, which can be one of the following - Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All - Includes all the supported data types
      * 
      */
-    private final String dataType;
+    private String dataType;
     /**
      * @return An array of the basic masking formats compatible with the data type category.
      * 
      */
-    private final List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats;
+    private List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats;
 
-    @CustomType.Constructor
-    private GetCompatibleFormatsForDataTypeFormatsForDataType(
-        @CustomType.Parameter("dataType") String dataType,
-        @CustomType.Parameter("maskingFormats") List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats) {
-        this.dataType = dataType;
-        this.maskingFormats = maskingFormats;
-    }
-
+    private GetCompatibleFormatsForDataTypeFormatsForDataType() {}
     /**
      * @return The data type category, which can be one of the following - Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All - Includes all the supported data types
      * 
@@ -52,33 +45,35 @@ public final class GetCompatibleFormatsForDataTypeFormatsForDataType {
     public static Builder builder(GetCompatibleFormatsForDataTypeFormatsForDataType defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dataType;
         private List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCompatibleFormatsForDataTypeFormatsForDataType defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dataType = defaults.dataType;
     	      this.maskingFormats = defaults.maskingFormats;
         }
 
+        @CustomType.Setter
         public Builder dataType(String dataType) {
             this.dataType = Objects.requireNonNull(dataType);
             return this;
         }
+        @CustomType.Setter
         public Builder maskingFormats(List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats) {
             this.maskingFormats = Objects.requireNonNull(maskingFormats);
             return this;
         }
         public Builder maskingFormats(GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat... maskingFormats) {
             return maskingFormats(List.of(maskingFormats));
-        }        public GetCompatibleFormatsForDataTypeFormatsForDataType build() {
-            return new GetCompatibleFormatsForDataTypeFormatsForDataType(dataType, maskingFormats);
+        }
+        public GetCompatibleFormatsForDataTypeFormatsForDataType build() {
+            final var o = new GetCompatibleFormatsForDataTypeFormatsForDataType();
+            o.dataType = dataType;
+            o.maskingFormats = maskingFormats;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidationCon
      * @return The media type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
      * 
      */
-    private final String mediaType;
+    private String mediaType;
     /**
      * @return Validation type defines the content validation method.
      * 
      */
-    private final String validationType;
+    private String validationType;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent(
-        @CustomType.Parameter("mediaType") String mediaType,
-        @CustomType.Parameter("validationType") String validationType) {
-        this.mediaType = mediaType;
-        this.validationType = validationType;
-    }
-
+    private GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent() {}
     /**
      * @return The media type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
      * 
@@ -50,30 +43,32 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidationCon
     public static Builder builder(GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String mediaType;
         private String validationType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.mediaType = defaults.mediaType;
     	      this.validationType = defaults.validationType;
         }
 
+        @CustomType.Setter
         public Builder mediaType(String mediaType) {
             this.mediaType = Objects.requireNonNull(mediaType);
             return this;
         }
+        @CustomType.Setter
         public Builder validationType(String validationType) {
             this.validationType = Objects.requireNonNull(validationType);
             return this;
-        }        public GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent build() {
-            return new GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent(mediaType, validationType);
+        }
+        public GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent build() {
+            final var o = new GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent();
+            o.mediaType = mediaType;
+            o.validationType = validationType;
+            return o;
         }
     }
 }

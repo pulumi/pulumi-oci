@@ -13,28 +13,19 @@ public final class GetAlarmHistoryCollectionEntry {
      * @return Description for this alarm history entry.
      * 
      */
-    private final String summary;
+    private String summary;
     /**
      * @return Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private final String timestamp;
+    private String timestamp;
     /**
      * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
      * 
      */
-    private final String timestampTriggered;
+    private String timestampTriggered;
 
-    @CustomType.Constructor
-    private GetAlarmHistoryCollectionEntry(
-        @CustomType.Parameter("summary") String summary,
-        @CustomType.Parameter("timestamp") String timestamp,
-        @CustomType.Parameter("timestampTriggered") String timestampTriggered) {
-        this.summary = summary;
-        this.timestamp = timestamp;
-        this.timestampTriggered = timestampTriggered;
-    }
-
+    private GetAlarmHistoryCollectionEntry() {}
     /**
      * @return Description for this alarm history entry.
      * 
@@ -64,16 +55,12 @@ public final class GetAlarmHistoryCollectionEntry {
     public static Builder builder(GetAlarmHistoryCollectionEntry defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String summary;
         private String timestamp;
         private String timestampTriggered;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlarmHistoryCollectionEntry defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.summary = defaults.summary;
@@ -81,19 +68,27 @@ public final class GetAlarmHistoryCollectionEntry {
     	      this.timestampTriggered = defaults.timestampTriggered;
         }
 
+        @CustomType.Setter
         public Builder summary(String summary) {
             this.summary = Objects.requireNonNull(summary);
             return this;
         }
+        @CustomType.Setter
         public Builder timestamp(String timestamp) {
             this.timestamp = Objects.requireNonNull(timestamp);
             return this;
         }
+        @CustomType.Setter
         public Builder timestampTriggered(String timestampTriggered) {
             this.timestampTriggered = Objects.requireNonNull(timestampTriggered);
             return this;
-        }        public GetAlarmHistoryCollectionEntry build() {
-            return new GetAlarmHistoryCollectionEntry(summary, timestamp, timestampTriggered);
+        }
+        public GetAlarmHistoryCollectionEntry build() {
+            final var o = new GetAlarmHistoryCollectionEntry();
+            o.summary = summary;
+            o.timestamp = timestamp;
+            o.timestampTriggered = timestampTriggered;
+            return o;
         }
     }
 }

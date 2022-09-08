@@ -16,28 +16,19 @@ public final class VirtualServiceRouteTableRouteRuleDestination {
      * @return (Updatable) Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
     /**
      * @return (Updatable) The OCID of the virtual deployment where the request will be routed.
      * 
      */
-    private final String virtualDeploymentId;
+    private String virtualDeploymentId;
     /**
      * @return (Updatable) Weight of traffic target.
      * 
      */
-    private final Integer weight;
+    private Integer weight;
 
-    @CustomType.Constructor
-    private VirtualServiceRouteTableRouteRuleDestination(
-        @CustomType.Parameter("port") @Nullable Integer port,
-        @CustomType.Parameter("virtualDeploymentId") String virtualDeploymentId,
-        @CustomType.Parameter("weight") Integer weight) {
-        this.port = port;
-        this.virtualDeploymentId = virtualDeploymentId;
-        this.weight = weight;
-    }
-
+    private VirtualServiceRouteTableRouteRuleDestination() {}
     /**
      * @return (Updatable) Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
      * 
@@ -67,16 +58,12 @@ public final class VirtualServiceRouteTableRouteRuleDestination {
     public static Builder builder(VirtualServiceRouteTableRouteRuleDestination defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer port;
         private String virtualDeploymentId;
         private Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VirtualServiceRouteTableRouteRuleDestination defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.port = defaults.port;
@@ -84,19 +71,27 @@ public final class VirtualServiceRouteTableRouteRuleDestination {
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
         }
+        @CustomType.Setter
         public Builder virtualDeploymentId(String virtualDeploymentId) {
             this.virtualDeploymentId = Objects.requireNonNull(virtualDeploymentId);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(Integer weight) {
             this.weight = Objects.requireNonNull(weight);
             return this;
-        }        public VirtualServiceRouteTableRouteRuleDestination build() {
-            return new VirtualServiceRouteTableRouteRuleDestination(port, virtualDeploymentId, weight);
+        }
+        public VirtualServiceRouteTableRouteRuleDestination build() {
+            final var o = new VirtualServiceRouteTableRouteRuleDestination();
+            o.port = port;
+            o.virtualDeploymentId = virtualDeploymentId;
+            o.weight = weight;
+            return o;
         }
     }
 }

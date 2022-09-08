@@ -14,49 +14,34 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpv6sResult {
-    private final @Nullable List<GetIpv6sFilter> filters;
+    private @Nullable List<GetIpv6sFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC&#39;s subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
      * 
      */
-    private final @Nullable String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return The list of ipv6s.
      * 
      */
-    private final List<GetIpv6sIpv6> ipv6s;
+    private List<GetIpv6sIpv6> ipv6s;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * 
      */
-    private final @Nullable String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the IPv6 is assigned to. The VNIC and IPv6 must be in the same subnet.
      * 
      */
-    private final @Nullable String vnicId;
+    private @Nullable String vnicId;
 
-    @CustomType.Constructor
-    private GetIpv6sResult(
-        @CustomType.Parameter("filters") @Nullable List<GetIpv6sFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddress") @Nullable String ipAddress,
-        @CustomType.Parameter("ipv6s") List<GetIpv6sIpv6> ipv6s,
-        @CustomType.Parameter("subnetId") @Nullable String subnetId,
-        @CustomType.Parameter("vnicId") @Nullable String vnicId) {
-        this.filters = filters;
-        this.id = id;
-        this.ipAddress = ipAddress;
-        this.ipv6s = ipv6s;
-        this.subnetId = subnetId;
-        this.vnicId = vnicId;
-    }
-
+    private GetIpv6sResult() {}
     public List<GetIpv6sFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -103,7 +88,7 @@ public final class GetIpv6sResult {
     public static Builder builder(GetIpv6sResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetIpv6sFilter> filters;
         private String id;
@@ -111,11 +96,7 @@ public final class GetIpv6sResult {
         private List<GetIpv6sIpv6> ipv6s;
         private @Nullable String subnetId;
         private @Nullable String vnicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpv6sResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -126,6 +107,7 @@ public final class GetIpv6sResult {
     	      this.vnicId = defaults.vnicId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIpv6sFilter> filters) {
             this.filters = filters;
             return this;
@@ -133,14 +115,17 @@ public final class GetIpv6sResult {
         public Builder filters(GetIpv6sFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
             this.ipAddress = ipAddress;
             return this;
         }
+        @CustomType.Setter
         public Builder ipv6s(List<GetIpv6sIpv6> ipv6s) {
             this.ipv6s = Objects.requireNonNull(ipv6s);
             return this;
@@ -148,15 +133,25 @@ public final class GetIpv6sResult {
         public Builder ipv6s(GetIpv6sIpv6... ipv6s) {
             return ipv6s(List.of(ipv6s));
         }
+        @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
         public Builder vnicId(@Nullable String vnicId) {
             this.vnicId = vnicId;
             return this;
-        }        public GetIpv6sResult build() {
-            return new GetIpv6sResult(filters, id, ipAddress, ipv6s, subnetId, vnicId);
+        }
+        public GetIpv6sResult build() {
+            final var o = new GetIpv6sResult();
+            o.filters = filters;
+            o.id = id;
+            o.ipAddress = ipAddress;
+            o.ipv6s = ipv6s;
+            o.subnetId = subnetId;
+            o.vnicId = vnicId;
+            return o;
         }
     }
 }

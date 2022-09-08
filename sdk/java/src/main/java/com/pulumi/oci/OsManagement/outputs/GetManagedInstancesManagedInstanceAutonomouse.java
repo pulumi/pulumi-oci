@@ -13,13 +13,9 @@ public final class GetManagedInstancesManagedInstanceAutonomouse {
      * @return True if daily updates are enabled
      * 
      */
-    private final Boolean isAutoUpdateEnabled;
+    private Boolean isAutoUpdateEnabled;
 
-    @CustomType.Constructor
-    private GetManagedInstancesManagedInstanceAutonomouse(@CustomType.Parameter("isAutoUpdateEnabled") Boolean isAutoUpdateEnabled) {
-        this.isAutoUpdateEnabled = isAutoUpdateEnabled;
-    }
-
+    private GetManagedInstancesManagedInstanceAutonomouse() {}
     /**
      * @return True if daily updates are enabled
      * 
@@ -35,24 +31,24 @@ public final class GetManagedInstancesManagedInstanceAutonomouse {
     public static Builder builder(GetManagedInstancesManagedInstanceAutonomouse defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isAutoUpdateEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedInstancesManagedInstanceAutonomouse defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isAutoUpdateEnabled = defaults.isAutoUpdateEnabled;
         }
 
+        @CustomType.Setter
         public Builder isAutoUpdateEnabled(Boolean isAutoUpdateEnabled) {
             this.isAutoUpdateEnabled = Objects.requireNonNull(isAutoUpdateEnabled);
             return this;
-        }        public GetManagedInstancesManagedInstanceAutonomouse build() {
-            return new GetManagedInstancesManagedInstanceAutonomouse(isAutoUpdateEnabled);
+        }
+        public GetManagedInstancesManagedInstanceAutonomouse build() {
+            final var o = new GetManagedInstancesManagedInstanceAutonomouse();
+            o.isAutoUpdateEnabled = isAutoUpdateEnabled;
+            return o;
         }
     }
 }

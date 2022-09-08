@@ -14,49 +14,34 @@ public final class GetNamespaceScheduledTaskScheduleSchedule {
      * @return Value in cron format.
      * 
      */
-    private final String expression;
+    private String expression;
     /**
      * @return Schedule misfire retry policy.
      * 
      */
-    private final String misfirePolicy;
+    private String misfirePolicy;
     /**
      * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
-    private final String recurringInterval;
+    private String recurringInterval;
     /**
      * @return Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
      * 
      */
-    private final Integer repeatCount;
+    private Integer repeatCount;
     /**
      * @return Time zone, by default UTC.
      * 
      */
-    private final String timeZone;
+    private String timeZone;
     /**
      * @return Schedule type discriminator.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetNamespaceScheduledTaskScheduleSchedule(
-        @CustomType.Parameter("expression") String expression,
-        @CustomType.Parameter("misfirePolicy") String misfirePolicy,
-        @CustomType.Parameter("recurringInterval") String recurringInterval,
-        @CustomType.Parameter("repeatCount") Integer repeatCount,
-        @CustomType.Parameter("timeZone") String timeZone,
-        @CustomType.Parameter("type") String type) {
-        this.expression = expression;
-        this.misfirePolicy = misfirePolicy;
-        this.recurringInterval = recurringInterval;
-        this.repeatCount = repeatCount;
-        this.timeZone = timeZone;
-        this.type = type;
-    }
-
+    private GetNamespaceScheduledTaskScheduleSchedule() {}
     /**
      * @return Value in cron format.
      * 
@@ -107,7 +92,7 @@ public final class GetNamespaceScheduledTaskScheduleSchedule {
     public static Builder builder(GetNamespaceScheduledTaskScheduleSchedule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String expression;
         private String misfirePolicy;
@@ -115,11 +100,7 @@ public final class GetNamespaceScheduledTaskScheduleSchedule {
         private Integer repeatCount;
         private String timeZone;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNamespaceScheduledTaskScheduleSchedule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.expression = defaults.expression;
@@ -130,31 +111,45 @@ public final class GetNamespaceScheduledTaskScheduleSchedule {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder expression(String expression) {
             this.expression = Objects.requireNonNull(expression);
             return this;
         }
+        @CustomType.Setter
         public Builder misfirePolicy(String misfirePolicy) {
             this.misfirePolicy = Objects.requireNonNull(misfirePolicy);
             return this;
         }
+        @CustomType.Setter
         public Builder recurringInterval(String recurringInterval) {
             this.recurringInterval = Objects.requireNonNull(recurringInterval);
             return this;
         }
+        @CustomType.Setter
         public Builder repeatCount(Integer repeatCount) {
             this.repeatCount = Objects.requireNonNull(repeatCount);
             return this;
         }
+        @CustomType.Setter
         public Builder timeZone(String timeZone) {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetNamespaceScheduledTaskScheduleSchedule build() {
-            return new GetNamespaceScheduledTaskScheduleSchedule(expression, misfirePolicy, recurringInterval, repeatCount, timeZone, type);
+        }
+        public GetNamespaceScheduledTaskScheduleSchedule build() {
+            final var o = new GetNamespaceScheduledTaskScheduleSchedule();
+            o.expression = expression;
+            o.misfirePolicy = misfirePolicy;
+            o.recurringInterval = recurringInterval;
+            o.repeatCount = repeatCount;
+            o.timeZone = timeZone;
+            o.type = type;
+            return o;
         }
     }
 }

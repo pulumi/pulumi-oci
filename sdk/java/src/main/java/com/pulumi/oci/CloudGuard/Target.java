@@ -285,14 +285,14 @@ public class Target extends com.pulumi.resources.CustomResource {
         return this.targetResourceId;
     }
     /**
-     * possible type of targets(compartment/HCMCloud/ERPCloud)
+     * possible type of targets(COMPARTMENT/FACLOUD)
      * 
      */
     @Export(name="targetResourceType", type=String.class, parameters={})
     private Output<String> targetResourceType;
 
     /**
-     * @return possible type of targets(compartment/HCMCloud/ERPCloud)
+     * @return possible type of targets(COMPARTMENT/FACLOUD)
      * 
      */
     public Output<String> targetResourceType() {

@@ -14,31 +14,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTopUtilizedProductLicensesResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isCompartmentIdInSubtree;
+    private String id;
+    private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return Collection of top utilized product licenses.
      * 
      */
-    private final List<GetTopUtilizedProductLicensesItem> items;
+    private List<GetTopUtilizedProductLicensesItem> items;
 
-    @CustomType.Constructor
-    private GetTopUtilizedProductLicensesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCompartmentIdInSubtree") @Nullable Boolean isCompartmentIdInSubtree,
-        @CustomType.Parameter("items") List<GetTopUtilizedProductLicensesItem> items) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-        this.items = items;
-    }
-
+    private GetTopUtilizedProductLicensesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -67,17 +56,13 @@ public final class GetTopUtilizedProductLicensesResult {
     public static Builder builder(GetTopUtilizedProductLicensesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
         private List<GetTopUtilizedProductLicensesItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTopUtilizedProductLicensesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -86,26 +71,36 @@ public final class GetTopUtilizedProductLicensesResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetTopUtilizedProductLicensesItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetTopUtilizedProductLicensesItem... items) {
             return items(List.of(items));
-        }        public GetTopUtilizedProductLicensesResult build() {
-            return new GetTopUtilizedProductLicensesResult(compartmentId, id, isCompartmentIdInSubtree, items);
+        }
+        public GetTopUtilizedProductLicensesResult build() {
+            final var o = new GetTopUtilizedProductLicensesResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            o.items = items;
+            return o;
         }
     }
 }

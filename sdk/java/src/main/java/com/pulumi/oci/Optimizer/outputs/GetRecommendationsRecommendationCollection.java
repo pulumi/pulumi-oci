@@ -14,13 +14,9 @@ public final class GetRecommendationsRecommendationCollection {
      * @return The list of supported levels.
      * 
      */
-    private final List<GetRecommendationsRecommendationCollectionItem> items;
+    private List<GetRecommendationsRecommendationCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRecommendationsRecommendationCollection(@CustomType.Parameter("items") List<GetRecommendationsRecommendationCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRecommendationsRecommendationCollection() {}
     /**
      * @return The list of supported levels.
      * 
@@ -36,27 +32,27 @@ public final class GetRecommendationsRecommendationCollection {
     public static Builder builder(GetRecommendationsRecommendationCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRecommendationsRecommendationCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationsRecommendationCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRecommendationsRecommendationCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRecommendationsRecommendationCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRecommendationsRecommendationCollection build() {
-            return new GetRecommendationsRecommendationCollection(items);
+        }
+        public GetRecommendationsRecommendationCollection build() {
+            final var o = new GetRecommendationsRecommendationCollection();
+            o.items = items;
+            return o;
         }
     }
 }

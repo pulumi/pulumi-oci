@@ -17,24 +17,15 @@ public final class GetAgentImagesResult {
      * @return The list of agent_image_collection.
      * 
      */
-    private final List<GetAgentImagesAgentImageCollection> agentImageCollections;
-    private final @Nullable List<GetAgentImagesFilter> filters;
+    private List<GetAgentImagesAgentImageCollection> agentImageCollections;
+    private @Nullable List<GetAgentImagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAgentImagesResult(
-        @CustomType.Parameter("agentImageCollections") List<GetAgentImagesAgentImageCollection> agentImageCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetAgentImagesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.agentImageCollections = agentImageCollections;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAgentImagesResult() {}
     /**
      * @return The list of agent_image_collection.
      * 
@@ -60,16 +51,12 @@ public final class GetAgentImagesResult {
     public static Builder builder(GetAgentImagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAgentImagesAgentImageCollection> agentImageCollections;
         private @Nullable List<GetAgentImagesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAgentImagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.agentImageCollections = defaults.agentImageCollections;
@@ -77,6 +64,7 @@ public final class GetAgentImagesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder agentImageCollections(List<GetAgentImagesAgentImageCollection> agentImageCollections) {
             this.agentImageCollections = Objects.requireNonNull(agentImageCollections);
             return this;
@@ -84,6 +72,7 @@ public final class GetAgentImagesResult {
         public Builder agentImageCollections(GetAgentImagesAgentImageCollection... agentImageCollections) {
             return agentImageCollections(List.of(agentImageCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAgentImagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -91,11 +80,17 @@ public final class GetAgentImagesResult {
         public Builder filters(GetAgentImagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAgentImagesResult build() {
-            return new GetAgentImagesResult(agentImageCollections, filters, id);
+        }
+        public GetAgentImagesResult build() {
+            final var o = new GetAgentImagesResult();
+            o.agentImageCollections = agentImageCollections;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

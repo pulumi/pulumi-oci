@@ -16,17 +16,10 @@ public final class AutoScalingConfigurationPolicyRuleMetricThreshold {
      * @return The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
      * 
      */
-    private final @Nullable String operator;
-    private final @Nullable Integer value;
+    private @Nullable String operator;
+    private @Nullable Integer value;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyRuleMetricThreshold(
-        @CustomType.Parameter("operator") @Nullable String operator,
-        @CustomType.Parameter("value") @Nullable Integer value) {
-        this.operator = operator;
-        this.value = value;
-    }
-
+    private AutoScalingConfigurationPolicyRuleMetricThreshold() {}
     /**
      * @return The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
      * 
@@ -45,30 +38,32 @@ public final class AutoScalingConfigurationPolicyRuleMetricThreshold {
     public static Builder builder(AutoScalingConfigurationPolicyRuleMetricThreshold defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String operator;
         private @Nullable Integer value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyRuleMetricThreshold defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.operator = defaults.operator;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder operator(@Nullable String operator) {
             this.operator = operator;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable Integer value) {
             this.value = value;
             return this;
-        }        public AutoScalingConfigurationPolicyRuleMetricThreshold build() {
-            return new AutoScalingConfigurationPolicyRuleMetricThreshold(operator, value);
+        }
+        public AutoScalingConfigurationPolicyRuleMetricThreshold build() {
+            final var o = new AutoScalingConfigurationPolicyRuleMetricThreshold();
+            o.operator = operator;
+            o.value = value;
+            return o;
         }
     }
 }

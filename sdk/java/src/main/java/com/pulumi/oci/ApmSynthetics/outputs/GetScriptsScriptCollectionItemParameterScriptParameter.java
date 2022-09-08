@@ -14,28 +14,19 @@ public final class GetScriptsScriptCollectionItemParameterScriptParameter {
      * @return If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
      */
-    private final Boolean isSecret;
+    private Boolean isSecret;
     /**
      * @return Name of the parameter.
      * 
      */
-    private final String paramName;
+    private String paramName;
     /**
      * @return Value of the parameter.
      * 
      */
-    private final String paramValue;
+    private String paramValue;
 
-    @CustomType.Constructor
-    private GetScriptsScriptCollectionItemParameterScriptParameter(
-        @CustomType.Parameter("isSecret") Boolean isSecret,
-        @CustomType.Parameter("paramName") String paramName,
-        @CustomType.Parameter("paramValue") String paramValue) {
-        this.isSecret = isSecret;
-        this.paramName = paramName;
-        this.paramValue = paramValue;
-    }
-
+    private GetScriptsScriptCollectionItemParameterScriptParameter() {}
     /**
      * @return If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
@@ -65,16 +56,12 @@ public final class GetScriptsScriptCollectionItemParameterScriptParameter {
     public static Builder builder(GetScriptsScriptCollectionItemParameterScriptParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isSecret;
         private String paramName;
         private String paramValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetScriptsScriptCollectionItemParameterScriptParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isSecret = defaults.isSecret;
@@ -82,19 +69,27 @@ public final class GetScriptsScriptCollectionItemParameterScriptParameter {
     	      this.paramValue = defaults.paramValue;
         }
 
+        @CustomType.Setter
         public Builder isSecret(Boolean isSecret) {
             this.isSecret = Objects.requireNonNull(isSecret);
             return this;
         }
+        @CustomType.Setter
         public Builder paramName(String paramName) {
             this.paramName = Objects.requireNonNull(paramName);
             return this;
         }
+        @CustomType.Setter
         public Builder paramValue(String paramValue) {
             this.paramValue = Objects.requireNonNull(paramValue);
             return this;
-        }        public GetScriptsScriptCollectionItemParameterScriptParameter build() {
-            return new GetScriptsScriptCollectionItemParameterScriptParameter(isSecret, paramName, paramValue);
+        }
+        public GetScriptsScriptCollectionItemParameterScriptParameter build() {
+            final var o = new GetScriptsScriptCollectionItemParameterScriptParameter();
+            o.isSecret = isSecret;
+            o.paramName = paramName;
+            o.paramValue = paramValue;
+            return o;
         }
     }
 }

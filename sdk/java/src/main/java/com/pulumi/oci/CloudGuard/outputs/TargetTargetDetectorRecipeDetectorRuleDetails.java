@@ -19,49 +19,34 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetails {
      * @return (Updatable) Condition group corresponding to each compartment
      * 
      */
-    private final @Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup> conditionGroups;
+    private @Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup> conditionGroups;
     /**
      * @return (Updatable) Configurations associated with the ResponderRule
      * 
      */
-    private final @Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration> configurations;
+    private @Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration> configurations;
     /**
      * @return configuration allowed or not
      * 
      */
-    private final @Nullable Boolean isConfigurationAllowed;
+    private @Nullable Boolean isConfigurationAllowed;
     /**
      * @return Identifies state for ResponderRule
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return user defined labels for a detector rule
      * 
      */
-    private final @Nullable List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return The Risk Level
      * 
      */
-    private final @Nullable String riskLevel;
+    private @Nullable String riskLevel;
 
-    @CustomType.Constructor
-    private TargetTargetDetectorRecipeDetectorRuleDetails(
-        @CustomType.Parameter("conditionGroups") @Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup> conditionGroups,
-        @CustomType.Parameter("configurations") @Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration> configurations,
-        @CustomType.Parameter("isConfigurationAllowed") @Nullable Boolean isConfigurationAllowed,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("labels") @Nullable List<String> labels,
-        @CustomType.Parameter("riskLevel") @Nullable String riskLevel) {
-        this.conditionGroups = conditionGroups;
-        this.configurations = configurations;
-        this.isConfigurationAllowed = isConfigurationAllowed;
-        this.isEnabled = isEnabled;
-        this.labels = labels;
-        this.riskLevel = riskLevel;
-    }
-
+    private TargetTargetDetectorRecipeDetectorRuleDetails() {}
     /**
      * @return (Updatable) Condition group corresponding to each compartment
      * 
@@ -112,7 +97,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetails {
     public static Builder builder(TargetTargetDetectorRecipeDetectorRuleDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup> conditionGroups;
         private @Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration> configurations;
@@ -120,11 +105,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetails {
         private @Nullable Boolean isEnabled;
         private @Nullable List<String> labels;
         private @Nullable String riskLevel;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetTargetDetectorRecipeDetectorRuleDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.conditionGroups = defaults.conditionGroups;
@@ -135,6 +116,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetails {
     	      this.riskLevel = defaults.riskLevel;
         }
 
+        @CustomType.Setter
         public Builder conditionGroups(@Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup> conditionGroups) {
             this.conditionGroups = conditionGroups;
             return this;
@@ -142,6 +124,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetails {
         public Builder conditionGroups(TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup... conditionGroups) {
             return conditionGroups(List.of(conditionGroups));
         }
+        @CustomType.Setter
         public Builder configurations(@Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration> configurations) {
             this.configurations = configurations;
             return this;
@@ -149,14 +132,17 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetails {
         public Builder configurations(TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
+        @CustomType.Setter
         public Builder isConfigurationAllowed(@Nullable Boolean isConfigurationAllowed) {
             this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder labels(@Nullable List<String> labels) {
             this.labels = labels;
             return this;
@@ -164,11 +150,20 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetails {
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
+        @CustomType.Setter
         public Builder riskLevel(@Nullable String riskLevel) {
             this.riskLevel = riskLevel;
             return this;
-        }        public TargetTargetDetectorRecipeDetectorRuleDetails build() {
-            return new TargetTargetDetectorRecipeDetectorRuleDetails(conditionGroups, configurations, isConfigurationAllowed, isEnabled, labels, riskLevel);
+        }
+        public TargetTargetDetectorRecipeDetectorRuleDetails build() {
+            final var o = new TargetTargetDetectorRecipeDetectorRuleDetails();
+            o.conditionGroups = conditionGroups;
+            o.configurations = configurations;
+            o.isConfigurationAllowed = isConfigurationAllowed;
+            o.isEnabled = isEnabled;
+            o.labels = labels;
+            o.riskLevel = riskLevel;
+            return o;
         }
     }
 }

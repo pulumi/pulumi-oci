@@ -10,17 +10,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetShapeShapePlatformConfigOptionVirtualInstructionsOption {
-    private final List<Boolean> allowedValues;
-    private final Boolean isDefaultEnabled;
+    private List<Boolean> allowedValues;
+    private Boolean isDefaultEnabled;
 
-    @CustomType.Constructor
-    private GetShapeShapePlatformConfigOptionVirtualInstructionsOption(
-        @CustomType.Parameter("allowedValues") List<Boolean> allowedValues,
-        @CustomType.Parameter("isDefaultEnabled") Boolean isDefaultEnabled) {
-        this.allowedValues = allowedValues;
-        this.isDefaultEnabled = isDefaultEnabled;
-    }
-
+    private GetShapeShapePlatformConfigOptionVirtualInstructionsOption() {}
     public List<Boolean> allowedValues() {
         return this.allowedValues;
     }
@@ -35,21 +28,18 @@ public final class GetShapeShapePlatformConfigOptionVirtualInstructionsOption {
     public static Builder builder(GetShapeShapePlatformConfigOptionVirtualInstructionsOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<Boolean> allowedValues;
         private Boolean isDefaultEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapeShapePlatformConfigOptionVirtualInstructionsOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedValues = defaults.allowedValues;
     	      this.isDefaultEnabled = defaults.isDefaultEnabled;
         }
 
+        @CustomType.Setter
         public Builder allowedValues(List<Boolean> allowedValues) {
             this.allowedValues = Objects.requireNonNull(allowedValues);
             return this;
@@ -57,11 +47,16 @@ public final class GetShapeShapePlatformConfigOptionVirtualInstructionsOption {
         public Builder allowedValues(Boolean... allowedValues) {
             return allowedValues(List.of(allowedValues));
         }
+        @CustomType.Setter
         public Builder isDefaultEnabled(Boolean isDefaultEnabled) {
             this.isDefaultEnabled = Objects.requireNonNull(isDefaultEnabled);
             return this;
-        }        public GetShapeShapePlatformConfigOptionVirtualInstructionsOption build() {
-            return new GetShapeShapePlatformConfigOptionVirtualInstructionsOption(allowedValues, isDefaultEnabled);
+        }
+        public GetShapeShapePlatformConfigOptionVirtualInstructionsOption build() {
+            final var o = new GetShapeShapePlatformConfigOptionVirtualInstructionsOption();
+            o.allowedValues = allowedValues;
+            o.isDefaultEnabled = isDefaultEnabled;
+            return o;
         }
     }
 }

@@ -19,32 +19,32 @@ public final class PolicyWafConfigAccessRule {
      * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
      * 
      */
-    private final @Nullable String blockAction;
+    private @Nullable String blockAction;
     /**
      * @return (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
      * 
      */
-    private final @Nullable String blockErrorPageCode;
+    private @Nullable String blockErrorPageCode;
     /**
      * @return (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
      * 
      */
-    private final @Nullable String blockErrorPageDescription;
+    private @Nullable String blockErrorPageDescription;
     /**
      * @return (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
      * 
      */
-    private final @Nullable String blockErrorPageMessage;
+    private @Nullable String blockErrorPageMessage;
     /**
      * @return (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
-    private final @Nullable Integer blockResponseCode;
+    private @Nullable Integer blockResponseCode;
     /**
      * @return (Updatable) The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
      * * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
@@ -53,91 +53,56 @@ public final class PolicyWafConfigAccessRule {
      * * **CAPTCHA:** Bypasses CAPTCHA Challenge.
      * 
      */
-    private final @Nullable List<String> bypassChallenges;
+    private @Nullable List<String> bypassChallenges;
     /**
      * @return (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
      * 
      */
-    private final @Nullable String captchaFooter;
+    private @Nullable String captchaFooter;
     /**
      * @return (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
      * 
      */
-    private final @Nullable String captchaHeader;
+    private @Nullable String captchaHeader;
     /**
      * @return (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
      * 
      */
-    private final @Nullable String captchaSubmitLabel;
+    private @Nullable String captchaSubmitLabel;
     /**
      * @return (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
      * 
      */
-    private final @Nullable String captchaTitle;
+    private @Nullable String captchaTitle;
     /**
      * @return (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
      * 
      */
-    private final List<PolicyWafConfigAccessRuleCriteria> criterias;
+    private List<PolicyWafConfigAccessRuleCriteria> criterias;
     /**
      * @return (Updatable) The unique name of the whitelist.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) The response status code to return when `action` is set to `REDIRECT`.
      * * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
      * * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
      * 
      */
-    private final @Nullable String redirectResponseCode;
+    private @Nullable String redirectResponseCode;
     /**
      * @return (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
      * 
      */
-    private final @Nullable String redirectUrl;
+    private @Nullable String redirectUrl;
     /**
      * @return (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
      * 
      */
-    private final @Nullable List<PolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations;
+    private @Nullable List<PolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations;
 
-    @CustomType.Constructor
-    private PolicyWafConfigAccessRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("blockAction") @Nullable String blockAction,
-        @CustomType.Parameter("blockErrorPageCode") @Nullable String blockErrorPageCode,
-        @CustomType.Parameter("blockErrorPageDescription") @Nullable String blockErrorPageDescription,
-        @CustomType.Parameter("blockErrorPageMessage") @Nullable String blockErrorPageMessage,
-        @CustomType.Parameter("blockResponseCode") @Nullable Integer blockResponseCode,
-        @CustomType.Parameter("bypassChallenges") @Nullable List<String> bypassChallenges,
-        @CustomType.Parameter("captchaFooter") @Nullable String captchaFooter,
-        @CustomType.Parameter("captchaHeader") @Nullable String captchaHeader,
-        @CustomType.Parameter("captchaSubmitLabel") @Nullable String captchaSubmitLabel,
-        @CustomType.Parameter("captchaTitle") @Nullable String captchaTitle,
-        @CustomType.Parameter("criterias") List<PolicyWafConfigAccessRuleCriteria> criterias,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("redirectResponseCode") @Nullable String redirectResponseCode,
-        @CustomType.Parameter("redirectUrl") @Nullable String redirectUrl,
-        @CustomType.Parameter("responseHeaderManipulations") @Nullable List<PolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations) {
-        this.action = action;
-        this.blockAction = blockAction;
-        this.blockErrorPageCode = blockErrorPageCode;
-        this.blockErrorPageDescription = blockErrorPageDescription;
-        this.blockErrorPageMessage = blockErrorPageMessage;
-        this.blockResponseCode = blockResponseCode;
-        this.bypassChallenges = bypassChallenges;
-        this.captchaFooter = captchaFooter;
-        this.captchaHeader = captchaHeader;
-        this.captchaSubmitLabel = captchaSubmitLabel;
-        this.captchaTitle = captchaTitle;
-        this.criterias = criterias;
-        this.name = name;
-        this.redirectResponseCode = redirectResponseCode;
-        this.redirectUrl = redirectUrl;
-        this.responseHeaderManipulations = responseHeaderManipulations;
-    }
-
+    private PolicyWafConfigAccessRule() {}
     /**
      * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
@@ -264,7 +229,7 @@ public final class PolicyWafConfigAccessRule {
     public static Builder builder(PolicyWafConfigAccessRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private @Nullable String blockAction;
@@ -282,11 +247,7 @@ public final class PolicyWafConfigAccessRule {
         private @Nullable String redirectResponseCode;
         private @Nullable String redirectUrl;
         private @Nullable List<PolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyWafConfigAccessRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -307,30 +268,37 @@ public final class PolicyWafConfigAccessRule {
     	      this.responseHeaderManipulations = defaults.responseHeaderManipulations;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder blockAction(@Nullable String blockAction) {
             this.blockAction = blockAction;
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageCode(@Nullable String blockErrorPageCode) {
             this.blockErrorPageCode = blockErrorPageCode;
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageDescription(@Nullable String blockErrorPageDescription) {
             this.blockErrorPageDescription = blockErrorPageDescription;
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageMessage(@Nullable String blockErrorPageMessage) {
             this.blockErrorPageMessage = blockErrorPageMessage;
             return this;
         }
+        @CustomType.Setter
         public Builder blockResponseCode(@Nullable Integer blockResponseCode) {
             this.blockResponseCode = blockResponseCode;
             return this;
         }
+        @CustomType.Setter
         public Builder bypassChallenges(@Nullable List<String> bypassChallenges) {
             this.bypassChallenges = bypassChallenges;
             return this;
@@ -338,22 +306,27 @@ public final class PolicyWafConfigAccessRule {
         public Builder bypassChallenges(String... bypassChallenges) {
             return bypassChallenges(List.of(bypassChallenges));
         }
+        @CustomType.Setter
         public Builder captchaFooter(@Nullable String captchaFooter) {
             this.captchaFooter = captchaFooter;
             return this;
         }
+        @CustomType.Setter
         public Builder captchaHeader(@Nullable String captchaHeader) {
             this.captchaHeader = captchaHeader;
             return this;
         }
+        @CustomType.Setter
         public Builder captchaSubmitLabel(@Nullable String captchaSubmitLabel) {
             this.captchaSubmitLabel = captchaSubmitLabel;
             return this;
         }
+        @CustomType.Setter
         public Builder captchaTitle(@Nullable String captchaTitle) {
             this.captchaTitle = captchaTitle;
             return this;
         }
+        @CustomType.Setter
         public Builder criterias(List<PolicyWafConfigAccessRuleCriteria> criterias) {
             this.criterias = Objects.requireNonNull(criterias);
             return this;
@@ -361,26 +334,48 @@ public final class PolicyWafConfigAccessRule {
         public Builder criterias(PolicyWafConfigAccessRuleCriteria... criterias) {
             return criterias(List.of(criterias));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder redirectResponseCode(@Nullable String redirectResponseCode) {
             this.redirectResponseCode = redirectResponseCode;
             return this;
         }
+        @CustomType.Setter
         public Builder redirectUrl(@Nullable String redirectUrl) {
             this.redirectUrl = redirectUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder responseHeaderManipulations(@Nullable List<PolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations) {
             this.responseHeaderManipulations = responseHeaderManipulations;
             return this;
         }
         public Builder responseHeaderManipulations(PolicyWafConfigAccessRuleResponseHeaderManipulation... responseHeaderManipulations) {
             return responseHeaderManipulations(List.of(responseHeaderManipulations));
-        }        public PolicyWafConfigAccessRule build() {
-            return new PolicyWafConfigAccessRule(action, blockAction, blockErrorPageCode, blockErrorPageDescription, blockErrorPageMessage, blockResponseCode, bypassChallenges, captchaFooter, captchaHeader, captchaSubmitLabel, captchaTitle, criterias, name, redirectResponseCode, redirectUrl, responseHeaderManipulations);
+        }
+        public PolicyWafConfigAccessRule build() {
+            final var o = new PolicyWafConfigAccessRule();
+            o.action = action;
+            o.blockAction = blockAction;
+            o.blockErrorPageCode = blockErrorPageCode;
+            o.blockErrorPageDescription = blockErrorPageDescription;
+            o.blockErrorPageMessage = blockErrorPageMessage;
+            o.blockResponseCode = blockResponseCode;
+            o.bypassChallenges = bypassChallenges;
+            o.captchaFooter = captchaFooter;
+            o.captchaHeader = captchaHeader;
+            o.captchaSubmitLabel = captchaSubmitLabel;
+            o.captchaTitle = captchaTitle;
+            o.criterias = criterias;
+            o.name = name;
+            o.redirectResponseCode = redirectResponseCode;
+            o.redirectUrl = redirectUrl;
+            o.responseHeaderManipulations = responseHeaderManipulations;
+            return o;
         }
     }
 }

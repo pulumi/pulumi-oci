@@ -15,28 +15,19 @@ public final class GetDiscoveryAnalyticItem {
      * @return The total count for the aggregation metric.
      * 
      */
-    private final String count;
+    private String count;
     /**
      * @return The scope of analytics data.
      * 
      */
-    private final List<GetDiscoveryAnalyticItemDimension> dimensions;
+    private List<GetDiscoveryAnalyticItemDimension> dimensions;
     /**
      * @return The name of the aggregation metric.
      * 
      */
-    private final String metricName;
+    private String metricName;
 
-    @CustomType.Constructor
-    private GetDiscoveryAnalyticItem(
-        @CustomType.Parameter("count") String count,
-        @CustomType.Parameter("dimensions") List<GetDiscoveryAnalyticItemDimension> dimensions,
-        @CustomType.Parameter("metricName") String metricName) {
-        this.count = count;
-        this.dimensions = dimensions;
-        this.metricName = metricName;
-    }
-
+    private GetDiscoveryAnalyticItem() {}
     /**
      * @return The total count for the aggregation metric.
      * 
@@ -66,16 +57,12 @@ public final class GetDiscoveryAnalyticItem {
     public static Builder builder(GetDiscoveryAnalyticItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String count;
         private List<GetDiscoveryAnalyticItemDimension> dimensions;
         private String metricName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryAnalyticItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
@@ -83,10 +70,12 @@ public final class GetDiscoveryAnalyticItem {
     	      this.metricName = defaults.metricName;
         }
 
+        @CustomType.Setter
         public Builder count(String count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(List<GetDiscoveryAnalyticItemDimension> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
@@ -94,11 +83,17 @@ public final class GetDiscoveryAnalyticItem {
         public Builder dimensions(GetDiscoveryAnalyticItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
+        @CustomType.Setter
         public Builder metricName(String metricName) {
             this.metricName = Objects.requireNonNull(metricName);
             return this;
-        }        public GetDiscoveryAnalyticItem build() {
-            return new GetDiscoveryAnalyticItem(count, dimensions, metricName);
+        }
+        public GetDiscoveryAnalyticItem build() {
+            final var o = new GetDiscoveryAnalyticItem();
+            o.count = count;
+            o.dimensions = dimensions;
+            o.metricName = metricName;
+            return o;
         }
     }
 }

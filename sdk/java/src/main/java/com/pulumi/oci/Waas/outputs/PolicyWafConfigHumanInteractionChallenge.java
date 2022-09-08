@@ -19,77 +19,54 @@ public final class PolicyWafConfigHumanInteractionChallenge {
      * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private final @Nullable String action;
+    private @Nullable String action;
     /**
      * @return (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
      * 
      */
-    private final @Nullable Integer actionExpirationInSeconds;
+    private @Nullable Integer actionExpirationInSeconds;
     /**
      * @return (Updatable) The challenge settings if `action` is set to `BLOCK`.
      * 
      */
-    private final @Nullable PolicyWafConfigHumanInteractionChallengeChallengeSettings challengeSettings;
+    private @Nullable PolicyWafConfigHumanInteractionChallengeChallengeSettings challengeSettings;
     /**
      * @return (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
      * 
      */
-    private final @Nullable Integer failureThreshold;
+    private @Nullable Integer failureThreshold;
     /**
      * @return (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
      * 
      */
-    private final @Nullable Integer failureThresholdExpirationInSeconds;
+    private @Nullable Integer failureThresholdExpirationInSeconds;
     /**
      * @return (Updatable) The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
      * 
      */
-    private final @Nullable Integer interactionThreshold;
+    private @Nullable Integer interactionThreshold;
     /**
      * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
      * 
      */
-    private final @Nullable Boolean isNatEnabled;
+    private @Nullable Boolean isNatEnabled;
     /**
      * @return (Updatable) The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
      * 
      */
-    private final @Nullable Integer recordingPeriodInSeconds;
+    private @Nullable Integer recordingPeriodInSeconds;
     /**
      * @return (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
      * 
      */
-    private final @Nullable PolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader;
+    private @Nullable PolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader;
 
-    @CustomType.Constructor
-    private PolicyWafConfigHumanInteractionChallenge(
-        @CustomType.Parameter("action") @Nullable String action,
-        @CustomType.Parameter("actionExpirationInSeconds") @Nullable Integer actionExpirationInSeconds,
-        @CustomType.Parameter("challengeSettings") @Nullable PolicyWafConfigHumanInteractionChallengeChallengeSettings challengeSettings,
-        @CustomType.Parameter("failureThreshold") @Nullable Integer failureThreshold,
-        @CustomType.Parameter("failureThresholdExpirationInSeconds") @Nullable Integer failureThresholdExpirationInSeconds,
-        @CustomType.Parameter("interactionThreshold") @Nullable Integer interactionThreshold,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("isNatEnabled") @Nullable Boolean isNatEnabled,
-        @CustomType.Parameter("recordingPeriodInSeconds") @Nullable Integer recordingPeriodInSeconds,
-        @CustomType.Parameter("setHttpHeader") @Nullable PolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader) {
-        this.action = action;
-        this.actionExpirationInSeconds = actionExpirationInSeconds;
-        this.challengeSettings = challengeSettings;
-        this.failureThreshold = failureThreshold;
-        this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
-        this.interactionThreshold = interactionThreshold;
-        this.isEnabled = isEnabled;
-        this.isNatEnabled = isNatEnabled;
-        this.recordingPeriodInSeconds = recordingPeriodInSeconds;
-        this.setHttpHeader = setHttpHeader;
-    }
-
+    private PolicyWafConfigHumanInteractionChallenge() {}
     /**
      * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
@@ -168,7 +145,7 @@ public final class PolicyWafConfigHumanInteractionChallenge {
     public static Builder builder(PolicyWafConfigHumanInteractionChallenge defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String action;
         private @Nullable Integer actionExpirationInSeconds;
@@ -180,11 +157,7 @@ public final class PolicyWafConfigHumanInteractionChallenge {
         private @Nullable Boolean isNatEnabled;
         private @Nullable Integer recordingPeriodInSeconds;
         private @Nullable PolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyWafConfigHumanInteractionChallenge defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -199,47 +172,69 @@ public final class PolicyWafConfigHumanInteractionChallenge {
     	      this.setHttpHeader = defaults.setHttpHeader;
         }
 
+        @CustomType.Setter
         public Builder action(@Nullable String action) {
             this.action = action;
             return this;
         }
+        @CustomType.Setter
         public Builder actionExpirationInSeconds(@Nullable Integer actionExpirationInSeconds) {
             this.actionExpirationInSeconds = actionExpirationInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder challengeSettings(@Nullable PolicyWafConfigHumanInteractionChallengeChallengeSettings challengeSettings) {
             this.challengeSettings = challengeSettings;
             return this;
         }
+        @CustomType.Setter
         public Builder failureThreshold(@Nullable Integer failureThreshold) {
             this.failureThreshold = failureThreshold;
             return this;
         }
+        @CustomType.Setter
         public Builder failureThresholdExpirationInSeconds(@Nullable Integer failureThresholdExpirationInSeconds) {
             this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder interactionThreshold(@Nullable Integer interactionThreshold) {
             this.interactionThreshold = interactionThreshold;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isNatEnabled(@Nullable Boolean isNatEnabled) {
             this.isNatEnabled = isNatEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder recordingPeriodInSeconds(@Nullable Integer recordingPeriodInSeconds) {
             this.recordingPeriodInSeconds = recordingPeriodInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder setHttpHeader(@Nullable PolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader) {
             this.setHttpHeader = setHttpHeader;
             return this;
-        }        public PolicyWafConfigHumanInteractionChallenge build() {
-            return new PolicyWafConfigHumanInteractionChallenge(action, actionExpirationInSeconds, challengeSettings, failureThreshold, failureThresholdExpirationInSeconds, interactionThreshold, isEnabled, isNatEnabled, recordingPeriodInSeconds, setHttpHeader);
+        }
+        public PolicyWafConfigHumanInteractionChallenge build() {
+            final var o = new PolicyWafConfigHumanInteractionChallenge();
+            o.action = action;
+            o.actionExpirationInSeconds = actionExpirationInSeconds;
+            o.challengeSettings = challengeSettings;
+            o.failureThreshold = failureThreshold;
+            o.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
+            o.interactionThreshold = interactionThreshold;
+            o.isEnabled = isEnabled;
+            o.isNatEnabled = isNatEnabled;
+            o.recordingPeriodInSeconds = recordingPeriodInSeconds;
+            o.setHttpHeader = setHttpHeader;
+            return o;
         }
     }
 }

@@ -13,28 +13,19 @@ public final class GetQueryQueryDefinitionReportQueryForecast {
      * @return BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
      * 
      */
-    private final String forecastType;
+    private String forecastType;
     /**
      * @return The forecast end time.
      * 
      */
-    private final String timeForecastEnded;
+    private String timeForecastEnded;
     /**
      * @return The forecast start time. Defaults to UTC-1 if not specified.
      * 
      */
-    private final String timeForecastStarted;
+    private String timeForecastStarted;
 
-    @CustomType.Constructor
-    private GetQueryQueryDefinitionReportQueryForecast(
-        @CustomType.Parameter("forecastType") String forecastType,
-        @CustomType.Parameter("timeForecastEnded") String timeForecastEnded,
-        @CustomType.Parameter("timeForecastStarted") String timeForecastStarted) {
-        this.forecastType = forecastType;
-        this.timeForecastEnded = timeForecastEnded;
-        this.timeForecastStarted = timeForecastStarted;
-    }
-
+    private GetQueryQueryDefinitionReportQueryForecast() {}
     /**
      * @return BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
      * 
@@ -64,16 +55,12 @@ public final class GetQueryQueryDefinitionReportQueryForecast {
     public static Builder builder(GetQueryQueryDefinitionReportQueryForecast defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String forecastType;
         private String timeForecastEnded;
         private String timeForecastStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQueryQueryDefinitionReportQueryForecast defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.forecastType = defaults.forecastType;
@@ -81,19 +68,27 @@ public final class GetQueryQueryDefinitionReportQueryForecast {
     	      this.timeForecastStarted = defaults.timeForecastStarted;
         }
 
+        @CustomType.Setter
         public Builder forecastType(String forecastType) {
             this.forecastType = Objects.requireNonNull(forecastType);
             return this;
         }
+        @CustomType.Setter
         public Builder timeForecastEnded(String timeForecastEnded) {
             this.timeForecastEnded = Objects.requireNonNull(timeForecastEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeForecastStarted(String timeForecastStarted) {
             this.timeForecastStarted = Objects.requireNonNull(timeForecastStarted);
             return this;
-        }        public GetQueryQueryDefinitionReportQueryForecast build() {
-            return new GetQueryQueryDefinitionReportQueryForecast(forecastType, timeForecastEnded, timeForecastStarted);
+        }
+        public GetQueryQueryDefinitionReportQueryForecast build() {
+            final var o = new GetQueryQueryDefinitionReportQueryForecast();
+            o.forecastType = forecastType;
+            o.timeForecastEnded = timeForecastEnded;
+            o.timeForecastStarted = timeForecastStarted;
+            return o;
         }
     }
 }

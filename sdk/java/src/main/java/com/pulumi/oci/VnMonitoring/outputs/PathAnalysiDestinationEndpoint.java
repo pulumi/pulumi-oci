@@ -15,73 +15,50 @@ public final class PathAnalysiDestinationEndpoint {
      * @return The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
      * 
      */
-    private final @Nullable String address;
+    private @Nullable String address;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
      * 
      */
-    private final @Nullable String instanceId;
+    private @Nullable String instanceId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
      * 
      */
-    private final @Nullable String listenerId;
+    private @Nullable String listenerId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener&#39;s load balancer.
      * 
      */
-    private final @Nullable String loadBalancerId;
+    private @Nullable String loadBalancerId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener&#39;s network load balancer.
      * 
      */
-    private final @Nullable String networkLoadBalancerId;
-    private final @Nullable String state;
+    private @Nullable String networkLoadBalancerId;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
      * 
      */
-    private final @Nullable String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The type of the `PathAnalysis` query.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
      * 
      */
-    private final @Nullable String vlanId;
+    private @Nullable String vlanId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
      * 
      */
-    private final @Nullable String vnicId;
+    private @Nullable String vnicId;
 
-    @CustomType.Constructor
-    private PathAnalysiDestinationEndpoint(
-        @CustomType.Parameter("address") @Nullable String address,
-        @CustomType.Parameter("instanceId") @Nullable String instanceId,
-        @CustomType.Parameter("listenerId") @Nullable String listenerId,
-        @CustomType.Parameter("loadBalancerId") @Nullable String loadBalancerId,
-        @CustomType.Parameter("networkLoadBalancerId") @Nullable String networkLoadBalancerId,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("subnetId") @Nullable String subnetId,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vlanId") @Nullable String vlanId,
-        @CustomType.Parameter("vnicId") @Nullable String vnicId) {
-        this.address = address;
-        this.instanceId = instanceId;
-        this.listenerId = listenerId;
-        this.loadBalancerId = loadBalancerId;
-        this.networkLoadBalancerId = networkLoadBalancerId;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.type = type;
-        this.vlanId = vlanId;
-        this.vnicId = vnicId;
-    }
-
+    private PathAnalysiDestinationEndpoint() {}
     /**
      * @return The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
      * 
@@ -156,7 +133,7 @@ public final class PathAnalysiDestinationEndpoint {
     public static Builder builder(PathAnalysiDestinationEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String address;
         private @Nullable String instanceId;
@@ -168,11 +145,7 @@ public final class PathAnalysiDestinationEndpoint {
         private String type;
         private @Nullable String vlanId;
         private @Nullable String vnicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PathAnalysiDestinationEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.address = defaults.address;
@@ -187,47 +160,69 @@ public final class PathAnalysiDestinationEndpoint {
     	      this.vnicId = defaults.vnicId;
         }
 
+        @CustomType.Setter
         public Builder address(@Nullable String address) {
             this.address = address;
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
             this.instanceId = instanceId;
             return this;
         }
+        @CustomType.Setter
         public Builder listenerId(@Nullable String listenerId) {
             this.listenerId = listenerId;
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(@Nullable String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             return this;
         }
+        @CustomType.Setter
         public Builder networkLoadBalancerId(@Nullable String networkLoadBalancerId) {
             this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vlanId(@Nullable String vlanId) {
             this.vlanId = vlanId;
             return this;
         }
+        @CustomType.Setter
         public Builder vnicId(@Nullable String vnicId) {
             this.vnicId = vnicId;
             return this;
-        }        public PathAnalysiDestinationEndpoint build() {
-            return new PathAnalysiDestinationEndpoint(address, instanceId, listenerId, loadBalancerId, networkLoadBalancerId, state, subnetId, type, vlanId, vnicId);
+        }
+        public PathAnalysiDestinationEndpoint build() {
+            final var o = new PathAnalysiDestinationEndpoint();
+            o.address = address;
+            o.instanceId = instanceId;
+            o.listenerId = listenerId;
+            o.loadBalancerId = loadBalancerId;
+            o.networkLoadBalancerId = networkLoadBalancerId;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.type = type;
+            o.vlanId = vlanId;
+            o.vnicId = vnicId;
+            return o;
         }
     }
 }

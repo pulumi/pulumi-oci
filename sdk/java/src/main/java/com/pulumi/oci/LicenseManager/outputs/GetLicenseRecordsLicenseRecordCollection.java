@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetLicenseRecordsLicenseRecordCollection {
-    private final List<GetLicenseRecordsLicenseRecordCollectionItem> items;
+    private List<GetLicenseRecordsLicenseRecordCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetLicenseRecordsLicenseRecordCollection(@CustomType.Parameter("items") List<GetLicenseRecordsLicenseRecordCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetLicenseRecordsLicenseRecordCollection() {}
     public List<GetLicenseRecordsLicenseRecordCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetLicenseRecordsLicenseRecordCollection {
     public static Builder builder(GetLicenseRecordsLicenseRecordCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetLicenseRecordsLicenseRecordCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLicenseRecordsLicenseRecordCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetLicenseRecordsLicenseRecordCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetLicenseRecordsLicenseRecordCollectionItem... items) {
             return items(List.of(items));
-        }        public GetLicenseRecordsLicenseRecordCollection build() {
-            return new GetLicenseRecordsLicenseRecordCollection(items);
+        }
+        public GetLicenseRecordsLicenseRecordCollection build() {
+            final var o = new GetLicenseRecordsLicenseRecordCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -9,83 +9,56 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBdsInstanceApiKeyResult {
-    private final String apiKeyId;
-    private final String bdsInstanceId;
+    private String apiKeyId;
+    private String bdsInstanceId;
     /**
      * @return The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
      * 
      */
-    private final String defaultRegion;
+    private String defaultRegion;
     /**
      * @return The fingerprint that corresponds to the public API key requested.
      * 
      */
-    private final String fingerprint;
+    private String fingerprint;
     /**
      * @return Identifier of the user&#39;s API key.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return User friendly identifier used to uniquely differentiate between different API keys. Only ASCII alphanumeric characters with no spaces allowed.
      * 
      */
-    private final String keyAlias;
-    private final String passphrase;
+    private String keyAlias;
+    private String passphrase;
     /**
      * @return The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
      * 
      */
-    private final String pemfilepath;
+    private String pemfilepath;
     /**
      * @return The current status of the API key.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The OCID of your tenancy.
      * 
      */
-    private final String tenantId;
+    private String tenantId;
     /**
      * @return The time the API key was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The user OCID for which this API key was created.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetBdsInstanceApiKeyResult(
-        @CustomType.Parameter("apiKeyId") String apiKeyId,
-        @CustomType.Parameter("bdsInstanceId") String bdsInstanceId,
-        @CustomType.Parameter("defaultRegion") String defaultRegion,
-        @CustomType.Parameter("fingerprint") String fingerprint,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("keyAlias") String keyAlias,
-        @CustomType.Parameter("passphrase") String passphrase,
-        @CustomType.Parameter("pemfilepath") String pemfilepath,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("tenantId") String tenantId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("userId") String userId) {
-        this.apiKeyId = apiKeyId;
-        this.bdsInstanceId = bdsInstanceId;
-        this.defaultRegion = defaultRegion;
-        this.fingerprint = fingerprint;
-        this.id = id;
-        this.keyAlias = keyAlias;
-        this.passphrase = passphrase;
-        this.pemfilepath = pemfilepath;
-        this.state = state;
-        this.tenantId = tenantId;
-        this.timeCreated = timeCreated;
-        this.userId = userId;
-    }
-
+    private GetBdsInstanceApiKeyResult() {}
     public String apiKeyId() {
         return this.apiKeyId;
     }
@@ -166,7 +139,7 @@ public final class GetBdsInstanceApiKeyResult {
     public static Builder builder(GetBdsInstanceApiKeyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apiKeyId;
         private String bdsInstanceId;
@@ -180,11 +153,7 @@ public final class GetBdsInstanceApiKeyResult {
         private String tenantId;
         private String timeCreated;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstanceApiKeyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apiKeyId = defaults.apiKeyId;
@@ -201,55 +170,81 @@ public final class GetBdsInstanceApiKeyResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder apiKeyId(String apiKeyId) {
             this.apiKeyId = Objects.requireNonNull(apiKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder defaultRegion(String defaultRegion) {
             this.defaultRegion = Objects.requireNonNull(defaultRegion);
             return this;
         }
+        @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = Objects.requireNonNull(fingerprint);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder keyAlias(String keyAlias) {
             this.keyAlias = Objects.requireNonNull(keyAlias);
             return this;
         }
+        @CustomType.Setter
         public Builder passphrase(String passphrase) {
             this.passphrase = Objects.requireNonNull(passphrase);
             return this;
         }
+        @CustomType.Setter
         public Builder pemfilepath(String pemfilepath) {
             this.pemfilepath = Objects.requireNonNull(pemfilepath);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder tenantId(String tenantId) {
             this.tenantId = Objects.requireNonNull(tenantId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetBdsInstanceApiKeyResult build() {
-            return new GetBdsInstanceApiKeyResult(apiKeyId, bdsInstanceId, defaultRegion, fingerprint, id, keyAlias, passphrase, pemfilepath, state, tenantId, timeCreated, userId);
+        }
+        public GetBdsInstanceApiKeyResult build() {
+            final var o = new GetBdsInstanceApiKeyResult();
+            o.apiKeyId = apiKeyId;
+            o.bdsInstanceId = bdsInstanceId;
+            o.defaultRegion = defaultRegion;
+            o.fingerprint = fingerprint;
+            o.id = id;
+            o.keyAlias = keyAlias;
+            o.passphrase = passphrase;
+            o.pemfilepath = pemfilepath;
+            o.state = state;
+            o.tenantId = tenantId;
+            o.timeCreated = timeCreated;
+            o.userId = userId;
+            return o;
         }
     }
 }

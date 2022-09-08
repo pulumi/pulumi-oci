@@ -15,13 +15,9 @@ public final class ConnectorSourceCursor {
      * @return (Updatable) The type descriminator.
      * 
      */
-    private final @Nullable String kind;
+    private @Nullable String kind;
 
-    @CustomType.Constructor
-    private ConnectorSourceCursor(@CustomType.Parameter("kind") @Nullable String kind) {
-        this.kind = kind;
-    }
-
+    private ConnectorSourceCursor() {}
     /**
      * @return (Updatable) The type descriminator.
      * 
@@ -37,24 +33,24 @@ public final class ConnectorSourceCursor {
     public static Builder builder(ConnectorSourceCursor defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String kind;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectorSourceCursor defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
         }
 
+        @CustomType.Setter
         public Builder kind(@Nullable String kind) {
             this.kind = kind;
             return this;
-        }        public ConnectorSourceCursor build() {
-            return new ConnectorSourceCursor(kind);
+        }
+        public ConnectorSourceCursor build() {
+            final var o = new ConnectorSourceCursor();
+            o.kind = kind;
+            return o;
         }
     }
 }

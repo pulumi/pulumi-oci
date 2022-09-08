@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlVersionResult {
-    private final String compartmentId;
-    private final @Nullable List<GetMysqlVersionFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetMysqlVersionFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of supported MySQL Versions.
      * 
      */
-    private final List<GetMysqlVersionVersion> versions;
+    private List<GetMysqlVersionVersion> versions;
 
-    @CustomType.Constructor
-    private GetMysqlVersionResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetMysqlVersionFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("versions") List<GetMysqlVersionVersion> versions) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.versions = versions;
-    }
-
+    private GetMysqlVersionResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetMysqlVersionResult {
     public static Builder builder(GetMysqlVersionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetMysqlVersionFilter> filters;
         private String id;
         private List<GetMysqlVersionVersion> versions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetMysqlVersionResult {
     	      this.versions = defaults.versions;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMysqlVersionFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetMysqlVersionResult {
         public Builder filters(GetMysqlVersionFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder versions(List<GetMysqlVersionVersion> versions) {
             this.versions = Objects.requireNonNull(versions);
             return this;
         }
         public Builder versions(GetMysqlVersionVersion... versions) {
             return versions(List.of(versions));
-        }        public GetMysqlVersionResult build() {
-            return new GetMysqlVersionResult(compartmentId, filters, id, versions);
+        }
+        public GetMysqlVersionResult build() {
+            final var o = new GetMysqlVersionResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.versions = versions;
+            return o;
         }
     }
 }

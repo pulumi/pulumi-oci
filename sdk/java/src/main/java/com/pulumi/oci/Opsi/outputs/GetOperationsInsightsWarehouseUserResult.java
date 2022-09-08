@@ -16,115 +16,80 @@ public final class GetOperationsInsightsWarehouseUserResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      * 
      */
-    private final String connectionPassword;
+    private String connectionPassword;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Hub User OCID
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicate whether user has access to AWR data.
      * 
      */
-    private final Boolean isAwrDataAccess;
+    private Boolean isAwrDataAccess;
     /**
      * @return Indicate whether user has access to EM data.
      * 
      */
-    private final Boolean isEmDataAccess;
+    private Boolean isEmDataAccess;
     /**
      * @return Indicate whether user has access to OPSI data.
      * 
      */
-    private final Boolean isOpsiDataAccess;
+    private Boolean isOpsiDataAccess;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return OPSI Warehouse OCID
      * 
      */
-    private final String operationsInsightsWarehouseId;
-    private final String operationsInsightsWarehouseUserId;
+    private String operationsInsightsWarehouseId;
+    private String operationsInsightsWarehouseUserId;
     /**
      * @return Possible lifecycle states
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time at which the resource was first created. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time at which the resource was last updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetOperationsInsightsWarehouseUserResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectionPassword") String connectionPassword,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAwrDataAccess") Boolean isAwrDataAccess,
-        @CustomType.Parameter("isEmDataAccess") Boolean isEmDataAccess,
-        @CustomType.Parameter("isOpsiDataAccess") Boolean isOpsiDataAccess,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("operationsInsightsWarehouseId") String operationsInsightsWarehouseId,
-        @CustomType.Parameter("operationsInsightsWarehouseUserId") String operationsInsightsWarehouseUserId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.connectionPassword = connectionPassword;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isAwrDataAccess = isAwrDataAccess;
-        this.isEmDataAccess = isEmDataAccess;
-        this.isOpsiDataAccess = isOpsiDataAccess;
-        this.lifecycleDetails = lifecycleDetails;
-        this.name = name;
-        this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-        this.operationsInsightsWarehouseUserId = operationsInsightsWarehouseUserId;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetOperationsInsightsWarehouseUserResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -241,7 +206,7 @@ public final class GetOperationsInsightsWarehouseUserResult {
     public static Builder builder(GetOperationsInsightsWarehouseUserResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String connectionPassword;
@@ -259,11 +224,7 @@ public final class GetOperationsInsightsWarehouseUserResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOperationsInsightsWarehouseUserResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -284,71 +245,105 @@ public final class GetOperationsInsightsWarehouseUserResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionPassword(String connectionPassword) {
             this.connectionPassword = Objects.requireNonNull(connectionPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAwrDataAccess(Boolean isAwrDataAccess) {
             this.isAwrDataAccess = Objects.requireNonNull(isAwrDataAccess);
             return this;
         }
+        @CustomType.Setter
         public Builder isEmDataAccess(Boolean isEmDataAccess) {
             this.isEmDataAccess = Objects.requireNonNull(isEmDataAccess);
             return this;
         }
+        @CustomType.Setter
         public Builder isOpsiDataAccess(Boolean isOpsiDataAccess) {
             this.isOpsiDataAccess = Objects.requireNonNull(isOpsiDataAccess);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
             this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsWarehouseUserId(String operationsInsightsWarehouseUserId) {
             this.operationsInsightsWarehouseUserId = Objects.requireNonNull(operationsInsightsWarehouseUserId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetOperationsInsightsWarehouseUserResult build() {
-            return new GetOperationsInsightsWarehouseUserResult(compartmentId, connectionPassword, definedTags, freeformTags, id, isAwrDataAccess, isEmDataAccess, isOpsiDataAccess, lifecycleDetails, name, operationsInsightsWarehouseId, operationsInsightsWarehouseUserId, state, systemTags, timeCreated, timeUpdated);
+        }
+        public GetOperationsInsightsWarehouseUserResult build() {
+            final var o = new GetOperationsInsightsWarehouseUserResult();
+            o.compartmentId = compartmentId;
+            o.connectionPassword = connectionPassword;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isAwrDataAccess = isAwrDataAccess;
+            o.isEmDataAccess = isEmDataAccess;
+            o.isOpsiDataAccess = isOpsiDataAccess;
+            o.lifecycleDetails = lifecycleDetails;
+            o.name = name;
+            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            o.operationsInsightsWarehouseUserId = operationsInsightsWarehouseUserId;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

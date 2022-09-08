@@ -13,28 +13,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationObjectTypesResult {
-    private final @Nullable List<GetMigrationObjectTypesFilter> filters;
+    private @Nullable List<GetMigrationObjectTypesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of migration_object_type_summary_collection.
      * 
      */
-    private final List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections;
+    private List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections;
 
-    @CustomType.Constructor
-    private GetMigrationObjectTypesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetMigrationObjectTypesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("migrationObjectTypeSummaryCollections") List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections) {
-        this.filters = filters;
-        this.id = id;
-        this.migrationObjectTypeSummaryCollections = migrationObjectTypeSummaryCollections;
-    }
-
+    private GetMigrationObjectTypesResult() {}
     public List<GetMigrationObjectTypesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -60,16 +51,12 @@ public final class GetMigrationObjectTypesResult {
     public static Builder builder(GetMigrationObjectTypesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetMigrationObjectTypesFilter> filters;
         private String id;
         private List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationObjectTypesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -77,6 +64,7 @@ public final class GetMigrationObjectTypesResult {
     	      this.migrationObjectTypeSummaryCollections = defaults.migrationObjectTypeSummaryCollections;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMigrationObjectTypesFilter> filters) {
             this.filters = filters;
             return this;
@@ -84,18 +72,25 @@ public final class GetMigrationObjectTypesResult {
         public Builder filters(GetMigrationObjectTypesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder migrationObjectTypeSummaryCollections(List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections) {
             this.migrationObjectTypeSummaryCollections = Objects.requireNonNull(migrationObjectTypeSummaryCollections);
             return this;
         }
         public Builder migrationObjectTypeSummaryCollections(GetMigrationObjectTypesMigrationObjectTypeSummaryCollection... migrationObjectTypeSummaryCollections) {
             return migrationObjectTypeSummaryCollections(List.of(migrationObjectTypeSummaryCollections));
-        }        public GetMigrationObjectTypesResult build() {
-            return new GetMigrationObjectTypesResult(filters, id, migrationObjectTypeSummaryCollections);
+        }
+        public GetMigrationObjectTypesResult build() {
+            final var o = new GetMigrationObjectTypesResult();
+            o.filters = filters;
+            o.id = id;
+            o.migrationObjectTypeSummaryCollections = migrationObjectTypeSummaryCollections;
+            return o;
         }
     }
 }

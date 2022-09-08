@@ -13,13 +13,9 @@ public final class GetClustersClusterOptionAdmissionControllerOption {
      * @return Whether or not to enable the Pod Security Policy admission controller.
      * 
      */
-    private final Boolean isPodSecurityPolicyEnabled;
+    private Boolean isPodSecurityPolicyEnabled;
 
-    @CustomType.Constructor
-    private GetClustersClusterOptionAdmissionControllerOption(@CustomType.Parameter("isPodSecurityPolicyEnabled") Boolean isPodSecurityPolicyEnabled) {
-        this.isPodSecurityPolicyEnabled = isPodSecurityPolicyEnabled;
-    }
-
+    private GetClustersClusterOptionAdmissionControllerOption() {}
     /**
      * @return Whether or not to enable the Pod Security Policy admission controller.
      * 
@@ -35,24 +31,24 @@ public final class GetClustersClusterOptionAdmissionControllerOption {
     public static Builder builder(GetClustersClusterOptionAdmissionControllerOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isPodSecurityPolicyEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClustersClusterOptionAdmissionControllerOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isPodSecurityPolicyEnabled = defaults.isPodSecurityPolicyEnabled;
         }
 
+        @CustomType.Setter
         public Builder isPodSecurityPolicyEnabled(Boolean isPodSecurityPolicyEnabled) {
             this.isPodSecurityPolicyEnabled = Objects.requireNonNull(isPodSecurityPolicyEnabled);
             return this;
-        }        public GetClustersClusterOptionAdmissionControllerOption build() {
-            return new GetClustersClusterOptionAdmissionControllerOption(isPodSecurityPolicyEnabled);
+        }
+        public GetClustersClusterOptionAdmissionControllerOption build() {
+            final var o = new GetClustersClusterOptionAdmissionControllerOption();
+            o.isPodSecurityPolicyEnabled = isPodSecurityPolicyEnabled;
+            return o;
         }
     }
 }

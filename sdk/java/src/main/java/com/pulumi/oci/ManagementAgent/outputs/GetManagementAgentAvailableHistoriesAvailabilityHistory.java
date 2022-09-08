@@ -13,35 +13,24 @@ public final class GetManagementAgentAvailableHistoriesAvailabilityHistory {
      * @return The availability status of managementAgent
      * 
      */
-    private final String availabilityStatus;
+    private String availabilityStatus;
     /**
      * @return Unique Management Agent identifier
      * 
      */
-    private final String managementAgentId;
+    private String managementAgentId;
     /**
      * @return The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeAvailabilityStatusEnded;
+    private String timeAvailabilityStatusEnded;
     /**
      * @return The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeAvailabilityStatusStarted;
+    private String timeAvailabilityStatusStarted;
 
-    @CustomType.Constructor
-    private GetManagementAgentAvailableHistoriesAvailabilityHistory(
-        @CustomType.Parameter("availabilityStatus") String availabilityStatus,
-        @CustomType.Parameter("managementAgentId") String managementAgentId,
-        @CustomType.Parameter("timeAvailabilityStatusEnded") String timeAvailabilityStatusEnded,
-        @CustomType.Parameter("timeAvailabilityStatusStarted") String timeAvailabilityStatusStarted) {
-        this.availabilityStatus = availabilityStatus;
-        this.managementAgentId = managementAgentId;
-        this.timeAvailabilityStatusEnded = timeAvailabilityStatusEnded;
-        this.timeAvailabilityStatusStarted = timeAvailabilityStatusStarted;
-    }
-
+    private GetManagementAgentAvailableHistoriesAvailabilityHistory() {}
     /**
      * @return The availability status of managementAgent
      * 
@@ -78,17 +67,13 @@ public final class GetManagementAgentAvailableHistoriesAvailabilityHistory {
     public static Builder builder(GetManagementAgentAvailableHistoriesAvailabilityHistory defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityStatus;
         private String managementAgentId;
         private String timeAvailabilityStatusEnded;
         private String timeAvailabilityStatusStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentAvailableHistoriesAvailabilityHistory defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityStatus = defaults.availabilityStatus;
@@ -97,23 +82,33 @@ public final class GetManagementAgentAvailableHistoriesAvailabilityHistory {
     	      this.timeAvailabilityStatusStarted = defaults.timeAvailabilityStatusStarted;
         }
 
+        @CustomType.Setter
         public Builder availabilityStatus(String availabilityStatus) {
             this.availabilityStatus = Objects.requireNonNull(availabilityStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = Objects.requireNonNull(managementAgentId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAvailabilityStatusEnded(String timeAvailabilityStatusEnded) {
             this.timeAvailabilityStatusEnded = Objects.requireNonNull(timeAvailabilityStatusEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAvailabilityStatusStarted(String timeAvailabilityStatusStarted) {
             this.timeAvailabilityStatusStarted = Objects.requireNonNull(timeAvailabilityStatusStarted);
             return this;
-        }        public GetManagementAgentAvailableHistoriesAvailabilityHistory build() {
-            return new GetManagementAgentAvailableHistoriesAvailabilityHistory(availabilityStatus, managementAgentId, timeAvailabilityStatusEnded, timeAvailabilityStatusStarted);
+        }
+        public GetManagementAgentAvailableHistoriesAvailabilityHistory build() {
+            final var o = new GetManagementAgentAvailableHistoriesAvailabilityHistory();
+            o.availabilityStatus = availabilityStatus;
+            o.managementAgentId = managementAgentId;
+            o.timeAvailabilityStatusEnded = timeAvailabilityStatusEnded;
+            o.timeAvailabilityStatusStarted = timeAvailabilityStatusStarted;
+            return o;
         }
     }
 }

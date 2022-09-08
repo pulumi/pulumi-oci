@@ -15,21 +15,14 @@ public final class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails
      * @return (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
      * 
      */
-    private final @Nullable Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
      * 
      */
-    private final @Nullable Double ocpus;
+    private @Nullable Double ocpus;
 
-    @CustomType.Constructor
-    private JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(
-        @CustomType.Parameter("memoryInGbs") @Nullable Double memoryInGbs,
-        @CustomType.Parameter("ocpus") @Nullable Double ocpus) {
-        this.memoryInGbs = memoryInGbs;
-        this.ocpus = ocpus;
-    }
-
+    private JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails() {}
     /**
      * @return (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
      * 
@@ -52,30 +45,32 @@ public final class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails
     public static Builder builder(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Double memoryInGbs;
         private @Nullable Double ocpus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
             this.memoryInGbs = memoryInGbs;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
             this.ocpus = ocpus;
             return this;
-        }        public JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails build() {
-            return new JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(memoryInGbs, ocpus);
+        }
+        public JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails build() {
+            final var o = new JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails();
+            o.memoryInGbs = memoryInGbs;
+            o.ocpus = ocpus;
+            return o;
         }
     }
 }

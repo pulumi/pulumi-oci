@@ -13,55 +13,36 @@ public final class GetModelProvenanceResult {
      * @return For model reproducibility purposes. Branch of the git repository associated with model training.
      * 
      */
-    private final String gitBranch;
+    private String gitBranch;
     /**
      * @return For model reproducibility purposes. Commit ID of the git repository associated with model training.
      * 
      */
-    private final String gitCommit;
-    private final String id;
-    private final String modelId;
+    private String gitCommit;
+    private String id;
+    private String modelId;
     /**
      * @return For model reproducibility purposes. URL of the git repository associated with model training.
      * 
      */
-    private final String repositoryUrl;
+    private String repositoryUrl;
     /**
      * @return For model reproducibility purposes. Path to model artifacts.
      * 
      */
-    private final String scriptDir;
+    private String scriptDir;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      * 
      */
-    private final String trainingId;
+    private String trainingId;
     /**
      * @return For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
      * 
      */
-    private final String trainingScript;
+    private String trainingScript;
 
-    @CustomType.Constructor
-    private GetModelProvenanceResult(
-        @CustomType.Parameter("gitBranch") String gitBranch,
-        @CustomType.Parameter("gitCommit") String gitCommit,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("modelId") String modelId,
-        @CustomType.Parameter("repositoryUrl") String repositoryUrl,
-        @CustomType.Parameter("scriptDir") String scriptDir,
-        @CustomType.Parameter("trainingId") String trainingId,
-        @CustomType.Parameter("trainingScript") String trainingScript) {
-        this.gitBranch = gitBranch;
-        this.gitCommit = gitCommit;
-        this.id = id;
-        this.modelId = modelId;
-        this.repositoryUrl = repositoryUrl;
-        this.scriptDir = scriptDir;
-        this.trainingId = trainingId;
-        this.trainingScript = trainingScript;
-    }
-
+    private GetModelProvenanceResult() {}
     /**
      * @return For model reproducibility purposes. Branch of the git repository associated with model training.
      * 
@@ -118,7 +99,7 @@ public final class GetModelProvenanceResult {
     public static Builder builder(GetModelProvenanceResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String gitBranch;
         private String gitCommit;
@@ -128,11 +109,7 @@ public final class GetModelProvenanceResult {
         private String scriptDir;
         private String trainingId;
         private String trainingScript;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelProvenanceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.gitBranch = defaults.gitBranch;
@@ -145,39 +122,57 @@ public final class GetModelProvenanceResult {
     	      this.trainingScript = defaults.trainingScript;
         }
 
+        @CustomType.Setter
         public Builder gitBranch(String gitBranch) {
             this.gitBranch = Objects.requireNonNull(gitBranch);
             return this;
         }
+        @CustomType.Setter
         public Builder gitCommit(String gitCommit) {
             this.gitCommit = Objects.requireNonNull(gitCommit);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder modelId(String modelId) {
             this.modelId = Objects.requireNonNull(modelId);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder scriptDir(String scriptDir) {
             this.scriptDir = Objects.requireNonNull(scriptDir);
             return this;
         }
+        @CustomType.Setter
         public Builder trainingId(String trainingId) {
             this.trainingId = Objects.requireNonNull(trainingId);
             return this;
         }
+        @CustomType.Setter
         public Builder trainingScript(String trainingScript) {
             this.trainingScript = Objects.requireNonNull(trainingScript);
             return this;
-        }        public GetModelProvenanceResult build() {
-            return new GetModelProvenanceResult(gitBranch, gitCommit, id, modelId, repositoryUrl, scriptDir, trainingId, trainingScript);
+        }
+        public GetModelProvenanceResult build() {
+            final var o = new GetModelProvenanceResult();
+            o.gitBranch = gitBranch;
+            o.gitCommit = gitCommit;
+            o.id = id;
+            o.modelId = modelId;
+            o.repositoryUrl = repositoryUrl;
+            o.scriptDir = scriptDir;
+            o.trainingId = trainingId;
+            o.trainingScript = trainingScript;
+            return o;
         }
     }
 }

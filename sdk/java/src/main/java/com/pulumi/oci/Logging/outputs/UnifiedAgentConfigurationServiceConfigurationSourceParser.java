@@ -21,182 +21,129 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
      * @return (Updatable)
      * 
      */
-    private final @Nullable String delimiter;
+    private @Nullable String delimiter;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String expression;
+    private @Nullable String expression;
     /**
      * @return (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
-    private final @Nullable String fieldTimeKey;
+    private @Nullable String fieldTimeKey;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String formatFirstline;
+    private @Nullable String formatFirstline;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable List<String> formats;
+    private @Nullable List<String> formats;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String grokFailureKey;
+    private @Nullable String grokFailureKey;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String grokNameKey;
+    private @Nullable String grokNameKey;
     /**
      * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
      * 
      */
-    private final @Nullable Boolean isEstimateCurrentEvent;
+    private @Nullable Boolean isEstimateCurrentEvent;
     /**
      * @return (Updatable) If true, keep time field in the record.
      * 
      */
-    private final @Nullable Boolean isKeepTimeKey;
+    private @Nullable Boolean isKeepTimeKey;
     /**
      * @return (Updatable) If true, an empty string field is replaced with nil.
      * 
      */
-    private final @Nullable Boolean isNullEmptyString;
+    private @Nullable Boolean isNullEmptyString;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable Boolean isSupportColonlessIdent;
+    private @Nullable Boolean isSupportColonlessIdent;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable Boolean isWithPriority;
+    private @Nullable Boolean isWithPriority;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable List<String> keys;
+    private @Nullable List<String> keys;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String messageFormat;
+    private @Nullable String messageFormat;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String messageKey;
+    private @Nullable String messageKey;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String multiLineStartRegexp;
+    private @Nullable String multiLineStartRegexp;
     /**
      * @return (Updatable) Specify the null value pattern.
      * 
      */
-    private final @Nullable String nullValuePattern;
+    private @Nullable String nullValuePattern;
     /**
      * @return (Updatable) Type of fluent parser.
      * 
      */
-    private final String parserType;
+    private String parserType;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable List<UnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
+    private @Nullable List<UnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String rfc5424timeFormat;
+    private @Nullable String rfc5424timeFormat;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String syslogParserType;
+    private @Nullable String syslogParserType;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String timeFormat;
+    private @Nullable String timeFormat;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String timeType;
+    private @Nullable String timeType;
     /**
      * @return (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
      * 
      */
-    private final @Nullable Integer timeoutInMilliseconds;
+    private @Nullable Integer timeoutInMilliseconds;
     /**
      * @return (Updatable) Specify types for converting a field into another type.
      * 
      */
-    private final @Nullable Map<String,Object> types;
+    private @Nullable Map<String,Object> types;
 
-    @CustomType.Constructor
-    private UnifiedAgentConfigurationServiceConfigurationSourceParser(
-        @CustomType.Parameter("delimiter") @Nullable String delimiter,
-        @CustomType.Parameter("expression") @Nullable String expression,
-        @CustomType.Parameter("fieldTimeKey") @Nullable String fieldTimeKey,
-        @CustomType.Parameter("formatFirstline") @Nullable String formatFirstline,
-        @CustomType.Parameter("formats") @Nullable List<String> formats,
-        @CustomType.Parameter("grokFailureKey") @Nullable String grokFailureKey,
-        @CustomType.Parameter("grokNameKey") @Nullable String grokNameKey,
-        @CustomType.Parameter("isEstimateCurrentEvent") @Nullable Boolean isEstimateCurrentEvent,
-        @CustomType.Parameter("isKeepTimeKey") @Nullable Boolean isKeepTimeKey,
-        @CustomType.Parameter("isNullEmptyString") @Nullable Boolean isNullEmptyString,
-        @CustomType.Parameter("isSupportColonlessIdent") @Nullable Boolean isSupportColonlessIdent,
-        @CustomType.Parameter("isWithPriority") @Nullable Boolean isWithPriority,
-        @CustomType.Parameter("keys") @Nullable List<String> keys,
-        @CustomType.Parameter("messageFormat") @Nullable String messageFormat,
-        @CustomType.Parameter("messageKey") @Nullable String messageKey,
-        @CustomType.Parameter("multiLineStartRegexp") @Nullable String multiLineStartRegexp,
-        @CustomType.Parameter("nullValuePattern") @Nullable String nullValuePattern,
-        @CustomType.Parameter("parserType") String parserType,
-        @CustomType.Parameter("patterns") @Nullable List<UnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns,
-        @CustomType.Parameter("rfc5424timeFormat") @Nullable String rfc5424timeFormat,
-        @CustomType.Parameter("syslogParserType") @Nullable String syslogParserType,
-        @CustomType.Parameter("timeFormat") @Nullable String timeFormat,
-        @CustomType.Parameter("timeType") @Nullable String timeType,
-        @CustomType.Parameter("timeoutInMilliseconds") @Nullable Integer timeoutInMilliseconds,
-        @CustomType.Parameter("types") @Nullable Map<String,Object> types) {
-        this.delimiter = delimiter;
-        this.expression = expression;
-        this.fieldTimeKey = fieldTimeKey;
-        this.formatFirstline = formatFirstline;
-        this.formats = formats;
-        this.grokFailureKey = grokFailureKey;
-        this.grokNameKey = grokNameKey;
-        this.isEstimateCurrentEvent = isEstimateCurrentEvent;
-        this.isKeepTimeKey = isKeepTimeKey;
-        this.isNullEmptyString = isNullEmptyString;
-        this.isSupportColonlessIdent = isSupportColonlessIdent;
-        this.isWithPriority = isWithPriority;
-        this.keys = keys;
-        this.messageFormat = messageFormat;
-        this.messageKey = messageKey;
-        this.multiLineStartRegexp = multiLineStartRegexp;
-        this.nullValuePattern = nullValuePattern;
-        this.parserType = parserType;
-        this.patterns = patterns;
-        this.rfc5424timeFormat = rfc5424timeFormat;
-        this.syslogParserType = syslogParserType;
-        this.timeFormat = timeFormat;
-        this.timeType = timeType;
-        this.timeoutInMilliseconds = timeoutInMilliseconds;
-        this.types = types;
-    }
-
+    private UnifiedAgentConfigurationServiceConfigurationSourceParser() {}
     /**
      * @return (Updatable)
      * 
@@ -380,7 +327,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
     public static Builder builder(UnifiedAgentConfigurationServiceConfigurationSourceParser defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String delimiter;
         private @Nullable String expression;
@@ -407,11 +354,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         private @Nullable String timeType;
         private @Nullable Integer timeoutInMilliseconds;
         private @Nullable Map<String,Object> types;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(UnifiedAgentConfigurationServiceConfigurationSourceParser defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.delimiter = defaults.delimiter;
@@ -441,22 +384,27 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
     	      this.types = defaults.types;
         }
 
+        @CustomType.Setter
         public Builder delimiter(@Nullable String delimiter) {
             this.delimiter = delimiter;
             return this;
         }
+        @CustomType.Setter
         public Builder expression(@Nullable String expression) {
             this.expression = expression;
             return this;
         }
+        @CustomType.Setter
         public Builder fieldTimeKey(@Nullable String fieldTimeKey) {
             this.fieldTimeKey = fieldTimeKey;
             return this;
         }
+        @CustomType.Setter
         public Builder formatFirstline(@Nullable String formatFirstline) {
             this.formatFirstline = formatFirstline;
             return this;
         }
+        @CustomType.Setter
         public Builder formats(@Nullable List<String> formats) {
             this.formats = formats;
             return this;
@@ -464,34 +412,42 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         public Builder formats(String... formats) {
             return formats(List.of(formats));
         }
+        @CustomType.Setter
         public Builder grokFailureKey(@Nullable String grokFailureKey) {
             this.grokFailureKey = grokFailureKey;
             return this;
         }
+        @CustomType.Setter
         public Builder grokNameKey(@Nullable String grokNameKey) {
             this.grokNameKey = grokNameKey;
             return this;
         }
+        @CustomType.Setter
         public Builder isEstimateCurrentEvent(@Nullable Boolean isEstimateCurrentEvent) {
             this.isEstimateCurrentEvent = isEstimateCurrentEvent;
             return this;
         }
+        @CustomType.Setter
         public Builder isKeepTimeKey(@Nullable Boolean isKeepTimeKey) {
             this.isKeepTimeKey = isKeepTimeKey;
             return this;
         }
+        @CustomType.Setter
         public Builder isNullEmptyString(@Nullable Boolean isNullEmptyString) {
             this.isNullEmptyString = isNullEmptyString;
             return this;
         }
+        @CustomType.Setter
         public Builder isSupportColonlessIdent(@Nullable Boolean isSupportColonlessIdent) {
             this.isSupportColonlessIdent = isSupportColonlessIdent;
             return this;
         }
+        @CustomType.Setter
         public Builder isWithPriority(@Nullable Boolean isWithPriority) {
             this.isWithPriority = isWithPriority;
             return this;
         }
+        @CustomType.Setter
         public Builder keys(@Nullable List<String> keys) {
             this.keys = keys;
             return this;
@@ -499,26 +455,32 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         public Builder keys(String... keys) {
             return keys(List.of(keys));
         }
+        @CustomType.Setter
         public Builder messageFormat(@Nullable String messageFormat) {
             this.messageFormat = messageFormat;
             return this;
         }
+        @CustomType.Setter
         public Builder messageKey(@Nullable String messageKey) {
             this.messageKey = messageKey;
             return this;
         }
+        @CustomType.Setter
         public Builder multiLineStartRegexp(@Nullable String multiLineStartRegexp) {
             this.multiLineStartRegexp = multiLineStartRegexp;
             return this;
         }
+        @CustomType.Setter
         public Builder nullValuePattern(@Nullable String nullValuePattern) {
             this.nullValuePattern = nullValuePattern;
             return this;
         }
+        @CustomType.Setter
         public Builder parserType(String parserType) {
             this.parserType = Objects.requireNonNull(parserType);
             return this;
         }
+        @CustomType.Setter
         public Builder patterns(@Nullable List<UnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns) {
             this.patterns = patterns;
             return this;
@@ -526,31 +488,64 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         public Builder patterns(UnifiedAgentConfigurationServiceConfigurationSourceParserPattern... patterns) {
             return patterns(List.of(patterns));
         }
+        @CustomType.Setter
         public Builder rfc5424timeFormat(@Nullable String rfc5424timeFormat) {
             this.rfc5424timeFormat = rfc5424timeFormat;
             return this;
         }
+        @CustomType.Setter
         public Builder syslogParserType(@Nullable String syslogParserType) {
             this.syslogParserType = syslogParserType;
             return this;
         }
+        @CustomType.Setter
         public Builder timeFormat(@Nullable String timeFormat) {
             this.timeFormat = timeFormat;
             return this;
         }
+        @CustomType.Setter
         public Builder timeType(@Nullable String timeType) {
             this.timeType = timeType;
             return this;
         }
+        @CustomType.Setter
         public Builder timeoutInMilliseconds(@Nullable Integer timeoutInMilliseconds) {
             this.timeoutInMilliseconds = timeoutInMilliseconds;
             return this;
         }
+        @CustomType.Setter
         public Builder types(@Nullable Map<String,Object> types) {
             this.types = types;
             return this;
-        }        public UnifiedAgentConfigurationServiceConfigurationSourceParser build() {
-            return new UnifiedAgentConfigurationServiceConfigurationSourceParser(delimiter, expression, fieldTimeKey, formatFirstline, formats, grokFailureKey, grokNameKey, isEstimateCurrentEvent, isKeepTimeKey, isNullEmptyString, isSupportColonlessIdent, isWithPriority, keys, messageFormat, messageKey, multiLineStartRegexp, nullValuePattern, parserType, patterns, rfc5424timeFormat, syslogParserType, timeFormat, timeType, timeoutInMilliseconds, types);
+        }
+        public UnifiedAgentConfigurationServiceConfigurationSourceParser build() {
+            final var o = new UnifiedAgentConfigurationServiceConfigurationSourceParser();
+            o.delimiter = delimiter;
+            o.expression = expression;
+            o.fieldTimeKey = fieldTimeKey;
+            o.formatFirstline = formatFirstline;
+            o.formats = formats;
+            o.grokFailureKey = grokFailureKey;
+            o.grokNameKey = grokNameKey;
+            o.isEstimateCurrentEvent = isEstimateCurrentEvent;
+            o.isKeepTimeKey = isKeepTimeKey;
+            o.isNullEmptyString = isNullEmptyString;
+            o.isSupportColonlessIdent = isSupportColonlessIdent;
+            o.isWithPriority = isWithPriority;
+            o.keys = keys;
+            o.messageFormat = messageFormat;
+            o.messageKey = messageKey;
+            o.multiLineStartRegexp = multiLineStartRegexp;
+            o.nullValuePattern = nullValuePattern;
+            o.parserType = parserType;
+            o.patterns = patterns;
+            o.rfc5424timeFormat = rfc5424timeFormat;
+            o.syslogParserType = syslogParserType;
+            o.timeFormat = timeFormat;
+            o.timeType = timeType;
+            o.timeoutInMilliseconds = timeoutInMilliseconds;
+            o.types = types;
+            return o;
         }
     }
 }

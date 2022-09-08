@@ -14,21 +14,14 @@ public final class GetUsagePlanEntitlementRateLimit {
      * @return The unit of time over which rate limits are calculated. Example: `SECOND`
      * 
      */
-    private final String unit;
+    private String unit;
     /**
      * @return The number of requests that can be made per time period.
      * 
      */
-    private final Integer value;
+    private Integer value;
 
-    @CustomType.Constructor
-    private GetUsagePlanEntitlementRateLimit(
-        @CustomType.Parameter("unit") String unit,
-        @CustomType.Parameter("value") Integer value) {
-        this.unit = unit;
-        this.value = value;
-    }
-
+    private GetUsagePlanEntitlementRateLimit() {}
     /**
      * @return The unit of time over which rate limits are calculated. Example: `SECOND`
      * 
@@ -51,30 +44,32 @@ public final class GetUsagePlanEntitlementRateLimit {
     public static Builder builder(GetUsagePlanEntitlementRateLimit defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String unit;
         private Integer value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUsagePlanEntitlementRateLimit defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.unit = defaults.unit;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder unit(String unit) {
             this.unit = Objects.requireNonNull(unit);
             return this;
         }
+        @CustomType.Setter
         public Builder value(Integer value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetUsagePlanEntitlementRateLimit build() {
-            return new GetUsagePlanEntitlementRateLimit(unit, value);
+        }
+        public GetUsagePlanEntitlementRateLimit build() {
+            final var o = new GetUsagePlanEntitlementRateLimit();
+            o.unit = unit;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class ChannelSourceSslCaCertificate {
      * @return (Updatable) The type of CA certificate.
      * 
      */
-    private final String certificateType;
+    private String certificateType;
     /**
      * @return (Updatable) The string containing the CA certificate in PEM format.
      * 
      */
-    private final String contents;
+    private String contents;
 
-    @CustomType.Constructor
-    private ChannelSourceSslCaCertificate(
-        @CustomType.Parameter("certificateType") String certificateType,
-        @CustomType.Parameter("contents") String contents) {
-        this.certificateType = certificateType;
-        this.contents = contents;
-    }
-
+    private ChannelSourceSslCaCertificate() {}
     /**
      * @return (Updatable) The type of CA certificate.
      * 
@@ -50,30 +43,32 @@ public final class ChannelSourceSslCaCertificate {
     public static Builder builder(ChannelSourceSslCaCertificate defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificateType;
         private String contents;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ChannelSourceSslCaCertificate defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateType = defaults.certificateType;
     	      this.contents = defaults.contents;
         }
 
+        @CustomType.Setter
         public Builder certificateType(String certificateType) {
             this.certificateType = Objects.requireNonNull(certificateType);
             return this;
         }
+        @CustomType.Setter
         public Builder contents(String contents) {
             this.contents = Objects.requireNonNull(contents);
             return this;
-        }        public ChannelSourceSslCaCertificate build() {
-            return new ChannelSourceSslCaCertificate(certificateType, contents);
+        }
+        public ChannelSourceSslCaCertificate build() {
+            final var o = new ChannelSourceSslCaCertificate();
+            o.certificateType = certificateType;
+            o.contents = contents;
+            return o;
         }
     }
 }

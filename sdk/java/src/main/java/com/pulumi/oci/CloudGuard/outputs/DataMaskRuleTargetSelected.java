@@ -15,21 +15,14 @@ public final class DataMaskRuleTargetSelected {
      * @return (Updatable) Target selection.
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return (Updatable) Types of Targets
      * 
      */
-    private final @Nullable List<String> values;
+    private @Nullable List<String> values;
 
-    @CustomType.Constructor
-    private DataMaskRuleTargetSelected(
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("values") @Nullable List<String> values) {
-        this.kind = kind;
-        this.values = values;
-    }
-
+    private DataMaskRuleTargetSelected() {}
     /**
      * @return (Updatable) Target selection.
      * 
@@ -52,33 +45,35 @@ public final class DataMaskRuleTargetSelected {
     public static Builder builder(DataMaskRuleTargetSelected defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kind;
         private @Nullable List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DataMaskRuleTargetSelected defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder values(@Nullable List<String> values) {
             this.values = values;
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public DataMaskRuleTargetSelected build() {
-            return new DataMaskRuleTargetSelected(kind, values);
+        }
+        public DataMaskRuleTargetSelected build() {
+            final var o = new DataMaskRuleTargetSelected();
+            o.kind = kind;
+            o.values = values;
+            return o;
         }
     }
 }

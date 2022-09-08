@@ -15,28 +15,19 @@ public final class PrivateApplicationLogo {
      * @return The content URL of the uploaded data.
      * 
      */
-    private final @Nullable String contentUrl;
+    private @Nullable String contentUrl;
     /**
      * @return (Updatable) The name of the private application.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The MIME type of the uploaded data.
      * 
      */
-    private final @Nullable String mimeType;
+    private @Nullable String mimeType;
 
-    @CustomType.Constructor
-    private PrivateApplicationLogo(
-        @CustomType.Parameter("contentUrl") @Nullable String contentUrl,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("mimeType") @Nullable String mimeType) {
-        this.contentUrl = contentUrl;
-        this.displayName = displayName;
-        this.mimeType = mimeType;
-    }
-
+    private PrivateApplicationLogo() {}
     /**
      * @return The content URL of the uploaded data.
      * 
@@ -66,16 +57,12 @@ public final class PrivateApplicationLogo {
     public static Builder builder(PrivateApplicationLogo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String contentUrl;
         private @Nullable String displayName;
         private @Nullable String mimeType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PrivateApplicationLogo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contentUrl = defaults.contentUrl;
@@ -83,19 +70,27 @@ public final class PrivateApplicationLogo {
     	      this.mimeType = defaults.mimeType;
         }
 
+        @CustomType.Setter
         public Builder contentUrl(@Nullable String contentUrl) {
             this.contentUrl = contentUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder mimeType(@Nullable String mimeType) {
             this.mimeType = mimeType;
             return this;
-        }        public PrivateApplicationLogo build() {
-            return new PrivateApplicationLogo(contentUrl, displayName, mimeType);
+        }
+        public PrivateApplicationLogo build() {
+            final var o = new PrivateApplicationLogo();
+            o.contentUrl = contentUrl;
+            o.displayName = displayName;
+            o.mimeType = mimeType;
+            return o;
         }
     }
 }

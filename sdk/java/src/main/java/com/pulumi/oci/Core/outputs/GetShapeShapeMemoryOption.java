@@ -9,26 +9,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetShapeShapeMemoryOption {
-    private final Double defaultPerOcpuInGbs;
-    private final Double maxInGbs;
-    private final Double maxPerOcpuInGbs;
-    private final Double minInGbs;
-    private final Double minPerOcpuInGbs;
+    private Double defaultPerOcpuInGbs;
+    private Double maxInGbs;
+    private Double maxPerOcpuInGbs;
+    private Double minInGbs;
+    private Double minPerOcpuInGbs;
 
-    @CustomType.Constructor
-    private GetShapeShapeMemoryOption(
-        @CustomType.Parameter("defaultPerOcpuInGbs") Double defaultPerOcpuInGbs,
-        @CustomType.Parameter("maxInGbs") Double maxInGbs,
-        @CustomType.Parameter("maxPerOcpuInGbs") Double maxPerOcpuInGbs,
-        @CustomType.Parameter("minInGbs") Double minInGbs,
-        @CustomType.Parameter("minPerOcpuInGbs") Double minPerOcpuInGbs) {
-        this.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
-        this.maxInGbs = maxInGbs;
-        this.maxPerOcpuInGbs = maxPerOcpuInGbs;
-        this.minInGbs = minInGbs;
-        this.minPerOcpuInGbs = minPerOcpuInGbs;
-    }
-
+    private GetShapeShapeMemoryOption() {}
     public Double defaultPerOcpuInGbs() {
         return this.defaultPerOcpuInGbs;
     }
@@ -52,18 +39,14 @@ public final class GetShapeShapeMemoryOption {
     public static Builder builder(GetShapeShapeMemoryOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double defaultPerOcpuInGbs;
         private Double maxInGbs;
         private Double maxPerOcpuInGbs;
         private Double minInGbs;
         private Double minPerOcpuInGbs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapeShapeMemoryOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultPerOcpuInGbs = defaults.defaultPerOcpuInGbs;
@@ -73,27 +56,39 @@ public final class GetShapeShapeMemoryOption {
     	      this.minPerOcpuInGbs = defaults.minPerOcpuInGbs;
         }
 
+        @CustomType.Setter
         public Builder defaultPerOcpuInGbs(Double defaultPerOcpuInGbs) {
             this.defaultPerOcpuInGbs = Objects.requireNonNull(defaultPerOcpuInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder maxInGbs(Double maxInGbs) {
             this.maxInGbs = Objects.requireNonNull(maxInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder maxPerOcpuInGbs(Double maxPerOcpuInGbs) {
             this.maxPerOcpuInGbs = Objects.requireNonNull(maxPerOcpuInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder minInGbs(Double minInGbs) {
             this.minInGbs = Objects.requireNonNull(minInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder minPerOcpuInGbs(Double minPerOcpuInGbs) {
             this.minPerOcpuInGbs = Objects.requireNonNull(minPerOcpuInGbs);
             return this;
-        }        public GetShapeShapeMemoryOption build() {
-            return new GetShapeShapeMemoryOption(defaultPerOcpuInGbs, maxInGbs, maxPerOcpuInGbs, minInGbs, minPerOcpuInGbs);
+        }
+        public GetShapeShapeMemoryOption build() {
+            final var o = new GetShapeShapeMemoryOption();
+            o.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
+            o.maxInGbs = maxInGbs;
+            o.maxPerOcpuInGbs = maxPerOcpuInGbs;
+            o.minInGbs = minInGbs;
+            o.minPerOcpuInGbs = minPerOcpuInGbs;
+            return o;
         }
     }
 }

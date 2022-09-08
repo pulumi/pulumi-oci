@@ -18,52 +18,35 @@ public final class GetDetectionModelsResult {
      * @return The OCID for the model&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDetectionModelsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDetectionModelsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of model_collection.
      * 
      */
-    private final List<GetDetectionModelsModelCollection> modelCollections;
+    private List<GetDetectionModelsModelCollection> modelCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The state of the model.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDetectionModelsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDetectionModelsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("modelCollections") List<GetDetectionModelsModelCollection> modelCollections,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.modelCollections = modelCollections;
-        this.projectId = projectId;
-        this.state = state;
-    }
-
+    private GetDetectionModelsResult() {}
     /**
      * @return The OCID for the model&#39;s compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetDetectionModelsResult {
     public static Builder builder(GetDetectionModelsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetDetectionModelsResult {
         private List<GetDetectionModelsModelCollection> modelCollections;
         private @Nullable String projectId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionModelsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetDetectionModelsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDetectionModelsFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,10 +139,12 @@ public final class GetDetectionModelsResult {
         public Builder filters(GetDetectionModelsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder modelCollections(List<GetDetectionModelsModelCollection> modelCollections) {
             this.modelCollections = Objects.requireNonNull(modelCollections);
             return this;
@@ -168,15 +152,26 @@ public final class GetDetectionModelsResult {
         public Builder modelCollections(GetDetectionModelsModelCollection... modelCollections) {
             return modelCollections(List.of(modelCollections));
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDetectionModelsResult build() {
-            return new GetDetectionModelsResult(compartmentId, displayName, filters, id, modelCollections, projectId, state);
+        }
+        public GetDetectionModelsResult build() {
+            final var o = new GetDetectionModelsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.modelCollections = modelCollections;
+            o.projectId = projectId;
+            o.state = state;
+            return o;
         }
     }
 }

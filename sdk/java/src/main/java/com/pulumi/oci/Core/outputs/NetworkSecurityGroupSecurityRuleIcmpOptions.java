@@ -15,21 +15,14 @@ public final class NetworkSecurityGroupSecurityRuleIcmpOptions {
      * @return The ICMP code (optional).
      * 
      */
-    private final @Nullable Integer code;
+    private @Nullable Integer code;
     /**
      * @return The ICMP type.
      * 
      */
-    private final Integer type;
+    private Integer type;
 
-    @CustomType.Constructor
-    private NetworkSecurityGroupSecurityRuleIcmpOptions(
-        @CustomType.Parameter("code") @Nullable Integer code,
-        @CustomType.Parameter("type") Integer type) {
-        this.code = code;
-        this.type = type;
-    }
-
+    private NetworkSecurityGroupSecurityRuleIcmpOptions() {}
     /**
      * @return The ICMP code (optional).
      * 
@@ -52,30 +45,32 @@ public final class NetworkSecurityGroupSecurityRuleIcmpOptions {
     public static Builder builder(NetworkSecurityGroupSecurityRuleIcmpOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer code;
         private Integer type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkSecurityGroupSecurityRuleIcmpOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder code(@Nullable Integer code) {
             this.code = code;
             return this;
         }
+        @CustomType.Setter
         public Builder type(Integer type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public NetworkSecurityGroupSecurityRuleIcmpOptions build() {
-            return new NetworkSecurityGroupSecurityRuleIcmpOptions(code, type);
+        }
+        public NetworkSecurityGroupSecurityRuleIcmpOptions build() {
+            final var o = new NetworkSecurityGroupSecurityRuleIcmpOptions();
+            o.code = code;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -22,300 +22,211 @@ public final class GetInvokeRunResult {
      * @return The application ID.
      * 
      */
-    private final String applicationId;
+    private String applicationId;
     /**
      * @return Logging details of Application logs for Data Flow Run.
      * 
      */
-    private final List<GetInvokeRunApplicationLogConfig> applicationLogConfigs;
+    private List<GetInvokeRunApplicationLogConfig> applicationLogConfigs;
     /**
      * @return An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    private final String archiveUri;
+    private String archiveUri;
     /**
      * @return The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ &#34;--input&#34;, &#34;${input_file}&#34;, &#34;--name&#34;, &#34;John Doe&#34; ]` If &#34;input_file&#34; has a value of &#34;mydata.xml&#34;, then the value above will be translated to `--input mydata.xml --name &#34;John Doe&#34;`
      * 
      */
-    private final List<String> arguments;
-    private final Boolean asynchronous;
+    private List<String> arguments;
+    private Boolean asynchronous;
     /**
      * @return The class for the application.
      * 
      */
-    private final String className;
+    private String className;
     /**
      * @return The OCID of a compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    private final Map<String,Object> configuration;
+    private Map<String,Object> configuration;
     /**
      * @return The data read by the run in bytes.
      * 
      */
-    private final String dataReadInBytes;
+    private String dataReadInBytes;
     /**
      * @return The data written by the run in bytes.
      * 
      */
-    private final String dataWrittenInBytes;
+    private String dataWrittenInBytes;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. This name is not necessarily unique.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The VM shape for the driver. Sets the driver cores and memory.
      * 
      */
-    private final String driverShape;
+    private String driverShape;
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    private final List<GetInvokeRunDriverShapeConfig> driverShapeConfigs;
+    private List<GetInvokeRunDriverShapeConfig> driverShapeConfigs;
     /**
      * @return The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
-    private final String execute;
+    private String execute;
     /**
      * @return The VM shape for the executors. Sets the executor cores and memory.
      * 
      */
-    private final String executorShape;
+    private String executorShape;
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    private final List<GetInvokeRunExecutorShapeConfig> executorShapeConfigs;
+    private List<GetInvokeRunExecutorShapeConfig> executorShapeConfigs;
     /**
      * @return An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    private final String fileUri;
+    private String fileUri;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The ID of a run.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The Spark language.
      * 
      */
-    private final String language;
+    private String language;
     /**
      * @return The detailed messages about the lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    private final String logsBucketUri;
+    private String logsBucketUri;
     /**
      * @return The OCID of Oracle Cloud Infrastructure Hive Metastore.
      * 
      */
-    private final String metastoreId;
+    private String metastoreId;
     /**
      * @return The number of executor VMs requested.
      * 
      */
-    private final Integer numExecutors;
+    private Integer numExecutors;
     /**
      * @return Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * 
      */
-    private final String opcRequestId;
+    private String opcRequestId;
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    private final String ownerPrincipalId;
+    private String ownerPrincipalId;
     /**
      * @return The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    private final String ownerUserName;
+    private String ownerUserName;
     /**
      * @return An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;input_file&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variable_x&#34;, value: &#34;${x}&#34;} ]
      * 
      */
-    private final List<GetInvokeRunParameter> parameters;
+    private List<GetInvokeRunParameter> parameters;
     /**
      * @return An array of DNS zone names. Example: `[ &#34;app.examplecorp.com&#34;, &#34;app.examplecorp2.com&#34; ]`
      * 
      */
-    private final List<String> privateEndpointDnsZones;
+    private List<String> privateEndpointDnsZones;
     /**
      * @return The OCID of a private endpoint.
      * 
      */
-    private final String privateEndpointId;
+    private String privateEndpointId;
     /**
      * @return The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
      * 
      */
-    private final Integer privateEndpointMaxHostCount;
+    private Integer privateEndpointMaxHostCount;
     /**
      * @return An array of network security group OCIDs.
      * 
      */
-    private final List<String> privateEndpointNsgIds;
+    private List<String> privateEndpointNsgIds;
     /**
      * @return The OCID of a subnet.
      * 
      */
-    private final String privateEndpointSubnetId;
+    private String privateEndpointSubnetId;
     /**
      * @return The duration of the run in milliseconds.
      * 
      */
-    private final String runDurationInMilliseconds;
-    private final String runId;
+    private String runDurationInMilliseconds;
+    private String runId;
     /**
      * @return The Spark version utilized to run the application.
      * 
      */
-    private final String sparkVersion;
+    private String sparkVersion;
     /**
      * @return The current state of this run.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The total number of oCPU requested by the run.
      * 
      */
-    private final Integer totalOcpu;
+    private Integer totalOcpu;
     /**
      * @return The Spark application processing type.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    private final String warehouseBucketUri;
+    private String warehouseBucketUri;
 
-    @CustomType.Constructor
-    private GetInvokeRunResult(
-        @CustomType.Parameter("applicationId") String applicationId,
-        @CustomType.Parameter("applicationLogConfigs") List<GetInvokeRunApplicationLogConfig> applicationLogConfigs,
-        @CustomType.Parameter("archiveUri") String archiveUri,
-        @CustomType.Parameter("arguments") List<String> arguments,
-        @CustomType.Parameter("asynchronous") Boolean asynchronous,
-        @CustomType.Parameter("className") String className,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("configuration") Map<String,Object> configuration,
-        @CustomType.Parameter("dataReadInBytes") String dataReadInBytes,
-        @CustomType.Parameter("dataWrittenInBytes") String dataWrittenInBytes,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("driverShape") String driverShape,
-        @CustomType.Parameter("driverShapeConfigs") List<GetInvokeRunDriverShapeConfig> driverShapeConfigs,
-        @CustomType.Parameter("execute") String execute,
-        @CustomType.Parameter("executorShape") String executorShape,
-        @CustomType.Parameter("executorShapeConfigs") List<GetInvokeRunExecutorShapeConfig> executorShapeConfigs,
-        @CustomType.Parameter("fileUri") String fileUri,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("language") String language,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("logsBucketUri") String logsBucketUri,
-        @CustomType.Parameter("metastoreId") String metastoreId,
-        @CustomType.Parameter("numExecutors") Integer numExecutors,
-        @CustomType.Parameter("opcRequestId") String opcRequestId,
-        @CustomType.Parameter("ownerPrincipalId") String ownerPrincipalId,
-        @CustomType.Parameter("ownerUserName") String ownerUserName,
-        @CustomType.Parameter("parameters") List<GetInvokeRunParameter> parameters,
-        @CustomType.Parameter("privateEndpointDnsZones") List<String> privateEndpointDnsZones,
-        @CustomType.Parameter("privateEndpointId") String privateEndpointId,
-        @CustomType.Parameter("privateEndpointMaxHostCount") Integer privateEndpointMaxHostCount,
-        @CustomType.Parameter("privateEndpointNsgIds") List<String> privateEndpointNsgIds,
-        @CustomType.Parameter("privateEndpointSubnetId") String privateEndpointSubnetId,
-        @CustomType.Parameter("runDurationInMilliseconds") String runDurationInMilliseconds,
-        @CustomType.Parameter("runId") String runId,
-        @CustomType.Parameter("sparkVersion") String sparkVersion,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("totalOcpu") Integer totalOcpu,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("warehouseBucketUri") String warehouseBucketUri) {
-        this.applicationId = applicationId;
-        this.applicationLogConfigs = applicationLogConfigs;
-        this.archiveUri = archiveUri;
-        this.arguments = arguments;
-        this.asynchronous = asynchronous;
-        this.className = className;
-        this.compartmentId = compartmentId;
-        this.configuration = configuration;
-        this.dataReadInBytes = dataReadInBytes;
-        this.dataWrittenInBytes = dataWrittenInBytes;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.driverShape = driverShape;
-        this.driverShapeConfigs = driverShapeConfigs;
-        this.execute = execute;
-        this.executorShape = executorShape;
-        this.executorShapeConfigs = executorShapeConfigs;
-        this.fileUri = fileUri;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.language = language;
-        this.lifecycleDetails = lifecycleDetails;
-        this.logsBucketUri = logsBucketUri;
-        this.metastoreId = metastoreId;
-        this.numExecutors = numExecutors;
-        this.opcRequestId = opcRequestId;
-        this.ownerPrincipalId = ownerPrincipalId;
-        this.ownerUserName = ownerUserName;
-        this.parameters = parameters;
-        this.privateEndpointDnsZones = privateEndpointDnsZones;
-        this.privateEndpointId = privateEndpointId;
-        this.privateEndpointMaxHostCount = privateEndpointMaxHostCount;
-        this.privateEndpointNsgIds = privateEndpointNsgIds;
-        this.privateEndpointSubnetId = privateEndpointSubnetId;
-        this.runDurationInMilliseconds = runDurationInMilliseconds;
-        this.runId = runId;
-        this.sparkVersion = sparkVersion;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.totalOcpu = totalOcpu;
-        this.type = type;
-        this.warehouseBucketUri = warehouseBucketUri;
-    }
-
+    private GetInvokeRunResult() {}
     /**
      * @return The application ID.
      * 
@@ -617,7 +528,7 @@ public final class GetInvokeRunResult {
     public static Builder builder(GetInvokeRunResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String applicationId;
         private List<GetInvokeRunApplicationLogConfig> applicationLogConfigs;
@@ -662,11 +573,7 @@ public final class GetInvokeRunResult {
         private Integer totalOcpu;
         private String type;
         private String warehouseBucketUri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvokeRunResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationId = defaults.applicationId;
@@ -714,10 +621,12 @@ public final class GetInvokeRunResult {
     	      this.warehouseBucketUri = defaults.warehouseBucketUri;
         }
 
+        @CustomType.Setter
         public Builder applicationId(String applicationId) {
             this.applicationId = Objects.requireNonNull(applicationId);
             return this;
         }
+        @CustomType.Setter
         public Builder applicationLogConfigs(List<GetInvokeRunApplicationLogConfig> applicationLogConfigs) {
             this.applicationLogConfigs = Objects.requireNonNull(applicationLogConfigs);
             return this;
@@ -725,10 +634,12 @@ public final class GetInvokeRunResult {
         public Builder applicationLogConfigs(GetInvokeRunApplicationLogConfig... applicationLogConfigs) {
             return applicationLogConfigs(List.of(applicationLogConfigs));
         }
+        @CustomType.Setter
         public Builder archiveUri(String archiveUri) {
             this.archiveUri = Objects.requireNonNull(archiveUri);
             return this;
         }
+        @CustomType.Setter
         public Builder arguments(List<String> arguments) {
             this.arguments = Objects.requireNonNull(arguments);
             return this;
@@ -736,42 +647,52 @@ public final class GetInvokeRunResult {
         public Builder arguments(String... arguments) {
             return arguments(List.of(arguments));
         }
+        @CustomType.Setter
         public Builder asynchronous(Boolean asynchronous) {
             this.asynchronous = Objects.requireNonNull(asynchronous);
             return this;
         }
+        @CustomType.Setter
         public Builder className(String className) {
             this.className = Objects.requireNonNull(className);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder configuration(Map<String,Object> configuration) {
             this.configuration = Objects.requireNonNull(configuration);
             return this;
         }
+        @CustomType.Setter
         public Builder dataReadInBytes(String dataReadInBytes) {
             this.dataReadInBytes = Objects.requireNonNull(dataReadInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder dataWrittenInBytes(String dataWrittenInBytes) {
             this.dataWrittenInBytes = Objects.requireNonNull(dataWrittenInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder driverShape(String driverShape) {
             this.driverShape = Objects.requireNonNull(driverShape);
             return this;
         }
+        @CustomType.Setter
         public Builder driverShapeConfigs(List<GetInvokeRunDriverShapeConfig> driverShapeConfigs) {
             this.driverShapeConfigs = Objects.requireNonNull(driverShapeConfigs);
             return this;
@@ -779,14 +700,17 @@ public final class GetInvokeRunResult {
         public Builder driverShapeConfigs(GetInvokeRunDriverShapeConfig... driverShapeConfigs) {
             return driverShapeConfigs(List.of(driverShapeConfigs));
         }
+        @CustomType.Setter
         public Builder execute(String execute) {
             this.execute = Objects.requireNonNull(execute);
             return this;
         }
+        @CustomType.Setter
         public Builder executorShape(String executorShape) {
             this.executorShape = Objects.requireNonNull(executorShape);
             return this;
         }
+        @CustomType.Setter
         public Builder executorShapeConfigs(List<GetInvokeRunExecutorShapeConfig> executorShapeConfigs) {
             this.executorShapeConfigs = Objects.requireNonNull(executorShapeConfigs);
             return this;
@@ -794,50 +718,62 @@ public final class GetInvokeRunResult {
         public Builder executorShapeConfigs(GetInvokeRunExecutorShapeConfig... executorShapeConfigs) {
             return executorShapeConfigs(List.of(executorShapeConfigs));
         }
+        @CustomType.Setter
         public Builder fileUri(String fileUri) {
             this.fileUri = Objects.requireNonNull(fileUri);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder language(String language) {
             this.language = Objects.requireNonNull(language);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder logsBucketUri(String logsBucketUri) {
             this.logsBucketUri = Objects.requireNonNull(logsBucketUri);
             return this;
         }
+        @CustomType.Setter
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = Objects.requireNonNull(metastoreId);
             return this;
         }
+        @CustomType.Setter
         public Builder numExecutors(Integer numExecutors) {
             this.numExecutors = Objects.requireNonNull(numExecutors);
             return this;
         }
+        @CustomType.Setter
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = Objects.requireNonNull(opcRequestId);
             return this;
         }
+        @CustomType.Setter
         public Builder ownerPrincipalId(String ownerPrincipalId) {
             this.ownerPrincipalId = Objects.requireNonNull(ownerPrincipalId);
             return this;
         }
+        @CustomType.Setter
         public Builder ownerUserName(String ownerUserName) {
             this.ownerUserName = Objects.requireNonNull(ownerUserName);
             return this;
         }
+        @CustomType.Setter
         public Builder parameters(List<GetInvokeRunParameter> parameters) {
             this.parameters = Objects.requireNonNull(parameters);
             return this;
@@ -845,6 +781,7 @@ public final class GetInvokeRunResult {
         public Builder parameters(GetInvokeRunParameter... parameters) {
             return parameters(List.of(parameters));
         }
+        @CustomType.Setter
         public Builder privateEndpointDnsZones(List<String> privateEndpointDnsZones) {
             this.privateEndpointDnsZones = Objects.requireNonNull(privateEndpointDnsZones);
             return this;
@@ -852,14 +789,17 @@ public final class GetInvokeRunResult {
         public Builder privateEndpointDnsZones(String... privateEndpointDnsZones) {
             return privateEndpointDnsZones(List.of(privateEndpointDnsZones));
         }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpointMaxHostCount(Integer privateEndpointMaxHostCount) {
             this.privateEndpointMaxHostCount = Objects.requireNonNull(privateEndpointMaxHostCount);
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpointNsgIds(List<String> privateEndpointNsgIds) {
             this.privateEndpointNsgIds = Objects.requireNonNull(privateEndpointNsgIds);
             return this;
@@ -867,47 +807,102 @@ public final class GetInvokeRunResult {
         public Builder privateEndpointNsgIds(String... privateEndpointNsgIds) {
             return privateEndpointNsgIds(List.of(privateEndpointNsgIds));
         }
+        @CustomType.Setter
         public Builder privateEndpointSubnetId(String privateEndpointSubnetId) {
             this.privateEndpointSubnetId = Objects.requireNonNull(privateEndpointSubnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder runDurationInMilliseconds(String runDurationInMilliseconds) {
             this.runDurationInMilliseconds = Objects.requireNonNull(runDurationInMilliseconds);
             return this;
         }
+        @CustomType.Setter
         public Builder runId(String runId) {
             this.runId = Objects.requireNonNull(runId);
             return this;
         }
+        @CustomType.Setter
         public Builder sparkVersion(String sparkVersion) {
             this.sparkVersion = Objects.requireNonNull(sparkVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder totalOcpu(Integer totalOcpu) {
             this.totalOcpu = Objects.requireNonNull(totalOcpu);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder warehouseBucketUri(String warehouseBucketUri) {
             this.warehouseBucketUri = Objects.requireNonNull(warehouseBucketUri);
             return this;
-        }        public GetInvokeRunResult build() {
-            return new GetInvokeRunResult(applicationId, applicationLogConfigs, archiveUri, arguments, asynchronous, className, compartmentId, configuration, dataReadInBytes, dataWrittenInBytes, definedTags, displayName, driverShape, driverShapeConfigs, execute, executorShape, executorShapeConfigs, fileUri, freeformTags, id, language, lifecycleDetails, logsBucketUri, metastoreId, numExecutors, opcRequestId, ownerPrincipalId, ownerUserName, parameters, privateEndpointDnsZones, privateEndpointId, privateEndpointMaxHostCount, privateEndpointNsgIds, privateEndpointSubnetId, runDurationInMilliseconds, runId, sparkVersion, state, timeCreated, timeUpdated, totalOcpu, type, warehouseBucketUri);
+        }
+        public GetInvokeRunResult build() {
+            final var o = new GetInvokeRunResult();
+            o.applicationId = applicationId;
+            o.applicationLogConfigs = applicationLogConfigs;
+            o.archiveUri = archiveUri;
+            o.arguments = arguments;
+            o.asynchronous = asynchronous;
+            o.className = className;
+            o.compartmentId = compartmentId;
+            o.configuration = configuration;
+            o.dataReadInBytes = dataReadInBytes;
+            o.dataWrittenInBytes = dataWrittenInBytes;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.driverShape = driverShape;
+            o.driverShapeConfigs = driverShapeConfigs;
+            o.execute = execute;
+            o.executorShape = executorShape;
+            o.executorShapeConfigs = executorShapeConfigs;
+            o.fileUri = fileUri;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.language = language;
+            o.lifecycleDetails = lifecycleDetails;
+            o.logsBucketUri = logsBucketUri;
+            o.metastoreId = metastoreId;
+            o.numExecutors = numExecutors;
+            o.opcRequestId = opcRequestId;
+            o.ownerPrincipalId = ownerPrincipalId;
+            o.ownerUserName = ownerUserName;
+            o.parameters = parameters;
+            o.privateEndpointDnsZones = privateEndpointDnsZones;
+            o.privateEndpointId = privateEndpointId;
+            o.privateEndpointMaxHostCount = privateEndpointMaxHostCount;
+            o.privateEndpointNsgIds = privateEndpointNsgIds;
+            o.privateEndpointSubnetId = privateEndpointSubnetId;
+            o.runDurationInMilliseconds = runDurationInMilliseconds;
+            o.runId = runId;
+            o.sparkVersion = sparkVersion;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.totalOcpu = totalOcpu;
+            o.type = type;
+            o.warehouseBucketUri = warehouseBucketUri;
+            return o;
         }
     }
 }

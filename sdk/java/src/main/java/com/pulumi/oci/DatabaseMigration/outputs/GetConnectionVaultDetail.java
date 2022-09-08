@@ -13,28 +13,19 @@ public final class GetConnectionVaultDetail {
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return OCID of the vault encryption key
      * 
      */
-    private final String keyId;
+    private String keyId;
     /**
      * @return OCID of the vault
      * 
      */
-    private final String vaultId;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private GetConnectionVaultDetail(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("keyId") String keyId,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.compartmentId = compartmentId;
-        this.keyId = keyId;
-        this.vaultId = vaultId;
-    }
-
+    private GetConnectionVaultDetail() {}
     /**
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
@@ -64,16 +55,12 @@ public final class GetConnectionVaultDetail {
     public static Builder builder(GetConnectionVaultDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String keyId;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionVaultDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -81,19 +68,27 @@ public final class GetConnectionVaultDetail {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder keyId(String keyId) {
             this.keyId = Objects.requireNonNull(keyId);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public GetConnectionVaultDetail build() {
-            return new GetConnectionVaultDetail(compartmentId, keyId, vaultId);
+        }
+        public GetConnectionVaultDetail build() {
+            final var o = new GetConnectionVaultDetail();
+            o.compartmentId = compartmentId;
+            o.keyId = keyId;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

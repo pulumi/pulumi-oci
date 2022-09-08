@@ -13,28 +13,19 @@ public final class GetOrganizationSubscriptionsOrganizationSubscriptionCurrency 
      * @return Currency Code
      * 
      */
-    private final String isoCode;
+    private String isoCode;
     /**
      * @return Currency name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Standard Precision of the Currency
      * 
      */
-    private final String stdPrecision;
+    private String stdPrecision;
 
-    @CustomType.Constructor
-    private GetOrganizationSubscriptionsOrganizationSubscriptionCurrency(
-        @CustomType.Parameter("isoCode") String isoCode,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("stdPrecision") String stdPrecision) {
-        this.isoCode = isoCode;
-        this.name = name;
-        this.stdPrecision = stdPrecision;
-    }
-
+    private GetOrganizationSubscriptionsOrganizationSubscriptionCurrency() {}
     /**
      * @return Currency Code
      * 
@@ -64,16 +55,12 @@ public final class GetOrganizationSubscriptionsOrganizationSubscriptionCurrency 
     public static Builder builder(GetOrganizationSubscriptionsOrganizationSubscriptionCurrency defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String isoCode;
         private String name;
         private String stdPrecision;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOrganizationSubscriptionsOrganizationSubscriptionCurrency defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isoCode = defaults.isoCode;
@@ -81,19 +68,27 @@ public final class GetOrganizationSubscriptionsOrganizationSubscriptionCurrency 
     	      this.stdPrecision = defaults.stdPrecision;
         }
 
+        @CustomType.Setter
         public Builder isoCode(String isoCode) {
             this.isoCode = Objects.requireNonNull(isoCode);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder stdPrecision(String stdPrecision) {
             this.stdPrecision = Objects.requireNonNull(stdPrecision);
             return this;
-        }        public GetOrganizationSubscriptionsOrganizationSubscriptionCurrency build() {
-            return new GetOrganizationSubscriptionsOrganizationSubscriptionCurrency(isoCode, name, stdPrecision);
+        }
+        public GetOrganizationSubscriptionsOrganizationSubscriptionCurrency build() {
+            final var o = new GetOrganizationSubscriptionsOrganizationSubscriptionCurrency();
+            o.isoCode = isoCode;
+            o.name = name;
+            o.stdPrecision = stdPrecision;
+            return o;
         }
     }
 }

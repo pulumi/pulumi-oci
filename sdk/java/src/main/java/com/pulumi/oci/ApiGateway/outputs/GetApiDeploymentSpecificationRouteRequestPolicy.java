@@ -21,63 +21,44 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
      * @return If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations;
     /**
      * @return Validate the payload body of the incoming API requests on a specific route.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations;
     /**
      * @return Enable CORS (Cross-Origin-Resource-Sharing) request handling.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyCor> cors;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyCor> cors;
     /**
      * @return A set of transformations to apply to HTTP headers that pass through the gateway.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations;
     /**
      * @return Validate the HTTP headers on the incoming API requests on a specific route.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations;
     /**
      * @return A set of transformations to apply to query parameters that pass through the gateway.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations;
     /**
      * @return Validate the URL query parameters on the incoming API requests on a specific route.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations;
     /**
      * @return Base policy for Response Cache lookup.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRouteRequestPolicy(
-        @CustomType.Parameter("authorizations") List<GetApiDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations,
-        @CustomType.Parameter("bodyValidations") List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations,
-        @CustomType.Parameter("cors") List<GetApiDeploymentSpecificationRouteRequestPolicyCor> cors,
-        @CustomType.Parameter("headerTransformations") List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations,
-        @CustomType.Parameter("headerValidations") List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations,
-        @CustomType.Parameter("queryParameterTransformations") List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations,
-        @CustomType.Parameter("queryParameterValidations") List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations,
-        @CustomType.Parameter("responseCacheLookups") List<GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups) {
-        this.authorizations = authorizations;
-        this.bodyValidations = bodyValidations;
-        this.cors = cors;
-        this.headerTransformations = headerTransformations;
-        this.headerValidations = headerValidations;
-        this.queryParameterTransformations = queryParameterTransformations;
-        this.queryParameterValidations = queryParameterValidations;
-        this.responseCacheLookups = responseCacheLookups;
-    }
-
+    private GetApiDeploymentSpecificationRouteRequestPolicy() {}
     /**
      * @return If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
      * 
@@ -142,7 +123,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
     public static Builder builder(GetApiDeploymentSpecificationRouteRequestPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations;
         private List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations;
@@ -152,11 +133,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations;
         private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations;
         private List<GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteRequestPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authorizations = defaults.authorizations;
@@ -169,6 +146,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
     	      this.responseCacheLookups = defaults.responseCacheLookups;
         }
 
+        @CustomType.Setter
         public Builder authorizations(List<GetApiDeploymentSpecificationRouteRequestPolicyAuthorization> authorizations) {
             this.authorizations = Objects.requireNonNull(authorizations);
             return this;
@@ -176,6 +154,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         public Builder authorizations(GetApiDeploymentSpecificationRouteRequestPolicyAuthorization... authorizations) {
             return authorizations(List.of(authorizations));
         }
+        @CustomType.Setter
         public Builder bodyValidations(List<GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation> bodyValidations) {
             this.bodyValidations = Objects.requireNonNull(bodyValidations);
             return this;
@@ -183,6 +162,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         public Builder bodyValidations(GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation... bodyValidations) {
             return bodyValidations(List.of(bodyValidations));
         }
+        @CustomType.Setter
         public Builder cors(List<GetApiDeploymentSpecificationRouteRequestPolicyCor> cors) {
             this.cors = Objects.requireNonNull(cors);
             return this;
@@ -190,6 +170,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         public Builder cors(GetApiDeploymentSpecificationRouteRequestPolicyCor... cors) {
             return cors(List.of(cors));
         }
+        @CustomType.Setter
         public Builder headerTransformations(List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformation> headerTransformations) {
             this.headerTransformations = Objects.requireNonNull(headerTransformations);
             return this;
@@ -197,6 +178,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         public Builder headerTransformations(GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformation... headerTransformations) {
             return headerTransformations(List.of(headerTransformations));
         }
+        @CustomType.Setter
         public Builder headerValidations(List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation> headerValidations) {
             this.headerValidations = Objects.requireNonNull(headerValidations);
             return this;
@@ -204,6 +186,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         public Builder headerValidations(GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation... headerValidations) {
             return headerValidations(List.of(headerValidations));
         }
+        @CustomType.Setter
         public Builder queryParameterTransformations(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation> queryParameterTransformations) {
             this.queryParameterTransformations = Objects.requireNonNull(queryParameterTransformations);
             return this;
@@ -211,6 +194,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         public Builder queryParameterTransformations(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation... queryParameterTransformations) {
             return queryParameterTransformations(List.of(queryParameterTransformations));
         }
+        @CustomType.Setter
         public Builder queryParameterValidations(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation> queryParameterValidations) {
             this.queryParameterValidations = Objects.requireNonNull(queryParameterValidations);
             return this;
@@ -218,14 +202,25 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicy {
         public Builder queryParameterValidations(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation... queryParameterValidations) {
             return queryParameterValidations(List.of(queryParameterValidations));
         }
+        @CustomType.Setter
         public Builder responseCacheLookups(List<GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup> responseCacheLookups) {
             this.responseCacheLookups = Objects.requireNonNull(responseCacheLookups);
             return this;
         }
         public Builder responseCacheLookups(GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookup... responseCacheLookups) {
             return responseCacheLookups(List.of(responseCacheLookups));
-        }        public GetApiDeploymentSpecificationRouteRequestPolicy build() {
-            return new GetApiDeploymentSpecificationRouteRequestPolicy(authorizations, bodyValidations, cors, headerTransformations, headerValidations, queryParameterTransformations, queryParameterValidations, responseCacheLookups);
+        }
+        public GetApiDeploymentSpecificationRouteRequestPolicy build() {
+            final var o = new GetApiDeploymentSpecificationRouteRequestPolicy();
+            o.authorizations = authorizations;
+            o.bodyValidations = bodyValidations;
+            o.cors = cors;
+            o.headerTransformations = headerTransformations;
+            o.headerValidations = headerValidations;
+            o.queryParameterTransformations = queryParameterTransformations;
+            o.queryParameterValidations = queryParameterValidations;
+            o.responseCacheLookups = responseCacheLookups;
+            return o;
         }
     }
 }

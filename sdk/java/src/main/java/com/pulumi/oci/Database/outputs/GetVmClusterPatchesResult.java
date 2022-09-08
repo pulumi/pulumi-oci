@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClusterPatchesResult {
-    private final @Nullable List<GetVmClusterPatchesFilter> filters;
+    private @Nullable List<GetVmClusterPatchesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of patches.
      * 
      */
-    private final List<GetVmClusterPatchesPatch> patches;
-    private final String vmClusterId;
+    private List<GetVmClusterPatchesPatch> patches;
+    private String vmClusterId;
 
-    @CustomType.Constructor
-    private GetVmClusterPatchesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetVmClusterPatchesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("patches") List<GetVmClusterPatchesPatch> patches,
-        @CustomType.Parameter("vmClusterId") String vmClusterId) {
-        this.filters = filters;
-        this.id = id;
-        this.patches = patches;
-        this.vmClusterId = vmClusterId;
-    }
-
+    private GetVmClusterPatchesResult() {}
     public List<GetVmClusterPatchesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetVmClusterPatchesResult {
     public static Builder builder(GetVmClusterPatchesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVmClusterPatchesFilter> filters;
         private String id;
         private List<GetVmClusterPatchesPatch> patches;
         private String vmClusterId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterPatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetVmClusterPatchesResult {
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVmClusterPatchesFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,10 +78,12 @@ public final class GetVmClusterPatchesResult {
         public Builder filters(GetVmClusterPatchesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder patches(List<GetVmClusterPatchesPatch> patches) {
             this.patches = Objects.requireNonNull(patches);
             return this;
@@ -103,11 +91,18 @@ public final class GetVmClusterPatchesResult {
         public Builder patches(GetVmClusterPatchesPatch... patches) {
             return patches(List.of(patches));
         }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = Objects.requireNonNull(vmClusterId);
             return this;
-        }        public GetVmClusterPatchesResult build() {
-            return new GetVmClusterPatchesResult(filters, id, patches, vmClusterId);
+        }
+        public GetVmClusterPatchesResult build() {
+            final var o = new GetVmClusterPatchesResult();
+            o.filters = filters;
+            o.id = id;
+            o.patches = patches;
+            o.vmClusterId = vmClusterId;
+            return o;
         }
     }
 }

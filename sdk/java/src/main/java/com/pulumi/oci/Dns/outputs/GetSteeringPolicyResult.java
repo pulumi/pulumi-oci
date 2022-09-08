@@ -19,101 +19,70 @@ public final class GetSteeringPolicyResult {
      * @return The set of all answers that can potentially issue from the steering policy.
      * 
      */
-    private final List<GetSteeringPolicyAnswer> answers;
+    private List<GetSteeringPolicyAnswer> answers;
     /**
      * @return The OCID of the compartment containing the steering policy.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
      * 
      */
-    private final String healthCheckMonitorId;
+    private String healthCheckMonitorId;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
      * 
      */
-    private final List<GetSteeringPolicyRule> rules;
+    private List<GetSteeringPolicyRule> rules;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private final String self;
+    private String self;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final String state;
-    private final String steeringPolicyId;
+    private String state;
+    private String steeringPolicyId;
     /**
      * @return A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management&#39;s rules in a different order to produce the desired results when answering DNS queries.
      * 
      */
-    private final String template;
+    private String template;
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
      * 
      */
-    private final Integer ttl;
+    private Integer ttl;
 
-    @CustomType.Constructor
-    private GetSteeringPolicyResult(
-        @CustomType.Parameter("answers") List<GetSteeringPolicyAnswer> answers,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("healthCheckMonitorId") String healthCheckMonitorId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("rules") List<GetSteeringPolicyRule> rules,
-        @CustomType.Parameter("self") String self,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("steeringPolicyId") String steeringPolicyId,
-        @CustomType.Parameter("template") String template,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("ttl") Integer ttl) {
-        this.answers = answers;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.healthCheckMonitorId = healthCheckMonitorId;
-        this.id = id;
-        this.rules = rules;
-        this.self = self;
-        this.state = state;
-        this.steeringPolicyId = steeringPolicyId;
-        this.template = template;
-        this.timeCreated = timeCreated;
-        this.ttl = ttl;
-    }
-
+    private GetSteeringPolicyResult() {}
     /**
      * @return The set of all answers that can potentially issue from the steering policy.
      * 
@@ -216,7 +185,7 @@ public final class GetSteeringPolicyResult {
     public static Builder builder(GetSteeringPolicyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSteeringPolicyAnswer> answers;
         private String compartmentId;
@@ -232,11 +201,7 @@ public final class GetSteeringPolicyResult {
         private String template;
         private String timeCreated;
         private Integer ttl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSteeringPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.answers = defaults.answers;
@@ -255,6 +220,7 @@ public final class GetSteeringPolicyResult {
     	      this.ttl = defaults.ttl;
         }
 
+        @CustomType.Setter
         public Builder answers(List<GetSteeringPolicyAnswer> answers) {
             this.answers = Objects.requireNonNull(answers);
             return this;
@@ -262,30 +228,37 @@ public final class GetSteeringPolicyResult {
         public Builder answers(GetSteeringPolicyAnswer... answers) {
             return answers(List.of(answers));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder healthCheckMonitorId(String healthCheckMonitorId) {
             this.healthCheckMonitorId = Objects.requireNonNull(healthCheckMonitorId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder rules(List<GetSteeringPolicyRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
@@ -293,31 +266,53 @@ public final class GetSteeringPolicyResult {
         public Builder rules(GetSteeringPolicyRule... rules) {
             return rules(List.of(rules));
         }
+        @CustomType.Setter
         public Builder self(String self) {
             this.self = Objects.requireNonNull(self);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder steeringPolicyId(String steeringPolicyId) {
             this.steeringPolicyId = Objects.requireNonNull(steeringPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder template(String template) {
             this.template = Objects.requireNonNull(template);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder ttl(Integer ttl) {
             this.ttl = Objects.requireNonNull(ttl);
             return this;
-        }        public GetSteeringPolicyResult build() {
-            return new GetSteeringPolicyResult(answers, compartmentId, definedTags, displayName, freeformTags, healthCheckMonitorId, id, rules, self, state, steeringPolicyId, template, timeCreated, ttl);
+        }
+        public GetSteeringPolicyResult build() {
+            final var o = new GetSteeringPolicyResult();
+            o.answers = answers;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.healthCheckMonitorId = healthCheckMonitorId;
+            o.id = id;
+            o.rules = rules;
+            o.self = self;
+            o.state = state;
+            o.steeringPolicyId = steeringPolicyId;
+            o.template = template;
+            o.timeCreated = timeCreated;
+            o.ttl = ttl;
+            return o;
         }
     }
 }

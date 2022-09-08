@@ -15,21 +15,14 @@ public final class SoftwareSourceAssociatedManagedInstance {
      * @return (Updatable) User friendly name for the software source
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return OCID for the Software Source
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
 
-    @CustomType.Constructor
-    private SoftwareSourceAssociatedManagedInstance(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("id") @Nullable String id) {
-        this.displayName = displayName;
-        this.id = id;
-    }
-
+    private SoftwareSourceAssociatedManagedInstance() {}
     /**
      * @return (Updatable) User friendly name for the software source
      * 
@@ -52,30 +45,32 @@ public final class SoftwareSourceAssociatedManagedInstance {
     public static Builder builder(SoftwareSourceAssociatedManagedInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SoftwareSourceAssociatedManagedInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
-        }        public SoftwareSourceAssociatedManagedInstance build() {
-            return new SoftwareSourceAssociatedManagedInstance(displayName, id);
+        }
+        public SoftwareSourceAssociatedManagedInstance build() {
+            final var o = new SoftwareSourceAssociatedManagedInstance();
+            o.displayName = displayName;
+            o.id = id;
+            return o;
         }
     }
 }

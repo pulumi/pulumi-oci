@@ -13,21 +13,14 @@ public final class GetMysqlVersionVersionVersion {
      * @return A link to a page describing the version.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The specific version identifier
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetMysqlVersionVersionVersion(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("version") String version) {
-        this.description = description;
-        this.version = version;
-    }
-
+    private GetMysqlVersionVersionVersion() {}
     /**
      * @return A link to a page describing the version.
      * 
@@ -50,30 +43,32 @@ public final class GetMysqlVersionVersionVersion {
     public static Builder builder(GetMysqlVersionVersionVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlVersionVersionVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetMysqlVersionVersionVersion build() {
-            return new GetMysqlVersionVersionVersion(description, version);
+        }
+        public GetMysqlVersionVersionVersion build() {
+            final var o = new GetMysqlVersionVersionVersion();
+            o.description = description;
+            o.version = version;
+            return o;
         }
     }
 }

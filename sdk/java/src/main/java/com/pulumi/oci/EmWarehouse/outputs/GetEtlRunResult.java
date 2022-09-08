@@ -17,38 +17,25 @@ public final class GetEtlRunResult {
      * @return Compartment Identifier
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name of the ETLRun.
      * 
      */
-    private final @Nullable String displayName;
-    private final String emWarehouseId;
+    private @Nullable String displayName;
+    private String emWarehouseId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return List of runs
      * 
      */
-    private final List<GetEtlRunItem> items;
+    private List<GetEtlRunItem> items;
 
-    @CustomType.Constructor
-    private GetEtlRunResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("emWarehouseId") String emWarehouseId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetEtlRunItem> items) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.emWarehouseId = emWarehouseId;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetEtlRunResult() {}
     /**
      * @return Compartment Identifier
      * 
@@ -88,18 +75,14 @@ public final class GetEtlRunResult {
     public static Builder builder(GetEtlRunResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private String emWarehouseId;
         private String id;
         private List<GetEtlRunItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEtlRunResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -109,30 +92,42 @@ public final class GetEtlRunResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder emWarehouseId(String emWarehouseId) {
             this.emWarehouseId = Objects.requireNonNull(emWarehouseId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetEtlRunItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetEtlRunItem... items) {
             return items(List.of(items));
-        }        public GetEtlRunResult build() {
-            return new GetEtlRunResult(compartmentId, displayName, emWarehouseId, id, items);
+        }
+        public GetEtlRunResult build() {
+            final var o = new GetEtlRunResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.emWarehouseId = emWarehouseId;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

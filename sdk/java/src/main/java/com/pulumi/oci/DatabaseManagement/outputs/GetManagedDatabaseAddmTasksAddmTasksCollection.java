@@ -14,13 +14,9 @@ public final class GetManagedDatabaseAddmTasksAddmTasksCollection {
      * @return The list of ADDM task metadata.
      * 
      */
-    private final List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items;
+    private List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseAddmTasksAddmTasksCollection(@CustomType.Parameter("items") List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseAddmTasksAddmTasksCollection() {}
     /**
      * @return The list of ADDM task metadata.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseAddmTasksAddmTasksCollection {
     public static Builder builder(GetManagedDatabaseAddmTasksAddmTasksCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseAddmTasksAddmTasksCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseAddmTasksAddmTasksCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseAddmTasksAddmTasksCollection build() {
-            return new GetManagedDatabaseAddmTasksAddmTasksCollection(items);
+        }
+        public GetManagedDatabaseAddmTasksAddmTasksCollection build() {
+            final var o = new GetManagedDatabaseAddmTasksAddmTasksCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -18,83 +18,56 @@ public final class GetCatalogTypesResult {
      * @return The data catalog&#39;s OCID.
      * 
      */
-    private final String catalogId;
+    private String catalogId;
     /**
      * @return Mapping type equivalence in the external system.
      * 
      */
-    private final @Nullable String externalTypeName;
-    private final @Nullable List<String> fields;
-    private final @Nullable List<GetCatalogTypesFilter> filters;
+    private @Nullable String externalTypeName;
+    private @Nullable List<String> fields;
+    private @Nullable List<GetCatalogTypesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether the type is approved for use as a classifying object.
      * 
      */
-    private final @Nullable String isApproved;
+    private @Nullable String isApproved;
     /**
      * @return Indicates whether the type is internal, making it unavailable for use by metadata elements.
      * 
      */
-    private final @Nullable String isInternal;
+    private @Nullable String isInternal;
     /**
      * @return Indicates whether the type can be used for tagging metadata elements.
      * 
      */
-    private final @Nullable String isTag;
+    private @Nullable String isTag;
     /**
      * @return The immutable name of the type.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the type.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return Indicates the category this type belongs to. For instance, data assets, connections.
      * 
      */
-    private final @Nullable String typeCategory;
+    private @Nullable String typeCategory;
     /**
      * @return The list of type_collection.
      * 
      */
-    private final List<GetCatalogTypesTypeCollection> typeCollections;
+    private List<GetCatalogTypesTypeCollection> typeCollections;
 
-    @CustomType.Constructor
-    private GetCatalogTypesResult(
-        @CustomType.Parameter("catalogId") String catalogId,
-        @CustomType.Parameter("externalTypeName") @Nullable String externalTypeName,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("filters") @Nullable List<GetCatalogTypesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isApproved") @Nullable String isApproved,
-        @CustomType.Parameter("isInternal") @Nullable String isInternal,
-        @CustomType.Parameter("isTag") @Nullable String isTag,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("typeCategory") @Nullable String typeCategory,
-        @CustomType.Parameter("typeCollections") List<GetCatalogTypesTypeCollection> typeCollections) {
-        this.catalogId = catalogId;
-        this.externalTypeName = externalTypeName;
-        this.fields = fields;
-        this.filters = filters;
-        this.id = id;
-        this.isApproved = isApproved;
-        this.isInternal = isInternal;
-        this.isTag = isTag;
-        this.name = name;
-        this.state = state;
-        this.typeCategory = typeCategory;
-        this.typeCollections = typeCollections;
-    }
-
+    private GetCatalogTypesResult() {}
     /**
      * @return The data catalog&#39;s OCID.
      * 
@@ -179,7 +152,7 @@ public final class GetCatalogTypesResult {
     public static Builder builder(GetCatalogTypesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String catalogId;
         private @Nullable String externalTypeName;
@@ -193,11 +166,7 @@ public final class GetCatalogTypesResult {
         private @Nullable String state;
         private @Nullable String typeCategory;
         private List<GetCatalogTypesTypeCollection> typeCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCatalogTypesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.catalogId = defaults.catalogId;
@@ -214,14 +183,17 @@ public final class GetCatalogTypesResult {
     	      this.typeCollections = defaults.typeCollections;
         }
 
+        @CustomType.Setter
         public Builder catalogId(String catalogId) {
             this.catalogId = Objects.requireNonNull(catalogId);
             return this;
         }
+        @CustomType.Setter
         public Builder externalTypeName(@Nullable String externalTypeName) {
             this.externalTypeName = externalTypeName;
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -229,6 +201,7 @@ public final class GetCatalogTypesResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCatalogTypesFilter> filters) {
             this.filters = filters;
             return this;
@@ -236,42 +209,64 @@ public final class GetCatalogTypesResult {
         public Builder filters(GetCatalogTypesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isApproved(@Nullable String isApproved) {
             this.isApproved = isApproved;
             return this;
         }
+        @CustomType.Setter
         public Builder isInternal(@Nullable String isInternal) {
             this.isInternal = isInternal;
             return this;
         }
+        @CustomType.Setter
         public Builder isTag(@Nullable String isTag) {
             this.isTag = isTag;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder typeCategory(@Nullable String typeCategory) {
             this.typeCategory = typeCategory;
             return this;
         }
+        @CustomType.Setter
         public Builder typeCollections(List<GetCatalogTypesTypeCollection> typeCollections) {
             this.typeCollections = Objects.requireNonNull(typeCollections);
             return this;
         }
         public Builder typeCollections(GetCatalogTypesTypeCollection... typeCollections) {
             return typeCollections(List.of(typeCollections));
-        }        public GetCatalogTypesResult build() {
-            return new GetCatalogTypesResult(catalogId, externalTypeName, fields, filters, id, isApproved, isInternal, isTag, name, state, typeCategory, typeCollections);
+        }
+        public GetCatalogTypesResult build() {
+            final var o = new GetCatalogTypesResult();
+            o.catalogId = catalogId;
+            o.externalTypeName = externalTypeName;
+            o.fields = fields;
+            o.filters = filters;
+            o.id = id;
+            o.isApproved = isApproved;
+            o.isInternal = isInternal;
+            o.isTag = isTag;
+            o.name = name;
+            o.state = state;
+            o.typeCategory = typeCategory;
+            o.typeCollections = typeCollections;
+            return o;
         }
     }
 }

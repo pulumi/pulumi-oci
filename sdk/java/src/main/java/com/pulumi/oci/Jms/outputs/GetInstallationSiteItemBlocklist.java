@@ -13,21 +13,14 @@ public final class GetInstallationSiteItemBlocklist {
      * @return The operation type.
      * 
      */
-    private final String operation;
+    private String operation;
     /**
      * @return The reason why the operation is blocklisted.
      * 
      */
-    private final String reason;
+    private String reason;
 
-    @CustomType.Constructor
-    private GetInstallationSiteItemBlocklist(
-        @CustomType.Parameter("operation") String operation,
-        @CustomType.Parameter("reason") String reason) {
-        this.operation = operation;
-        this.reason = reason;
-    }
-
+    private GetInstallationSiteItemBlocklist() {}
     /**
      * @return The operation type.
      * 
@@ -50,30 +43,32 @@ public final class GetInstallationSiteItemBlocklist {
     public static Builder builder(GetInstallationSiteItemBlocklist defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String operation;
         private String reason;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstallationSiteItemBlocklist defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.operation = defaults.operation;
     	      this.reason = defaults.reason;
         }
 
+        @CustomType.Setter
         public Builder operation(String operation) {
             this.operation = Objects.requireNonNull(operation);
             return this;
         }
+        @CustomType.Setter
         public Builder reason(String reason) {
             this.reason = Objects.requireNonNull(reason);
             return this;
-        }        public GetInstallationSiteItemBlocklist build() {
-            return new GetInstallationSiteItemBlocklist(operation, reason);
+        }
+        public GetInstallationSiteItemBlocklist build() {
+            final var o = new GetInstallationSiteItemBlocklist();
+            o.operation = operation;
+            o.reason = reason;
+            return o;
         }
     }
 }

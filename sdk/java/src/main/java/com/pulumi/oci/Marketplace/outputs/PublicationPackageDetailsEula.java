@@ -15,21 +15,14 @@ public final class PublicationPackageDetailsEula {
      * @return The end user license agreement&#39;s type.
      * 
      */
-    private final String eulaType;
+    private String eulaType;
     /**
      * @return The text of the end user license agreement.
      * 
      */
-    private final @Nullable String licenseText;
+    private @Nullable String licenseText;
 
-    @CustomType.Constructor
-    private PublicationPackageDetailsEula(
-        @CustomType.Parameter("eulaType") String eulaType,
-        @CustomType.Parameter("licenseText") @Nullable String licenseText) {
-        this.eulaType = eulaType;
-        this.licenseText = licenseText;
-    }
-
+    private PublicationPackageDetailsEula() {}
     /**
      * @return The end user license agreement&#39;s type.
      * 
@@ -52,30 +45,32 @@ public final class PublicationPackageDetailsEula {
     public static Builder builder(PublicationPackageDetailsEula defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String eulaType;
         private @Nullable String licenseText;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PublicationPackageDetailsEula defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.eulaType = defaults.eulaType;
     	      this.licenseText = defaults.licenseText;
         }
 
+        @CustomType.Setter
         public Builder eulaType(String eulaType) {
             this.eulaType = Objects.requireNonNull(eulaType);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseText(@Nullable String licenseText) {
             this.licenseText = licenseText;
             return this;
-        }        public PublicationPackageDetailsEula build() {
-            return new PublicationPackageDetailsEula(eulaType, licenseText);
+        }
+        public PublicationPackageDetailsEula build() {
+            final var o = new PublicationPackageDetailsEula();
+            o.eulaType = eulaType;
+            o.licenseText = licenseText;
+            return o;
         }
     }
 }

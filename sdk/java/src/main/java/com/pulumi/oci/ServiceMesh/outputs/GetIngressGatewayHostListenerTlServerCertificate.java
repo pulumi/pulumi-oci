@@ -13,28 +13,19 @@ public final class GetIngressGatewayHostListenerTlServerCertificate {
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
-    private final String certificateId;
+    private String certificateId;
     /**
      * @return Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
      * 
      */
-    private final String secretName;
+    private String secretName;
     /**
      * @return Type of certificate.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetIngressGatewayHostListenerTlServerCertificate(
-        @CustomType.Parameter("certificateId") String certificateId,
-        @CustomType.Parameter("secretName") String secretName,
-        @CustomType.Parameter("type") String type) {
-        this.certificateId = certificateId;
-        this.secretName = secretName;
-        this.type = type;
-    }
-
+    private GetIngressGatewayHostListenerTlServerCertificate() {}
     /**
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
@@ -64,16 +55,12 @@ public final class GetIngressGatewayHostListenerTlServerCertificate {
     public static Builder builder(GetIngressGatewayHostListenerTlServerCertificate defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificateId;
         private String secretName;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewayHostListenerTlServerCertificate defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateId = defaults.certificateId;
@@ -81,19 +68,27 @@ public final class GetIngressGatewayHostListenerTlServerCertificate {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder certificateId(String certificateId) {
             this.certificateId = Objects.requireNonNull(certificateId);
             return this;
         }
+        @CustomType.Setter
         public Builder secretName(String secretName) {
             this.secretName = Objects.requireNonNull(secretName);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetIngressGatewayHostListenerTlServerCertificate build() {
-            return new GetIngressGatewayHostListenerTlServerCertificate(certificateId, secretName, type);
+        }
+        public GetIngressGatewayHostListenerTlServerCertificate build() {
+            final var o = new GetIngressGatewayHostListenerTlServerCertificate();
+            o.certificateId = certificateId;
+            o.secretName = secretName;
+            o.type = type;
+            return o;
         }
     }
 }

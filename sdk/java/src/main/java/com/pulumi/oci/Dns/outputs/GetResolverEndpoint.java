@@ -14,91 +14,64 @@ public final class GetResolverEndpoint {
      * @return The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver&#39;s compartment is changed.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
-    private final String endpointType;
+    private String endpointType;
     /**
      * @return An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      * 
      */
-    private final String forwardingAddress;
+    private String forwardingAddress;
     /**
      * @return A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      * 
      */
-    private final Boolean isForwarding;
+    private Boolean isForwarding;
     /**
      * @return A Boolean flag indicating whether or not the resolver endpoint is for listening.
      * 
      */
-    private final Boolean isListening;
+    private Boolean isListening;
     /**
      * @return An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
      * 
      */
-    private final String listeningAddress;
+    private String listeningAddress;
     /**
      * @return The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private final String self;
+    private String self;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetResolverEndpoint(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("endpointType") String endpointType,
-        @CustomType.Parameter("forwardingAddress") String forwardingAddress,
-        @CustomType.Parameter("isForwarding") Boolean isForwarding,
-        @CustomType.Parameter("isListening") Boolean isListening,
-        @CustomType.Parameter("listeningAddress") String listeningAddress,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("self") String self,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.endpointType = endpointType;
-        this.forwardingAddress = forwardingAddress;
-        this.isForwarding = isForwarding;
-        this.isListening = isListening;
-        this.listeningAddress = listeningAddress;
-        this.name = name;
-        this.self = self;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetResolverEndpoint() {}
     /**
      * @return The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver&#39;s compartment is changed.
      * 
@@ -191,7 +164,7 @@ public final class GetResolverEndpoint {
     public static Builder builder(GetResolverEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String endpointType;
@@ -205,11 +178,7 @@ public final class GetResolverEndpoint {
         private String subnetId;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResolverEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -226,55 +195,81 @@ public final class GetResolverEndpoint {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder endpointType(String endpointType) {
             this.endpointType = Objects.requireNonNull(endpointType);
             return this;
         }
+        @CustomType.Setter
         public Builder forwardingAddress(String forwardingAddress) {
             this.forwardingAddress = Objects.requireNonNull(forwardingAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder isForwarding(Boolean isForwarding) {
             this.isForwarding = Objects.requireNonNull(isForwarding);
             return this;
         }
+        @CustomType.Setter
         public Builder isListening(Boolean isListening) {
             this.isListening = Objects.requireNonNull(isListening);
             return this;
         }
+        @CustomType.Setter
         public Builder listeningAddress(String listeningAddress) {
             this.listeningAddress = Objects.requireNonNull(listeningAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder self(String self) {
             this.self = Objects.requireNonNull(self);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetResolverEndpoint build() {
-            return new GetResolverEndpoint(compartmentId, endpointType, forwardingAddress, isForwarding, isListening, listeningAddress, name, self, state, subnetId, timeCreated, timeUpdated);
+        }
+        public GetResolverEndpoint build() {
+            final var o = new GetResolverEndpoint();
+            o.compartmentId = compartmentId;
+            o.endpointType = endpointType;
+            o.forwardingAddress = forwardingAddress;
+            o.isForwarding = isForwarding;
+            o.isListening = isListening;
+            o.listeningAddress = listeningAddress;
+            o.name = name;
+            o.self = self;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

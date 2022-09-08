@@ -13,28 +13,19 @@ public final class GetContainerImageVersion {
      * @return The OCID of the user or principal that pushed the version.
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return The creation time of the version.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The version name.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetContainerImageVersion(
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("version") String version) {
-        this.createdBy = createdBy;
-        this.timeCreated = timeCreated;
-        this.version = version;
-    }
-
+    private GetContainerImageVersion() {}
     /**
      * @return The OCID of the user or principal that pushed the version.
      * 
@@ -64,16 +55,12 @@ public final class GetContainerImageVersion {
     public static Builder builder(GetContainerImageVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String createdBy;
         private String timeCreated;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerImageVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.createdBy = defaults.createdBy;
@@ -81,19 +68,27 @@ public final class GetContainerImageVersion {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetContainerImageVersion build() {
-            return new GetContainerImageVersion(createdBy, timeCreated, version);
+        }
+        public GetContainerImageVersion build() {
+            final var o = new GetContainerImageVersion();
+            o.createdBy = createdBy;
+            o.timeCreated = timeCreated;
+            o.version = version;
+            return o;
         }
     }
 }

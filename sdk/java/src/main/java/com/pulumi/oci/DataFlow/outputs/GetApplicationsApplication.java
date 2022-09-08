@@ -21,224 +21,159 @@ public final class GetApplicationsApplication {
      * @return Logging details of Application logs for Data Flow Run.
      * 
      */
-    private final List<GetApplicationsApplicationApplicationLogConfig> applicationLogConfigs;
+    private List<GetApplicationsApplicationApplicationLogConfig> applicationLogConfigs;
     /**
      * @return An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    private final String archiveUri;
+    private String archiveUri;
     /**
      * @return The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ &#34;--input&#34;, &#34;${input_file}&#34;, &#34;--name&#34;, &#34;John Doe&#34; ]` If &#34;input_file&#34; has a value of &#34;mydata.xml&#34;, then the value above will be translated to `--input mydata.xml --name &#34;John Doe&#34;`
      * 
      */
-    private final List<String> arguments;
+    private List<String> arguments;
     /**
      * @return The class for the application.
      * 
      */
-    private final String className;
+    private String className;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    private final Map<String,Object> configuration;
+    private Map<String,Object> configuration;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The query parameter for the Spark application name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The VM shape for the driver. Sets the driver cores and memory.
      * 
      */
-    private final String driverShape;
+    private String driverShape;
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    private final List<GetApplicationsApplicationDriverShapeConfig> driverShapeConfigs;
+    private List<GetApplicationsApplicationDriverShapeConfig> driverShapeConfigs;
     /**
      * @return The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
-    private final String execute;
+    private String execute;
     /**
      * @return The VM shape for the executors. Sets the executor cores and memory.
      * 
      */
-    private final String executorShape;
+    private String executorShape;
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    private final List<GetApplicationsApplicationExecutorShapeConfig> executorShapeConfigs;
+    private List<GetApplicationsApplicationExecutorShapeConfig> executorShapeConfigs;
     /**
      * @return An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    private final String fileUri;
+    private String fileUri;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The application ID.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The Spark language.
      * 
      */
-    private final String language;
+    private String language;
     /**
      * @return An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    private final String logsBucketUri;
+    private String logsBucketUri;
     /**
      * @return The OCID of Oracle Cloud Infrastructure Hive Metastore.
      * 
      */
-    private final String metastoreId;
+    private String metastoreId;
     /**
      * @return The number of executor VMs requested.
      * 
      */
-    private final Integer numExecutors;
+    private Integer numExecutors;
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    private final String ownerPrincipalId;
+    private String ownerPrincipalId;
     /**
      * @return The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    private final String ownerUserName;
+    private String ownerUserName;
     /**
      * @return An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;input_file&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variable_x&#34;, value: &#34;${x}&#34;} ]
      * 
      */
-    private final List<GetApplicationsApplicationParameter> parameters;
+    private List<GetApplicationsApplicationParameter> parameters;
     /**
      * @return The OCID of a private endpoint.
      * 
      */
-    private final String privateEndpointId;
+    private String privateEndpointId;
     /**
      * @return The Spark version utilized to run the application.
      * 
      */
-    private final String sparkVersion;
+    private String sparkVersion;
     /**
      * @return The current state of this application.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The Spark application processing type.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    private final String warehouseBucketUri;
+    private String warehouseBucketUri;
 
-    @CustomType.Constructor
-    private GetApplicationsApplication(
-        @CustomType.Parameter("applicationLogConfigs") List<GetApplicationsApplicationApplicationLogConfig> applicationLogConfigs,
-        @CustomType.Parameter("archiveUri") String archiveUri,
-        @CustomType.Parameter("arguments") List<String> arguments,
-        @CustomType.Parameter("className") String className,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("configuration") Map<String,Object> configuration,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("driverShape") String driverShape,
-        @CustomType.Parameter("driverShapeConfigs") List<GetApplicationsApplicationDriverShapeConfig> driverShapeConfigs,
-        @CustomType.Parameter("execute") String execute,
-        @CustomType.Parameter("executorShape") String executorShape,
-        @CustomType.Parameter("executorShapeConfigs") List<GetApplicationsApplicationExecutorShapeConfig> executorShapeConfigs,
-        @CustomType.Parameter("fileUri") String fileUri,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("language") String language,
-        @CustomType.Parameter("logsBucketUri") String logsBucketUri,
-        @CustomType.Parameter("metastoreId") String metastoreId,
-        @CustomType.Parameter("numExecutors") Integer numExecutors,
-        @CustomType.Parameter("ownerPrincipalId") String ownerPrincipalId,
-        @CustomType.Parameter("ownerUserName") String ownerUserName,
-        @CustomType.Parameter("parameters") List<GetApplicationsApplicationParameter> parameters,
-        @CustomType.Parameter("privateEndpointId") String privateEndpointId,
-        @CustomType.Parameter("sparkVersion") String sparkVersion,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("warehouseBucketUri") String warehouseBucketUri) {
-        this.applicationLogConfigs = applicationLogConfigs;
-        this.archiveUri = archiveUri;
-        this.arguments = arguments;
-        this.className = className;
-        this.compartmentId = compartmentId;
-        this.configuration = configuration;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.driverShape = driverShape;
-        this.driverShapeConfigs = driverShapeConfigs;
-        this.execute = execute;
-        this.executorShape = executorShape;
-        this.executorShapeConfigs = executorShapeConfigs;
-        this.fileUri = fileUri;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.language = language;
-        this.logsBucketUri = logsBucketUri;
-        this.metastoreId = metastoreId;
-        this.numExecutors = numExecutors;
-        this.ownerPrincipalId = ownerPrincipalId;
-        this.ownerUserName = ownerUserName;
-        this.parameters = parameters;
-        this.privateEndpointId = privateEndpointId;
-        this.sparkVersion = sparkVersion;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.type = type;
-        this.warehouseBucketUri = warehouseBucketUri;
-    }
-
+    private GetApplicationsApplication() {}
     /**
      * @return Logging details of Application logs for Data Flow Run.
      * 
@@ -464,7 +399,7 @@ public final class GetApplicationsApplication {
     public static Builder builder(GetApplicationsApplication defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApplicationsApplicationApplicationLogConfig> applicationLogConfigs;
         private String archiveUri;
@@ -497,11 +432,7 @@ public final class GetApplicationsApplication {
         private String timeUpdated;
         private String type;
         private String warehouseBucketUri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApplicationsApplication defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationLogConfigs = defaults.applicationLogConfigs;
@@ -537,6 +468,7 @@ public final class GetApplicationsApplication {
     	      this.warehouseBucketUri = defaults.warehouseBucketUri;
         }
 
+        @CustomType.Setter
         public Builder applicationLogConfigs(List<GetApplicationsApplicationApplicationLogConfig> applicationLogConfigs) {
             this.applicationLogConfigs = Objects.requireNonNull(applicationLogConfigs);
             return this;
@@ -544,10 +476,12 @@ public final class GetApplicationsApplication {
         public Builder applicationLogConfigs(GetApplicationsApplicationApplicationLogConfig... applicationLogConfigs) {
             return applicationLogConfigs(List.of(applicationLogConfigs));
         }
+        @CustomType.Setter
         public Builder archiveUri(String archiveUri) {
             this.archiveUri = Objects.requireNonNull(archiveUri);
             return this;
         }
+        @CustomType.Setter
         public Builder arguments(List<String> arguments) {
             this.arguments = Objects.requireNonNull(arguments);
             return this;
@@ -555,34 +489,42 @@ public final class GetApplicationsApplication {
         public Builder arguments(String... arguments) {
             return arguments(List.of(arguments));
         }
+        @CustomType.Setter
         public Builder className(String className) {
             this.className = Objects.requireNonNull(className);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder configuration(Map<String,Object> configuration) {
             this.configuration = Objects.requireNonNull(configuration);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder driverShape(String driverShape) {
             this.driverShape = Objects.requireNonNull(driverShape);
             return this;
         }
+        @CustomType.Setter
         public Builder driverShapeConfigs(List<GetApplicationsApplicationDriverShapeConfig> driverShapeConfigs) {
             this.driverShapeConfigs = Objects.requireNonNull(driverShapeConfigs);
             return this;
@@ -590,14 +532,17 @@ public final class GetApplicationsApplication {
         public Builder driverShapeConfigs(GetApplicationsApplicationDriverShapeConfig... driverShapeConfigs) {
             return driverShapeConfigs(List.of(driverShapeConfigs));
         }
+        @CustomType.Setter
         public Builder execute(String execute) {
             this.execute = Objects.requireNonNull(execute);
             return this;
         }
+        @CustomType.Setter
         public Builder executorShape(String executorShape) {
             this.executorShape = Objects.requireNonNull(executorShape);
             return this;
         }
+        @CustomType.Setter
         public Builder executorShapeConfigs(List<GetApplicationsApplicationExecutorShapeConfig> executorShapeConfigs) {
             this.executorShapeConfigs = Objects.requireNonNull(executorShapeConfigs);
             return this;
@@ -605,42 +550,52 @@ public final class GetApplicationsApplication {
         public Builder executorShapeConfigs(GetApplicationsApplicationExecutorShapeConfig... executorShapeConfigs) {
             return executorShapeConfigs(List.of(executorShapeConfigs));
         }
+        @CustomType.Setter
         public Builder fileUri(String fileUri) {
             this.fileUri = Objects.requireNonNull(fileUri);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder language(String language) {
             this.language = Objects.requireNonNull(language);
             return this;
         }
+        @CustomType.Setter
         public Builder logsBucketUri(String logsBucketUri) {
             this.logsBucketUri = Objects.requireNonNull(logsBucketUri);
             return this;
         }
+        @CustomType.Setter
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = Objects.requireNonNull(metastoreId);
             return this;
         }
+        @CustomType.Setter
         public Builder numExecutors(Integer numExecutors) {
             this.numExecutors = Objects.requireNonNull(numExecutors);
             return this;
         }
+        @CustomType.Setter
         public Builder ownerPrincipalId(String ownerPrincipalId) {
             this.ownerPrincipalId = Objects.requireNonNull(ownerPrincipalId);
             return this;
         }
+        @CustomType.Setter
         public Builder ownerUserName(String ownerUserName) {
             this.ownerUserName = Objects.requireNonNull(ownerUserName);
             return this;
         }
+        @CustomType.Setter
         public Builder parameters(List<GetApplicationsApplicationParameter> parameters) {
             this.parameters = Objects.requireNonNull(parameters);
             return this;
@@ -648,35 +603,75 @@ public final class GetApplicationsApplication {
         public Builder parameters(GetApplicationsApplicationParameter... parameters) {
             return parameters(List.of(parameters));
         }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder sparkVersion(String sparkVersion) {
             this.sparkVersion = Objects.requireNonNull(sparkVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder warehouseBucketUri(String warehouseBucketUri) {
             this.warehouseBucketUri = Objects.requireNonNull(warehouseBucketUri);
             return this;
-        }        public GetApplicationsApplication build() {
-            return new GetApplicationsApplication(applicationLogConfigs, archiveUri, arguments, className, compartmentId, configuration, definedTags, description, displayName, driverShape, driverShapeConfigs, execute, executorShape, executorShapeConfigs, fileUri, freeformTags, id, language, logsBucketUri, metastoreId, numExecutors, ownerPrincipalId, ownerUserName, parameters, privateEndpointId, sparkVersion, state, timeCreated, timeUpdated, type, warehouseBucketUri);
+        }
+        public GetApplicationsApplication build() {
+            final var o = new GetApplicationsApplication();
+            o.applicationLogConfigs = applicationLogConfigs;
+            o.archiveUri = archiveUri;
+            o.arguments = arguments;
+            o.className = className;
+            o.compartmentId = compartmentId;
+            o.configuration = configuration;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.driverShape = driverShape;
+            o.driverShapeConfigs = driverShapeConfigs;
+            o.execute = execute;
+            o.executorShape = executorShape;
+            o.executorShapeConfigs = executorShapeConfigs;
+            o.fileUri = fileUri;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.language = language;
+            o.logsBucketUri = logsBucketUri;
+            o.metastoreId = metastoreId;
+            o.numExecutors = numExecutors;
+            o.ownerPrincipalId = ownerPrincipalId;
+            o.ownerUserName = ownerUserName;
+            o.parameters = parameters;
+            o.privateEndpointId = privateEndpointId;
+            o.sparkVersion = sparkVersion;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.type = type;
+            o.warehouseBucketUri = warehouseBucketUri;
+            return o;
         }
     }
 }

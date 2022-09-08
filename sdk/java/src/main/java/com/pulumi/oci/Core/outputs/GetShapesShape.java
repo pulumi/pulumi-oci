@@ -23,210 +23,149 @@ public final class GetShapesShape {
      * @return For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
      * 
      */
-    private final List<String> baselineOcpuUtilizations;
+    private List<String> baselineOcpuUtilizations;
     /**
      * @return How instances that use this shape are charged.
      * 
      */
-    private final String billingType;
+    private String billingType;
     /**
      * @return A short description of the graphics processing unit (GPU) available for this shape.
      * 
      */
-    private final String gpuDescription;
+    private String gpuDescription;
     /**
      * @return The number of GPUs available for this shape.
      * 
      */
-    private final Integer gpus;
+    private Integer gpus;
     /**
      * @return Whether billing continues when the instances that use this shape are in the stopped state.
      * 
      */
-    private final Boolean isBilledForStoppedInstance;
+    private Boolean isBilledForStoppedInstance;
     /**
      * @return Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
      * 
      */
-    private final Boolean isFlexible;
+    private Boolean isFlexible;
     /**
      * @return Whether Live Migration is currently supported for this shape.
      * 
      */
-    private final Boolean isLiveMigrationSupported;
+    private Boolean isLiveMigrationSupported;
     /**
      * @return Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional spikes in usage.
      * 
      */
-    private final Boolean isSubcore;
+    private Boolean isSubcore;
     /**
      * @return A short description of the local disks available for this shape.
      * 
      */
-    private final String localDiskDescription;
+    private String localDiskDescription;
     /**
      * @return The number of local disks available for this shape.
      * 
      */
-    private final Integer localDisks;
+    private Integer localDisks;
     /**
      * @return The aggregate size of the local disks available for this shape, in gigabytes.
      * 
      */
-    private final Double localDisksTotalSizeInGbs;
+    private Double localDisksTotalSizeInGbs;
     /**
      * @return For a flexible shape, the number of VNIC attachments that are available for instances that use this shape.
      * 
      */
-    private final List<GetShapesShapeMaxVnicAttachmentOption> maxVnicAttachmentOptions;
+    private List<GetShapesShapeMaxVnicAttachmentOption> maxVnicAttachmentOptions;
     /**
      * @return The maximum number of VNIC attachments available for this shape.
      * 
      */
-    private final Integer maxVnicAttachments;
+    private Integer maxVnicAttachments;
     /**
      * @return The default amount of memory available for this shape, in gigabytes.
      * 
      */
-    private final Double memoryInGbs;
+    private Double memoryInGbs;
     /**
      * @return For a flexible shape, the amount of memory available for instances that use this shape.
      * 
      */
-    private final List<GetShapesShapeMemoryOption> memoryOptions;
+    private List<GetShapesShapeMemoryOption> memoryOptions;
     /**
      * @return For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
      * 
      */
-    private final Double minTotalBaselineOcpusRequired;
+    private Double minTotalBaselineOcpusRequired;
     /**
      * @return The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The number of physical network interface card (NIC) ports available for this shape.
      * 
      */
-    private final Integer networkPorts;
+    private Integer networkPorts;
     /**
      * @return The networking bandwidth available for this shape, in gigabits per second.
      * 
      */
-    private final Double networkingBandwidthInGbps;
+    private Double networkingBandwidthInGbps;
     /**
      * @return For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
      * 
      */
-    private final List<GetShapesShapeNetworkingBandwidthOption> networkingBandwidthOptions;
+    private List<GetShapesShapeNetworkingBandwidthOption> networkingBandwidthOptions;
     /**
      * @return For a flexible shape, the number of OCPUs available for instances that use this shape.
      * 
      */
-    private final List<GetShapesShapeOcpuOption> ocpuOptions;
+    private List<GetShapesShapeOcpuOption> ocpuOptions;
     /**
      * @return The default number of OCPUs available for this shape.
      * 
      */
-    private final Double ocpus;
+    private Double ocpus;
     /**
      * @return The list of supported platform configuration options for this shape.
      * 
      */
-    private final List<GetShapesShapePlatformConfigOption> platformConfigOptions;
+    private List<GetShapesShapePlatformConfigOption> platformConfigOptions;
     /**
      * @return A short description of the shape&#39;s processor (CPU).
      * 
      */
-    private final String processorDescription;
+    private String processorDescription;
     /**
      * @return The list of of compartment quotas for the shape.
      * 
      */
-    private final List<String> quotaNames;
+    private List<String> quotaNames;
     /**
      * @return The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in gigabits per second.
      * 
      */
-    private final Integer rdmaBandwidthInGbps;
+    private Integer rdmaBandwidthInGbps;
     /**
      * @return The number of networking ports available for the remote direct memory access (RDMA) network between nodes in a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this value is `0`.
      * 
      */
-    private final Integer rdmaPorts;
+    private Integer rdmaPorts;
     /**
      * @return The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
      * 
      */
-    private final List<GetShapesShapeRecommendedAlternative> recommendedAlternatives;
+    private List<GetShapesShapeRecommendedAlternative> recommendedAlternatives;
     /**
      * @return The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
      * 
      */
-    private final List<String> resizeCompatibleShapes;
+    private List<String> resizeCompatibleShapes;
 
-    @CustomType.Constructor
-    private GetShapesShape(
-        @CustomType.Parameter("baselineOcpuUtilizations") List<String> baselineOcpuUtilizations,
-        @CustomType.Parameter("billingType") String billingType,
-        @CustomType.Parameter("gpuDescription") String gpuDescription,
-        @CustomType.Parameter("gpus") Integer gpus,
-        @CustomType.Parameter("isBilledForStoppedInstance") Boolean isBilledForStoppedInstance,
-        @CustomType.Parameter("isFlexible") Boolean isFlexible,
-        @CustomType.Parameter("isLiveMigrationSupported") Boolean isLiveMigrationSupported,
-        @CustomType.Parameter("isSubcore") Boolean isSubcore,
-        @CustomType.Parameter("localDiskDescription") String localDiskDescription,
-        @CustomType.Parameter("localDisks") Integer localDisks,
-        @CustomType.Parameter("localDisksTotalSizeInGbs") Double localDisksTotalSizeInGbs,
-        @CustomType.Parameter("maxVnicAttachmentOptions") List<GetShapesShapeMaxVnicAttachmentOption> maxVnicAttachmentOptions,
-        @CustomType.Parameter("maxVnicAttachments") Integer maxVnicAttachments,
-        @CustomType.Parameter("memoryInGbs") Double memoryInGbs,
-        @CustomType.Parameter("memoryOptions") List<GetShapesShapeMemoryOption> memoryOptions,
-        @CustomType.Parameter("minTotalBaselineOcpusRequired") Double minTotalBaselineOcpusRequired,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("networkPorts") Integer networkPorts,
-        @CustomType.Parameter("networkingBandwidthInGbps") Double networkingBandwidthInGbps,
-        @CustomType.Parameter("networkingBandwidthOptions") List<GetShapesShapeNetworkingBandwidthOption> networkingBandwidthOptions,
-        @CustomType.Parameter("ocpuOptions") List<GetShapesShapeOcpuOption> ocpuOptions,
-        @CustomType.Parameter("ocpus") Double ocpus,
-        @CustomType.Parameter("platformConfigOptions") List<GetShapesShapePlatformConfigOption> platformConfigOptions,
-        @CustomType.Parameter("processorDescription") String processorDescription,
-        @CustomType.Parameter("quotaNames") List<String> quotaNames,
-        @CustomType.Parameter("rdmaBandwidthInGbps") Integer rdmaBandwidthInGbps,
-        @CustomType.Parameter("rdmaPorts") Integer rdmaPorts,
-        @CustomType.Parameter("recommendedAlternatives") List<GetShapesShapeRecommendedAlternative> recommendedAlternatives,
-        @CustomType.Parameter("resizeCompatibleShapes") List<String> resizeCompatibleShapes) {
-        this.baselineOcpuUtilizations = baselineOcpuUtilizations;
-        this.billingType = billingType;
-        this.gpuDescription = gpuDescription;
-        this.gpus = gpus;
-        this.isBilledForStoppedInstance = isBilledForStoppedInstance;
-        this.isFlexible = isFlexible;
-        this.isLiveMigrationSupported = isLiveMigrationSupported;
-        this.isSubcore = isSubcore;
-        this.localDiskDescription = localDiskDescription;
-        this.localDisks = localDisks;
-        this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
-        this.maxVnicAttachmentOptions = maxVnicAttachmentOptions;
-        this.maxVnicAttachments = maxVnicAttachments;
-        this.memoryInGbs = memoryInGbs;
-        this.memoryOptions = memoryOptions;
-        this.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
-        this.name = name;
-        this.networkPorts = networkPorts;
-        this.networkingBandwidthInGbps = networkingBandwidthInGbps;
-        this.networkingBandwidthOptions = networkingBandwidthOptions;
-        this.ocpuOptions = ocpuOptions;
-        this.ocpus = ocpus;
-        this.platformConfigOptions = platformConfigOptions;
-        this.processorDescription = processorDescription;
-        this.quotaNames = quotaNames;
-        this.rdmaBandwidthInGbps = rdmaBandwidthInGbps;
-        this.rdmaPorts = rdmaPorts;
-        this.recommendedAlternatives = recommendedAlternatives;
-        this.resizeCompatibleShapes = resizeCompatibleShapes;
-    }
-
+    private GetShapesShape() {}
     /**
      * @return For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
      * 
@@ -438,7 +377,7 @@ public final class GetShapesShape {
     public static Builder builder(GetShapesShape defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> baselineOcpuUtilizations;
         private String billingType;
@@ -469,11 +408,7 @@ public final class GetShapesShape {
         private Integer rdmaPorts;
         private List<GetShapesShapeRecommendedAlternative> recommendedAlternatives;
         private List<String> resizeCompatibleShapes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapesShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baselineOcpuUtilizations = defaults.baselineOcpuUtilizations;
@@ -507,6 +442,7 @@ public final class GetShapesShape {
     	      this.resizeCompatibleShapes = defaults.resizeCompatibleShapes;
         }
 
+        @CustomType.Setter
         public Builder baselineOcpuUtilizations(List<String> baselineOcpuUtilizations) {
             this.baselineOcpuUtilizations = Objects.requireNonNull(baselineOcpuUtilizations);
             return this;
@@ -514,46 +450,57 @@ public final class GetShapesShape {
         public Builder baselineOcpuUtilizations(String... baselineOcpuUtilizations) {
             return baselineOcpuUtilizations(List.of(baselineOcpuUtilizations));
         }
+        @CustomType.Setter
         public Builder billingType(String billingType) {
             this.billingType = Objects.requireNonNull(billingType);
             return this;
         }
+        @CustomType.Setter
         public Builder gpuDescription(String gpuDescription) {
             this.gpuDescription = Objects.requireNonNull(gpuDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder gpus(Integer gpus) {
             this.gpus = Objects.requireNonNull(gpus);
             return this;
         }
+        @CustomType.Setter
         public Builder isBilledForStoppedInstance(Boolean isBilledForStoppedInstance) {
             this.isBilledForStoppedInstance = Objects.requireNonNull(isBilledForStoppedInstance);
             return this;
         }
+        @CustomType.Setter
         public Builder isFlexible(Boolean isFlexible) {
             this.isFlexible = Objects.requireNonNull(isFlexible);
             return this;
         }
+        @CustomType.Setter
         public Builder isLiveMigrationSupported(Boolean isLiveMigrationSupported) {
             this.isLiveMigrationSupported = Objects.requireNonNull(isLiveMigrationSupported);
             return this;
         }
+        @CustomType.Setter
         public Builder isSubcore(Boolean isSubcore) {
             this.isSubcore = Objects.requireNonNull(isSubcore);
             return this;
         }
+        @CustomType.Setter
         public Builder localDiskDescription(String localDiskDescription) {
             this.localDiskDescription = Objects.requireNonNull(localDiskDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder localDisks(Integer localDisks) {
             this.localDisks = Objects.requireNonNull(localDisks);
             return this;
         }
+        @CustomType.Setter
         public Builder localDisksTotalSizeInGbs(Double localDisksTotalSizeInGbs) {
             this.localDisksTotalSizeInGbs = Objects.requireNonNull(localDisksTotalSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder maxVnicAttachmentOptions(List<GetShapesShapeMaxVnicAttachmentOption> maxVnicAttachmentOptions) {
             this.maxVnicAttachmentOptions = Objects.requireNonNull(maxVnicAttachmentOptions);
             return this;
@@ -561,14 +508,17 @@ public final class GetShapesShape {
         public Builder maxVnicAttachmentOptions(GetShapesShapeMaxVnicAttachmentOption... maxVnicAttachmentOptions) {
             return maxVnicAttachmentOptions(List.of(maxVnicAttachmentOptions));
         }
+        @CustomType.Setter
         public Builder maxVnicAttachments(Integer maxVnicAttachments) {
             this.maxVnicAttachments = Objects.requireNonNull(maxVnicAttachments);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
             this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryOptions(List<GetShapesShapeMemoryOption> memoryOptions) {
             this.memoryOptions = Objects.requireNonNull(memoryOptions);
             return this;
@@ -576,22 +526,27 @@ public final class GetShapesShape {
         public Builder memoryOptions(GetShapesShapeMemoryOption... memoryOptions) {
             return memoryOptions(List.of(memoryOptions));
         }
+        @CustomType.Setter
         public Builder minTotalBaselineOcpusRequired(Double minTotalBaselineOcpusRequired) {
             this.minTotalBaselineOcpusRequired = Objects.requireNonNull(minTotalBaselineOcpusRequired);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder networkPorts(Integer networkPorts) {
             this.networkPorts = Objects.requireNonNull(networkPorts);
             return this;
         }
+        @CustomType.Setter
         public Builder networkingBandwidthInGbps(Double networkingBandwidthInGbps) {
             this.networkingBandwidthInGbps = Objects.requireNonNull(networkingBandwidthInGbps);
             return this;
         }
+        @CustomType.Setter
         public Builder networkingBandwidthOptions(List<GetShapesShapeNetworkingBandwidthOption> networkingBandwidthOptions) {
             this.networkingBandwidthOptions = Objects.requireNonNull(networkingBandwidthOptions);
             return this;
@@ -599,6 +554,7 @@ public final class GetShapesShape {
         public Builder networkingBandwidthOptions(GetShapesShapeNetworkingBandwidthOption... networkingBandwidthOptions) {
             return networkingBandwidthOptions(List.of(networkingBandwidthOptions));
         }
+        @CustomType.Setter
         public Builder ocpuOptions(List<GetShapesShapeOcpuOption> ocpuOptions) {
             this.ocpuOptions = Objects.requireNonNull(ocpuOptions);
             return this;
@@ -606,10 +562,12 @@ public final class GetShapesShape {
         public Builder ocpuOptions(GetShapesShapeOcpuOption... ocpuOptions) {
             return ocpuOptions(List.of(ocpuOptions));
         }
+        @CustomType.Setter
         public Builder ocpus(Double ocpus) {
             this.ocpus = Objects.requireNonNull(ocpus);
             return this;
         }
+        @CustomType.Setter
         public Builder platformConfigOptions(List<GetShapesShapePlatformConfigOption> platformConfigOptions) {
             this.platformConfigOptions = Objects.requireNonNull(platformConfigOptions);
             return this;
@@ -617,10 +575,12 @@ public final class GetShapesShape {
         public Builder platformConfigOptions(GetShapesShapePlatformConfigOption... platformConfigOptions) {
             return platformConfigOptions(List.of(platformConfigOptions));
         }
+        @CustomType.Setter
         public Builder processorDescription(String processorDescription) {
             this.processorDescription = Objects.requireNonNull(processorDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder quotaNames(List<String> quotaNames) {
             this.quotaNames = Objects.requireNonNull(quotaNames);
             return this;
@@ -628,14 +588,17 @@ public final class GetShapesShape {
         public Builder quotaNames(String... quotaNames) {
             return quotaNames(List.of(quotaNames));
         }
+        @CustomType.Setter
         public Builder rdmaBandwidthInGbps(Integer rdmaBandwidthInGbps) {
             this.rdmaBandwidthInGbps = Objects.requireNonNull(rdmaBandwidthInGbps);
             return this;
         }
+        @CustomType.Setter
         public Builder rdmaPorts(Integer rdmaPorts) {
             this.rdmaPorts = Objects.requireNonNull(rdmaPorts);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendedAlternatives(List<GetShapesShapeRecommendedAlternative> recommendedAlternatives) {
             this.recommendedAlternatives = Objects.requireNonNull(recommendedAlternatives);
             return this;
@@ -643,14 +606,46 @@ public final class GetShapesShape {
         public Builder recommendedAlternatives(GetShapesShapeRecommendedAlternative... recommendedAlternatives) {
             return recommendedAlternatives(List.of(recommendedAlternatives));
         }
+        @CustomType.Setter
         public Builder resizeCompatibleShapes(List<String> resizeCompatibleShapes) {
             this.resizeCompatibleShapes = Objects.requireNonNull(resizeCompatibleShapes);
             return this;
         }
         public Builder resizeCompatibleShapes(String... resizeCompatibleShapes) {
             return resizeCompatibleShapes(List.of(resizeCompatibleShapes));
-        }        public GetShapesShape build() {
-            return new GetShapesShape(baselineOcpuUtilizations, billingType, gpuDescription, gpus, isBilledForStoppedInstance, isFlexible, isLiveMigrationSupported, isSubcore, localDiskDescription, localDisks, localDisksTotalSizeInGbs, maxVnicAttachmentOptions, maxVnicAttachments, memoryInGbs, memoryOptions, minTotalBaselineOcpusRequired, name, networkPorts, networkingBandwidthInGbps, networkingBandwidthOptions, ocpuOptions, ocpus, platformConfigOptions, processorDescription, quotaNames, rdmaBandwidthInGbps, rdmaPorts, recommendedAlternatives, resizeCompatibleShapes);
+        }
+        public GetShapesShape build() {
+            final var o = new GetShapesShape();
+            o.baselineOcpuUtilizations = baselineOcpuUtilizations;
+            o.billingType = billingType;
+            o.gpuDescription = gpuDescription;
+            o.gpus = gpus;
+            o.isBilledForStoppedInstance = isBilledForStoppedInstance;
+            o.isFlexible = isFlexible;
+            o.isLiveMigrationSupported = isLiveMigrationSupported;
+            o.isSubcore = isSubcore;
+            o.localDiskDescription = localDiskDescription;
+            o.localDisks = localDisks;
+            o.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            o.maxVnicAttachmentOptions = maxVnicAttachmentOptions;
+            o.maxVnicAttachments = maxVnicAttachments;
+            o.memoryInGbs = memoryInGbs;
+            o.memoryOptions = memoryOptions;
+            o.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
+            o.name = name;
+            o.networkPorts = networkPorts;
+            o.networkingBandwidthInGbps = networkingBandwidthInGbps;
+            o.networkingBandwidthOptions = networkingBandwidthOptions;
+            o.ocpuOptions = ocpuOptions;
+            o.ocpus = ocpus;
+            o.platformConfigOptions = platformConfigOptions;
+            o.processorDescription = processorDescription;
+            o.quotaNames = quotaNames;
+            o.rdmaBandwidthInGbps = rdmaBandwidthInGbps;
+            o.rdmaPorts = rdmaPorts;
+            o.recommendedAlternatives = recommendedAlternatives;
+            o.resizeCompatibleShapes = resizeCompatibleShapes;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetProfileLevelsConfiguration {
      * @return The list of tags specified in the current profile override.
      * 
      */
-    private final List<GetProfileLevelsConfigurationItem> items;
+    private List<GetProfileLevelsConfigurationItem> items;
 
-    @CustomType.Constructor
-    private GetProfileLevelsConfiguration(@CustomType.Parameter("items") List<GetProfileLevelsConfigurationItem> items) {
-        this.items = items;
-    }
-
+    private GetProfileLevelsConfiguration() {}
     /**
      * @return The list of tags specified in the current profile override.
      * 
@@ -36,27 +32,27 @@ public final class GetProfileLevelsConfiguration {
     public static Builder builder(GetProfileLevelsConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetProfileLevelsConfigurationItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfileLevelsConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetProfileLevelsConfigurationItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetProfileLevelsConfigurationItem... items) {
             return items(List.of(items));
-        }        public GetProfileLevelsConfiguration build() {
-            return new GetProfileLevelsConfiguration(items);
+        }
+        public GetProfileLevelsConfiguration build() {
+            final var o = new GetProfileLevelsConfiguration();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -15,42 +15,29 @@ public final class IntegrationInstanceIdcsInfo {
      * @return The IDCS application display name associated with the instance
      * 
      */
-    private final @Nullable String idcsAppDisplayName;
+    private @Nullable String idcsAppDisplayName;
     /**
      * @return The IDCS application ID associated with the instance
      * 
      */
-    private final @Nullable String idcsAppId;
+    private @Nullable String idcsAppId;
     /**
      * @return URL for the location of the IDCS Application (used by IDCS APIs)
      * 
      */
-    private final @Nullable String idcsAppLocationUrl;
+    private @Nullable String idcsAppLocationUrl;
     /**
      * @return The IDCS application name associated with the instance
      * 
      */
-    private final @Nullable String idcsAppName;
+    private @Nullable String idcsAppName;
     /**
      * @return The URL used as the primary audience for integration flows in this instance type: string
      * 
      */
-    private final @Nullable String instancePrimaryAudienceUrl;
+    private @Nullable String instancePrimaryAudienceUrl;
 
-    @CustomType.Constructor
-    private IntegrationInstanceIdcsInfo(
-        @CustomType.Parameter("idcsAppDisplayName") @Nullable String idcsAppDisplayName,
-        @CustomType.Parameter("idcsAppId") @Nullable String idcsAppId,
-        @CustomType.Parameter("idcsAppLocationUrl") @Nullable String idcsAppLocationUrl,
-        @CustomType.Parameter("idcsAppName") @Nullable String idcsAppName,
-        @CustomType.Parameter("instancePrimaryAudienceUrl") @Nullable String instancePrimaryAudienceUrl) {
-        this.idcsAppDisplayName = idcsAppDisplayName;
-        this.idcsAppId = idcsAppId;
-        this.idcsAppLocationUrl = idcsAppLocationUrl;
-        this.idcsAppName = idcsAppName;
-        this.instancePrimaryAudienceUrl = instancePrimaryAudienceUrl;
-    }
-
+    private IntegrationInstanceIdcsInfo() {}
     /**
      * @return The IDCS application display name associated with the instance
      * 
@@ -94,18 +81,14 @@ public final class IntegrationInstanceIdcsInfo {
     public static Builder builder(IntegrationInstanceIdcsInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String idcsAppDisplayName;
         private @Nullable String idcsAppId;
         private @Nullable String idcsAppLocationUrl;
         private @Nullable String idcsAppName;
         private @Nullable String instancePrimaryAudienceUrl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IntegrationInstanceIdcsInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.idcsAppDisplayName = defaults.idcsAppDisplayName;
@@ -115,27 +98,39 @@ public final class IntegrationInstanceIdcsInfo {
     	      this.instancePrimaryAudienceUrl = defaults.instancePrimaryAudienceUrl;
         }
 
+        @CustomType.Setter
         public Builder idcsAppDisplayName(@Nullable String idcsAppDisplayName) {
             this.idcsAppDisplayName = idcsAppDisplayName;
             return this;
         }
+        @CustomType.Setter
         public Builder idcsAppId(@Nullable String idcsAppId) {
             this.idcsAppId = idcsAppId;
             return this;
         }
+        @CustomType.Setter
         public Builder idcsAppLocationUrl(@Nullable String idcsAppLocationUrl) {
             this.idcsAppLocationUrl = idcsAppLocationUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder idcsAppName(@Nullable String idcsAppName) {
             this.idcsAppName = idcsAppName;
             return this;
         }
+        @CustomType.Setter
         public Builder instancePrimaryAudienceUrl(@Nullable String instancePrimaryAudienceUrl) {
             this.instancePrimaryAudienceUrl = instancePrimaryAudienceUrl;
             return this;
-        }        public IntegrationInstanceIdcsInfo build() {
-            return new IntegrationInstanceIdcsInfo(idcsAppDisplayName, idcsAppId, idcsAppLocationUrl, idcsAppName, instancePrimaryAudienceUrl);
+        }
+        public IntegrationInstanceIdcsInfo build() {
+            final var o = new IntegrationInstanceIdcsInfo();
+            o.idcsAppDisplayName = idcsAppDisplayName;
+            o.idcsAppId = idcsAppId;
+            o.idcsAppLocationUrl = idcsAppLocationUrl;
+            o.idcsAppName = idcsAppName;
+            o.instancePrimaryAudienceUrl = instancePrimaryAudienceUrl;
+            return o;
         }
     }
 }

@@ -15,54 +15,33 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOnpremConnectorsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The OCID of the compartment that contains the on-premises connector.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The display name of the on-premises connector.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetOnpremConnectorsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetOnpremConnectorsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String onPremConnectorId;
-    private final @Nullable String onPremConnectorLifecycleState;
+    private String id;
+    private @Nullable String onPremConnectorId;
+    private @Nullable String onPremConnectorLifecycleState;
     /**
      * @return The list of on_prem_connectors.
      * 
      */
-    private final List<GetOnpremConnectorsOnPremConnector> onPremConnectors;
+    private List<GetOnpremConnectorsOnPremConnector> onPremConnectors;
 
-    @CustomType.Constructor
-    private GetOnpremConnectorsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetOnpremConnectorsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("onPremConnectorId") @Nullable String onPremConnectorId,
-        @CustomType.Parameter("onPremConnectorLifecycleState") @Nullable String onPremConnectorLifecycleState,
-        @CustomType.Parameter("onPremConnectors") List<GetOnpremConnectorsOnPremConnector> onPremConnectors) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.onPremConnectorId = onPremConnectorId;
-        this.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
-        this.onPremConnectors = onPremConnectors;
-    }
-
+    private GetOnpremConnectorsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -114,7 +93,7 @@ public final class GetOnpremConnectorsResult {
     public static Builder builder(GetOnpremConnectorsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -125,11 +104,7 @@ public final class GetOnpremConnectorsResult {
         private @Nullable String onPremConnectorId;
         private @Nullable String onPremConnectorLifecycleState;
         private List<GetOnpremConnectorsOnPremConnector> onPremConnectors;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOnpremConnectorsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -143,22 +118,27 @@ public final class GetOnpremConnectorsResult {
     	      this.onPremConnectors = defaults.onPremConnectors;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOnpremConnectorsFilter> filters) {
             this.filters = filters;
             return this;
@@ -166,26 +146,41 @@ public final class GetOnpremConnectorsResult {
         public Builder filters(GetOnpremConnectorsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder onPremConnectorId(@Nullable String onPremConnectorId) {
             this.onPremConnectorId = onPremConnectorId;
             return this;
         }
+        @CustomType.Setter
         public Builder onPremConnectorLifecycleState(@Nullable String onPremConnectorLifecycleState) {
             this.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
             return this;
         }
+        @CustomType.Setter
         public Builder onPremConnectors(List<GetOnpremConnectorsOnPremConnector> onPremConnectors) {
             this.onPremConnectors = Objects.requireNonNull(onPremConnectors);
             return this;
         }
         public Builder onPremConnectors(GetOnpremConnectorsOnPremConnector... onPremConnectors) {
             return onPremConnectors(List.of(onPremConnectors));
-        }        public GetOnpremConnectorsResult build() {
-            return new GetOnpremConnectorsResult(accessLevel, compartmentId, compartmentIdInSubtree, displayName, filters, id, onPremConnectorId, onPremConnectorLifecycleState, onPremConnectors);
+        }
+        public GetOnpremConnectorsResult build() {
+            final var o = new GetOnpremConnectorsResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.onPremConnectorId = onPremConnectorId;
+            o.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
+            o.onPremConnectors = onPremConnectors;
+            return o;
         }
     }
 }

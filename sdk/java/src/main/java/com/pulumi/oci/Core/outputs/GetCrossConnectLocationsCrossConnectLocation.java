@@ -13,21 +13,14 @@ public final class GetCrossConnectLocationsCrossConnectLocation {
      * @return A description of the location.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The name of the location.  Example: `CyrusOne, Chandler, AZ`
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetCrossConnectLocationsCrossConnectLocation(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("name") String name) {
-        this.description = description;
-        this.name = name;
-    }
-
+    private GetCrossConnectLocationsCrossConnectLocation() {}
     /**
      * @return A description of the location.
      * 
@@ -50,30 +43,32 @@ public final class GetCrossConnectLocationsCrossConnectLocation {
     public static Builder builder(GetCrossConnectLocationsCrossConnectLocation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCrossConnectLocationsCrossConnectLocation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetCrossConnectLocationsCrossConnectLocation build() {
-            return new GetCrossConnectLocationsCrossConnectLocation(description, name);
+        }
+        public GetCrossConnectLocationsCrossConnectLocation build() {
+            final var o = new GetCrossConnectLocationsCrossConnectLocation();
+            o.description = description;
+            o.name = name;
+            return o;
         }
     }
 }

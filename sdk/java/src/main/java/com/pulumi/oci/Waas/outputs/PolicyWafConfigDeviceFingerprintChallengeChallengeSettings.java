@@ -16,70 +16,49 @@ public final class PolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
      * @return (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
      * 
      */
-    private final @Nullable String blockAction;
+    private @Nullable String blockAction;
     /**
      * @return (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
      * 
      */
-    private final @Nullable String blockErrorPageCode;
+    private @Nullable String blockErrorPageCode;
     /**
      * @return (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
      * 
      */
-    private final @Nullable String blockErrorPageDescription;
+    private @Nullable String blockErrorPageDescription;
     /**
      * @return (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
      * 
      */
-    private final @Nullable String blockErrorPageMessage;
+    private @Nullable String blockErrorPageMessage;
     /**
      * @return (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
-    private final @Nullable Integer blockResponseCode;
+    private @Nullable Integer blockResponseCode;
     /**
      * @return (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
      * 
      */
-    private final @Nullable String captchaFooter;
+    private @Nullable String captchaFooter;
     /**
      * @return (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
      * 
      */
-    private final @Nullable String captchaHeader;
+    private @Nullable String captchaHeader;
     /**
      * @return (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
      * 
      */
-    private final @Nullable String captchaSubmitLabel;
+    private @Nullable String captchaSubmitLabel;
     /**
      * @return (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
      * 
      */
-    private final @Nullable String captchaTitle;
+    private @Nullable String captchaTitle;
 
-    @CustomType.Constructor
-    private PolicyWafConfigDeviceFingerprintChallengeChallengeSettings(
-        @CustomType.Parameter("blockAction") @Nullable String blockAction,
-        @CustomType.Parameter("blockErrorPageCode") @Nullable String blockErrorPageCode,
-        @CustomType.Parameter("blockErrorPageDescription") @Nullable String blockErrorPageDescription,
-        @CustomType.Parameter("blockErrorPageMessage") @Nullable String blockErrorPageMessage,
-        @CustomType.Parameter("blockResponseCode") @Nullable Integer blockResponseCode,
-        @CustomType.Parameter("captchaFooter") @Nullable String captchaFooter,
-        @CustomType.Parameter("captchaHeader") @Nullable String captchaHeader,
-        @CustomType.Parameter("captchaSubmitLabel") @Nullable String captchaSubmitLabel,
-        @CustomType.Parameter("captchaTitle") @Nullable String captchaTitle) {
-        this.blockAction = blockAction;
-        this.blockErrorPageCode = blockErrorPageCode;
-        this.blockErrorPageDescription = blockErrorPageDescription;
-        this.blockErrorPageMessage = blockErrorPageMessage;
-        this.blockResponseCode = blockResponseCode;
-        this.captchaFooter = captchaFooter;
-        this.captchaHeader = captchaHeader;
-        this.captchaSubmitLabel = captchaSubmitLabel;
-        this.captchaTitle = captchaTitle;
-    }
-
+    private PolicyWafConfigDeviceFingerprintChallengeChallengeSettings() {}
     /**
      * @return (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
      * 
@@ -151,7 +130,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
     public static Builder builder(PolicyWafConfigDeviceFingerprintChallengeChallengeSettings defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String blockAction;
         private @Nullable String blockErrorPageCode;
@@ -162,11 +141,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
         private @Nullable String captchaHeader;
         private @Nullable String captchaSubmitLabel;
         private @Nullable String captchaTitle;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyWafConfigDeviceFingerprintChallengeChallengeSettings defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockAction = defaults.blockAction;
@@ -180,43 +155,63 @@ public final class PolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
     	      this.captchaTitle = defaults.captchaTitle;
         }
 
+        @CustomType.Setter
         public Builder blockAction(@Nullable String blockAction) {
             this.blockAction = blockAction;
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageCode(@Nullable String blockErrorPageCode) {
             this.blockErrorPageCode = blockErrorPageCode;
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageDescription(@Nullable String blockErrorPageDescription) {
             this.blockErrorPageDescription = blockErrorPageDescription;
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageMessage(@Nullable String blockErrorPageMessage) {
             this.blockErrorPageMessage = blockErrorPageMessage;
             return this;
         }
+        @CustomType.Setter
         public Builder blockResponseCode(@Nullable Integer blockResponseCode) {
             this.blockResponseCode = blockResponseCode;
             return this;
         }
+        @CustomType.Setter
         public Builder captchaFooter(@Nullable String captchaFooter) {
             this.captchaFooter = captchaFooter;
             return this;
         }
+        @CustomType.Setter
         public Builder captchaHeader(@Nullable String captchaHeader) {
             this.captchaHeader = captchaHeader;
             return this;
         }
+        @CustomType.Setter
         public Builder captchaSubmitLabel(@Nullable String captchaSubmitLabel) {
             this.captchaSubmitLabel = captchaSubmitLabel;
             return this;
         }
+        @CustomType.Setter
         public Builder captchaTitle(@Nullable String captchaTitle) {
             this.captchaTitle = captchaTitle;
             return this;
-        }        public PolicyWafConfigDeviceFingerprintChallengeChallengeSettings build() {
-            return new PolicyWafConfigDeviceFingerprintChallengeChallengeSettings(blockAction, blockErrorPageCode, blockErrorPageDescription, blockErrorPageMessage, blockResponseCode, captchaFooter, captchaHeader, captchaSubmitLabel, captchaTitle);
+        }
+        public PolicyWafConfigDeviceFingerprintChallengeChallengeSettings build() {
+            final var o = new PolicyWafConfigDeviceFingerprintChallengeChallengeSettings();
+            o.blockAction = blockAction;
+            o.blockErrorPageCode = blockErrorPageCode;
+            o.blockErrorPageDescription = blockErrorPageDescription;
+            o.blockErrorPageMessage = blockErrorPageMessage;
+            o.blockResponseCode = blockResponseCode;
+            o.captchaFooter = captchaFooter;
+            o.captchaHeader = captchaHeader;
+            o.captchaSubmitLabel = captchaSubmitLabel;
+            o.captchaTitle = captchaTitle;
+            return o;
         }
     }
 }

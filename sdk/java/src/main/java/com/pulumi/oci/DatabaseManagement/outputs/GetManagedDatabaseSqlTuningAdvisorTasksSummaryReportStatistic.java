@@ -16,28 +16,19 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
      * @return The benefits of the findings in the SQL Tuning Advisor summary report.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits;
+    private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits;
     /**
      * @return The number of findings in the SQL Tuning Advisor summary report.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts;
+    private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts;
     /**
      * @return The number of statements in the SQL Tuning Advisor summary report.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts;
+    private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic(
-        @CustomType.Parameter("findingBenefits") List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits,
-        @CustomType.Parameter("findingCounts") List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts,
-        @CustomType.Parameter("statementCounts") List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts) {
-        this.findingBenefits = findingBenefits;
-        this.findingCounts = findingCounts;
-        this.statementCounts = statementCounts;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic() {}
     /**
      * @return The benefits of the findings in the SQL Tuning Advisor summary report.
      * 
@@ -67,16 +58,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.findingBenefits = defaults.findingBenefits;
@@ -84,6 +71,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     	      this.statementCounts = defaults.statementCounts;
         }
 
+        @CustomType.Setter
         public Builder findingBenefits(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits) {
             this.findingBenefits = Objects.requireNonNull(findingBenefits);
             return this;
@@ -91,6 +79,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
         public Builder findingBenefits(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit... findingBenefits) {
             return findingBenefits(List.of(findingBenefits));
         }
+        @CustomType.Setter
         public Builder findingCounts(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts) {
             this.findingCounts = Objects.requireNonNull(findingCounts);
             return this;
@@ -98,14 +87,20 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
         public Builder findingCounts(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount... findingCounts) {
             return findingCounts(List.of(findingCounts));
         }
+        @CustomType.Setter
         public Builder statementCounts(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts) {
             this.statementCounts = Objects.requireNonNull(statementCounts);
             return this;
         }
         public Builder statementCounts(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount... statementCounts) {
             return statementCounts(List.of(statementCounts));
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic(findingBenefits, findingCounts, statementCounts);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic();
+            o.findingBenefits = findingBenefits;
+            o.findingCounts = findingCounts;
+            o.statementCounts = statementCounts;
+            return o;
         }
     }
 }

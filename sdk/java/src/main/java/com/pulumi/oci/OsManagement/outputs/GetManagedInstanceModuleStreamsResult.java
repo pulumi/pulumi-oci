@@ -14,51 +14,32 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceModuleStreamsResult {
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetManagedInstanceModuleStreamsFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetManagedInstanceModuleStreamsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedInstanceId;
+    private String id;
+    private String managedInstanceId;
     /**
      * @return The name of the module that contains the stream profile
      * 
      */
-    private final @Nullable String moduleName;
+    private @Nullable String moduleName;
     /**
      * @return The list of module_stream_on_managed_instances.
      * 
      */
-    private final List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance> moduleStreamOnManagedInstances;
+    private List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance> moduleStreamOnManagedInstances;
     /**
      * @return The name of the stream.
      * 
      */
-    private final @Nullable String streamName;
-    private final @Nullable String streamStatus;
+    private @Nullable String streamName;
+    private @Nullable String streamStatus;
 
-    @CustomType.Constructor
-    private GetManagedInstanceModuleStreamsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedInstanceModuleStreamsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedInstanceId") String managedInstanceId,
-        @CustomType.Parameter("moduleName") @Nullable String moduleName,
-        @CustomType.Parameter("moduleStreamOnManagedInstances") List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance> moduleStreamOnManagedInstances,
-        @CustomType.Parameter("streamName") @Nullable String streamName,
-        @CustomType.Parameter("streamStatus") @Nullable String streamStatus) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.managedInstanceId = managedInstanceId;
-        this.moduleName = moduleName;
-        this.moduleStreamOnManagedInstances = moduleStreamOnManagedInstances;
-        this.streamName = streamName;
-        this.streamStatus = streamStatus;
-    }
-
+    private GetManagedInstanceModuleStreamsResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -107,7 +88,7 @@ public final class GetManagedInstanceModuleStreamsResult {
     public static Builder builder(GetManagedInstanceModuleStreamsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetManagedInstanceModuleStreamsFilter> filters;
@@ -117,11 +98,7 @@ public final class GetManagedInstanceModuleStreamsResult {
         private List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance> moduleStreamOnManagedInstances;
         private @Nullable String streamName;
         private @Nullable String streamStatus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedInstanceModuleStreamsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,10 +111,12 @@ public final class GetManagedInstanceModuleStreamsResult {
     	      this.streamStatus = defaults.streamStatus;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedInstanceModuleStreamsFilter> filters) {
             this.filters = filters;
             return this;
@@ -145,18 +124,22 @@ public final class GetManagedInstanceModuleStreamsResult {
         public Builder filters(GetManagedInstanceModuleStreamsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder moduleName(@Nullable String moduleName) {
             this.moduleName = moduleName;
             return this;
         }
+        @CustomType.Setter
         public Builder moduleStreamOnManagedInstances(List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance> moduleStreamOnManagedInstances) {
             this.moduleStreamOnManagedInstances = Objects.requireNonNull(moduleStreamOnManagedInstances);
             return this;
@@ -164,15 +147,27 @@ public final class GetManagedInstanceModuleStreamsResult {
         public Builder moduleStreamOnManagedInstances(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance... moduleStreamOnManagedInstances) {
             return moduleStreamOnManagedInstances(List.of(moduleStreamOnManagedInstances));
         }
+        @CustomType.Setter
         public Builder streamName(@Nullable String streamName) {
             this.streamName = streamName;
             return this;
         }
+        @CustomType.Setter
         public Builder streamStatus(@Nullable String streamStatus) {
             this.streamStatus = streamStatus;
             return this;
-        }        public GetManagedInstanceModuleStreamsResult build() {
-            return new GetManagedInstanceModuleStreamsResult(compartmentId, filters, id, managedInstanceId, moduleName, moduleStreamOnManagedInstances, streamName, streamStatus);
+        }
+        public GetManagedInstanceModuleStreamsResult build() {
+            final var o = new GetManagedInstanceModuleStreamsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.managedInstanceId = managedInstanceId;
+            o.moduleName = moduleName;
+            o.moduleStreamOnManagedInstances = moduleStreamOnManagedInstances;
+            o.streamName = streamName;
+            o.streamStatus = streamStatus;
+            return o;
         }
     }
 }

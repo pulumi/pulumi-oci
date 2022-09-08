@@ -16,28 +16,19 @@ public final class ClusterNetworkPlacementConfiguration {
      * @return The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
      * 
      */
-    private final String primarySubnetId;
+    private String primarySubnetId;
     /**
      * @return The set of secondary VNIC data for instances in the pool.
      * 
      */
-    private final @Nullable List<ClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
+    private @Nullable List<ClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
 
-    @CustomType.Constructor
-    private ClusterNetworkPlacementConfiguration(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("primarySubnetId") String primarySubnetId,
-        @CustomType.Parameter("secondaryVnicSubnets") @Nullable List<ClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
-        this.availabilityDomain = availabilityDomain;
-        this.primarySubnetId = primarySubnetId;
-        this.secondaryVnicSubnets = secondaryVnicSubnets;
-    }
-
+    private ClusterNetworkPlacementConfiguration() {}
     /**
      * @return The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
      * 
@@ -67,16 +58,12 @@ public final class ClusterNetworkPlacementConfiguration {
     public static Builder builder(ClusterNetworkPlacementConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String primarySubnetId;
         private @Nullable List<ClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterNetworkPlacementConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -84,22 +71,30 @@ public final class ClusterNetworkPlacementConfiguration {
     	      this.secondaryVnicSubnets = defaults.secondaryVnicSubnets;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder primarySubnetId(String primarySubnetId) {
             this.primarySubnetId = Objects.requireNonNull(primarySubnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder secondaryVnicSubnets(@Nullable List<ClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
             this.secondaryVnicSubnets = secondaryVnicSubnets;
             return this;
         }
         public Builder secondaryVnicSubnets(ClusterNetworkPlacementConfigurationSecondaryVnicSubnet... secondaryVnicSubnets) {
             return secondaryVnicSubnets(List.of(secondaryVnicSubnets));
-        }        public ClusterNetworkPlacementConfiguration build() {
-            return new ClusterNetworkPlacementConfiguration(availabilityDomain, primarySubnetId, secondaryVnicSubnets);
+        }
+        public ClusterNetworkPlacementConfiguration build() {
+            final var o = new ClusterNetworkPlacementConfiguration();
+            o.availabilityDomain = availabilityDomain;
+            o.primarySubnetId = primarySubnetId;
+            o.secondaryVnicSubnets = secondaryVnicSubnets;
+            return o;
         }
     }
 }

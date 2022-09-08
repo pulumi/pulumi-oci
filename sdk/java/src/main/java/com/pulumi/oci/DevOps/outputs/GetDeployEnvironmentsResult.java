@@ -18,52 +18,35 @@ public final class GetDeployEnvironmentsResult {
      * @return The OCID of a compartment.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The list of deploy_environment_collection.
      * 
      */
-    private final List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections;
+    private List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections;
     /**
      * @return Deployment environment display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDeployEnvironmentsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDeployEnvironmentsFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of a project.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The current state of the deployment environment.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDeployEnvironmentsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("deployEnvironmentCollections") List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDeployEnvironmentsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.deployEnvironmentCollections = deployEnvironmentCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.projectId = projectId;
-        this.state = state;
-    }
-
+    private GetDeployEnvironmentsResult() {}
     /**
      * @return The OCID of a compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetDeployEnvironmentsResult {
     public static Builder builder(GetDeployEnvironmentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections;
@@ -126,11 +109,7 @@ public final class GetDeployEnvironmentsResult {
         private @Nullable String id;
         private @Nullable String projectId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployEnvironmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetDeployEnvironmentsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder deployEnvironmentCollections(List<GetDeployEnvironmentsDeployEnvironmentCollection> deployEnvironmentCollections) {
             this.deployEnvironmentCollections = Objects.requireNonNull(deployEnvironmentCollections);
             return this;
@@ -153,10 +134,12 @@ public final class GetDeployEnvironmentsResult {
         public Builder deployEnvironmentCollections(GetDeployEnvironmentsDeployEnvironmentCollection... deployEnvironmentCollections) {
             return deployEnvironmentCollections(List.of(deployEnvironmentCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDeployEnvironmentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,19 +147,31 @@ public final class GetDeployEnvironmentsResult {
         public Builder filters(GetDeployEnvironmentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDeployEnvironmentsResult build() {
-            return new GetDeployEnvironmentsResult(compartmentId, deployEnvironmentCollections, displayName, filters, id, projectId, state);
+        }
+        public GetDeployEnvironmentsResult build() {
+            final var o = new GetDeployEnvironmentsResult();
+            o.compartmentId = compartmentId;
+            o.deployEnvironmentCollections = deployEnvironmentCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.projectId = projectId;
+            o.state = state;
+            return o;
         }
     }
 }

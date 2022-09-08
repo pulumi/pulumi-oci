@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetServiceCatalogsServiceCatalogCollection {
-    private final List<GetServiceCatalogsServiceCatalogCollectionItem> items;
+    private List<GetServiceCatalogsServiceCatalogCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetServiceCatalogsServiceCatalogCollection(@CustomType.Parameter("items") List<GetServiceCatalogsServiceCatalogCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetServiceCatalogsServiceCatalogCollection() {}
     public List<GetServiceCatalogsServiceCatalogCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetServiceCatalogsServiceCatalogCollection {
     public static Builder builder(GetServiceCatalogsServiceCatalogCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetServiceCatalogsServiceCatalogCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceCatalogsServiceCatalogCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetServiceCatalogsServiceCatalogCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetServiceCatalogsServiceCatalogCollectionItem... items) {
             return items(List.of(items));
-        }        public GetServiceCatalogsServiceCatalogCollection build() {
-            return new GetServiceCatalogsServiceCatalogCollection(items);
+        }
+        public GetServiceCatalogsServiceCatalogCollection build() {
+            final var o = new GetServiceCatalogsServiceCatalogCollection();
+            o.items = items;
+            return o;
         }
     }
 }

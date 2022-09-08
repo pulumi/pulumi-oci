@@ -14,21 +14,14 @@ public final class GetDeploymentSpecificationRouteLoggingPolicyExecutionLog {
      * @return Whether this policy is currently enabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
      * 
      */
-    private final String logLevel;
+    private String logLevel;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteLoggingPolicyExecutionLog(
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("logLevel") String logLevel) {
-        this.isEnabled = isEnabled;
-        this.logLevel = logLevel;
-    }
-
+    private GetDeploymentSpecificationRouteLoggingPolicyExecutionLog() {}
     /**
      * @return Whether this policy is currently enabled.
      * 
@@ -51,30 +44,32 @@ public final class GetDeploymentSpecificationRouteLoggingPolicyExecutionLog {
     public static Builder builder(GetDeploymentSpecificationRouteLoggingPolicyExecutionLog defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
         private String logLevel;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteLoggingPolicyExecutionLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
     	      this.logLevel = defaults.logLevel;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder logLevel(String logLevel) {
             this.logLevel = Objects.requireNonNull(logLevel);
             return this;
-        }        public GetDeploymentSpecificationRouteLoggingPolicyExecutionLog build() {
-            return new GetDeploymentSpecificationRouteLoggingPolicyExecutionLog(isEnabled, logLevel);
+        }
+        public GetDeploymentSpecificationRouteLoggingPolicyExecutionLog build() {
+            final var o = new GetDeploymentSpecificationRouteLoggingPolicyExecutionLog();
+            o.isEnabled = isEnabled;
+            o.logLevel = logLevel;
+            return o;
         }
     }
 }

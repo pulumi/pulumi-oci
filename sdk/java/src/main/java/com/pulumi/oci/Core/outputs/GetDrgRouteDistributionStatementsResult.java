@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrgRouteDistributionStatementsResult {
-    private final String drgRouteDistributionId;
+    private String drgRouteDistributionId;
     /**
      * @return The list of drg_route_distribution_statements.
      * 
      */
-    private final List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements;
-    private final @Nullable List<GetDrgRouteDistributionStatementsFilter> filters;
+    private List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements;
+    private @Nullable List<GetDrgRouteDistributionStatementsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDrgRouteDistributionStatementsResult(
-        @CustomType.Parameter("drgRouteDistributionId") String drgRouteDistributionId,
-        @CustomType.Parameter("drgRouteDistributionStatements") List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements,
-        @CustomType.Parameter("filters") @Nullable List<GetDrgRouteDistributionStatementsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.drgRouteDistributionId = drgRouteDistributionId;
-        this.drgRouteDistributionStatements = drgRouteDistributionStatements;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetDrgRouteDistributionStatementsResult() {}
     public String drgRouteDistributionId() {
         return this.drgRouteDistributionId;
     }
@@ -66,17 +55,13 @@ public final class GetDrgRouteDistributionStatementsResult {
     public static Builder builder(GetDrgRouteDistributionStatementsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String drgRouteDistributionId;
         private List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements;
         private @Nullable List<GetDrgRouteDistributionStatementsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDrgRouteDistributionStatementsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.drgRouteDistributionId = defaults.drgRouteDistributionId;
@@ -85,10 +70,12 @@ public final class GetDrgRouteDistributionStatementsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder drgRouteDistributionId(String drgRouteDistributionId) {
             this.drgRouteDistributionId = Objects.requireNonNull(drgRouteDistributionId);
             return this;
         }
+        @CustomType.Setter
         public Builder drgRouteDistributionStatements(List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements) {
             this.drgRouteDistributionStatements = Objects.requireNonNull(drgRouteDistributionStatements);
             return this;
@@ -96,6 +83,7 @@ public final class GetDrgRouteDistributionStatementsResult {
         public Builder drgRouteDistributionStatements(GetDrgRouteDistributionStatementsDrgRouteDistributionStatement... drgRouteDistributionStatements) {
             return drgRouteDistributionStatements(List.of(drgRouteDistributionStatements));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDrgRouteDistributionStatementsFilter> filters) {
             this.filters = filters;
             return this;
@@ -103,11 +91,18 @@ public final class GetDrgRouteDistributionStatementsResult {
         public Builder filters(GetDrgRouteDistributionStatementsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDrgRouteDistributionStatementsResult build() {
-            return new GetDrgRouteDistributionStatementsResult(drgRouteDistributionId, drgRouteDistributionStatements, filters, id);
+        }
+        public GetDrgRouteDistributionStatementsResult build() {
+            final var o = new GetDrgRouteDistributionStatementsResult();
+            o.drgRouteDistributionId = drgRouteDistributionId;
+            o.drgRouteDistributionStatements = drgRouteDistributionStatements;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

@@ -18,45 +18,30 @@ public final class GetSecurityRecipesResult {
      * @return The id of the compartment that contains the recipe
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The recipe&#39;s name
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetSecurityRecipesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetSecurityRecipesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of security_recipe_collection.
      * 
      */
-    private final List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections;
+    private List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections;
     /**
      * @return The current state of the recipe
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetSecurityRecipesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetSecurityRecipesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("securityRecipeCollections") List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.securityRecipeCollections = securityRecipeCollections;
-        this.state = state;
-    }
-
+    private GetSecurityRecipesResult() {}
     /**
      * @return The id of the compartment that contains the recipe
      * 
@@ -103,7 +88,7 @@ public final class GetSecurityRecipesResult {
     public static Builder builder(GetSecurityRecipesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetSecurityRecipesResult {
         private @Nullable String id;
         private List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityRecipesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetSecurityRecipesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityRecipesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetSecurityRecipesResult {
         public Builder filters(GetSecurityRecipesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder securityRecipeCollections(List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections) {
             this.securityRecipeCollections = Objects.requireNonNull(securityRecipeCollections);
             return this;
@@ -152,11 +138,20 @@ public final class GetSecurityRecipesResult {
         public Builder securityRecipeCollections(GetSecurityRecipesSecurityRecipeCollection... securityRecipeCollections) {
             return securityRecipeCollections(List.of(securityRecipeCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetSecurityRecipesResult build() {
-            return new GetSecurityRecipesResult(compartmentId, displayName, filters, id, securityRecipeCollections, state);
+        }
+        public GetSecurityRecipesResult build() {
+            final var o = new GetSecurityRecipesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.securityRecipeCollections = securityRecipeCollections;
+            o.state = state;
+            return o;
         }
     }
 }

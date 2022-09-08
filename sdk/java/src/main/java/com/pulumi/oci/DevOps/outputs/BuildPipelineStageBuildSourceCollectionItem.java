@@ -15,49 +15,34 @@ public final class BuildPipelineStageBuildSourceCollectionItem {
      * @return (Updatable) Branch name.
      * 
      */
-    private final @Nullable String branch;
+    private @Nullable String branch;
     /**
      * @return (Updatable) Connection identifier pertinent to Bitbucket Server source provider
      * 
      */
-    private final @Nullable String connectionId;
+    private @Nullable String connectionId;
     /**
      * @return (Updatable) The type of source provider.
      * 
      */
-    private final String connectionType;
+    private String connectionType;
     /**
      * @return (Updatable) Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The DevOps code repository ID.
      * 
      */
-    private final @Nullable String repositoryId;
+    private @Nullable String repositoryId;
     /**
      * @return (Updatable) URL for the repository.
      * 
      */
-    private final @Nullable String repositoryUrl;
+    private @Nullable String repositoryUrl;
 
-    @CustomType.Constructor
-    private BuildPipelineStageBuildSourceCollectionItem(
-        @CustomType.Parameter("branch") @Nullable String branch,
-        @CustomType.Parameter("connectionId") @Nullable String connectionId,
-        @CustomType.Parameter("connectionType") String connectionType,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("repositoryId") @Nullable String repositoryId,
-        @CustomType.Parameter("repositoryUrl") @Nullable String repositoryUrl) {
-        this.branch = branch;
-        this.connectionId = connectionId;
-        this.connectionType = connectionType;
-        this.name = name;
-        this.repositoryId = repositoryId;
-        this.repositoryUrl = repositoryUrl;
-    }
-
+    private BuildPipelineStageBuildSourceCollectionItem() {}
     /**
      * @return (Updatable) Branch name.
      * 
@@ -108,7 +93,7 @@ public final class BuildPipelineStageBuildSourceCollectionItem {
     public static Builder builder(BuildPipelineStageBuildSourceCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String branch;
         private @Nullable String connectionId;
@@ -116,11 +101,7 @@ public final class BuildPipelineStageBuildSourceCollectionItem {
         private @Nullable String name;
         private @Nullable String repositoryId;
         private @Nullable String repositoryUrl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildPipelineStageBuildSourceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.branch = defaults.branch;
@@ -131,31 +112,45 @@ public final class BuildPipelineStageBuildSourceCollectionItem {
     	      this.repositoryUrl = defaults.repositoryUrl;
         }
 
+        @CustomType.Setter
         public Builder branch(@Nullable String branch) {
             this.branch = branch;
             return this;
         }
+        @CustomType.Setter
         public Builder connectionId(@Nullable String connectionId) {
             this.connectionId = connectionId;
             return this;
         }
+        @CustomType.Setter
         public Builder connectionType(String connectionType) {
             this.connectionType = Objects.requireNonNull(connectionType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
             this.repositoryId = repositoryId;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryUrl(@Nullable String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             return this;
-        }        public BuildPipelineStageBuildSourceCollectionItem build() {
-            return new BuildPipelineStageBuildSourceCollectionItem(branch, connectionId, connectionType, name, repositoryId, repositoryUrl);
+        }
+        public BuildPipelineStageBuildSourceCollectionItem build() {
+            final var o = new BuildPipelineStageBuildSourceCollectionItem();
+            o.branch = branch;
+            o.connectionId = connectionId;
+            o.connectionType = connectionType;
+            o.name = name;
+            o.repositoryId = repositoryId;
+            o.repositoryUrl = repositoryUrl;
+            return o;
         }
     }
 }

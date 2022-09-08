@@ -16,28 +16,19 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
      * @return Filter parameters from the query string as they pass through the gateway.  The gateway applies filters after other transformations, so any parameters set or renamed must also be listed here when using an ALLOW type policy.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter> filterQueryParameters;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter> filterQueryParameters;
     /**
      * @return Rename parameters on the query string as they pass through the gateway.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter> renameQueryParameters;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter> renameQueryParameters;
     /**
      * @return Set parameters on the query string as they pass through the gateway.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter> setQueryParameters;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter> setQueryParameters;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformation(
-        @CustomType.Parameter("filterQueryParameters") List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter> filterQueryParameters,
-        @CustomType.Parameter("renameQueryParameters") List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter> renameQueryParameters,
-        @CustomType.Parameter("setQueryParameters") List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter> setQueryParameters) {
-        this.filterQueryParameters = filterQueryParameters;
-        this.renameQueryParameters = renameQueryParameters;
-        this.setQueryParameters = setQueryParameters;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformation() {}
     /**
      * @return Filter parameters from the query string as they pass through the gateway.  The gateway applies filters after other transformations, so any parameters set or renamed must also be listed here when using an ALLOW type policy.
      * 
@@ -67,16 +58,12 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter> filterQueryParameters;
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter> renameQueryParameters;
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter> setQueryParameters;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filterQueryParameters = defaults.filterQueryParameters;
@@ -84,6 +71,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     	      this.setQueryParameters = defaults.setQueryParameters;
         }
 
+        @CustomType.Setter
         public Builder filterQueryParameters(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter> filterQueryParameters) {
             this.filterQueryParameters = Objects.requireNonNull(filterQueryParameters);
             return this;
@@ -91,6 +79,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         public Builder filterQueryParameters(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter... filterQueryParameters) {
             return filterQueryParameters(List.of(filterQueryParameters));
         }
+        @CustomType.Setter
         public Builder renameQueryParameters(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter> renameQueryParameters) {
             this.renameQueryParameters = Objects.requireNonNull(renameQueryParameters);
             return this;
@@ -98,14 +87,20 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         public Builder renameQueryParameters(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter... renameQueryParameters) {
             return renameQueryParameters(List.of(renameQueryParameters));
         }
+        @CustomType.Setter
         public Builder setQueryParameters(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter> setQueryParameters) {
             this.setQueryParameters = Objects.requireNonNull(setQueryParameters);
             return this;
         }
         public Builder setQueryParameters(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter... setQueryParameters) {
             return setQueryParameters(List.of(setQueryParameters));
-        }        public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformation build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformation(filterQueryParameters, renameQueryParameters, setQueryParameters);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformation build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformation();
+            o.filterQueryParameters = filterQueryParameters;
+            o.renameQueryParameters = renameQueryParameters;
+            o.setQueryParameters = setQueryParameters;
+            return o;
         }
     }
 }

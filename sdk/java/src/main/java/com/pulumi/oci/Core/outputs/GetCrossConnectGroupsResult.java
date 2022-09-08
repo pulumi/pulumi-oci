@@ -18,45 +18,30 @@ public final class GetCrossConnectGroupsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of cross_connect_groups.
      * 
      */
-    private final List<GetCrossConnectGroupsCrossConnectGroup> crossConnectGroups;
+    private List<GetCrossConnectGroupsCrossConnectGroup> crossConnectGroups;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetCrossConnectGroupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetCrossConnectGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The cross-connect group&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetCrossConnectGroupsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("crossConnectGroups") List<GetCrossConnectGroupsCrossConnectGroup> crossConnectGroups,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetCrossConnectGroupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.crossConnectGroups = crossConnectGroups;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetCrossConnectGroupsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
      * 
@@ -103,7 +88,7 @@ public final class GetCrossConnectGroupsResult {
     public static Builder builder(GetCrossConnectGroupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetCrossConnectGroupsCrossConnectGroup> crossConnectGroups;
@@ -111,11 +96,7 @@ public final class GetCrossConnectGroupsResult {
         private @Nullable List<GetCrossConnectGroupsFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCrossConnectGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetCrossConnectGroupsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder crossConnectGroups(List<GetCrossConnectGroupsCrossConnectGroup> crossConnectGroups) {
             this.crossConnectGroups = Objects.requireNonNull(crossConnectGroups);
             return this;
@@ -137,10 +120,12 @@ public final class GetCrossConnectGroupsResult {
         public Builder crossConnectGroups(GetCrossConnectGroupsCrossConnectGroup... crossConnectGroups) {
             return crossConnectGroups(List.of(crossConnectGroups));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCrossConnectGroupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -148,15 +133,25 @@ public final class GetCrossConnectGroupsResult {
         public Builder filters(GetCrossConnectGroupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetCrossConnectGroupsResult build() {
-            return new GetCrossConnectGroupsResult(compartmentId, crossConnectGroups, displayName, filters, id, state);
+        }
+        public GetCrossConnectGroupsResult build() {
+            final var o = new GetCrossConnectGroupsResult();
+            o.compartmentId = compartmentId;
+            o.crossConnectGroups = crossConnectGroups;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

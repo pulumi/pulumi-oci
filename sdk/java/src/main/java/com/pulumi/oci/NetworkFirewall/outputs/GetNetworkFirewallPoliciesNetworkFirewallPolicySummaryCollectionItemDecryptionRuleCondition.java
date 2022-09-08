@@ -14,21 +14,14 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
      * @return An array of IP address list names to be evaluated against the traffic destination address.
      * 
      */
-    private final List<String> destinations;
+    private List<String> destinations;
     /**
      * @return An array of IP address list names to be evaluated against the traffic source address.
      * 
      */
-    private final List<String> sources;
+    private List<String> sources;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition(
-        @CustomType.Parameter("destinations") List<String> destinations,
-        @CustomType.Parameter("sources") List<String> sources) {
-        this.destinations = destinations;
-        this.sources = sources;
-    }
-
+    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition() {}
     /**
      * @return An array of IP address list names to be evaluated against the traffic destination address.
      * 
@@ -51,21 +44,18 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     public static Builder builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> destinations;
         private List<String> sources;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinations = defaults.destinations;
     	      this.sources = defaults.sources;
         }
 
+        @CustomType.Setter
         public Builder destinations(List<String> destinations) {
             this.destinations = Objects.requireNonNull(destinations);
             return this;
@@ -73,14 +63,19 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
         public Builder destinations(String... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder sources(List<String> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
         }
         public Builder sources(String... sources) {
             return sources(List.of(sources));
-        }        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition build() {
-            return new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition(destinations, sources);
+        }
+        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition build() {
+            final var o = new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition();
+            o.destinations = destinations;
+            o.sources = sources;
+            return o;
         }
     }
 }

@@ -14,45 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPublicIpPoolsResult {
-    private final @Nullable String byoipRangeId;
+    private @Nullable String byoipRangeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this pool.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetPublicIpPoolsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetPublicIpPoolsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of public_ip_pool_collection.
      * 
      */
-    private final List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections;
+    private List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections;
 
-    @CustomType.Constructor
-    private GetPublicIpPoolsResult(
-        @CustomType.Parameter("byoipRangeId") @Nullable String byoipRangeId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetPublicIpPoolsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("publicIpPoolCollections") List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections) {
-        this.byoipRangeId = byoipRangeId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.publicIpPoolCollections = publicIpPoolCollections;
-    }
-
+    private GetPublicIpPoolsResult() {}
     public Optional<String> byoipRangeId() {
         return Optional.ofNullable(this.byoipRangeId);
     }
@@ -95,7 +80,7 @@ public final class GetPublicIpPoolsResult {
     public static Builder builder(GetPublicIpPoolsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String byoipRangeId;
         private String compartmentId;
@@ -103,11 +88,7 @@ public final class GetPublicIpPoolsResult {
         private @Nullable List<GetPublicIpPoolsFilter> filters;
         private String id;
         private List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicIpPoolsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.byoipRangeId = defaults.byoipRangeId;
@@ -118,18 +99,22 @@ public final class GetPublicIpPoolsResult {
     	      this.publicIpPoolCollections = defaults.publicIpPoolCollections;
         }
 
+        @CustomType.Setter
         public Builder byoipRangeId(@Nullable String byoipRangeId) {
             this.byoipRangeId = byoipRangeId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPublicIpPoolsFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,18 +122,28 @@ public final class GetPublicIpPoolsResult {
         public Builder filters(GetPublicIpPoolsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder publicIpPoolCollections(List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections) {
             this.publicIpPoolCollections = Objects.requireNonNull(publicIpPoolCollections);
             return this;
         }
         public Builder publicIpPoolCollections(GetPublicIpPoolsPublicIpPoolCollection... publicIpPoolCollections) {
             return publicIpPoolCollections(List.of(publicIpPoolCollections));
-        }        public GetPublicIpPoolsResult build() {
-            return new GetPublicIpPoolsResult(byoipRangeId, compartmentId, displayName, filters, id, publicIpPoolCollections);
+        }
+        public GetPublicIpPoolsResult build() {
+            final var o = new GetPublicIpPoolsResult();
+            o.byoipRangeId = byoipRangeId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.publicIpPoolCollections = publicIpPoolCollections;
+            return o;
         }
     }
 }

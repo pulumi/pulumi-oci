@@ -17,63 +17,44 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
      * @return The destination of the request.
      * 
      */
-    private final List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination> destinations;
+    private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination> destinations;
     /**
      * @return The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
      * 
      */
-    private final List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost> ingressGatewayHosts;
+    private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost> ingressGatewayHosts;
     /**
      * @return If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
      * 
      */
-    private final Boolean isGrpc;
+    private Boolean isGrpc;
     /**
      * @return If true, the hostname will be rewritten to the target virtual deployment&#39;s DNS hostname.
      * 
      */
-    private final Boolean isHostRewriteEnabled;
+    private Boolean isHostRewriteEnabled;
     /**
      * @return If true, the matched path prefix will be rewritten to &#39;/&#39; before being directed to the target virtual deployment.
      * 
      */
-    private final Boolean isPathRewriteEnabled;
+    private Boolean isPathRewriteEnabled;
     /**
      * @return Route to match
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return Match type for the route
      * 
      */
-    private final String pathType;
+    private String pathType;
     /**
      * @return Type of protocol.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule(
-        @CustomType.Parameter("destinations") List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination> destinations,
-        @CustomType.Parameter("ingressGatewayHosts") List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost> ingressGatewayHosts,
-        @CustomType.Parameter("isGrpc") Boolean isGrpc,
-        @CustomType.Parameter("isHostRewriteEnabled") Boolean isHostRewriteEnabled,
-        @CustomType.Parameter("isPathRewriteEnabled") Boolean isPathRewriteEnabled,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("pathType") String pathType,
-        @CustomType.Parameter("type") String type) {
-        this.destinations = destinations;
-        this.ingressGatewayHosts = ingressGatewayHosts;
-        this.isGrpc = isGrpc;
-        this.isHostRewriteEnabled = isHostRewriteEnabled;
-        this.isPathRewriteEnabled = isPathRewriteEnabled;
-        this.path = path;
-        this.pathType = pathType;
-        this.type = type;
-    }
-
+    private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule() {}
     /**
      * @return The destination of the request.
      * 
@@ -138,7 +119,7 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
     public static Builder builder(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination> destinations;
         private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost> ingressGatewayHosts;
@@ -148,11 +129,7 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
         private String path;
         private String pathType;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinations = defaults.destinations;
@@ -165,6 +142,7 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder destinations(List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination> destinations) {
             this.destinations = Objects.requireNonNull(destinations);
             return this;
@@ -172,6 +150,7 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
         public Builder destinations(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder ingressGatewayHosts(List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost> ingressGatewayHosts) {
             this.ingressGatewayHosts = Objects.requireNonNull(ingressGatewayHosts);
             return this;
@@ -179,31 +158,47 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
         public Builder ingressGatewayHosts(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost... ingressGatewayHosts) {
             return ingressGatewayHosts(List.of(ingressGatewayHosts));
         }
+        @CustomType.Setter
         public Builder isGrpc(Boolean isGrpc) {
             this.isGrpc = Objects.requireNonNull(isGrpc);
             return this;
         }
+        @CustomType.Setter
         public Builder isHostRewriteEnabled(Boolean isHostRewriteEnabled) {
             this.isHostRewriteEnabled = Objects.requireNonNull(isHostRewriteEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isPathRewriteEnabled(Boolean isPathRewriteEnabled) {
             this.isPathRewriteEnabled = Objects.requireNonNull(isPathRewriteEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder pathType(String pathType) {
             this.pathType = Objects.requireNonNull(pathType);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule build() {
-            return new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule(destinations, ingressGatewayHosts, isGrpc, isHostRewriteEnabled, isPathRewriteEnabled, path, pathType, type);
+        }
+        public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule build() {
+            final var o = new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule();
+            o.destinations = destinations;
+            o.ingressGatewayHosts = ingressGatewayHosts;
+            o.isGrpc = isGrpc;
+            o.isHostRewriteEnabled = isHostRewriteEnabled;
+            o.isPathRewriteEnabled = isPathRewriteEnabled;
+            o.path = path;
+            o.pathType = pathType;
+            o.type = type;
+            return o;
         }
     }
 }

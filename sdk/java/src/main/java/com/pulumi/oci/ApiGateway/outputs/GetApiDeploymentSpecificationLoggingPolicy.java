@@ -15,21 +15,14 @@ public final class GetApiDeploymentSpecificationLoggingPolicy {
      * @return Configures the logging policies for the access logs of an API Deployment.
      * 
      */
-    private final List<GetApiDeploymentSpecificationLoggingPolicyAccessLog> accessLogs;
+    private List<GetApiDeploymentSpecificationLoggingPolicyAccessLog> accessLogs;
     /**
      * @return Configures the logging policies for the execution logs of an API Deployment.
      * 
      */
-    private final List<GetApiDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs;
+    private List<GetApiDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationLoggingPolicy(
-        @CustomType.Parameter("accessLogs") List<GetApiDeploymentSpecificationLoggingPolicyAccessLog> accessLogs,
-        @CustomType.Parameter("executionLogs") List<GetApiDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs) {
-        this.accessLogs = accessLogs;
-        this.executionLogs = executionLogs;
-    }
-
+    private GetApiDeploymentSpecificationLoggingPolicy() {}
     /**
      * @return Configures the logging policies for the access logs of an API Deployment.
      * 
@@ -52,21 +45,18 @@ public final class GetApiDeploymentSpecificationLoggingPolicy {
     public static Builder builder(GetApiDeploymentSpecificationLoggingPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiDeploymentSpecificationLoggingPolicyAccessLog> accessLogs;
         private List<GetApiDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationLoggingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLogs = defaults.accessLogs;
     	      this.executionLogs = defaults.executionLogs;
         }
 
+        @CustomType.Setter
         public Builder accessLogs(List<GetApiDeploymentSpecificationLoggingPolicyAccessLog> accessLogs) {
             this.accessLogs = Objects.requireNonNull(accessLogs);
             return this;
@@ -74,14 +64,19 @@ public final class GetApiDeploymentSpecificationLoggingPolicy {
         public Builder accessLogs(GetApiDeploymentSpecificationLoggingPolicyAccessLog... accessLogs) {
             return accessLogs(List.of(accessLogs));
         }
+        @CustomType.Setter
         public Builder executionLogs(List<GetApiDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs) {
             this.executionLogs = Objects.requireNonNull(executionLogs);
             return this;
         }
         public Builder executionLogs(GetApiDeploymentSpecificationLoggingPolicyExecutionLog... executionLogs) {
             return executionLogs(List.of(executionLogs));
-        }        public GetApiDeploymentSpecificationLoggingPolicy build() {
-            return new GetApiDeploymentSpecificationLoggingPolicy(accessLogs, executionLogs);
+        }
+        public GetApiDeploymentSpecificationLoggingPolicy build() {
+            final var o = new GetApiDeploymentSpecificationLoggingPolicy();
+            o.accessLogs = accessLogs;
+            o.executionLogs = executionLogs;
+            return o;
         }
     }
 }

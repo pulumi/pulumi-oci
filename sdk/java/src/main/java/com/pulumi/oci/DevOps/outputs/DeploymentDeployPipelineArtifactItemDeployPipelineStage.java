@@ -15,13 +15,9 @@ public final class DeploymentDeployPipelineArtifactItemDeployPipelineStage {
      * @return List of arguments provided at the time of deployment.
      * 
      */
-    private final @Nullable List<DeploymentDeployPipelineArtifactItemDeployPipelineStageItem> items;
+    private @Nullable List<DeploymentDeployPipelineArtifactItemDeployPipelineStageItem> items;
 
-    @CustomType.Constructor
-    private DeploymentDeployPipelineArtifactItemDeployPipelineStage(@CustomType.Parameter("items") @Nullable List<DeploymentDeployPipelineArtifactItemDeployPipelineStageItem> items) {
-        this.items = items;
-    }
-
+    private DeploymentDeployPipelineArtifactItemDeployPipelineStage() {}
     /**
      * @return List of arguments provided at the time of deployment.
      * 
@@ -37,27 +33,27 @@ public final class DeploymentDeployPipelineArtifactItemDeployPipelineStage {
     public static Builder builder(DeploymentDeployPipelineArtifactItemDeployPipelineStage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<DeploymentDeployPipelineArtifactItemDeployPipelineStageItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentDeployPipelineArtifactItemDeployPipelineStage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<DeploymentDeployPipelineArtifactItemDeployPipelineStageItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(DeploymentDeployPipelineArtifactItemDeployPipelineStageItem... items) {
             return items(List.of(items));
-        }        public DeploymentDeployPipelineArtifactItemDeployPipelineStage build() {
-            return new DeploymentDeployPipelineArtifactItemDeployPipelineStage(items);
+        }
+        public DeploymentDeployPipelineArtifactItemDeployPipelineStage build() {
+            final var o = new DeploymentDeployPipelineArtifactItemDeployPipelineStage();
+            o.items = items;
+            return o;
         }
     }
 }

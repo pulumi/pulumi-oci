@@ -14,157 +14,110 @@ public final class GetDbNodesDbNode {
      * @return Additional information about the planned maintenance.
      * 
      */
-    private final String additionalDetails;
+    private String additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * 
      */
-    private final String backupIpId;
+    private String backupIpId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
      * 
      */
-    private final String backupVnic2id;
+    private String backupVnic2id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      * 
      */
-    private final String backupVnicId;
+    private String backupVnicId;
     /**
      * @return The number of CPU cores enabled on the Db node.
      * 
      */
-    private final Integer cpuCoreCount;
-    private final String dbNodeId;
+    private Integer cpuCoreCount;
+    private String dbNodeId;
     /**
      * @return The allocated local node storage in GBs on the Db node.
      * 
      */
-    private final Integer dbNodeStorageSizeInGbs;
+    private Integer dbNodeStorageSizeInGbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
      * 
      */
-    private final String dbServerId;
+    private String dbServerId;
     /**
      * @return The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      * 
      */
-    private final String dbSystemId;
+    private String dbSystemId;
     /**
      * @return The name of the Fault Domain the instance is contained in.
      * 
      */
-    private final String faultDomain;
+    private String faultDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * 
      */
-    private final String hostIpId;
+    private String hostIpId;
     /**
      * @return The host name for the database node.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The type of database node maintenance.
      * 
      */
-    private final String maintenanceType;
+    private String maintenanceType;
     /**
      * @return The allocated memory in GBs on the Db node.
      * 
      */
-    private final Integer memorySizeInGbs;
+    private Integer memorySizeInGbs;
     /**
      * @return The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
      * 
      */
-    private final Integer softwareStorageSizeInGb;
+    private Integer softwareStorageSizeInGb;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time that the database node was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return End date and time of maintenance window.
      * 
      */
-    private final String timeMaintenanceWindowEnd;
+    private String timeMaintenanceWindowEnd;
     /**
      * @return Start date and time of maintenance window.
      * 
      */
-    private final String timeMaintenanceWindowStart;
+    private String timeMaintenanceWindowStart;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      * 
      */
-    private final String vnic2id;
+    private String vnic2id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * 
      */
-    private final String vnicId;
+    private String vnicId;
 
-    @CustomType.Constructor
-    private GetDbNodesDbNode(
-        @CustomType.Parameter("additionalDetails") String additionalDetails,
-        @CustomType.Parameter("backupIpId") String backupIpId,
-        @CustomType.Parameter("backupVnic2id") String backupVnic2id,
-        @CustomType.Parameter("backupVnicId") String backupVnicId,
-        @CustomType.Parameter("cpuCoreCount") Integer cpuCoreCount,
-        @CustomType.Parameter("dbNodeId") String dbNodeId,
-        @CustomType.Parameter("dbNodeStorageSizeInGbs") Integer dbNodeStorageSizeInGbs,
-        @CustomType.Parameter("dbServerId") String dbServerId,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("faultDomain") String faultDomain,
-        @CustomType.Parameter("hostIpId") String hostIpId,
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("maintenanceType") String maintenanceType,
-        @CustomType.Parameter("memorySizeInGbs") Integer memorySizeInGbs,
-        @CustomType.Parameter("softwareStorageSizeInGb") Integer softwareStorageSizeInGb,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeMaintenanceWindowEnd") String timeMaintenanceWindowEnd,
-        @CustomType.Parameter("timeMaintenanceWindowStart") String timeMaintenanceWindowStart,
-        @CustomType.Parameter("vnic2id") String vnic2id,
-        @CustomType.Parameter("vnicId") String vnicId) {
-        this.additionalDetails = additionalDetails;
-        this.backupIpId = backupIpId;
-        this.backupVnic2id = backupVnic2id;
-        this.backupVnicId = backupVnicId;
-        this.cpuCoreCount = cpuCoreCount;
-        this.dbNodeId = dbNodeId;
-        this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
-        this.dbServerId = dbServerId;
-        this.dbSystemId = dbSystemId;
-        this.faultDomain = faultDomain;
-        this.hostIpId = hostIpId;
-        this.hostname = hostname;
-        this.id = id;
-        this.maintenanceType = maintenanceType;
-        this.memorySizeInGbs = memorySizeInGbs;
-        this.softwareStorageSizeInGb = softwareStorageSizeInGb;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
-        this.timeMaintenanceWindowStart = timeMaintenanceWindowStart;
-        this.vnic2id = vnic2id;
-        this.vnicId = vnicId;
-    }
-
+    private GetDbNodesDbNode() {}
     /**
      * @return Additional information about the planned maintenance.
      * 
@@ -323,7 +276,7 @@ public final class GetDbNodesDbNode {
     public static Builder builder(GetDbNodesDbNode defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String additionalDetails;
         private String backupIpId;
@@ -347,11 +300,7 @@ public final class GetDbNodesDbNode {
         private String timeMaintenanceWindowStart;
         private String vnic2id;
         private String vnicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbNodesDbNode defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalDetails = defaults.additionalDetails;
@@ -378,95 +327,141 @@ public final class GetDbNodesDbNode {
     	      this.vnicId = defaults.vnicId;
         }
 
+        @CustomType.Setter
         public Builder additionalDetails(String additionalDetails) {
             this.additionalDetails = Objects.requireNonNull(additionalDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder backupIpId(String backupIpId) {
             this.backupIpId = Objects.requireNonNull(backupIpId);
             return this;
         }
+        @CustomType.Setter
         public Builder backupVnic2id(String backupVnic2id) {
             this.backupVnic2id = Objects.requireNonNull(backupVnic2id);
             return this;
         }
+        @CustomType.Setter
         public Builder backupVnicId(String backupVnicId) {
             this.backupVnicId = Objects.requireNonNull(backupVnicId);
             return this;
         }
+        @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder dbNodeId(String dbNodeId) {
             this.dbNodeId = Objects.requireNonNull(dbNodeId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
             this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder dbServerId(String dbServerId) {
             this.dbServerId = Objects.requireNonNull(dbServerId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = Objects.requireNonNull(faultDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder hostIpId(String hostIpId) {
             this.hostIpId = Objects.requireNonNull(hostIpId);
             return this;
         }
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder maintenanceType(String maintenanceType) {
             this.maintenanceType = Objects.requireNonNull(maintenanceType);
             return this;
         }
+        @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
             this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder softwareStorageSizeInGb(Integer softwareStorageSizeInGb) {
             this.softwareStorageSizeInGb = Objects.requireNonNull(softwareStorageSizeInGb);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeMaintenanceWindowEnd(String timeMaintenanceWindowEnd) {
             this.timeMaintenanceWindowEnd = Objects.requireNonNull(timeMaintenanceWindowEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeMaintenanceWindowStart(String timeMaintenanceWindowStart) {
             this.timeMaintenanceWindowStart = Objects.requireNonNull(timeMaintenanceWindowStart);
             return this;
         }
+        @CustomType.Setter
         public Builder vnic2id(String vnic2id) {
             this.vnic2id = Objects.requireNonNull(vnic2id);
             return this;
         }
+        @CustomType.Setter
         public Builder vnicId(String vnicId) {
             this.vnicId = Objects.requireNonNull(vnicId);
             return this;
-        }        public GetDbNodesDbNode build() {
-            return new GetDbNodesDbNode(additionalDetails, backupIpId, backupVnic2id, backupVnicId, cpuCoreCount, dbNodeId, dbNodeStorageSizeInGbs, dbServerId, dbSystemId, faultDomain, hostIpId, hostname, id, maintenanceType, memorySizeInGbs, softwareStorageSizeInGb, state, timeCreated, timeMaintenanceWindowEnd, timeMaintenanceWindowStart, vnic2id, vnicId);
+        }
+        public GetDbNodesDbNode build() {
+            final var o = new GetDbNodesDbNode();
+            o.additionalDetails = additionalDetails;
+            o.backupIpId = backupIpId;
+            o.backupVnic2id = backupVnic2id;
+            o.backupVnicId = backupVnicId;
+            o.cpuCoreCount = cpuCoreCount;
+            o.dbNodeId = dbNodeId;
+            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            o.dbServerId = dbServerId;
+            o.dbSystemId = dbSystemId;
+            o.faultDomain = faultDomain;
+            o.hostIpId = hostIpId;
+            o.hostname = hostname;
+            o.id = id;
+            o.maintenanceType = maintenanceType;
+            o.memorySizeInGbs = memorySizeInGbs;
+            o.softwareStorageSizeInGb = softwareStorageSizeInGb;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
+            o.timeMaintenanceWindowStart = timeMaintenanceWindowStart;
+            o.vnic2id = vnic2id;
+            o.vnicId = vnicId;
+            return o;
         }
     }
 }

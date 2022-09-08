@@ -13,37 +13,22 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAwrHubAwrSnapshotResult {
-    private final String awrHubId;
-    private final String awrSourceDatabaseIdentifier;
+    private String awrHubId;
+    private String awrSourceDatabaseIdentifier;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A list of AWR snapshot summary data.
      * 
      */
-    private final List<GetAwrHubAwrSnapshotItem> items;
-    private final @Nullable String timeGreaterThanOrEqualTo;
-    private final @Nullable String timeLessThanOrEqualTo;
+    private List<GetAwrHubAwrSnapshotItem> items;
+    private @Nullable String timeGreaterThanOrEqualTo;
+    private @Nullable String timeLessThanOrEqualTo;
 
-    @CustomType.Constructor
-    private GetAwrHubAwrSnapshotResult(
-        @CustomType.Parameter("awrHubId") String awrHubId,
-        @CustomType.Parameter("awrSourceDatabaseIdentifier") String awrSourceDatabaseIdentifier,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetAwrHubAwrSnapshotItem> items,
-        @CustomType.Parameter("timeGreaterThanOrEqualTo") @Nullable String timeGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeLessThanOrEqualTo") @Nullable String timeLessThanOrEqualTo) {
-        this.awrHubId = awrHubId;
-        this.awrSourceDatabaseIdentifier = awrSourceDatabaseIdentifier;
-        this.id = id;
-        this.items = items;
-        this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-        this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-    }
-
+    private GetAwrHubAwrSnapshotResult() {}
     public String awrHubId() {
         return this.awrHubId;
     }
@@ -78,7 +63,7 @@ public final class GetAwrHubAwrSnapshotResult {
     public static Builder builder(GetAwrHubAwrSnapshotResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String awrHubId;
         private String awrSourceDatabaseIdentifier;
@@ -86,11 +71,7 @@ public final class GetAwrHubAwrSnapshotResult {
         private List<GetAwrHubAwrSnapshotItem> items;
         private @Nullable String timeGreaterThanOrEqualTo;
         private @Nullable String timeLessThanOrEqualTo;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAwrHubAwrSnapshotResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.awrHubId = defaults.awrHubId;
@@ -101,18 +82,22 @@ public final class GetAwrHubAwrSnapshotResult {
     	      this.timeLessThanOrEqualTo = defaults.timeLessThanOrEqualTo;
         }
 
+        @CustomType.Setter
         public Builder awrHubId(String awrHubId) {
             this.awrHubId = Objects.requireNonNull(awrHubId);
             return this;
         }
+        @CustomType.Setter
         public Builder awrSourceDatabaseIdentifier(String awrSourceDatabaseIdentifier) {
             this.awrSourceDatabaseIdentifier = Objects.requireNonNull(awrSourceDatabaseIdentifier);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetAwrHubAwrSnapshotItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -120,15 +105,25 @@ public final class GetAwrHubAwrSnapshotResult {
         public Builder items(GetAwrHubAwrSnapshotItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
-        }        public GetAwrHubAwrSnapshotResult build() {
-            return new GetAwrHubAwrSnapshotResult(awrHubId, awrSourceDatabaseIdentifier, id, items, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo);
+        }
+        public GetAwrHubAwrSnapshotResult build() {
+            final var o = new GetAwrHubAwrSnapshotResult();
+            o.awrHubId = awrHubId;
+            o.awrSourceDatabaseIdentifier = awrSourceDatabaseIdentifier;
+            o.id = id;
+            o.items = items;
+            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            return o;
         }
     }
 }

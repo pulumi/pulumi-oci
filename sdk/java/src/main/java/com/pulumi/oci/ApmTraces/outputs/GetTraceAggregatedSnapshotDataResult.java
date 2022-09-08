@@ -11,31 +11,20 @@ import java.util.Objects;
 
 @CustomType
 public final class GetTraceAggregatedSnapshotDataResult {
-    private final String apmDomainId;
+    private String apmDomainId;
     /**
      * @return Aggregated snapshot details.
      * 
      */
-    private final List<GetTraceAggregatedSnapshotDataDetail> details;
+    private List<GetTraceAggregatedSnapshotDataDetail> details;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String traceKey;
+    private String id;
+    private String traceKey;
 
-    @CustomType.Constructor
-    private GetTraceAggregatedSnapshotDataResult(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("details") List<GetTraceAggregatedSnapshotDataDetail> details,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("traceKey") String traceKey) {
-        this.apmDomainId = apmDomainId;
-        this.details = details;
-        this.id = id;
-        this.traceKey = traceKey;
-    }
-
+    private GetTraceAggregatedSnapshotDataResult() {}
     public String apmDomainId() {
         return this.apmDomainId;
     }
@@ -64,17 +53,13 @@ public final class GetTraceAggregatedSnapshotDataResult {
     public static Builder builder(GetTraceAggregatedSnapshotDataResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private List<GetTraceAggregatedSnapshotDataDetail> details;
         private String id;
         private String traceKey;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTraceAggregatedSnapshotDataResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -83,10 +68,12 @@ public final class GetTraceAggregatedSnapshotDataResult {
     	      this.traceKey = defaults.traceKey;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder details(List<GetTraceAggregatedSnapshotDataDetail> details) {
             this.details = Objects.requireNonNull(details);
             return this;
@@ -94,15 +81,23 @@ public final class GetTraceAggregatedSnapshotDataResult {
         public Builder details(GetTraceAggregatedSnapshotDataDetail... details) {
             return details(List.of(details));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder traceKey(String traceKey) {
             this.traceKey = Objects.requireNonNull(traceKey);
             return this;
-        }        public GetTraceAggregatedSnapshotDataResult build() {
-            return new GetTraceAggregatedSnapshotDataResult(apmDomainId, details, id, traceKey);
+        }
+        public GetTraceAggregatedSnapshotDataResult build() {
+            final var o = new GetTraceAggregatedSnapshotDataResult();
+            o.apmDomainId = apmDomainId;
+            o.details = details;
+            o.id = id;
+            o.traceKey = traceKey;
+            return o;
         }
     }
 }

@@ -13,28 +13,19 @@ public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return A header field name that conforms to RFC 7230.  Example: `example_header_name`
      * 
      */
-    private final String header;
+    private String header;
     /**
      * @return The value of the header.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("header") String header,
-        @CustomType.Parameter("value") String value) {
-        this.action = action;
-        this.header = header;
-        this.value = value;
-    }
-
+    private GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation() {}
     /**
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
@@ -64,16 +55,12 @@ public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
     public static Builder builder(GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private String header;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -81,19 +68,27 @@ public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder header(String header) {
             this.header = Objects.requireNonNull(header);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation build() {
-            return new GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation(action, header, value);
+        }
+        public GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation build() {
+            final var o = new GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation();
+            o.action = action;
+            o.header = header;
+            o.value = value;
+            return o;
         }
     }
 }

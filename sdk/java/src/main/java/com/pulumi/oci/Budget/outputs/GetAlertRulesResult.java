@@ -18,45 +18,30 @@ public final class GetAlertRulesResult {
      * @return The list of alert_rules.
      * 
      */
-    private final List<GetAlertRulesAlertRule> alertRules;
+    private List<GetAlertRulesAlertRule> alertRules;
     /**
      * @return The OCID of the budget.
      * 
      */
-    private final String budgetId;
+    private String budgetId;
     /**
      * @return The name of the alert rule. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAlertRulesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAlertRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the alert rule.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetAlertRulesResult(
-        @CustomType.Parameter("alertRules") List<GetAlertRulesAlertRule> alertRules,
-        @CustomType.Parameter("budgetId") String budgetId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAlertRulesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.alertRules = alertRules;
-        this.budgetId = budgetId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetAlertRulesResult() {}
     /**
      * @return The list of alert_rules.
      * 
@@ -103,7 +88,7 @@ public final class GetAlertRulesResult {
     public static Builder builder(GetAlertRulesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAlertRulesAlertRule> alertRules;
         private String budgetId;
@@ -111,11 +96,7 @@ public final class GetAlertRulesResult {
         private @Nullable List<GetAlertRulesFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alertRules = defaults.alertRules;
@@ -126,6 +107,7 @@ public final class GetAlertRulesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder alertRules(List<GetAlertRulesAlertRule> alertRules) {
             this.alertRules = Objects.requireNonNull(alertRules);
             return this;
@@ -133,14 +115,17 @@ public final class GetAlertRulesResult {
         public Builder alertRules(GetAlertRulesAlertRule... alertRules) {
             return alertRules(List.of(alertRules));
         }
+        @CustomType.Setter
         public Builder budgetId(String budgetId) {
             this.budgetId = Objects.requireNonNull(budgetId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAlertRulesFilter> filters) {
             this.filters = filters;
             return this;
@@ -148,15 +133,25 @@ public final class GetAlertRulesResult {
         public Builder filters(GetAlertRulesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetAlertRulesResult build() {
-            return new GetAlertRulesResult(alertRules, budgetId, displayName, filters, id, state);
+        }
+        public GetAlertRulesResult build() {
+            final var o = new GetAlertRulesResult();
+            o.alertRules = alertRules;
+            o.budgetId = budgetId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

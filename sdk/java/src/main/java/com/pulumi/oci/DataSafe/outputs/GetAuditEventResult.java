@@ -14,41 +14,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditEventResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Array of audit event summary.
      * 
      */
-    private final List<GetAuditEventItem> items;
-    private final @Nullable String scimQuery;
+    private List<GetAuditEventItem> items;
+    private @Nullable String scimQuery;
 
-    @CustomType.Constructor
-    private GetAuditEventResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetAuditEventItem> items,
-        @CustomType.Parameter("scimQuery") @Nullable String scimQuery) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.id = id;
-        this.items = items;
-        this.scimQuery = scimQuery;
-    }
-
+    private GetAuditEventResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -87,7 +72,7 @@ public final class GetAuditEventResult {
     public static Builder builder(GetAuditEventResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -95,11 +80,7 @@ public final class GetAuditEventResult {
         private String id;
         private List<GetAuditEventItem> items;
         private @Nullable String scimQuery;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditEventResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -110,22 +91,27 @@ public final class GetAuditEventResult {
     	      this.scimQuery = defaults.scimQuery;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetAuditEventItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -133,11 +119,20 @@ public final class GetAuditEventResult {
         public Builder items(GetAuditEventItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder scimQuery(@Nullable String scimQuery) {
             this.scimQuery = scimQuery;
             return this;
-        }        public GetAuditEventResult build() {
-            return new GetAuditEventResult(accessLevel, compartmentId, compartmentIdInSubtree, id, items, scimQuery);
+        }
+        public GetAuditEventResult build() {
+            final var o = new GetAuditEventResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.id = id;
+            o.items = items;
+            o.scimQuery = scimQuery;
+            return o;
         }
     }
 }

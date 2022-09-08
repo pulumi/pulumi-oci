@@ -14,31 +14,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSslCipherSuitesResult {
-    private final @Nullable List<GetSslCipherSuitesFilter> filters;
+    private @Nullable List<GetSslCipherSuitesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String loadBalancerId;
+    private String id;
+    private @Nullable String loadBalancerId;
     /**
      * @return The list of ssl_cipher_suites.
      * 
      */
-    private final List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites;
+    private List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites;
 
-    @CustomType.Constructor
-    private GetSslCipherSuitesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetSslCipherSuitesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") @Nullable String loadBalancerId,
-        @CustomType.Parameter("sslCipherSuites") List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites) {
-        this.filters = filters;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-        this.sslCipherSuites = sslCipherSuites;
-    }
-
+    private GetSslCipherSuitesResult() {}
     public List<GetSslCipherSuitesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -67,17 +56,13 @@ public final class GetSslCipherSuitesResult {
     public static Builder builder(GetSslCipherSuitesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSslCipherSuitesFilter> filters;
         private String id;
         private @Nullable String loadBalancerId;
         private List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSslCipherSuitesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -86,6 +71,7 @@ public final class GetSslCipherSuitesResult {
     	      this.sslCipherSuites = defaults.sslCipherSuites;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSslCipherSuitesFilter> filters) {
             this.filters = filters;
             return this;
@@ -93,22 +79,31 @@ public final class GetSslCipherSuitesResult {
         public Builder filters(GetSslCipherSuitesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(@Nullable String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             return this;
         }
+        @CustomType.Setter
         public Builder sslCipherSuites(List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites) {
             this.sslCipherSuites = Objects.requireNonNull(sslCipherSuites);
             return this;
         }
         public Builder sslCipherSuites(GetSslCipherSuitesSslCipherSuite... sslCipherSuites) {
             return sslCipherSuites(List.of(sslCipherSuites));
-        }        public GetSslCipherSuitesResult build() {
-            return new GetSslCipherSuitesResult(filters, id, loadBalancerId, sslCipherSuites);
+        }
+        public GetSslCipherSuitesResult build() {
+            final var o = new GetSslCipherSuitesResult();
+            o.filters = filters;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            o.sslCipherSuites = sslCipherSuites;
+            return o;
         }
     }
 }

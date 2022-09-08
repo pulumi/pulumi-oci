@@ -17,34 +17,21 @@ public final class GetManagedDatabaseUserProxiedForUserResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An array of user resources.
      * 
      */
-    private final List<GetManagedDatabaseUserProxiedForUserItem> items;
-    private final String managedDatabaseId;
+    private List<GetManagedDatabaseUserProxiedForUserItem> items;
+    private String managedDatabaseId;
     /**
      * @return The name of a proxy user or the name of the client user.
      * 
      */
-    private final @Nullable String name;
-    private final String userName;
+    private @Nullable String name;
+    private String userName;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserProxiedForUserResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetManagedDatabaseUserProxiedForUserItem> items,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("userName") String userName) {
-        this.id = id;
-        this.items = items;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.userName = userName;
-    }
-
+    private GetManagedDatabaseUserProxiedForUserResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -80,18 +67,14 @@ public final class GetManagedDatabaseUserProxiedForUserResult {
     public static Builder builder(GetManagedDatabaseUserProxiedForUserResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetManagedDatabaseUserProxiedForUserItem> items;
         private String managedDatabaseId;
         private @Nullable String name;
         private String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserProxiedForUserResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -101,10 +84,12 @@ public final class GetManagedDatabaseUserProxiedForUserResult {
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseUserProxiedForUserItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -112,19 +97,29 @@ public final class GetManagedDatabaseUserProxiedForUserResult {
         public Builder items(GetManagedDatabaseUserProxiedForUserItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
-        }        public GetManagedDatabaseUserProxiedForUserResult build() {
-            return new GetManagedDatabaseUserProxiedForUserResult(id, items, managedDatabaseId, name, userName);
+        }
+        public GetManagedDatabaseUserProxiedForUserResult build() {
+            final var o = new GetManagedDatabaseUserProxiedForUserResult();
+            o.id = id;
+            o.items = items;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.userName = userName;
+            return o;
         }
     }
 }

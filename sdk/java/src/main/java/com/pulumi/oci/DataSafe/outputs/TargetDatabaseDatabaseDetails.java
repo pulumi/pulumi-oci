@@ -17,70 +17,49 @@ public final class TargetDatabaseDatabaseDetails {
      * @return (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
      * 
      */
-    private final @Nullable String autonomousDatabaseId;
+    private @Nullable String autonomousDatabaseId;
     /**
      * @return (Updatable) The database type.
      * 
      */
-    private final String databaseType;
+    private String databaseType;
     /**
      * @return (Updatable) The OCID of the cloud database system registered as a target database in Data Safe.
      * 
      */
-    private final @Nullable String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return (Updatable) The infrastructure type the database is running on.
      * 
      */
-    private final String infrastructureType;
+    private String infrastructureType;
     /**
      * @return (Updatable) The OCID of the compute instance on which the database is running.
      * 
      */
-    private final @Nullable String instanceId;
+    private @Nullable String instanceId;
     /**
      * @return (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
      * 
      */
-    private final @Nullable List<String> ipAddresses;
+    private @Nullable List<String> ipAddresses;
     /**
      * @return (Updatable) The port number of the database listener.
      * 
      */
-    private final @Nullable Integer listenerPort;
+    private @Nullable Integer listenerPort;
     /**
      * @return (Updatable) The service name of the database registered as target database.
      * 
      */
-    private final @Nullable String serviceName;
+    private @Nullable String serviceName;
     /**
      * @return (Updatable) The OCID of the VM cluster in which the database is running.
      * 
      */
-    private final @Nullable String vmClusterId;
+    private @Nullable String vmClusterId;
 
-    @CustomType.Constructor
-    private TargetDatabaseDatabaseDetails(
-        @CustomType.Parameter("autonomousDatabaseId") @Nullable String autonomousDatabaseId,
-        @CustomType.Parameter("databaseType") String databaseType,
-        @CustomType.Parameter("dbSystemId") @Nullable String dbSystemId,
-        @CustomType.Parameter("infrastructureType") String infrastructureType,
-        @CustomType.Parameter("instanceId") @Nullable String instanceId,
-        @CustomType.Parameter("ipAddresses") @Nullable List<String> ipAddresses,
-        @CustomType.Parameter("listenerPort") @Nullable Integer listenerPort,
-        @CustomType.Parameter("serviceName") @Nullable String serviceName,
-        @CustomType.Parameter("vmClusterId") @Nullable String vmClusterId) {
-        this.autonomousDatabaseId = autonomousDatabaseId;
-        this.databaseType = databaseType;
-        this.dbSystemId = dbSystemId;
-        this.infrastructureType = infrastructureType;
-        this.instanceId = instanceId;
-        this.ipAddresses = ipAddresses;
-        this.listenerPort = listenerPort;
-        this.serviceName = serviceName;
-        this.vmClusterId = vmClusterId;
-    }
-
+    private TargetDatabaseDatabaseDetails() {}
     /**
      * @return (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
      * 
@@ -152,7 +131,7 @@ public final class TargetDatabaseDatabaseDetails {
     public static Builder builder(TargetDatabaseDatabaseDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String autonomousDatabaseId;
         private String databaseType;
@@ -163,11 +142,7 @@ public final class TargetDatabaseDatabaseDetails {
         private @Nullable Integer listenerPort;
         private @Nullable String serviceName;
         private @Nullable String vmClusterId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetDatabaseDatabaseDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
@@ -181,26 +156,32 @@ public final class TargetDatabaseDatabaseDetails {
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
         public Builder autonomousDatabaseId(@Nullable String autonomousDatabaseId) {
             this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseType(String databaseType) {
             this.databaseType = Objects.requireNonNull(databaseType);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
             this.dbSystemId = dbSystemId;
             return this;
         }
+        @CustomType.Setter
         public Builder infrastructureType(String infrastructureType) {
             this.infrastructureType = Objects.requireNonNull(infrastructureType);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
             this.instanceId = instanceId;
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddresses(@Nullable List<String> ipAddresses) {
             this.ipAddresses = ipAddresses;
             return this;
@@ -208,19 +189,33 @@ public final class TargetDatabaseDatabaseDetails {
         public Builder ipAddresses(String... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
         }
+        @CustomType.Setter
         public Builder listenerPort(@Nullable Integer listenerPort) {
             this.listenerPort = listenerPort;
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(@Nullable String serviceName) {
             this.serviceName = serviceName;
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(@Nullable String vmClusterId) {
             this.vmClusterId = vmClusterId;
             return this;
-        }        public TargetDatabaseDatabaseDetails build() {
-            return new TargetDatabaseDatabaseDetails(autonomousDatabaseId, databaseType, dbSystemId, infrastructureType, instanceId, ipAddresses, listenerPort, serviceName, vmClusterId);
+        }
+        public TargetDatabaseDatabaseDetails build() {
+            final var o = new TargetDatabaseDatabaseDetails();
+            o.autonomousDatabaseId = autonomousDatabaseId;
+            o.databaseType = databaseType;
+            o.dbSystemId = dbSystemId;
+            o.infrastructureType = infrastructureType;
+            o.instanceId = instanceId;
+            o.ipAddresses = ipAddresses;
+            o.listenerPort = listenerPort;
+            o.serviceName = serviceName;
+            o.vmClusterId = vmClusterId;
+            return o;
         }
     }
 }

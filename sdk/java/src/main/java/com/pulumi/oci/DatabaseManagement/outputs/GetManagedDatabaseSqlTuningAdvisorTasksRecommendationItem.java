@@ -16,77 +16,54 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
      * @return The percentage benefit of this implementation.
      * 
      */
-    private final Double benefit;
+    private Double benefit;
     /**
      * @return Summary of the issue found in the SQL statement.
      * 
      */
-    private final String finding;
+    private String finding;
     /**
      * @return Action sql to be implemented based on the recommendation result.
      * 
      */
-    private final String implementActionSql;
+    private String implementActionSql;
     /**
      * @return Indicates whether a SQL Profile recommendation uses parallel execution.
      * 
      */
-    private final Boolean isParallelExecution;
+    private Boolean isParallelExecution;
     /**
      * @return Describes the reasoning behind the recommendation and how it relates to the finding.
      * 
      */
-    private final String rationale;
+    private String rationale;
     /**
      * @return The recommendation for a specific finding.
      * 
      */
-    private final String recommendation;
+    private String recommendation;
     /**
      * @return The unique identifier of the recommendation in the scope of the task.
      * 
      */
-    private final Integer recommendationKey;
+    private Integer recommendationKey;
     /**
      * @return Type of recommendation.
      * 
      */
-    private final String recommendationType;
+    private String recommendationType;
     /**
      * @return The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String sqlTuningAdvisorTaskId;
+    private String sqlTuningAdvisorTaskId;
     /**
      * @return The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String sqlTuningAdvisorTaskObjectId;
+    private String sqlTuningAdvisorTaskObjectId;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem(
-        @CustomType.Parameter("benefit") Double benefit,
-        @CustomType.Parameter("finding") String finding,
-        @CustomType.Parameter("implementActionSql") String implementActionSql,
-        @CustomType.Parameter("isParallelExecution") Boolean isParallelExecution,
-        @CustomType.Parameter("rationale") String rationale,
-        @CustomType.Parameter("recommendation") String recommendation,
-        @CustomType.Parameter("recommendationKey") Integer recommendationKey,
-        @CustomType.Parameter("recommendationType") String recommendationType,
-        @CustomType.Parameter("sqlTuningAdvisorTaskId") String sqlTuningAdvisorTaskId,
-        @CustomType.Parameter("sqlTuningAdvisorTaskObjectId") String sqlTuningAdvisorTaskObjectId) {
-        this.benefit = benefit;
-        this.finding = finding;
-        this.implementActionSql = implementActionSql;
-        this.isParallelExecution = isParallelExecution;
-        this.rationale = rationale;
-        this.recommendation = recommendation;
-        this.recommendationKey = recommendationKey;
-        this.recommendationType = recommendationType;
-        this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-        this.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem() {}
     /**
      * @return The percentage benefit of this implementation.
      * 
@@ -165,7 +142,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double benefit;
         private String finding;
@@ -177,11 +154,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
         private String recommendationType;
         private String sqlTuningAdvisorTaskId;
         private String sqlTuningAdvisorTaskObjectId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.benefit = defaults.benefit;
@@ -196,47 +169,69 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
     	      this.sqlTuningAdvisorTaskObjectId = defaults.sqlTuningAdvisorTaskObjectId;
         }
 
+        @CustomType.Setter
         public Builder benefit(Double benefit) {
             this.benefit = Objects.requireNonNull(benefit);
             return this;
         }
+        @CustomType.Setter
         public Builder finding(String finding) {
             this.finding = Objects.requireNonNull(finding);
             return this;
         }
+        @CustomType.Setter
         public Builder implementActionSql(String implementActionSql) {
             this.implementActionSql = Objects.requireNonNull(implementActionSql);
             return this;
         }
+        @CustomType.Setter
         public Builder isParallelExecution(Boolean isParallelExecution) {
             this.isParallelExecution = Objects.requireNonNull(isParallelExecution);
             return this;
         }
+        @CustomType.Setter
         public Builder rationale(String rationale) {
             this.rationale = Objects.requireNonNull(rationale);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendation(String recommendation) {
             this.recommendation = Objects.requireNonNull(recommendation);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationKey(Integer recommendationKey) {
             this.recommendationKey = Objects.requireNonNull(recommendationKey);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationType(String recommendationType) {
             this.recommendationType = Objects.requireNonNull(recommendationType);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
             this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskObjectId(String sqlTuningAdvisorTaskObjectId) {
             this.sqlTuningAdvisorTaskObjectId = Objects.requireNonNull(sqlTuningAdvisorTaskObjectId);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem(benefit, finding, implementActionSql, isParallelExecution, rationale, recommendation, recommendationKey, recommendationType, sqlTuningAdvisorTaskId, sqlTuningAdvisorTaskObjectId);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem();
+            o.benefit = benefit;
+            o.finding = finding;
+            o.implementActionSql = implementActionSql;
+            o.isParallelExecution = isParallelExecution;
+            o.rationale = rationale;
+            o.recommendation = recommendation;
+            o.recommendationKey = recommendationKey;
+            o.recommendationType = recommendationType;
+            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            o.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
+            return o;
         }
     }
 }

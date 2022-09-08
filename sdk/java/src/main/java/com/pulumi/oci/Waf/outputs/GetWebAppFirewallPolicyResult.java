@@ -22,122 +22,85 @@ public final class GetWebAppFirewallPolicyResult {
      * @return Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
      * 
      */
-    private final List<GetWebAppFirewallPolicyAction> actions;
+    private List<GetWebAppFirewallPolicyAction> actions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return WebAppFirewallPolicy display name, can be renamed.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewallPolicy.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name &#39;Default Action&#39; are not allowed, since this name is reserved for default action logs.
      * 
      */
-    private final List<GetWebAppFirewallPolicyRequestAccessControl> requestAccessControls;
+    private List<GetWebAppFirewallPolicyRequestAccessControl> requestAccessControls;
     /**
      * @return Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      * 
      */
-    private final List<GetWebAppFirewallPolicyRequestProtection> requestProtections;
+    private List<GetWebAppFirewallPolicyRequestProtection> requestProtections;
     /**
      * @return Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      * 
      */
-    private final List<GetWebAppFirewallPolicyRequestRateLimiting> requestRateLimitings;
+    private List<GetWebAppFirewallPolicyRequestRateLimiting> requestRateLimitings;
     /**
      * @return Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      * 
      */
-    private final List<GetWebAppFirewallPolicyResponseAccessControl> responseAccessControls;
+    private List<GetWebAppFirewallPolicyResponseAccessControl> responseAccessControls;
     /**
      * @return Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      * 
      */
-    private final List<GetWebAppFirewallPolicyResponseProtection> responseProtections;
+    private List<GetWebAppFirewallPolicyResponseProtection> responseProtections;
     /**
      * @return The current state of the WebAppFirewallPolicy.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
-    private final String webAppFirewallPolicyId;
+    private String timeUpdated;
+    private String webAppFirewallPolicyId;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPolicyResult(
-        @CustomType.Parameter("actions") List<GetWebAppFirewallPolicyAction> actions,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("requestAccessControls") List<GetWebAppFirewallPolicyRequestAccessControl> requestAccessControls,
-        @CustomType.Parameter("requestProtections") List<GetWebAppFirewallPolicyRequestProtection> requestProtections,
-        @CustomType.Parameter("requestRateLimitings") List<GetWebAppFirewallPolicyRequestRateLimiting> requestRateLimitings,
-        @CustomType.Parameter("responseAccessControls") List<GetWebAppFirewallPolicyResponseAccessControl> responseAccessControls,
-        @CustomType.Parameter("responseProtections") List<GetWebAppFirewallPolicyResponseProtection> responseProtections,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("webAppFirewallPolicyId") String webAppFirewallPolicyId) {
-        this.actions = actions;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.requestAccessControls = requestAccessControls;
-        this.requestProtections = requestProtections;
-        this.requestRateLimitings = requestRateLimitings;
-        this.responseAccessControls = responseAccessControls;
-        this.responseProtections = responseProtections;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.webAppFirewallPolicyId = webAppFirewallPolicyId;
-    }
-
+    private GetWebAppFirewallPolicyResult() {}
     /**
      * @return Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
      * 
@@ -261,7 +224,7 @@ public final class GetWebAppFirewallPolicyResult {
     public static Builder builder(GetWebAppFirewallPolicyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetWebAppFirewallPolicyAction> actions;
         private String compartmentId;
@@ -280,11 +243,7 @@ public final class GetWebAppFirewallPolicyResult {
         private String timeCreated;
         private String timeUpdated;
         private String webAppFirewallPolicyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actions = defaults.actions;
@@ -306,6 +265,7 @@ public final class GetWebAppFirewallPolicyResult {
     	      this.webAppFirewallPolicyId = defaults.webAppFirewallPolicyId;
         }
 
+        @CustomType.Setter
         public Builder actions(List<GetWebAppFirewallPolicyAction> actions) {
             this.actions = Objects.requireNonNull(actions);
             return this;
@@ -313,30 +273,37 @@ public final class GetWebAppFirewallPolicyResult {
         public Builder actions(GetWebAppFirewallPolicyAction... actions) {
             return actions(List.of(actions));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder requestAccessControls(List<GetWebAppFirewallPolicyRequestAccessControl> requestAccessControls) {
             this.requestAccessControls = Objects.requireNonNull(requestAccessControls);
             return this;
@@ -344,6 +311,7 @@ public final class GetWebAppFirewallPolicyResult {
         public Builder requestAccessControls(GetWebAppFirewallPolicyRequestAccessControl... requestAccessControls) {
             return requestAccessControls(List.of(requestAccessControls));
         }
+        @CustomType.Setter
         public Builder requestProtections(List<GetWebAppFirewallPolicyRequestProtection> requestProtections) {
             this.requestProtections = Objects.requireNonNull(requestProtections);
             return this;
@@ -351,6 +319,7 @@ public final class GetWebAppFirewallPolicyResult {
         public Builder requestProtections(GetWebAppFirewallPolicyRequestProtection... requestProtections) {
             return requestProtections(List.of(requestProtections));
         }
+        @CustomType.Setter
         public Builder requestRateLimitings(List<GetWebAppFirewallPolicyRequestRateLimiting> requestRateLimitings) {
             this.requestRateLimitings = Objects.requireNonNull(requestRateLimitings);
             return this;
@@ -358,6 +327,7 @@ public final class GetWebAppFirewallPolicyResult {
         public Builder requestRateLimitings(GetWebAppFirewallPolicyRequestRateLimiting... requestRateLimitings) {
             return requestRateLimitings(List.of(requestRateLimitings));
         }
+        @CustomType.Setter
         public Builder responseAccessControls(List<GetWebAppFirewallPolicyResponseAccessControl> responseAccessControls) {
             this.responseAccessControls = Objects.requireNonNull(responseAccessControls);
             return this;
@@ -365,6 +335,7 @@ public final class GetWebAppFirewallPolicyResult {
         public Builder responseAccessControls(GetWebAppFirewallPolicyResponseAccessControl... responseAccessControls) {
             return responseAccessControls(List.of(responseAccessControls));
         }
+        @CustomType.Setter
         public Builder responseProtections(List<GetWebAppFirewallPolicyResponseProtection> responseProtections) {
             this.responseProtections = Objects.requireNonNull(responseProtections);
             return this;
@@ -372,27 +343,51 @@ public final class GetWebAppFirewallPolicyResult {
         public Builder responseProtections(GetWebAppFirewallPolicyResponseProtection... responseProtections) {
             return responseProtections(List.of(responseProtections));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder webAppFirewallPolicyId(String webAppFirewallPolicyId) {
             this.webAppFirewallPolicyId = Objects.requireNonNull(webAppFirewallPolicyId);
             return this;
-        }        public GetWebAppFirewallPolicyResult build() {
-            return new GetWebAppFirewallPolicyResult(actions, compartmentId, definedTags, displayName, freeformTags, id, lifecycleDetails, requestAccessControls, requestProtections, requestRateLimitings, responseAccessControls, responseProtections, state, systemTags, timeCreated, timeUpdated, webAppFirewallPolicyId);
+        }
+        public GetWebAppFirewallPolicyResult build() {
+            final var o = new GetWebAppFirewallPolicyResult();
+            o.actions = actions;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.requestAccessControls = requestAccessControls;
+            o.requestProtections = requestProtections;
+            o.requestRateLimitings = requestRateLimitings;
+            o.responseAccessControls = responseAccessControls;
+            o.responseProtections = responseProtections;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.webAppFirewallPolicyId = webAppFirewallPolicyId;
+            return o;
         }
     }
 }

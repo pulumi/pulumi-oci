@@ -14,42 +14,29 @@ public final class GetInvoicesInvoiceCollectionItemBillToAddressCountry {
      * @return Country code in ISO-3166-1 3-letter format
      * 
      */
-    private final String ascii3countryCode;
+    private String ascii3countryCode;
     /**
      * @return Country code in ISO-3166-1 2-letter format
      * 
      */
-    private final String countryCode;
+    private String countryCode;
     /**
      * @return Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
      * 
      */
-    private final Double countryId;
+    private Double countryId;
     /**
      * @return Name of the country
      * 
      */
-    private final String countryName;
+    private String countryName;
     /**
      * @return Language identifier
      * 
      */
-    private final Double languageId;
+    private Double languageId;
 
-    @CustomType.Constructor
-    private GetInvoicesInvoiceCollectionItemBillToAddressCountry(
-        @CustomType.Parameter("ascii3countryCode") String ascii3countryCode,
-        @CustomType.Parameter("countryCode") String countryCode,
-        @CustomType.Parameter("countryId") Double countryId,
-        @CustomType.Parameter("countryName") String countryName,
-        @CustomType.Parameter("languageId") Double languageId) {
-        this.ascii3countryCode = ascii3countryCode;
-        this.countryCode = countryCode;
-        this.countryId = countryId;
-        this.countryName = countryName;
-        this.languageId = languageId;
-    }
-
+    private GetInvoicesInvoiceCollectionItemBillToAddressCountry() {}
     /**
      * @return Country code in ISO-3166-1 3-letter format
      * 
@@ -93,18 +80,14 @@ public final class GetInvoicesInvoiceCollectionItemBillToAddressCountry {
     public static Builder builder(GetInvoicesInvoiceCollectionItemBillToAddressCountry defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ascii3countryCode;
         private String countryCode;
         private Double countryId;
         private String countryName;
         private Double languageId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesInvoiceCollectionItemBillToAddressCountry defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ascii3countryCode = defaults.ascii3countryCode;
@@ -114,27 +97,39 @@ public final class GetInvoicesInvoiceCollectionItemBillToAddressCountry {
     	      this.languageId = defaults.languageId;
         }
 
+        @CustomType.Setter
         public Builder ascii3countryCode(String ascii3countryCode) {
             this.ascii3countryCode = Objects.requireNonNull(ascii3countryCode);
             return this;
         }
+        @CustomType.Setter
         public Builder countryCode(String countryCode) {
             this.countryCode = Objects.requireNonNull(countryCode);
             return this;
         }
+        @CustomType.Setter
         public Builder countryId(Double countryId) {
             this.countryId = Objects.requireNonNull(countryId);
             return this;
         }
+        @CustomType.Setter
         public Builder countryName(String countryName) {
             this.countryName = Objects.requireNonNull(countryName);
             return this;
         }
+        @CustomType.Setter
         public Builder languageId(Double languageId) {
             this.languageId = Objects.requireNonNull(languageId);
             return this;
-        }        public GetInvoicesInvoiceCollectionItemBillToAddressCountry build() {
-            return new GetInvoicesInvoiceCollectionItemBillToAddressCountry(ascii3countryCode, countryCode, countryId, countryName, languageId);
+        }
+        public GetInvoicesInvoiceCollectionItemBillToAddressCountry build() {
+            final var o = new GetInvoicesInvoiceCollectionItemBillToAddressCountry();
+            o.ascii3countryCode = ascii3countryCode;
+            o.countryCode = countryCode;
+            o.countryId = countryId;
+            o.countryName = countryName;
+            o.languageId = languageId;
+            return o;
         }
     }
 }

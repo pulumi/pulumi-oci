@@ -13,21 +13,14 @@ public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail
      * @return Compartment Identifier
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Base condition object
      * 
      */
-    private final String condition;
+    private String condition;
 
-    @CustomType.Constructor
-    private GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("condition") String condition) {
-        this.compartmentId = compartmentId;
-        this.condition = condition;
-    }
-
+    private GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup() {}
     /**
      * @return Compartment Identifier
      * 
@@ -50,30 +43,32 @@ public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail
     public static Builder builder(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String condition;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.condition = defaults.condition;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
-        }        public GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup build() {
-            return new GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup(compartmentId, condition);
+        }
+        public GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup build() {
+            final var o = new GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup();
+            o.compartmentId = compartmentId;
+            o.condition = condition;
+            return o;
         }
     }
 }

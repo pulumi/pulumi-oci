@@ -18,59 +18,40 @@ public final class GetVolumesResult {
      * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment that contains the volume.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetVolumesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetVolumesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of a volume.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the source volume group.
      * 
      */
-    private final @Nullable String volumeGroupId;
+    private @Nullable String volumeGroupId;
     /**
      * @return The list of volumes.
      * 
      */
-    private final List<GetVolumesVolume> volumes;
+    private List<GetVolumesVolume> volumes;
 
-    @CustomType.Constructor
-    private GetVolumesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetVolumesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("volumeGroupId") @Nullable String volumeGroupId,
-        @CustomType.Parameter("volumes") List<GetVolumesVolume> volumes) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.volumeGroupId = volumeGroupId;
-        this.volumes = volumes;
-    }
-
+    private GetVolumesResult() {}
     /**
      * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
@@ -131,7 +112,7 @@ public final class GetVolumesResult {
     public static Builder builder(GetVolumesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private @Nullable String compartmentId;
@@ -141,11 +122,7 @@ public final class GetVolumesResult {
         private @Nullable String state;
         private @Nullable String volumeGroupId;
         private List<GetVolumesVolume> volumes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -158,18 +135,22 @@ public final class GetVolumesResult {
     	      this.volumes = defaults.volumes;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumesFilter> filters) {
             this.filters = filters;
             return this;
@@ -177,26 +158,40 @@ public final class GetVolumesResult {
         public Builder filters(GetVolumesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupId(@Nullable String volumeGroupId) {
             this.volumeGroupId = volumeGroupId;
             return this;
         }
+        @CustomType.Setter
         public Builder volumes(List<GetVolumesVolume> volumes) {
             this.volumes = Objects.requireNonNull(volumes);
             return this;
         }
         public Builder volumes(GetVolumesVolume... volumes) {
             return volumes(List.of(volumes));
-        }        public GetVolumesResult build() {
-            return new GetVolumesResult(availabilityDomain, compartmentId, displayName, filters, id, state, volumeGroupId, volumes);
+        }
+        public GetVolumesResult build() {
+            final var o = new GetVolumesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.volumeGroupId = volumeGroupId;
+            o.volumes = volumes;
+            return o;
         }
     }
 }

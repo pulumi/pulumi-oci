@@ -15,35 +15,24 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
      * @return (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    private final @Nullable List<String> applications;
+    private @Nullable List<String> applications;
     /**
      * @return (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
      * 
      */
-    private final @Nullable List<String> destinations;
+    private @Nullable List<String> destinations;
     /**
      * @return (Updatable) An array of IP address list names to be evaluated against the traffic source address.
      * 
      */
-    private final @Nullable List<String> sources;
+    private @Nullable List<String> sources;
     /**
      * @return (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
      * 
      */
-    private final @Nullable List<String> urls;
+    private @Nullable List<String> urls;
 
-    @CustomType.Constructor
-    private NetworkFirewallPolicySecurityRuleCondition(
-        @CustomType.Parameter("applications") @Nullable List<String> applications,
-        @CustomType.Parameter("destinations") @Nullable List<String> destinations,
-        @CustomType.Parameter("sources") @Nullable List<String> sources,
-        @CustomType.Parameter("urls") @Nullable List<String> urls) {
-        this.applications = applications;
-        this.destinations = destinations;
-        this.sources = sources;
-        this.urls = urls;
-    }
-
+    private NetworkFirewallPolicySecurityRuleCondition() {}
     /**
      * @return (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
@@ -80,17 +69,13 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
     public static Builder builder(NetworkFirewallPolicySecurityRuleCondition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> applications;
         private @Nullable List<String> destinations;
         private @Nullable List<String> sources;
         private @Nullable List<String> urls;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkFirewallPolicySecurityRuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applications = defaults.applications;
@@ -99,6 +84,7 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
     	      this.urls = defaults.urls;
         }
 
+        @CustomType.Setter
         public Builder applications(@Nullable List<String> applications) {
             this.applications = applications;
             return this;
@@ -106,6 +92,7 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
         public Builder applications(String... applications) {
             return applications(List.of(applications));
         }
+        @CustomType.Setter
         public Builder destinations(@Nullable List<String> destinations) {
             this.destinations = destinations;
             return this;
@@ -113,6 +100,7 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
         public Builder destinations(String... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder sources(@Nullable List<String> sources) {
             this.sources = sources;
             return this;
@@ -120,14 +108,21 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
         public Builder sources(String... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
         public Builder urls(@Nullable List<String> urls) {
             this.urls = urls;
             return this;
         }
         public Builder urls(String... urls) {
             return urls(List.of(urls));
-        }        public NetworkFirewallPolicySecurityRuleCondition build() {
-            return new NetworkFirewallPolicySecurityRuleCondition(applications, destinations, sources, urls);
+        }
+        public NetworkFirewallPolicySecurityRuleCondition build() {
+            final var o = new NetworkFirewallPolicySecurityRuleCondition();
+            o.applications = applications;
+            o.destinations = destinations;
+            o.sources = sources;
+            o.urls = urls;
+            return o;
         }
     }
 }

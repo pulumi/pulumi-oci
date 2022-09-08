@@ -44,7 +44,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registries in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Returns a list of Data Connectivity Management Registries.
+     * Retrieves a list of Data Connectivity Management registries.
      * 
      * ## Example Usage
      * ```java
@@ -86,7 +86,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registries in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Returns a list of Data Connectivity Management Registries.
+     * Retrieves a list of Data Connectivity Management registries.
      * 
      * ## Example Usage
      * ```java
@@ -128,7 +128,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registries in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Returns a list of Data Connectivity Management Registries.
+     * Retrieves a list of Data Connectivity Management registries.
      * 
      * ## Example Usage
      * ```java
@@ -170,7 +170,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registries in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Returns a list of Data Connectivity Management Registries.
+     * Retrieves a list of Data Connectivity Management registries.
      * 
      * ## Example Usage
      * ```java
@@ -212,7 +212,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Gets a Data Connectivity Management Registry by identifier
+     * Retrieves a Data Connectivity Management registry using the specified identifier.
      * 
      * ## Example Usage
      * ```java
@@ -251,7 +251,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Gets a Data Connectivity Management Registry by identifier
+     * Retrieves a Data Connectivity Management registry using the specified identifier.
      * 
      * ## Example Usage
      * ```java
@@ -290,7 +290,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Gets a Data Connectivity Management Registry by identifier
+     * Retrieves a Data Connectivity Management registry using the specified identifier.
      * 
      * ## Example Usage
      * ```java
@@ -329,7 +329,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Gets a Data Connectivity Management Registry by identifier
+     * Retrieves a Data Connectivity Management registry using the specified identifier.
      * 
      * ## Example Usage
      * ```java
@@ -1212,7 +1212,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registry Folders in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Retrieves a list of all folders.
+     * Retrieves a list of all the folders.
      * 
      * ## Example Usage
      * ```java
@@ -1255,7 +1255,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registry Folders in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Retrieves a list of all folders.
+     * Retrieves a list of all the folders.
      * 
      * ## Example Usage
      * ```java
@@ -1298,7 +1298,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registry Folders in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Retrieves a list of all folders.
+     * Retrieves a list of all the folders.
      * 
      * ## Example Usage
      * ```java
@@ -1341,7 +1341,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registry Folders in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * Retrieves a list of all folders.
+     * Retrieves a list of all the folders.
      * 
      * ## Example Usage
      * ```java
@@ -1384,7 +1384,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
      * 
      * ## Example Usage
      * ```java
@@ -1425,7 +1425,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
      * 
      * ## Example Usage
      * ```java
@@ -1466,7 +1466,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
      * 
      * ## Example Usage
      * ```java
@@ -1507,7 +1507,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
      * 
      * ## Example Usage
      * ```java
@@ -1548,7 +1548,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * This endpoint retrieves list of all the supported connector types
+     * This endpoint retrieves a list of all the supported connector types.
      * 
      * ## Example Usage
      * ```java
@@ -1589,7 +1589,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * This endpoint retrieves list of all the supported connector types
+     * This endpoint retrieves a list of all the supported connector types.
      * 
      * ## Example Usage
      * ```java
@@ -1630,7 +1630,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * This endpoint retrieves list of all the supported connector types
+     * This endpoint retrieves a list of all the supported connector types.
      * 
      * ## Example Usage
      * ```java
@@ -1671,7 +1671,7 @@ public final class DataConnectivityFunctions {
     /**
      * This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
      * 
-     * This endpoint retrieves list of all the supported connector types
+     * This endpoint retrieves a list of all the supported connector types.
      * 
      * ## Example Usage
      * ```java

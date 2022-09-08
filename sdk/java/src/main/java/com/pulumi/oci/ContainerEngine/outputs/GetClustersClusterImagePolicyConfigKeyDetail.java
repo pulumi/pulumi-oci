@@ -13,13 +13,9 @@ public final class GetClustersClusterImagePolicyConfigKeyDetail {
      * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
 
-    @CustomType.Constructor
-    private GetClustersClusterImagePolicyConfigKeyDetail(@CustomType.Parameter("kmsKeyId") String kmsKeyId) {
-        this.kmsKeyId = kmsKeyId;
-    }
-
+    private GetClustersClusterImagePolicyConfigKeyDetail() {}
     /**
      * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
      * 
@@ -35,24 +31,24 @@ public final class GetClustersClusterImagePolicyConfigKeyDetail {
     public static Builder builder(GetClustersClusterImagePolicyConfigKeyDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kmsKeyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClustersClusterImagePolicyConfigKeyDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kmsKeyId = defaults.kmsKeyId;
         }
 
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
-        }        public GetClustersClusterImagePolicyConfigKeyDetail build() {
-            return new GetClustersClusterImagePolicyConfigKeyDetail(kmsKeyId);
+        }
+        public GetClustersClusterImagePolicyConfigKeyDetail build() {
+            final var o = new GetClustersClusterImagePolicyConfigKeyDetail();
+            o.kmsKeyId = kmsKeyId;
+            return o;
         }
     }
 }

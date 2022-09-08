@@ -13,35 +13,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuthTokensResult {
-    private final @Nullable List<GetAuthTokensFilter> filters;
+    private @Nullable List<GetAuthTokensFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of tokens.
      * 
      */
-    private final List<GetAuthTokensToken> tokens;
+    private List<GetAuthTokensToken> tokens;
     /**
      * @return The OCID of the user the auth token belongs to.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetAuthTokensResult(
-        @CustomType.Parameter("filters") @Nullable List<GetAuthTokensFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("tokens") List<GetAuthTokensToken> tokens,
-        @CustomType.Parameter("userId") String userId) {
-        this.filters = filters;
-        this.id = id;
-        this.tokens = tokens;
-        this.userId = userId;
-    }
-
+    private GetAuthTokensResult() {}
     public List<GetAuthTokensFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -74,17 +63,13 @@ public final class GetAuthTokensResult {
     public static Builder builder(GetAuthTokensResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetAuthTokensFilter> filters;
         private String id;
         private List<GetAuthTokensToken> tokens;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuthTokensResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -93,6 +78,7 @@ public final class GetAuthTokensResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAuthTokensFilter> filters) {
             this.filters = filters;
             return this;
@@ -100,10 +86,12 @@ public final class GetAuthTokensResult {
         public Builder filters(GetAuthTokensFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder tokens(List<GetAuthTokensToken> tokens) {
             this.tokens = Objects.requireNonNull(tokens);
             return this;
@@ -111,11 +99,18 @@ public final class GetAuthTokensResult {
         public Builder tokens(GetAuthTokensToken... tokens) {
             return tokens(List.of(tokens));
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetAuthTokensResult build() {
-            return new GetAuthTokensResult(filters, id, tokens, userId);
+        }
+        public GetAuthTokensResult build() {
+            final var o = new GetAuthTokensResult();
+            o.filters = filters;
+            o.id = id;
+            o.tokens = tokens;
+            o.userId = userId;
+            return o;
         }
     }
 }

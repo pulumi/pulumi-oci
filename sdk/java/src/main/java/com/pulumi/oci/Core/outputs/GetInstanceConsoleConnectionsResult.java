@@ -18,38 +18,25 @@ public final class GetInstanceConsoleConnectionsResult {
      * @return The OCID of the compartment to contain the console connection.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetInstanceConsoleConnectionsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetInstanceConsoleConnectionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of instance_console_connections.
      * 
      */
-    private final List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections;
+    private List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections;
     /**
      * @return The OCID of the instance the console connection connects to.
      * 
      */
-    private final @Nullable String instanceId;
+    private @Nullable String instanceId;
 
-    @CustomType.Constructor
-    private GetInstanceConsoleConnectionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetInstanceConsoleConnectionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceConsoleConnections") List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections,
-        @CustomType.Parameter("instanceId") @Nullable String instanceId) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.instanceConsoleConnections = instanceConsoleConnections;
-        this.instanceId = instanceId;
-    }
-
+    private GetInstanceConsoleConnectionsResult() {}
     /**
      * @return The OCID of the compartment to contain the console connection.
      * 
@@ -89,18 +76,14 @@ public final class GetInstanceConsoleConnectionsResult {
     public static Builder builder(GetInstanceConsoleConnectionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetInstanceConsoleConnectionsFilter> filters;
         private String id;
         private List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections;
         private @Nullable String instanceId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConsoleConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -110,10 +93,12 @@ public final class GetInstanceConsoleConnectionsResult {
     	      this.instanceId = defaults.instanceId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInstanceConsoleConnectionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -121,10 +106,12 @@ public final class GetInstanceConsoleConnectionsResult {
         public Builder filters(GetInstanceConsoleConnectionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceConsoleConnections(List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections) {
             this.instanceConsoleConnections = Objects.requireNonNull(instanceConsoleConnections);
             return this;
@@ -132,11 +119,19 @@ public final class GetInstanceConsoleConnectionsResult {
         public Builder instanceConsoleConnections(GetInstanceConsoleConnectionsInstanceConsoleConnection... instanceConsoleConnections) {
             return instanceConsoleConnections(List.of(instanceConsoleConnections));
         }
+        @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
             this.instanceId = instanceId;
             return this;
-        }        public GetInstanceConsoleConnectionsResult build() {
-            return new GetInstanceConsoleConnectionsResult(compartmentId, filters, id, instanceConsoleConnections, instanceId);
+        }
+        public GetInstanceConsoleConnectionsResult build() {
+            final var o = new GetInstanceConsoleConnectionsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.instanceConsoleConnections = instanceConsoleConnections;
+            o.instanceId = instanceId;
+            return o;
         }
     }
 }

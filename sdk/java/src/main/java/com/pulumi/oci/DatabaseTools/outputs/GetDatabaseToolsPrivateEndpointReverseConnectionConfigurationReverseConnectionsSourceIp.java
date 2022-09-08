@@ -13,13 +13,9 @@ public final class GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration
      * @return The IP address in the customer&#39;s VCN to be used as the source IP for reverse connection packets traveling from the customer&#39;s VCN to the service&#39;s VCN.
      * 
      */
-    private final String sourceIp;
+    private String sourceIp;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp(@CustomType.Parameter("sourceIp") String sourceIp) {
-        this.sourceIp = sourceIp;
-    }
-
+    private GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp() {}
     /**
      * @return The IP address in the customer&#39;s VCN to be used as the source IP for reverse connection packets traveling from the customer&#39;s VCN to the service&#39;s VCN.
      * 
@@ -35,24 +31,24 @@ public final class GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration
     public static Builder builder(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String sourceIp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.sourceIp = defaults.sourceIp;
         }
 
+        @CustomType.Setter
         public Builder sourceIp(String sourceIp) {
             this.sourceIp = Objects.requireNonNull(sourceIp);
             return this;
-        }        public GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp build() {
-            return new GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp(sourceIp);
+        }
+        public GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp build() {
+            final var o = new GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp();
+            o.sourceIp = sourceIp;
+            return o;
         }
     }
 }

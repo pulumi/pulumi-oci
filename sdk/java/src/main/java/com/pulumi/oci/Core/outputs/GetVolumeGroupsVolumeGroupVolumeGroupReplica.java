@@ -13,28 +13,19 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The volume group replica&#39;s Oracle ID (OCID).
      * 
      */
-    private final String volumeGroupReplicaId;
+    private String volumeGroupReplicaId;
 
-    @CustomType.Constructor
-    private GetVolumeGroupsVolumeGroupVolumeGroupReplica(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("volumeGroupReplicaId") String volumeGroupReplicaId) {
-        this.availabilityDomain = availabilityDomain;
-        this.displayName = displayName;
-        this.volumeGroupReplicaId = volumeGroupReplicaId;
-    }
-
+    private GetVolumeGroupsVolumeGroupVolumeGroupReplica() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -64,16 +55,12 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
     public static Builder builder(GetVolumeGroupsVolumeGroupVolumeGroupReplica defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String displayName;
         private String volumeGroupReplicaId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeGroupsVolumeGroupVolumeGroupReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -81,19 +68,27 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
     	      this.volumeGroupReplicaId = defaults.volumeGroupReplicaId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
             this.volumeGroupReplicaId = Objects.requireNonNull(volumeGroupReplicaId);
             return this;
-        }        public GetVolumeGroupsVolumeGroupVolumeGroupReplica build() {
-            return new GetVolumeGroupsVolumeGroupVolumeGroupReplica(availabilityDomain, displayName, volumeGroupReplicaId);
+        }
+        public GetVolumeGroupsVolumeGroupVolumeGroupReplica build() {
+            final var o = new GetVolumeGroupsVolumeGroupVolumeGroupReplica();
+            o.availabilityDomain = availabilityDomain;
+            o.displayName = displayName;
+            o.volumeGroupReplicaId = volumeGroupReplicaId;
+            return o;
         }
     }
 }

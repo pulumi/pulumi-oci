@@ -15,13 +15,9 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRe
      * @return (Updatable) Key of the parent object.
      * 
      */
-    private final @Nullable String parent;
+    private @Nullable String parent;
 
-    @CustomType.Constructor
-    private RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef(@CustomType.Parameter("parent") @Nullable String parent) {
-        this.parent = parent;
-    }
-
+    private RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef() {}
     /**
      * @return (Updatable) Key of the parent object.
      * 
@@ -37,24 +33,24 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRe
     public static Builder builder(RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String parent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parent = defaults.parent;
         }
 
+        @CustomType.Setter
         public Builder parent(@Nullable String parent) {
             this.parent = parent;
             return this;
-        }        public RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef build() {
-            return new RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef(parent);
+        }
+        public RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef build() {
+            final var o = new RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef();
+            o.parent = parent;
+            return o;
         }
     }
 }

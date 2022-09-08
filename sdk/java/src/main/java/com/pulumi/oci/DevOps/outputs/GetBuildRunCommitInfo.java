@@ -13,28 +13,19 @@ public final class GetBuildRunCommitInfo {
      * @return Commit hash pertinent to the repository URL and the specified branch.
      * 
      */
-    private final String commitHash;
+    private String commitHash;
     /**
      * @return Name of the repository branch.
      * 
      */
-    private final String repositoryBranch;
+    private String repositoryBranch;
     /**
      * @return Repository URL.
      * 
      */
-    private final String repositoryUrl;
+    private String repositoryUrl;
 
-    @CustomType.Constructor
-    private GetBuildRunCommitInfo(
-        @CustomType.Parameter("commitHash") String commitHash,
-        @CustomType.Parameter("repositoryBranch") String repositoryBranch,
-        @CustomType.Parameter("repositoryUrl") String repositoryUrl) {
-        this.commitHash = commitHash;
-        this.repositoryBranch = repositoryBranch;
-        this.repositoryUrl = repositoryUrl;
-    }
-
+    private GetBuildRunCommitInfo() {}
     /**
      * @return Commit hash pertinent to the repository URL and the specified branch.
      * 
@@ -64,16 +55,12 @@ public final class GetBuildRunCommitInfo {
     public static Builder builder(GetBuildRunCommitInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String commitHash;
         private String repositoryBranch;
         private String repositoryUrl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunCommitInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.commitHash = defaults.commitHash;
@@ -81,19 +68,27 @@ public final class GetBuildRunCommitInfo {
     	      this.repositoryUrl = defaults.repositoryUrl;
         }
 
+        @CustomType.Setter
         public Builder commitHash(String commitHash) {
             this.commitHash = Objects.requireNonNull(commitHash);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryBranch(String repositoryBranch) {
             this.repositoryBranch = Objects.requireNonNull(repositoryBranch);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
             return this;
-        }        public GetBuildRunCommitInfo build() {
-            return new GetBuildRunCommitInfo(commitHash, repositoryBranch, repositoryUrl);
+        }
+        public GetBuildRunCommitInfo build() {
+            final var o = new GetBuildRunCommitInfo();
+            o.commitHash = commitHash;
+            o.repositoryBranch = repositoryBranch;
+            o.repositoryUrl = repositoryUrl;
+            return o;
         }
     }
 }

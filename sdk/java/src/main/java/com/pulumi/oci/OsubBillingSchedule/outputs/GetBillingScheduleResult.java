@@ -18,36 +18,19 @@ public final class GetBillingScheduleResult {
      * @return The list of billing_schedules.
      * 
      */
-    private final List<GetBillingScheduleBillingSchedule> billingSchedules;
-    private final String compartmentId;
-    private final @Nullable List<GetBillingScheduleFilter> filters;
+    private List<GetBillingScheduleBillingSchedule> billingSchedules;
+    private String compartmentId;
+    private @Nullable List<GetBillingScheduleFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String subscribedServiceId;
-    private final String subscriptionId;
-    private final @Nullable String xOneOriginRegion;
+    private String id;
+    private @Nullable String subscribedServiceId;
+    private String subscriptionId;
+    private @Nullable String xOneOriginRegion;
 
-    @CustomType.Constructor
-    private GetBillingScheduleResult(
-        @CustomType.Parameter("billingSchedules") List<GetBillingScheduleBillingSchedule> billingSchedules,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetBillingScheduleFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("subscribedServiceId") @Nullable String subscribedServiceId,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("xOneOriginRegion") @Nullable String xOneOriginRegion) {
-        this.billingSchedules = billingSchedules;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.subscribedServiceId = subscribedServiceId;
-        this.subscriptionId = subscriptionId;
-        this.xOneOriginRegion = xOneOriginRegion;
-    }
-
+    private GetBillingScheduleResult() {}
     /**
      * @return The list of billing_schedules.
      * 
@@ -85,7 +68,7 @@ public final class GetBillingScheduleResult {
     public static Builder builder(GetBillingScheduleResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBillingScheduleBillingSchedule> billingSchedules;
         private String compartmentId;
@@ -94,11 +77,7 @@ public final class GetBillingScheduleResult {
         private @Nullable String subscribedServiceId;
         private String subscriptionId;
         private @Nullable String xOneOriginRegion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBillingScheduleResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billingSchedules = defaults.billingSchedules;
@@ -110,6 +89,7 @@ public final class GetBillingScheduleResult {
     	      this.xOneOriginRegion = defaults.xOneOriginRegion;
         }
 
+        @CustomType.Setter
         public Builder billingSchedules(List<GetBillingScheduleBillingSchedule> billingSchedules) {
             this.billingSchedules = Objects.requireNonNull(billingSchedules);
             return this;
@@ -117,10 +97,12 @@ public final class GetBillingScheduleResult {
         public Builder billingSchedules(GetBillingScheduleBillingSchedule... billingSchedules) {
             return billingSchedules(List.of(billingSchedules));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBillingScheduleFilter> filters) {
             this.filters = filters;
             return this;
@@ -128,23 +110,36 @@ public final class GetBillingScheduleResult {
         public Builder filters(GetBillingScheduleFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder subscribedServiceId(@Nullable String subscribedServiceId) {
             this.subscribedServiceId = subscribedServiceId;
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder xOneOriginRegion(@Nullable String xOneOriginRegion) {
             this.xOneOriginRegion = xOneOriginRegion;
             return this;
-        }        public GetBillingScheduleResult build() {
-            return new GetBillingScheduleResult(billingSchedules, compartmentId, filters, id, subscribedServiceId, subscriptionId, xOneOriginRegion);
+        }
+        public GetBillingScheduleResult build() {
+            final var o = new GetBillingScheduleResult();
+            o.billingSchedules = billingSchedules;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.subscribedServiceId = subscribedServiceId;
+            o.subscriptionId = subscriptionId;
+            o.xOneOriginRegion = xOneOriginRegion;
+            return o;
         }
     }
 }

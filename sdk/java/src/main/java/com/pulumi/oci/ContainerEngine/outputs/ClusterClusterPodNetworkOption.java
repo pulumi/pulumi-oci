@@ -13,13 +13,9 @@ public final class ClusterClusterPodNetworkOption {
      * @return The CNI used by the node pools of this cluster
      * 
      */
-    private final String cniType;
+    private String cniType;
 
-    @CustomType.Constructor
-    private ClusterClusterPodNetworkOption(@CustomType.Parameter("cniType") String cniType) {
-        this.cniType = cniType;
-    }
-
+    private ClusterClusterPodNetworkOption() {}
     /**
      * @return The CNI used by the node pools of this cluster
      * 
@@ -35,24 +31,24 @@ public final class ClusterClusterPodNetworkOption {
     public static Builder builder(ClusterClusterPodNetworkOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cniType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterClusterPodNetworkOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cniType = defaults.cniType;
         }
 
+        @CustomType.Setter
         public Builder cniType(String cniType) {
             this.cniType = Objects.requireNonNull(cniType);
             return this;
-        }        public ClusterClusterPodNetworkOption build() {
-            return new ClusterClusterPodNetworkOption(cniType);
+        }
+        public ClusterClusterPodNetworkOption build() {
+            final var o = new ClusterClusterPodNetworkOption();
+            o.cniType = cniType;
+            return o;
         }
     }
 }

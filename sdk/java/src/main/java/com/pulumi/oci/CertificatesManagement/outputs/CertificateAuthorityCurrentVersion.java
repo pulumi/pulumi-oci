@@ -18,77 +18,54 @@ public final class CertificateAuthorityCurrentVersion {
      * @return The OCID of the CA.
      * 
      */
-    private final @Nullable String certificateAuthorityId;
+    private @Nullable String certificateAuthorityId;
     /**
      * @return The version number of the issuing CA.
      * 
      */
-    private final @Nullable String issuerCaVersionNumber;
+    private @Nullable String issuerCaVersionNumber;
     /**
      * @return The current revocation status of the entity.
      * 
      */
-    private final @Nullable List<CertificateAuthorityCurrentVersionRevocationStatus> revocationStatuses;
+    private @Nullable List<CertificateAuthorityCurrentVersionRevocationStatus> revocationStatuses;
     /**
      * @return Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
      * 
      */
-    private final @Nullable String serialNumber;
+    private @Nullable String serialNumber;
     /**
      * @return A list of rotation states for this CA version.
      * 
      */
-    private final @Nullable List<String> stages;
+    private @Nullable List<String> stages;
     /**
      * @return A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final @Nullable String timeOfDeletion;
+    private @Nullable String timeOfDeletion;
     /**
      * @return (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
-    private final @Nullable List<CertificateAuthorityCurrentVersionValidity> validities;
+    private @Nullable List<CertificateAuthorityCurrentVersionValidity> validities;
     /**
      * @return (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
      * 
      */
-    private final @Nullable String versionName;
+    private @Nullable String versionName;
     /**
      * @return The version number of the CA.
      * 
      */
-    private final @Nullable String versionNumber;
+    private @Nullable String versionNumber;
 
-    @CustomType.Constructor
-    private CertificateAuthorityCurrentVersion(
-        @CustomType.Parameter("certificateAuthorityId") @Nullable String certificateAuthorityId,
-        @CustomType.Parameter("issuerCaVersionNumber") @Nullable String issuerCaVersionNumber,
-        @CustomType.Parameter("revocationStatuses") @Nullable List<CertificateAuthorityCurrentVersionRevocationStatus> revocationStatuses,
-        @CustomType.Parameter("serialNumber") @Nullable String serialNumber,
-        @CustomType.Parameter("stages") @Nullable List<String> stages,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeOfDeletion") @Nullable String timeOfDeletion,
-        @CustomType.Parameter("validities") @Nullable List<CertificateAuthorityCurrentVersionValidity> validities,
-        @CustomType.Parameter("versionName") @Nullable String versionName,
-        @CustomType.Parameter("versionNumber") @Nullable String versionNumber) {
-        this.certificateAuthorityId = certificateAuthorityId;
-        this.issuerCaVersionNumber = issuerCaVersionNumber;
-        this.revocationStatuses = revocationStatuses;
-        this.serialNumber = serialNumber;
-        this.stages = stages;
-        this.timeCreated = timeCreated;
-        this.timeOfDeletion = timeOfDeletion;
-        this.validities = validities;
-        this.versionName = versionName;
-        this.versionNumber = versionNumber;
-    }
-
+    private CertificateAuthorityCurrentVersion() {}
     /**
      * @return The OCID of the CA.
      * 
@@ -167,7 +144,7 @@ public final class CertificateAuthorityCurrentVersion {
     public static Builder builder(CertificateAuthorityCurrentVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String certificateAuthorityId;
         private @Nullable String issuerCaVersionNumber;
@@ -179,11 +156,7 @@ public final class CertificateAuthorityCurrentVersion {
         private @Nullable List<CertificateAuthorityCurrentVersionValidity> validities;
         private @Nullable String versionName;
         private @Nullable String versionNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateAuthorityCurrentVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateAuthorityId = defaults.certificateAuthorityId;
@@ -198,14 +171,17 @@ public final class CertificateAuthorityCurrentVersion {
     	      this.versionNumber = defaults.versionNumber;
         }
 
+        @CustomType.Setter
         public Builder certificateAuthorityId(@Nullable String certificateAuthorityId) {
             this.certificateAuthorityId = certificateAuthorityId;
             return this;
         }
+        @CustomType.Setter
         public Builder issuerCaVersionNumber(@Nullable String issuerCaVersionNumber) {
             this.issuerCaVersionNumber = issuerCaVersionNumber;
             return this;
         }
+        @CustomType.Setter
         public Builder revocationStatuses(@Nullable List<CertificateAuthorityCurrentVersionRevocationStatus> revocationStatuses) {
             this.revocationStatuses = revocationStatuses;
             return this;
@@ -213,10 +189,12 @@ public final class CertificateAuthorityCurrentVersion {
         public Builder revocationStatuses(CertificateAuthorityCurrentVersionRevocationStatus... revocationStatuses) {
             return revocationStatuses(List.of(revocationStatuses));
         }
+        @CustomType.Setter
         public Builder serialNumber(@Nullable String serialNumber) {
             this.serialNumber = serialNumber;
             return this;
         }
+        @CustomType.Setter
         public Builder stages(@Nullable List<String> stages) {
             this.stages = stages;
             return this;
@@ -224,14 +202,17 @@ public final class CertificateAuthorityCurrentVersion {
         public Builder stages(String... stages) {
             return stages(List.of(stages));
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfDeletion(@Nullable String timeOfDeletion) {
             this.timeOfDeletion = timeOfDeletion;
             return this;
         }
+        @CustomType.Setter
         public Builder validities(@Nullable List<CertificateAuthorityCurrentVersionValidity> validities) {
             this.validities = validities;
             return this;
@@ -239,15 +220,29 @@ public final class CertificateAuthorityCurrentVersion {
         public Builder validities(CertificateAuthorityCurrentVersionValidity... validities) {
             return validities(List.of(validities));
         }
+        @CustomType.Setter
         public Builder versionName(@Nullable String versionName) {
             this.versionName = versionName;
             return this;
         }
+        @CustomType.Setter
         public Builder versionNumber(@Nullable String versionNumber) {
             this.versionNumber = versionNumber;
             return this;
-        }        public CertificateAuthorityCurrentVersion build() {
-            return new CertificateAuthorityCurrentVersion(certificateAuthorityId, issuerCaVersionNumber, revocationStatuses, serialNumber, stages, timeCreated, timeOfDeletion, validities, versionName, versionNumber);
+        }
+        public CertificateAuthorityCurrentVersion build() {
+            final var o = new CertificateAuthorityCurrentVersion();
+            o.certificateAuthorityId = certificateAuthorityId;
+            o.issuerCaVersionNumber = issuerCaVersionNumber;
+            o.revocationStatuses = revocationStatuses;
+            o.serialNumber = serialNumber;
+            o.stages = stages;
+            o.timeCreated = timeCreated;
+            o.timeOfDeletion = timeOfDeletion;
+            o.validities = validities;
+            o.versionName = versionName;
+            o.versionNumber = versionNumber;
+            return o;
         }
     }
 }

@@ -13,31 +13,20 @@ public final class GetInstanceCredentialsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String instanceId;
+    private String id;
+    private String instanceId;
     /**
      * @return The password for the username.
      * 
      */
-    private final String password;
+    private String password;
     /**
      * @return The username.
      * 
      */
-    private final String username;
+    private String username;
 
-    @CustomType.Constructor
-    private GetInstanceCredentialsResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("username") String username) {
-        this.id = id;
-        this.instanceId = instanceId;
-        this.password = password;
-        this.username = username;
-    }
-
+    private GetInstanceCredentialsResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -70,17 +59,13 @@ public final class GetInstanceCredentialsResult {
     public static Builder builder(GetInstanceCredentialsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String instanceId;
         private String password;
         private String username;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceCredentialsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -89,23 +74,33 @@ public final class GetInstanceCredentialsResult {
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder username(String username) {
             this.username = Objects.requireNonNull(username);
             return this;
-        }        public GetInstanceCredentialsResult build() {
-            return new GetInstanceCredentialsResult(id, instanceId, password, username);
+        }
+        public GetInstanceCredentialsResult build() {
+            final var o = new GetInstanceCredentialsResult();
+            o.id = id;
+            o.instanceId = instanceId;
+            o.password = password;
+            o.username = username;
+            return o;
         }
     }
 }

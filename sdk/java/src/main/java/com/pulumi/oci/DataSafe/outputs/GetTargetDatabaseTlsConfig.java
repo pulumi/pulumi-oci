@@ -13,42 +13,29 @@ public final class GetTargetDatabaseTlsConfig {
      * @return The format of the certificate store.
      * 
      */
-    private final String certificateStoreType;
+    private String certificateStoreType;
     /**
      * @return Base64 encoded string of key store file content.
      * 
      */
-    private final String keyStoreContent;
+    private String keyStoreContent;
     /**
      * @return Status to represent whether the database connection is TLS enabled or not.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The password to read the trust store and key store files, if they are password protected.
      * 
      */
-    private final String storePassword;
+    private String storePassword;
     /**
      * @return Base64 encoded string of trust store file content.
      * 
      */
-    private final String trustStoreContent;
+    private String trustStoreContent;
 
-    @CustomType.Constructor
-    private GetTargetDatabaseTlsConfig(
-        @CustomType.Parameter("certificateStoreType") String certificateStoreType,
-        @CustomType.Parameter("keyStoreContent") String keyStoreContent,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("storePassword") String storePassword,
-        @CustomType.Parameter("trustStoreContent") String trustStoreContent) {
-        this.certificateStoreType = certificateStoreType;
-        this.keyStoreContent = keyStoreContent;
-        this.status = status;
-        this.storePassword = storePassword;
-        this.trustStoreContent = trustStoreContent;
-    }
-
+    private GetTargetDatabaseTlsConfig() {}
     /**
      * @return The format of the certificate store.
      * 
@@ -92,18 +79,14 @@ public final class GetTargetDatabaseTlsConfig {
     public static Builder builder(GetTargetDatabaseTlsConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificateStoreType;
         private String keyStoreContent;
         private String status;
         private String storePassword;
         private String trustStoreContent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabaseTlsConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateStoreType = defaults.certificateStoreType;
@@ -113,27 +96,39 @@ public final class GetTargetDatabaseTlsConfig {
     	      this.trustStoreContent = defaults.trustStoreContent;
         }
 
+        @CustomType.Setter
         public Builder certificateStoreType(String certificateStoreType) {
             this.certificateStoreType = Objects.requireNonNull(certificateStoreType);
             return this;
         }
+        @CustomType.Setter
         public Builder keyStoreContent(String keyStoreContent) {
             this.keyStoreContent = Objects.requireNonNull(keyStoreContent);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder storePassword(String storePassword) {
             this.storePassword = Objects.requireNonNull(storePassword);
             return this;
         }
+        @CustomType.Setter
         public Builder trustStoreContent(String trustStoreContent) {
             this.trustStoreContent = Objects.requireNonNull(trustStoreContent);
             return this;
-        }        public GetTargetDatabaseTlsConfig build() {
-            return new GetTargetDatabaseTlsConfig(certificateStoreType, keyStoreContent, status, storePassword, trustStoreContent);
+        }
+        public GetTargetDatabaseTlsConfig build() {
+            final var o = new GetTargetDatabaseTlsConfig();
+            o.certificateStoreType = certificateStoreType;
+            o.keyStoreContent = keyStoreContent;
+            o.status = status;
+            o.storePassword = storePassword;
+            o.trustStoreContent = trustStoreContent;
+            return o;
         }
     }
 }

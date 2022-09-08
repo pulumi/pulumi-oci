@@ -18,42 +18,29 @@ public final class VirtualServiceRouteTableRouteRule {
      * @return (Updatable) The destination of the request.
      * 
      */
-    private final List<VirtualServiceRouteTableRouteRuleDestination> destinations;
+    private List<VirtualServiceRouteTableRouteRuleDestination> destinations;
     /**
      * @return (Updatable) If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
      * 
      */
-    private final @Nullable Boolean isGrpc;
+    private @Nullable Boolean isGrpc;
     /**
      * @return (Updatable) Route to match
      * 
      */
-    private final @Nullable String path;
+    private @Nullable String path;
     /**
      * @return (Updatable) Match type for the route
      * 
      */
-    private final @Nullable String pathType;
+    private @Nullable String pathType;
     /**
      * @return (Updatable) Type of protocol.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private VirtualServiceRouteTableRouteRule(
-        @CustomType.Parameter("destinations") List<VirtualServiceRouteTableRouteRuleDestination> destinations,
-        @CustomType.Parameter("isGrpc") @Nullable Boolean isGrpc,
-        @CustomType.Parameter("path") @Nullable String path,
-        @CustomType.Parameter("pathType") @Nullable String pathType,
-        @CustomType.Parameter("type") String type) {
-        this.destinations = destinations;
-        this.isGrpc = isGrpc;
-        this.path = path;
-        this.pathType = pathType;
-        this.type = type;
-    }
-
+    private VirtualServiceRouteTableRouteRule() {}
     /**
      * @return (Updatable) The destination of the request.
      * 
@@ -97,18 +84,14 @@ public final class VirtualServiceRouteTableRouteRule {
     public static Builder builder(VirtualServiceRouteTableRouteRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<VirtualServiceRouteTableRouteRuleDestination> destinations;
         private @Nullable Boolean isGrpc;
         private @Nullable String path;
         private @Nullable String pathType;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VirtualServiceRouteTableRouteRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinations = defaults.destinations;
@@ -118,6 +101,7 @@ public final class VirtualServiceRouteTableRouteRule {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder destinations(List<VirtualServiceRouteTableRouteRuleDestination> destinations) {
             this.destinations = Objects.requireNonNull(destinations);
             return this;
@@ -125,23 +109,34 @@ public final class VirtualServiceRouteTableRouteRule {
         public Builder destinations(VirtualServiceRouteTableRouteRuleDestination... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder isGrpc(@Nullable Boolean isGrpc) {
             this.isGrpc = isGrpc;
             return this;
         }
+        @CustomType.Setter
         public Builder path(@Nullable String path) {
             this.path = path;
             return this;
         }
+        @CustomType.Setter
         public Builder pathType(@Nullable String pathType) {
             this.pathType = pathType;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public VirtualServiceRouteTableRouteRule build() {
-            return new VirtualServiceRouteTableRouteRule(destinations, isGrpc, path, pathType, type);
+        }
+        public VirtualServiceRouteTableRouteRule build() {
+            final var o = new VirtualServiceRouteTableRouteRule();
+            o.destinations = destinations;
+            o.isGrpc = isGrpc;
+            o.path = path;
+            o.pathType = pathType;
+            o.type = type;
+            return o;
         }
     }
 }

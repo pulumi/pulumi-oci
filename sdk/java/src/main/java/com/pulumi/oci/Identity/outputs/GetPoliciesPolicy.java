@@ -18,109 +18,78 @@ public final class GetPoliciesPolicy {
      * 
      */
     @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private final String ETag;
+    private String ETag;
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description you assign to the policy. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the policy.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private final String inactiveState;
+    private String inactiveState;
     /**
      * @deprecated
      * The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
     @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private final String lastUpdateETag;
+    private String lastUpdateETag;
     /**
      * @return A filter to only return resources that match the given name exactly.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @deprecated
      * The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
     @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private final String policyHash;
+    private String policyHash;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return An array of one or more policy statements written in the policy language.
      * 
      */
-    private final List<String> statements;
+    private List<String> statements;
     /**
      * @return Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
      * 
      */
-    private final String versionDate;
+    private String versionDate;
 
-    @CustomType.Constructor
-    private GetPoliciesPolicy(
-        @CustomType.Parameter("ETag") String ETag,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inactiveState") String inactiveState,
-        @CustomType.Parameter("lastUpdateETag") String lastUpdateETag,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("policyHash") String policyHash,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("statements") List<String> statements,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("versionDate") String versionDate) {
-        this.ETag = ETag;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.inactiveState = inactiveState;
-        this.lastUpdateETag = lastUpdateETag;
-        this.name = name;
-        this.policyHash = policyHash;
-        this.state = state;
-        this.statements = statements;
-        this.timeCreated = timeCreated;
-        this.versionDate = versionDate;
-    }
-
+    private GetPoliciesPolicy() {}
     /**
      * @deprecated
      * The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
@@ -233,7 +202,7 @@ public final class GetPoliciesPolicy {
     public static Builder builder(GetPoliciesPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ETag;
         private String compartmentId;
@@ -249,11 +218,7 @@ public final class GetPoliciesPolicy {
         private List<String> statements;
         private String timeCreated;
         private String versionDate;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPoliciesPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ETag = defaults.ETag;
@@ -272,50 +237,62 @@ public final class GetPoliciesPolicy {
     	      this.versionDate = defaults.versionDate;
         }
 
+        @CustomType.Setter
         public Builder ETag(String ETag) {
             this.ETag = Objects.requireNonNull(ETag);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
             this.inactiveState = Objects.requireNonNull(inactiveState);
             return this;
         }
+        @CustomType.Setter
         public Builder lastUpdateETag(String lastUpdateETag) {
             this.lastUpdateETag = Objects.requireNonNull(lastUpdateETag);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder policyHash(String policyHash) {
             this.policyHash = Objects.requireNonNull(policyHash);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder statements(List<String> statements) {
             this.statements = Objects.requireNonNull(statements);
             return this;
@@ -323,15 +300,33 @@ public final class GetPoliciesPolicy {
         public Builder statements(String... statements) {
             return statements(List.of(statements));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder versionDate(String versionDate) {
             this.versionDate = Objects.requireNonNull(versionDate);
             return this;
-        }        public GetPoliciesPolicy build() {
-            return new GetPoliciesPolicy(ETag, compartmentId, definedTags, description, freeformTags, id, inactiveState, lastUpdateETag, name, policyHash, state, statements, timeCreated, versionDate);
+        }
+        public GetPoliciesPolicy build() {
+            final var o = new GetPoliciesPolicy();
+            o.ETag = ETag;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.inactiveState = inactiveState;
+            o.lastUpdateETag = lastUpdateETag;
+            o.name = name;
+            o.policyHash = policyHash;
+            o.state = state;
+            o.statements = statements;
+            o.timeCreated = timeCreated;
+            o.versionDate = versionDate;
+            return o;
         }
     }
 }

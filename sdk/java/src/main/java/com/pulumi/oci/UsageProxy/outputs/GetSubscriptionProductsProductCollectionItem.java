@@ -14,13 +14,9 @@ public final class GetSubscriptionProductsProductCollectionItem {
      * @return The list of product rewards summaries.
      * 
      */
-    private final List<GetSubscriptionProductsProductCollectionItemItem> items;
+    private List<GetSubscriptionProductsProductCollectionItemItem> items;
 
-    @CustomType.Constructor
-    private GetSubscriptionProductsProductCollectionItem(@CustomType.Parameter("items") List<GetSubscriptionProductsProductCollectionItemItem> items) {
-        this.items = items;
-    }
-
+    private GetSubscriptionProductsProductCollectionItem() {}
     /**
      * @return The list of product rewards summaries.
      * 
@@ -36,27 +32,27 @@ public final class GetSubscriptionProductsProductCollectionItem {
     public static Builder builder(GetSubscriptionProductsProductCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionProductsProductCollectionItemItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionProductsProductCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSubscriptionProductsProductCollectionItemItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSubscriptionProductsProductCollectionItemItem... items) {
             return items(List.of(items));
-        }        public GetSubscriptionProductsProductCollectionItem build() {
-            return new GetSubscriptionProductsProductCollectionItem(items);
+        }
+        public GetSubscriptionProductsProductCollectionItem build() {
+            final var o = new GetSubscriptionProductsProductCollectionItem();
+            o.items = items;
+            return o;
         }
     }
 }

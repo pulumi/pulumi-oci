@@ -18,83 +18,56 @@ public final class GetQuotaResult {
      * @return The OCID of the compartment containing the resource this quota applies to.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description you assign to the quota.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the quota.
      * 
      */
-    private final String id;
-    private final Boolean isLockOverride;
+    private String id;
+    private Boolean isLockOverride;
     /**
      * @return Locks associated with this resource.
      * 
      */
-    private final List<GetQuotaLock> locks;
+    private List<GetQuotaLock> locks;
     /**
      * @return The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
      * 
      */
-    private final String name;
-    private final String quotaId;
+    private String name;
+    private String quotaId;
     /**
      * @return The quota&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return An array of one or more quota statements written in the declarative quota statement language.
      * 
      */
-    private final List<String> statements;
+    private List<String> statements;
     /**
      * @return Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetQuotaResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isLockOverride") Boolean isLockOverride,
-        @CustomType.Parameter("locks") List<GetQuotaLock> locks,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("quotaId") String quotaId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("statements") List<String> statements,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isLockOverride = isLockOverride;
-        this.locks = locks;
-        this.name = name;
-        this.quotaId = quotaId;
-        this.state = state;
-        this.statements = statements;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetQuotaResult() {}
     /**
      * @return The OCID of the compartment containing the resource this quota applies to.
      * 
@@ -179,7 +152,7 @@ public final class GetQuotaResult {
     public static Builder builder(GetQuotaResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -193,11 +166,7 @@ public final class GetQuotaResult {
         private String state;
         private List<String> statements;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQuotaResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -214,30 +183,37 @@ public final class GetQuotaResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isLockOverride(Boolean isLockOverride) {
             this.isLockOverride = Objects.requireNonNull(isLockOverride);
             return this;
         }
+        @CustomType.Setter
         public Builder locks(List<GetQuotaLock> locks) {
             this.locks = Objects.requireNonNull(locks);
             return this;
@@ -245,18 +221,22 @@ public final class GetQuotaResult {
         public Builder locks(GetQuotaLock... locks) {
             return locks(List.of(locks));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder quotaId(String quotaId) {
             this.quotaId = Objects.requireNonNull(quotaId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder statements(List<String> statements) {
             this.statements = Objects.requireNonNull(statements);
             return this;
@@ -264,11 +244,26 @@ public final class GetQuotaResult {
         public Builder statements(String... statements) {
             return statements(List.of(statements));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetQuotaResult build() {
-            return new GetQuotaResult(compartmentId, definedTags, description, freeformTags, id, isLockOverride, locks, name, quotaId, state, statements, timeCreated);
+        }
+        public GetQuotaResult build() {
+            final var o = new GetQuotaResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isLockOverride = isLockOverride;
+            o.locks = locks;
+            o.name = name;
+            o.quotaId = quotaId;
+            o.state = state;
+            o.statements = statements;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

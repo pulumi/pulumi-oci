@@ -15,28 +15,19 @@ public final class ManagedDatabasesChangeDatabaseParameterParameter {
      * @return The parameter name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A comment string to associate with the change in parameter value. It cannot contain control characters or a line break.
      * 
      */
-    private final @Nullable String updateComment;
+    private @Nullable String updateComment;
     /**
      * @return The parameter value.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private ManagedDatabasesChangeDatabaseParameterParameter(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("updateComment") @Nullable String updateComment,
-        @CustomType.Parameter("value") String value) {
-        this.name = name;
-        this.updateComment = updateComment;
-        this.value = value;
-    }
-
+    private ManagedDatabasesChangeDatabaseParameterParameter() {}
     /**
      * @return The parameter name.
      * 
@@ -66,16 +57,12 @@ public final class ManagedDatabasesChangeDatabaseParameterParameter {
     public static Builder builder(ManagedDatabasesChangeDatabaseParameterParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private @Nullable String updateComment;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ManagedDatabasesChangeDatabaseParameterParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -83,19 +70,27 @@ public final class ManagedDatabasesChangeDatabaseParameterParameter {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder updateComment(@Nullable String updateComment) {
             this.updateComment = updateComment;
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public ManagedDatabasesChangeDatabaseParameterParameter build() {
-            return new ManagedDatabasesChangeDatabaseParameterParameter(name, updateComment, value);
+        }
+        public ManagedDatabasesChangeDatabaseParameterParameter build() {
+            final var o = new ManagedDatabasesChangeDatabaseParameterParameter();
+            o.name = name;
+            o.updateComment = updateComment;
+            o.value = value;
+            return o;
         }
     }
 }

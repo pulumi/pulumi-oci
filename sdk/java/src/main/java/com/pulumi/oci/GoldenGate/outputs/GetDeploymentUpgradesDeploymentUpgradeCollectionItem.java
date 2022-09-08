@@ -15,126 +15,89 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The ID of the deployment in which to list resources.
      * 
      */
-    private final String deploymentId;
+    private String deploymentId;
     /**
      * @return The type of the deployment upgrade: MANUAL or AUTOMATIC
      * 
      */
-    private final String deploymentUpgradeType;
+    private String deploymentUpgradeType;
     /**
      * @return Metadata about this specific object.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Possible GGS lifecycle sub-states.
      * 
      */
-    private final String lifecycleSubState;
+    private String lifecycleSubState;
     /**
      * @return Version of OGG
      * 
      */
-    private final String oggVersion;
+    private String oggVersion;
     /**
      * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeFinished;
+    private String timeFinished;
     /**
      * @return The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetDeploymentUpgradesDeploymentUpgradeCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("deploymentId") String deploymentId,
-        @CustomType.Parameter("deploymentUpgradeType") String deploymentUpgradeType,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("lifecycleSubState") String lifecycleSubState,
-        @CustomType.Parameter("oggVersion") String oggVersion,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeFinished") String timeFinished,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.deploymentId = deploymentId;
-        this.deploymentUpgradeType = deploymentUpgradeType;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.lifecycleSubState = lifecycleSubState;
-        this.oggVersion = oggVersion;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeFinished = timeFinished;
-        this.timeStarted = timeStarted;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetDeploymentUpgradesDeploymentUpgradeCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -262,7 +225,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
     public static Builder builder(GetDeploymentUpgradesDeploymentUpgradeCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -281,11 +244,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
         private String timeFinished;
         private String timeStarted;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentUpgradesDeploymentUpgradeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -307,75 +266,111 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = Objects.requireNonNull(deploymentId);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentUpgradeType(String deploymentUpgradeType) {
             this.deploymentUpgradeType = Objects.requireNonNull(deploymentUpgradeType);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleSubState(String lifecycleSubState) {
             this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
             return this;
         }
+        @CustomType.Setter
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = Objects.requireNonNull(oggVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
             this.timeFinished = Objects.requireNonNull(timeFinished);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetDeploymentUpgradesDeploymentUpgradeCollectionItem build() {
-            return new GetDeploymentUpgradesDeploymentUpgradeCollectionItem(compartmentId, definedTags, deploymentId, deploymentUpgradeType, description, displayName, freeformTags, id, lifecycleDetails, lifecycleSubState, oggVersion, state, systemTags, timeCreated, timeFinished, timeStarted, timeUpdated);
+        }
+        public GetDeploymentUpgradesDeploymentUpgradeCollectionItem build() {
+            final var o = new GetDeploymentUpgradesDeploymentUpgradeCollectionItem();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.deploymentId = deploymentId;
+            o.deploymentUpgradeType = deploymentUpgradeType;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.lifecycleSubState = lifecycleSubState;
+            o.oggVersion = oggVersion;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeFinished = timeFinished;
+            o.timeStarted = timeStarted;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

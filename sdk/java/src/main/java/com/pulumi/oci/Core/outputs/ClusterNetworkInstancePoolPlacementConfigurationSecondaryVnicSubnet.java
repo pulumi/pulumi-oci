@@ -15,21 +15,14 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
      * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
      * 
      */
-    private final @Nullable String subnetId;
+    private @Nullable String subnetId;
 
-    @CustomType.Constructor
-    private ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("subnetId") @Nullable String subnetId) {
-        this.displayName = displayName;
-        this.subnetId = subnetId;
-    }
-
+    private ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet() {}
     /**
      * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
      * 
@@ -52,30 +45,32 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
     public static Builder builder(ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
             this.subnetId = subnetId;
             return this;
-        }        public ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet build() {
-            return new ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet(displayName, subnetId);
+        }
+        public ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet build() {
+            final var o = new ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet();
+            o.displayName = displayName;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

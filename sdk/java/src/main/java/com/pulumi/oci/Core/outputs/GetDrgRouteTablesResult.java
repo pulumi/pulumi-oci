@@ -18,52 +18,35 @@ public final class GetDrgRouteTablesResult {
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG that contains this route table.
      * 
      */
-    private final String drgId;
+    private String drgId;
     /**
      * @return The list of drg_route_tables.
      * 
      */
-    private final List<GetDrgRouteTablesDrgRouteTable> drgRouteTables;
-    private final @Nullable List<GetDrgRouteTablesFilter> filters;
+    private List<GetDrgRouteTablesDrgRouteTable> drgRouteTables;
+    private @Nullable List<GetDrgRouteTablesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
      * 
      */
-    private final @Nullable String importDrgRouteDistributionId;
+    private @Nullable String importDrgRouteDistributionId;
     /**
      * @return The DRG route table&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDrgRouteTablesResult(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("drgId") String drgId,
-        @CustomType.Parameter("drgRouteTables") List<GetDrgRouteTablesDrgRouteTable> drgRouteTables,
-        @CustomType.Parameter("filters") @Nullable List<GetDrgRouteTablesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("importDrgRouteDistributionId") @Nullable String importDrgRouteDistributionId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.displayName = displayName;
-        this.drgId = drgId;
-        this.drgRouteTables = drgRouteTables;
-        this.filters = filters;
-        this.id = id;
-        this.importDrgRouteDistributionId = importDrgRouteDistributionId;
-        this.state = state;
-    }
-
+    private GetDrgRouteTablesResult() {}
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -117,7 +100,7 @@ public final class GetDrgRouteTablesResult {
     public static Builder builder(GetDrgRouteTablesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private String drgId;
@@ -126,11 +109,7 @@ public final class GetDrgRouteTablesResult {
         private String id;
         private @Nullable String importDrgRouteDistributionId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDrgRouteTablesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -142,14 +121,17 @@ public final class GetDrgRouteTablesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder drgId(String drgId) {
             this.drgId = Objects.requireNonNull(drgId);
             return this;
         }
+        @CustomType.Setter
         public Builder drgRouteTables(List<GetDrgRouteTablesDrgRouteTable> drgRouteTables) {
             this.drgRouteTables = Objects.requireNonNull(drgRouteTables);
             return this;
@@ -157,6 +139,7 @@ public final class GetDrgRouteTablesResult {
         public Builder drgRouteTables(GetDrgRouteTablesDrgRouteTable... drgRouteTables) {
             return drgRouteTables(List.of(drgRouteTables));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDrgRouteTablesFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,19 +147,31 @@ public final class GetDrgRouteTablesResult {
         public Builder filters(GetDrgRouteTablesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder importDrgRouteDistributionId(@Nullable String importDrgRouteDistributionId) {
             this.importDrgRouteDistributionId = importDrgRouteDistributionId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDrgRouteTablesResult build() {
-            return new GetDrgRouteTablesResult(displayName, drgId, drgRouteTables, filters, id, importDrgRouteDistributionId, state);
+        }
+        public GetDrgRouteTablesResult build() {
+            final var o = new GetDrgRouteTablesResult();
+            o.displayName = displayName;
+            o.drgId = drgId;
+            o.drgRouteTables = drgRouteTables;
+            o.filters = filters;
+            o.id = id;
+            o.importDrgRouteDistributionId = importDrgRouteDistributionId;
+            o.state = state;
+            return o;
         }
     }
 }

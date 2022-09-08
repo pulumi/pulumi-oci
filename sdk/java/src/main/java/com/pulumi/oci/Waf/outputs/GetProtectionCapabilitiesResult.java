@@ -15,64 +15,43 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtectionCapabilitiesResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The display name of protection capability.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetProtectionCapabilitiesFilter> filters;
-    private final @Nullable List<String> groupTags;
+    private @Nullable String displayName;
+    private @Nullable List<GetProtectionCapabilitiesFilter> filters;
+    private @Nullable List<String> groupTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The field that shows if this is the latest version of protection capability.
      * 
      */
-    private final @Nullable List<Boolean> isLatestVersions;
+    private @Nullable List<Boolean> isLatestVersions;
     /**
      * @return Unique key of protection capability.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return The list of protection_capability_collection.
      * 
      */
-    private final List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections;
+    private List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections;
     /**
      * @return The type of protection capability.
      * * **REQUEST_PROTECTION_CAPABILITY** can only be used in `requestProtection` module of WebAppFirewallPolicy.
      * * **RESPONSE_PROTECTION_CAPABILITY** can only be used in `responseProtection` module of WebAppFirewallPolicy.
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private GetProtectionCapabilitiesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetProtectionCapabilitiesFilter> filters,
-        @CustomType.Parameter("groupTags") @Nullable List<String> groupTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isLatestVersions") @Nullable List<Boolean> isLatestVersions,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("protectionCapabilityCollections") List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.groupTags = groupTags;
-        this.id = id;
-        this.isLatestVersions = isLatestVersions;
-        this.key = key;
-        this.protectionCapabilityCollections = protectionCapabilityCollections;
-        this.type = type;
-    }
-
+    private GetProtectionCapabilitiesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -134,7 +113,7 @@ public final class GetProtectionCapabilitiesResult {
     public static Builder builder(GetProtectionCapabilitiesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -145,11 +124,7 @@ public final class GetProtectionCapabilitiesResult {
         private @Nullable String key;
         private List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProtectionCapabilitiesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -163,14 +138,17 @@ public final class GetProtectionCapabilitiesResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetProtectionCapabilitiesFilter> filters) {
             this.filters = filters;
             return this;
@@ -178,6 +156,7 @@ public final class GetProtectionCapabilitiesResult {
         public Builder filters(GetProtectionCapabilitiesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder groupTags(@Nullable List<String> groupTags) {
             this.groupTags = groupTags;
             return this;
@@ -185,10 +164,12 @@ public final class GetProtectionCapabilitiesResult {
         public Builder groupTags(String... groupTags) {
             return groupTags(List.of(groupTags));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isLatestVersions(@Nullable List<Boolean> isLatestVersions) {
             this.isLatestVersions = isLatestVersions;
             return this;
@@ -196,10 +177,12 @@ public final class GetProtectionCapabilitiesResult {
         public Builder isLatestVersions(Boolean... isLatestVersions) {
             return isLatestVersions(List.of(isLatestVersions));
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder protectionCapabilityCollections(List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections) {
             this.protectionCapabilityCollections = Objects.requireNonNull(protectionCapabilityCollections);
             return this;
@@ -207,11 +190,23 @@ public final class GetProtectionCapabilitiesResult {
         public Builder protectionCapabilityCollections(GetProtectionCapabilitiesProtectionCapabilityCollection... protectionCapabilityCollections) {
             return protectionCapabilityCollections(List.of(protectionCapabilityCollections));
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public GetProtectionCapabilitiesResult build() {
-            return new GetProtectionCapabilitiesResult(compartmentId, displayName, filters, groupTags, id, isLatestVersions, key, protectionCapabilityCollections, type);
+        }
+        public GetProtectionCapabilitiesResult build() {
+            final var o = new GetProtectionCapabilitiesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.groupTags = groupTags;
+            o.id = id;
+            o.isLatestVersions = isLatestVersions;
+            o.key = key;
+            o.protectionCapabilityCollections = protectionCapabilityCollections;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -11,49 +11,34 @@ import java.util.Objects;
 
 @CustomType
 public final class GetTagStandardTagNamespaceTemplateResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The default description of the tag namespace that users can use to create the tag definition
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The reserved name of this standard tag namespace
      * 
      */
-    private final String standardTagNamespaceName;
+    private String standardTagNamespaceName;
     /**
      * @return The status of the standard tag namespace
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The template of the tag definition. This object includes necessary details to create the provided standard tag definition.
      * 
      */
-    private final List<GetTagStandardTagNamespaceTemplateTagDefinitionTemplate> tagDefinitionTemplates;
+    private List<GetTagStandardTagNamespaceTemplateTagDefinitionTemplate> tagDefinitionTemplates;
 
-    @CustomType.Constructor
-    private GetTagStandardTagNamespaceTemplateResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("standardTagNamespaceName") String standardTagNamespaceName,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("tagDefinitionTemplates") List<GetTagStandardTagNamespaceTemplateTagDefinitionTemplate> tagDefinitionTemplates) {
-        this.compartmentId = compartmentId;
-        this.description = description;
-        this.id = id;
-        this.standardTagNamespaceName = standardTagNamespaceName;
-        this.status = status;
-        this.tagDefinitionTemplates = tagDefinitionTemplates;
-    }
-
+    private GetTagStandardTagNamespaceTemplateResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -100,7 +85,7 @@ public final class GetTagStandardTagNamespaceTemplateResult {
     public static Builder builder(GetTagStandardTagNamespaceTemplateResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String description;
@@ -108,11 +93,7 @@ public final class GetTagStandardTagNamespaceTemplateResult {
         private String standardTagNamespaceName;
         private String status;
         private List<GetTagStandardTagNamespaceTemplateTagDefinitionTemplate> tagDefinitionTemplates;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTagStandardTagNamespaceTemplateResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -123,34 +104,48 @@ public final class GetTagStandardTagNamespaceTemplateResult {
     	      this.tagDefinitionTemplates = defaults.tagDefinitionTemplates;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder standardTagNamespaceName(String standardTagNamespaceName) {
             this.standardTagNamespaceName = Objects.requireNonNull(standardTagNamespaceName);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder tagDefinitionTemplates(List<GetTagStandardTagNamespaceTemplateTagDefinitionTemplate> tagDefinitionTemplates) {
             this.tagDefinitionTemplates = Objects.requireNonNull(tagDefinitionTemplates);
             return this;
         }
         public Builder tagDefinitionTemplates(GetTagStandardTagNamespaceTemplateTagDefinitionTemplate... tagDefinitionTemplates) {
             return tagDefinitionTemplates(List.of(tagDefinitionTemplates));
-        }        public GetTagStandardTagNamespaceTemplateResult build() {
-            return new GetTagStandardTagNamespaceTemplateResult(compartmentId, description, id, standardTagNamespaceName, status, tagDefinitionTemplates);
+        }
+        public GetTagStandardTagNamespaceTemplateResult build() {
+            final var o = new GetTagStandardTagNamespaceTemplateResult();
+            o.compartmentId = compartmentId;
+            o.description = description;
+            o.id = id;
+            o.standardTagNamespaceName = standardTagNamespaceName;
+            o.status = status;
+            o.tagDefinitionTemplates = tagDefinitionTemplates;
+            return o;
         }
     }
 }

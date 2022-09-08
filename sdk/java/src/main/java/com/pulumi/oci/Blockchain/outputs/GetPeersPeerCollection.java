@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPeersPeerCollection {
-    private final List<GetPeersPeerCollectionItem> items;
+    private List<GetPeersPeerCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetPeersPeerCollection(@CustomType.Parameter("items") List<GetPeersPeerCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetPeersPeerCollection() {}
     public List<GetPeersPeerCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetPeersPeerCollection {
     public static Builder builder(GetPeersPeerCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetPeersPeerCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPeersPeerCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetPeersPeerCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetPeersPeerCollectionItem... items) {
             return items(List.of(items));
-        }        public GetPeersPeerCollection build() {
-            return new GetPeersPeerCollection(items);
+        }
+        public GetPeersPeerCollection build() {
+            final var o = new GetPeersPeerCollection();
+            o.items = items;
+            return o;
         }
     }
 }

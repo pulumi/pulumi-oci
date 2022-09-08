@@ -15,63 +15,44 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
      * @return List of authentication headers. Example: `[{&#34;headerName&#34;: &#34;content-type&#34;, &#34;headerValue&#34;:&#34;json&#34;}]`
      * 
      */
-    private final List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders;
+    private List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders;
     /**
      * @return Request method.
      * 
      */
-    private final String authRequestMethod;
+    private String authRequestMethod;
     /**
      * @return Request post body.
      * 
      */
-    private final String authRequestPostBody;
+    private String authRequestPostBody;
     /**
      * @return Authentication token.
      * 
      */
-    private final String authToken;
+    private String authToken;
     /**
      * @return URL to get authetication token.
      * 
      */
-    private final String authUrl;
+    private String authUrl;
     /**
      * @return Username for authentication.
      * 
      */
-    private final String authUserName;
+    private String authUserName;
     /**
      * @return User password for authentication.
      * 
      */
-    private final String authUserPassword;
+    private String authUserPassword;
     /**
      * @return Request http oauth scheme.
      * 
      */
-    private final String oauthScheme;
+    private String oauthScheme;
 
-    @CustomType.Constructor
-    private GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail(
-        @CustomType.Parameter("authHeaders") List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders,
-        @CustomType.Parameter("authRequestMethod") String authRequestMethod,
-        @CustomType.Parameter("authRequestPostBody") String authRequestPostBody,
-        @CustomType.Parameter("authToken") String authToken,
-        @CustomType.Parameter("authUrl") String authUrl,
-        @CustomType.Parameter("authUserName") String authUserName,
-        @CustomType.Parameter("authUserPassword") String authUserPassword,
-        @CustomType.Parameter("oauthScheme") String oauthScheme) {
-        this.authHeaders = authHeaders;
-        this.authRequestMethod = authRequestMethod;
-        this.authRequestPostBody = authRequestPostBody;
-        this.authToken = authToken;
-        this.authUrl = authUrl;
-        this.authUserName = authUserName;
-        this.authUserPassword = authUserPassword;
-        this.oauthScheme = oauthScheme;
-    }
-
+    private GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail() {}
     /**
      * @return List of authentication headers. Example: `[{&#34;headerName&#34;: &#34;content-type&#34;, &#34;headerValue&#34;:&#34;json&#34;}]`
      * 
@@ -136,7 +117,7 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
     public static Builder builder(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders;
         private String authRequestMethod;
@@ -146,11 +127,7 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
         private String authUserName;
         private String authUserPassword;
         private String oauthScheme;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authHeaders = defaults.authHeaders;
@@ -163,6 +140,7 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
     	      this.oauthScheme = defaults.oauthScheme;
         }
 
+        @CustomType.Setter
         public Builder authHeaders(List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders) {
             this.authHeaders = Objects.requireNonNull(authHeaders);
             return this;
@@ -170,35 +148,52 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
         public Builder authHeaders(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader... authHeaders) {
             return authHeaders(List.of(authHeaders));
         }
+        @CustomType.Setter
         public Builder authRequestMethod(String authRequestMethod) {
             this.authRequestMethod = Objects.requireNonNull(authRequestMethod);
             return this;
         }
+        @CustomType.Setter
         public Builder authRequestPostBody(String authRequestPostBody) {
             this.authRequestPostBody = Objects.requireNonNull(authRequestPostBody);
             return this;
         }
+        @CustomType.Setter
         public Builder authToken(String authToken) {
             this.authToken = Objects.requireNonNull(authToken);
             return this;
         }
+        @CustomType.Setter
         public Builder authUrl(String authUrl) {
             this.authUrl = Objects.requireNonNull(authUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder authUserName(String authUserName) {
             this.authUserName = Objects.requireNonNull(authUserName);
             return this;
         }
+        @CustomType.Setter
         public Builder authUserPassword(String authUserPassword) {
             this.authUserPassword = Objects.requireNonNull(authUserPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder oauthScheme(String oauthScheme) {
             this.oauthScheme = Objects.requireNonNull(oauthScheme);
             return this;
-        }        public GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail build() {
-            return new GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail(authHeaders, authRequestMethod, authRequestPostBody, authToken, authUrl, authUserName, authUserPassword, oauthScheme);
+        }
+        public GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail build() {
+            final var o = new GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail();
+            o.authHeaders = authHeaders;
+            o.authRequestMethod = authRequestMethod;
+            o.authRequestPostBody = authRequestPostBody;
+            o.authToken = authToken;
+            o.authUrl = authUrl;
+            o.authUserName = authUserName;
+            o.authUserPassword = authUserPassword;
+            o.oauthScheme = oauthScheme;
+            return o;
         }
     }
 }

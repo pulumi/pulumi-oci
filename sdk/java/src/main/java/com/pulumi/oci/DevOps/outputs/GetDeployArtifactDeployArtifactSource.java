@@ -13,63 +13,44 @@ public final class GetDeployArtifactDeployArtifactSource {
      * @return Specifies content for the inline artifact.
      * 
      */
-    private final String base64encodedContent;
+    private String base64encodedContent;
     /**
      * @return The URL of an OCIR repository.
      * 
      */
-    private final String chartUrl;
+    private String chartUrl;
     /**
      * @return Specifies the artifact path in the repository.
      * 
      */
-    private final String deployArtifactPath;
+    private String deployArtifactPath;
     /**
      * @return Specifies types of artifact sources.
      * 
      */
-    private final String deployArtifactSourceType;
+    private String deployArtifactSourceType;
     /**
      * @return Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
      * 
      */
-    private final String deployArtifactVersion;
+    private String deployArtifactVersion;
     /**
      * @return Specifies image digest for the version of the image.
      * 
      */
-    private final String imageDigest;
+    private String imageDigest;
     /**
      * @return Specifies OCIR Image Path - optionally include tag.
      * 
      */
-    private final String imageUri;
+    private String imageUri;
     /**
      * @return The OCID of a repository
      * 
      */
-    private final String repositoryId;
+    private String repositoryId;
 
-    @CustomType.Constructor
-    private GetDeployArtifactDeployArtifactSource(
-        @CustomType.Parameter("base64encodedContent") String base64encodedContent,
-        @CustomType.Parameter("chartUrl") String chartUrl,
-        @CustomType.Parameter("deployArtifactPath") String deployArtifactPath,
-        @CustomType.Parameter("deployArtifactSourceType") String deployArtifactSourceType,
-        @CustomType.Parameter("deployArtifactVersion") String deployArtifactVersion,
-        @CustomType.Parameter("imageDigest") String imageDigest,
-        @CustomType.Parameter("imageUri") String imageUri,
-        @CustomType.Parameter("repositoryId") String repositoryId) {
-        this.base64encodedContent = base64encodedContent;
-        this.chartUrl = chartUrl;
-        this.deployArtifactPath = deployArtifactPath;
-        this.deployArtifactSourceType = deployArtifactSourceType;
-        this.deployArtifactVersion = deployArtifactVersion;
-        this.imageDigest = imageDigest;
-        this.imageUri = imageUri;
-        this.repositoryId = repositoryId;
-    }
-
+    private GetDeployArtifactDeployArtifactSource() {}
     /**
      * @return Specifies content for the inline artifact.
      * 
@@ -134,7 +115,7 @@ public final class GetDeployArtifactDeployArtifactSource {
     public static Builder builder(GetDeployArtifactDeployArtifactSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String base64encodedContent;
         private String chartUrl;
@@ -144,11 +125,7 @@ public final class GetDeployArtifactDeployArtifactSource {
         private String imageDigest;
         private String imageUri;
         private String repositoryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployArtifactDeployArtifactSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.base64encodedContent = defaults.base64encodedContent;
@@ -161,39 +138,57 @@ public final class GetDeployArtifactDeployArtifactSource {
     	      this.repositoryId = defaults.repositoryId;
         }
 
+        @CustomType.Setter
         public Builder base64encodedContent(String base64encodedContent) {
             this.base64encodedContent = Objects.requireNonNull(base64encodedContent);
             return this;
         }
+        @CustomType.Setter
         public Builder chartUrl(String chartUrl) {
             this.chartUrl = Objects.requireNonNull(chartUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder deployArtifactPath(String deployArtifactPath) {
             this.deployArtifactPath = Objects.requireNonNull(deployArtifactPath);
             return this;
         }
+        @CustomType.Setter
         public Builder deployArtifactSourceType(String deployArtifactSourceType) {
             this.deployArtifactSourceType = Objects.requireNonNull(deployArtifactSourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder deployArtifactVersion(String deployArtifactVersion) {
             this.deployArtifactVersion = Objects.requireNonNull(deployArtifactVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder imageDigest(String imageDigest) {
             this.imageDigest = Objects.requireNonNull(imageDigest);
             return this;
         }
+        @CustomType.Setter
         public Builder imageUri(String imageUri) {
             this.imageUri = Objects.requireNonNull(imageUri);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
-        }        public GetDeployArtifactDeployArtifactSource build() {
-            return new GetDeployArtifactDeployArtifactSource(base64encodedContent, chartUrl, deployArtifactPath, deployArtifactSourceType, deployArtifactVersion, imageDigest, imageUri, repositoryId);
+        }
+        public GetDeployArtifactDeployArtifactSource build() {
+            final var o = new GetDeployArtifactDeployArtifactSource();
+            o.base64encodedContent = base64encodedContent;
+            o.chartUrl = chartUrl;
+            o.deployArtifactPath = deployArtifactPath;
+            o.deployArtifactSourceType = deployArtifactSourceType;
+            o.deployArtifactVersion = deployArtifactVersion;
+            o.imageDigest = imageDigest;
+            o.imageUri = imageUri;
+            o.repositoryId = repositoryId;
+            return o;
         }
     }
 }

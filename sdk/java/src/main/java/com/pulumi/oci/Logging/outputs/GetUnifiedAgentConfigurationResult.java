@@ -19,101 +19,70 @@ public final class GetUnifiedAgentConfigurationResult {
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return State of unified agent service configuration.
      * 
      */
-    private final String configurationState;
+    private String configurationState;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description for this resource.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Groups using the configuration.
      * 
      */
-    private final List<GetUnifiedAgentConfigurationGroupAssociation> groupAssociations;
+    private List<GetUnifiedAgentConfigurationGroupAssociation> groupAssociations;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether or not this resource is currently enabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return Top level Unified Agent service configuration object.
      * 
      */
-    private final List<GetUnifiedAgentConfigurationServiceConfiguration> serviceConfigurations;
+    private List<GetUnifiedAgentConfigurationServiceConfiguration> serviceConfigurations;
     /**
      * @return The pipeline state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Time the resource was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Time the resource was last modified.
      * 
      */
-    private final String timeLastModified;
-    private final String unifiedAgentConfigurationId;
+    private String timeLastModified;
+    private String unifiedAgentConfigurationId;
 
-    @CustomType.Constructor
-    private GetUnifiedAgentConfigurationResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("configurationState") String configurationState,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("groupAssociations") List<GetUnifiedAgentConfigurationGroupAssociation> groupAssociations,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("serviceConfigurations") List<GetUnifiedAgentConfigurationServiceConfiguration> serviceConfigurations,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastModified") String timeLastModified,
-        @CustomType.Parameter("unifiedAgentConfigurationId") String unifiedAgentConfigurationId) {
-        this.compartmentId = compartmentId;
-        this.configurationState = configurationState;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.groupAssociations = groupAssociations;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.serviceConfigurations = serviceConfigurations;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeLastModified = timeLastModified;
-        this.unifiedAgentConfigurationId = unifiedAgentConfigurationId;
-    }
-
+    private GetUnifiedAgentConfigurationResult() {}
     /**
      * @return The OCID of the compartment that the resource belongs to.
      * 
@@ -216,7 +185,7 @@ public final class GetUnifiedAgentConfigurationResult {
     public static Builder builder(GetUnifiedAgentConfigurationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String configurationState;
@@ -232,11 +201,7 @@ public final class GetUnifiedAgentConfigurationResult {
         private String timeCreated;
         private String timeLastModified;
         private String unifiedAgentConfigurationId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUnifiedAgentConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -255,30 +220,37 @@ public final class GetUnifiedAgentConfigurationResult {
     	      this.unifiedAgentConfigurationId = defaults.unifiedAgentConfigurationId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder configurationState(String configurationState) {
             this.configurationState = Objects.requireNonNull(configurationState);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder groupAssociations(List<GetUnifiedAgentConfigurationGroupAssociation> groupAssociations) {
             this.groupAssociations = Objects.requireNonNull(groupAssociations);
             return this;
@@ -286,14 +258,17 @@ public final class GetUnifiedAgentConfigurationResult {
         public Builder groupAssociations(GetUnifiedAgentConfigurationGroupAssociation... groupAssociations) {
             return groupAssociations(List.of(groupAssociations));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceConfigurations(List<GetUnifiedAgentConfigurationServiceConfiguration> serviceConfigurations) {
             this.serviceConfigurations = Objects.requireNonNull(serviceConfigurations);
             return this;
@@ -301,23 +276,43 @@ public final class GetUnifiedAgentConfigurationResult {
         public Builder serviceConfigurations(GetUnifiedAgentConfigurationServiceConfiguration... serviceConfigurations) {
             return serviceConfigurations(List.of(serviceConfigurations));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastModified(String timeLastModified) {
             this.timeLastModified = Objects.requireNonNull(timeLastModified);
             return this;
         }
+        @CustomType.Setter
         public Builder unifiedAgentConfigurationId(String unifiedAgentConfigurationId) {
             this.unifiedAgentConfigurationId = Objects.requireNonNull(unifiedAgentConfigurationId);
             return this;
-        }        public GetUnifiedAgentConfigurationResult build() {
-            return new GetUnifiedAgentConfigurationResult(compartmentId, configurationState, definedTags, description, displayName, freeformTags, groupAssociations, id, isEnabled, serviceConfigurations, state, timeCreated, timeLastModified, unifiedAgentConfigurationId);
+        }
+        public GetUnifiedAgentConfigurationResult build() {
+            final var o = new GetUnifiedAgentConfigurationResult();
+            o.compartmentId = compartmentId;
+            o.configurationState = configurationState;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.groupAssociations = groupAssociations;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.serviceConfigurations = serviceConfigurations;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeLastModified = timeLastModified;
+            o.unifiedAgentConfigurationId = unifiedAgentConfigurationId;
+            return o;
         }
     }
 }

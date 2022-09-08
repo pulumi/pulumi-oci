@@ -13,13 +13,9 @@ public final class GetBuildPipelineStageBuildPipelineStagePredecessorCollectionI
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItem(@CustomType.Parameter("id") String id) {
-        this.id = id;
-    }
-
+    private GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItem() {}
     /**
      * @return Unique identifier that is immutable on creation.
      * 
@@ -35,24 +31,24 @@ public final class GetBuildPipelineStageBuildPipelineStagePredecessorCollectionI
     public static Builder builder(GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItem build() {
-            return new GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItem(id);
+        }
+        public GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItem build() {
+            final var o = new GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItem();
+            o.id = id;
+            return o;
         }
     }
 }

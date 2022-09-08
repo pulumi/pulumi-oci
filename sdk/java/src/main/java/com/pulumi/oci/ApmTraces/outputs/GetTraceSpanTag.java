@@ -13,21 +13,14 @@ public final class GetTraceSpanTag {
      * @return Key that specifies the tag name.
      * 
      */
-    private final String tagName;
+    private String tagName;
     /**
      * @return Value associated with the tag key.
      * 
      */
-    private final String tagValue;
+    private String tagValue;
 
-    @CustomType.Constructor
-    private GetTraceSpanTag(
-        @CustomType.Parameter("tagName") String tagName,
-        @CustomType.Parameter("tagValue") String tagValue) {
-        this.tagName = tagName;
-        this.tagValue = tagValue;
-    }
-
+    private GetTraceSpanTag() {}
     /**
      * @return Key that specifies the tag name.
      * 
@@ -50,30 +43,32 @@ public final class GetTraceSpanTag {
     public static Builder builder(GetTraceSpanTag defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String tagName;
         private String tagValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTraceSpanTag defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.tagName = defaults.tagName;
     	      this.tagValue = defaults.tagValue;
         }
 
+        @CustomType.Setter
         public Builder tagName(String tagName) {
             this.tagName = Objects.requireNonNull(tagName);
             return this;
         }
+        @CustomType.Setter
         public Builder tagValue(String tagValue) {
             this.tagValue = Objects.requireNonNull(tagValue);
             return this;
-        }        public GetTraceSpanTag build() {
-            return new GetTraceSpanTag(tagName, tagValue);
+        }
+        public GetTraceSpanTag build() {
+            final var o = new GetTraceSpanTag();
+            o.tagName = tagName;
+            o.tagValue = tagValue;
+            return o;
         }
     }
 }

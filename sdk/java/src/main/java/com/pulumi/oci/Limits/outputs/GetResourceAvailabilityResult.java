@@ -12,65 +12,42 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourceAvailabilityResult {
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The count of available resources. To support resources with fractional counts, the field rounds down to the nearest integer.
      * 
      */
-    private final String available;
-    private final String compartmentId;
+    private String available;
+    private String compartmentId;
     /**
      * @return The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
      * 
      */
-    private final Double effectiveQuotaValue;
+    private Double effectiveQuotaValue;
     /**
      * @return The most accurate count of available resources.
      * 
      */
-    private final Double fractionalAvailability;
+    private Double fractionalAvailability;
     /**
      * @return The current most accurate usage in the given compartment.
      * 
      */
-    private final Double fractionalUsage;
+    private Double fractionalUsage;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String limitName;
-    private final String serviceName;
+    private String id;
+    private String limitName;
+    private String serviceName;
     /**
      * @return The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
      * 
      */
-    private final String used;
+    private String used;
 
-    @CustomType.Constructor
-    private GetResourceAvailabilityResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("available") String available,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("effectiveQuotaValue") Double effectiveQuotaValue,
-        @CustomType.Parameter("fractionalAvailability") Double fractionalAvailability,
-        @CustomType.Parameter("fractionalUsage") Double fractionalUsage,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("limitName") String limitName,
-        @CustomType.Parameter("serviceName") String serviceName,
-        @CustomType.Parameter("used") String used) {
-        this.availabilityDomain = availabilityDomain;
-        this.available = available;
-        this.compartmentId = compartmentId;
-        this.effectiveQuotaValue = effectiveQuotaValue;
-        this.fractionalAvailability = fractionalAvailability;
-        this.fractionalUsage = fractionalUsage;
-        this.id = id;
-        this.limitName = limitName;
-        this.serviceName = serviceName;
-        this.used = used;
-    }
-
+    private GetResourceAvailabilityResult() {}
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
@@ -133,7 +110,7 @@ public final class GetResourceAvailabilityResult {
     public static Builder builder(GetResourceAvailabilityResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String available;
@@ -145,11 +122,7 @@ public final class GetResourceAvailabilityResult {
         private String limitName;
         private String serviceName;
         private String used;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResourceAvailabilityResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -164,47 +137,69 @@ public final class GetResourceAvailabilityResult {
     	      this.used = defaults.used;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder available(String available) {
             this.available = Objects.requireNonNull(available);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder effectiveQuotaValue(Double effectiveQuotaValue) {
             this.effectiveQuotaValue = Objects.requireNonNull(effectiveQuotaValue);
             return this;
         }
+        @CustomType.Setter
         public Builder fractionalAvailability(Double fractionalAvailability) {
             this.fractionalAvailability = Objects.requireNonNull(fractionalAvailability);
             return this;
         }
+        @CustomType.Setter
         public Builder fractionalUsage(Double fractionalUsage) {
             this.fractionalUsage = Objects.requireNonNull(fractionalUsage);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder limitName(String limitName) {
             this.limitName = Objects.requireNonNull(limitName);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(String serviceName) {
             this.serviceName = Objects.requireNonNull(serviceName);
             return this;
         }
+        @CustomType.Setter
         public Builder used(String used) {
             this.used = Objects.requireNonNull(used);
             return this;
-        }        public GetResourceAvailabilityResult build() {
-            return new GetResourceAvailabilityResult(availabilityDomain, available, compartmentId, effectiveQuotaValue, fractionalAvailability, fractionalUsage, id, limitName, serviceName, used);
+        }
+        public GetResourceAvailabilityResult build() {
+            final var o = new GetResourceAvailabilityResult();
+            o.availabilityDomain = availabilityDomain;
+            o.available = available;
+            o.compartmentId = compartmentId;
+            o.effectiveQuotaValue = effectiveQuotaValue;
+            o.fractionalAvailability = fractionalAvailability;
+            o.fractionalUsage = fractionalUsage;
+            o.id = id;
+            o.limitName = limitName;
+            o.serviceName = serviceName;
+            o.used = used;
+            return o;
         }
     }
 }

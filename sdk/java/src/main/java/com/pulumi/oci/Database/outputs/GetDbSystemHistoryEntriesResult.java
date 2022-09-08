@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemHistoryEntriesResult {
-    private final String dbSystemId;
-    private final @Nullable List<GetDbSystemHistoryEntriesFilter> filters;
+    private String dbSystemId;
+    private @Nullable List<GetDbSystemHistoryEntriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of patch_history_entries.
      * 
      */
-    private final List<GetDbSystemHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
+    private List<GetDbSystemHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
 
-    @CustomType.Constructor
-    private GetDbSystemHistoryEntriesResult(
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("filters") @Nullable List<GetDbSystemHistoryEntriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("patchHistoryEntries") List<GetDbSystemHistoryEntriesPatchHistoryEntry> patchHistoryEntries) {
-        this.dbSystemId = dbSystemId;
-        this.filters = filters;
-        this.id = id;
-        this.patchHistoryEntries = patchHistoryEntries;
-    }
-
+    private GetDbSystemHistoryEntriesResult() {}
     public String dbSystemId() {
         return this.dbSystemId;
     }
@@ -66,17 +55,13 @@ public final class GetDbSystemHistoryEntriesResult {
     public static Builder builder(GetDbSystemHistoryEntriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbSystemId;
         private @Nullable List<GetDbSystemHistoryEntriesFilter> filters;
         private String id;
         private List<GetDbSystemHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemHistoryEntriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbSystemId = defaults.dbSystemId;
@@ -85,10 +70,12 @@ public final class GetDbSystemHistoryEntriesResult {
     	      this.patchHistoryEntries = defaults.patchHistoryEntries;
         }
 
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemHistoryEntriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetDbSystemHistoryEntriesResult {
         public Builder filters(GetDbSystemHistoryEntriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder patchHistoryEntries(List<GetDbSystemHistoryEntriesPatchHistoryEntry> patchHistoryEntries) {
             this.patchHistoryEntries = Objects.requireNonNull(patchHistoryEntries);
             return this;
         }
         public Builder patchHistoryEntries(GetDbSystemHistoryEntriesPatchHistoryEntry... patchHistoryEntries) {
             return patchHistoryEntries(List.of(patchHistoryEntries));
-        }        public GetDbSystemHistoryEntriesResult build() {
-            return new GetDbSystemHistoryEntriesResult(dbSystemId, filters, id, patchHistoryEntries);
+        }
+        public GetDbSystemHistoryEntriesResult build() {
+            final var o = new GetDbSystemHistoryEntriesResult();
+            o.dbSystemId = dbSystemId;
+            o.filters = filters;
+            o.id = id;
+            o.patchHistoryEntries = patchHistoryEntries;
+            return o;
         }
     }
 }

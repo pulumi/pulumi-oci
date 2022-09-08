@@ -14,13 +14,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCo
      * @return A list of SQL Tuning Advisor tasks.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items;
+    private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection(@CustomType.Parameter("items") List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection() {}
     /**
      * @return A list of SQL Tuning Advisor tasks.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCo
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection(items);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection();
+            o.items = items;
+            return o;
         }
     }
 }

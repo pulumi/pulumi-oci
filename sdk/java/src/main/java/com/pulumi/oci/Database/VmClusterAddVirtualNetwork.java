@@ -102,22 +102,30 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
         return this.cpusEnabled;
     }
     /**
-     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     @Export(name="dataCollectionOptions", type=List.class, parameters={VmClusterAddVirtualNetworkDataCollectionOption.class})
     private Output<List<VmClusterAddVirtualNetworkDataCollectionOption>> dataCollectionOptions;
 
     /**
-     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     public Output<List<VmClusterAddVirtualNetworkDataCollectionOption>> dataCollectionOptions() {
         return this.dataCollectionOptions;
     }
+    /**
+     * Size of the DATA disk group in GBs.
+     * 
+     */
     @Export(name="dataStorageSizeInGb", type=Double.class, parameters={})
     private Output<Double> dataStorageSizeInGb;
 
+    /**
+     * @return Size of the DATA disk group in GBs.
+     * 
+     */
     public Output<Double> dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
     }

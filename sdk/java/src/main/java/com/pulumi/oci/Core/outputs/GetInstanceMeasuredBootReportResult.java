@@ -16,31 +16,20 @@ public final class GetInstanceMeasuredBootReportResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String instanceId;
+    private String id;
+    private String instanceId;
     /**
      * @return Whether the verification succeeded, and the new values match the expected values.
      * 
      */
-    private final Boolean isPolicyVerificationSuccessful;
+    private Boolean isPolicyVerificationSuccessful;
     /**
      * @return A list of Trusted Platform Module (TPM) Platform Configuration Register (PCR) entries.
      * 
      */
-    private final List<GetInstanceMeasuredBootReportMeasurement> measurements;
+    private List<GetInstanceMeasuredBootReportMeasurement> measurements;
 
-    @CustomType.Constructor
-    private GetInstanceMeasuredBootReportResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("isPolicyVerificationSuccessful") Boolean isPolicyVerificationSuccessful,
-        @CustomType.Parameter("measurements") List<GetInstanceMeasuredBootReportMeasurement> measurements) {
-        this.id = id;
-        this.instanceId = instanceId;
-        this.isPolicyVerificationSuccessful = isPolicyVerificationSuccessful;
-        this.measurements = measurements;
-    }
-
+    private GetInstanceMeasuredBootReportResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -73,17 +62,13 @@ public final class GetInstanceMeasuredBootReportResult {
     public static Builder builder(GetInstanceMeasuredBootReportResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String instanceId;
         private Boolean isPolicyVerificationSuccessful;
         private List<GetInstanceMeasuredBootReportMeasurement> measurements;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceMeasuredBootReportResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -92,26 +77,36 @@ public final class GetInstanceMeasuredBootReportResult {
     	      this.measurements = defaults.measurements;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder isPolicyVerificationSuccessful(Boolean isPolicyVerificationSuccessful) {
             this.isPolicyVerificationSuccessful = Objects.requireNonNull(isPolicyVerificationSuccessful);
             return this;
         }
+        @CustomType.Setter
         public Builder measurements(List<GetInstanceMeasuredBootReportMeasurement> measurements) {
             this.measurements = Objects.requireNonNull(measurements);
             return this;
         }
         public Builder measurements(GetInstanceMeasuredBootReportMeasurement... measurements) {
             return measurements(List.of(measurements));
-        }        public GetInstanceMeasuredBootReportResult build() {
-            return new GetInstanceMeasuredBootReportResult(id, instanceId, isPolicyVerificationSuccessful, measurements);
+        }
+        public GetInstanceMeasuredBootReportResult build() {
+            final var o = new GetInstanceMeasuredBootReportResult();
+            o.id = id;
+            o.instanceId = instanceId;
+            o.isPolicyVerificationSuccessful = isPolicyVerificationSuccessful;
+            o.measurements = measurements;
+            return o;
         }
     }
 }

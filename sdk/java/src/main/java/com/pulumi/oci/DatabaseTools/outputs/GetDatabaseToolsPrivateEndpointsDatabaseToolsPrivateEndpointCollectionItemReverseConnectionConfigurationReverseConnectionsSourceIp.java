@@ -13,13 +13,9 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      * @return The IP address in the customer&#39;s VCN to be used as the source IP for reverse connection packets traveling from the customer&#39;s VCN to the service&#39;s VCN.
      * 
      */
-    private final String sourceIp;
+    private String sourceIp;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp(@CustomType.Parameter("sourceIp") String sourceIp) {
-        this.sourceIp = sourceIp;
-    }
-
+    private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp() {}
     /**
      * @return The IP address in the customer&#39;s VCN to be used as the source IP for reverse connection packets traveling from the customer&#39;s VCN to the service&#39;s VCN.
      * 
@@ -35,24 +31,24 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
     public static Builder builder(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String sourceIp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.sourceIp = defaults.sourceIp;
         }
 
+        @CustomType.Setter
         public Builder sourceIp(String sourceIp) {
             this.sourceIp = Objects.requireNonNull(sourceIp);
             return this;
-        }        public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp build() {
-            return new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp(sourceIp);
+        }
+        public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp build() {
+            final var o = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp();
+            o.sourceIp = sourceIp;
+            return o;
         }
     }
 }

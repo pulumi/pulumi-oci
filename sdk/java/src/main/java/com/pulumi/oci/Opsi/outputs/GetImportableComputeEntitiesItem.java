@@ -13,49 +13,34 @@ public final class GetImportableComputeEntitiesItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
      * 
      */
-    private final String computeDisplayName;
+    private String computeDisplayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      * 
      */
-    private final String computeId;
+    private String computeId;
     /**
      * @return Source of the importable agent entity.
      * 
      */
-    private final String entitySource;
+    private String entitySource;
     /**
      * @return The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    private final String hostName;
+    private String hostName;
     /**
      * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      * 
      */
-    private final String platformType;
+    private String platformType;
 
-    @CustomType.Constructor
-    private GetImportableComputeEntitiesItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computeDisplayName") String computeDisplayName,
-        @CustomType.Parameter("computeId") String computeId,
-        @CustomType.Parameter("entitySource") String entitySource,
-        @CustomType.Parameter("hostName") String hostName,
-        @CustomType.Parameter("platformType") String platformType) {
-        this.compartmentId = compartmentId;
-        this.computeDisplayName = computeDisplayName;
-        this.computeId = computeId;
-        this.entitySource = entitySource;
-        this.hostName = hostName;
-        this.platformType = platformType;
-    }
-
+    private GetImportableComputeEntitiesItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -106,7 +91,7 @@ public final class GetImportableComputeEntitiesItem {
     public static Builder builder(GetImportableComputeEntitiesItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String computeDisplayName;
@@ -114,11 +99,7 @@ public final class GetImportableComputeEntitiesItem {
         private String entitySource;
         private String hostName;
         private String platformType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImportableComputeEntitiesItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -129,31 +110,45 @@ public final class GetImportableComputeEntitiesItem {
     	      this.platformType = defaults.platformType;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeDisplayName(String computeDisplayName) {
             this.computeDisplayName = Objects.requireNonNull(computeDisplayName);
             return this;
         }
+        @CustomType.Setter
         public Builder computeId(String computeId) {
             this.computeId = Objects.requireNonNull(computeId);
             return this;
         }
+        @CustomType.Setter
         public Builder entitySource(String entitySource) {
             this.entitySource = Objects.requireNonNull(entitySource);
             return this;
         }
+        @CustomType.Setter
         public Builder hostName(String hostName) {
             this.hostName = Objects.requireNonNull(hostName);
             return this;
         }
+        @CustomType.Setter
         public Builder platformType(String platformType) {
             this.platformType = Objects.requireNonNull(platformType);
             return this;
-        }        public GetImportableComputeEntitiesItem build() {
-            return new GetImportableComputeEntitiesItem(compartmentId, computeDisplayName, computeId, entitySource, hostName, platformType);
+        }
+        public GetImportableComputeEntitiesItem build() {
+            final var o = new GetImportableComputeEntitiesItem();
+            o.compartmentId = compartmentId;
+            o.computeDisplayName = computeDisplayName;
+            o.computeId = computeId;
+            o.entitySource = entitySource;
+            o.hostName = hostName;
+            o.platformType = platformType;
+            return o;
         }
     }
 }

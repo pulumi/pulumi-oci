@@ -13,34 +13,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerPatchesResult {
-    private final String autonomousContainerDatabaseId;
+    private String autonomousContainerDatabaseId;
     /**
      * @return The list of autonomous_patches.
      * 
      */
-    private final List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches;
-    private final String compartmentId;
-    private final @Nullable List<GetAutonomousContainerPatchesFilter> filters;
+    private List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches;
+    private String compartmentId;
+    private @Nullable List<GetAutonomousContainerPatchesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAutonomousContainerPatchesResult(
-        @CustomType.Parameter("autonomousContainerDatabaseId") String autonomousContainerDatabaseId,
-        @CustomType.Parameter("autonomousPatches") List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetAutonomousContainerPatchesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
-        this.autonomousPatches = autonomousPatches;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAutonomousContainerPatchesResult() {}
     public String autonomousContainerDatabaseId() {
         return this.autonomousContainerDatabaseId;
     }
@@ -72,18 +59,14 @@ public final class GetAutonomousContainerPatchesResult {
     public static Builder builder(GetAutonomousContainerPatchesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String autonomousContainerDatabaseId;
         private List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches;
         private String compartmentId;
         private @Nullable List<GetAutonomousContainerPatchesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousContainerPatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
@@ -93,10 +76,12 @@ public final class GetAutonomousContainerPatchesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder autonomousPatches(List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches) {
             this.autonomousPatches = Objects.requireNonNull(autonomousPatches);
             return this;
@@ -104,10 +89,12 @@ public final class GetAutonomousContainerPatchesResult {
         public Builder autonomousPatches(GetAutonomousContainerPatchesAutonomousPatch... autonomousPatches) {
             return autonomousPatches(List.of(autonomousPatches));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousContainerPatchesFilter> filters) {
             this.filters = filters;
             return this;
@@ -115,11 +102,19 @@ public final class GetAutonomousContainerPatchesResult {
         public Builder filters(GetAutonomousContainerPatchesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAutonomousContainerPatchesResult build() {
-            return new GetAutonomousContainerPatchesResult(autonomousContainerDatabaseId, autonomousPatches, compartmentId, filters, id);
+        }
+        public GetAutonomousContainerPatchesResult build() {
+            final var o = new GetAutonomousContainerPatchesResult();
+            o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            o.autonomousPatches = autonomousPatches;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

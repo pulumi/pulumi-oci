@@ -15,21 +15,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsS
      * @return The OCID of the volume backup.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails(
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("type") String type) {
-        this.id = id;
-        this.type = type;
-    }
-
+    private InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails() {}
     /**
      * @return The OCID of the volume backup.
      * 
@@ -52,30 +45,32 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsS
     public static Builder builder(InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails build() {
-            return new InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails(id, type);
+        }
+        public InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails build() {
+            final var o = new InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails();
+            o.id = id;
+            o.type = type;
+            return o;
         }
     }
 }

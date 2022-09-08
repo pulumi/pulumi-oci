@@ -16,21 +16,14 @@ public final class ConnectorSourceMonitoringSource {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return (Updatable) Discriminator for namespaces in the compartment-specific list.
      * 
      */
-    private final @Nullable ConnectorSourceMonitoringSourceNamespaceDetails namespaceDetails;
+    private @Nullable ConnectorSourceMonitoringSourceNamespaceDetails namespaceDetails;
 
-    @CustomType.Constructor
-    private ConnectorSourceMonitoringSource(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("namespaceDetails") @Nullable ConnectorSourceMonitoringSourceNamespaceDetails namespaceDetails) {
-        this.compartmentId = compartmentId;
-        this.namespaceDetails = namespaceDetails;
-    }
-
+    private ConnectorSourceMonitoringSource() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
@@ -53,30 +46,32 @@ public final class ConnectorSourceMonitoringSource {
     public static Builder builder(ConnectorSourceMonitoringSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable ConnectorSourceMonitoringSourceNamespaceDetails namespaceDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectorSourceMonitoringSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.namespaceDetails = defaults.namespaceDetails;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder namespaceDetails(@Nullable ConnectorSourceMonitoringSourceNamespaceDetails namespaceDetails) {
             this.namespaceDetails = namespaceDetails;
             return this;
-        }        public ConnectorSourceMonitoringSource build() {
-            return new ConnectorSourceMonitoringSource(compartmentId, namespaceDetails);
+        }
+        public ConnectorSourceMonitoringSource build() {
+            final var o = new ConnectorSourceMonitoringSource();
+            o.compartmentId = compartmentId;
+            o.namespaceDetails = namespaceDetails;
+            return o;
         }
     }
 }

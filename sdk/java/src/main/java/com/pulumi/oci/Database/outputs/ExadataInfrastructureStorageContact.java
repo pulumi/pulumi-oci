@@ -12,26 +12,13 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ExadataInfrastructureStorageContact {
-    private final String email;
-    private final @Nullable Boolean isContactMosValidated;
-    private final Boolean isPrimary;
-    private final String name;
-    private final @Nullable String phoneNumber;
+    private String email;
+    private @Nullable Boolean isContactMosValidated;
+    private Boolean isPrimary;
+    private String name;
+    private @Nullable String phoneNumber;
 
-    @CustomType.Constructor
-    private ExadataInfrastructureStorageContact(
-        @CustomType.Parameter("email") String email,
-        @CustomType.Parameter("isContactMosValidated") @Nullable Boolean isContactMosValidated,
-        @CustomType.Parameter("isPrimary") Boolean isPrimary,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("phoneNumber") @Nullable String phoneNumber) {
-        this.email = email;
-        this.isContactMosValidated = isContactMosValidated;
-        this.isPrimary = isPrimary;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-    }
-
+    private ExadataInfrastructureStorageContact() {}
     public String email() {
         return this.email;
     }
@@ -55,18 +42,14 @@ public final class ExadataInfrastructureStorageContact {
     public static Builder builder(ExadataInfrastructureStorageContact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String email;
         private @Nullable Boolean isContactMosValidated;
         private Boolean isPrimary;
         private String name;
         private @Nullable String phoneNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ExadataInfrastructureStorageContact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.email = defaults.email;
@@ -76,27 +59,39 @@ public final class ExadataInfrastructureStorageContact {
     	      this.phoneNumber = defaults.phoneNumber;
         }
 
+        @CustomType.Setter
         public Builder email(String email) {
             this.email = Objects.requireNonNull(email);
             return this;
         }
+        @CustomType.Setter
         public Builder isContactMosValidated(@Nullable Boolean isContactMosValidated) {
             this.isContactMosValidated = isContactMosValidated;
             return this;
         }
+        @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = Objects.requireNonNull(isPrimary);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder phoneNumber(@Nullable String phoneNumber) {
             this.phoneNumber = phoneNumber;
             return this;
-        }        public ExadataInfrastructureStorageContact build() {
-            return new ExadataInfrastructureStorageContact(email, isContactMosValidated, isPrimary, name, phoneNumber);
+        }
+        public ExadataInfrastructureStorageContact build() {
+            final var o = new ExadataInfrastructureStorageContact();
+            o.email = email;
+            o.isContactMosValidated = isContactMosValidated;
+            o.isPrimary = isPrimary;
+            o.name = name;
+            o.phoneNumber = phoneNumber;
+            return o;
         }
     }
 }

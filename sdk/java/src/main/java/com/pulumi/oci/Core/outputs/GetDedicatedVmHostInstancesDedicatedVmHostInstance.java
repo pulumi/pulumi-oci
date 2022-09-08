@@ -13,42 +13,29 @@ public final class GetDedicatedVmHostInstancesDedicatedVmHostInstance {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the virtual machine instance.
      * 
      */
-    private final String instanceId;
+    private String instanceId;
     /**
      * @return The shape of the VM instance.
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return The date and time the virtual machine instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetDedicatedVmHostInstancesDedicatedVmHostInstance(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.instanceId = instanceId;
-        this.shape = shape;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetDedicatedVmHostInstancesDedicatedVmHostInstance() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -92,18 +79,14 @@ public final class GetDedicatedVmHostInstancesDedicatedVmHostInstance {
     public static Builder builder(GetDedicatedVmHostInstancesDedicatedVmHostInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
         private String instanceId;
         private String shape;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDedicatedVmHostInstancesDedicatedVmHostInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -113,27 +96,39 @@ public final class GetDedicatedVmHostInstancesDedicatedVmHostInstance {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetDedicatedVmHostInstancesDedicatedVmHostInstance build() {
-            return new GetDedicatedVmHostInstancesDedicatedVmHostInstance(availabilityDomain, compartmentId, instanceId, shape, timeCreated);
+        }
+        public GetDedicatedVmHostInstancesDedicatedVmHostInstance build() {
+            final var o = new GetDedicatedVmHostInstancesDedicatedVmHostInstance();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.instanceId = instanceId;
+            o.shape = shape;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

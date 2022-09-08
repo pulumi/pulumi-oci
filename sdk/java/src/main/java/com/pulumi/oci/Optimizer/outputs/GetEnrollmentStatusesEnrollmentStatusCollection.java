@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetEnrollmentStatusesEnrollmentStatusCollection {
-    private final List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items;
+    private List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetEnrollmentStatusesEnrollmentStatusCollection(@CustomType.Parameter("items") List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetEnrollmentStatusesEnrollmentStatusCollection() {}
     public List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetEnrollmentStatusesEnrollmentStatusCollection {
     public static Builder builder(GetEnrollmentStatusesEnrollmentStatusCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEnrollmentStatusesEnrollmentStatusCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetEnrollmentStatusesEnrollmentStatusCollectionItem... items) {
             return items(List.of(items));
-        }        public GetEnrollmentStatusesEnrollmentStatusCollection build() {
-            return new GetEnrollmentStatusesEnrollmentStatusCollection(items);
+        }
+        public GetEnrollmentStatusesEnrollmentStatusCollection build() {
+            final var o = new GetEnrollmentStatusesEnrollmentStatusCollection();
+            o.items = items;
+            return o;
         }
     }
 }

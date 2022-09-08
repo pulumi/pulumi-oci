@@ -14,28 +14,19 @@ public final class GetWaasPolicyWafConfigWhitelist {
      * @return A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
      * 
      */
-    private final List<String> addressLists;
+    private List<String> addressLists;
     /**
      * @return A set of IP addresses or CIDR notations to include in the whitelist.
      * 
      */
-    private final List<String> addresses;
+    private List<String> addresses;
     /**
      * @return The unique name of the whitelist.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetWaasPolicyWafConfigWhitelist(
-        @CustomType.Parameter("addressLists") List<String> addressLists,
-        @CustomType.Parameter("addresses") List<String> addresses,
-        @CustomType.Parameter("name") String name) {
-        this.addressLists = addressLists;
-        this.addresses = addresses;
-        this.name = name;
-    }
-
+    private GetWaasPolicyWafConfigWhitelist() {}
     /**
      * @return A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
      * 
@@ -65,16 +56,12 @@ public final class GetWaasPolicyWafConfigWhitelist {
     public static Builder builder(GetWaasPolicyWafConfigWhitelist defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> addressLists;
         private List<String> addresses;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPolicyWafConfigWhitelist defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addressLists = defaults.addressLists;
@@ -82,6 +69,7 @@ public final class GetWaasPolicyWafConfigWhitelist {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder addressLists(List<String> addressLists) {
             this.addressLists = Objects.requireNonNull(addressLists);
             return this;
@@ -89,6 +77,7 @@ public final class GetWaasPolicyWafConfigWhitelist {
         public Builder addressLists(String... addressLists) {
             return addressLists(List.of(addressLists));
         }
+        @CustomType.Setter
         public Builder addresses(List<String> addresses) {
             this.addresses = Objects.requireNonNull(addresses);
             return this;
@@ -96,11 +85,17 @@ public final class GetWaasPolicyWafConfigWhitelist {
         public Builder addresses(String... addresses) {
             return addresses(List.of(addresses));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetWaasPolicyWafConfigWhitelist build() {
-            return new GetWaasPolicyWafConfigWhitelist(addressLists, addresses, name);
+        }
+        public GetWaasPolicyWafConfigWhitelist build() {
+            final var o = new GetWaasPolicyWafConfigWhitelist();
+            o.addressLists = addressLists;
+            o.addresses = addresses;
+            o.name = name;
+            return o;
         }
     }
 }

@@ -45,23 +45,31 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     @Import(name="dataCollectionOptions")
     private @Nullable Output<VmClusterDataCollectionOptionsArgs> dataCollectionOptions;
 
     /**
-     * @return (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * @return (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     public Optional<Output<VmClusterDataCollectionOptionsArgs>> dataCollectionOptions() {
         return Optional.ofNullable(this.dataCollectionOptions);
     }
 
+    /**
+     * (Updatable) The data disk group size to be allocated in GBs.
+     * 
+     */
     @Import(name="dataStorageSizeInGb")
     private @Nullable Output<Double> dataStorageSizeInGb;
 
+    /**
+     * @return (Updatable) The data disk group size to be allocated in GBs.
+     * 
+     */
     public Optional<Output<Double>> dataStorageSizeInGb() {
         return Optional.ofNullable(this.dataStorageSizeInGb);
     }
@@ -372,7 +380,7 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataCollectionOptions (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * @param dataCollectionOptions (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
          * 
          * @return builder
          * 
@@ -383,7 +391,7 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataCollectionOptions (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * @param dataCollectionOptions (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
          * 
          * @return builder
          * 
@@ -392,11 +400,23 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
             return dataCollectionOptions(Output.of(dataCollectionOptions));
         }
 
+        /**
+         * @param dataStorageSizeInGb (Updatable) The data disk group size to be allocated in GBs.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataStorageSizeInGb(@Nullable Output<Double> dataStorageSizeInGb) {
             $.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
 
+        /**
+         * @param dataStorageSizeInGb (Updatable) The data disk group size to be allocated in GBs.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
             return dataStorageSizeInGb(Output.of(dataStorageSizeInGb));
         }

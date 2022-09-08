@@ -15,35 +15,24 @@ public final class ConfigMetric {
      * @return (Updatable) A description of the metric.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) The name of the metric. This must be a known metric name.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The unit of the metric.
      * 
      */
-    private final @Nullable String unit;
+    private @Nullable String unit;
     /**
      * @return (Updatable) This must not be set.
      * 
      */
-    private final @Nullable String valueSource;
+    private @Nullable String valueSource;
 
-    @CustomType.Constructor
-    private ConfigMetric(
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("unit") @Nullable String unit,
-        @CustomType.Parameter("valueSource") @Nullable String valueSource) {
-        this.description = description;
-        this.name = name;
-        this.unit = unit;
-        this.valueSource = valueSource;
-    }
-
+    private ConfigMetric() {}
     /**
      * @return (Updatable) A description of the metric.
      * 
@@ -80,17 +69,13 @@ public final class ConfigMetric {
     public static Builder builder(ConfigMetric defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String description;
         private @Nullable String name;
         private @Nullable String unit;
         private @Nullable String valueSource;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigMetric defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -99,23 +84,33 @@ public final class ConfigMetric {
     	      this.valueSource = defaults.valueSource;
         }
 
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder unit(@Nullable String unit) {
             this.unit = unit;
             return this;
         }
+        @CustomType.Setter
         public Builder valueSource(@Nullable String valueSource) {
             this.valueSource = valueSource;
             return this;
-        }        public ConfigMetric build() {
-            return new ConfigMetric(description, name, unit, valueSource);
+        }
+        public ConfigMetric build() {
+            final var o = new ConfigMetric();
+            o.description = description;
+            o.name = name;
+            o.unit = unit;
+            o.valueSource = valueSource;
+            return o;
         }
     }
 }

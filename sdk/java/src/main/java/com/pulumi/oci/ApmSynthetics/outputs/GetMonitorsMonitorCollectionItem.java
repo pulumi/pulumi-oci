@@ -20,161 +20,114 @@ public final class GetMonitorsMonitorCollectionItem {
      * @return The APM domain ID the request is intended for.
      * 
      */
-    private final String apmDomainId;
+    private String apmDomainId;
     /**
      * @return Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
      * 
      */
-    private final Integer batchIntervalInSeconds;
+    private Integer batchIntervalInSeconds;
     /**
      * @return Details of monitor configuration.
      * 
      */
-    private final List<GetMonitorsMonitorCollectionItemConfiguration> configurations;
+    private List<GetMonitorsMonitorCollectionItemConfiguration> configurations;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return If isRunNow is enabled, then the monitor will run now.
      * 
      */
-    private final Boolean isRunNow;
+    private Boolean isRunNow;
     /**
      * @return If runOnce is enabled, then the monitor will run once.
      * 
      */
-    private final Boolean isRunOnce;
+    private Boolean isRunOnce;
     /**
      * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
      * 
      */
-    private final String monitorType;
+    private String monitorType;
     /**
      * @return Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      * 
      */
-    private final Integer repeatIntervalInSeconds;
+    private Integer repeatIntervalInSeconds;
     /**
      * @return Scheduling policy on Vantage points.
      * 
      */
-    private final String schedulingPolicy;
+    private String schedulingPolicy;
     /**
      * @return A filter to return only monitors using scriptId.
      * 
      */
-    private final String scriptId;
+    private String scriptId;
     /**
      * @return Name of the script.
      * 
      */
-    private final String scriptName;
+    private String scriptName;
     /**
      * @return List of script parameters. Example: `[{&#34;monitorScriptParameter&#34;: {&#34;paramName&#34;: &#34;userid&#34;, &#34;paramValue&#34;:&#34;testuser&#34;}, &#34;isSecret&#34;: false, &#34;isOverwritten&#34;: false}]`
      * 
      */
-    private final List<GetMonitorsMonitorCollectionItemScriptParameter> scriptParameters;
+    private List<GetMonitorsMonitorCollectionItemScriptParameter> scriptParameters;
     /**
      * @return A filter to return only monitors that match the status given.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
      * 
      */
-    private final String target;
+    private String target;
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
-    private final Integer timeoutInSeconds;
+    private Integer timeoutInSeconds;
     /**
      * @return Number of vantage points where monitor is running.
      * 
      */
-    private final Integer vantagePointCount;
+    private Integer vantagePointCount;
     /**
      * @return List of public and dedicated vantage points where the monitor is running.
      * 
      */
-    private final List<String> vantagePoints;
+    private List<String> vantagePoints;
 
-    @CustomType.Constructor
-    private GetMonitorsMonitorCollectionItem(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("batchIntervalInSeconds") Integer batchIntervalInSeconds,
-        @CustomType.Parameter("configurations") List<GetMonitorsMonitorCollectionItemConfiguration> configurations,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isRunNow") Boolean isRunNow,
-        @CustomType.Parameter("isRunOnce") Boolean isRunOnce,
-        @CustomType.Parameter("monitorType") String monitorType,
-        @CustomType.Parameter("repeatIntervalInSeconds") Integer repeatIntervalInSeconds,
-        @CustomType.Parameter("schedulingPolicy") String schedulingPolicy,
-        @CustomType.Parameter("scriptId") String scriptId,
-        @CustomType.Parameter("scriptName") String scriptName,
-        @CustomType.Parameter("scriptParameters") List<GetMonitorsMonitorCollectionItemScriptParameter> scriptParameters,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("target") String target,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("timeoutInSeconds") Integer timeoutInSeconds,
-        @CustomType.Parameter("vantagePointCount") Integer vantagePointCount,
-        @CustomType.Parameter("vantagePoints") List<String> vantagePoints) {
-        this.apmDomainId = apmDomainId;
-        this.batchIntervalInSeconds = batchIntervalInSeconds;
-        this.configurations = configurations;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isRunNow = isRunNow;
-        this.isRunOnce = isRunOnce;
-        this.monitorType = monitorType;
-        this.repeatIntervalInSeconds = repeatIntervalInSeconds;
-        this.schedulingPolicy = schedulingPolicy;
-        this.scriptId = scriptId;
-        this.scriptName = scriptName;
-        this.scriptParameters = scriptParameters;
-        this.status = status;
-        this.target = target;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.timeoutInSeconds = timeoutInSeconds;
-        this.vantagePointCount = vantagePointCount;
-        this.vantagePoints = vantagePoints;
-    }
-
+    private GetMonitorsMonitorCollectionItem() {}
     /**
      * @return The APM domain ID the request is intended for.
      * 
@@ -337,7 +290,7 @@ public final class GetMonitorsMonitorCollectionItem {
     public static Builder builder(GetMonitorsMonitorCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private Integer batchIntervalInSeconds;
@@ -361,11 +314,7 @@ public final class GetMonitorsMonitorCollectionItem {
         private Integer timeoutInSeconds;
         private Integer vantagePointCount;
         private List<String> vantagePoints;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -392,14 +341,17 @@ public final class GetMonitorsMonitorCollectionItem {
     	      this.vantagePoints = defaults.vantagePoints;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder batchIntervalInSeconds(Integer batchIntervalInSeconds) {
             this.batchIntervalInSeconds = Objects.requireNonNull(batchIntervalInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder configurations(List<GetMonitorsMonitorCollectionItemConfiguration> configurations) {
             this.configurations = Objects.requireNonNull(configurations);
             return this;
@@ -407,50 +359,62 @@ public final class GetMonitorsMonitorCollectionItem {
         public Builder configurations(GetMonitorsMonitorCollectionItemConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isRunNow(Boolean isRunNow) {
             this.isRunNow = Objects.requireNonNull(isRunNow);
             return this;
         }
+        @CustomType.Setter
         public Builder isRunOnce(Boolean isRunOnce) {
             this.isRunOnce = Objects.requireNonNull(isRunOnce);
             return this;
         }
+        @CustomType.Setter
         public Builder monitorType(String monitorType) {
             this.monitorType = Objects.requireNonNull(monitorType);
             return this;
         }
+        @CustomType.Setter
         public Builder repeatIntervalInSeconds(Integer repeatIntervalInSeconds) {
             this.repeatIntervalInSeconds = Objects.requireNonNull(repeatIntervalInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder schedulingPolicy(String schedulingPolicy) {
             this.schedulingPolicy = Objects.requireNonNull(schedulingPolicy);
             return this;
         }
+        @CustomType.Setter
         public Builder scriptId(String scriptId) {
             this.scriptId = Objects.requireNonNull(scriptId);
             return this;
         }
+        @CustomType.Setter
         public Builder scriptName(String scriptName) {
             this.scriptName = Objects.requireNonNull(scriptName);
             return this;
         }
+        @CustomType.Setter
         public Builder scriptParameters(List<GetMonitorsMonitorCollectionItemScriptParameter> scriptParameters) {
             this.scriptParameters = Objects.requireNonNull(scriptParameters);
             return this;
@@ -458,38 +422,69 @@ public final class GetMonitorsMonitorCollectionItem {
         public Builder scriptParameters(GetMonitorsMonitorCollectionItemScriptParameter... scriptParameters) {
             return scriptParameters(List.of(scriptParameters));
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder target(String target) {
             this.target = Objects.requireNonNull(target);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder vantagePointCount(Integer vantagePointCount) {
             this.vantagePointCount = Objects.requireNonNull(vantagePointCount);
             return this;
         }
+        @CustomType.Setter
         public Builder vantagePoints(List<String> vantagePoints) {
             this.vantagePoints = Objects.requireNonNull(vantagePoints);
             return this;
         }
         public Builder vantagePoints(String... vantagePoints) {
             return vantagePoints(List.of(vantagePoints));
-        }        public GetMonitorsMonitorCollectionItem build() {
-            return new GetMonitorsMonitorCollectionItem(apmDomainId, batchIntervalInSeconds, configurations, definedTags, displayName, freeformTags, id, isRunNow, isRunOnce, monitorType, repeatIntervalInSeconds, schedulingPolicy, scriptId, scriptName, scriptParameters, status, target, timeCreated, timeUpdated, timeoutInSeconds, vantagePointCount, vantagePoints);
+        }
+        public GetMonitorsMonitorCollectionItem build() {
+            final var o = new GetMonitorsMonitorCollectionItem();
+            o.apmDomainId = apmDomainId;
+            o.batchIntervalInSeconds = batchIntervalInSeconds;
+            o.configurations = configurations;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isRunNow = isRunNow;
+            o.isRunOnce = isRunOnce;
+            o.monitorType = monitorType;
+            o.repeatIntervalInSeconds = repeatIntervalInSeconds;
+            o.schedulingPolicy = schedulingPolicy;
+            o.scriptId = scriptId;
+            o.scriptName = scriptName;
+            o.scriptParameters = scriptParameters;
+            o.status = status;
+            o.target = target;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.timeoutInSeconds = timeoutInSeconds;
+            o.vantagePointCount = vantagePointCount;
+            o.vantagePoints = vantagePoints;
+            return o;
         }
     }
 }

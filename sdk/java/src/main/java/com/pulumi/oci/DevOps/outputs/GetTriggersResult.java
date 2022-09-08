@@ -18,56 +18,39 @@ public final class GetTriggersResult {
      * @return The OCID of the compartment that contains the trigger.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Trigger display name. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The filters for the trigger.
      * 
      */
-    private final @Nullable List<GetTriggersFilter> filters;
+    private @Nullable List<GetTriggersFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the DevOps project to which the trigger belongs to.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The current state of the trigger.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of trigger_collection.
      * 
      */
-    private final List<GetTriggersTriggerCollection> triggerCollections;
+    private List<GetTriggersTriggerCollection> triggerCollections;
 
-    @CustomType.Constructor
-    private GetTriggersResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetTriggersFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("triggerCollections") List<GetTriggersTriggerCollection> triggerCollections) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.projectId = projectId;
-        this.state = state;
-        this.triggerCollections = triggerCollections;
-    }
-
+    private GetTriggersResult() {}
     /**
      * @return The OCID of the compartment that contains the trigger.
      * 
@@ -125,7 +108,7 @@ public final class GetTriggersResult {
     public static Builder builder(GetTriggersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
@@ -134,11 +117,7 @@ public final class GetTriggersResult {
         private @Nullable String projectId;
         private @Nullable String state;
         private List<GetTriggersTriggerCollection> triggerCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTriggersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -150,14 +129,17 @@ public final class GetTriggersResult {
     	      this.triggerCollections = defaults.triggerCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTriggersFilter> filters) {
             this.filters = filters;
             return this;
@@ -165,26 +147,39 @@ public final class GetTriggersResult {
         public Builder filters(GetTriggersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder triggerCollections(List<GetTriggersTriggerCollection> triggerCollections) {
             this.triggerCollections = Objects.requireNonNull(triggerCollections);
             return this;
         }
         public Builder triggerCollections(GetTriggersTriggerCollection... triggerCollections) {
             return triggerCollections(List.of(triggerCollections));
-        }        public GetTriggersResult build() {
-            return new GetTriggersResult(compartmentId, displayName, filters, id, projectId, state, triggerCollections);
+        }
+        public GetTriggersResult build() {
+            final var o = new GetTriggersResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.projectId = projectId;
+            o.state = state;
+            o.triggerCollections = triggerCollections;
+            return o;
         }
     }
 }

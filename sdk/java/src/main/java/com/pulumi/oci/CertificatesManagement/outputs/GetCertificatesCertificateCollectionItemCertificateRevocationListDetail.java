@@ -15,21 +15,14 @@ public final class GetCertificatesCertificateCollectionItemCertificateRevocation
      * @return Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      * 
      */
-    private final List<String> customFormattedUrls;
+    private List<String> customFormattedUrls;
     /**
      * @return The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
      * 
      */
-    private final List<GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs;
+    private List<GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs;
 
-    @CustomType.Constructor
-    private GetCertificatesCertificateCollectionItemCertificateRevocationListDetail(
-        @CustomType.Parameter("customFormattedUrls") List<String> customFormattedUrls,
-        @CustomType.Parameter("objectStorageConfigs") List<GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs) {
-        this.customFormattedUrls = customFormattedUrls;
-        this.objectStorageConfigs = objectStorageConfigs;
-    }
-
+    private GetCertificatesCertificateCollectionItemCertificateRevocationListDetail() {}
     /**
      * @return Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      * 
@@ -52,21 +45,18 @@ public final class GetCertificatesCertificateCollectionItemCertificateRevocation
     public static Builder builder(GetCertificatesCertificateCollectionItemCertificateRevocationListDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> customFormattedUrls;
         private List<GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificatesCertificateCollectionItemCertificateRevocationListDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customFormattedUrls = defaults.customFormattedUrls;
     	      this.objectStorageConfigs = defaults.objectStorageConfigs;
         }
 
+        @CustomType.Setter
         public Builder customFormattedUrls(List<String> customFormattedUrls) {
             this.customFormattedUrls = Objects.requireNonNull(customFormattedUrls);
             return this;
@@ -74,14 +64,19 @@ public final class GetCertificatesCertificateCollectionItemCertificateRevocation
         public Builder customFormattedUrls(String... customFormattedUrls) {
             return customFormattedUrls(List.of(customFormattedUrls));
         }
+        @CustomType.Setter
         public Builder objectStorageConfigs(List<GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs) {
             this.objectStorageConfigs = Objects.requireNonNull(objectStorageConfigs);
             return this;
         }
         public Builder objectStorageConfigs(GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig... objectStorageConfigs) {
             return objectStorageConfigs(List.of(objectStorageConfigs));
-        }        public GetCertificatesCertificateCollectionItemCertificateRevocationListDetail build() {
-            return new GetCertificatesCertificateCollectionItemCertificateRevocationListDetail(customFormattedUrls, objectStorageConfigs);
+        }
+        public GetCertificatesCertificateCollectionItemCertificateRevocationListDetail build() {
+            final var o = new GetCertificatesCertificateCollectionItemCertificateRevocationListDetail();
+            o.customFormattedUrls = customFormattedUrls;
+            o.objectStorageConfigs = objectStorageConfigs;
+            return o;
         }
     }
 }

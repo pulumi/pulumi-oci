@@ -14,13 +14,9 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollection {
      * @return A collection of recommendation strategy summaries.
      * 
      */
-    private final List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items;
+    private List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRecommendationStrategiesRecommendationStrategyCollection(@CustomType.Parameter("items") List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRecommendationStrategiesRecommendationStrategyCollection() {}
     /**
      * @return A collection of recommendation strategy summaries.
      * 
@@ -36,27 +32,27 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollection {
     public static Builder builder(GetRecommendationStrategiesRecommendationStrategyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationStrategiesRecommendationStrategyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRecommendationStrategiesRecommendationStrategyCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRecommendationStrategiesRecommendationStrategyCollection build() {
-            return new GetRecommendationStrategiesRecommendationStrategyCollection(items);
+        }
+        public GetRecommendationStrategiesRecommendationStrategyCollection build() {
+            final var o = new GetRecommendationStrategiesRecommendationStrategyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

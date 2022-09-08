@@ -14,48 +14,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingPackagesResult {
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetListingPackagesFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetListingPackagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The ID of the listing that the specified package belongs to.
      * 
      */
-    private final String listingId;
+    private String listingId;
     /**
      * @return The list of listing_packages.
      * 
      */
-    private final List<GetListingPackagesListingPackage> listingPackages;
+    private List<GetListingPackagesListingPackage> listingPackages;
     /**
      * @return The specified package&#39;s type.
      * 
      */
-    private final @Nullable String packageType;
-    private final @Nullable String packageVersion;
+    private @Nullable String packageType;
+    private @Nullable String packageVersion;
 
-    @CustomType.Constructor
-    private GetListingPackagesResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetListingPackagesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("listingPackages") List<GetListingPackagesListingPackage> listingPackages,
-        @CustomType.Parameter("packageType") @Nullable String packageType,
-        @CustomType.Parameter("packageVersion") @Nullable String packageVersion) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.listingId = listingId;
-        this.listingPackages = listingPackages;
-        this.packageType = packageType;
-        this.packageVersion = packageVersion;
-    }
-
+    private GetListingPackagesResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -101,7 +84,7 @@ public final class GetListingPackagesResult {
     public static Builder builder(GetListingPackagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetListingPackagesFilter> filters;
@@ -110,11 +93,7 @@ public final class GetListingPackagesResult {
         private List<GetListingPackagesListingPackage> listingPackages;
         private @Nullable String packageType;
         private @Nullable String packageVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPackagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +105,12 @@ public final class GetListingPackagesResult {
     	      this.packageVersion = defaults.packageVersion;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetListingPackagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,14 +118,17 @@ public final class GetListingPackagesResult {
         public Builder filters(GetListingPackagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingPackages(List<GetListingPackagesListingPackage> listingPackages) {
             this.listingPackages = Objects.requireNonNull(listingPackages);
             return this;
@@ -152,15 +136,26 @@ public final class GetListingPackagesResult {
         public Builder listingPackages(GetListingPackagesListingPackage... listingPackages) {
             return listingPackages(List.of(listingPackages));
         }
+        @CustomType.Setter
         public Builder packageType(@Nullable String packageType) {
             this.packageType = packageType;
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(@Nullable String packageVersion) {
             this.packageVersion = packageVersion;
             return this;
-        }        public GetListingPackagesResult build() {
-            return new GetListingPackagesResult(compartmentId, filters, id, listingId, listingPackages, packageType, packageVersion);
+        }
+        public GetListingPackagesResult build() {
+            final var o = new GetListingPackagesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.listingId = listingId;
+            o.listingPackages = listingPackages;
+            o.packageType = packageType;
+            o.packageVersion = packageVersion;
+            return o;
         }
     }
 }

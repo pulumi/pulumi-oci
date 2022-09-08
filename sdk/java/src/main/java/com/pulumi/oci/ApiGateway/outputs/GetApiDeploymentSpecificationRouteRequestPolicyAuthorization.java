@@ -14,21 +14,14 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyAuthorization 
      * @return A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
      * 
      */
-    private final List<String> allowedScopes;
+    private List<String> allowedScopes;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRouteRequestPolicyAuthorization(
-        @CustomType.Parameter("allowedScopes") List<String> allowedScopes,
-        @CustomType.Parameter("type") String type) {
-        this.allowedScopes = allowedScopes;
-        this.type = type;
-    }
-
+    private GetApiDeploymentSpecificationRouteRequestPolicyAuthorization() {}
     /**
      * @return A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
      * 
@@ -51,21 +44,18 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyAuthorization 
     public static Builder builder(GetApiDeploymentSpecificationRouteRequestPolicyAuthorization defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> allowedScopes;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteRequestPolicyAuthorization defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedScopes = defaults.allowedScopes;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder allowedScopes(List<String> allowedScopes) {
             this.allowedScopes = Objects.requireNonNull(allowedScopes);
             return this;
@@ -73,11 +63,16 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyAuthorization 
         public Builder allowedScopes(String... allowedScopes) {
             return allowedScopes(List.of(allowedScopes));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetApiDeploymentSpecificationRouteRequestPolicyAuthorization build() {
-            return new GetApiDeploymentSpecificationRouteRequestPolicyAuthorization(allowedScopes, type);
+        }
+        public GetApiDeploymentSpecificationRouteRequestPolicyAuthorization build() {
+            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyAuthorization();
+            o.allowedScopes = allowedScopes;
+            o.type = type;
+            return o;
         }
     }
 }

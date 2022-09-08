@@ -15,21 +15,14 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail 
      * @return Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
      * 
      */
-    private final List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
+    private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
     /**
      * @return In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
      * 
      */
-    private final List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
+    private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
 
-    @CustomType.Constructor
-    private GetMigrationsMigrationCollectionItemDataTransferMediumDetail(
-        @CustomType.Parameter("databaseLinkDetails") List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails,
-        @CustomType.Parameter("objectStorageDetails") List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails) {
-        this.databaseLinkDetails = databaseLinkDetails;
-        this.objectStorageDetails = objectStorageDetails;
-    }
-
+    private GetMigrationsMigrationCollectionItemDataTransferMediumDetail() {}
     /**
      * @return Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
      * 
@@ -52,21 +45,18 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail 
     public static Builder builder(GetMigrationsMigrationCollectionItemDataTransferMediumDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
         private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemDataTransferMediumDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.databaseLinkDetails = defaults.databaseLinkDetails;
     	      this.objectStorageDetails = defaults.objectStorageDetails;
         }
 
+        @CustomType.Setter
         public Builder databaseLinkDetails(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails) {
             this.databaseLinkDetails = Objects.requireNonNull(databaseLinkDetails);
             return this;
@@ -74,14 +64,19 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail 
         public Builder databaseLinkDetails(GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail... databaseLinkDetails) {
             return databaseLinkDetails(List.of(databaseLinkDetails));
         }
+        @CustomType.Setter
         public Builder objectStorageDetails(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails) {
             this.objectStorageDetails = Objects.requireNonNull(objectStorageDetails);
             return this;
         }
         public Builder objectStorageDetails(GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail... objectStorageDetails) {
             return objectStorageDetails(List.of(objectStorageDetails));
-        }        public GetMigrationsMigrationCollectionItemDataTransferMediumDetail build() {
-            return new GetMigrationsMigrationCollectionItemDataTransferMediumDetail(databaseLinkDetails, objectStorageDetails);
+        }
+        public GetMigrationsMigrationCollectionItemDataTransferMediumDetail build() {
+            final var o = new GetMigrationsMigrationCollectionItemDataTransferMediumDetail();
+            o.databaseLinkDetails = databaseLinkDetails;
+            o.objectStorageDetails = objectStorageDetails;
+            return o;
         }
     }
 }

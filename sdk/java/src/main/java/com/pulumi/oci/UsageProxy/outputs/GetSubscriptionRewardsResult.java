@@ -13,42 +13,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionRewardsResult {
-    private final @Nullable List<GetSubscriptionRewardsFilter> filters;
+    private @Nullable List<GetSubscriptionRewardsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of reward_collection.
      * 
      */
-    private final List<GetSubscriptionRewardsRewardCollection> rewardCollections;
+    private List<GetSubscriptionRewardsRewardCollection> rewardCollections;
     /**
      * @return The entitlement ID from MQS, which is the same as the subcription ID.
      * 
      */
-    private final String subscriptionId;
+    private String subscriptionId;
     /**
      * @return The OCID of the target tenancy.
      * 
      */
-    private final String tenancyId;
+    private String tenancyId;
 
-    @CustomType.Constructor
-    private GetSubscriptionRewardsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetSubscriptionRewardsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("rewardCollections") List<GetSubscriptionRewardsRewardCollection> rewardCollections,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("tenancyId") String tenancyId) {
-        this.filters = filters;
-        this.id = id;
-        this.rewardCollections = rewardCollections;
-        this.subscriptionId = subscriptionId;
-        this.tenancyId = tenancyId;
-    }
-
+    private GetSubscriptionRewardsResult() {}
     public List<GetSubscriptionRewardsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -88,18 +75,14 @@ public final class GetSubscriptionRewardsResult {
     public static Builder builder(GetSubscriptionRewardsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSubscriptionRewardsFilter> filters;
         private String id;
         private List<GetSubscriptionRewardsRewardCollection> rewardCollections;
         private String subscriptionId;
         private String tenancyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionRewardsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -109,6 +92,7 @@ public final class GetSubscriptionRewardsResult {
     	      this.tenancyId = defaults.tenancyId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscriptionRewardsFilter> filters) {
             this.filters = filters;
             return this;
@@ -116,10 +100,12 @@ public final class GetSubscriptionRewardsResult {
         public Builder filters(GetSubscriptionRewardsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder rewardCollections(List<GetSubscriptionRewardsRewardCollection> rewardCollections) {
             this.rewardCollections = Objects.requireNonNull(rewardCollections);
             return this;
@@ -127,15 +113,24 @@ public final class GetSubscriptionRewardsResult {
         public Builder rewardCollections(GetSubscriptionRewardsRewardCollection... rewardCollections) {
             return rewardCollections(List.of(rewardCollections));
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
-        }        public GetSubscriptionRewardsResult build() {
-            return new GetSubscriptionRewardsResult(filters, id, rewardCollections, subscriptionId, tenancyId);
+        }
+        public GetSubscriptionRewardsResult build() {
+            final var o = new GetSubscriptionRewardsResult();
+            o.filters = filters;
+            o.id = id;
+            o.rewardCollections = rewardCollections;
+            o.subscriptionId = subscriptionId;
+            o.tenancyId = tenancyId;
+            return o;
         }
     }
 }

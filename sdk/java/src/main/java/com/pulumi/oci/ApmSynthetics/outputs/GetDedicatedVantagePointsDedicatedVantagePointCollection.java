@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDedicatedVantagePointsDedicatedVantagePointCollection {
-    private final List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items;
+    private List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDedicatedVantagePointsDedicatedVantagePointCollection(@CustomType.Parameter("items") List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDedicatedVantagePointsDedicatedVantagePointCollection() {}
     public List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollection {
     public static Builder builder(GetDedicatedVantagePointsDedicatedVantagePointCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDedicatedVantagePointsDedicatedVantagePointCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDedicatedVantagePointsDedicatedVantagePointCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDedicatedVantagePointsDedicatedVantagePointCollection build() {
-            return new GetDedicatedVantagePointsDedicatedVantagePointCollection(items);
+        }
+        public GetDedicatedVantagePointsDedicatedVantagePointCollection build() {
+            final var o = new GetDedicatedVantagePointsDedicatedVantagePointCollection();
+            o.items = items;
+            return o;
         }
     }
 }

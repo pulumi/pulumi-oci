@@ -14,44 +14,27 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditTrailAnalyticResult {
-    private final @Nullable String accessLevel;
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
-    private final @Nullable List<String> groupBies;
+    private @Nullable String accessLevel;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable List<String> groupBies;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Array of audit trail aggregration data.
      * 
      */
-    private final List<GetAuditTrailAnalyticItem> items;
+    private List<GetAuditTrailAnalyticItem> items;
     /**
      * @return The OCID of the Data Safe target for which the audit trail is created.
      * 
      */
-    private final @Nullable String targetId;
+    private @Nullable String targetId;
 
-    @CustomType.Constructor
-    private GetAuditTrailAnalyticResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("groupBies") @Nullable List<String> groupBies,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetAuditTrailAnalyticItem> items,
-        @CustomType.Parameter("targetId") @Nullable String targetId) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.groupBies = groupBies;
-        this.id = id;
-        this.items = items;
-        this.targetId = targetId;
-    }
-
+    private GetAuditTrailAnalyticResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -93,7 +76,7 @@ public final class GetAuditTrailAnalyticResult {
     public static Builder builder(GetAuditTrailAnalyticResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -102,11 +85,7 @@ public final class GetAuditTrailAnalyticResult {
         private String id;
         private List<GetAuditTrailAnalyticItem> items;
         private @Nullable String targetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditTrailAnalyticResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -118,18 +97,22 @@ public final class GetAuditTrailAnalyticResult {
     	      this.targetId = defaults.targetId;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
             this.groupBies = groupBies;
             return this;
@@ -137,10 +120,12 @@ public final class GetAuditTrailAnalyticResult {
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetAuditTrailAnalyticItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -148,11 +133,21 @@ public final class GetAuditTrailAnalyticResult {
         public Builder items(GetAuditTrailAnalyticItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
-        }        public GetAuditTrailAnalyticResult build() {
-            return new GetAuditTrailAnalyticResult(accessLevel, compartmentId, compartmentIdInSubtree, groupBies, id, items, targetId);
+        }
+        public GetAuditTrailAnalyticResult build() {
+            final var o = new GetAuditTrailAnalyticResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.groupBies = groupBies;
+            o.id = id;
+            o.items = items;
+            o.targetId = targetId;
+            return o;
         }
     }
 }

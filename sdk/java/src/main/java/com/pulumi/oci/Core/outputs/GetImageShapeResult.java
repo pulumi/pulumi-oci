@@ -16,45 +16,30 @@ public final class GetImageShapeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return For a flexible image and shape, the amount of memory supported for instances that use this image.
      * 
      */
-    private final List<GetImageShapeMemoryConstraint> memoryConstraints;
+    private List<GetImageShapeMemoryConstraint> memoryConstraints;
     /**
      * @return OCPU options for an image and shape.
      * 
      */
-    private final List<GetImageShapeOcpuConstraint> ocpuConstraints;
+    private List<GetImageShapeOcpuConstraint> ocpuConstraints;
     /**
      * @return The shape name.
      * 
      */
-    private final String shape;
-    private final String shapeName;
+    private String shape;
+    private String shapeName;
 
-    @CustomType.Constructor
-    private GetImageShapeResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("memoryConstraints") List<GetImageShapeMemoryConstraint> memoryConstraints,
-        @CustomType.Parameter("ocpuConstraints") List<GetImageShapeOcpuConstraint> ocpuConstraints,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("shapeName") String shapeName) {
-        this.id = id;
-        this.imageId = imageId;
-        this.memoryConstraints = memoryConstraints;
-        this.ocpuConstraints = ocpuConstraints;
-        this.shape = shape;
-        this.shapeName = shapeName;
-    }
-
+    private GetImageShapeResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -101,7 +86,7 @@ public final class GetImageShapeResult {
     public static Builder builder(GetImageShapeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String imageId;
@@ -109,11 +94,7 @@ public final class GetImageShapeResult {
         private List<GetImageShapeOcpuConstraint> ocpuConstraints;
         private String shape;
         private String shapeName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImageShapeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -124,14 +105,17 @@ public final class GetImageShapeResult {
     	      this.shapeName = defaults.shapeName;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryConstraints(List<GetImageShapeMemoryConstraint> memoryConstraints) {
             this.memoryConstraints = Objects.requireNonNull(memoryConstraints);
             return this;
@@ -139,6 +123,7 @@ public final class GetImageShapeResult {
         public Builder memoryConstraints(GetImageShapeMemoryConstraint... memoryConstraints) {
             return memoryConstraints(List.of(memoryConstraints));
         }
+        @CustomType.Setter
         public Builder ocpuConstraints(List<GetImageShapeOcpuConstraint> ocpuConstraints) {
             this.ocpuConstraints = Objects.requireNonNull(ocpuConstraints);
             return this;
@@ -146,15 +131,25 @@ public final class GetImageShapeResult {
         public Builder ocpuConstraints(GetImageShapeOcpuConstraint... ocpuConstraints) {
             return ocpuConstraints(List.of(ocpuConstraints));
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
-        }        public GetImageShapeResult build() {
-            return new GetImageShapeResult(id, imageId, memoryConstraints, ocpuConstraints, shape, shapeName);
+        }
+        public GetImageShapeResult build() {
+            final var o = new GetImageShapeResult();
+            o.id = id;
+            o.imageId = imageId;
+            o.memoryConstraints = memoryConstraints;
+            o.ocpuConstraints = ocpuConstraints;
+            o.shape = shape;
+            o.shapeName = shapeName;
+            return o;
         }
     }
 }

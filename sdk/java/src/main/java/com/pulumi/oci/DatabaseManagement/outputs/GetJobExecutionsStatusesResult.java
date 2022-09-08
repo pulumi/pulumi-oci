@@ -14,42 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobExecutionsStatusesResult {
-    private final String compartmentId;
-    private final String endTime;
-    private final @Nullable List<GetJobExecutionsStatusesFilter> filters;
-    private final @Nullable String id;
+    private String compartmentId;
+    private String endTime;
+    private @Nullable List<GetJobExecutionsStatusesFilter> filters;
+    private @Nullable String id;
     /**
      * @return The list of job_executions_status_summary_collection.
      * 
      */
-    private final List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections;
-    private final @Nullable String managedDatabaseGroupId;
-    private final @Nullable String managedDatabaseId;
-    private final @Nullable String name;
-    private final String startTime;
+    private List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections;
+    private @Nullable String managedDatabaseGroupId;
+    private @Nullable String managedDatabaseId;
+    private @Nullable String name;
+    private String startTime;
 
-    @CustomType.Constructor
-    private GetJobExecutionsStatusesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("endTime") String endTime,
-        @CustomType.Parameter("filters") @Nullable List<GetJobExecutionsStatusesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("jobExecutionsStatusSummaryCollections") List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections,
-        @CustomType.Parameter("managedDatabaseGroupId") @Nullable String managedDatabaseGroupId,
-        @CustomType.Parameter("managedDatabaseId") @Nullable String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("startTime") String startTime) {
-        this.compartmentId = compartmentId;
-        this.endTime = endTime;
-        this.filters = filters;
-        this.id = id;
-        this.jobExecutionsStatusSummaryCollections = jobExecutionsStatusSummaryCollections;
-        this.managedDatabaseGroupId = managedDatabaseGroupId;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.startTime = startTime;
-    }
-
+    private GetJobExecutionsStatusesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -89,7 +68,7 @@ public final class GetJobExecutionsStatusesResult {
     public static Builder builder(GetJobExecutionsStatusesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String endTime;
@@ -100,11 +79,7 @@ public final class GetJobExecutionsStatusesResult {
         private @Nullable String managedDatabaseId;
         private @Nullable String name;
         private String startTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobExecutionsStatusesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,14 +93,17 @@ public final class GetJobExecutionsStatusesResult {
     	      this.startTime = defaults.startTime;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder endTime(String endTime) {
             this.endTime = Objects.requireNonNull(endTime);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetJobExecutionsStatusesFilter> filters) {
             this.filters = filters;
             return this;
@@ -133,10 +111,12 @@ public final class GetJobExecutionsStatusesResult {
         public Builder filters(GetJobExecutionsStatusesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder jobExecutionsStatusSummaryCollections(List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections) {
             this.jobExecutionsStatusSummaryCollections = Objects.requireNonNull(jobExecutionsStatusSummaryCollections);
             return this;
@@ -144,23 +124,38 @@ public final class GetJobExecutionsStatusesResult {
         public Builder jobExecutionsStatusSummaryCollections(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection... jobExecutionsStatusSummaryCollections) {
             return jobExecutionsStatusSummaryCollections(List.of(jobExecutionsStatusSummaryCollections));
         }
+        @CustomType.Setter
         public Builder managedDatabaseGroupId(@Nullable String managedDatabaseGroupId) {
             this.managedDatabaseGroupId = managedDatabaseGroupId;
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(@Nullable String managedDatabaseId) {
             this.managedDatabaseId = managedDatabaseId;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder startTime(String startTime) {
             this.startTime = Objects.requireNonNull(startTime);
             return this;
-        }        public GetJobExecutionsStatusesResult build() {
-            return new GetJobExecutionsStatusesResult(compartmentId, endTime, filters, id, jobExecutionsStatusSummaryCollections, managedDatabaseGroupId, managedDatabaseId, name, startTime);
+        }
+        public GetJobExecutionsStatusesResult build() {
+            final var o = new GetJobExecutionsStatusesResult();
+            o.compartmentId = compartmentId;
+            o.endTime = endTime;
+            o.filters = filters;
+            o.id = id;
+            o.jobExecutionsStatusSummaryCollections = jobExecutionsStatusSummaryCollections;
+            o.managedDatabaseGroupId = managedDatabaseGroupId;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.startTime = startTime;
+            return o;
         }
     }
 }

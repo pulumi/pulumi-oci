@@ -13,46 +13,25 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRrsetResult {
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The fully qualified domain name where the record can be located.
      * 
      */
-    private final String domain;
-    private final String id;
-    private final List<GetRrsetItem> items;
+    private String domain;
+    private String id;
+    private List<GetRrsetItem> items;
     /**
      * @return The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
      */
-    private final String rtype;
-    private final @Nullable String scope;
-    private final @Nullable String viewId;
-    private final String zoneNameOrId;
-    private final @Nullable String zoneVersion;
+    private String rtype;
+    private @Nullable String scope;
+    private @Nullable String viewId;
+    private String zoneNameOrId;
+    private @Nullable String zoneVersion;
 
-    @CustomType.Constructor
-    private GetRrsetResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("domain") String domain,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetRrsetItem> items,
-        @CustomType.Parameter("rtype") String rtype,
-        @CustomType.Parameter("scope") @Nullable String scope,
-        @CustomType.Parameter("viewId") @Nullable String viewId,
-        @CustomType.Parameter("zoneNameOrId") String zoneNameOrId,
-        @CustomType.Parameter("zoneVersion") @Nullable String zoneVersion) {
-        this.compartmentId = compartmentId;
-        this.domain = domain;
-        this.id = id;
-        this.items = items;
-        this.rtype = rtype;
-        this.scope = scope;
-        this.viewId = viewId;
-        this.zoneNameOrId = zoneNameOrId;
-        this.zoneVersion = zoneVersion;
-    }
-
+    private GetRrsetResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -96,7 +75,7 @@ public final class GetRrsetResult {
     public static Builder builder(GetRrsetResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private String domain;
@@ -107,11 +86,7 @@ public final class GetRrsetResult {
         private @Nullable String viewId;
         private String zoneNameOrId;
         private @Nullable String zoneVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRrsetResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -125,18 +100,22 @@ public final class GetRrsetResult {
     	      this.zoneVersion = defaults.zoneVersion;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder domain(String domain) {
             this.domain = Objects.requireNonNull(domain);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetRrsetItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -144,27 +123,43 @@ public final class GetRrsetResult {
         public Builder items(GetRrsetItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder rtype(String rtype) {
             this.rtype = Objects.requireNonNull(rtype);
             return this;
         }
+        @CustomType.Setter
         public Builder scope(@Nullable String scope) {
             this.scope = scope;
             return this;
         }
+        @CustomType.Setter
         public Builder viewId(@Nullable String viewId) {
             this.viewId = viewId;
             return this;
         }
+        @CustomType.Setter
         public Builder zoneNameOrId(String zoneNameOrId) {
             this.zoneNameOrId = Objects.requireNonNull(zoneNameOrId);
             return this;
         }
+        @CustomType.Setter
         public Builder zoneVersion(@Nullable String zoneVersion) {
             this.zoneVersion = zoneVersion;
             return this;
-        }        public GetRrsetResult build() {
-            return new GetRrsetResult(compartmentId, domain, id, items, rtype, scope, viewId, zoneNameOrId, zoneVersion);
+        }
+        public GetRrsetResult build() {
+            final var o = new GetRrsetResult();
+            o.compartmentId = compartmentId;
+            o.domain = domain;
+            o.id = id;
+            o.items = items;
+            o.rtype = rtype;
+            o.scope = scope;
+            o.viewId = viewId;
+            o.zoneNameOrId = zoneNameOrId;
+            o.zoneVersion = zoneVersion;
+            return o;
         }
     }
 }

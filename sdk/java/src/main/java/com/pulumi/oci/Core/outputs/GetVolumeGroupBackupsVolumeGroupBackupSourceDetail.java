@@ -9,20 +9,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetVolumeGroupBackupsVolumeGroupBackupSourceDetail {
-    private final String kmsKeyId;
-    private final String region;
-    private final String volumeGroupBackupId;
+    private String kmsKeyId;
+    private String region;
+    private String volumeGroupBackupId;
 
-    @CustomType.Constructor
-    private GetVolumeGroupBackupsVolumeGroupBackupSourceDetail(
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("volumeGroupBackupId") String volumeGroupBackupId) {
-        this.kmsKeyId = kmsKeyId;
-        this.region = region;
-        this.volumeGroupBackupId = volumeGroupBackupId;
-    }
-
+    private GetVolumeGroupBackupsVolumeGroupBackupSourceDetail() {}
     public String kmsKeyId() {
         return this.kmsKeyId;
     }
@@ -40,16 +31,12 @@ public final class GetVolumeGroupBackupsVolumeGroupBackupSourceDetail {
     public static Builder builder(GetVolumeGroupBackupsVolumeGroupBackupSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kmsKeyId;
         private String region;
         private String volumeGroupBackupId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeGroupBackupsVolumeGroupBackupSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kmsKeyId = defaults.kmsKeyId;
@@ -57,19 +44,27 @@ public final class GetVolumeGroupBackupsVolumeGroupBackupSourceDetail {
     	      this.volumeGroupBackupId = defaults.volumeGroupBackupId;
         }
 
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupBackupId(String volumeGroupBackupId) {
             this.volumeGroupBackupId = Objects.requireNonNull(volumeGroupBackupId);
             return this;
-        }        public GetVolumeGroupBackupsVolumeGroupBackupSourceDetail build() {
-            return new GetVolumeGroupBackupsVolumeGroupBackupSourceDetail(kmsKeyId, region, volumeGroupBackupId);
+        }
+        public GetVolumeGroupBackupsVolumeGroupBackupSourceDetail build() {
+            final var o = new GetVolumeGroupBackupsVolumeGroupBackupSourceDetail();
+            o.kmsKeyId = kmsKeyId;
+            o.region = region;
+            o.volumeGroupBackupId = volumeGroupBackupId;
+            return o;
         }
     }
 }

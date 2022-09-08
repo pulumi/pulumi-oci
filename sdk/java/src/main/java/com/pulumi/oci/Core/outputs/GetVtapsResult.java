@@ -19,78 +19,53 @@ public final class GetVtapsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetVtapsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetVtapsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Used to start or stop a `Vtap` resource.
      * * `TRUE` directs the VTAP to start mirroring traffic.
      * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      * 
      */
-    private final @Nullable Boolean isVtapEnabled;
-    private final @Nullable String source;
+    private @Nullable Boolean isVtapEnabled;
+    private @Nullable String source;
     /**
      * @return The VTAP&#39;s administrative lifecycle state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
      * 
      */
-    private final @Nullable String targetId;
+    private @Nullable String targetId;
     /**
      * @return The IP address of the destination resource where mirrored packets are sent.
      * 
      */
-    private final @Nullable String targetIp;
+    private @Nullable String targetIp;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
     /**
      * @return The list of vtaps.
      * 
      */
-    private final List<GetVtapsVtap> vtaps;
+    private List<GetVtapsVtap> vtaps;
 
-    @CustomType.Constructor
-    private GetVtapsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetVtapsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isVtapEnabled") @Nullable Boolean isVtapEnabled,
-        @CustomType.Parameter("source") @Nullable String source,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targetId") @Nullable String targetId,
-        @CustomType.Parameter("targetIp") @Nullable String targetIp,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId,
-        @CustomType.Parameter("vtaps") List<GetVtapsVtap> vtaps) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isVtapEnabled = isVtapEnabled;
-        this.source = source;
-        this.state = state;
-        this.targetId = targetId;
-        this.targetIp = targetIp;
-        this.vcnId = vcnId;
-        this.vtaps = vtaps;
-    }
-
+    private GetVtapsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
      * 
@@ -170,7 +145,7 @@ public final class GetVtapsResult {
     public static Builder builder(GetVtapsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -183,11 +158,7 @@ public final class GetVtapsResult {
         private @Nullable String targetIp;
         private @Nullable String vcnId;
         private List<GetVtapsVtap> vtaps;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVtapsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -203,14 +174,17 @@ public final class GetVtapsResult {
     	      this.vtaps = defaults.vtaps;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVtapsFilter> filters) {
             this.filters = filters;
             return this;
@@ -218,42 +192,63 @@ public final class GetVtapsResult {
         public Builder filters(GetVtapsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isVtapEnabled(@Nullable Boolean isVtapEnabled) {
             this.isVtapEnabled = isVtapEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder source(@Nullable String source) {
             this.source = source;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
         public Builder targetIp(@Nullable String targetIp) {
             this.targetIp = targetIp;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
         }
+        @CustomType.Setter
         public Builder vtaps(List<GetVtapsVtap> vtaps) {
             this.vtaps = Objects.requireNonNull(vtaps);
             return this;
         }
         public Builder vtaps(GetVtapsVtap... vtaps) {
             return vtaps(List.of(vtaps));
-        }        public GetVtapsResult build() {
-            return new GetVtapsResult(compartmentId, displayName, filters, id, isVtapEnabled, source, state, targetId, targetIp, vcnId, vtaps);
+        }
+        public GetVtapsResult build() {
+            final var o = new GetVtapsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isVtapEnabled = isVtapEnabled;
+            o.source = source;
+            o.state = state;
+            o.targetId = targetId;
+            o.targetIp = targetIp;
+            o.vcnId = vcnId;
+            o.vtaps = vtaps;
+            return o;
         }
     }
 }

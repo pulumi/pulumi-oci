@@ -15,28 +15,19 @@ public final class JobUnsupportedObject {
      * @return Name of the object (regular expression is allowed)
      * 
      */
-    private final @Nullable String object;
+    private @Nullable String object;
     /**
      * @return Owner of the object (regular expression is allowed)
      * 
      */
-    private final @Nullable String owner;
+    private @Nullable String owner;
     /**
      * @return Type of unsupported object
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private JobUnsupportedObject(
-        @CustomType.Parameter("object") @Nullable String object,
-        @CustomType.Parameter("owner") @Nullable String owner,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.object = object;
-        this.owner = owner;
-        this.type = type;
-    }
-
+    private JobUnsupportedObject() {}
     /**
      * @return Name of the object (regular expression is allowed)
      * 
@@ -66,16 +57,12 @@ public final class JobUnsupportedObject {
     public static Builder builder(JobUnsupportedObject defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String object;
         private @Nullable String owner;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(JobUnsupportedObject defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.object = defaults.object;
@@ -83,19 +70,27 @@ public final class JobUnsupportedObject {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder object(@Nullable String object) {
             this.object = object;
             return this;
         }
+        @CustomType.Setter
         public Builder owner(@Nullable String owner) {
             this.owner = owner;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public JobUnsupportedObject build() {
-            return new JobUnsupportedObject(object, owner, type);
+        }
+        public JobUnsupportedObject build() {
+            final var o = new JobUnsupportedObject();
+            o.object = object;
+            o.owner = owner;
+            o.type = type;
+            return o;
         }
     }
 }

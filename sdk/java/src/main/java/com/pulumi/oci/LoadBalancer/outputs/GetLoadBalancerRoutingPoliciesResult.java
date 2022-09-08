@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLoadBalancerRoutingPoliciesResult {
-    private final @Nullable List<GetLoadBalancerRoutingPoliciesFilter> filters;
+    private @Nullable List<GetLoadBalancerRoutingPoliciesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String loadBalancerId;
+    private String id;
+    private String loadBalancerId;
     /**
      * @return The list of routing_policies.
      * 
      */
-    private final List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies;
+    private List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies;
 
-    @CustomType.Constructor
-    private GetLoadBalancerRoutingPoliciesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetLoadBalancerRoutingPoliciesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("routingPolicies") List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies) {
-        this.filters = filters;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-        this.routingPolicies = routingPolicies;
-    }
-
+    private GetLoadBalancerRoutingPoliciesResult() {}
     public List<GetLoadBalancerRoutingPoliciesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetLoadBalancerRoutingPoliciesResult {
     public static Builder builder(GetLoadBalancerRoutingPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetLoadBalancerRoutingPoliciesFilter> filters;
         private String id;
         private String loadBalancerId;
         private List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLoadBalancerRoutingPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetLoadBalancerRoutingPoliciesResult {
     	      this.routingPolicies = defaults.routingPolicies;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLoadBalancerRoutingPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,22 +78,31 @@ public final class GetLoadBalancerRoutingPoliciesResult {
         public Builder filters(GetLoadBalancerRoutingPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder routingPolicies(List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies) {
             this.routingPolicies = Objects.requireNonNull(routingPolicies);
             return this;
         }
         public Builder routingPolicies(GetLoadBalancerRoutingPoliciesRoutingPolicy... routingPolicies) {
             return routingPolicies(List.of(routingPolicies));
-        }        public GetLoadBalancerRoutingPoliciesResult build() {
-            return new GetLoadBalancerRoutingPoliciesResult(filters, id, loadBalancerId, routingPolicies);
+        }
+        public GetLoadBalancerRoutingPoliciesResult build() {
+            final var o = new GetLoadBalancerRoutingPoliciesResult();
+            o.filters = filters;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            o.routingPolicies = routingPolicies;
+            return o;
         }
     }
 }

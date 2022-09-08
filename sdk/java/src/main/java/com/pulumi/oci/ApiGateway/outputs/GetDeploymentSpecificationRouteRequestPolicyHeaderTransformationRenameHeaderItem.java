@@ -13,21 +13,14 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
      * @return The original case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private final String from;
+    private String from;
     /**
      * @return The new name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private final String to;
+    private String to;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem(
-        @CustomType.Parameter("from") String from,
-        @CustomType.Parameter("to") String to) {
-        this.from = from;
-        this.to = to;
-    }
-
+    private GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem() {}
     /**
      * @return The original case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
@@ -50,30 +43,32 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
     public static Builder builder(GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String from;
         private String to;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.from = defaults.from;
     	      this.to = defaults.to;
         }
 
+        @CustomType.Setter
         public Builder from(String from) {
             this.from = Objects.requireNonNull(from);
             return this;
         }
+        @CustomType.Setter
         public Builder to(String to) {
             this.to = Objects.requireNonNull(to);
             return this;
-        }        public GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem build() {
-            return new GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem(from, to);
+        }
+        public GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem build() {
+            final var o = new GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem();
+            o.from = from;
+            o.to = to;
+            return o;
         }
     }
 }

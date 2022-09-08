@@ -15,49 +15,34 @@ public final class GetAlarmStatusesAlarmStatus {
      * @return A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The configured severity of the alarm.  Example: `CRITICAL`
      * 
      */
-    private final String severity;
+    private String severity;
     /**
      * @return The status of this alarm.  Example: `FIRING`
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The configuration details for suppressing an alarm.
      * 
      */
-    private final List<GetAlarmStatusesAlarmStatusSuppression> suppressions;
+    private List<GetAlarmStatusesAlarmStatusSuppression> suppressions;
     /**
      * @return Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private final String timestampTriggered;
+    private String timestampTriggered;
 
-    @CustomType.Constructor
-    private GetAlarmStatusesAlarmStatus(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("severity") String severity,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("suppressions") List<GetAlarmStatusesAlarmStatusSuppression> suppressions,
-        @CustomType.Parameter("timestampTriggered") String timestampTriggered) {
-        this.displayName = displayName;
-        this.id = id;
-        this.severity = severity;
-        this.status = status;
-        this.suppressions = suppressions;
-        this.timestampTriggered = timestampTriggered;
-    }
-
+    private GetAlarmStatusesAlarmStatus() {}
     /**
      * @return A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
      * 
@@ -108,7 +93,7 @@ public final class GetAlarmStatusesAlarmStatus {
     public static Builder builder(GetAlarmStatusesAlarmStatus defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String id;
@@ -116,11 +101,7 @@ public final class GetAlarmStatusesAlarmStatus {
         private String status;
         private List<GetAlarmStatusesAlarmStatusSuppression> suppressions;
         private String timestampTriggered;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlarmStatusesAlarmStatus defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -131,22 +112,27 @@ public final class GetAlarmStatusesAlarmStatus {
     	      this.timestampTriggered = defaults.timestampTriggered;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder severity(String severity) {
             this.severity = Objects.requireNonNull(severity);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder suppressions(List<GetAlarmStatusesAlarmStatusSuppression> suppressions) {
             this.suppressions = Objects.requireNonNull(suppressions);
             return this;
@@ -154,11 +140,20 @@ public final class GetAlarmStatusesAlarmStatus {
         public Builder suppressions(GetAlarmStatusesAlarmStatusSuppression... suppressions) {
             return suppressions(List.of(suppressions));
         }
+        @CustomType.Setter
         public Builder timestampTriggered(String timestampTriggered) {
             this.timestampTriggered = Objects.requireNonNull(timestampTriggered);
             return this;
-        }        public GetAlarmStatusesAlarmStatus build() {
-            return new GetAlarmStatusesAlarmStatus(displayName, id, severity, status, suppressions, timestampTriggered);
+        }
+        public GetAlarmStatusesAlarmStatus build() {
+            final var o = new GetAlarmStatusesAlarmStatus();
+            o.displayName = displayName;
+            o.id = id;
+            o.severity = severity;
+            o.status = status;
+            o.suppressions = suppressions;
+            o.timestampTriggered = timestampTriggered;
+            return o;
         }
     }
 }

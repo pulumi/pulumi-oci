@@ -15,21 +15,14 @@ public final class GetBlockchainPlatformComponentDetail {
      * @return List of OSNs
      * 
      */
-    private final List<GetBlockchainPlatformComponentDetailOsn> osns;
+    private List<GetBlockchainPlatformComponentDetailOsn> osns;
     /**
      * @return List of Peers
      * 
      */
-    private final List<GetBlockchainPlatformComponentDetailPeer> peers;
+    private List<GetBlockchainPlatformComponentDetailPeer> peers;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformComponentDetail(
-        @CustomType.Parameter("osns") List<GetBlockchainPlatformComponentDetailOsn> osns,
-        @CustomType.Parameter("peers") List<GetBlockchainPlatformComponentDetailPeer> peers) {
-        this.osns = osns;
-        this.peers = peers;
-    }
-
+    private GetBlockchainPlatformComponentDetail() {}
     /**
      * @return List of OSNs
      * 
@@ -52,21 +45,18 @@ public final class GetBlockchainPlatformComponentDetail {
     public static Builder builder(GetBlockchainPlatformComponentDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBlockchainPlatformComponentDetailOsn> osns;
         private List<GetBlockchainPlatformComponentDetailPeer> peers;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformComponentDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.osns = defaults.osns;
     	      this.peers = defaults.peers;
         }
 
+        @CustomType.Setter
         public Builder osns(List<GetBlockchainPlatformComponentDetailOsn> osns) {
             this.osns = Objects.requireNonNull(osns);
             return this;
@@ -74,14 +64,19 @@ public final class GetBlockchainPlatformComponentDetail {
         public Builder osns(GetBlockchainPlatformComponentDetailOsn... osns) {
             return osns(List.of(osns));
         }
+        @CustomType.Setter
         public Builder peers(List<GetBlockchainPlatformComponentDetailPeer> peers) {
             this.peers = Objects.requireNonNull(peers);
             return this;
         }
         public Builder peers(GetBlockchainPlatformComponentDetailPeer... peers) {
             return peers(List.of(peers));
-        }        public GetBlockchainPlatformComponentDetail build() {
-            return new GetBlockchainPlatformComponentDetail(osns, peers);
+        }
+        public GetBlockchainPlatformComponentDetail build() {
+            final var o = new GetBlockchainPlatformComponentDetail();
+            o.osns = osns;
+            o.peers = peers;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class GetSubscriptionRewardsRewardCollectionItem {
      * @return The monthly summary of rewards.
      * 
      */
-    private final List<GetSubscriptionRewardsRewardCollectionItemItem> items;
+    private List<GetSubscriptionRewardsRewardCollectionItemItem> items;
     /**
      * @return The overall monthly reward summary.
      * 
      */
-    private final List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries;
+    private List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries;
 
-    @CustomType.Constructor
-    private GetSubscriptionRewardsRewardCollectionItem(
-        @CustomType.Parameter("items") List<GetSubscriptionRewardsRewardCollectionItemItem> items,
-        @CustomType.Parameter("summaries") List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries) {
-        this.items = items;
-        this.summaries = summaries;
-    }
-
+    private GetSubscriptionRewardsRewardCollectionItem() {}
     /**
      * @return The monthly summary of rewards.
      * 
@@ -52,21 +45,18 @@ public final class GetSubscriptionRewardsRewardCollectionItem {
     public static Builder builder(GetSubscriptionRewardsRewardCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionRewardsRewardCollectionItemItem> items;
         private List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionRewardsRewardCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
     	      this.summaries = defaults.summaries;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSubscriptionRewardsRewardCollectionItemItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -74,14 +64,19 @@ public final class GetSubscriptionRewardsRewardCollectionItem {
         public Builder items(GetSubscriptionRewardsRewardCollectionItemItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder summaries(List<GetSubscriptionRewardsRewardCollectionItemSummary> summaries) {
             this.summaries = Objects.requireNonNull(summaries);
             return this;
         }
         public Builder summaries(GetSubscriptionRewardsRewardCollectionItemSummary... summaries) {
             return summaries(List.of(summaries));
-        }        public GetSubscriptionRewardsRewardCollectionItem build() {
-            return new GetSubscriptionRewardsRewardCollectionItem(items, summaries);
+        }
+        public GetSubscriptionRewardsRewardCollectionItem build() {
+            final var o = new GetSubscriptionRewardsRewardCollectionItem();
+            o.items = items;
+            o.summaries = summaries;
+            return o;
         }
     }
 }

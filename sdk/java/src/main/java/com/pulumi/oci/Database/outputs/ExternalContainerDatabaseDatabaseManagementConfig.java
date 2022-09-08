@@ -15,28 +15,19 @@ public final class ExternalContainerDatabaseDatabaseManagementConfig {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    private final @Nullable String databaseManagementConnectionId;
+    private @Nullable String databaseManagementConnectionId;
     /**
      * @return The status of the Database Management service.
      * 
      */
-    private final @Nullable String databaseManagementStatus;
+    private @Nullable String databaseManagementStatus;
     /**
      * @return The Oracle license model that applies to the external database.
      * 
      */
-    private final @Nullable String licenseModel;
+    private @Nullable String licenseModel;
 
-    @CustomType.Constructor
-    private ExternalContainerDatabaseDatabaseManagementConfig(
-        @CustomType.Parameter("databaseManagementConnectionId") @Nullable String databaseManagementConnectionId,
-        @CustomType.Parameter("databaseManagementStatus") @Nullable String databaseManagementStatus,
-        @CustomType.Parameter("licenseModel") @Nullable String licenseModel) {
-        this.databaseManagementConnectionId = databaseManagementConnectionId;
-        this.databaseManagementStatus = databaseManagementStatus;
-        this.licenseModel = licenseModel;
-    }
-
+    private ExternalContainerDatabaseDatabaseManagementConfig() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
@@ -66,16 +57,12 @@ public final class ExternalContainerDatabaseDatabaseManagementConfig {
     public static Builder builder(ExternalContainerDatabaseDatabaseManagementConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String databaseManagementConnectionId;
         private @Nullable String databaseManagementStatus;
         private @Nullable String licenseModel;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ExternalContainerDatabaseDatabaseManagementConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.databaseManagementConnectionId = defaults.databaseManagementConnectionId;
@@ -83,19 +70,27 @@ public final class ExternalContainerDatabaseDatabaseManagementConfig {
     	      this.licenseModel = defaults.licenseModel;
         }
 
+        @CustomType.Setter
         public Builder databaseManagementConnectionId(@Nullable String databaseManagementConnectionId) {
             this.databaseManagementConnectionId = databaseManagementConnectionId;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseManagementStatus(@Nullable String databaseManagementStatus) {
             this.databaseManagementStatus = databaseManagementStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder licenseModel(@Nullable String licenseModel) {
             this.licenseModel = licenseModel;
             return this;
-        }        public ExternalContainerDatabaseDatabaseManagementConfig build() {
-            return new ExternalContainerDatabaseDatabaseManagementConfig(databaseManagementConnectionId, databaseManagementStatus, licenseModel);
+        }
+        public ExternalContainerDatabaseDatabaseManagementConfig build() {
+            final var o = new ExternalContainerDatabaseDatabaseManagementConfig();
+            o.databaseManagementConnectionId = databaseManagementConnectionId;
+            o.databaseManagementStatus = databaseManagementStatus;
+            o.licenseModel = licenseModel;
+            return o;
         }
     }
 }

@@ -18,52 +18,35 @@ public final class GetExternalDatabaseConnectorsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of external_database_connectors.
      * 
      */
-    private final List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors;
+    private List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
      * 
      */
-    private final String externalDatabaseId;
-    private final @Nullable List<GetExternalDatabaseConnectorsFilter> filters;
+    private String externalDatabaseId;
+    private @Nullable List<GetExternalDatabaseConnectorsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current lifecycle state of the external database connector resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetExternalDatabaseConnectorsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("externalDatabaseConnectors") List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors,
-        @CustomType.Parameter("externalDatabaseId") String externalDatabaseId,
-        @CustomType.Parameter("filters") @Nullable List<GetExternalDatabaseConnectorsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.externalDatabaseConnectors = externalDatabaseConnectors;
-        this.externalDatabaseId = externalDatabaseId;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetExternalDatabaseConnectorsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetExternalDatabaseConnectorsResult {
     public static Builder builder(GetExternalDatabaseConnectorsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetExternalDatabaseConnectorsResult {
         private @Nullable List<GetExternalDatabaseConnectorsFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExternalDatabaseConnectorsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetExternalDatabaseConnectorsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder externalDatabaseConnectors(List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors) {
             this.externalDatabaseConnectors = Objects.requireNonNull(externalDatabaseConnectors);
             return this;
@@ -157,10 +139,12 @@ public final class GetExternalDatabaseConnectorsResult {
         public Builder externalDatabaseConnectors(GetExternalDatabaseConnectorsExternalDatabaseConnector... externalDatabaseConnectors) {
             return externalDatabaseConnectors(List.of(externalDatabaseConnectors));
         }
+        @CustomType.Setter
         public Builder externalDatabaseId(String externalDatabaseId) {
             this.externalDatabaseId = Objects.requireNonNull(externalDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalDatabaseConnectorsFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,15 +152,26 @@ public final class GetExternalDatabaseConnectorsResult {
         public Builder filters(GetExternalDatabaseConnectorsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetExternalDatabaseConnectorsResult build() {
-            return new GetExternalDatabaseConnectorsResult(compartmentId, displayName, externalDatabaseConnectors, externalDatabaseId, filters, id, state);
+        }
+        public GetExternalDatabaseConnectorsResult build() {
+            final var o = new GetExternalDatabaseConnectorsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.externalDatabaseConnectors = externalDatabaseConnectors;
+            o.externalDatabaseId = externalDatabaseId;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

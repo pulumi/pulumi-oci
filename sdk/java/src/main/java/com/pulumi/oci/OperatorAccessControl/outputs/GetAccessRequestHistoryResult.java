@@ -11,28 +11,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAccessRequestHistoryResult {
-    private final String accessRequestId;
+    private String accessRequestId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return contains AccessRequestHistorySummary
      * 
      */
-    private final List<GetAccessRequestHistoryItem> items;
+    private List<GetAccessRequestHistoryItem> items;
 
-    @CustomType.Constructor
-    private GetAccessRequestHistoryResult(
-        @CustomType.Parameter("accessRequestId") String accessRequestId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetAccessRequestHistoryItem> items) {
-        this.accessRequestId = accessRequestId;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetAccessRequestHistoryResult() {}
     public String accessRequestId() {
         return this.accessRequestId;
     }
@@ -58,16 +49,12 @@ public final class GetAccessRequestHistoryResult {
     public static Builder builder(GetAccessRequestHistoryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String accessRequestId;
         private String id;
         private List<GetAccessRequestHistoryItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAccessRequestHistoryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessRequestId = defaults.accessRequestId;
@@ -75,22 +62,30 @@ public final class GetAccessRequestHistoryResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder accessRequestId(String accessRequestId) {
             this.accessRequestId = Objects.requireNonNull(accessRequestId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetAccessRequestHistoryItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAccessRequestHistoryItem... items) {
             return items(List.of(items));
-        }        public GetAccessRequestHistoryResult build() {
-            return new GetAccessRequestHistoryResult(accessRequestId, id, items);
+        }
+        public GetAccessRequestHistoryResult build() {
+            final var o = new GetAccessRequestHistoryResult();
+            o.accessRequestId = accessRequestId;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.BootVolumeAutotunePolicyArgs;
 import com.pulumi.oci.Core.inputs.BootVolumeBootVolumeReplicaArgs;
 import com.pulumi.oci.Core.inputs.BootVolumeSourceDetailsArgs;
 import java.lang.Boolean;
@@ -22,18 +23,33 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
     public static final BootVolumeState Empty = new BootVolumeState();
 
     /**
-     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
+     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
      * 
      */
     @Import(name="autoTunedVpusPerGb")
     private @Nullable Output<String> autoTunedVpusPerGb;
 
     /**
-     * @return The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
+     * @return The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
      * 
      */
     public Optional<Output<String>> autoTunedVpusPerGb() {
         return Optional.ofNullable(this.autoTunedVpusPerGb);
+    }
+
+    /**
+     * (Updatable) The list of autotune policies to be enabled for this volume.
+     * 
+     */
+    @Import(name="autotunePolicies")
+    private @Nullable Output<List<BootVolumeAutotunePolicyArgs>> autotunePolicies;
+
+    /**
+     * @return (Updatable) The list of autotune policies to be enabled for this volume.
+     * 
+     */
+    public Optional<Output<List<BootVolumeAutotunePolicyArgs>>> autotunePolicies() {
+        return Optional.ofNullable(this.autotunePolicies);
     }
 
     /**
@@ -172,14 +188,14 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     @Import(name="isAutoTuneEnabled")
     private @Nullable Output<Boolean> isAutoTuneEnabled;
 
     /**
-     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     public Optional<Output<Boolean>> isAutoTuneEnabled() {
@@ -332,6 +348,7 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
 
     private BootVolumeState(BootVolumeState $) {
         this.autoTunedVpusPerGb = $.autoTunedVpusPerGb;
+        this.autotunePolicies = $.autotunePolicies;
         this.availabilityDomain = $.availabilityDomain;
         this.backupPolicyId = $.backupPolicyId;
         this.bootVolumeReplicas = $.bootVolumeReplicas;
@@ -373,7 +390,7 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
+         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
          * 
          * @return builder
          * 
@@ -384,13 +401,44 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
+         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
          * 
          * @return builder
          * 
          */
         public Builder autoTunedVpusPerGb(String autoTunedVpusPerGb) {
             return autoTunedVpusPerGb(Output.of(autoTunedVpusPerGb));
+        }
+
+        /**
+         * @param autotunePolicies (Updatable) The list of autotune policies to be enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(@Nullable Output<List<BootVolumeAutotunePolicyArgs>> autotunePolicies) {
+            $.autotunePolicies = autotunePolicies;
+            return this;
+        }
+
+        /**
+         * @param autotunePolicies (Updatable) The list of autotune policies to be enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(List<BootVolumeAutotunePolicyArgs> autotunePolicies) {
+            return autotunePolicies(Output.of(autotunePolicies));
+        }
+
+        /**
+         * @param autotunePolicies (Updatable) The list of autotune policies to be enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(BootVolumeAutotunePolicyArgs... autotunePolicies) {
+            return autotunePolicies(List.of(autotunePolicies));
         }
 
         /**
@@ -589,7 +637,7 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          * 
          * @return builder
          * 
@@ -600,7 +648,7 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          * 
          * @return builder
          * 

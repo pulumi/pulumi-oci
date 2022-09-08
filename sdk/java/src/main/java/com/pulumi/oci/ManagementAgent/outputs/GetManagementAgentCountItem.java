@@ -15,21 +15,14 @@ public final class GetManagementAgentCountItem {
      * @return The number of Management Agents in this group
      * 
      */
-    private final Integer count;
+    private Integer count;
     /**
      * @return The Aggregation of Management Agent Dimensions
      * 
      */
-    private final List<GetManagementAgentCountItemDimension> dimensions;
+    private List<GetManagementAgentCountItemDimension> dimensions;
 
-    @CustomType.Constructor
-    private GetManagementAgentCountItem(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("dimensions") List<GetManagementAgentCountItemDimension> dimensions) {
-        this.count = count;
-        this.dimensions = dimensions;
-    }
-
+    private GetManagementAgentCountItem() {}
     /**
      * @return The number of Management Agents in this group
      * 
@@ -52,33 +45,35 @@ public final class GetManagementAgentCountItem {
     public static Builder builder(GetManagementAgentCountItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private List<GetManagementAgentCountItemDimension> dimensions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentCountItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.dimensions = defaults.dimensions;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(List<GetManagementAgentCountItemDimension> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
         }
         public Builder dimensions(GetManagementAgentCountItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
-        }        public GetManagementAgentCountItem build() {
-            return new GetManagementAgentCountItem(count, dimensions);
+        }
+        public GetManagementAgentCountItem build() {
+            final var o = new GetManagementAgentCountItem();
+            o.count = count;
+            o.dimensions = dimensions;
+            return o;
         }
     }
 }

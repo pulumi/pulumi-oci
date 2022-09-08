@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetReportsReportCollection {
-    private final List<GetReportsReportCollectionItem> items;
+    private List<GetReportsReportCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetReportsReportCollection(@CustomType.Parameter("items") List<GetReportsReportCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetReportsReportCollection() {}
     public List<GetReportsReportCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetReportsReportCollection {
     public static Builder builder(GetReportsReportCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetReportsReportCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportsReportCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetReportsReportCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetReportsReportCollectionItem... items) {
             return items(List.of(items));
-        }        public GetReportsReportCollection build() {
-            return new GetReportsReportCollection(items);
+        }
+        public GetReportsReportCollection build() {
+            final var o = new GetReportsReportCollection();
+            o.items = items;
+            return o;
         }
     }
 }

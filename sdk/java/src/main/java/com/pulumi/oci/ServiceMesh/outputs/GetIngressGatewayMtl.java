@@ -14,21 +14,14 @@ public final class GetIngressGatewayMtl {
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
-    private final String certificateId;
+    private String certificateId;
     /**
      * @return The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
      * 
      */
-    private final Integer maximumValidity;
+    private Integer maximumValidity;
 
-    @CustomType.Constructor
-    private GetIngressGatewayMtl(
-        @CustomType.Parameter("certificateId") String certificateId,
-        @CustomType.Parameter("maximumValidity") Integer maximumValidity) {
-        this.certificateId = certificateId;
-        this.maximumValidity = maximumValidity;
-    }
-
+    private GetIngressGatewayMtl() {}
     /**
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
@@ -51,30 +44,32 @@ public final class GetIngressGatewayMtl {
     public static Builder builder(GetIngressGatewayMtl defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificateId;
         private Integer maximumValidity;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewayMtl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateId = defaults.certificateId;
     	      this.maximumValidity = defaults.maximumValidity;
         }
 
+        @CustomType.Setter
         public Builder certificateId(String certificateId) {
             this.certificateId = Objects.requireNonNull(certificateId);
             return this;
         }
+        @CustomType.Setter
         public Builder maximumValidity(Integer maximumValidity) {
             this.maximumValidity = Objects.requireNonNull(maximumValidity);
             return this;
-        }        public GetIngressGatewayMtl build() {
-            return new GetIngressGatewayMtl(certificateId, maximumValidity);
+        }
+        public GetIngressGatewayMtl build() {
+            final var o = new GetIngressGatewayMtl();
+            o.certificateId = certificateId;
+            o.maximumValidity = maximumValidity;
+            return o;
         }
     }
 }

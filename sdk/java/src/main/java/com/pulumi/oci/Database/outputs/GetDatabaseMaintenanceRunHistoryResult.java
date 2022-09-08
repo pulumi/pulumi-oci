@@ -16,31 +16,20 @@ public final class GetDatabaseMaintenanceRunHistoryResult {
      * @return List of database server history details.
      * 
      */
-    private final List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails;
+    private List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Details of a maintenance run.
      * 
      */
-    private final List<GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails;
-    private final String maintenanceRunHistoryId;
+    private List<GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails;
+    private String maintenanceRunHistoryId;
 
-    @CustomType.Constructor
-    private GetDatabaseMaintenanceRunHistoryResult(
-        @CustomType.Parameter("dbServersHistoryDetails") List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("maintenanceRunDetails") List<GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails,
-        @CustomType.Parameter("maintenanceRunHistoryId") String maintenanceRunHistoryId) {
-        this.dbServersHistoryDetails = dbServersHistoryDetails;
-        this.id = id;
-        this.maintenanceRunDetails = maintenanceRunDetails;
-        this.maintenanceRunHistoryId = maintenanceRunHistoryId;
-    }
-
+    private GetDatabaseMaintenanceRunHistoryResult() {}
     /**
      * @return List of database server history details.
      * 
@@ -73,17 +62,13 @@ public final class GetDatabaseMaintenanceRunHistoryResult {
     public static Builder builder(GetDatabaseMaintenanceRunHistoryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails;
         private String id;
         private List<GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails;
         private String maintenanceRunHistoryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseMaintenanceRunHistoryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbServersHistoryDetails = defaults.dbServersHistoryDetails;
@@ -92,6 +77,7 @@ public final class GetDatabaseMaintenanceRunHistoryResult {
     	      this.maintenanceRunHistoryId = defaults.maintenanceRunHistoryId;
         }
 
+        @CustomType.Setter
         public Builder dbServersHistoryDetails(List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail> dbServersHistoryDetails) {
             this.dbServersHistoryDetails = Objects.requireNonNull(dbServersHistoryDetails);
             return this;
@@ -99,10 +85,12 @@ public final class GetDatabaseMaintenanceRunHistoryResult {
         public Builder dbServersHistoryDetails(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail... dbServersHistoryDetails) {
             return dbServersHistoryDetails(List.of(dbServersHistoryDetails));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder maintenanceRunDetails(List<GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail> maintenanceRunDetails) {
             this.maintenanceRunDetails = Objects.requireNonNull(maintenanceRunDetails);
             return this;
@@ -110,11 +98,18 @@ public final class GetDatabaseMaintenanceRunHistoryResult {
         public Builder maintenanceRunDetails(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail... maintenanceRunDetails) {
             return maintenanceRunDetails(List.of(maintenanceRunDetails));
         }
+        @CustomType.Setter
         public Builder maintenanceRunHistoryId(String maintenanceRunHistoryId) {
             this.maintenanceRunHistoryId = Objects.requireNonNull(maintenanceRunHistoryId);
             return this;
-        }        public GetDatabaseMaintenanceRunHistoryResult build() {
-            return new GetDatabaseMaintenanceRunHistoryResult(dbServersHistoryDetails, id, maintenanceRunDetails, maintenanceRunHistoryId);
+        }
+        public GetDatabaseMaintenanceRunHistoryResult build() {
+            final var o = new GetDatabaseMaintenanceRunHistoryResult();
+            o.dbServersHistoryDetails = dbServersHistoryDetails;
+            o.id = id;
+            o.maintenanceRunDetails = maintenanceRunDetails;
+            o.maintenanceRunHistoryId = maintenanceRunHistoryId;
+            return o;
         }
     }
 }

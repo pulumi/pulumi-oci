@@ -13,28 +13,19 @@ public final class GetResourceActionsResourceActionCollectionItemAction {
      * @return Text describing the recommended action.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The status of the resource action.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The URL path to documentation that explains how to perform the action.
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetResourceActionsResourceActionCollectionItemAction(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("url") String url) {
-        this.description = description;
-        this.type = type;
-        this.url = url;
-    }
-
+    private GetResourceActionsResourceActionCollectionItemAction() {}
     /**
      * @return Text describing the recommended action.
      * 
@@ -64,16 +55,12 @@ public final class GetResourceActionsResourceActionCollectionItemAction {
     public static Builder builder(GetResourceActionsResourceActionCollectionItemAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String type;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResourceActionsResourceActionCollectionItemAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -81,19 +68,27 @@ public final class GetResourceActionsResourceActionCollectionItemAction {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetResourceActionsResourceActionCollectionItemAction build() {
-            return new GetResourceActionsResourceActionCollectionItemAction(description, type, url);
+        }
+        public GetResourceActionsResourceActionCollectionItemAction build() {
+            final var o = new GetResourceActionsResourceActionCollectionItemAction();
+            o.description = description;
+            o.type = type;
+            o.url = url;
+            return o;
         }
     }
 }

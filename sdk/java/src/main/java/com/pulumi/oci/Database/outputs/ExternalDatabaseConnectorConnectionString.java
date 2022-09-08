@@ -14,35 +14,24 @@ public final class ExternalDatabaseConnectorConnectionString {
      * @return (Updatable) The host name of the database.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return (Updatable) The port used to connect to the database.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return (Updatable) The protocol used to connect to the database.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return (Updatable) The name of the service alias used to connect to the database.
      * 
      */
-    private final String service;
+    private String service;
 
-    @CustomType.Constructor
-    private ExternalDatabaseConnectorConnectionString(
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("service") String service) {
-        this.hostname = hostname;
-        this.port = port;
-        this.protocol = protocol;
-        this.service = service;
-    }
-
+    private ExternalDatabaseConnectorConnectionString() {}
     /**
      * @return (Updatable) The host name of the database.
      * 
@@ -79,17 +68,13 @@ public final class ExternalDatabaseConnectorConnectionString {
     public static Builder builder(ExternalDatabaseConnectorConnectionString defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostname;
         private Integer port;
         private String protocol;
         private String service;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ExternalDatabaseConnectorConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
@@ -98,23 +83,33 @@ public final class ExternalDatabaseConnectorConnectionString {
     	      this.service = defaults.service;
         }
 
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder service(String service) {
             this.service = Objects.requireNonNull(service);
             return this;
-        }        public ExternalDatabaseConnectorConnectionString build() {
-            return new ExternalDatabaseConnectorConnectionString(hostname, port, protocol, service);
+        }
+        public ExternalDatabaseConnectorConnectionString build() {
+            final var o = new ExternalDatabaseConnectorConnectionString();
+            o.hostname = hostname;
+            o.port = port;
+            o.protocol = protocol;
+            o.service = service;
+            return o;
         }
     }
 }

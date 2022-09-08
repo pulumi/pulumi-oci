@@ -16,77 +16,54 @@ public final class GetCommitmentAggregatedsComputedUsageAggregated {
      * @return Aggregation of computed usages for the subscribed service.
      * 
      */
-    private final List<GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage> aggregatedComputedUsages;
+    private List<GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage> aggregatedComputedUsages;
     /**
      * @return Currency code
      * 
      */
-    private final String currencyCode;
+    private String currencyCode;
     /**
      * @return Product part number for subscribed service line, called parent product.
      * 
      */
-    private final List<GetCommitmentAggregatedsComputedUsageAggregatedParentProduct> parentProducts;
+    private List<GetCommitmentAggregatedsComputedUsageAggregatedParentProduct> parentProducts;
     /**
      * @return Subscribed service line parent id
      * 
      */
-    private final String parentSubscribedServiceId;
+    private String parentSubscribedServiceId;
     /**
      * @return Subscribed service asociated subscription plan number.
      * 
      */
-    private final String planNumber;
+    private String planNumber;
     /**
      * @return Subscribed services pricing model
      * 
      */
-    private final String pricingModel;
+    private String pricingModel;
     /**
      * @return Inernal SPM Ratecard Id at line level
      * 
      */
-    private final String rateCardId;
+    private String rateCardId;
     /**
      * @return Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
      * 
      */
-    private final String subscriptionId;
+    private String subscriptionId;
     /**
      * @return Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeStart;
+    private String timeStart;
 
-    @CustomType.Constructor
-    private GetCommitmentAggregatedsComputedUsageAggregated(
-        @CustomType.Parameter("aggregatedComputedUsages") List<GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage> aggregatedComputedUsages,
-        @CustomType.Parameter("currencyCode") String currencyCode,
-        @CustomType.Parameter("parentProducts") List<GetCommitmentAggregatedsComputedUsageAggregatedParentProduct> parentProducts,
-        @CustomType.Parameter("parentSubscribedServiceId") String parentSubscribedServiceId,
-        @CustomType.Parameter("planNumber") String planNumber,
-        @CustomType.Parameter("pricingModel") String pricingModel,
-        @CustomType.Parameter("rateCardId") String rateCardId,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart) {
-        this.aggregatedComputedUsages = aggregatedComputedUsages;
-        this.currencyCode = currencyCode;
-        this.parentProducts = parentProducts;
-        this.parentSubscribedServiceId = parentSubscribedServiceId;
-        this.planNumber = planNumber;
-        this.pricingModel = pricingModel;
-        this.rateCardId = rateCardId;
-        this.subscriptionId = subscriptionId;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetCommitmentAggregatedsComputedUsageAggregated() {}
     /**
      * @return Aggregation of computed usages for the subscribed service.
      * 
@@ -165,7 +142,7 @@ public final class GetCommitmentAggregatedsComputedUsageAggregated {
     public static Builder builder(GetCommitmentAggregatedsComputedUsageAggregated defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage> aggregatedComputedUsages;
         private String currencyCode;
@@ -177,11 +154,7 @@ public final class GetCommitmentAggregatedsComputedUsageAggregated {
         private String subscriptionId;
         private String timeEnd;
         private String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCommitmentAggregatedsComputedUsageAggregated defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aggregatedComputedUsages = defaults.aggregatedComputedUsages;
@@ -196,6 +169,7 @@ public final class GetCommitmentAggregatedsComputedUsageAggregated {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder aggregatedComputedUsages(List<GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage> aggregatedComputedUsages) {
             this.aggregatedComputedUsages = Objects.requireNonNull(aggregatedComputedUsages);
             return this;
@@ -203,10 +177,12 @@ public final class GetCommitmentAggregatedsComputedUsageAggregated {
         public Builder aggregatedComputedUsages(GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage... aggregatedComputedUsages) {
             return aggregatedComputedUsages(List.of(aggregatedComputedUsages));
         }
+        @CustomType.Setter
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = Objects.requireNonNull(currencyCode);
             return this;
         }
+        @CustomType.Setter
         public Builder parentProducts(List<GetCommitmentAggregatedsComputedUsageAggregatedParentProduct> parentProducts) {
             this.parentProducts = Objects.requireNonNull(parentProducts);
             return this;
@@ -214,35 +190,54 @@ public final class GetCommitmentAggregatedsComputedUsageAggregated {
         public Builder parentProducts(GetCommitmentAggregatedsComputedUsageAggregatedParentProduct... parentProducts) {
             return parentProducts(List.of(parentProducts));
         }
+        @CustomType.Setter
         public Builder parentSubscribedServiceId(String parentSubscribedServiceId) {
             this.parentSubscribedServiceId = Objects.requireNonNull(parentSubscribedServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder planNumber(String planNumber) {
             this.planNumber = Objects.requireNonNull(planNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder pricingModel(String pricingModel) {
             this.pricingModel = Objects.requireNonNull(pricingModel);
             return this;
         }
+        @CustomType.Setter
         public Builder rateCardId(String rateCardId) {
             this.rateCardId = Objects.requireNonNull(rateCardId);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
-        }        public GetCommitmentAggregatedsComputedUsageAggregated build() {
-            return new GetCommitmentAggregatedsComputedUsageAggregated(aggregatedComputedUsages, currencyCode, parentProducts, parentSubscribedServiceId, planNumber, pricingModel, rateCardId, subscriptionId, timeEnd, timeStart);
+        }
+        public GetCommitmentAggregatedsComputedUsageAggregated build() {
+            final var o = new GetCommitmentAggregatedsComputedUsageAggregated();
+            o.aggregatedComputedUsages = aggregatedComputedUsages;
+            o.currencyCode = currencyCode;
+            o.parentProducts = parentProducts;
+            o.parentSubscribedServiceId = parentSubscribedServiceId;
+            o.planNumber = planNumber;
+            o.pricingModel = pricingModel;
+            o.rateCardId = rateCardId;
+            o.subscriptionId = subscriptionId;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

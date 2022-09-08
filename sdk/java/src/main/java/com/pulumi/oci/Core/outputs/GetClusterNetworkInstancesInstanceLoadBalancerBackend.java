@@ -13,42 +13,29 @@ public final class GetClusterNetworkInstancesInstanceLoadBalancerBackend {
      * @return The health of the backend as observed by the load balancer.
      * 
      */
-    private final String backendHealthStatus;
+    private String backendHealthStatus;
     /**
      * @return The name of the backend in the backend set.
      * 
      */
-    private final String backendName;
+    private String backendName;
     /**
      * @return The name of the backend set on the load balancer.
      * 
      */
-    private final String backendSetName;
+    private String backendSetName;
     /**
      * @return The OCID of the load balancer attached to the instance pool.
      * 
      */
-    private final String loadBalancerId;
+    private String loadBalancerId;
     /**
      * @return The current state of the instance pool instance.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetClusterNetworkInstancesInstanceLoadBalancerBackend(
-        @CustomType.Parameter("backendHealthStatus") String backendHealthStatus,
-        @CustomType.Parameter("backendName") String backendName,
-        @CustomType.Parameter("backendSetName") String backendSetName,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("state") String state) {
-        this.backendHealthStatus = backendHealthStatus;
-        this.backendName = backendName;
-        this.backendSetName = backendSetName;
-        this.loadBalancerId = loadBalancerId;
-        this.state = state;
-    }
-
+    private GetClusterNetworkInstancesInstanceLoadBalancerBackend() {}
     /**
      * @return The health of the backend as observed by the load balancer.
      * 
@@ -92,18 +79,14 @@ public final class GetClusterNetworkInstancesInstanceLoadBalancerBackend {
     public static Builder builder(GetClusterNetworkInstancesInstanceLoadBalancerBackend defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backendHealthStatus;
         private String backendName;
         private String backendSetName;
         private String loadBalancerId;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClusterNetworkInstancesInstanceLoadBalancerBackend defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendHealthStatus = defaults.backendHealthStatus;
@@ -113,27 +96,39 @@ public final class GetClusterNetworkInstancesInstanceLoadBalancerBackend {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder backendHealthStatus(String backendHealthStatus) {
             this.backendHealthStatus = Objects.requireNonNull(backendHealthStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder backendName(String backendName) {
             this.backendName = Objects.requireNonNull(backendName);
             return this;
         }
+        @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetClusterNetworkInstancesInstanceLoadBalancerBackend build() {
-            return new GetClusterNetworkInstancesInstanceLoadBalancerBackend(backendHealthStatus, backendName, backendSetName, loadBalancerId, state);
+        }
+        public GetClusterNetworkInstancesInstanceLoadBalancerBackend build() {
+            final var o = new GetClusterNetworkInstancesInstanceLoadBalancerBackend();
+            o.backendHealthStatus = backendHealthStatus;
+            o.backendName = backendName;
+            o.backendSetName = backendSetName;
+            o.loadBalancerId = loadBalancerId;
+            o.state = state;
+            return o;
         }
     }
 }

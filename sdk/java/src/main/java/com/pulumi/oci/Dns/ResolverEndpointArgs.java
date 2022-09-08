@@ -141,15 +141,15 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
      * Value must be `PRIVATE` when creating private name resolver endpoints.
      * 
      */
-    @Import(name="scope", required=true)
-    private Output<String> scope;
+    @Import(name="scope")
+    private @Nullable Output<String> scope;
 
     /**
      * @return Value must be `PRIVATE` when creating private name resolver endpoints.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Optional<Output<String>> scope() {
+        return Optional.ofNullable(this.scope);
     }
 
     /**
@@ -384,7 +384,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder scope(Output<String> scope) {
+        public Builder scope(@Nullable Output<String> scope) {
             $.scope = scope;
             return this;
         }
@@ -424,7 +424,6 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
             $.isForwarding = Objects.requireNonNull($.isForwarding, "expected parameter 'isForwarding' to be non-null");
             $.isListening = Objects.requireNonNull($.isListening, "expected parameter 'isListening' to be non-null");
             $.resolverId = Objects.requireNonNull($.resolverId, "expected parameter 'resolverId' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
             $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
             return $;
         }

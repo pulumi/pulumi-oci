@@ -18,45 +18,30 @@ public final class GetProjectsResult {
      * @return The OCID of the compartment where the project is created.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetProjectsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetProjectsFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return Project name (case-sensitive).
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of project_collection.
      * 
      */
-    private final List<GetProjectsProjectCollection> projectCollections;
+    private List<GetProjectsProjectCollection> projectCollections;
     /**
      * @return The current state of the project.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetProjectsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetProjectsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("projectCollections") List<GetProjectsProjectCollection> projectCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.projectCollections = projectCollections;
-        this.state = state;
-    }
-
+    private GetProjectsResult() {}
     /**
      * @return The OCID of the compartment where the project is created.
      * 
@@ -103,7 +88,7 @@ public final class GetProjectsResult {
     public static Builder builder(GetProjectsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetProjectsFilter> filters;
@@ -111,11 +96,7 @@ public final class GetProjectsResult {
         private @Nullable String name;
         private List<GetProjectsProjectCollection> projectCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProjectsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetProjectsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetProjectsFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,14 +120,17 @@ public final class GetProjectsResult {
         public Builder filters(GetProjectsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder projectCollections(List<GetProjectsProjectCollection> projectCollections) {
             this.projectCollections = Objects.requireNonNull(projectCollections);
             return this;
@@ -152,11 +138,20 @@ public final class GetProjectsResult {
         public Builder projectCollections(GetProjectsProjectCollection... projectCollections) {
             return projectCollections(List.of(projectCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetProjectsResult build() {
-            return new GetProjectsResult(compartmentId, filters, id, name, projectCollections, state);
+        }
+        public GetProjectsResult build() {
+            final var o = new GetProjectsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.projectCollections = projectCollections;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -24,91 +24,64 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
      * @return The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigAccessRule> accessRules;
+    private List<GetWaasPoliciesWaasPolicyWafConfigAccessRule> accessRules;
     /**
      * @return The IP address rate limiting settings used to limit the number of requests from an address.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting> addressRateLimitings;
+    private List<GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting> addressRateLimitings;
     /**
      * @return A list of caching rules applied to the web application.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigCachingRule> cachingRules;
+    private List<GetWaasPoliciesWaasPolicyWafConfigCachingRule> cachingRules;
     /**
      * @return A list of CAPTCHA challenge settings. These are used to challenge requests with a CAPTCHA to block bots.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigCaptcha> captchas;
+    private List<GetWaasPoliciesWaasPolicyWafConfigCaptcha> captchas;
     /**
      * @return A list of the custom protection rule OCIDs and their actions.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule> customProtectionRules;
+    private List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule> customProtectionRules;
     /**
      * @return The device fingerprint challenge settings. Used to detect unique devices based on the device fingerprint information collected in order to block bots.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge> deviceFingerprintChallenges;
+    private List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge> deviceFingerprintChallenges;
     /**
      * @return The human interaction challenge settings. Used to look for natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge> humanInteractionChallenges;
+    private List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge> humanInteractionChallenges;
     /**
      * @return The JavaScript challenge settings. Used to challenge requests with a JavaScript challenge and take the action if a browser has no JavaScript support in order to block bots.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigJsChallenge> jsChallenges;
+    private List<GetWaasPoliciesWaasPolicyWafConfigJsChallenge> jsChallenges;
     /**
      * @return The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
      * 
      */
-    private final String origin;
+    private String origin;
     /**
      * @return The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      * 
      */
-    private final List<String> originGroups;
+    private List<String> originGroups;
     /**
      * @return The settings to apply to protection rules.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigProtectionSetting> protectionSettings;
+    private List<GetWaasPoliciesWaasPolicyWafConfigProtectionSetting> protectionSettings;
     /**
      * @return A list of IP addresses that bypass the Web Application Firewall.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigWhitelist> whitelists;
+    private List<GetWaasPoliciesWaasPolicyWafConfigWhitelist> whitelists;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesWaasPolicyWafConfig(
-        @CustomType.Parameter("accessRules") List<GetWaasPoliciesWaasPolicyWafConfigAccessRule> accessRules,
-        @CustomType.Parameter("addressRateLimitings") List<GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting> addressRateLimitings,
-        @CustomType.Parameter("cachingRules") List<GetWaasPoliciesWaasPolicyWafConfigCachingRule> cachingRules,
-        @CustomType.Parameter("captchas") List<GetWaasPoliciesWaasPolicyWafConfigCaptcha> captchas,
-        @CustomType.Parameter("customProtectionRules") List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule> customProtectionRules,
-        @CustomType.Parameter("deviceFingerprintChallenges") List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge> deviceFingerprintChallenges,
-        @CustomType.Parameter("humanInteractionChallenges") List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge> humanInteractionChallenges,
-        @CustomType.Parameter("jsChallenges") List<GetWaasPoliciesWaasPolicyWafConfigJsChallenge> jsChallenges,
-        @CustomType.Parameter("origin") String origin,
-        @CustomType.Parameter("originGroups") List<String> originGroups,
-        @CustomType.Parameter("protectionSettings") List<GetWaasPoliciesWaasPolicyWafConfigProtectionSetting> protectionSettings,
-        @CustomType.Parameter("whitelists") List<GetWaasPoliciesWaasPolicyWafConfigWhitelist> whitelists) {
-        this.accessRules = accessRules;
-        this.addressRateLimitings = addressRateLimitings;
-        this.cachingRules = cachingRules;
-        this.captchas = captchas;
-        this.customProtectionRules = customProtectionRules;
-        this.deviceFingerprintChallenges = deviceFingerprintChallenges;
-        this.humanInteractionChallenges = humanInteractionChallenges;
-        this.jsChallenges = jsChallenges;
-        this.origin = origin;
-        this.originGroups = originGroups;
-        this.protectionSettings = protectionSettings;
-        this.whitelists = whitelists;
-    }
-
+    private GetWaasPoliciesWaasPolicyWafConfig() {}
     /**
      * @return The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
      * 
@@ -201,7 +174,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
     public static Builder builder(GetWaasPoliciesWaasPolicyWafConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetWaasPoliciesWaasPolicyWafConfigAccessRule> accessRules;
         private List<GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting> addressRateLimitings;
@@ -215,11 +188,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         private List<String> originGroups;
         private List<GetWaasPoliciesWaasPolicyWafConfigProtectionSetting> protectionSettings;
         private List<GetWaasPoliciesWaasPolicyWafConfigWhitelist> whitelists;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessRules = defaults.accessRules;
@@ -236,6 +205,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
     	      this.whitelists = defaults.whitelists;
         }
 
+        @CustomType.Setter
         public Builder accessRules(List<GetWaasPoliciesWaasPolicyWafConfigAccessRule> accessRules) {
             this.accessRules = Objects.requireNonNull(accessRules);
             return this;
@@ -243,6 +213,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         public Builder accessRules(GetWaasPoliciesWaasPolicyWafConfigAccessRule... accessRules) {
             return accessRules(List.of(accessRules));
         }
+        @CustomType.Setter
         public Builder addressRateLimitings(List<GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting> addressRateLimitings) {
             this.addressRateLimitings = Objects.requireNonNull(addressRateLimitings);
             return this;
@@ -250,6 +221,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         public Builder addressRateLimitings(GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting... addressRateLimitings) {
             return addressRateLimitings(List.of(addressRateLimitings));
         }
+        @CustomType.Setter
         public Builder cachingRules(List<GetWaasPoliciesWaasPolicyWafConfigCachingRule> cachingRules) {
             this.cachingRules = Objects.requireNonNull(cachingRules);
             return this;
@@ -257,6 +229,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         public Builder cachingRules(GetWaasPoliciesWaasPolicyWafConfigCachingRule... cachingRules) {
             return cachingRules(List.of(cachingRules));
         }
+        @CustomType.Setter
         public Builder captchas(List<GetWaasPoliciesWaasPolicyWafConfigCaptcha> captchas) {
             this.captchas = Objects.requireNonNull(captchas);
             return this;
@@ -264,6 +237,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         public Builder captchas(GetWaasPoliciesWaasPolicyWafConfigCaptcha... captchas) {
             return captchas(List.of(captchas));
         }
+        @CustomType.Setter
         public Builder customProtectionRules(List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule> customProtectionRules) {
             this.customProtectionRules = Objects.requireNonNull(customProtectionRules);
             return this;
@@ -271,6 +245,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         public Builder customProtectionRules(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule... customProtectionRules) {
             return customProtectionRules(List.of(customProtectionRules));
         }
+        @CustomType.Setter
         public Builder deviceFingerprintChallenges(List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge> deviceFingerprintChallenges) {
             this.deviceFingerprintChallenges = Objects.requireNonNull(deviceFingerprintChallenges);
             return this;
@@ -278,6 +253,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         public Builder deviceFingerprintChallenges(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge... deviceFingerprintChallenges) {
             return deviceFingerprintChallenges(List.of(deviceFingerprintChallenges));
         }
+        @CustomType.Setter
         public Builder humanInteractionChallenges(List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge> humanInteractionChallenges) {
             this.humanInteractionChallenges = Objects.requireNonNull(humanInteractionChallenges);
             return this;
@@ -285,6 +261,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         public Builder humanInteractionChallenges(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge... humanInteractionChallenges) {
             return humanInteractionChallenges(List.of(humanInteractionChallenges));
         }
+        @CustomType.Setter
         public Builder jsChallenges(List<GetWaasPoliciesWaasPolicyWafConfigJsChallenge> jsChallenges) {
             this.jsChallenges = Objects.requireNonNull(jsChallenges);
             return this;
@@ -292,10 +269,12 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         public Builder jsChallenges(GetWaasPoliciesWaasPolicyWafConfigJsChallenge... jsChallenges) {
             return jsChallenges(List.of(jsChallenges));
         }
+        @CustomType.Setter
         public Builder origin(String origin) {
             this.origin = Objects.requireNonNull(origin);
             return this;
         }
+        @CustomType.Setter
         public Builder originGroups(List<String> originGroups) {
             this.originGroups = Objects.requireNonNull(originGroups);
             return this;
@@ -303,6 +282,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         public Builder originGroups(String... originGroups) {
             return originGroups(List.of(originGroups));
         }
+        @CustomType.Setter
         public Builder protectionSettings(List<GetWaasPoliciesWaasPolicyWafConfigProtectionSetting> protectionSettings) {
             this.protectionSettings = Objects.requireNonNull(protectionSettings);
             return this;
@@ -310,14 +290,29 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
         public Builder protectionSettings(GetWaasPoliciesWaasPolicyWafConfigProtectionSetting... protectionSettings) {
             return protectionSettings(List.of(protectionSettings));
         }
+        @CustomType.Setter
         public Builder whitelists(List<GetWaasPoliciesWaasPolicyWafConfigWhitelist> whitelists) {
             this.whitelists = Objects.requireNonNull(whitelists);
             return this;
         }
         public Builder whitelists(GetWaasPoliciesWaasPolicyWafConfigWhitelist... whitelists) {
             return whitelists(List.of(whitelists));
-        }        public GetWaasPoliciesWaasPolicyWafConfig build() {
-            return new GetWaasPoliciesWaasPolicyWafConfig(accessRules, addressRateLimitings, cachingRules, captchas, customProtectionRules, deviceFingerprintChallenges, humanInteractionChallenges, jsChallenges, origin, originGroups, protectionSettings, whitelists);
+        }
+        public GetWaasPoliciesWaasPolicyWafConfig build() {
+            final var o = new GetWaasPoliciesWaasPolicyWafConfig();
+            o.accessRules = accessRules;
+            o.addressRateLimitings = addressRateLimitings;
+            o.cachingRules = cachingRules;
+            o.captchas = captchas;
+            o.customProtectionRules = customProtectionRules;
+            o.deviceFingerprintChallenges = deviceFingerprintChallenges;
+            o.humanInteractionChallenges = humanInteractionChallenges;
+            o.jsChallenges = jsChallenges;
+            o.origin = origin;
+            o.originGroups = originGroups;
+            o.protectionSettings = protectionSettings;
+            o.whitelists = whitelists;
+            return o;
         }
     }
 }

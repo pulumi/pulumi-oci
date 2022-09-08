@@ -14,30 +14,17 @@ public final class GetSslCipherSuiteResult {
      * @return A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
      * 
      */
-    private final List<String> ciphers;
-    private final String id;
-    private final String loadBalancerId;
+    private List<String> ciphers;
+    private String id;
+    private String loadBalancerId;
     /**
      * @return A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      * 
      */
-    private final String name;
-    private final String state;
+    private String name;
+    private String state;
 
-    @CustomType.Constructor
-    private GetSslCipherSuiteResult(
-        @CustomType.Parameter("ciphers") List<String> ciphers,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state) {
-        this.ciphers = ciphers;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetSslCipherSuiteResult() {}
     /**
      * @return A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
      * 
@@ -69,18 +56,14 @@ public final class GetSslCipherSuiteResult {
     public static Builder builder(GetSslCipherSuiteResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> ciphers;
         private String id;
         private String loadBalancerId;
         private String name;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSslCipherSuiteResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ciphers = defaults.ciphers;
@@ -90,6 +73,7 @@ public final class GetSslCipherSuiteResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder ciphers(List<String> ciphers) {
             this.ciphers = Objects.requireNonNull(ciphers);
             return this;
@@ -97,23 +81,34 @@ public final class GetSslCipherSuiteResult {
         public Builder ciphers(String... ciphers) {
             return ciphers(List.of(ciphers));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetSslCipherSuiteResult build() {
-            return new GetSslCipherSuiteResult(ciphers, id, loadBalancerId, name, state);
+        }
+        public GetSslCipherSuiteResult build() {
+            final var o = new GetSslCipherSuiteResult();
+            o.ciphers = ciphers;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

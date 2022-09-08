@@ -13,13 +13,9 @@ public final class GetOpensearchVersionsOpensearchVersionsCollectionItem {
      * @return The version of OpenSearch.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetOpensearchVersionsOpensearchVersionsCollectionItem(@CustomType.Parameter("version") String version) {
-        this.version = version;
-    }
-
+    private GetOpensearchVersionsOpensearchVersionsCollectionItem() {}
     /**
      * @return The version of OpenSearch.
      * 
@@ -35,24 +31,24 @@ public final class GetOpensearchVersionsOpensearchVersionsCollectionItem {
     public static Builder builder(GetOpensearchVersionsOpensearchVersionsCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOpensearchVersionsOpensearchVersionsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetOpensearchVersionsOpensearchVersionsCollectionItem build() {
-            return new GetOpensearchVersionsOpensearchVersionsCollectionItem(version);
+        }
+        public GetOpensearchVersionsOpensearchVersionsCollectionItem build() {
+            final var o = new GetOpensearchVersionsOpensearchVersionsCollectionItem();
+            o.version = version;
+            return o;
         }
     }
 }

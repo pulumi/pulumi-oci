@@ -12,36 +12,25 @@ import java.util.Objects;
 @CustomType
 public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
     /**
-     * @return The list of user email IDs that can redeem rewards.
+     * @return The list of user summary that can redeem rewards.
      * 
      */
-    private final List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem> items;
+    private List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem> items;
     /**
      * @return The subscription ID for which rewards information is requested for.
      * 
      */
-    private final String subscriptionId;
+    private String subscriptionId;
     /**
      * @return The OCID of the tenancy.
      * 
      */
-    private final String tenancyId;
-    private final String userId;
+    private String tenancyId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetSubscriptionRedeemableUsersRedeemableUserCollectionItem(
-        @CustomType.Parameter("items") List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem> items,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("tenancyId") String tenancyId,
-        @CustomType.Parameter("userId") String userId) {
-        this.items = items;
-        this.subscriptionId = subscriptionId;
-        this.tenancyId = tenancyId;
-        this.userId = userId;
-    }
-
+    private GetSubscriptionRedeemableUsersRedeemableUserCollectionItem() {}
     /**
-     * @return The list of user email IDs that can redeem rewards.
+     * @return The list of user summary that can redeem rewards.
      * 
      */
     public List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem> items() {
@@ -72,17 +61,13 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
     public static Builder builder(GetSubscriptionRedeemableUsersRedeemableUserCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem> items;
         private String subscriptionId;
         private String tenancyId;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionRedeemableUsersRedeemableUserCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
@@ -91,6 +76,7 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -98,19 +84,28 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
         public Builder items(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetSubscriptionRedeemableUsersRedeemableUserCollectionItem build() {
-            return new GetSubscriptionRedeemableUsersRedeemableUserCollectionItem(items, subscriptionId, tenancyId, userId);
+        }
+        public GetSubscriptionRedeemableUsersRedeemableUserCollectionItem build() {
+            final var o = new GetSubscriptionRedeemableUsersRedeemableUserCollectionItem();
+            o.items = items;
+            o.subscriptionId = subscriptionId;
+            o.tenancyId = tenancyId;
+            o.userId = userId;
+            return o;
         }
     }
 }

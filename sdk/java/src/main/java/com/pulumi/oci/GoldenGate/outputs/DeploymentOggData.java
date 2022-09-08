@@ -15,49 +15,34 @@ public final class DeploymentOggData {
      * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
      * 
      */
-    private final String adminPassword;
+    private String adminPassword;
     /**
      * @return (Updatable) The GoldenGate deployment console username.
      * 
      */
-    private final String adminUsername;
+    private String adminUsername;
     /**
      * @return (Updatable) A PEM-encoded SSL certificate.
      * 
      */
-    private final @Nullable String certificate;
+    private @Nullable String certificate;
     /**
      * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      * 
      */
-    private final String deploymentName;
+    private String deploymentName;
     /**
      * @return (Updatable) A PEM-encoded private key.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return Version of OGG
      * 
      */
-    private final @Nullable String oggVersion;
+    private @Nullable String oggVersion;
 
-    @CustomType.Constructor
-    private DeploymentOggData(
-        @CustomType.Parameter("adminPassword") String adminPassword,
-        @CustomType.Parameter("adminUsername") String adminUsername,
-        @CustomType.Parameter("certificate") @Nullable String certificate,
-        @CustomType.Parameter("deploymentName") String deploymentName,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("oggVersion") @Nullable String oggVersion) {
-        this.adminPassword = adminPassword;
-        this.adminUsername = adminUsername;
-        this.certificate = certificate;
-        this.deploymentName = deploymentName;
-        this.key = key;
-        this.oggVersion = oggVersion;
-    }
-
+    private DeploymentOggData() {}
     /**
      * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
      * 
@@ -108,7 +93,7 @@ public final class DeploymentOggData {
     public static Builder builder(DeploymentOggData defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminPassword;
         private String adminUsername;
@@ -116,11 +101,7 @@ public final class DeploymentOggData {
         private String deploymentName;
         private @Nullable String key;
         private @Nullable String oggVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentOggData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
@@ -131,31 +112,45 @@ public final class DeploymentOggData {
     	      this.oggVersion = defaults.oggVersion;
         }
 
+        @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = Objects.requireNonNull(adminPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = Objects.requireNonNull(adminUsername);
             return this;
         }
+        @CustomType.Setter
         public Builder certificate(@Nullable String certificate) {
             this.certificate = certificate;
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentName(String deploymentName) {
             this.deploymentName = Objects.requireNonNull(deploymentName);
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder oggVersion(@Nullable String oggVersion) {
             this.oggVersion = oggVersion;
             return this;
-        }        public DeploymentOggData build() {
-            return new DeploymentOggData(adminPassword, adminUsername, certificate, deploymentName, key, oggVersion);
+        }
+        public DeploymentOggData build() {
+            final var o = new DeploymentOggData();
+            o.adminPassword = adminPassword;
+            o.adminUsername = adminUsername;
+            o.certificate = certificate;
+            o.deploymentName = deploymentName;
+            o.key = key;
+            o.oggVersion = oggVersion;
+            return o;
         }
     }
 }

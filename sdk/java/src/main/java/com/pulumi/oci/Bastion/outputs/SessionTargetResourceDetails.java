@@ -16,51 +16,36 @@ public final class SessionTargetResourceDetails {
      * @return The session type.
      * 
      */
-    private final String sessionType;
+    private String sessionType;
     /**
      * @return The display name of the target Compute instance that the session connects to.
      * 
      */
-    private final @Nullable String targetResourceDisplayName;
+    private @Nullable String targetResourceDisplayName;
     /**
      * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It&#39;s optional depends on the type of session you want to create.
      * * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
      * * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
      * 
      */
-    private final @Nullable String targetResourceId;
+    private @Nullable String targetResourceId;
     /**
      * @return The name of the user on the target resource operating system that the session uses for the connection.
      * 
      */
-    private final @Nullable String targetResourceOperatingSystemUserName;
+    private @Nullable String targetResourceOperatingSystemUserName;
     /**
      * @return The port number to connect to on the target resource.
      * 
      */
-    private final @Nullable Integer targetResourcePort;
+    private @Nullable Integer targetResourcePort;
     /**
      * @return The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
      * 
      */
-    private final @Nullable String targetResourcePrivateIpAddress;
+    private @Nullable String targetResourcePrivateIpAddress;
 
-    @CustomType.Constructor
-    private SessionTargetResourceDetails(
-        @CustomType.Parameter("sessionType") String sessionType,
-        @CustomType.Parameter("targetResourceDisplayName") @Nullable String targetResourceDisplayName,
-        @CustomType.Parameter("targetResourceId") @Nullable String targetResourceId,
-        @CustomType.Parameter("targetResourceOperatingSystemUserName") @Nullable String targetResourceOperatingSystemUserName,
-        @CustomType.Parameter("targetResourcePort") @Nullable Integer targetResourcePort,
-        @CustomType.Parameter("targetResourcePrivateIpAddress") @Nullable String targetResourcePrivateIpAddress) {
-        this.sessionType = sessionType;
-        this.targetResourceDisplayName = targetResourceDisplayName;
-        this.targetResourceId = targetResourceId;
-        this.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
-        this.targetResourcePort = targetResourcePort;
-        this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
-    }
-
+    private SessionTargetResourceDetails() {}
     /**
      * @return The session type.
      * 
@@ -113,7 +98,7 @@ public final class SessionTargetResourceDetails {
     public static Builder builder(SessionTargetResourceDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String sessionType;
         private @Nullable String targetResourceDisplayName;
@@ -121,11 +106,7 @@ public final class SessionTargetResourceDetails {
         private @Nullable String targetResourceOperatingSystemUserName;
         private @Nullable Integer targetResourcePort;
         private @Nullable String targetResourcePrivateIpAddress;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SessionTargetResourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.sessionType = defaults.sessionType;
@@ -136,31 +117,45 @@ public final class SessionTargetResourceDetails {
     	      this.targetResourcePrivateIpAddress = defaults.targetResourcePrivateIpAddress;
         }
 
+        @CustomType.Setter
         public Builder sessionType(String sessionType) {
             this.sessionType = Objects.requireNonNull(sessionType);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceDisplayName(@Nullable String targetResourceDisplayName) {
             this.targetResourceDisplayName = targetResourceDisplayName;
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceId(@Nullable String targetResourceId) {
             this.targetResourceId = targetResourceId;
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceOperatingSystemUserName(@Nullable String targetResourceOperatingSystemUserName) {
             this.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourcePort(@Nullable Integer targetResourcePort) {
             this.targetResourcePort = targetResourcePort;
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourcePrivateIpAddress(@Nullable String targetResourcePrivateIpAddress) {
             this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
             return this;
-        }        public SessionTargetResourceDetails build() {
-            return new SessionTargetResourceDetails(sessionType, targetResourceDisplayName, targetResourceId, targetResourceOperatingSystemUserName, targetResourcePort, targetResourcePrivateIpAddress);
+        }
+        public SessionTargetResourceDetails build() {
+            final var o = new SessionTargetResourceDetails();
+            o.sessionType = sessionType;
+            o.targetResourceDisplayName = targetResourceDisplayName;
+            o.targetResourceId = targetResourceId;
+            o.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
+            o.targetResourcePort = targetResourcePort;
+            o.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
+            return o;
         }
     }
 }

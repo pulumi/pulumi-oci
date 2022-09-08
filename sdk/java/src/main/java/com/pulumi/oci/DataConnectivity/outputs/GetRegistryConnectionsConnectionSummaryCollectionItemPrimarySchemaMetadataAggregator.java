@@ -13,42 +13,29 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
      * @return The description of the aggregator.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The identifier of the aggregator.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
      * @return The identifying key for the object.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Type of the object to filter the results with.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.description = description;
-        this.identifier = identifier;
-        this.key = key;
-        this.name = name;
-        this.type = type;
-    }
-
+    private GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator() {}
     /**
      * @return The description of the aggregator.
      * 
@@ -92,18 +79,14 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
     public static Builder builder(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String identifier;
         private String key;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -113,27 +96,39 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator build() {
-            return new GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator(description, identifier, key, name, type);
+        }
+        public GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator build() {
+            final var o = new GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator();
+            o.description = description;
+            o.identifier = identifier;
+            o.key = key;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -16,28 +16,19 @@ public final class GetIngressGatewayHostListenerTl {
      * @return Resource representing the TLS configuration used for validating client certificates.
      * 
      */
-    private final List<GetIngressGatewayHostListenerTlClientValidation> clientValidations;
+    private List<GetIngressGatewayHostListenerTlClientValidation> clientValidations;
     /**
      * @return DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client&#39;s certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
      * 
      */
-    private final String mode;
+    private String mode;
     /**
      * @return Resource representing the location of the TLS certificate.
      * 
      */
-    private final List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates;
+    private List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates;
 
-    @CustomType.Constructor
-    private GetIngressGatewayHostListenerTl(
-        @CustomType.Parameter("clientValidations") List<GetIngressGatewayHostListenerTlClientValidation> clientValidations,
-        @CustomType.Parameter("mode") String mode,
-        @CustomType.Parameter("serverCertificates") List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates) {
-        this.clientValidations = clientValidations;
-        this.mode = mode;
-        this.serverCertificates = serverCertificates;
-    }
-
+    private GetIngressGatewayHostListenerTl() {}
     /**
      * @return Resource representing the TLS configuration used for validating client certificates.
      * 
@@ -67,16 +58,12 @@ public final class GetIngressGatewayHostListenerTl {
     public static Builder builder(GetIngressGatewayHostListenerTl defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetIngressGatewayHostListenerTlClientValidation> clientValidations;
         private String mode;
         private List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewayHostListenerTl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clientValidations = defaults.clientValidations;
@@ -84,6 +71,7 @@ public final class GetIngressGatewayHostListenerTl {
     	      this.serverCertificates = defaults.serverCertificates;
         }
 
+        @CustomType.Setter
         public Builder clientValidations(List<GetIngressGatewayHostListenerTlClientValidation> clientValidations) {
             this.clientValidations = Objects.requireNonNull(clientValidations);
             return this;
@@ -91,18 +79,25 @@ public final class GetIngressGatewayHostListenerTl {
         public Builder clientValidations(GetIngressGatewayHostListenerTlClientValidation... clientValidations) {
             return clientValidations(List.of(clientValidations));
         }
+        @CustomType.Setter
         public Builder mode(String mode) {
             this.mode = Objects.requireNonNull(mode);
             return this;
         }
+        @CustomType.Setter
         public Builder serverCertificates(List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates) {
             this.serverCertificates = Objects.requireNonNull(serverCertificates);
             return this;
         }
         public Builder serverCertificates(GetIngressGatewayHostListenerTlServerCertificate... serverCertificates) {
             return serverCertificates(List.of(serverCertificates));
-        }        public GetIngressGatewayHostListenerTl build() {
-            return new GetIngressGatewayHostListenerTl(clientValidations, mode, serverCertificates);
+        }
+        public GetIngressGatewayHostListenerTl build() {
+            final var o = new GetIngressGatewayHostListenerTl();
+            o.clientValidations = clientValidations;
+            o.mode = mode;
+            o.serverCertificates = serverCertificates;
+            return o;
         }
     }
 }

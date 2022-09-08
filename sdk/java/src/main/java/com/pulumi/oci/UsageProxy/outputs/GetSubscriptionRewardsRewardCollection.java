@@ -14,13 +14,9 @@ public final class GetSubscriptionRewardsRewardCollection {
      * @return The monthly summary of rewards.
      * 
      */
-    private final List<GetSubscriptionRewardsRewardCollectionItem> items;
+    private List<GetSubscriptionRewardsRewardCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetSubscriptionRewardsRewardCollection(@CustomType.Parameter("items") List<GetSubscriptionRewardsRewardCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetSubscriptionRewardsRewardCollection() {}
     /**
      * @return The monthly summary of rewards.
      * 
@@ -36,27 +32,27 @@ public final class GetSubscriptionRewardsRewardCollection {
     public static Builder builder(GetSubscriptionRewardsRewardCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionRewardsRewardCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionRewardsRewardCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSubscriptionRewardsRewardCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSubscriptionRewardsRewardCollectionItem... items) {
             return items(List.of(items));
-        }        public GetSubscriptionRewardsRewardCollection build() {
-            return new GetSubscriptionRewardsRewardCollection(items);
+        }
+        public GetSubscriptionRewardsRewardCollection build() {
+            final var o = new GetSubscriptionRewardsRewardCollection();
+            o.items = items;
+            return o;
         }
     }
 }

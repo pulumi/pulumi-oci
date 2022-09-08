@@ -17,42 +17,29 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
      * @return (Updatable) Unique name of the configuration
      * 
      */
-    private final @Nullable String configKey;
+    private @Nullable String configKey;
     /**
      * @return (Updatable) configuration data type
      * 
      */
-    private final @Nullable String dataType;
+    private @Nullable String dataType;
     /**
      * @return (Updatable) configuration name
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) configuration value
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
     /**
      * @return (Updatable) List of configuration values
      * 
      */
-    private final @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values;
+    private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values;
 
-    @CustomType.Constructor
-    private DetectorRecipeEffectiveDetectorRuleDetailConfiguration(
-        @CustomType.Parameter("configKey") @Nullable String configKey,
-        @CustomType.Parameter("dataType") @Nullable String dataType,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value,
-        @CustomType.Parameter("values") @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values) {
-        this.configKey = configKey;
-        this.dataType = dataType;
-        this.name = name;
-        this.value = value;
-        this.values = values;
-    }
-
+    private DetectorRecipeEffectiveDetectorRuleDetailConfiguration() {}
     /**
      * @return (Updatable) Unique name of the configuration
      * 
@@ -96,18 +83,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
     public static Builder builder(DetectorRecipeEffectiveDetectorRuleDetailConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String configKey;
         private @Nullable String dataType;
         private @Nullable String name;
         private @Nullable String value;
         private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DetectorRecipeEffectiveDetectorRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configKey = defaults.configKey;
@@ -117,30 +100,42 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder configKey(@Nullable String configKey) {
             this.configKey = configKey;
             return this;
         }
+        @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
             this.dataType = dataType;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
         }
+        @CustomType.Setter
         public Builder values(@Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values) {
             this.values = values;
             return this;
         }
         public Builder values(DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue... values) {
             return values(List.of(values));
-        }        public DetectorRecipeEffectiveDetectorRuleDetailConfiguration build() {
-            return new DetectorRecipeEffectiveDetectorRuleDetailConfiguration(configKey, dataType, name, value, values);
+        }
+        public DetectorRecipeEffectiveDetectorRuleDetailConfiguration build() {
+            final var o = new DetectorRecipeEffectiveDetectorRuleDetailConfiguration();
+            o.configKey = configKey;
+            o.dataType = dataType;
+            o.name = name;
+            o.value = value;
+            o.values = values;
+            return o;
         }
     }
 }

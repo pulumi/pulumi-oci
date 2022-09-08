@@ -16,42 +16,29 @@ public final class GetVantagePointsHealthChecksVantagePoint {
      * @return Filters results that exactly match the `displayName` field.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Geographic information about a vantage point.
      * 
      */
-    private final List<GetVantagePointsHealthChecksVantagePointGeo> geos;
+    private List<GetVantagePointsHealthChecksVantagePointGeo> geos;
     /**
      * @return Filters results that exactly match the `name` field.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The organization on whose infrastructure this vantage point resides. Provider names are not unique, as Oracle Cloud Infrastructure maintains many vantage points in each major provider.
      * 
      */
-    private final String providerName;
+    private String providerName;
     /**
      * @return An array of objects that describe how traffic to this vantage point is routed, including which prefixes and ASNs connect it to the internet.
      * 
      */
-    private final List<GetVantagePointsHealthChecksVantagePointRouting> routings;
+    private List<GetVantagePointsHealthChecksVantagePointRouting> routings;
 
-    @CustomType.Constructor
-    private GetVantagePointsHealthChecksVantagePoint(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("geos") List<GetVantagePointsHealthChecksVantagePointGeo> geos,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("providerName") String providerName,
-        @CustomType.Parameter("routings") List<GetVantagePointsHealthChecksVantagePointRouting> routings) {
-        this.displayName = displayName;
-        this.geos = geos;
-        this.name = name;
-        this.providerName = providerName;
-        this.routings = routings;
-    }
-
+    private GetVantagePointsHealthChecksVantagePoint() {}
     /**
      * @return Filters results that exactly match the `displayName` field.
      * 
@@ -95,18 +82,14 @@ public final class GetVantagePointsHealthChecksVantagePoint {
     public static Builder builder(GetVantagePointsHealthChecksVantagePoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private List<GetVantagePointsHealthChecksVantagePointGeo> geos;
         private String name;
         private String providerName;
         private List<GetVantagePointsHealthChecksVantagePointRouting> routings;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVantagePointsHealthChecksVantagePoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -116,10 +99,12 @@ public final class GetVantagePointsHealthChecksVantagePoint {
     	      this.routings = defaults.routings;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder geos(List<GetVantagePointsHealthChecksVantagePointGeo> geos) {
             this.geos = Objects.requireNonNull(geos);
             return this;
@@ -127,22 +112,32 @@ public final class GetVantagePointsHealthChecksVantagePoint {
         public Builder geos(GetVantagePointsHealthChecksVantagePointGeo... geos) {
             return geos(List.of(geos));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder providerName(String providerName) {
             this.providerName = Objects.requireNonNull(providerName);
             return this;
         }
+        @CustomType.Setter
         public Builder routings(List<GetVantagePointsHealthChecksVantagePointRouting> routings) {
             this.routings = Objects.requireNonNull(routings);
             return this;
         }
         public Builder routings(GetVantagePointsHealthChecksVantagePointRouting... routings) {
             return routings(List.of(routings));
-        }        public GetVantagePointsHealthChecksVantagePoint build() {
-            return new GetVantagePointsHealthChecksVantagePoint(displayName, geos, name, providerName, routings);
+        }
+        public GetVantagePointsHealthChecksVantagePoint build() {
+            final var o = new GetVantagePointsHealthChecksVantagePoint();
+            o.displayName = displayName;
+            o.geos = geos;
+            o.name = name;
+            o.providerName = providerName;
+            o.routings = routings;
+            return o;
         }
     }
 }

@@ -13,56 +13,39 @@ public final class GetSubscribedServiceEndUserAddressLocation {
      * @return Address first line.
      * 
      */
-    private final String address1;
+    private String address1;
     /**
      * @return Address second line.
      * 
      */
-    private final String address2;
+    private String address2;
     /**
      * @return City.
      * 
      */
-    private final String city;
+    private String city;
     /**
      * @return Country.
      * 
      */
-    private final String country;
+    private String country;
     /**
      * @return Postal code.
      * 
      */
-    private final String postalCode;
+    private String postalCode;
     /**
      * @return Region.
      * 
      */
-    private final String region;
+    private String region;
     /**
      * @return Region.
      * 
      */
-    private final String tcaLocationId;
+    private String tcaLocationId;
 
-    @CustomType.Constructor
-    private GetSubscribedServiceEndUserAddressLocation(
-        @CustomType.Parameter("address1") String address1,
-        @CustomType.Parameter("address2") String address2,
-        @CustomType.Parameter("city") String city,
-        @CustomType.Parameter("country") String country,
-        @CustomType.Parameter("postalCode") String postalCode,
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("tcaLocationId") String tcaLocationId) {
-        this.address1 = address1;
-        this.address2 = address2;
-        this.city = city;
-        this.country = country;
-        this.postalCode = postalCode;
-        this.region = region;
-        this.tcaLocationId = tcaLocationId;
-    }
-
+    private GetSubscribedServiceEndUserAddressLocation() {}
     /**
      * @return Address first line.
      * 
@@ -120,7 +103,7 @@ public final class GetSubscribedServiceEndUserAddressLocation {
     public static Builder builder(GetSubscribedServiceEndUserAddressLocation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String address1;
         private String address2;
@@ -129,11 +112,7 @@ public final class GetSubscribedServiceEndUserAddressLocation {
         private String postalCode;
         private String region;
         private String tcaLocationId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscribedServiceEndUserAddressLocation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.address1 = defaults.address1;
@@ -145,35 +124,51 @@ public final class GetSubscribedServiceEndUserAddressLocation {
     	      this.tcaLocationId = defaults.tcaLocationId;
         }
 
+        @CustomType.Setter
         public Builder address1(String address1) {
             this.address1 = Objects.requireNonNull(address1);
             return this;
         }
+        @CustomType.Setter
         public Builder address2(String address2) {
             this.address2 = Objects.requireNonNull(address2);
             return this;
         }
+        @CustomType.Setter
         public Builder city(String city) {
             this.city = Objects.requireNonNull(city);
             return this;
         }
+        @CustomType.Setter
         public Builder country(String country) {
             this.country = Objects.requireNonNull(country);
             return this;
         }
+        @CustomType.Setter
         public Builder postalCode(String postalCode) {
             this.postalCode = Objects.requireNonNull(postalCode);
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaLocationId(String tcaLocationId) {
             this.tcaLocationId = Objects.requireNonNull(tcaLocationId);
             return this;
-        }        public GetSubscribedServiceEndUserAddressLocation build() {
-            return new GetSubscribedServiceEndUserAddressLocation(address1, address2, city, country, postalCode, region, tcaLocationId);
+        }
+        public GetSubscribedServiceEndUserAddressLocation build() {
+            final var o = new GetSubscribedServiceEndUserAddressLocation();
+            o.address1 = address1;
+            o.address2 = address2;
+            o.city = city;
+            o.country = country;
+            o.postalCode = postalCode;
+            o.region = region;
+            o.tcaLocationId = tcaLocationId;
+            return o;
         }
     }
 }

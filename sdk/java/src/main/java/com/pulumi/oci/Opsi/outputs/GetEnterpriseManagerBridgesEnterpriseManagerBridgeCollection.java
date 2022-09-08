@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection {
-    private final List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items;
+    private List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection(@CustomType.Parameter("items") List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection() {}
     public List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection 
     public static Builder builder(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem... items) {
             return items(List.of(items));
-        }        public GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection build() {
-            return new GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection(items);
+        }
+        public GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection build() {
+            final var o = new GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection();
+            o.items = items;
+            return o;
         }
     }
 }

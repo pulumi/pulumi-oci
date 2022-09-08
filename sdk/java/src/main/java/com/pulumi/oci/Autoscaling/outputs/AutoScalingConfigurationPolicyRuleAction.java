@@ -16,17 +16,10 @@ public final class AutoScalingConfigurationPolicyRuleAction {
      * @return The type of action to take.
      * 
      */
-    private final @Nullable String type;
-    private final @Nullable Integer value;
+    private @Nullable String type;
+    private @Nullable Integer value;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyRuleAction(
-        @CustomType.Parameter("type") @Nullable String type,
-        @CustomType.Parameter("value") @Nullable Integer value) {
-        this.type = type;
-        this.value = value;
-    }
-
+    private AutoScalingConfigurationPolicyRuleAction() {}
     /**
      * @return The type of action to take.
      * 
@@ -45,30 +38,32 @@ public final class AutoScalingConfigurationPolicyRuleAction {
     public static Builder builder(AutoScalingConfigurationPolicyRuleAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String type;
         private @Nullable Integer value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyRuleAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable Integer value) {
             this.value = value;
             return this;
-        }        public AutoScalingConfigurationPolicyRuleAction build() {
-            return new AutoScalingConfigurationPolicyRuleAction(type, value);
+        }
+        public AutoScalingConfigurationPolicyRuleAction build() {
+            final var o = new AutoScalingConfigurationPolicyRuleAction();
+            o.type = type;
+            o.value = value;
+            return o;
         }
     }
 }

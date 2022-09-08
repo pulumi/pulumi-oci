@@ -13,21 +13,14 @@ public final class GetAnnouncementSubscriptionFilterGroupFilter {
      * @return The type of filter.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The value of the filter.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetAnnouncementSubscriptionFilterGroupFilter(
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("value") String value) {
-        this.type = type;
-        this.value = value;
-    }
-
+    private GetAnnouncementSubscriptionFilterGroupFilter() {}
     /**
      * @return The type of filter.
      * 
@@ -50,30 +43,32 @@ public final class GetAnnouncementSubscriptionFilterGroupFilter {
     public static Builder builder(GetAnnouncementSubscriptionFilterGroupFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String type;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnnouncementSubscriptionFilterGroupFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetAnnouncementSubscriptionFilterGroupFilter build() {
-            return new GetAnnouncementSubscriptionFilterGroupFilter(type, value);
+        }
+        public GetAnnouncementSubscriptionFilterGroupFilter build() {
+            final var o = new GetAnnouncementSubscriptionFilterGroupFilter();
+            o.type = type;
+            o.value = value;
+            return o;
         }
     }
 }

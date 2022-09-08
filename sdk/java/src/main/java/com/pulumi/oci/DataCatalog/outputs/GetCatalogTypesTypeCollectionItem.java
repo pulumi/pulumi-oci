@@ -13,56 +13,39 @@ public final class GetCatalogTypesTypeCollectionItem {
      * @return Unique catalog identifier.
      * 
      */
-    private final String catalogId;
+    private String catalogId;
     /**
      * @return Detailed description of the type.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Unique type key that is immutable.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return Immutable resource name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Indicates the category of this type . For example, data assets or connections.
      * 
      */
-    private final String typeCategory;
+    private String typeCategory;
     /**
      * @return URI to the type instance in the API.
      * 
      */
-    private final String uri;
+    private String uri;
 
-    @CustomType.Constructor
-    private GetCatalogTypesTypeCollectionItem(
-        @CustomType.Parameter("catalogId") String catalogId,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("typeCategory") String typeCategory,
-        @CustomType.Parameter("uri") String uri) {
-        this.catalogId = catalogId;
-        this.description = description;
-        this.key = key;
-        this.name = name;
-        this.state = state;
-        this.typeCategory = typeCategory;
-        this.uri = uri;
-    }
-
+    private GetCatalogTypesTypeCollectionItem() {}
     /**
      * @return Unique catalog identifier.
      * 
@@ -120,7 +103,7 @@ public final class GetCatalogTypesTypeCollectionItem {
     public static Builder builder(GetCatalogTypesTypeCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String catalogId;
         private String description;
@@ -129,11 +112,7 @@ public final class GetCatalogTypesTypeCollectionItem {
         private String state;
         private String typeCategory;
         private String uri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCatalogTypesTypeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.catalogId = defaults.catalogId;
@@ -145,35 +124,51 @@ public final class GetCatalogTypesTypeCollectionItem {
     	      this.uri = defaults.uri;
         }
 
+        @CustomType.Setter
         public Builder catalogId(String catalogId) {
             this.catalogId = Objects.requireNonNull(catalogId);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder typeCategory(String typeCategory) {
             this.typeCategory = Objects.requireNonNull(typeCategory);
             return this;
         }
+        @CustomType.Setter
         public Builder uri(String uri) {
             this.uri = Objects.requireNonNull(uri);
             return this;
-        }        public GetCatalogTypesTypeCollectionItem build() {
-            return new GetCatalogTypesTypeCollectionItem(catalogId, description, key, name, state, typeCategory, uri);
+        }
+        public GetCatalogTypesTypeCollectionItem build() {
+            final var o = new GetCatalogTypesTypeCollectionItem();
+            o.catalogId = catalogId;
+            o.description = description;
+            o.key = key;
+            o.name = name;
+            o.state = state;
+            o.typeCategory = typeCategory;
+            o.uri = uri;
+            return o;
         }
     }
 }

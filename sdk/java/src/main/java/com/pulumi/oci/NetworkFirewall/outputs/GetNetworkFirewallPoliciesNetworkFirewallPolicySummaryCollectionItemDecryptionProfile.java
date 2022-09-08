@@ -14,82 +14,57 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
      * @return Whether to block sessions if the server&#39;s certificate uses extensions other than key usage and/or extended key usage.
      * 
      */
-    private final Boolean areCertificateExtensionsRestricted;
+    private Boolean areCertificateExtensionsRestricted;
     /**
      * @return Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      * 
      */
-    private final Boolean isAutoIncludeAltName;
+    private Boolean isAutoIncludeAltName;
     /**
      * @return Whether to block sessions if server&#39;s certificate is expired.
      * 
      */
-    private final Boolean isExpiredCertificateBlocked;
+    private Boolean isExpiredCertificateBlocked;
     /**
      * @return Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
      * 
      */
-    private final Boolean isOutOfCapacityBlocked;
+    private Boolean isOutOfCapacityBlocked;
     /**
      * @return Whether to block sessions if the revocation status check for server&#39;s certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
      * 
      */
-    private final Boolean isRevocationStatusTimeoutBlocked;
+    private Boolean isRevocationStatusTimeoutBlocked;
     /**
      * @return Whether to block sessions if the revocation status check for server&#39;s certificate results in &#34;unknown&#34;.
      * 
      */
-    private final Boolean isUnknownRevocationStatusBlocked;
+    private Boolean isUnknownRevocationStatusBlocked;
     /**
      * @return Whether to block sessions if SSL cipher suite is not supported.
      * 
      */
-    private final Boolean isUnsupportedCipherBlocked;
+    private Boolean isUnsupportedCipherBlocked;
     /**
      * @return Whether to block sessions if SSL version is not supported.
      * 
      */
-    private final Boolean isUnsupportedVersionBlocked;
+    private Boolean isUnsupportedVersionBlocked;
     /**
      * @return Whether to block sessions if server&#39;s certificate is issued by an untrusted certificate authority (CA).
      * 
      */
-    private final Boolean isUntrustedIssuerBlocked;
-    private final String key;
+    private Boolean isUntrustedIssuerBlocked;
+    private String key;
     /**
      * @return Type of the secrets mapped based on the policy.
      * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
      * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile(
-        @CustomType.Parameter("areCertificateExtensionsRestricted") Boolean areCertificateExtensionsRestricted,
-        @CustomType.Parameter("isAutoIncludeAltName") Boolean isAutoIncludeAltName,
-        @CustomType.Parameter("isExpiredCertificateBlocked") Boolean isExpiredCertificateBlocked,
-        @CustomType.Parameter("isOutOfCapacityBlocked") Boolean isOutOfCapacityBlocked,
-        @CustomType.Parameter("isRevocationStatusTimeoutBlocked") Boolean isRevocationStatusTimeoutBlocked,
-        @CustomType.Parameter("isUnknownRevocationStatusBlocked") Boolean isUnknownRevocationStatusBlocked,
-        @CustomType.Parameter("isUnsupportedCipherBlocked") Boolean isUnsupportedCipherBlocked,
-        @CustomType.Parameter("isUnsupportedVersionBlocked") Boolean isUnsupportedVersionBlocked,
-        @CustomType.Parameter("isUntrustedIssuerBlocked") Boolean isUntrustedIssuerBlocked,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("type") String type) {
-        this.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
-        this.isAutoIncludeAltName = isAutoIncludeAltName;
-        this.isExpiredCertificateBlocked = isExpiredCertificateBlocked;
-        this.isOutOfCapacityBlocked = isOutOfCapacityBlocked;
-        this.isRevocationStatusTimeoutBlocked = isRevocationStatusTimeoutBlocked;
-        this.isUnknownRevocationStatusBlocked = isUnknownRevocationStatusBlocked;
-        this.isUnsupportedCipherBlocked = isUnsupportedCipherBlocked;
-        this.isUnsupportedVersionBlocked = isUnsupportedVersionBlocked;
-        this.isUntrustedIssuerBlocked = isUntrustedIssuerBlocked;
-        this.key = key;
-        this.type = type;
-    }
-
+    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile() {}
     /**
      * @return Whether to block sessions if the server&#39;s certificate uses extensions other than key usage and/or extended key usage.
      * 
@@ -173,7 +148,7 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     public static Builder builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean areCertificateExtensionsRestricted;
         private Boolean isAutoIncludeAltName;
@@ -186,11 +161,7 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
         private Boolean isUntrustedIssuerBlocked;
         private String key;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areCertificateExtensionsRestricted = defaults.areCertificateExtensionsRestricted;
@@ -206,51 +177,75 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder areCertificateExtensionsRestricted(Boolean areCertificateExtensionsRestricted) {
             this.areCertificateExtensionsRestricted = Objects.requireNonNull(areCertificateExtensionsRestricted);
             return this;
         }
+        @CustomType.Setter
         public Builder isAutoIncludeAltName(Boolean isAutoIncludeAltName) {
             this.isAutoIncludeAltName = Objects.requireNonNull(isAutoIncludeAltName);
             return this;
         }
+        @CustomType.Setter
         public Builder isExpiredCertificateBlocked(Boolean isExpiredCertificateBlocked) {
             this.isExpiredCertificateBlocked = Objects.requireNonNull(isExpiredCertificateBlocked);
             return this;
         }
+        @CustomType.Setter
         public Builder isOutOfCapacityBlocked(Boolean isOutOfCapacityBlocked) {
             this.isOutOfCapacityBlocked = Objects.requireNonNull(isOutOfCapacityBlocked);
             return this;
         }
+        @CustomType.Setter
         public Builder isRevocationStatusTimeoutBlocked(Boolean isRevocationStatusTimeoutBlocked) {
             this.isRevocationStatusTimeoutBlocked = Objects.requireNonNull(isRevocationStatusTimeoutBlocked);
             return this;
         }
+        @CustomType.Setter
         public Builder isUnknownRevocationStatusBlocked(Boolean isUnknownRevocationStatusBlocked) {
             this.isUnknownRevocationStatusBlocked = Objects.requireNonNull(isUnknownRevocationStatusBlocked);
             return this;
         }
+        @CustomType.Setter
         public Builder isUnsupportedCipherBlocked(Boolean isUnsupportedCipherBlocked) {
             this.isUnsupportedCipherBlocked = Objects.requireNonNull(isUnsupportedCipherBlocked);
             return this;
         }
+        @CustomType.Setter
         public Builder isUnsupportedVersionBlocked(Boolean isUnsupportedVersionBlocked) {
             this.isUnsupportedVersionBlocked = Objects.requireNonNull(isUnsupportedVersionBlocked);
             return this;
         }
+        @CustomType.Setter
         public Builder isUntrustedIssuerBlocked(Boolean isUntrustedIssuerBlocked) {
             this.isUntrustedIssuerBlocked = Objects.requireNonNull(isUntrustedIssuerBlocked);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile build() {
-            return new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile(areCertificateExtensionsRestricted, isAutoIncludeAltName, isExpiredCertificateBlocked, isOutOfCapacityBlocked, isRevocationStatusTimeoutBlocked, isUnknownRevocationStatusBlocked, isUnsupportedCipherBlocked, isUnsupportedVersionBlocked, isUntrustedIssuerBlocked, key, type);
+        }
+        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile build() {
+            final var o = new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile();
+            o.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
+            o.isAutoIncludeAltName = isAutoIncludeAltName;
+            o.isExpiredCertificateBlocked = isExpiredCertificateBlocked;
+            o.isOutOfCapacityBlocked = isOutOfCapacityBlocked;
+            o.isRevocationStatusTimeoutBlocked = isRevocationStatusTimeoutBlocked;
+            o.isUnknownRevocationStatusBlocked = isUnknownRevocationStatusBlocked;
+            o.isUnsupportedCipherBlocked = isUnsupportedCipherBlocked;
+            o.isUnsupportedVersionBlocked = isUnsupportedVersionBlocked;
+            o.isUntrustedIssuerBlocked = isUntrustedIssuerBlocked;
+            o.key = key;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -14,21 +14,14 @@ public final class GetRecommendationsRecommendationCollectionItemResourceCount {
      * @return The count of resources.
      * 
      */
-    private final Integer count;
+    private Integer count;
     /**
      * @return A filter that returns recommendations that match the status specified.
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetRecommendationsRecommendationCollectionItemResourceCount(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("status") String status) {
-        this.count = count;
-        this.status = status;
-    }
-
+    private GetRecommendationsRecommendationCollectionItemResourceCount() {}
     /**
      * @return The count of resources.
      * 
@@ -51,30 +44,32 @@ public final class GetRecommendationsRecommendationCollectionItemResourceCount {
     public static Builder builder(GetRecommendationsRecommendationCollectionItemResourceCount defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationsRecommendationCollectionItemResourceCount defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetRecommendationsRecommendationCollectionItemResourceCount build() {
-            return new GetRecommendationsRecommendationCollectionItemResourceCount(count, status);
+        }
+        public GetRecommendationsRecommendationCollectionItemResourceCount build() {
+            final var o = new GetRecommendationsRecommendationCollectionItemResourceCount();
+            o.count = count;
+            o.status = status;
+            return o;
         }
     }
 }

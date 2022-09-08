@@ -207,14 +207,14 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="scope", type=String.class, parameters={})
-    private Output<String> scope;
+    private Output</* @Nullable */ String> scope;
 
     /**
      * @return Value must be `PRIVATE` when creating private name resolver endpoints.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Output<Optional<String>> scope() {
+        return Codegen.optional(this.scope);
     }
     /**
      * The canonical absolute URL of the resource.

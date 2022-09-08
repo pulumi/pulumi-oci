@@ -17,27 +17,16 @@ public final class GetVbInstanceApplicationsResult {
      * @return The list of application_summary_collection.
      * 
      */
-    private final List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
+    private List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String idcsOpenId;
-    private final String vbInstanceId;
+    private String id;
+    private @Nullable String idcsOpenId;
+    private String vbInstanceId;
 
-    @CustomType.Constructor
-    private GetVbInstanceApplicationsResult(
-        @CustomType.Parameter("applicationSummaryCollections") List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("idcsOpenId") @Nullable String idcsOpenId,
-        @CustomType.Parameter("vbInstanceId") String vbInstanceId) {
-        this.applicationSummaryCollections = applicationSummaryCollections;
-        this.id = id;
-        this.idcsOpenId = idcsOpenId;
-        this.vbInstanceId = vbInstanceId;
-    }
-
+    private GetVbInstanceApplicationsResult() {}
     /**
      * @return The list of application_summary_collection.
      * 
@@ -66,17 +55,13 @@ public final class GetVbInstanceApplicationsResult {
     public static Builder builder(GetVbInstanceApplicationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
         private String id;
         private @Nullable String idcsOpenId;
         private String vbInstanceId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVbInstanceApplicationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationSummaryCollections = defaults.applicationSummaryCollections;
@@ -85,6 +70,7 @@ public final class GetVbInstanceApplicationsResult {
     	      this.vbInstanceId = defaults.vbInstanceId;
         }
 
+        @CustomType.Setter
         public Builder applicationSummaryCollections(List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections) {
             this.applicationSummaryCollections = Objects.requireNonNull(applicationSummaryCollections);
             return this;
@@ -92,19 +78,28 @@ public final class GetVbInstanceApplicationsResult {
         public Builder applicationSummaryCollections(GetVbInstanceApplicationsApplicationSummaryCollection... applicationSummaryCollections) {
             return applicationSummaryCollections(List.of(applicationSummaryCollections));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder idcsOpenId(@Nullable String idcsOpenId) {
             this.idcsOpenId = idcsOpenId;
             return this;
         }
+        @CustomType.Setter
         public Builder vbInstanceId(String vbInstanceId) {
             this.vbInstanceId = Objects.requireNonNull(vbInstanceId);
             return this;
-        }        public GetVbInstanceApplicationsResult build() {
-            return new GetVbInstanceApplicationsResult(applicationSummaryCollections, id, idcsOpenId, vbInstanceId);
+        }
+        public GetVbInstanceApplicationsResult build() {
+            final var o = new GetVbInstanceApplicationsResult();
+            o.applicationSummaryCollections = applicationSummaryCollections;
+            o.id = id;
+            o.idcsOpenId = idcsOpenId;
+            o.vbInstanceId = vbInstanceId;
+            return o;
         }
     }
 }

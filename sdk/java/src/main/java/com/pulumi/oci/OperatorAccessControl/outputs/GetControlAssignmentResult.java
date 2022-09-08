@@ -17,199 +17,140 @@ public final class GetControlAssignmentResult {
      * @return The OCID of the user who created this operator control assignment.
      * 
      */
-    private final String assignerId;
+    private String assignerId;
     /**
      * @return Comment about the assignment of the operator control to this target resource.
      * 
      */
-    private final String comment;
+    private String comment;
     /**
      * @return The OCID of the comparment that contains the operator control assignment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return description containing reason for releasing of OperatorControl.
      * 
      */
-    private final String detachmentDescription;
+    private String detachmentDescription;
     /**
      * @return The code identifying the error occurred during Assignment operation.
      * 
      */
-    private final Integer errorCode;
+    private Integer errorCode;
     /**
      * @return The message describing the error occurred during Assignment operation.
      * 
      */
-    private final String errorMessage;
+    private String errorMessage;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the operator control assignment.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The boolean if true would autoApprove during maintenance.
      * 
      */
-    private final Boolean isAutoApproveDuringMaintenance;
+    private Boolean isAutoApproveDuringMaintenance;
     /**
      * @return If set, then the target resource is always governed by the operator control.
      * 
      */
-    private final Boolean isEnforcedAlways;
+    private Boolean isEnforcedAlways;
     /**
      * @return If set indicates that the audit logs are being forwarded to the relevant remote logging server
      * 
      */
-    private final Boolean isLogForwarded;
+    private Boolean isLogForwarded;
     /**
      * @return More in detail about the lifeCycleState.
      * 
      */
-    private final String lifecycleDetails;
-    private final String operatorControlAssignmentId;
+    private String lifecycleDetails;
+    private String operatorControlAssignmentId;
     /**
      * @return The OCID of the operator control.
      * 
      */
-    private final String operatorControlId;
+    private String operatorControlId;
     /**
      * @return The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
      * 
      */
-    private final String remoteSyslogServerAddress;
+    private String remoteSyslogServerAddress;
     /**
      * @return The CA certificate of the remote syslog server.
      * 
      */
-    private final String remoteSyslogServerCaCert;
+    private String remoteSyslogServerCaCert;
     /**
      * @return The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      * 
      */
-    private final Integer remoteSyslogServerPort;
+    private Integer remoteSyslogServerPort;
     /**
      * @return The OCID of the compartment that contains the target resource.
      * 
      */
-    private final String resourceCompartmentId;
+    private String resourceCompartmentId;
     /**
      * @return The OCID of the target resource.
      * 
      */
-    private final String resourceId;
+    private String resourceId;
     /**
      * @return Name of the target resource.
      * 
      */
-    private final String resourceName;
+    private String resourceName;
     /**
      * @return resourceType for which the OperatorControlAssignment is applicable
      * 
      */
-    private final String resourceType;
+    private String resourceType;
     /**
      * @return The current lifcycle state of the OperatorControl.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private final String timeAssignmentFrom;
+    private String timeAssignmentFrom;
     /**
      * @return The time at which the target resource will leave the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private final String timeAssignmentTo;
+    private String timeAssignmentTo;
     /**
      * @return Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private final String timeOfAssignment;
+    private String timeOfAssignment;
     /**
      * @return Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private final String timeOfDeletion;
+    private String timeOfDeletion;
     /**
      * @return User id who released the operatorControl.
      * 
      */
-    private final String unassignerId;
+    private String unassignerId;
 
-    @CustomType.Constructor
-    private GetControlAssignmentResult(
-        @CustomType.Parameter("assignerId") String assignerId,
-        @CustomType.Parameter("comment") String comment,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("detachmentDescription") String detachmentDescription,
-        @CustomType.Parameter("errorCode") Integer errorCode,
-        @CustomType.Parameter("errorMessage") String errorMessage,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAutoApproveDuringMaintenance") Boolean isAutoApproveDuringMaintenance,
-        @CustomType.Parameter("isEnforcedAlways") Boolean isEnforcedAlways,
-        @CustomType.Parameter("isLogForwarded") Boolean isLogForwarded,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("operatorControlAssignmentId") String operatorControlAssignmentId,
-        @CustomType.Parameter("operatorControlId") String operatorControlId,
-        @CustomType.Parameter("remoteSyslogServerAddress") String remoteSyslogServerAddress,
-        @CustomType.Parameter("remoteSyslogServerCaCert") String remoteSyslogServerCaCert,
-        @CustomType.Parameter("remoteSyslogServerPort") Integer remoteSyslogServerPort,
-        @CustomType.Parameter("resourceCompartmentId") String resourceCompartmentId,
-        @CustomType.Parameter("resourceId") String resourceId,
-        @CustomType.Parameter("resourceName") String resourceName,
-        @CustomType.Parameter("resourceType") String resourceType,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeAssignmentFrom") String timeAssignmentFrom,
-        @CustomType.Parameter("timeAssignmentTo") String timeAssignmentTo,
-        @CustomType.Parameter("timeOfAssignment") String timeOfAssignment,
-        @CustomType.Parameter("timeOfDeletion") String timeOfDeletion,
-        @CustomType.Parameter("unassignerId") String unassignerId) {
-        this.assignerId = assignerId;
-        this.comment = comment;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.detachmentDescription = detachmentDescription;
-        this.errorCode = errorCode;
-        this.errorMessage = errorMessage;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
-        this.isEnforcedAlways = isEnforcedAlways;
-        this.isLogForwarded = isLogForwarded;
-        this.lifecycleDetails = lifecycleDetails;
-        this.operatorControlAssignmentId = operatorControlAssignmentId;
-        this.operatorControlId = operatorControlId;
-        this.remoteSyslogServerAddress = remoteSyslogServerAddress;
-        this.remoteSyslogServerCaCert = remoteSyslogServerCaCert;
-        this.remoteSyslogServerPort = remoteSyslogServerPort;
-        this.resourceCompartmentId = resourceCompartmentId;
-        this.resourceId = resourceId;
-        this.resourceName = resourceName;
-        this.resourceType = resourceType;
-        this.state = state;
-        this.timeAssignmentFrom = timeAssignmentFrom;
-        this.timeAssignmentTo = timeAssignmentTo;
-        this.timeOfAssignment = timeOfAssignment;
-        this.timeOfDeletion = timeOfDeletion;
-        this.unassignerId = unassignerId;
-    }
-
+    private GetControlAssignmentResult() {}
     /**
      * @return The OCID of the user who created this operator control assignment.
      * 
@@ -410,7 +351,7 @@ public final class GetControlAssignmentResult {
     public static Builder builder(GetControlAssignmentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String assignerId;
         private String comment;
@@ -440,11 +381,7 @@ public final class GetControlAssignmentResult {
         private String timeOfAssignment;
         private String timeOfDeletion;
         private String unassignerId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetControlAssignmentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assignerId = defaults.assignerId;
@@ -477,119 +414,177 @@ public final class GetControlAssignmentResult {
     	      this.unassignerId = defaults.unassignerId;
         }
 
+        @CustomType.Setter
         public Builder assignerId(String assignerId) {
             this.assignerId = Objects.requireNonNull(assignerId);
             return this;
         }
+        @CustomType.Setter
         public Builder comment(String comment) {
             this.comment = Objects.requireNonNull(comment);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder detachmentDescription(String detachmentDescription) {
             this.detachmentDescription = Objects.requireNonNull(detachmentDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder errorCode(Integer errorCode) {
             this.errorCode = Objects.requireNonNull(errorCode);
             return this;
         }
+        @CustomType.Setter
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = Objects.requireNonNull(errorMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAutoApproveDuringMaintenance(Boolean isAutoApproveDuringMaintenance) {
             this.isAutoApproveDuringMaintenance = Objects.requireNonNull(isAutoApproveDuringMaintenance);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnforcedAlways(Boolean isEnforcedAlways) {
             this.isEnforcedAlways = Objects.requireNonNull(isEnforcedAlways);
             return this;
         }
+        @CustomType.Setter
         public Builder isLogForwarded(Boolean isLogForwarded) {
             this.isLogForwarded = Objects.requireNonNull(isLogForwarded);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder operatorControlAssignmentId(String operatorControlAssignmentId) {
             this.operatorControlAssignmentId = Objects.requireNonNull(operatorControlAssignmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder operatorControlId(String operatorControlId) {
             this.operatorControlId = Objects.requireNonNull(operatorControlId);
             return this;
         }
+        @CustomType.Setter
         public Builder remoteSyslogServerAddress(String remoteSyslogServerAddress) {
             this.remoteSyslogServerAddress = Objects.requireNonNull(remoteSyslogServerAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder remoteSyslogServerCaCert(String remoteSyslogServerCaCert) {
             this.remoteSyslogServerCaCert = Objects.requireNonNull(remoteSyslogServerCaCert);
             return this;
         }
+        @CustomType.Setter
         public Builder remoteSyslogServerPort(Integer remoteSyslogServerPort) {
             this.remoteSyslogServerPort = Objects.requireNonNull(remoteSyslogServerPort);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceCompartmentId(String resourceCompartmentId) {
             this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceId(String resourceId) {
             this.resourceId = Objects.requireNonNull(resourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(String resourceName) {
             this.resourceName = Objects.requireNonNull(resourceName);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceType(String resourceType) {
             this.resourceType = Objects.requireNonNull(resourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAssignmentFrom(String timeAssignmentFrom) {
             this.timeAssignmentFrom = Objects.requireNonNull(timeAssignmentFrom);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAssignmentTo(String timeAssignmentTo) {
             this.timeAssignmentTo = Objects.requireNonNull(timeAssignmentTo);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfAssignment(String timeOfAssignment) {
             this.timeOfAssignment = Objects.requireNonNull(timeOfAssignment);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
             this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
             return this;
         }
+        @CustomType.Setter
         public Builder unassignerId(String unassignerId) {
             this.unassignerId = Objects.requireNonNull(unassignerId);
             return this;
-        }        public GetControlAssignmentResult build() {
-            return new GetControlAssignmentResult(assignerId, comment, compartmentId, definedTags, detachmentDescription, errorCode, errorMessage, freeformTags, id, isAutoApproveDuringMaintenance, isEnforcedAlways, isLogForwarded, lifecycleDetails, operatorControlAssignmentId, operatorControlId, remoteSyslogServerAddress, remoteSyslogServerCaCert, remoteSyslogServerPort, resourceCompartmentId, resourceId, resourceName, resourceType, state, timeAssignmentFrom, timeAssignmentTo, timeOfAssignment, timeOfDeletion, unassignerId);
+        }
+        public GetControlAssignmentResult build() {
+            final var o = new GetControlAssignmentResult();
+            o.assignerId = assignerId;
+            o.comment = comment;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.detachmentDescription = detachmentDescription;
+            o.errorCode = errorCode;
+            o.errorMessage = errorMessage;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
+            o.isEnforcedAlways = isEnforcedAlways;
+            o.isLogForwarded = isLogForwarded;
+            o.lifecycleDetails = lifecycleDetails;
+            o.operatorControlAssignmentId = operatorControlAssignmentId;
+            o.operatorControlId = operatorControlId;
+            o.remoteSyslogServerAddress = remoteSyslogServerAddress;
+            o.remoteSyslogServerCaCert = remoteSyslogServerCaCert;
+            o.remoteSyslogServerPort = remoteSyslogServerPort;
+            o.resourceCompartmentId = resourceCompartmentId;
+            o.resourceId = resourceId;
+            o.resourceName = resourceName;
+            o.resourceType = resourceType;
+            o.state = state;
+            o.timeAssignmentFrom = timeAssignmentFrom;
+            o.timeAssignmentTo = timeAssignmentTo;
+            o.timeOfAssignment = timeOfAssignment;
+            o.timeOfDeletion = timeOfDeletion;
+            o.unassignerId = unassignerId;
+            return o;
         }
     }
 }

@@ -13,44 +13,27 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult {
-    private final String executionId;
-    private final @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter> filters;
+    private String executionId;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
-    private final String sqlObjectId;
+    private String id;
+    private String managedDatabaseId;
+    private String sqlObjectId;
     /**
      * @return The unique identifier of the task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String sqlTuningAdvisorTaskId;
+    private String sqlTuningAdvisorTaskId;
     /**
      * @return The list of sql_tuning_advisor_task_recommendation_collection.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection> sqlTuningAdvisorTaskRecommendationCollections;
+    private List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection> sqlTuningAdvisorTaskRecommendationCollections;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult(
-        @CustomType.Parameter("executionId") String executionId,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("sqlObjectId") String sqlObjectId,
-        @CustomType.Parameter("sqlTuningAdvisorTaskId") String sqlTuningAdvisorTaskId,
-        @CustomType.Parameter("sqlTuningAdvisorTaskRecommendationCollections") List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection> sqlTuningAdvisorTaskRecommendationCollections) {
-        this.executionId = executionId;
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.sqlObjectId = sqlObjectId;
-        this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-        this.sqlTuningAdvisorTaskRecommendationCollections = sqlTuningAdvisorTaskRecommendationCollections;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult() {}
     public String executionId() {
         return this.executionId;
     }
@@ -92,7 +75,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String executionId;
         private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter> filters;
@@ -101,11 +84,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
         private String sqlObjectId;
         private String sqlTuningAdvisorTaskId;
         private List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection> sqlTuningAdvisorTaskRecommendationCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.executionId = defaults.executionId;
@@ -117,10 +96,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
     	      this.sqlTuningAdvisorTaskRecommendationCollections = defaults.sqlTuningAdvisorTaskRecommendationCollections;
         }
 
+        @CustomType.Setter
         public Builder executionId(String executionId) {
             this.executionId = Objects.requireNonNull(executionId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -128,30 +109,44 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult 
         public Builder filters(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlObjectId(String sqlObjectId) {
             this.sqlObjectId = Objects.requireNonNull(sqlObjectId);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
             this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskRecommendationCollections(List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection> sqlTuningAdvisorTaskRecommendationCollections) {
             this.sqlTuningAdvisorTaskRecommendationCollections = Objects.requireNonNull(sqlTuningAdvisorTaskRecommendationCollections);
             return this;
         }
         public Builder sqlTuningAdvisorTaskRecommendationCollections(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection... sqlTuningAdvisorTaskRecommendationCollections) {
             return sqlTuningAdvisorTaskRecommendationCollections(List.of(sqlTuningAdvisorTaskRecommendationCollections));
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult(executionId, filters, id, managedDatabaseId, sqlObjectId, sqlTuningAdvisorTaskId, sqlTuningAdvisorTaskRecommendationCollections);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult();
+            o.executionId = executionId;
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.sqlObjectId = sqlObjectId;
+            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            o.sqlTuningAdvisorTaskRecommendationCollections = sqlTuningAdvisorTaskRecommendationCollections;
+            return o;
         }
     }
 }

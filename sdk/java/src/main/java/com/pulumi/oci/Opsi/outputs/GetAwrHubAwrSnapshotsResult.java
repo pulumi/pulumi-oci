@@ -14,40 +14,23 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAwrHubAwrSnapshotsResult {
-    private final String awrHubId;
+    private String awrHubId;
     /**
      * @return The list of awr_snapshot_collection.
      * 
      */
-    private final List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections;
-    private final String awrSourceDatabaseIdentifier;
-    private final @Nullable List<GetAwrHubAwrSnapshotsFilter> filters;
+    private List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections;
+    private String awrSourceDatabaseIdentifier;
+    private @Nullable List<GetAwrHubAwrSnapshotsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String timeGreaterThanOrEqualTo;
-    private final @Nullable String timeLessThanOrEqualTo;
+    private String id;
+    private @Nullable String timeGreaterThanOrEqualTo;
+    private @Nullable String timeLessThanOrEqualTo;
 
-    @CustomType.Constructor
-    private GetAwrHubAwrSnapshotsResult(
-        @CustomType.Parameter("awrHubId") String awrHubId,
-        @CustomType.Parameter("awrSnapshotCollections") List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections,
-        @CustomType.Parameter("awrSourceDatabaseIdentifier") String awrSourceDatabaseIdentifier,
-        @CustomType.Parameter("filters") @Nullable List<GetAwrHubAwrSnapshotsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("timeGreaterThanOrEqualTo") @Nullable String timeGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeLessThanOrEqualTo") @Nullable String timeLessThanOrEqualTo) {
-        this.awrHubId = awrHubId;
-        this.awrSnapshotCollections = awrSnapshotCollections;
-        this.awrSourceDatabaseIdentifier = awrSourceDatabaseIdentifier;
-        this.filters = filters;
-        this.id = id;
-        this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-        this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-    }
-
+    private GetAwrHubAwrSnapshotsResult() {}
     public String awrHubId() {
         return this.awrHubId;
     }
@@ -85,7 +68,7 @@ public final class GetAwrHubAwrSnapshotsResult {
     public static Builder builder(GetAwrHubAwrSnapshotsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String awrHubId;
         private List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections;
@@ -94,11 +77,7 @@ public final class GetAwrHubAwrSnapshotsResult {
         private String id;
         private @Nullable String timeGreaterThanOrEqualTo;
         private @Nullable String timeLessThanOrEqualTo;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAwrHubAwrSnapshotsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.awrHubId = defaults.awrHubId;
@@ -110,10 +89,12 @@ public final class GetAwrHubAwrSnapshotsResult {
     	      this.timeLessThanOrEqualTo = defaults.timeLessThanOrEqualTo;
         }
 
+        @CustomType.Setter
         public Builder awrHubId(String awrHubId) {
             this.awrHubId = Objects.requireNonNull(awrHubId);
             return this;
         }
+        @CustomType.Setter
         public Builder awrSnapshotCollections(List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections) {
             this.awrSnapshotCollections = Objects.requireNonNull(awrSnapshotCollections);
             return this;
@@ -121,10 +102,12 @@ public final class GetAwrHubAwrSnapshotsResult {
         public Builder awrSnapshotCollections(GetAwrHubAwrSnapshotsAwrSnapshotCollection... awrSnapshotCollections) {
             return awrSnapshotCollections(List.of(awrSnapshotCollections));
         }
+        @CustomType.Setter
         public Builder awrSourceDatabaseIdentifier(String awrSourceDatabaseIdentifier) {
             this.awrSourceDatabaseIdentifier = Objects.requireNonNull(awrSourceDatabaseIdentifier);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAwrHubAwrSnapshotsFilter> filters) {
             this.filters = filters;
             return this;
@@ -132,19 +115,31 @@ public final class GetAwrHubAwrSnapshotsResult {
         public Builder filters(GetAwrHubAwrSnapshotsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
-        }        public GetAwrHubAwrSnapshotsResult build() {
-            return new GetAwrHubAwrSnapshotsResult(awrHubId, awrSnapshotCollections, awrSourceDatabaseIdentifier, filters, id, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo);
+        }
+        public GetAwrHubAwrSnapshotsResult build() {
+            final var o = new GetAwrHubAwrSnapshotsResult();
+            o.awrHubId = awrHubId;
+            o.awrSnapshotCollections = awrSnapshotCollections;
+            o.awrSourceDatabaseIdentifier = awrSourceDatabaseIdentifier;
+            o.filters = filters;
+            o.id = id;
+            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            return o;
         }
     }
 }

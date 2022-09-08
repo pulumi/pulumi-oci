@@ -15,28 +15,19 @@ public final class GetBuildRunBuildRunSourceTriggerInfoAction {
      * @return The OCID of the build pipeline to be triggered.
      * 
      */
-    private final String buildPipelineId;
+    private String buildPipelineId;
     /**
      * @return The filters for the trigger.
      * 
      */
-    private final List<GetBuildRunBuildRunSourceTriggerInfoActionFilter> filters;
+    private List<GetBuildRunBuildRunSourceTriggerInfoActionFilter> filters;
     /**
      * @return The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetBuildRunBuildRunSourceTriggerInfoAction(
-        @CustomType.Parameter("buildPipelineId") String buildPipelineId,
-        @CustomType.Parameter("filters") List<GetBuildRunBuildRunSourceTriggerInfoActionFilter> filters,
-        @CustomType.Parameter("type") String type) {
-        this.buildPipelineId = buildPipelineId;
-        this.filters = filters;
-        this.type = type;
-    }
-
+    private GetBuildRunBuildRunSourceTriggerInfoAction() {}
     /**
      * @return The OCID of the build pipeline to be triggered.
      * 
@@ -66,16 +57,12 @@ public final class GetBuildRunBuildRunSourceTriggerInfoAction {
     public static Builder builder(GetBuildRunBuildRunSourceTriggerInfoAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String buildPipelineId;
         private List<GetBuildRunBuildRunSourceTriggerInfoActionFilter> filters;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunBuildRunSourceTriggerInfoAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildPipelineId = defaults.buildPipelineId;
@@ -83,10 +70,12 @@ public final class GetBuildRunBuildRunSourceTriggerInfoAction {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder buildPipelineId(String buildPipelineId) {
             this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(List<GetBuildRunBuildRunSourceTriggerInfoActionFilter> filters) {
             this.filters = Objects.requireNonNull(filters);
             return this;
@@ -94,11 +83,17 @@ public final class GetBuildRunBuildRunSourceTriggerInfoAction {
         public Builder filters(GetBuildRunBuildRunSourceTriggerInfoActionFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetBuildRunBuildRunSourceTriggerInfoAction build() {
-            return new GetBuildRunBuildRunSourceTriggerInfoAction(buildPipelineId, filters, type);
+        }
+        public GetBuildRunBuildRunSourceTriggerInfoAction build() {
+            final var o = new GetBuildRunBuildRunSourceTriggerInfoAction();
+            o.buildPipelineId = buildPipelineId;
+            o.filters = filters;
+            o.type = type;
+            return o;
         }
     }
 }

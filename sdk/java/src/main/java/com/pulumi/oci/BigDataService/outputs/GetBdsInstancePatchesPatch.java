@@ -13,21 +13,14 @@ public final class GetBdsInstancePatchesPatch {
      * @return The time when the patch was released.
      * 
      */
-    private final String timeReleased;
+    private String timeReleased;
     /**
      * @return The version of the patch.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetBdsInstancePatchesPatch(
-        @CustomType.Parameter("timeReleased") String timeReleased,
-        @CustomType.Parameter("version") String version) {
-        this.timeReleased = timeReleased;
-        this.version = version;
-    }
-
+    private GetBdsInstancePatchesPatch() {}
     /**
      * @return The time when the patch was released.
      * 
@@ -50,30 +43,32 @@ public final class GetBdsInstancePatchesPatch {
     public static Builder builder(GetBdsInstancePatchesPatch defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String timeReleased;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstancePatchesPatch defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.timeReleased = defaults.timeReleased;
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
             this.timeReleased = Objects.requireNonNull(timeReleased);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetBdsInstancePatchesPatch build() {
-            return new GetBdsInstancePatchesPatch(timeReleased, version);
+        }
+        public GetBdsInstancePatchesPatch build() {
+            final var o = new GetBdsInstancePatchesPatch();
+            o.timeReleased = timeReleased;
+            o.version = version;
+            return o;
         }
     }
 }

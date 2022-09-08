@@ -15,21 +15,14 @@ public final class GetAuditTrailAnalyticItem {
      * @return Total count of aggregated metric.
      * 
      */
-    private final String count;
+    private String count;
     /**
      * @return Details of aggregation dimensions used for summarizing audit trails.
      * 
      */
-    private final List<GetAuditTrailAnalyticItemDimension> dimensions;
+    private List<GetAuditTrailAnalyticItemDimension> dimensions;
 
-    @CustomType.Constructor
-    private GetAuditTrailAnalyticItem(
-        @CustomType.Parameter("count") String count,
-        @CustomType.Parameter("dimensions") List<GetAuditTrailAnalyticItemDimension> dimensions) {
-        this.count = count;
-        this.dimensions = dimensions;
-    }
-
+    private GetAuditTrailAnalyticItem() {}
     /**
      * @return Total count of aggregated metric.
      * 
@@ -52,33 +45,35 @@ public final class GetAuditTrailAnalyticItem {
     public static Builder builder(GetAuditTrailAnalyticItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String count;
         private List<GetAuditTrailAnalyticItemDimension> dimensions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditTrailAnalyticItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.dimensions = defaults.dimensions;
         }
 
+        @CustomType.Setter
         public Builder count(String count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(List<GetAuditTrailAnalyticItemDimension> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
         }
         public Builder dimensions(GetAuditTrailAnalyticItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
-        }        public GetAuditTrailAnalyticItem build() {
-            return new GetAuditTrailAnalyticItem(count, dimensions);
+        }
+        public GetAuditTrailAnalyticItem build() {
+            final var o = new GetAuditTrailAnalyticItem();
+            o.count = count;
+            o.dimensions = dimensions;
+            return o;
         }
     }
 }

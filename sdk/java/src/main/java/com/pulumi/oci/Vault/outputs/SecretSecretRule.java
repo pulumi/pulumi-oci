@@ -16,42 +16,29 @@ public final class SecretSecretRule {
      * @return (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
      * 
      */
-    private final @Nullable Boolean isEnforcedOnDeletedSecretVersions;
+    private @Nullable Boolean isEnforcedOnDeletedSecretVersions;
     /**
      * @return (Updatable) A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
      * 
      */
-    private final @Nullable Boolean isSecretContentRetrievalBlockedOnExpiry;
+    private @Nullable Boolean isSecretContentRetrievalBlockedOnExpiry;
     /**
      * @return (Updatable) The type of rule, which either controls when the secret contents expire or whether they can be reused.
      * 
      */
-    private final String ruleType;
+    private String ruleType;
     /**
      * @return (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
      * 
      */
-    private final @Nullable String secretVersionExpiryInterval;
+    private @Nullable String secretVersionExpiryInterval;
     /**
      * @return (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final @Nullable String timeOfAbsoluteExpiry;
+    private @Nullable String timeOfAbsoluteExpiry;
 
-    @CustomType.Constructor
-    private SecretSecretRule(
-        @CustomType.Parameter("isEnforcedOnDeletedSecretVersions") @Nullable Boolean isEnforcedOnDeletedSecretVersions,
-        @CustomType.Parameter("isSecretContentRetrievalBlockedOnExpiry") @Nullable Boolean isSecretContentRetrievalBlockedOnExpiry,
-        @CustomType.Parameter("ruleType") String ruleType,
-        @CustomType.Parameter("secretVersionExpiryInterval") @Nullable String secretVersionExpiryInterval,
-        @CustomType.Parameter("timeOfAbsoluteExpiry") @Nullable String timeOfAbsoluteExpiry) {
-        this.isEnforcedOnDeletedSecretVersions = isEnforcedOnDeletedSecretVersions;
-        this.isSecretContentRetrievalBlockedOnExpiry = isSecretContentRetrievalBlockedOnExpiry;
-        this.ruleType = ruleType;
-        this.secretVersionExpiryInterval = secretVersionExpiryInterval;
-        this.timeOfAbsoluteExpiry = timeOfAbsoluteExpiry;
-    }
-
+    private SecretSecretRule() {}
     /**
      * @return (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
      * 
@@ -95,18 +82,14 @@ public final class SecretSecretRule {
     public static Builder builder(SecretSecretRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isEnforcedOnDeletedSecretVersions;
         private @Nullable Boolean isSecretContentRetrievalBlockedOnExpiry;
         private String ruleType;
         private @Nullable String secretVersionExpiryInterval;
         private @Nullable String timeOfAbsoluteExpiry;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SecretSecretRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnforcedOnDeletedSecretVersions = defaults.isEnforcedOnDeletedSecretVersions;
@@ -116,27 +99,39 @@ public final class SecretSecretRule {
     	      this.timeOfAbsoluteExpiry = defaults.timeOfAbsoluteExpiry;
         }
 
+        @CustomType.Setter
         public Builder isEnforcedOnDeletedSecretVersions(@Nullable Boolean isEnforcedOnDeletedSecretVersions) {
             this.isEnforcedOnDeletedSecretVersions = isEnforcedOnDeletedSecretVersions;
             return this;
         }
+        @CustomType.Setter
         public Builder isSecretContentRetrievalBlockedOnExpiry(@Nullable Boolean isSecretContentRetrievalBlockedOnExpiry) {
             this.isSecretContentRetrievalBlockedOnExpiry = isSecretContentRetrievalBlockedOnExpiry;
             return this;
         }
+        @CustomType.Setter
         public Builder ruleType(String ruleType) {
             this.ruleType = Objects.requireNonNull(ruleType);
             return this;
         }
+        @CustomType.Setter
         public Builder secretVersionExpiryInterval(@Nullable String secretVersionExpiryInterval) {
             this.secretVersionExpiryInterval = secretVersionExpiryInterval;
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfAbsoluteExpiry(@Nullable String timeOfAbsoluteExpiry) {
             this.timeOfAbsoluteExpiry = timeOfAbsoluteExpiry;
             return this;
-        }        public SecretSecretRule build() {
-            return new SecretSecretRule(isEnforcedOnDeletedSecretVersions, isSecretContentRetrievalBlockedOnExpiry, ruleType, secretVersionExpiryInterval, timeOfAbsoluteExpiry);
+        }
+        public SecretSecretRule build() {
+            final var o = new SecretSecretRule();
+            o.isEnforcedOnDeletedSecretVersions = isEnforcedOnDeletedSecretVersions;
+            o.isSecretContentRetrievalBlockedOnExpiry = isSecretContentRetrievalBlockedOnExpiry;
+            o.ruleType = ruleType;
+            o.secretVersionExpiryInterval = secretVersionExpiryInterval;
+            o.timeOfAbsoluteExpiry = timeOfAbsoluteExpiry;
+            return o;
         }
     }
 }

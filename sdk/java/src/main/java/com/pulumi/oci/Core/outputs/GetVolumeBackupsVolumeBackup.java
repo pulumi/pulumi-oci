@@ -17,42 +17,42 @@ public final class GetVolumeBackupsVolumeBackup {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      * 
      */
-    private final String expirationTime;
+    private String expirationTime;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the volume backup.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the Key Management key which is the master encryption key for the volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The size of the volume, in GBs.
      * 
      */
-    private final String sizeInGbs;
+    private String sizeInGbs;
     /**
      * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
      * 
@@ -61,48 +61,48 @@ public final class GetVolumeBackupsVolumeBackup {
      * 
      */
     @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
-    private final String sizeInMbs;
-    private final List<GetVolumeBackupsVolumeBackupSourceDetail> sourceDetails;
+    private String sizeInMbs;
+    private List<GetVolumeBackupsVolumeBackupSourceDetail> sourceDetails;
     /**
      * @return Specifies whether the backup was created manually, or via scheduled backup policy.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
     /**
      * @return A filter to return only resources that originated from the given source volume backup.
      * 
      */
-    private final String sourceVolumeBackupId;
+    private String sourceVolumeBackupId;
     /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
      * 
      */
-    private final String timeRequestReceived;
+    private String timeRequestReceived;
     /**
      * @return The type of a volume backup. Supported values are &#39;FULL&#39; or &#39;INCREMENTAL&#39;.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
      * 
      */
-    private final String uniqueSizeInGbs;
+    private String uniqueSizeInGbs;
     /**
      * @return The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
      * 
@@ -111,57 +111,14 @@ public final class GetVolumeBackupsVolumeBackup {
      * 
      */
     @Deprecated /* The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead. */
-    private final String uniqueSizeInMbs;
+    private String uniqueSizeInMbs;
     /**
      * @return The OCID of the volume.
      * 
      */
-    private final String volumeId;
+    private String volumeId;
 
-    @CustomType.Constructor
-    private GetVolumeBackupsVolumeBackup(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("expirationTime") String expirationTime,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("sizeInGbs") String sizeInGbs,
-        @CustomType.Parameter("sizeInMbs") String sizeInMbs,
-        @CustomType.Parameter("sourceDetails") List<GetVolumeBackupsVolumeBackupSourceDetail> sourceDetails,
-        @CustomType.Parameter("sourceType") String sourceType,
-        @CustomType.Parameter("sourceVolumeBackupId") String sourceVolumeBackupId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeRequestReceived") String timeRequestReceived,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("uniqueSizeInGbs") String uniqueSizeInGbs,
-        @CustomType.Parameter("uniqueSizeInMbs") String uniqueSizeInMbs,
-        @CustomType.Parameter("volumeId") String volumeId) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.expirationTime = expirationTime;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.kmsKeyId = kmsKeyId;
-        this.sizeInGbs = sizeInGbs;
-        this.sizeInMbs = sizeInMbs;
-        this.sourceDetails = sourceDetails;
-        this.sourceType = sourceType;
-        this.sourceVolumeBackupId = sourceVolumeBackupId;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeRequestReceived = timeRequestReceived;
-        this.type = type;
-        this.uniqueSizeInGbs = uniqueSizeInGbs;
-        this.uniqueSizeInMbs = uniqueSizeInMbs;
-        this.volumeId = volumeId;
-    }
-
+    private GetVolumeBackupsVolumeBackup() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -314,7 +271,7 @@ public final class GetVolumeBackupsVolumeBackup {
     public static Builder builder(GetVolumeBackupsVolumeBackup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -336,11 +293,7 @@ public final class GetVolumeBackupsVolumeBackup {
         private String uniqueSizeInGbs;
         private String uniqueSizeInMbs;
         private String volumeId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeBackupsVolumeBackup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -365,42 +318,52 @@ public final class GetVolumeBackupsVolumeBackup {
     	      this.volumeId = defaults.volumeId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder expirationTime(String expirationTime) {
             this.expirationTime = Objects.requireNonNull(expirationTime);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
             this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInMbs(String sizeInMbs) {
             this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceDetails(List<GetVolumeBackupsVolumeBackupSourceDetail> sourceDetails) {
             this.sourceDetails = Objects.requireNonNull(sourceDetails);
             return this;
@@ -408,47 +371,79 @@ public final class GetVolumeBackupsVolumeBackup {
         public Builder sourceDetails(GetVolumeBackupsVolumeBackupSourceDetail... sourceDetails) {
             return sourceDetails(List.of(sourceDetails));
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceVolumeBackupId(String sourceVolumeBackupId) {
             this.sourceVolumeBackupId = Objects.requireNonNull(sourceVolumeBackupId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRequestReceived(String timeRequestReceived) {
             this.timeRequestReceived = Objects.requireNonNull(timeRequestReceived);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder uniqueSizeInGbs(String uniqueSizeInGbs) {
             this.uniqueSizeInGbs = Objects.requireNonNull(uniqueSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder uniqueSizeInMbs(String uniqueSizeInMbs) {
             this.uniqueSizeInMbs = Objects.requireNonNull(uniqueSizeInMbs);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeId(String volumeId) {
             this.volumeId = Objects.requireNonNull(volumeId);
             return this;
-        }        public GetVolumeBackupsVolumeBackup build() {
-            return new GetVolumeBackupsVolumeBackup(compartmentId, definedTags, displayName, expirationTime, freeformTags, id, kmsKeyId, sizeInGbs, sizeInMbs, sourceDetails, sourceType, sourceVolumeBackupId, state, systemTags, timeCreated, timeRequestReceived, type, uniqueSizeInGbs, uniqueSizeInMbs, volumeId);
+        }
+        public GetVolumeBackupsVolumeBackup build() {
+            final var o = new GetVolumeBackupsVolumeBackup();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.expirationTime = expirationTime;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.kmsKeyId = kmsKeyId;
+            o.sizeInGbs = sizeInGbs;
+            o.sizeInMbs = sizeInMbs;
+            o.sourceDetails = sourceDetails;
+            o.sourceType = sourceType;
+            o.sourceVolumeBackupId = sourceVolumeBackupId;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeRequestReceived = timeRequestReceived;
+            o.type = type;
+            o.uniqueSizeInGbs = uniqueSizeInGbs;
+            o.uniqueSizeInMbs = uniqueSizeInMbs;
+            o.volumeId = volumeId;
+            return o;
         }
     }
 }

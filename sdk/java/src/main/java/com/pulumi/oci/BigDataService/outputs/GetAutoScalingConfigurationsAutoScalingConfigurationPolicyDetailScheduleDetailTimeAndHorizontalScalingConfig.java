@@ -10,17 +10,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig {
-    private final Integer targetNodeCount;
-    private final String timeRecurrence;
+    private Integer targetNodeCount;
+    private String timeRecurrence;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig(
-        @CustomType.Parameter("targetNodeCount") Integer targetNodeCount,
-        @CustomType.Parameter("timeRecurrence") String timeRecurrence) {
-        this.targetNodeCount = targetNodeCount;
-        this.timeRecurrence = timeRecurrence;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig() {}
     public Integer targetNodeCount() {
         return this.targetNodeCount;
     }
@@ -35,30 +28,32 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer targetNodeCount;
         private String timeRecurrence;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.targetNodeCount = defaults.targetNodeCount;
     	      this.timeRecurrence = defaults.timeRecurrence;
         }
 
+        @CustomType.Setter
         public Builder targetNodeCount(Integer targetNodeCount) {
             this.targetNodeCount = Objects.requireNonNull(targetNodeCount);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRecurrence(String timeRecurrence) {
             this.timeRecurrence = Objects.requireNonNull(timeRecurrence);
             return this;
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig(targetNodeCount, timeRecurrence);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig();
+            o.targetNodeCount = targetNodeCount;
+            o.timeRecurrence = timeRecurrence;
+            return o;
         }
     }
 }

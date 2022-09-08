@@ -20,56 +20,39 @@ public final class JobProgressPhase {
      * @return Duration of the phase in milliseconds
      * 
      */
-    private final @Nullable Integer durationInMs;
+    private @Nullable Integer durationInMs;
     /**
      * @return Summary of phase status results.
      * 
      */
-    private final @Nullable List<JobProgressPhaseExtract> extracts;
+    private @Nullable List<JobProgressPhaseExtract> extracts;
     /**
      * @return True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
      * 
      */
-    private final @Nullable Boolean isAdvisorReportAvailable;
+    private @Nullable Boolean isAdvisorReportAvailable;
     /**
      * @return Details to access log file in the specified Object Storage bucket, if any.
      * 
      */
-    private final @Nullable List<JobProgressPhaseLogLocation> logLocations;
+    private @Nullable List<JobProgressPhaseLogLocation> logLocations;
     /**
      * @return Phase name
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return Percent progress of job phase.
      * 
      */
-    private final @Nullable Integer progress;
+    private @Nullable Integer progress;
     /**
      * @return Phase status
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
 
-    @CustomType.Constructor
-    private JobProgressPhase(
-        @CustomType.Parameter("durationInMs") @Nullable Integer durationInMs,
-        @CustomType.Parameter("extracts") @Nullable List<JobProgressPhaseExtract> extracts,
-        @CustomType.Parameter("isAdvisorReportAvailable") @Nullable Boolean isAdvisorReportAvailable,
-        @CustomType.Parameter("logLocations") @Nullable List<JobProgressPhaseLogLocation> logLocations,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("progress") @Nullable Integer progress,
-        @CustomType.Parameter("status") @Nullable String status) {
-        this.durationInMs = durationInMs;
-        this.extracts = extracts;
-        this.isAdvisorReportAvailable = isAdvisorReportAvailable;
-        this.logLocations = logLocations;
-        this.name = name;
-        this.progress = progress;
-        this.status = status;
-    }
-
+    private JobProgressPhase() {}
     /**
      * @return Duration of the phase in milliseconds
      * 
@@ -127,7 +110,7 @@ public final class JobProgressPhase {
     public static Builder builder(JobProgressPhase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer durationInMs;
         private @Nullable List<JobProgressPhaseExtract> extracts;
@@ -136,11 +119,7 @@ public final class JobProgressPhase {
         private @Nullable String name;
         private @Nullable Integer progress;
         private @Nullable String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(JobProgressPhase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.durationInMs = defaults.durationInMs;
@@ -152,10 +131,12 @@ public final class JobProgressPhase {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder durationInMs(@Nullable Integer durationInMs) {
             this.durationInMs = durationInMs;
             return this;
         }
+        @CustomType.Setter
         public Builder extracts(@Nullable List<JobProgressPhaseExtract> extracts) {
             this.extracts = extracts;
             return this;
@@ -163,10 +144,12 @@ public final class JobProgressPhase {
         public Builder extracts(JobProgressPhaseExtract... extracts) {
             return extracts(List.of(extracts));
         }
+        @CustomType.Setter
         public Builder isAdvisorReportAvailable(@Nullable Boolean isAdvisorReportAvailable) {
             this.isAdvisorReportAvailable = isAdvisorReportAvailable;
             return this;
         }
+        @CustomType.Setter
         public Builder logLocations(@Nullable List<JobProgressPhaseLogLocation> logLocations) {
             this.logLocations = logLocations;
             return this;
@@ -174,19 +157,31 @@ public final class JobProgressPhase {
         public Builder logLocations(JobProgressPhaseLogLocation... logLocations) {
             return logLocations(List.of(logLocations));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder progress(@Nullable Integer progress) {
             this.progress = progress;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
-        }        public JobProgressPhase build() {
-            return new JobProgressPhase(durationInMs, extracts, isAdvisorReportAvailable, logLocations, name, progress, status);
+        }
+        public JobProgressPhase build() {
+            final var o = new JobProgressPhase();
+            o.durationInMs = durationInMs;
+            o.extracts = extracts;
+            o.isAdvisorReportAvailable = isAdvisorReportAvailable;
+            o.logLocations = logLocations;
+            o.name = name;
+            o.progress = progress;
+            o.status = status;
+            return o;
         }
     }
 }

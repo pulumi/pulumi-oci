@@ -18,48 +18,31 @@ public final class GetCaBundlesResult {
      * @return The list of ca_bundle_collection.
      * 
      */
-    private final List<GetCaBundlesCaBundleCollection> caBundleCollections;
-    private final @Nullable String caBundleId;
+    private List<GetCaBundlesCaBundleCollection> caBundleCollections;
+    private @Nullable String caBundleId;
     /**
      * @return The OCID of the compartment for the CA bundle.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetCaBundlesFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetCaBundlesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current lifecycle state of the CA bundle.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetCaBundlesResult(
-        @CustomType.Parameter("caBundleCollections") List<GetCaBundlesCaBundleCollection> caBundleCollections,
-        @CustomType.Parameter("caBundleId") @Nullable String caBundleId,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetCaBundlesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.caBundleCollections = caBundleCollections;
-        this.caBundleId = caBundleId;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetCaBundlesResult() {}
     /**
      * @return The list of ca_bundle_collection.
      * 
@@ -109,7 +92,7 @@ public final class GetCaBundlesResult {
     public static Builder builder(GetCaBundlesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCaBundlesCaBundleCollection> caBundleCollections;
         private @Nullable String caBundleId;
@@ -118,11 +101,7 @@ public final class GetCaBundlesResult {
         private String id;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCaBundlesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.caBundleCollections = defaults.caBundleCollections;
@@ -134,6 +113,7 @@ public final class GetCaBundlesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder caBundleCollections(List<GetCaBundlesCaBundleCollection> caBundleCollections) {
             this.caBundleCollections = Objects.requireNonNull(caBundleCollections);
             return this;
@@ -141,14 +121,17 @@ public final class GetCaBundlesResult {
         public Builder caBundleCollections(GetCaBundlesCaBundleCollection... caBundleCollections) {
             return caBundleCollections(List.of(caBundleCollections));
         }
+        @CustomType.Setter
         public Builder caBundleId(@Nullable String caBundleId) {
             this.caBundleId = caBundleId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCaBundlesFilter> filters) {
             this.filters = filters;
             return this;
@@ -156,19 +139,31 @@ public final class GetCaBundlesResult {
         public Builder filters(GetCaBundlesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetCaBundlesResult build() {
-            return new GetCaBundlesResult(caBundleCollections, caBundleId, compartmentId, filters, id, name, state);
+        }
+        public GetCaBundlesResult build() {
+            final var o = new GetCaBundlesResult();
+            o.caBundleCollections = caBundleCollections;
+            o.caBundleId = caBundleId;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

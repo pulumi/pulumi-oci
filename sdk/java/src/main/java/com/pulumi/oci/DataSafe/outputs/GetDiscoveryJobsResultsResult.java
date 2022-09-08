@@ -19,69 +19,46 @@ public final class GetDiscoveryJobsResultsResult {
      * @return The name of the sensitive column.
      * 
      */
-    private final @Nullable List<String> columnNames;
-    private final String discoveryJobId;
+    private @Nullable List<String> columnNames;
+    private String discoveryJobId;
     /**
      * @return The list of discovery_job_result_collection.
      * 
      */
-    private final List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections;
+    private List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections;
     /**
      * @return The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
      * 
      */
-    private final @Nullable String discoveryType;
-    private final @Nullable List<GetDiscoveryJobsResultsFilter> filters;
+    private @Nullable String discoveryType;
+    private @Nullable List<GetDiscoveryJobsResultsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
      * 
      */
-    private final @Nullable Boolean isResultApplied;
+    private @Nullable Boolean isResultApplied;
     /**
      * @return The database object that contains the sensitive column.
      * 
      */
-    private final @Nullable List<String> objects;
+    private @Nullable List<String> objects;
     /**
      * @return Specifies how to process the discovery result. It&#39;s set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn&#39;t change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren&#39;t reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
      * 
      */
-    private final @Nullable String plannedAction;
+    private @Nullable String plannedAction;
     /**
      * @return The database schema that contains the sensitive column.
      * 
      */
-    private final @Nullable List<String> schemaNames;
+    private @Nullable List<String> schemaNames;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobsResultsResult(
-        @CustomType.Parameter("columnNames") @Nullable List<String> columnNames,
-        @CustomType.Parameter("discoveryJobId") String discoveryJobId,
-        @CustomType.Parameter("discoveryJobResultCollections") List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections,
-        @CustomType.Parameter("discoveryType") @Nullable String discoveryType,
-        @CustomType.Parameter("filters") @Nullable List<GetDiscoveryJobsResultsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isResultApplied") @Nullable Boolean isResultApplied,
-        @CustomType.Parameter("objects") @Nullable List<String> objects,
-        @CustomType.Parameter("plannedAction") @Nullable String plannedAction,
-        @CustomType.Parameter("schemaNames") @Nullable List<String> schemaNames) {
-        this.columnNames = columnNames;
-        this.discoveryJobId = discoveryJobId;
-        this.discoveryJobResultCollections = discoveryJobResultCollections;
-        this.discoveryType = discoveryType;
-        this.filters = filters;
-        this.id = id;
-        this.isResultApplied = isResultApplied;
-        this.objects = objects;
-        this.plannedAction = plannedAction;
-        this.schemaNames = schemaNames;
-    }
-
+    private GetDiscoveryJobsResultsResult() {}
     /**
      * @return The name of the sensitive column.
      * 
@@ -152,7 +129,7 @@ public final class GetDiscoveryJobsResultsResult {
     public static Builder builder(GetDiscoveryJobsResultsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> columnNames;
         private String discoveryJobId;
@@ -164,11 +141,7 @@ public final class GetDiscoveryJobsResultsResult {
         private @Nullable List<String> objects;
         private @Nullable String plannedAction;
         private @Nullable List<String> schemaNames;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobsResultsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnNames = defaults.columnNames;
@@ -183,6 +156,7 @@ public final class GetDiscoveryJobsResultsResult {
     	      this.schemaNames = defaults.schemaNames;
         }
 
+        @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
             this.columnNames = columnNames;
             return this;
@@ -190,10 +164,12 @@ public final class GetDiscoveryJobsResultsResult {
         public Builder columnNames(String... columnNames) {
             return columnNames(List.of(columnNames));
         }
+        @CustomType.Setter
         public Builder discoveryJobId(String discoveryJobId) {
             this.discoveryJobId = Objects.requireNonNull(discoveryJobId);
             return this;
         }
+        @CustomType.Setter
         public Builder discoveryJobResultCollections(List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections) {
             this.discoveryJobResultCollections = Objects.requireNonNull(discoveryJobResultCollections);
             return this;
@@ -201,10 +177,12 @@ public final class GetDiscoveryJobsResultsResult {
         public Builder discoveryJobResultCollections(GetDiscoveryJobsResultsDiscoveryJobResultCollection... discoveryJobResultCollections) {
             return discoveryJobResultCollections(List.of(discoveryJobResultCollections));
         }
+        @CustomType.Setter
         public Builder discoveryType(@Nullable String discoveryType) {
             this.discoveryType = discoveryType;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDiscoveryJobsResultsFilter> filters) {
             this.filters = filters;
             return this;
@@ -212,14 +190,17 @@ public final class GetDiscoveryJobsResultsResult {
         public Builder filters(GetDiscoveryJobsResultsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isResultApplied(@Nullable Boolean isResultApplied) {
             this.isResultApplied = isResultApplied;
             return this;
         }
+        @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
             this.objects = objects;
             return this;
@@ -227,18 +208,32 @@ public final class GetDiscoveryJobsResultsResult {
         public Builder objects(String... objects) {
             return objects(List.of(objects));
         }
+        @CustomType.Setter
         public Builder plannedAction(@Nullable String plannedAction) {
             this.plannedAction = plannedAction;
             return this;
         }
+        @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
             this.schemaNames = schemaNames;
             return this;
         }
         public Builder schemaNames(String... schemaNames) {
             return schemaNames(List.of(schemaNames));
-        }        public GetDiscoveryJobsResultsResult build() {
-            return new GetDiscoveryJobsResultsResult(columnNames, discoveryJobId, discoveryJobResultCollections, discoveryType, filters, id, isResultApplied, objects, plannedAction, schemaNames);
+        }
+        public GetDiscoveryJobsResultsResult build() {
+            final var o = new GetDiscoveryJobsResultsResult();
+            o.columnNames = columnNames;
+            o.discoveryJobId = discoveryJobId;
+            o.discoveryJobResultCollections = discoveryJobResultCollections;
+            o.discoveryType = discoveryType;
+            o.filters = filters;
+            o.id = id;
+            o.isResultApplied = isResultApplied;
+            o.objects = objects;
+            o.plannedAction = plannedAction;
+            o.schemaNames = schemaNames;
+            return o;
         }
     }
 }

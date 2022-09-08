@@ -13,21 +13,14 @@ public final class GetImagesImageAgentFeature {
      * @return This attribute is not used.
      * 
      */
-    private final Boolean isManagementSupported;
+    private Boolean isManagementSupported;
     /**
      * @return This attribute is not used.
      * 
      */
-    private final Boolean isMonitoringSupported;
+    private Boolean isMonitoringSupported;
 
-    @CustomType.Constructor
-    private GetImagesImageAgentFeature(
-        @CustomType.Parameter("isManagementSupported") Boolean isManagementSupported,
-        @CustomType.Parameter("isMonitoringSupported") Boolean isMonitoringSupported) {
-        this.isManagementSupported = isManagementSupported;
-        this.isMonitoringSupported = isMonitoringSupported;
-    }
-
+    private GetImagesImageAgentFeature() {}
     /**
      * @return This attribute is not used.
      * 
@@ -50,30 +43,32 @@ public final class GetImagesImageAgentFeature {
     public static Builder builder(GetImagesImageAgentFeature defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isManagementSupported;
         private Boolean isMonitoringSupported;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImagesImageAgentFeature defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isManagementSupported = defaults.isManagementSupported;
     	      this.isMonitoringSupported = defaults.isMonitoringSupported;
         }
 
+        @CustomType.Setter
         public Builder isManagementSupported(Boolean isManagementSupported) {
             this.isManagementSupported = Objects.requireNonNull(isManagementSupported);
             return this;
         }
+        @CustomType.Setter
         public Builder isMonitoringSupported(Boolean isMonitoringSupported) {
             this.isMonitoringSupported = Objects.requireNonNull(isMonitoringSupported);
             return this;
-        }        public GetImagesImageAgentFeature build() {
-            return new GetImagesImageAgentFeature(isManagementSupported, isMonitoringSupported);
+        }
+        public GetImagesImageAgentFeature build() {
+            final var o = new GetImagesImageAgentFeature();
+            o.isManagementSupported = isManagementSupported;
+            o.isMonitoringSupported = isMonitoringSupported;
+            return o;
         }
     }
 }

@@ -21,91 +21,64 @@ public final class MysqlDbSystemChannel {
      * @return The OCID of the compartment.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return (Updatable) The user-friendly name for the DB System. It does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the DB System.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return (Updatable) Specifies if PITR is enabled or disabled.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    private final @Nullable String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Parameters detailing how to provision the initial data of the system.
      * 
      */
-    private final @Nullable List<MysqlDbSystemChannelSource> sources;
+    private @Nullable List<MysqlDbSystemChannelSource> sources;
     /**
      * @return (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return Details about the Channel target.
      * 
      */
-    private final @Nullable List<MysqlDbSystemChannelTarget> targets;
+    private @Nullable List<MysqlDbSystemChannelTarget> targets;
     /**
      * @return The date and time the DB System was created.
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the DB System was last updated.
      * 
      */
-    private final @Nullable String timeUpdated;
+    private @Nullable String timeUpdated;
 
-    @CustomType.Constructor
-    private MysqlDbSystemChannel(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("lifecycleDetails") @Nullable String lifecycleDetails,
-        @CustomType.Parameter("sources") @Nullable List<MysqlDbSystemChannelSource> sources,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targets") @Nullable List<MysqlDbSystemChannelTarget> targets,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeUpdated") @Nullable String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.lifecycleDetails = lifecycleDetails;
-        this.sources = sources;
-        this.state = state;
-        this.targets = targets;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private MysqlDbSystemChannel() {}
     /**
      * @return The OCID of the compartment.
      * 
@@ -198,7 +171,7 @@ public final class MysqlDbSystemChannel {
     public static Builder builder(MysqlDbSystemChannel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable Map<String,Object> definedTags;
@@ -212,11 +185,7 @@ public final class MysqlDbSystemChannel {
         private @Nullable List<MysqlDbSystemChannelTarget> targets;
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MysqlDbSystemChannel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -233,34 +202,42 @@ public final class MysqlDbSystemChannel {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder sources(@Nullable List<MysqlDbSystemChannelSource> sources) {
             this.sources = sources;
             return this;
@@ -268,10 +245,12 @@ public final class MysqlDbSystemChannel {
         public Builder sources(MysqlDbSystemChannelSource... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targets(@Nullable List<MysqlDbSystemChannelTarget> targets) {
             this.targets = targets;
             return this;
@@ -279,15 +258,31 @@ public final class MysqlDbSystemChannel {
         public Builder targets(MysqlDbSystemChannelTarget... targets) {
             return targets(List.of(targets));
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
-        }        public MysqlDbSystemChannel build() {
-            return new MysqlDbSystemChannel(compartmentId, definedTags, displayName, freeformTags, id, isEnabled, lifecycleDetails, sources, state, targets, timeCreated, timeUpdated);
+        }
+        public MysqlDbSystemChannel build() {
+            final var o = new MysqlDbSystemChannel();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.lifecycleDetails = lifecycleDetails;
+            o.sources = sources;
+            o.state = state;
+            o.targets = targets;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

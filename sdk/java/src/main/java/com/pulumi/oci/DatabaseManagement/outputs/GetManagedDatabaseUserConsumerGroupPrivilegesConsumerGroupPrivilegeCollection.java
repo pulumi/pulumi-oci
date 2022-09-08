@@ -14,13 +14,9 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
      * @return An array of consumer group privileges.
      * 
      */
-    private final List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items;
+    private List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection(@CustomType.Parameter("items") List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection() {}
     /**
      * @return An array of consumer group privileges.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
     public static Builder builder(GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection build() {
-            return new GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection(items);
+        }
+        public GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection build() {
+            final var o = new GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection();
+            o.items = items;
+            return o;
         }
     }
 }

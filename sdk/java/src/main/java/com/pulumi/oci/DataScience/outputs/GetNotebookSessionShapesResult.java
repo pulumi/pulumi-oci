@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNotebookSessionShapesResult {
-    private final String compartmentId;
-    private final @Nullable List<GetNotebookSessionShapesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetNotebookSessionShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of notebook_session_shapes.
      * 
      */
-    private final List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes;
+    private List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes;
 
-    @CustomType.Constructor
-    private GetNotebookSessionShapesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetNotebookSessionShapesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("notebookSessionShapes") List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.notebookSessionShapes = notebookSessionShapes;
-    }
-
+    private GetNotebookSessionShapesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetNotebookSessionShapesResult {
     public static Builder builder(GetNotebookSessionShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetNotebookSessionShapesFilter> filters;
         private String id;
         private List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNotebookSessionShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetNotebookSessionShapesResult {
     	      this.notebookSessionShapes = defaults.notebookSessionShapes;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNotebookSessionShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetNotebookSessionShapesResult {
         public Builder filters(GetNotebookSessionShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder notebookSessionShapes(List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes) {
             this.notebookSessionShapes = Objects.requireNonNull(notebookSessionShapes);
             return this;
         }
         public Builder notebookSessionShapes(GetNotebookSessionShapesNotebookSessionShape... notebookSessionShapes) {
             return notebookSessionShapes(List.of(notebookSessionShapes));
-        }        public GetNotebookSessionShapesResult build() {
-            return new GetNotebookSessionShapesResult(compartmentId, filters, id, notebookSessionShapes);
+        }
+        public GetNotebookSessionShapesResult build() {
+            final var o = new GetNotebookSessionShapesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.notebookSessionShapes = notebookSessionShapes;
+            return o;
         }
     }
 }

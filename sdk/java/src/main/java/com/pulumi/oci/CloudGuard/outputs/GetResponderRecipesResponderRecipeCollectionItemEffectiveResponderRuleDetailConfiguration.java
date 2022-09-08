@@ -13,28 +13,19 @@ public final class GetResponderRecipesResponderRecipeCollectionItemEffectiveResp
      * @return Unique name of the configuration
      * 
      */
-    private final String configKey;
+    private String configKey;
     /**
      * @return configuration name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return configuration value
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration(
-        @CustomType.Parameter("configKey") String configKey,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.configKey = configKey;
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration() {}
     /**
      * @return Unique name of the configuration
      * 
@@ -64,16 +55,12 @@ public final class GetResponderRecipesResponderRecipeCollectionItemEffectiveResp
     public static Builder builder(GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String configKey;
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configKey = defaults.configKey;
@@ -81,19 +68,27 @@ public final class GetResponderRecipesResponderRecipeCollectionItemEffectiveResp
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder configKey(String configKey) {
             this.configKey = Objects.requireNonNull(configKey);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration build() {
-            return new GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration(configKey, name, value);
+        }
+        public GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration build() {
+            final var o = new GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration();
+            o.configKey = configKey;
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

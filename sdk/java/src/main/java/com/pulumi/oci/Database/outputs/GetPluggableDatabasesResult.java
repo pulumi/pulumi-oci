@@ -18,48 +18,31 @@ public final class GetPluggableDatabasesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable String databaseId;
-    private final @Nullable List<GetPluggableDatabasesFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable String databaseId;
+    private @Nullable List<GetPluggableDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      * 
      */
-    private final @Nullable String pdbName;
+    private @Nullable String pdbName;
     /**
      * @return The list of pluggable_databases.
      * 
      */
-    private final List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases;
+    private List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases;
     /**
      * @return The current state of the pluggable database.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetPluggableDatabasesResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("databaseId") @Nullable String databaseId,
-        @CustomType.Parameter("filters") @Nullable List<GetPluggableDatabasesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("pdbName") @Nullable String pdbName,
-        @CustomType.Parameter("pluggableDatabases") List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.databaseId = databaseId;
-        this.filters = filters;
-        this.id = id;
-        this.pdbName = pdbName;
-        this.pluggableDatabases = pluggableDatabases;
-        this.state = state;
-    }
-
+    private GetPluggableDatabasesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -109,7 +92,7 @@ public final class GetPluggableDatabasesResult {
     public static Builder builder(GetPluggableDatabasesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String databaseId;
@@ -118,11 +101,7 @@ public final class GetPluggableDatabasesResult {
         private @Nullable String pdbName;
         private List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPluggableDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,14 +113,17 @@ public final class GetPluggableDatabasesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseId(@Nullable String databaseId) {
             this.databaseId = databaseId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPluggableDatabasesFilter> filters) {
             this.filters = filters;
             return this;
@@ -149,14 +131,17 @@ public final class GetPluggableDatabasesResult {
         public Builder filters(GetPluggableDatabasesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder pdbName(@Nullable String pdbName) {
             this.pdbName = pdbName;
             return this;
         }
+        @CustomType.Setter
         public Builder pluggableDatabases(List<GetPluggableDatabasesPluggableDatabase> pluggableDatabases) {
             this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
             return this;
@@ -164,11 +149,21 @@ public final class GetPluggableDatabasesResult {
         public Builder pluggableDatabases(GetPluggableDatabasesPluggableDatabase... pluggableDatabases) {
             return pluggableDatabases(List.of(pluggableDatabases));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetPluggableDatabasesResult build() {
-            return new GetPluggableDatabasesResult(compartmentId, databaseId, filters, id, pdbName, pluggableDatabases, state);
+        }
+        public GetPluggableDatabasesResult build() {
+            final var o = new GetPluggableDatabasesResult();
+            o.compartmentId = compartmentId;
+            o.databaseId = databaseId;
+            o.filters = filters;
+            o.id = id;
+            o.pdbName = pdbName;
+            o.pluggableDatabases = pluggableDatabases;
+            o.state = state;
+            return o;
         }
     }
 }

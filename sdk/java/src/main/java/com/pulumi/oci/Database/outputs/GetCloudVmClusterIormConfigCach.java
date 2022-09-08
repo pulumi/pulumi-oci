@@ -15,35 +15,24 @@ public final class GetCloudVmClusterIormConfigCach {
      * @return An array of IORM settings for all the database in the Exadata DB system.
      * 
      */
-    private final List<GetCloudVmClusterIormConfigCachDbPlan> dbPlans;
+    private List<GetCloudVmClusterIormConfigCachDbPlan> dbPlans;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The current value for the IORM objective. The default is `AUTO`.
      * 
      */
-    private final String objective;
+    private String objective;
     /**
      * @return The current state of the cloud VM cluster.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetCloudVmClusterIormConfigCach(
-        @CustomType.Parameter("dbPlans") List<GetCloudVmClusterIormConfigCachDbPlan> dbPlans,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("objective") String objective,
-        @CustomType.Parameter("state") String state) {
-        this.dbPlans = dbPlans;
-        this.lifecycleDetails = lifecycleDetails;
-        this.objective = objective;
-        this.state = state;
-    }
-
+    private GetCloudVmClusterIormConfigCach() {}
     /**
      * @return An array of IORM settings for all the database in the Exadata DB system.
      * 
@@ -80,17 +69,13 @@ public final class GetCloudVmClusterIormConfigCach {
     public static Builder builder(GetCloudVmClusterIormConfigCach defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCloudVmClusterIormConfigCachDbPlan> dbPlans;
         private String lifecycleDetails;
         private String objective;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCloudVmClusterIormConfigCach defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbPlans = defaults.dbPlans;
@@ -99,6 +84,7 @@ public final class GetCloudVmClusterIormConfigCach {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder dbPlans(List<GetCloudVmClusterIormConfigCachDbPlan> dbPlans) {
             this.dbPlans = Objects.requireNonNull(dbPlans);
             return this;
@@ -106,19 +92,28 @@ public final class GetCloudVmClusterIormConfigCach {
         public Builder dbPlans(GetCloudVmClusterIormConfigCachDbPlan... dbPlans) {
             return dbPlans(List.of(dbPlans));
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder objective(String objective) {
             this.objective = Objects.requireNonNull(objective);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetCloudVmClusterIormConfigCach build() {
-            return new GetCloudVmClusterIormConfigCach(dbPlans, lifecycleDetails, objective, state);
+        }
+        public GetCloudVmClusterIormConfigCach build() {
+            final var o = new GetCloudVmClusterIormConfigCach();
+            o.dbPlans = dbPlans;
+            o.lifecycleDetails = lifecycleDetails;
+            o.objective = objective;
+            o.state = state;
+            return o;
         }
     }
 }

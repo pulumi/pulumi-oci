@@ -13,21 +13,14 @@ public final class GetNodePoolsNodePoolInitialNodeLabel {
      * @return The key of the pair.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The value of the pair.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetNodePoolsNodePoolInitialNodeLabel(
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("value") String value) {
-        this.key = key;
-        this.value = value;
-    }
-
+    private GetNodePoolsNodePoolInitialNodeLabel() {}
     /**
      * @return The key of the pair.
      * 
@@ -50,30 +43,32 @@ public final class GetNodePoolsNodePoolInitialNodeLabel {
     public static Builder builder(GetNodePoolsNodePoolInitialNodeLabel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String key;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNodePoolsNodePoolInitialNodeLabel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetNodePoolsNodePoolInitialNodeLabel build() {
-            return new GetNodePoolsNodePoolInitialNodeLabel(key, value);
+        }
+        public GetNodePoolsNodePoolInitialNodeLabel build() {
+            final var o = new GetNodePoolsNodePoolInitialNodeLabel();
+            o.key = key;
+            o.value = value;
+            return o;
         }
     }
 }

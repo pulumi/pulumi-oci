@@ -13,126 +13,89 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSu
      * @return Common name or fully-qualified domain name (RDN CN).
      * 
      */
-    private final String commonName;
+    private String commonName;
     /**
      * @return Country name (RDN C).
      * 
      */
-    private final String country;
+    private String country;
     /**
      * @return Distinguished name qualifier(RDN DNQ).
      * 
      */
-    private final String distinguishedNameQualifier;
+    private String distinguishedNameQualifier;
     /**
      * @return Domain component (RDN DC).
      * 
      */
-    private final String domainComponent;
+    private String domainComponent;
     /**
      * @return Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
      * 
      */
-    private final String generationQualifier;
+    private String generationQualifier;
     /**
      * @return Personal given name (RDN G or GN).
      * 
      */
-    private final String givenName;
+    private String givenName;
     /**
      * @return Personal initials.
      * 
      */
-    private final String initials;
+    private String initials;
     /**
      * @return Locality (RDN L).
      * 
      */
-    private final String localityName;
+    private String localityName;
     /**
      * @return Organization (RDN O).
      * 
      */
-    private final String organization;
+    private String organization;
     /**
      * @return Organizational unit (RDN OU).
      * 
      */
-    private final String organizationalUnit;
+    private String organizationalUnit;
     /**
      * @return Subject pseudonym.
      * 
      */
-    private final String pseudonym;
+    private String pseudonym;
     /**
      * @return Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
      * 
      */
-    private final String serialNumber;
+    private String serialNumber;
     /**
      * @return State or province name (RDN ST or S).
      * 
      */
-    private final String stateOrProvinceName;
+    private String stateOrProvinceName;
     /**
      * @return Street address (RDN STREET).
      * 
      */
-    private final String street;
+    private String street;
     /**
      * @return Personal surname (RDN SN).
      * 
      */
-    private final String surname;
+    private String surname;
     /**
      * @return Title (RDN T or TITLE).
      * 
      */
-    private final String title;
+    private String title;
     /**
      * @return User ID (RDN UID).
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject(
-        @CustomType.Parameter("commonName") String commonName,
-        @CustomType.Parameter("country") String country,
-        @CustomType.Parameter("distinguishedNameQualifier") String distinguishedNameQualifier,
-        @CustomType.Parameter("domainComponent") String domainComponent,
-        @CustomType.Parameter("generationQualifier") String generationQualifier,
-        @CustomType.Parameter("givenName") String givenName,
-        @CustomType.Parameter("initials") String initials,
-        @CustomType.Parameter("localityName") String localityName,
-        @CustomType.Parameter("organization") String organization,
-        @CustomType.Parameter("organizationalUnit") String organizationalUnit,
-        @CustomType.Parameter("pseudonym") String pseudonym,
-        @CustomType.Parameter("serialNumber") String serialNumber,
-        @CustomType.Parameter("stateOrProvinceName") String stateOrProvinceName,
-        @CustomType.Parameter("street") String street,
-        @CustomType.Parameter("surname") String surname,
-        @CustomType.Parameter("title") String title,
-        @CustomType.Parameter("userId") String userId) {
-        this.commonName = commonName;
-        this.country = country;
-        this.distinguishedNameQualifier = distinguishedNameQualifier;
-        this.domainComponent = domainComponent;
-        this.generationQualifier = generationQualifier;
-        this.givenName = givenName;
-        this.initials = initials;
-        this.localityName = localityName;
-        this.organization = organization;
-        this.organizationalUnit = organizationalUnit;
-        this.pseudonym = pseudonym;
-        this.serialNumber = serialNumber;
-        this.stateOrProvinceName = stateOrProvinceName;
-        this.street = street;
-        this.surname = surname;
-        this.title = title;
-        this.userId = userId;
-    }
-
+    private GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject() {}
     /**
      * @return Common name or fully-qualified domain name (RDN CN).
      * 
@@ -260,7 +223,7 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSu
     public static Builder builder(GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String commonName;
         private String country;
@@ -279,11 +242,7 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSu
         private String surname;
         private String title;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.commonName = defaults.commonName;
@@ -305,75 +264,111 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSu
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder commonName(String commonName) {
             this.commonName = Objects.requireNonNull(commonName);
             return this;
         }
+        @CustomType.Setter
         public Builder country(String country) {
             this.country = Objects.requireNonNull(country);
             return this;
         }
+        @CustomType.Setter
         public Builder distinguishedNameQualifier(String distinguishedNameQualifier) {
             this.distinguishedNameQualifier = Objects.requireNonNull(distinguishedNameQualifier);
             return this;
         }
+        @CustomType.Setter
         public Builder domainComponent(String domainComponent) {
             this.domainComponent = Objects.requireNonNull(domainComponent);
             return this;
         }
+        @CustomType.Setter
         public Builder generationQualifier(String generationQualifier) {
             this.generationQualifier = Objects.requireNonNull(generationQualifier);
             return this;
         }
+        @CustomType.Setter
         public Builder givenName(String givenName) {
             this.givenName = Objects.requireNonNull(givenName);
             return this;
         }
+        @CustomType.Setter
         public Builder initials(String initials) {
             this.initials = Objects.requireNonNull(initials);
             return this;
         }
+        @CustomType.Setter
         public Builder localityName(String localityName) {
             this.localityName = Objects.requireNonNull(localityName);
             return this;
         }
+        @CustomType.Setter
         public Builder organization(String organization) {
             this.organization = Objects.requireNonNull(organization);
             return this;
         }
+        @CustomType.Setter
         public Builder organizationalUnit(String organizationalUnit) {
             this.organizationalUnit = Objects.requireNonNull(organizationalUnit);
             return this;
         }
+        @CustomType.Setter
         public Builder pseudonym(String pseudonym) {
             this.pseudonym = Objects.requireNonNull(pseudonym);
             return this;
         }
+        @CustomType.Setter
         public Builder serialNumber(String serialNumber) {
             this.serialNumber = Objects.requireNonNull(serialNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder stateOrProvinceName(String stateOrProvinceName) {
             this.stateOrProvinceName = Objects.requireNonNull(stateOrProvinceName);
             return this;
         }
+        @CustomType.Setter
         public Builder street(String street) {
             this.street = Objects.requireNonNull(street);
             return this;
         }
+        @CustomType.Setter
         public Builder surname(String surname) {
             this.surname = Objects.requireNonNull(surname);
             return this;
         }
+        @CustomType.Setter
         public Builder title(String title) {
             this.title = Objects.requireNonNull(title);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject build() {
-            return new GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject(commonName, country, distinguishedNameQualifier, domainComponent, generationQualifier, givenName, initials, localityName, organization, organizationalUnit, pseudonym, serialNumber, stateOrProvinceName, street, surname, title, userId);
+        }
+        public GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject build() {
+            final var o = new GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject();
+            o.commonName = commonName;
+            o.country = country;
+            o.distinguishedNameQualifier = distinguishedNameQualifier;
+            o.domainComponent = domainComponent;
+            o.generationQualifier = generationQualifier;
+            o.givenName = givenName;
+            o.initials = initials;
+            o.localityName = localityName;
+            o.organization = organization;
+            o.organizationalUnit = organizationalUnit;
+            o.pseudonym = pseudonym;
+            o.serialNumber = serialNumber;
+            o.stateOrProvinceName = stateOrProvinceName;
+            o.street = street;
+            o.surname = surname;
+            o.title = title;
+            o.userId = userId;
+            return o;
         }
     }
 }

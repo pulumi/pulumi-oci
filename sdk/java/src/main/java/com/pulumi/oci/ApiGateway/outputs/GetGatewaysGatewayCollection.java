@@ -19,126 +19,89 @@ public final class GetGatewaysGatewayCollection {
      * @return An array of CA bundles that should be used on the Gateway for TLS validation.
      * 
      */
-    private final List<GetGatewaysGatewayCollectionCaBundle> caBundles;
+    private List<GetGatewaysGatewayCollectionCaBundle> caBundles;
     /**
      * @return Filter gateways by the certificate ocid.
      * 
      */
-    private final String certificateId;
+    private String certificateId;
     /**
      * @return The ocid of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
      * 
      */
-    private final String endpointType;
+    private String endpointType;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The hostname for APIs deployed on the gateway.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An array of IP addresses associated with the gateway.
      * 
      */
-    private final List<GetGatewaysGatewayCollectionIpAddress> ipAddresses;
+    private List<GetGatewaysGatewayCollectionIpAddress> ipAddresses;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return An array of Network Security Groups OCIDs associated with this API Gateway.
      * 
      */
-    private final List<String> networkSecurityGroupIds;
+    private List<String> networkSecurityGroupIds;
     /**
      * @return Base Gateway response cache.
      * 
      */
-    private final List<GetGatewaysGatewayCollectionResponseCacheDetail> responseCacheDetails;
+    private List<GetGatewaysGatewayCollectionResponseCacheDetail> responseCacheDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time this resource was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetGatewaysGatewayCollection(
-        @CustomType.Parameter("caBundles") List<GetGatewaysGatewayCollectionCaBundle> caBundles,
-        @CustomType.Parameter("certificateId") String certificateId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("endpointType") String endpointType,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddresses") List<GetGatewaysGatewayCollectionIpAddress> ipAddresses,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("networkSecurityGroupIds") List<String> networkSecurityGroupIds,
-        @CustomType.Parameter("responseCacheDetails") List<GetGatewaysGatewayCollectionResponseCacheDetail> responseCacheDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.caBundles = caBundles;
-        this.certificateId = certificateId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.endpointType = endpointType;
-        this.freeformTags = freeformTags;
-        this.hostname = hostname;
-        this.id = id;
-        this.ipAddresses = ipAddresses;
-        this.lifecycleDetails = lifecycleDetails;
-        this.networkSecurityGroupIds = networkSecurityGroupIds;
-        this.responseCacheDetails = responseCacheDetails;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetGatewaysGatewayCollection() {}
     /**
      * @return An array of CA bundles that should be used on the Gateway for TLS validation.
      * 
@@ -266,7 +229,7 @@ public final class GetGatewaysGatewayCollection {
     public static Builder builder(GetGatewaysGatewayCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetGatewaysGatewayCollectionCaBundle> caBundles;
         private String certificateId;
@@ -285,11 +248,7 @@ public final class GetGatewaysGatewayCollection {
         private String subnetId;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGatewaysGatewayCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.caBundles = defaults.caBundles;
@@ -311,6 +270,7 @@ public final class GetGatewaysGatewayCollection {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder caBundles(List<GetGatewaysGatewayCollectionCaBundle> caBundles) {
             this.caBundles = Objects.requireNonNull(caBundles);
             return this;
@@ -318,38 +278,47 @@ public final class GetGatewaysGatewayCollection {
         public Builder caBundles(GetGatewaysGatewayCollectionCaBundle... caBundles) {
             return caBundles(List.of(caBundles));
         }
+        @CustomType.Setter
         public Builder certificateId(String certificateId) {
             this.certificateId = Objects.requireNonNull(certificateId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder endpointType(String endpointType) {
             this.endpointType = Objects.requireNonNull(endpointType);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddresses(List<GetGatewaysGatewayCollectionIpAddress> ipAddresses) {
             this.ipAddresses = Objects.requireNonNull(ipAddresses);
             return this;
@@ -357,10 +326,12 @@ public final class GetGatewaysGatewayCollection {
         public Builder ipAddresses(GetGatewaysGatewayCollectionIpAddress... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
             return this;
@@ -368,6 +339,7 @@ public final class GetGatewaysGatewayCollection {
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
+        @CustomType.Setter
         public Builder responseCacheDetails(List<GetGatewaysGatewayCollectionResponseCacheDetail> responseCacheDetails) {
             this.responseCacheDetails = Objects.requireNonNull(responseCacheDetails);
             return this;
@@ -375,23 +347,46 @@ public final class GetGatewaysGatewayCollection {
         public Builder responseCacheDetails(GetGatewaysGatewayCollectionResponseCacheDetail... responseCacheDetails) {
             return responseCacheDetails(List.of(responseCacheDetails));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetGatewaysGatewayCollection build() {
-            return new GetGatewaysGatewayCollection(caBundles, certificateId, compartmentId, definedTags, displayName, endpointType, freeformTags, hostname, id, ipAddresses, lifecycleDetails, networkSecurityGroupIds, responseCacheDetails, state, subnetId, timeCreated, timeUpdated);
+        }
+        public GetGatewaysGatewayCollection build() {
+            final var o = new GetGatewaysGatewayCollection();
+            o.caBundles = caBundles;
+            o.certificateId = certificateId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.endpointType = endpointType;
+            o.freeformTags = freeformTags;
+            o.hostname = hostname;
+            o.id = id;
+            o.ipAddresses = ipAddresses;
+            o.lifecycleDetails = lifecycleDetails;
+            o.networkSecurityGroupIds = networkSecurityGroupIds;
+            o.responseCacheDetails = responseCacheDetails;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

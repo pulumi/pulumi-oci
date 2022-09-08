@@ -14,35 +14,24 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
      * @return The name of the availability domain in which this node is placed.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The OCID of the compute capacity reservation in which to place the compute instance.
      * 
      */
-    private final String capacityReservationId;
+    private String capacityReservationId;
     /**
      * @return A list of fault domains in which to place nodes.
      * 
      */
-    private final List<String> faultDomains;
+    private List<String> faultDomains;
     /**
      * @return The OCID of the subnet in which this node is placed.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private GetNodePoolNodeConfigDetailPlacementConfig(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("capacityReservationId") String capacityReservationId,
-        @CustomType.Parameter("faultDomains") List<String> faultDomains,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.availabilityDomain = availabilityDomain;
-        this.capacityReservationId = capacityReservationId;
-        this.faultDomains = faultDomains;
-        this.subnetId = subnetId;
-    }
-
+    private GetNodePoolNodeConfigDetailPlacementConfig() {}
     /**
      * @return The name of the availability domain in which this node is placed.
      * 
@@ -79,17 +68,13 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
     public static Builder builder(GetNodePoolNodeConfigDetailPlacementConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String capacityReservationId;
         private List<String> faultDomains;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNodePoolNodeConfigDetailPlacementConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -98,14 +83,17 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
             return this;
         }
+        @CustomType.Setter
         public Builder faultDomains(List<String> faultDomains) {
             this.faultDomains = Objects.requireNonNull(faultDomains);
             return this;
@@ -113,11 +101,18 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
         public Builder faultDomains(String... faultDomains) {
             return faultDomains(List.of(faultDomains));
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public GetNodePoolNodeConfigDetailPlacementConfig build() {
-            return new GetNodePoolNodeConfigDetailPlacementConfig(availabilityDomain, capacityReservationId, faultDomains, subnetId);
+        }
+        public GetNodePoolNodeConfigDetailPlacementConfig build() {
+            final var o = new GetNodePoolNodeConfigDetailPlacementConfig();
+            o.availabilityDomain = availabilityDomain;
+            o.capacityReservationId = capacityReservationId;
+            o.faultDomains = faultDomains;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

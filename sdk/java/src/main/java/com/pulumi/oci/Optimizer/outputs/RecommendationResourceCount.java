@@ -16,21 +16,14 @@ public final class RecommendationResourceCount {
      * @return The count of resources.
      * 
      */
-    private final @Nullable Integer count;
+    private @Nullable Integer count;
     /**
      * @return (Updatable) The status of the recommendation.
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
 
-    @CustomType.Constructor
-    private RecommendationResourceCount(
-        @CustomType.Parameter("count") @Nullable Integer count,
-        @CustomType.Parameter("status") @Nullable String status) {
-        this.count = count;
-        this.status = status;
-    }
-
+    private RecommendationResourceCount() {}
     /**
      * @return The count of resources.
      * 
@@ -53,30 +46,32 @@ public final class RecommendationResourceCount {
     public static Builder builder(RecommendationResourceCount defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer count;
         private @Nullable String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RecommendationResourceCount defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder count(@Nullable Integer count) {
             this.count = count;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
-        }        public RecommendationResourceCount build() {
-            return new RecommendationResourceCount(count, status);
+        }
+        public RecommendationResourceCount build() {
+            final var o = new RecommendationResourceCount();
+            o.count = count;
+            o.status = status;
+            return o;
         }
     }
 }

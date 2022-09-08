@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetApisApiCollection {
-    private final List<GetApisApiCollectionItem> items;
+    private List<GetApisApiCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetApisApiCollection(@CustomType.Parameter("items") List<GetApisApiCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetApisApiCollection() {}
     public List<GetApisApiCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetApisApiCollection {
     public static Builder builder(GetApisApiCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApisApiCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApisApiCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetApisApiCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetApisApiCollectionItem... items) {
             return items(List.of(items));
-        }        public GetApisApiCollection build() {
-            return new GetApisApiCollection(items);
+        }
+        public GetApisApiCollection build() {
+            final var o = new GetApisApiCollection();
+            o.items = items;
+            return o;
         }
     }
 }

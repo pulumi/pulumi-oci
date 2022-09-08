@@ -14,13 +14,9 @@ public final class GetProfilesProfileCollection {
      * @return The list of tags specified in the current profile override.
      * 
      */
-    private final List<GetProfilesProfileCollectionItem> items;
+    private List<GetProfilesProfileCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetProfilesProfileCollection(@CustomType.Parameter("items") List<GetProfilesProfileCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetProfilesProfileCollection() {}
     /**
      * @return The list of tags specified in the current profile override.
      * 
@@ -36,27 +32,27 @@ public final class GetProfilesProfileCollection {
     public static Builder builder(GetProfilesProfileCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetProfilesProfileCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfilesProfileCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetProfilesProfileCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetProfilesProfileCollectionItem... items) {
             return items(List.of(items));
-        }        public GetProfilesProfileCollection build() {
-            return new GetProfilesProfileCollection(items);
+        }
+        public GetProfilesProfileCollection build() {
+            final var o = new GetProfilesProfileCollection();
+            o.items = items;
+            return o;
         }
     }
 }

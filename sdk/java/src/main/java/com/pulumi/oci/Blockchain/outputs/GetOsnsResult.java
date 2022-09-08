@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOsnsResult {
-    private final String blockchainPlatformId;
-    private final @Nullable String displayName;
-    private final @Nullable List<GetOsnsFilter> filters;
+    private String blockchainPlatformId;
+    private @Nullable String displayName;
+    private @Nullable List<GetOsnsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of osn_collection.
      * 
      */
-    private final List<GetOsnsOsnCollection> osnCollections;
+    private List<GetOsnsOsnCollection> osnCollections;
 
-    @CustomType.Constructor
-    private GetOsnsResult(
-        @CustomType.Parameter("blockchainPlatformId") String blockchainPlatformId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetOsnsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("osnCollections") List<GetOsnsOsnCollection> osnCollections) {
-        this.blockchainPlatformId = blockchainPlatformId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.osnCollections = osnCollections;
-    }
-
+    private GetOsnsResult() {}
     public String blockchainPlatformId() {
         return this.blockchainPlatformId;
     }
@@ -73,18 +60,14 @@ public final class GetOsnsResult {
     public static Builder builder(GetOsnsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String blockchainPlatformId;
         private @Nullable String displayName;
         private @Nullable List<GetOsnsFilter> filters;
         private String id;
         private List<GetOsnsOsnCollection> osnCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOsnsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockchainPlatformId = defaults.blockchainPlatformId;
@@ -94,14 +77,17 @@ public final class GetOsnsResult {
     	      this.osnCollections = defaults.osnCollections;
         }
 
+        @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
             this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOsnsFilter> filters) {
             this.filters = filters;
             return this;
@@ -109,18 +95,27 @@ public final class GetOsnsResult {
         public Builder filters(GetOsnsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder osnCollections(List<GetOsnsOsnCollection> osnCollections) {
             this.osnCollections = Objects.requireNonNull(osnCollections);
             return this;
         }
         public Builder osnCollections(GetOsnsOsnCollection... osnCollections) {
             return osnCollections(List.of(osnCollections));
-        }        public GetOsnsResult build() {
-            return new GetOsnsResult(blockchainPlatformId, displayName, filters, id, osnCollections);
+        }
+        public GetOsnsResult build() {
+            final var o = new GetOsnsResult();
+            o.blockchainPlatformId = blockchainPlatformId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.osnCollections = osnCollections;
+            return o;
         }
     }
 }

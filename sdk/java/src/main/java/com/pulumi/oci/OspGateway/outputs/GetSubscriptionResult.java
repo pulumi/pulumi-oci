@@ -20,155 +20,104 @@ public final class GetSubscriptionResult {
      * @return Bill to customer Account id.
      * 
      */
-    private final String billToCustAccountId;
+    private String billToCustAccountId;
     /**
      * @return Billing address details model.
      * 
      */
-    private final List<GetSubscriptionBillingAddress> billingAddresses;
-    private final String compartmentId;
+    private List<GetSubscriptionBillingAddress> billingAddresses;
+    private String compartmentId;
     /**
      * @return Currency code
      * 
      */
-    private final String currencyCode;
-    private final String email;
+    private String currencyCode;
+    private String email;
     /**
      * @return GSI Subscription external code.
      * 
      */
-    private final String gsiOrgCode;
+    private String gsiOrgCode;
     /**
      * @return Subscription id identifier (OCID).
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Payment intension.
      * 
      */
-    private final Boolean isIntentToPay;
+    private Boolean isIntentToPay;
     /**
      * @return Language short code (en, de, hu, etc)
      * 
      */
-    private final String languageCode;
+    private String languageCode;
     /**
      * @return GSI organization external identifier.
      * 
      */
-    private final String organizationId;
-    private final String ospHomeRegion;
+    private String organizationId;
+    private String ospHomeRegion;
     /**
      * @return Payment gateway details.
      * 
      */
-    private final List<GetSubscriptionPaymentGateway> paymentGateways;
+    private List<GetSubscriptionPaymentGateway> paymentGateways;
     /**
      * @return Payment option list of a subscription.
      * 
      */
-    private final List<GetSubscriptionPaymentOption> paymentOptions;
+    private List<GetSubscriptionPaymentOption> paymentOptions;
     /**
      * @return Subscription plan type.
      * 
      */
-    private final String planType;
+    private String planType;
     /**
      * @return Ship to customer account role.
      * 
      */
-    private final String shipToCustAcctRoleId;
+    private String shipToCustAcctRoleId;
     /**
      * @return Ship to customer account site address id.
      * 
      */
-    private final String shipToCustAcctSiteId;
-    private final String subscriptionId;
+    private String shipToCustAcctSiteId;
+    private String subscriptionId;
     /**
      * @return Subscription plan number.
      * 
      */
-    private final String subscriptionPlanNumber;
-    private final List<GetSubscriptionSubscription> subscriptions;
+    private String subscriptionPlanNumber;
+    private List<GetSubscriptionSubscription> subscriptions;
     /**
      * @return Tax details.
      * 
      */
-    private final List<GetSubscriptionTaxInfo> taxInfos;
+    private List<GetSubscriptionTaxInfo> taxInfos;
     /**
      * @return Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
-    private final String timePlanUpgrade;
+    private String timePlanUpgrade;
     /**
      * @return Start date of the subscription.
      * 
      */
-    private final String timeStart;
+    private String timeStart;
     /**
      * @return Status of the upgrade.
      * 
      */
-    private final String upgradeState;
+    private String upgradeState;
     /**
      * @return This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
-    private final String upgradeStateDetails;
+    private String upgradeStateDetails;
 
-    @CustomType.Constructor
-    private GetSubscriptionResult(
-        @CustomType.Parameter("billToCustAccountId") String billToCustAccountId,
-        @CustomType.Parameter("billingAddresses") List<GetSubscriptionBillingAddress> billingAddresses,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("currencyCode") String currencyCode,
-        @CustomType.Parameter("email") String email,
-        @CustomType.Parameter("gsiOrgCode") String gsiOrgCode,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isIntentToPay") Boolean isIntentToPay,
-        @CustomType.Parameter("languageCode") String languageCode,
-        @CustomType.Parameter("organizationId") String organizationId,
-        @CustomType.Parameter("ospHomeRegion") String ospHomeRegion,
-        @CustomType.Parameter("paymentGateways") List<GetSubscriptionPaymentGateway> paymentGateways,
-        @CustomType.Parameter("paymentOptions") List<GetSubscriptionPaymentOption> paymentOptions,
-        @CustomType.Parameter("planType") String planType,
-        @CustomType.Parameter("shipToCustAcctRoleId") String shipToCustAcctRoleId,
-        @CustomType.Parameter("shipToCustAcctSiteId") String shipToCustAcctSiteId,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("subscriptionPlanNumber") String subscriptionPlanNumber,
-        @CustomType.Parameter("subscriptions") List<GetSubscriptionSubscription> subscriptions,
-        @CustomType.Parameter("taxInfos") List<GetSubscriptionTaxInfo> taxInfos,
-        @CustomType.Parameter("timePlanUpgrade") String timePlanUpgrade,
-        @CustomType.Parameter("timeStart") String timeStart,
-        @CustomType.Parameter("upgradeState") String upgradeState,
-        @CustomType.Parameter("upgradeStateDetails") String upgradeStateDetails) {
-        this.billToCustAccountId = billToCustAccountId;
-        this.billingAddresses = billingAddresses;
-        this.compartmentId = compartmentId;
-        this.currencyCode = currencyCode;
-        this.email = email;
-        this.gsiOrgCode = gsiOrgCode;
-        this.id = id;
-        this.isIntentToPay = isIntentToPay;
-        this.languageCode = languageCode;
-        this.organizationId = organizationId;
-        this.ospHomeRegion = ospHomeRegion;
-        this.paymentGateways = paymentGateways;
-        this.paymentOptions = paymentOptions;
-        this.planType = planType;
-        this.shipToCustAcctRoleId = shipToCustAcctRoleId;
-        this.shipToCustAcctSiteId = shipToCustAcctSiteId;
-        this.subscriptionId = subscriptionId;
-        this.subscriptionPlanNumber = subscriptionPlanNumber;
-        this.subscriptions = subscriptions;
-        this.taxInfos = taxInfos;
-        this.timePlanUpgrade = timePlanUpgrade;
-        this.timeStart = timeStart;
-        this.upgradeState = upgradeState;
-        this.upgradeStateDetails = upgradeStateDetails;
-    }
-
+    private GetSubscriptionResult() {}
     /**
      * @return Bill to customer Account id.
      * 
@@ -325,7 +274,7 @@ public final class GetSubscriptionResult {
     public static Builder builder(GetSubscriptionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String billToCustAccountId;
         private List<GetSubscriptionBillingAddress> billingAddresses;
@@ -351,11 +300,7 @@ public final class GetSubscriptionResult {
         private String timeStart;
         private String upgradeState;
         private String upgradeStateDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billToCustAccountId = defaults.billToCustAccountId;
@@ -384,10 +329,12 @@ public final class GetSubscriptionResult {
     	      this.upgradeStateDetails = defaults.upgradeStateDetails;
         }
 
+        @CustomType.Setter
         public Builder billToCustAccountId(String billToCustAccountId) {
             this.billToCustAccountId = Objects.requireNonNull(billToCustAccountId);
             return this;
         }
+        @CustomType.Setter
         public Builder billingAddresses(List<GetSubscriptionBillingAddress> billingAddresses) {
             this.billingAddresses = Objects.requireNonNull(billingAddresses);
             return this;
@@ -395,42 +342,52 @@ public final class GetSubscriptionResult {
         public Builder billingAddresses(GetSubscriptionBillingAddress... billingAddresses) {
             return billingAddresses(List.of(billingAddresses));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = Objects.requireNonNull(currencyCode);
             return this;
         }
+        @CustomType.Setter
         public Builder email(String email) {
             this.email = Objects.requireNonNull(email);
             return this;
         }
+        @CustomType.Setter
         public Builder gsiOrgCode(String gsiOrgCode) {
             this.gsiOrgCode = Objects.requireNonNull(gsiOrgCode);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isIntentToPay(Boolean isIntentToPay) {
             this.isIntentToPay = Objects.requireNonNull(isIntentToPay);
             return this;
         }
+        @CustomType.Setter
         public Builder languageCode(String languageCode) {
             this.languageCode = Objects.requireNonNull(languageCode);
             return this;
         }
+        @CustomType.Setter
         public Builder organizationId(String organizationId) {
             this.organizationId = Objects.requireNonNull(organizationId);
             return this;
         }
+        @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
             this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
             return this;
         }
+        @CustomType.Setter
         public Builder paymentGateways(List<GetSubscriptionPaymentGateway> paymentGateways) {
             this.paymentGateways = Objects.requireNonNull(paymentGateways);
             return this;
@@ -438,6 +395,7 @@ public final class GetSubscriptionResult {
         public Builder paymentGateways(GetSubscriptionPaymentGateway... paymentGateways) {
             return paymentGateways(List.of(paymentGateways));
         }
+        @CustomType.Setter
         public Builder paymentOptions(List<GetSubscriptionPaymentOption> paymentOptions) {
             this.paymentOptions = Objects.requireNonNull(paymentOptions);
             return this;
@@ -445,26 +403,32 @@ public final class GetSubscriptionResult {
         public Builder paymentOptions(GetSubscriptionPaymentOption... paymentOptions) {
             return paymentOptions(List.of(paymentOptions));
         }
+        @CustomType.Setter
         public Builder planType(String planType) {
             this.planType = Objects.requireNonNull(planType);
             return this;
         }
+        @CustomType.Setter
         public Builder shipToCustAcctRoleId(String shipToCustAcctRoleId) {
             this.shipToCustAcctRoleId = Objects.requireNonNull(shipToCustAcctRoleId);
             return this;
         }
+        @CustomType.Setter
         public Builder shipToCustAcctSiteId(String shipToCustAcctSiteId) {
             this.shipToCustAcctSiteId = Objects.requireNonNull(shipToCustAcctSiteId);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionPlanNumber(String subscriptionPlanNumber) {
             this.subscriptionPlanNumber = Objects.requireNonNull(subscriptionPlanNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptions(List<GetSubscriptionSubscription> subscriptions) {
             this.subscriptions = Objects.requireNonNull(subscriptions);
             return this;
@@ -472,6 +436,7 @@ public final class GetSubscriptionResult {
         public Builder subscriptions(GetSubscriptionSubscription... subscriptions) {
             return subscriptions(List.of(subscriptions));
         }
+        @CustomType.Setter
         public Builder taxInfos(List<GetSubscriptionTaxInfo> taxInfos) {
             this.taxInfos = Objects.requireNonNull(taxInfos);
             return this;
@@ -479,23 +444,53 @@ public final class GetSubscriptionResult {
         public Builder taxInfos(GetSubscriptionTaxInfo... taxInfos) {
             return taxInfos(List.of(taxInfos));
         }
+        @CustomType.Setter
         public Builder timePlanUpgrade(String timePlanUpgrade) {
             this.timePlanUpgrade = Objects.requireNonNull(timePlanUpgrade);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
         }
+        @CustomType.Setter
         public Builder upgradeState(String upgradeState) {
             this.upgradeState = Objects.requireNonNull(upgradeState);
             return this;
         }
+        @CustomType.Setter
         public Builder upgradeStateDetails(String upgradeStateDetails) {
             this.upgradeStateDetails = Objects.requireNonNull(upgradeStateDetails);
             return this;
-        }        public GetSubscriptionResult build() {
-            return new GetSubscriptionResult(billToCustAccountId, billingAddresses, compartmentId, currencyCode, email, gsiOrgCode, id, isIntentToPay, languageCode, organizationId, ospHomeRegion, paymentGateways, paymentOptions, planType, shipToCustAcctRoleId, shipToCustAcctSiteId, subscriptionId, subscriptionPlanNumber, subscriptions, taxInfos, timePlanUpgrade, timeStart, upgradeState, upgradeStateDetails);
+        }
+        public GetSubscriptionResult build() {
+            final var o = new GetSubscriptionResult();
+            o.billToCustAccountId = billToCustAccountId;
+            o.billingAddresses = billingAddresses;
+            o.compartmentId = compartmentId;
+            o.currencyCode = currencyCode;
+            o.email = email;
+            o.gsiOrgCode = gsiOrgCode;
+            o.id = id;
+            o.isIntentToPay = isIntentToPay;
+            o.languageCode = languageCode;
+            o.organizationId = organizationId;
+            o.ospHomeRegion = ospHomeRegion;
+            o.paymentGateways = paymentGateways;
+            o.paymentOptions = paymentOptions;
+            o.planType = planType;
+            o.shipToCustAcctRoleId = shipToCustAcctRoleId;
+            o.shipToCustAcctSiteId = shipToCustAcctSiteId;
+            o.subscriptionId = subscriptionId;
+            o.subscriptionPlanNumber = subscriptionPlanNumber;
+            o.subscriptions = subscriptions;
+            o.taxInfos = taxInfos;
+            o.timePlanUpgrade = timePlanUpgrade;
+            o.timeStart = timeStart;
+            o.upgradeState = upgradeState;
+            o.upgradeStateDetails = upgradeStateDetails;
+            return o;
         }
     }
 }

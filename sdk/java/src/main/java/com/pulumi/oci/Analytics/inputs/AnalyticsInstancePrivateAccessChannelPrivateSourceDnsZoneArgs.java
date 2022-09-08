@@ -16,14 +16,14 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
     public static final AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs Empty = new AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs();
 
     /**
-     * (Updatable) Description of private source dns zone.
+     * (Updatable) Description of private source scan host zone.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Description of private source dns zone.
+     * @return (Updatable) Description of private source scan host zone.
      * 
      */
     public Optional<Output<String>> description() {
@@ -71,7 +71,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
         }
 
         /**
-         * @param description (Updatable) Description of private source dns zone.
+         * @param description (Updatable) Description of private source scan host zone.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
         }
 
         /**
-         * @param description (Updatable) Description of private source dns zone.
+         * @param description (Updatable) Description of private source scan host zone.
          * 
          * @return builder
          * 

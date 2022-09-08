@@ -18,55 +18,36 @@ public final class GetDatabasesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of databases.
      * 
      */
-    private final List<GetDatabasesDatabase> databases;
+    private List<GetDatabasesDatabase> databases;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    private final @Nullable String dbHomeId;
+    private @Nullable String dbHomeId;
     /**
      * @return The database name.
      * 
      */
-    private final @Nullable String dbName;
-    private final @Nullable List<GetDatabasesFilter> filters;
+    private @Nullable String dbName;
+    private @Nullable List<GetDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the database.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String systemId;
+    private @Nullable String state;
+    private @Nullable String systemId;
 
-    @CustomType.Constructor
-    private GetDatabasesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("databases") List<GetDatabasesDatabase> databases,
-        @CustomType.Parameter("dbHomeId") @Nullable String dbHomeId,
-        @CustomType.Parameter("dbName") @Nullable String dbName,
-        @CustomType.Parameter("filters") @Nullable List<GetDatabasesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("systemId") @Nullable String systemId) {
-        this.compartmentId = compartmentId;
-        this.databases = databases;
-        this.dbHomeId = dbHomeId;
-        this.dbName = dbName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.systemId = systemId;
-    }
-
+    private GetDatabasesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -123,7 +104,7 @@ public final class GetDatabasesResult {
     public static Builder builder(GetDatabasesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetDatabasesDatabase> databases;
@@ -133,11 +114,7 @@ public final class GetDatabasesResult {
         private String id;
         private @Nullable String state;
         private @Nullable String systemId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -150,10 +127,12 @@ public final class GetDatabasesResult {
     	      this.systemId = defaults.systemId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder databases(List<GetDatabasesDatabase> databases) {
             this.databases = Objects.requireNonNull(databases);
             return this;
@@ -161,14 +140,17 @@ public final class GetDatabasesResult {
         public Builder databases(GetDatabasesDatabase... databases) {
             return databases(List.of(databases));
         }
+        @CustomType.Setter
         public Builder dbHomeId(@Nullable String dbHomeId) {
             this.dbHomeId = dbHomeId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbName(@Nullable String dbName) {
             this.dbName = dbName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabasesFilter> filters) {
             this.filters = filters;
             return this;
@@ -176,19 +158,32 @@ public final class GetDatabasesResult {
         public Builder filters(GetDatabasesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder systemId(@Nullable String systemId) {
             this.systemId = systemId;
             return this;
-        }        public GetDatabasesResult build() {
-            return new GetDatabasesResult(compartmentId, databases, dbHomeId, dbName, filters, id, state, systemId);
+        }
+        public GetDatabasesResult build() {
+            final var o = new GetDatabasesResult();
+            o.compartmentId = compartmentId;
+            o.databases = databases;
+            o.dbHomeId = dbHomeId;
+            o.dbName = dbName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.systemId = systemId;
+            return o;
         }
     }
 }

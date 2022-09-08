@@ -78,18 +78,18 @@ public final class ViewArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Value must be `PRIVATE` when creating a view for private zones.
+     * If specified, must be `PRIVATE` when creating a view for private zones.
      * 
      */
-    @Import(name="scope", required=true)
-    private Output<String> scope;
+    @Import(name="scope")
+    private @Nullable Output<String> scope;
 
     /**
-     * @return Value must be `PRIVATE` when creating a view for private zones.
+     * @return If specified, must be `PRIVATE` when creating a view for private zones.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Optional<Output<String>> scope() {
+        return Optional.ofNullable(this.scope);
     }
 
     private ViewArgs() {}
@@ -205,18 +205,18 @@ public final class ViewArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope Value must be `PRIVATE` when creating a view for private zones.
+         * @param scope If specified, must be `PRIVATE` when creating a view for private zones.
          * 
          * @return builder
          * 
          */
-        public Builder scope(Output<String> scope) {
+        public Builder scope(@Nullable Output<String> scope) {
             $.scope = scope;
             return this;
         }
 
         /**
-         * @param scope Value must be `PRIVATE` when creating a view for private zones.
+         * @param scope If specified, must be `PRIVATE` when creating a view for private zones.
          * 
          * @return builder
          * 
@@ -227,7 +227,6 @@ public final class ViewArgs extends com.pulumi.resources.ResourceArgs {
 
         public ViewArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
             return $;
         }
     }

@@ -18,21 +18,14 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetails {
      * @return (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
      * 
      */
-    private final @Nullable Map<String,Object> customEnvironmentVariables;
+    private @Nullable Map<String,Object> customEnvironmentVariables;
     /**
      * @return (Updatable) Git configuration Details.
      * 
      */
-    private final @Nullable NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails notebookSessionGitConfigDetails;
+    private @Nullable NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails notebookSessionGitConfigDetails;
 
-    @CustomType.Constructor
-    private NotebookSessionNotebookSessionRuntimeConfigDetails(
-        @CustomType.Parameter("customEnvironmentVariables") @Nullable Map<String,Object> customEnvironmentVariables,
-        @CustomType.Parameter("notebookSessionGitConfigDetails") @Nullable NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails notebookSessionGitConfigDetails) {
-        this.customEnvironmentVariables = customEnvironmentVariables;
-        this.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
-    }
-
+    private NotebookSessionNotebookSessionRuntimeConfigDetails() {}
     /**
      * @return (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
      * 
@@ -55,30 +48,32 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetails {
     public static Builder builder(NotebookSessionNotebookSessionRuntimeConfigDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> customEnvironmentVariables;
         private @Nullable NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails notebookSessionGitConfigDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NotebookSessionNotebookSessionRuntimeConfigDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customEnvironmentVariables = defaults.customEnvironmentVariables;
     	      this.notebookSessionGitConfigDetails = defaults.notebookSessionGitConfigDetails;
         }
 
+        @CustomType.Setter
         public Builder customEnvironmentVariables(@Nullable Map<String,Object> customEnvironmentVariables) {
             this.customEnvironmentVariables = customEnvironmentVariables;
             return this;
         }
+        @CustomType.Setter
         public Builder notebookSessionGitConfigDetails(@Nullable NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails notebookSessionGitConfigDetails) {
             this.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
             return this;
-        }        public NotebookSessionNotebookSessionRuntimeConfigDetails build() {
-            return new NotebookSessionNotebookSessionRuntimeConfigDetails(customEnvironmentVariables, notebookSessionGitConfigDetails);
+        }
+        public NotebookSessionNotebookSessionRuntimeConfigDetails build() {
+            final var o = new NotebookSessionNotebookSessionRuntimeConfigDetails();
+            o.customEnvironmentVariables = customEnvironmentVariables;
+            o.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
+            return o;
         }
     }
 }

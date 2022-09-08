@@ -13,91 +13,64 @@ public final class GetManagedDatabaseAddmTaskItem {
      * @return The ID number of the beginning AWR snapshot.
      * 
      */
-    private final String beginSnapshotId;
+    private String beginSnapshotId;
     /**
      * @return The database user who owns the ADDM task.
      * 
      */
-    private final String dbUser;
+    private String dbUser;
     /**
      * @return The description of the ADDM task.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The ID number of the ending AWR snapshot.
      * 
      */
-    private final String endSnapshotId;
+    private String endSnapshotId;
     /**
      * @return The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
      * 
      */
-    private final String endSnapshotTime;
+    private String endSnapshotTime;
     /**
      * @return The number of ADDM findings.
      * 
      */
-    private final String findings;
+    private String findings;
     /**
      * @return A description of how the task was created.
      * 
      */
-    private final String howCreated;
+    private String howCreated;
     /**
      * @return The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
      * 
      */
-    private final String startSnapshotTime;
+    private String startSnapshotTime;
     /**
      * @return The status of the ADDM task.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The ID number of the ADDM task.
      * 
      */
-    private final String taskId;
+    private String taskId;
     /**
      * @return The name of the ADDM task.
      * 
      */
-    private final String taskName;
+    private String taskName;
     /**
      * @return The creation date of the ADDM task.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseAddmTaskItem(
-        @CustomType.Parameter("beginSnapshotId") String beginSnapshotId,
-        @CustomType.Parameter("dbUser") String dbUser,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("endSnapshotId") String endSnapshotId,
-        @CustomType.Parameter("endSnapshotTime") String endSnapshotTime,
-        @CustomType.Parameter("findings") String findings,
-        @CustomType.Parameter("howCreated") String howCreated,
-        @CustomType.Parameter("startSnapshotTime") String startSnapshotTime,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("taskId") String taskId,
-        @CustomType.Parameter("taskName") String taskName,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.beginSnapshotId = beginSnapshotId;
-        this.dbUser = dbUser;
-        this.description = description;
-        this.endSnapshotId = endSnapshotId;
-        this.endSnapshotTime = endSnapshotTime;
-        this.findings = findings;
-        this.howCreated = howCreated;
-        this.startSnapshotTime = startSnapshotTime;
-        this.status = status;
-        this.taskId = taskId;
-        this.taskName = taskName;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetManagedDatabaseAddmTaskItem() {}
     /**
      * @return The ID number of the beginning AWR snapshot.
      * 
@@ -190,7 +163,7 @@ public final class GetManagedDatabaseAddmTaskItem {
     public static Builder builder(GetManagedDatabaseAddmTaskItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String beginSnapshotId;
         private String dbUser;
@@ -204,11 +177,7 @@ public final class GetManagedDatabaseAddmTaskItem {
         private String taskId;
         private String taskName;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseAddmTaskItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.beginSnapshotId = defaults.beginSnapshotId;
@@ -225,55 +194,81 @@ public final class GetManagedDatabaseAddmTaskItem {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder beginSnapshotId(String beginSnapshotId) {
             this.beginSnapshotId = Objects.requireNonNull(beginSnapshotId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbUser(String dbUser) {
             this.dbUser = Objects.requireNonNull(dbUser);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder endSnapshotId(String endSnapshotId) {
             this.endSnapshotId = Objects.requireNonNull(endSnapshotId);
             return this;
         }
+        @CustomType.Setter
         public Builder endSnapshotTime(String endSnapshotTime) {
             this.endSnapshotTime = Objects.requireNonNull(endSnapshotTime);
             return this;
         }
+        @CustomType.Setter
         public Builder findings(String findings) {
             this.findings = Objects.requireNonNull(findings);
             return this;
         }
+        @CustomType.Setter
         public Builder howCreated(String howCreated) {
             this.howCreated = Objects.requireNonNull(howCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder startSnapshotTime(String startSnapshotTime) {
             this.startSnapshotTime = Objects.requireNonNull(startSnapshotTime);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder taskId(String taskId) {
             this.taskId = Objects.requireNonNull(taskId);
             return this;
         }
+        @CustomType.Setter
         public Builder taskName(String taskName) {
             this.taskName = Objects.requireNonNull(taskName);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetManagedDatabaseAddmTaskItem build() {
-            return new GetManagedDatabaseAddmTaskItem(beginSnapshotId, dbUser, description, endSnapshotId, endSnapshotTime, findings, howCreated, startSnapshotTime, status, taskId, taskName, timeCreated);
+        }
+        public GetManagedDatabaseAddmTaskItem build() {
+            final var o = new GetManagedDatabaseAddmTaskItem();
+            o.beginSnapshotId = beginSnapshotId;
+            o.dbUser = dbUser;
+            o.description = description;
+            o.endSnapshotId = endSnapshotId;
+            o.endSnapshotTime = endSnapshotTime;
+            o.findings = findings;
+            o.howCreated = howCreated;
+            o.startSnapshotTime = startSnapshotTime;
+            o.status = status;
+            o.taskId = taskId;
+            o.taskName = taskName;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

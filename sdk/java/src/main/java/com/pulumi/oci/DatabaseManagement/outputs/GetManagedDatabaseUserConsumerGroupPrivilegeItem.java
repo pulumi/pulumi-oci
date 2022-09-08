@@ -13,28 +13,19 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegeItem {
      * @return Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
      * 
      */
-    private final String grantOption;
+    private String grantOption;
     /**
      * @return Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
      * 
      */
-    private final String initialGroup;
+    private String initialGroup;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserConsumerGroupPrivilegeItem(
-        @CustomType.Parameter("grantOption") String grantOption,
-        @CustomType.Parameter("initialGroup") String initialGroup,
-        @CustomType.Parameter("name") String name) {
-        this.grantOption = grantOption;
-        this.initialGroup = initialGroup;
-        this.name = name;
-    }
-
+    private GetManagedDatabaseUserConsumerGroupPrivilegeItem() {}
     /**
      * @return Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
      * 
@@ -64,16 +55,12 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegeItem {
     public static Builder builder(GetManagedDatabaseUserConsumerGroupPrivilegeItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String grantOption;
         private String initialGroup;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserConsumerGroupPrivilegeItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.grantOption = defaults.grantOption;
@@ -81,19 +68,27 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegeItem {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder grantOption(String grantOption) {
             this.grantOption = Objects.requireNonNull(grantOption);
             return this;
         }
+        @CustomType.Setter
         public Builder initialGroup(String initialGroup) {
             this.initialGroup = Objects.requireNonNull(initialGroup);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetManagedDatabaseUserConsumerGroupPrivilegeItem build() {
-            return new GetManagedDatabaseUserConsumerGroupPrivilegeItem(grantOption, initialGroup, name);
+        }
+        public GetManagedDatabaseUserConsumerGroupPrivilegeItem build() {
+            final var o = new GetManagedDatabaseUserConsumerGroupPrivilegeItem();
+            o.grantOption = grantOption;
+            o.initialGroup = initialGroup;
+            o.name = name;
+            return o;
         }
     }
 }

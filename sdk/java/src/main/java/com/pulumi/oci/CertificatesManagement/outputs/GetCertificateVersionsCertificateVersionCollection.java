@@ -14,13 +14,9 @@ public final class GetCertificateVersionsCertificateVersionCollection {
      * @return A list of certificate version summary objects.
      * 
      */
-    private final List<GetCertificateVersionsCertificateVersionCollectionItem> items;
+    private List<GetCertificateVersionsCertificateVersionCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetCertificateVersionsCertificateVersionCollection(@CustomType.Parameter("items") List<GetCertificateVersionsCertificateVersionCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetCertificateVersionsCertificateVersionCollection() {}
     /**
      * @return A list of certificate version summary objects.
      * 
@@ -36,27 +32,27 @@ public final class GetCertificateVersionsCertificateVersionCollection {
     public static Builder builder(GetCertificateVersionsCertificateVersionCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCertificateVersionsCertificateVersionCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateVersionsCertificateVersionCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetCertificateVersionsCertificateVersionCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetCertificateVersionsCertificateVersionCollectionItem... items) {
             return items(List.of(items));
-        }        public GetCertificateVersionsCertificateVersionCollection build() {
-            return new GetCertificateVersionsCertificateVersionCollection(items);
+        }
+        public GetCertificateVersionsCertificateVersionCollection build() {
+            final var o = new GetCertificateVersionsCertificateVersionCollection();
+            o.items = items;
+            return o;
         }
     }
 }

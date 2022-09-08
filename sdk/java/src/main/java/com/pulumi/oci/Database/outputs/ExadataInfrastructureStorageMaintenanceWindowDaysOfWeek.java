@@ -9,13 +9,9 @@ import java.util.Objects;
 
 @CustomType
 public final class ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek {
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek() {}
     public String name() {
         return this.name;
     }
@@ -27,24 +23,24 @@ public final class ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek {
     public static Builder builder(ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek build() {
-            return new ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek(name);
+        }
+        public ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek build() {
+            final var o = new ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek();
+            o.name = name;
+            return o;
         }
     }
 }

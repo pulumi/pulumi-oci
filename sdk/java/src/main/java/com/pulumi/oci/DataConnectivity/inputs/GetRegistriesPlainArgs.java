@@ -40,14 +40,14 @@ public final class GetRegistriesPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * This parameter allows list registries to deep look at whole tenancy.
+     * This parameter allows list registries to deep look at the whole tenancy.
      * 
      */
     @Import(name="isDeepLookup")
     private @Nullable Boolean isDeepLookup;
 
     /**
-     * @return This parameter allows list registries to deep look at whole tenancy.
+     * @return This parameter allows list registries to deep look at the whole tenancy.
      * 
      */
     public Optional<Boolean> isDeepLookup() {
@@ -133,7 +133,7 @@ public final class GetRegistriesPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param isDeepLookup This parameter allows list registries to deep look at whole tenancy.
+         * @param isDeepLookup This parameter allows list registries to deep look at the whole tenancy.
          * 
          * @return builder
          * 

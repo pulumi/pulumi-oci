@@ -16,49 +16,34 @@ public final class BucketRetentionRule {
      * @return A user-specified name for the retention rule. Names can be helpful in identifying retention rules. The name should be unique. This attribute is a forcenew attribute
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable BucketRetentionRuleDuration duration;
+    private @Nullable BucketRetentionRuleDuration duration;
     /**
      * @return Unique identifier for the retention rule.
      * 
      */
-    private final @Nullable String retentionRuleId;
+    private @Nullable String retentionRuleId;
     /**
      * @return The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final @Nullable String timeModified;
+    private @Nullable String timeModified;
     /**
      * @return (Updatable) The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are allowed and no other properties can be changed. This property cannot be updated for rules that are in a locked state. Specifying it when a duration is not specified is considered an error.
      * 
      */
-    private final @Nullable String timeRuleLocked;
+    private @Nullable String timeRuleLocked;
 
-    @CustomType.Constructor
-    private BucketRetentionRule(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("duration") @Nullable BucketRetentionRuleDuration duration,
-        @CustomType.Parameter("retentionRuleId") @Nullable String retentionRuleId,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeModified") @Nullable String timeModified,
-        @CustomType.Parameter("timeRuleLocked") @Nullable String timeRuleLocked) {
-        this.displayName = displayName;
-        this.duration = duration;
-        this.retentionRuleId = retentionRuleId;
-        this.timeCreated = timeCreated;
-        this.timeModified = timeModified;
-        this.timeRuleLocked = timeRuleLocked;
-    }
-
+    private BucketRetentionRule() {}
     /**
      * @return A user-specified name for the retention rule. Names can be helpful in identifying retention rules. The name should be unique. This attribute is a forcenew attribute
      * 
@@ -109,7 +94,7 @@ public final class BucketRetentionRule {
     public static Builder builder(BucketRetentionRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private @Nullable BucketRetentionRuleDuration duration;
@@ -117,11 +102,7 @@ public final class BucketRetentionRule {
         private @Nullable String timeCreated;
         private @Nullable String timeModified;
         private @Nullable String timeRuleLocked;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BucketRetentionRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -132,31 +113,45 @@ public final class BucketRetentionRule {
     	      this.timeRuleLocked = defaults.timeRuleLocked;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder duration(@Nullable BucketRetentionRuleDuration duration) {
             this.duration = duration;
             return this;
         }
+        @CustomType.Setter
         public Builder retentionRuleId(@Nullable String retentionRuleId) {
             this.retentionRuleId = retentionRuleId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeModified(@Nullable String timeModified) {
             this.timeModified = timeModified;
             return this;
         }
+        @CustomType.Setter
         public Builder timeRuleLocked(@Nullable String timeRuleLocked) {
             this.timeRuleLocked = timeRuleLocked;
             return this;
-        }        public BucketRetentionRule build() {
-            return new BucketRetentionRule(displayName, duration, retentionRuleId, timeCreated, timeModified, timeRuleLocked);
+        }
+        public BucketRetentionRule build() {
+            final var o = new BucketRetentionRule();
+            o.displayName = displayName;
+            o.duration = duration;
+            o.retentionRuleId = retentionRuleId;
+            o.timeCreated = timeCreated;
+            o.timeModified = timeModified;
+            o.timeRuleLocked = timeRuleLocked;
+            return o;
         }
     }
 }

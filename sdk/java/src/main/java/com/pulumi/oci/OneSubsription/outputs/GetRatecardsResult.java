@@ -14,47 +14,28 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRatecardsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetRatecardsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetRatecardsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Product part numner
      * 
      */
-    private final @Nullable String partNumber;
+    private @Nullable String partNumber;
     /**
      * @return The list of rate_cards.
      * 
      */
-    private final List<GetRatecardsRateCard> rateCards;
-    private final String subscriptionId;
-    private final @Nullable String timeFrom;
-    private final @Nullable String timeTo;
+    private List<GetRatecardsRateCard> rateCards;
+    private String subscriptionId;
+    private @Nullable String timeFrom;
+    private @Nullable String timeTo;
 
-    @CustomType.Constructor
-    private GetRatecardsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetRatecardsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("partNumber") @Nullable String partNumber,
-        @CustomType.Parameter("rateCards") List<GetRatecardsRateCard> rateCards,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("timeFrom") @Nullable String timeFrom,
-        @CustomType.Parameter("timeTo") @Nullable String timeTo) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.partNumber = partNumber;
-        this.rateCards = rateCards;
-        this.subscriptionId = subscriptionId;
-        this.timeFrom = timeFrom;
-        this.timeTo = timeTo;
-    }
-
+    private GetRatecardsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -99,7 +80,7 @@ public final class GetRatecardsResult {
     public static Builder builder(GetRatecardsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetRatecardsFilter> filters;
@@ -109,11 +90,7 @@ public final class GetRatecardsResult {
         private String subscriptionId;
         private @Nullable String timeFrom;
         private @Nullable String timeTo;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRatecardsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +103,12 @@ public final class GetRatecardsResult {
     	      this.timeTo = defaults.timeTo;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRatecardsFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,14 +116,17 @@ public final class GetRatecardsResult {
         public Builder filters(GetRatecardsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder partNumber(@Nullable String partNumber) {
             this.partNumber = partNumber;
             return this;
         }
+        @CustomType.Setter
         public Builder rateCards(List<GetRatecardsRateCard> rateCards) {
             this.rateCards = Objects.requireNonNull(rateCards);
             return this;
@@ -152,19 +134,32 @@ public final class GetRatecardsResult {
         public Builder rateCards(GetRatecardsRateCard... rateCards) {
             return rateCards(List.of(rateCards));
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFrom(@Nullable String timeFrom) {
             this.timeFrom = timeFrom;
             return this;
         }
+        @CustomType.Setter
         public Builder timeTo(@Nullable String timeTo) {
             this.timeTo = timeTo;
             return this;
-        }        public GetRatecardsResult build() {
-            return new GetRatecardsResult(compartmentId, filters, id, partNumber, rateCards, subscriptionId, timeFrom, timeTo);
+        }
+        public GetRatecardsResult build() {
+            final var o = new GetRatecardsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.partNumber = partNumber;
+            o.rateCards = rateCards;
+            o.subscriptionId = subscriptionId;
+            o.timeFrom = timeFrom;
+            o.timeTo = timeTo;
+            return o;
         }
     }
 }

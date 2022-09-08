@@ -15,21 +15,14 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The list of strategies used.
      * 
      */
-    private final List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy> strategies;
+    private List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy> strategies;
 
-    @CustomType.Constructor
-    private GetRecommendationStrategiesRecommendationStrategyCollectionItem(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("strategies") List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy> strategies) {
-        this.name = name;
-        this.strategies = strategies;
-    }
-
+    private GetRecommendationStrategiesRecommendationStrategyCollectionItem() {}
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
@@ -52,33 +45,35 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
     public static Builder builder(GetRecommendationStrategiesRecommendationStrategyCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy> strategies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationStrategiesRecommendationStrategyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.strategies = defaults.strategies;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder strategies(List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy> strategies) {
             this.strategies = Objects.requireNonNull(strategies);
             return this;
         }
         public Builder strategies(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy... strategies) {
             return strategies(List.of(strategies));
-        }        public GetRecommendationStrategiesRecommendationStrategyCollectionItem build() {
-            return new GetRecommendationStrategiesRecommendationStrategyCollectionItem(name, strategies);
+        }
+        public GetRecommendationStrategiesRecommendationStrategyCollectionItem build() {
+            final var o = new GetRecommendationStrategiesRecommendationStrategyCollectionItem();
+            o.name = name;
+            o.strategies = strategies;
+            return o;
         }
     }
 }

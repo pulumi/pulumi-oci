@@ -9,21 +9,14 @@ import java.util.Objects;
 
 @CustomType
 public final class GetGenericArtifactsContentResult {
-    private final String artifactId;
+    private String artifactId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetGenericArtifactsContentResult(
-        @CustomType.Parameter("artifactId") String artifactId,
-        @CustomType.Parameter("id") String id) {
-        this.artifactId = artifactId;
-        this.id = id;
-    }
-
+    private GetGenericArtifactsContentResult() {}
     public String artifactId() {
         return this.artifactId;
     }
@@ -42,30 +35,32 @@ public final class GetGenericArtifactsContentResult {
     public static Builder builder(GetGenericArtifactsContentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String artifactId;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGenericArtifactsContentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.artifactId = defaults.artifactId;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder artifactId(String artifactId) {
             this.artifactId = Objects.requireNonNull(artifactId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetGenericArtifactsContentResult build() {
-            return new GetGenericArtifactsContentResult(artifactId, id);
+        }
+        public GetGenericArtifactsContentResult build() {
+            final var o = new GetGenericArtifactsContentResult();
+            o.artifactId = artifactId;
+            o.id = id;
+            return o;
         }
     }
 }

@@ -18,66 +18,45 @@ public final class GetRepositoryDiffsDiffCollectionItem {
      * @return Indicates whether the changed file contains conflicts.
      * 
      */
-    private final Boolean areConflictsInFile;
+    private Boolean areConflictsInFile;
     /**
      * @return List of changed section in the file.
      * 
      */
-    private final List<GetRepositoryDiffsDiffCollectionItemChange> changes;
-    private final Map<String,Object> freeformTags;
+    private List<GetRepositoryDiffsDiffCollectionItemChange> changes;
+    private Map<String,Object> freeformTags;
     /**
      * @return Indicates whether the file is binary.
      * 
      */
-    private final Boolean isBinary;
+    private Boolean isBinary;
     /**
      * @return Indicates whether the file is large.
      * 
      */
-    private final Boolean isLarge;
+    private Boolean isLarge;
     /**
      * @return The ID of the changed object on the target version.
      * 
      */
-    private final String newId;
+    private String newId;
     /**
      * @return The path on the target version to the changed object.
      * 
      */
-    private final String newPath;
+    private String newPath;
     /**
      * @return The ID of the changed object on the base version.
      * 
      */
-    private final String oldId;
+    private String oldId;
     /**
      * @return The path on the base version to the changed object.
      * 
      */
-    private final String oldPath;
+    private String oldPath;
 
-    @CustomType.Constructor
-    private GetRepositoryDiffsDiffCollectionItem(
-        @CustomType.Parameter("areConflictsInFile") Boolean areConflictsInFile,
-        @CustomType.Parameter("changes") List<GetRepositoryDiffsDiffCollectionItemChange> changes,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("isBinary") Boolean isBinary,
-        @CustomType.Parameter("isLarge") Boolean isLarge,
-        @CustomType.Parameter("newId") String newId,
-        @CustomType.Parameter("newPath") String newPath,
-        @CustomType.Parameter("oldId") String oldId,
-        @CustomType.Parameter("oldPath") String oldPath) {
-        this.areConflictsInFile = areConflictsInFile;
-        this.changes = changes;
-        this.freeformTags = freeformTags;
-        this.isBinary = isBinary;
-        this.isLarge = isLarge;
-        this.newId = newId;
-        this.newPath = newPath;
-        this.oldId = oldId;
-        this.oldPath = oldPath;
-    }
-
+    private GetRepositoryDiffsDiffCollectionItem() {}
     /**
      * @return Indicates whether the changed file contains conflicts.
      * 
@@ -145,7 +124,7 @@ public final class GetRepositoryDiffsDiffCollectionItem {
     public static Builder builder(GetRepositoryDiffsDiffCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean areConflictsInFile;
         private List<GetRepositoryDiffsDiffCollectionItemChange> changes;
@@ -156,11 +135,7 @@ public final class GetRepositoryDiffsDiffCollectionItem {
         private String newPath;
         private String oldId;
         private String oldPath;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryDiffsDiffCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areConflictsInFile = defaults.areConflictsInFile;
@@ -174,10 +149,12 @@ public final class GetRepositoryDiffsDiffCollectionItem {
     	      this.oldPath = defaults.oldPath;
         }
 
+        @CustomType.Setter
         public Builder areConflictsInFile(Boolean areConflictsInFile) {
             this.areConflictsInFile = Objects.requireNonNull(areConflictsInFile);
             return this;
         }
+        @CustomType.Setter
         public Builder changes(List<GetRepositoryDiffsDiffCollectionItemChange> changes) {
             this.changes = Objects.requireNonNull(changes);
             return this;
@@ -185,35 +162,53 @@ public final class GetRepositoryDiffsDiffCollectionItem {
         public Builder changes(GetRepositoryDiffsDiffCollectionItemChange... changes) {
             return changes(List.of(changes));
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder isBinary(Boolean isBinary) {
             this.isBinary = Objects.requireNonNull(isBinary);
             return this;
         }
+        @CustomType.Setter
         public Builder isLarge(Boolean isLarge) {
             this.isLarge = Objects.requireNonNull(isLarge);
             return this;
         }
+        @CustomType.Setter
         public Builder newId(String newId) {
             this.newId = Objects.requireNonNull(newId);
             return this;
         }
+        @CustomType.Setter
         public Builder newPath(String newPath) {
             this.newPath = Objects.requireNonNull(newPath);
             return this;
         }
+        @CustomType.Setter
         public Builder oldId(String oldId) {
             this.oldId = Objects.requireNonNull(oldId);
             return this;
         }
+        @CustomType.Setter
         public Builder oldPath(String oldPath) {
             this.oldPath = Objects.requireNonNull(oldPath);
             return this;
-        }        public GetRepositoryDiffsDiffCollectionItem build() {
-            return new GetRepositoryDiffsDiffCollectionItem(areConflictsInFile, changes, freeformTags, isBinary, isLarge, newId, newPath, oldId, oldPath);
+        }
+        public GetRepositoryDiffsDiffCollectionItem build() {
+            final var o = new GetRepositoryDiffsDiffCollectionItem();
+            o.areConflictsInFile = areConflictsInFile;
+            o.changes = changes;
+            o.freeformTags = freeformTags;
+            o.isBinary = isBinary;
+            o.isLarge = isLarge;
+            o.newId = newId;
+            o.newPath = newPath;
+            o.oldId = oldId;
+            o.oldPath = oldPath;
+            return o;
         }
     }
 }

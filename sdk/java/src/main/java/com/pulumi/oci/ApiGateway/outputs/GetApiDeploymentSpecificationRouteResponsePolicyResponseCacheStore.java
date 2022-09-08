@@ -14,21 +14,14 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyResponseCache
      * @return Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
      * 
      */
-    private final Integer timeToLiveInSeconds;
+    private Integer timeToLiveInSeconds;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore(
-        @CustomType.Parameter("timeToLiveInSeconds") Integer timeToLiveInSeconds,
-        @CustomType.Parameter("type") String type) {
-        this.timeToLiveInSeconds = timeToLiveInSeconds;
-        this.type = type;
-    }
-
+    private GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore() {}
     /**
      * @return Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
      * 
@@ -51,30 +44,32 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyResponseCache
     public static Builder builder(GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer timeToLiveInSeconds;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.timeToLiveInSeconds = defaults.timeToLiveInSeconds;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder timeToLiveInSeconds(Integer timeToLiveInSeconds) {
             this.timeToLiveInSeconds = Objects.requireNonNull(timeToLiveInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore build() {
-            return new GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore(timeToLiveInSeconds, type);
+        }
+        public GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore build() {
+            final var o = new GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore();
+            o.timeToLiveInSeconds = timeToLiveInSeconds;
+            o.type = type;
+            return o;
         }
     }
 }

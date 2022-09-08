@@ -24,199 +24,140 @@ public final class GetMigrationResult {
      * @return Optional Pre-Migration advisor settings.
      * 
      */
-    private final List<GetMigrationAdvisorSetting> advisorSettings;
+    private List<GetMigrationAdvisorSetting> advisorSettings;
     /**
      * @return The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
      * 
      */
-    private final String agentId;
+    private String agentId;
     /**
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
      * 
      */
-    private final String credentialsSecretId;
+    private String credentialsSecretId;
     /**
      * @return Data Transfer Medium details for the Migration.
      * 
      */
-    private final List<GetMigrationDataTransferMediumDetail> dataTransferMediumDetails;
+    private List<GetMigrationDataTransferMediumDetail> dataTransferMediumDetails;
     /**
      * @return Optional settings for Data Pump Export and Import jobs
      * 
      */
-    private final List<GetMigrationDatapumpSetting> datapumpSettings;
+    private List<GetMigrationDatapumpSetting> datapumpSettings;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Migration Display Name
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Optional additional properties for dump transfer.
      * 
      */
-    private final List<GetMigrationDumpTransferDetail> dumpTransferDetails;
+    private List<GetMigrationDumpTransferDetail> dumpTransferDetails;
     /**
      * @return Database objects to exclude from migration. If &#39;includeObjects&#39; are specified, only exclude object types can be specified with general wildcards (.*) for owner and objectName.
      * 
      */
-    private final List<GetMigrationExcludeObject> excludeObjects;
+    private List<GetMigrationExcludeObject> excludeObjects;
     /**
      * @return OCID of the current ODMS Job in execution for the Migration, if any.
      * 
      */
-    private final String executingJobId;
+    private String executingJobId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Details about Oracle GoldenGate Microservices.
      * 
      */
-    private final List<GetMigrationGoldenGateDetail> goldenGateDetails;
+    private List<GetMigrationGoldenGateDetail> goldenGateDetails;
     /**
      * @return The OCID of the resource
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Database objects to include from migration.
      * 
      */
-    private final List<GetMigrationIncludeObject> includeObjects;
+    private List<GetMigrationIncludeObject> includeObjects;
     /**
      * @return Additional status related to the execution and current state of the Migration.
      * 
      */
-    private final String lifecycleDetails;
-    private final String migrationId;
+    private String lifecycleDetails;
+    private String migrationId;
     /**
      * @return The OCID of the Source Container Database Connection.
      * 
      */
-    private final String sourceContainerDatabaseConnectionId;
+    private String sourceContainerDatabaseConnectionId;
     /**
      * @return The OCID of the Source Database Connection.
      * 
      */
-    private final String sourceDatabaseConnectionId;
+    private String sourceDatabaseConnectionId;
     /**
      * @return The current state of the Migration resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The OCID of the Target Database Connection.
      * 
      */
-    private final String targetDatabaseConnectionId;
+    private String targetDatabaseConnectionId;
     /**
      * @return The time the Migration was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time of last Migration. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeLastMigration;
+    private String timeLastMigration;
     /**
      * @return The time of the last Migration details update. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Migration type.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
      * 
      */
-    private final List<GetMigrationVaultDetail> vaultDetails;
+    private List<GetMigrationVaultDetail> vaultDetails;
     /**
      * @return Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
      * 
      */
-    private final String waitAfter;
+    private String waitAfter;
 
-    @CustomType.Constructor
-    private GetMigrationResult(
-        @CustomType.Parameter("advisorSettings") List<GetMigrationAdvisorSetting> advisorSettings,
-        @CustomType.Parameter("agentId") String agentId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("credentialsSecretId") String credentialsSecretId,
-        @CustomType.Parameter("dataTransferMediumDetails") List<GetMigrationDataTransferMediumDetail> dataTransferMediumDetails,
-        @CustomType.Parameter("datapumpSettings") List<GetMigrationDatapumpSetting> datapumpSettings,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("dumpTransferDetails") List<GetMigrationDumpTransferDetail> dumpTransferDetails,
-        @CustomType.Parameter("excludeObjects") List<GetMigrationExcludeObject> excludeObjects,
-        @CustomType.Parameter("executingJobId") String executingJobId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("goldenGateDetails") List<GetMigrationGoldenGateDetail> goldenGateDetails,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("includeObjects") List<GetMigrationIncludeObject> includeObjects,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("migrationId") String migrationId,
-        @CustomType.Parameter("sourceContainerDatabaseConnectionId") String sourceContainerDatabaseConnectionId,
-        @CustomType.Parameter("sourceDatabaseConnectionId") String sourceDatabaseConnectionId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("targetDatabaseConnectionId") String targetDatabaseConnectionId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastMigration") String timeLastMigration,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vaultDetails") List<GetMigrationVaultDetail> vaultDetails,
-        @CustomType.Parameter("waitAfter") String waitAfter) {
-        this.advisorSettings = advisorSettings;
-        this.agentId = agentId;
-        this.compartmentId = compartmentId;
-        this.credentialsSecretId = credentialsSecretId;
-        this.dataTransferMediumDetails = dataTransferMediumDetails;
-        this.datapumpSettings = datapumpSettings;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.dumpTransferDetails = dumpTransferDetails;
-        this.excludeObjects = excludeObjects;
-        this.executingJobId = executingJobId;
-        this.freeformTags = freeformTags;
-        this.goldenGateDetails = goldenGateDetails;
-        this.id = id;
-        this.includeObjects = includeObjects;
-        this.lifecycleDetails = lifecycleDetails;
-        this.migrationId = migrationId;
-        this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
-        this.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.targetDatabaseConnectionId = targetDatabaseConnectionId;
-        this.timeCreated = timeCreated;
-        this.timeLastMigration = timeLastMigration;
-        this.timeUpdated = timeUpdated;
-        this.type = type;
-        this.vaultDetails = vaultDetails;
-        this.waitAfter = waitAfter;
-    }
-
+    private GetMigrationResult() {}
     /**
      * @return Optional Pre-Migration advisor settings.
      * 
@@ -417,7 +358,7 @@ public final class GetMigrationResult {
     public static Builder builder(GetMigrationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMigrationAdvisorSetting> advisorSettings;
         private String agentId;
@@ -447,11 +388,7 @@ public final class GetMigrationResult {
         private String type;
         private List<GetMigrationVaultDetail> vaultDetails;
         private String waitAfter;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advisorSettings = defaults.advisorSettings;
@@ -484,6 +421,7 @@ public final class GetMigrationResult {
     	      this.waitAfter = defaults.waitAfter;
         }
 
+        @CustomType.Setter
         public Builder advisorSettings(List<GetMigrationAdvisorSetting> advisorSettings) {
             this.advisorSettings = Objects.requireNonNull(advisorSettings);
             return this;
@@ -491,18 +429,22 @@ public final class GetMigrationResult {
         public Builder advisorSettings(GetMigrationAdvisorSetting... advisorSettings) {
             return advisorSettings(List.of(advisorSettings));
         }
+        @CustomType.Setter
         public Builder agentId(String agentId) {
             this.agentId = Objects.requireNonNull(agentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder credentialsSecretId(String credentialsSecretId) {
             this.credentialsSecretId = Objects.requireNonNull(credentialsSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataTransferMediumDetails(List<GetMigrationDataTransferMediumDetail> dataTransferMediumDetails) {
             this.dataTransferMediumDetails = Objects.requireNonNull(dataTransferMediumDetails);
             return this;
@@ -510,6 +452,7 @@ public final class GetMigrationResult {
         public Builder dataTransferMediumDetails(GetMigrationDataTransferMediumDetail... dataTransferMediumDetails) {
             return dataTransferMediumDetails(List.of(dataTransferMediumDetails));
         }
+        @CustomType.Setter
         public Builder datapumpSettings(List<GetMigrationDatapumpSetting> datapumpSettings) {
             this.datapumpSettings = Objects.requireNonNull(datapumpSettings);
             return this;
@@ -517,14 +460,17 @@ public final class GetMigrationResult {
         public Builder datapumpSettings(GetMigrationDatapumpSetting... datapumpSettings) {
             return datapumpSettings(List.of(datapumpSettings));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder dumpTransferDetails(List<GetMigrationDumpTransferDetail> dumpTransferDetails) {
             this.dumpTransferDetails = Objects.requireNonNull(dumpTransferDetails);
             return this;
@@ -532,6 +478,7 @@ public final class GetMigrationResult {
         public Builder dumpTransferDetails(GetMigrationDumpTransferDetail... dumpTransferDetails) {
             return dumpTransferDetails(List.of(dumpTransferDetails));
         }
+        @CustomType.Setter
         public Builder excludeObjects(List<GetMigrationExcludeObject> excludeObjects) {
             this.excludeObjects = Objects.requireNonNull(excludeObjects);
             return this;
@@ -539,14 +486,17 @@ public final class GetMigrationResult {
         public Builder excludeObjects(GetMigrationExcludeObject... excludeObjects) {
             return excludeObjects(List.of(excludeObjects));
         }
+        @CustomType.Setter
         public Builder executingJobId(String executingJobId) {
             this.executingJobId = Objects.requireNonNull(executingJobId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder goldenGateDetails(List<GetMigrationGoldenGateDetail> goldenGateDetails) {
             this.goldenGateDetails = Objects.requireNonNull(goldenGateDetails);
             return this;
@@ -554,10 +504,12 @@ public final class GetMigrationResult {
         public Builder goldenGateDetails(GetMigrationGoldenGateDetail... goldenGateDetails) {
             return goldenGateDetails(List.of(goldenGateDetails));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder includeObjects(List<GetMigrationIncludeObject> includeObjects) {
             this.includeObjects = Objects.requireNonNull(includeObjects);
             return this;
@@ -565,50 +517,62 @@ public final class GetMigrationResult {
         public Builder includeObjects(GetMigrationIncludeObject... includeObjects) {
             return includeObjects(List.of(includeObjects));
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder migrationId(String migrationId) {
             this.migrationId = Objects.requireNonNull(migrationId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceContainerDatabaseConnectionId(String sourceContainerDatabaseConnectionId) {
             this.sourceContainerDatabaseConnectionId = Objects.requireNonNull(sourceContainerDatabaseConnectionId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceDatabaseConnectionId(String sourceDatabaseConnectionId) {
             this.sourceDatabaseConnectionId = Objects.requireNonNull(sourceDatabaseConnectionId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder targetDatabaseConnectionId(String targetDatabaseConnectionId) {
             this.targetDatabaseConnectionId = Objects.requireNonNull(targetDatabaseConnectionId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastMigration(String timeLastMigration) {
             this.timeLastMigration = Objects.requireNonNull(timeLastMigration);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultDetails(List<GetMigrationVaultDetail> vaultDetails) {
             this.vaultDetails = Objects.requireNonNull(vaultDetails);
             return this;
@@ -616,11 +580,42 @@ public final class GetMigrationResult {
         public Builder vaultDetails(GetMigrationVaultDetail... vaultDetails) {
             return vaultDetails(List.of(vaultDetails));
         }
+        @CustomType.Setter
         public Builder waitAfter(String waitAfter) {
             this.waitAfter = Objects.requireNonNull(waitAfter);
             return this;
-        }        public GetMigrationResult build() {
-            return new GetMigrationResult(advisorSettings, agentId, compartmentId, credentialsSecretId, dataTransferMediumDetails, datapumpSettings, definedTags, displayName, dumpTransferDetails, excludeObjects, executingJobId, freeformTags, goldenGateDetails, id, includeObjects, lifecycleDetails, migrationId, sourceContainerDatabaseConnectionId, sourceDatabaseConnectionId, state, systemTags, targetDatabaseConnectionId, timeCreated, timeLastMigration, timeUpdated, type, vaultDetails, waitAfter);
+        }
+        public GetMigrationResult build() {
+            final var o = new GetMigrationResult();
+            o.advisorSettings = advisorSettings;
+            o.agentId = agentId;
+            o.compartmentId = compartmentId;
+            o.credentialsSecretId = credentialsSecretId;
+            o.dataTransferMediumDetails = dataTransferMediumDetails;
+            o.datapumpSettings = datapumpSettings;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.dumpTransferDetails = dumpTransferDetails;
+            o.excludeObjects = excludeObjects;
+            o.executingJobId = executingJobId;
+            o.freeformTags = freeformTags;
+            o.goldenGateDetails = goldenGateDetails;
+            o.id = id;
+            o.includeObjects = includeObjects;
+            o.lifecycleDetails = lifecycleDetails;
+            o.migrationId = migrationId;
+            o.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
+            o.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.targetDatabaseConnectionId = targetDatabaseConnectionId;
+            o.timeCreated = timeCreated;
+            o.timeLastMigration = timeLastMigration;
+            o.timeUpdated = timeUpdated;
+            o.type = type;
+            o.vaultDetails = vaultDetails;
+            o.waitAfter = waitAfter;
+            return o;
         }
     }
 }

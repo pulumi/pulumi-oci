@@ -13,59 +13,40 @@ public final class GetEnrollmentStatusesEnrollmentStatusCollectionItem {
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final String enrollmentStatusId;
+    private String compartmentId;
+    private String enrollmentStatusId;
     /**
      * @return The OCID of the enrollment status.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A filter that returns results that match the lifecycle state specified.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return A filter that returns results that match the Cloud Advisor enrollment status specified.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The reason for the enrollment status of the tenancy.
      * 
      */
-    private final String statusReason;
+    private String statusReason;
     /**
      * @return The date and time the enrollment status was created, in the format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the enrollment status was last updated, in the format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetEnrollmentStatusesEnrollmentStatusCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("enrollmentStatusId") String enrollmentStatusId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("statusReason") String statusReason,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.enrollmentStatusId = enrollmentStatusId;
-        this.id = id;
-        this.state = state;
-        this.status = status;
-        this.statusReason = statusReason;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetEnrollmentStatusesEnrollmentStatusCollectionItem() {}
     /**
      * @return The OCID of the compartment.
      * 
@@ -126,7 +107,7 @@ public final class GetEnrollmentStatusesEnrollmentStatusCollectionItem {
     public static Builder builder(GetEnrollmentStatusesEnrollmentStatusCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String enrollmentStatusId;
@@ -136,11 +117,7 @@ public final class GetEnrollmentStatusesEnrollmentStatusCollectionItem {
         private String statusReason;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEnrollmentStatusesEnrollmentStatusCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -153,39 +130,57 @@ public final class GetEnrollmentStatusesEnrollmentStatusCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder enrollmentStatusId(String enrollmentStatusId) {
             this.enrollmentStatusId = Objects.requireNonNull(enrollmentStatusId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder statusReason(String statusReason) {
             this.statusReason = Objects.requireNonNull(statusReason);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetEnrollmentStatusesEnrollmentStatusCollectionItem build() {
-            return new GetEnrollmentStatusesEnrollmentStatusCollectionItem(compartmentId, enrollmentStatusId, id, state, status, statusReason, timeCreated, timeUpdated);
+        }
+        public GetEnrollmentStatusesEnrollmentStatusCollectionItem build() {
+            final var o = new GetEnrollmentStatusesEnrollmentStatusCollectionItem();
+            o.compartmentId = compartmentId;
+            o.enrollmentStatusId = enrollmentStatusId;
+            o.id = id;
+            o.state = state;
+            o.status = status;
+            o.statusReason = statusReason;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

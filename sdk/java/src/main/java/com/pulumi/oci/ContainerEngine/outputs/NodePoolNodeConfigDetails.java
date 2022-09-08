@@ -22,63 +22,44 @@ public final class NodePoolNodeConfigDetails {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return (Updatable) Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
      * 
      */
-    private final @Nullable Boolean isPvEncryptionInTransitEnabled;
+    private @Nullable Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
      * 
      */
-    private final @Nullable String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return (Updatable) The CNI related configuration of pods in the node pool.
      * 
      */
-    private final @Nullable NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails;
+    private @Nullable NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails;
     /**
      * @return (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
-    private final @Nullable List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
      * 
      */
-    private final List<NodePoolNodeConfigDetailsPlacementConfig> placementConfigs;
+    private List<NodePoolNodeConfigDetailsPlacementConfig> placementConfigs;
     /**
      * @return (Updatable) The number of nodes that should be in the node pool.
      * 
      */
-    private final Integer size;
+    private Integer size;
 
-    @CustomType.Constructor
-    private NodePoolNodeConfigDetails(
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
-        @CustomType.Parameter("isPvEncryptionInTransitEnabled") @Nullable Boolean isPvEncryptionInTransitEnabled,
-        @CustomType.Parameter("kmsKeyId") @Nullable String kmsKeyId,
-        @CustomType.Parameter("nodePoolPodNetworkOptionDetails") @Nullable NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails,
-        @CustomType.Parameter("nsgIds") @Nullable List<String> nsgIds,
-        @CustomType.Parameter("placementConfigs") List<NodePoolNodeConfigDetailsPlacementConfig> placementConfigs,
-        @CustomType.Parameter("size") Integer size) {
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-        this.kmsKeyId = kmsKeyId;
-        this.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
-        this.nsgIds = nsgIds;
-        this.placementConfigs = placementConfigs;
-        this.size = size;
-    }
-
+    private NodePoolNodeConfigDetails() {}
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -143,7 +124,7 @@ public final class NodePoolNodeConfigDetails {
     public static Builder builder(NodePoolNodeConfigDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> definedTags;
         private @Nullable Map<String,Object> freeformTags;
@@ -153,11 +134,7 @@ public final class NodePoolNodeConfigDetails {
         private @Nullable List<String> nsgIds;
         private List<NodePoolNodeConfigDetailsPlacementConfig> placementConfigs;
         private Integer size;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NodePoolNodeConfigDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
@@ -170,26 +147,32 @@ public final class NodePoolNodeConfigDetails {
     	      this.size = defaults.size;
         }
 
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             return this;
         }
+        @CustomType.Setter
         public Builder nodePoolPodNetworkOptionDetails(@Nullable NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails) {
             this.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
             this.nsgIds = nsgIds;
             return this;
@@ -197,6 +180,7 @@ public final class NodePoolNodeConfigDetails {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder placementConfigs(List<NodePoolNodeConfigDetailsPlacementConfig> placementConfigs) {
             this.placementConfigs = Objects.requireNonNull(placementConfigs);
             return this;
@@ -204,11 +188,22 @@ public final class NodePoolNodeConfigDetails {
         public Builder placementConfigs(NodePoolNodeConfigDetailsPlacementConfig... placementConfigs) {
             return placementConfigs(List.of(placementConfigs));
         }
+        @CustomType.Setter
         public Builder size(Integer size) {
             this.size = Objects.requireNonNull(size);
             return this;
-        }        public NodePoolNodeConfigDetails build() {
-            return new NodePoolNodeConfigDetails(definedTags, freeformTags, isPvEncryptionInTransitEnabled, kmsKeyId, nodePoolPodNetworkOptionDetails, nsgIds, placementConfigs, size);
+        }
+        public NodePoolNodeConfigDetails build() {
+            final var o = new NodePoolNodeConfigDetails();
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            o.kmsKeyId = kmsKeyId;
+            o.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
+            o.nsgIds = nsgIds;
+            o.placementConfigs = placementConfigs;
+            o.size = size;
+            return o;
         }
     }
 }

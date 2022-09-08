@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection {
-    private final List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem> items;
+    private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection(@CustomType.Parameter("items") List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection() {}
     public List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
     public static Builder builder(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection build() {
-            return new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection(items);
+        }
+        public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection build() {
+            final var o = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -10,61 +10,48 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator {
     /**
-     * @return User-defined description for the folder.
+     * @return User-defined description of the folder.
      * 
      */
-    private final String description;
+    private String description;
     /**
-     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
-     * @return Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Type of the object to filter the results with.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.description = description;
-        this.identifier = identifier;
-        this.key = key;
-        this.name = name;
-        this.type = type;
-    }
-
+    private GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator() {}
     /**
-     * @return User-defined description for the folder.
+     * @return User-defined description of the folder.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public String identifier() {
         return this.identifier;
     }
     /**
-     * @return Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public String key() {
@@ -92,18 +79,14 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadat
     public static Builder builder(GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String identifier;
         private String key;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -113,27 +96,39 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadat
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator build() {
-            return new GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator(description, identifier, key, name, type);
+        }
+        public GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator build() {
+            final var o = new GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator();
+            o.description = description;
+            o.identifier = identifier;
+            o.key = key;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -12,34 +12,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClusterNetworkDownloadConfigFileResult {
-    private final @Nullable Boolean base64EncodeContent;
+    private @Nullable Boolean base64EncodeContent;
     /**
      * @return content of the downloaded config file for exadata infrastructure. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    private final String content;
-    private final String exadataInfrastructureId;
+    private String content;
+    private String exadataInfrastructureId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String vmClusterNetworkId;
+    private String id;
+    private String vmClusterNetworkId;
 
-    @CustomType.Constructor
-    private GetVmClusterNetworkDownloadConfigFileResult(
-        @CustomType.Parameter("base64EncodeContent") @Nullable Boolean base64EncodeContent,
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("exadataInfrastructureId") String exadataInfrastructureId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("vmClusterNetworkId") String vmClusterNetworkId) {
-        this.base64EncodeContent = base64EncodeContent;
-        this.content = content;
-        this.exadataInfrastructureId = exadataInfrastructureId;
-        this.id = id;
-        this.vmClusterNetworkId = vmClusterNetworkId;
-    }
-
+    private GetVmClusterNetworkDownloadConfigFileResult() {}
     public Optional<Boolean> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -71,18 +58,14 @@ public final class GetVmClusterNetworkDownloadConfigFileResult {
     public static Builder builder(GetVmClusterNetworkDownloadConfigFileResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean base64EncodeContent;
         private String content;
         private String exadataInfrastructureId;
         private String id;
         private String vmClusterNetworkId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterNetworkDownloadConfigFileResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.base64EncodeContent = defaults.base64EncodeContent;
@@ -92,27 +75,39 @@ public final class GetVmClusterNetworkDownloadConfigFileResult {
     	      this.vmClusterNetworkId = defaults.vmClusterNetworkId;
         }
 
+        @CustomType.Setter
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
             this.base64EncodeContent = base64EncodeContent;
             return this;
         }
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterNetworkId(String vmClusterNetworkId) {
             this.vmClusterNetworkId = Objects.requireNonNull(vmClusterNetworkId);
             return this;
-        }        public GetVmClusterNetworkDownloadConfigFileResult build() {
-            return new GetVmClusterNetworkDownloadConfigFileResult(base64EncodeContent, content, exadataInfrastructureId, id, vmClusterNetworkId);
+        }
+        public GetVmClusterNetworkDownloadConfigFileResult build() {
+            final var o = new GetVmClusterNetworkDownloadConfigFileResult();
+            o.base64EncodeContent = base64EncodeContent;
+            o.content = content;
+            o.exadataInfrastructureId = exadataInfrastructureId;
+            o.id = id;
+            o.vmClusterNetworkId = vmClusterNetworkId;
+            return o;
         }
     }
 }

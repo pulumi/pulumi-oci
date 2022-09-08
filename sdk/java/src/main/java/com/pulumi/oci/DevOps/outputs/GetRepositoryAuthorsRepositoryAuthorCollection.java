@@ -14,13 +14,9 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollection {
      * @return List of author objects.
      * 
      */
-    private final List<GetRepositoryAuthorsRepositoryAuthorCollectionItem> items;
+    private List<GetRepositoryAuthorsRepositoryAuthorCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRepositoryAuthorsRepositoryAuthorCollection(@CustomType.Parameter("items") List<GetRepositoryAuthorsRepositoryAuthorCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRepositoryAuthorsRepositoryAuthorCollection() {}
     /**
      * @return List of author objects.
      * 
@@ -36,27 +32,27 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollection {
     public static Builder builder(GetRepositoryAuthorsRepositoryAuthorCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRepositoryAuthorsRepositoryAuthorCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryAuthorsRepositoryAuthorCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRepositoryAuthorsRepositoryAuthorCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRepositoryAuthorsRepositoryAuthorCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRepositoryAuthorsRepositoryAuthorCollection build() {
-            return new GetRepositoryAuthorsRepositoryAuthorCollection(items);
+        }
+        public GetRepositoryAuthorsRepositoryAuthorCollection build() {
+            final var o = new GetRepositoryAuthorsRepositoryAuthorCollection();
+            o.items = items;
+            return o;
         }
     }
 }

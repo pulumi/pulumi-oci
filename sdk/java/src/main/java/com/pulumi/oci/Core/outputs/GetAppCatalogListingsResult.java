@@ -18,41 +18,26 @@ public final class GetAppCatalogListingsResult {
      * @return The list of app_catalog_listings.
      * 
      */
-    private final List<GetAppCatalogListingsAppCatalogListing> appCatalogListings;
+    private List<GetAppCatalogListingsAppCatalogListing> appCatalogListings;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAppCatalogListingsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAppCatalogListingsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the publisher who published this listing.
      * 
      */
-    private final @Nullable String publisherName;
-    private final @Nullable String publisherType;
+    private @Nullable String publisherName;
+    private @Nullable String publisherType;
 
-    @CustomType.Constructor
-    private GetAppCatalogListingsResult(
-        @CustomType.Parameter("appCatalogListings") List<GetAppCatalogListingsAppCatalogListing> appCatalogListings,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAppCatalogListingsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("publisherName") @Nullable String publisherName,
-        @CustomType.Parameter("publisherType") @Nullable String publisherType) {
-        this.appCatalogListings = appCatalogListings;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.publisherName = publisherName;
-        this.publisherType = publisherType;
-    }
-
+    private GetAppCatalogListingsResult() {}
     /**
      * @return The list of app_catalog_listings.
      * 
@@ -95,7 +80,7 @@ public final class GetAppCatalogListingsResult {
     public static Builder builder(GetAppCatalogListingsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAppCatalogListingsAppCatalogListing> appCatalogListings;
         private @Nullable String displayName;
@@ -103,11 +88,7 @@ public final class GetAppCatalogListingsResult {
         private String id;
         private @Nullable String publisherName;
         private @Nullable String publisherType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppCatalogListingsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.appCatalogListings = defaults.appCatalogListings;
@@ -118,6 +99,7 @@ public final class GetAppCatalogListingsResult {
     	      this.publisherType = defaults.publisherType;
         }
 
+        @CustomType.Setter
         public Builder appCatalogListings(List<GetAppCatalogListingsAppCatalogListing> appCatalogListings) {
             this.appCatalogListings = Objects.requireNonNull(appCatalogListings);
             return this;
@@ -125,10 +107,12 @@ public final class GetAppCatalogListingsResult {
         public Builder appCatalogListings(GetAppCatalogListingsAppCatalogListing... appCatalogListings) {
             return appCatalogListings(List.of(appCatalogListings));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAppCatalogListingsFilter> filters) {
             this.filters = filters;
             return this;
@@ -136,19 +120,30 @@ public final class GetAppCatalogListingsResult {
         public Builder filters(GetAppCatalogListingsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder publisherName(@Nullable String publisherName) {
             this.publisherName = publisherName;
             return this;
         }
+        @CustomType.Setter
         public Builder publisherType(@Nullable String publisherType) {
             this.publisherType = publisherType;
             return this;
-        }        public GetAppCatalogListingsResult build() {
-            return new GetAppCatalogListingsResult(appCatalogListings, displayName, filters, id, publisherName, publisherType);
+        }
+        public GetAppCatalogListingsResult build() {
+            final var o = new GetAppCatalogListingsResult();
+            o.appCatalogListings = appCatalogListings;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.publisherName = publisherName;
+            o.publisherType = publisherType;
+            return o;
         }
     }
 }

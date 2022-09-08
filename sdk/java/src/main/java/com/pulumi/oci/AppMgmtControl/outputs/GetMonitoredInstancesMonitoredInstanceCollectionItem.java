@@ -13,70 +13,49 @@ public final class GetMonitoredInstancesMonitoredInstanceCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
      * 
      */
-    private final String instanceId;
+    private String instanceId;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke manage operations on Management Agent Cloud Service.
      * 
      */
-    private final String managementAgentId;
+    private String managementAgentId;
     /**
      * @return Monitoring status. Can be either enabled or disabled.
      * 
      */
-    private final String monitoringState;
+    private String monitoringState;
     /**
      * @return The current state of the monitored instance.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time the MonitoredInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetMonitoredInstancesMonitoredInstanceCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("managementAgentId") String managementAgentId,
-        @CustomType.Parameter("monitoringState") String monitoringState,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.instanceId = instanceId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.managementAgentId = managementAgentId;
-        this.monitoringState = monitoringState;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetMonitoredInstancesMonitoredInstanceCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -148,7 +127,7 @@ public final class GetMonitoredInstancesMonitoredInstanceCollectionItem {
     public static Builder builder(GetMonitoredInstancesMonitoredInstanceCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String displayName;
@@ -159,11 +138,7 @@ public final class GetMonitoredInstancesMonitoredInstanceCollectionItem {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitoredInstancesMonitoredInstanceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -177,43 +152,63 @@ public final class GetMonitoredInstancesMonitoredInstanceCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = Objects.requireNonNull(managementAgentId);
             return this;
         }
+        @CustomType.Setter
         public Builder monitoringState(String monitoringState) {
             this.monitoringState = Objects.requireNonNull(monitoringState);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetMonitoredInstancesMonitoredInstanceCollectionItem build() {
-            return new GetMonitoredInstancesMonitoredInstanceCollectionItem(compartmentId, displayName, instanceId, lifecycleDetails, managementAgentId, monitoringState, state, timeCreated, timeUpdated);
+        }
+        public GetMonitoredInstancesMonitoredInstanceCollectionItem build() {
+            final var o = new GetMonitoredInstancesMonitoredInstanceCollectionItem();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.instanceId = instanceId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.managementAgentId = managementAgentId;
+            o.monitoringState = monitoringState;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

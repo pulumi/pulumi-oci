@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSupportedVmwareSoftwareVersionsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetSupportedVmwareSoftwareVersionsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetSupportedVmwareSoftwareVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A list of the supported versions of bundled VMware software.
      * 
      */
-    private final List<GetSupportedVmwareSoftwareVersionsItem> items;
+    private List<GetSupportedVmwareSoftwareVersionsItem> items;
 
-    @CustomType.Constructor
-    private GetSupportedVmwareSoftwareVersionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetSupportedVmwareSoftwareVersionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetSupportedVmwareSoftwareVersionsItem> items) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetSupportedVmwareSoftwareVersionsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
     public static Builder builder(GetSupportedVmwareSoftwareVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSupportedVmwareSoftwareVersionsFilter> filters;
         private String id;
         private List<GetSupportedVmwareSoftwareVersionsItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSupportedVmwareSoftwareVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSupportedVmwareSoftwareVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
         public Builder filters(GetSupportedVmwareSoftwareVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetSupportedVmwareSoftwareVersionsItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSupportedVmwareSoftwareVersionsItem... items) {
             return items(List.of(items));
-        }        public GetSupportedVmwareSoftwareVersionsResult build() {
-            return new GetSupportedVmwareSoftwareVersionsResult(compartmentId, filters, id, items);
+        }
+        public GetSupportedVmwareSoftwareVersionsResult build() {
+            final var o = new GetSupportedVmwareSoftwareVersionsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

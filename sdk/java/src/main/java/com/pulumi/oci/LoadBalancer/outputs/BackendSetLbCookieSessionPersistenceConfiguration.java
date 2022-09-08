@@ -17,56 +17,39 @@ public final class BackendSetLbCookieSessionPersistenceConfiguration {
      * @return (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
      * 
      */
-    private final @Nullable String cookieName;
+    private @Nullable String cookieName;
     /**
      * @return (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
      * 
      */
-    private final @Nullable Boolean disableFallback;
+    private @Nullable Boolean disableFallback;
     /**
      * @return (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
      * 
      */
-    private final @Nullable String domain;
+    private @Nullable String domain;
     /**
      * @return (Updatable) Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
      * 
      */
-    private final @Nullable Boolean isHttpOnly;
+    private @Nullable Boolean isHttpOnly;
     /**
      * @return (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
      * 
      */
-    private final @Nullable Boolean isSecure;
+    private @Nullable Boolean isSecure;
     /**
      * @return (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
      * 
      */
-    private final @Nullable Integer maxAgeInSeconds;
+    private @Nullable Integer maxAgeInSeconds;
     /**
      * @return (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
      * 
      */
-    private final @Nullable String path;
+    private @Nullable String path;
 
-    @CustomType.Constructor
-    private BackendSetLbCookieSessionPersistenceConfiguration(
-        @CustomType.Parameter("cookieName") @Nullable String cookieName,
-        @CustomType.Parameter("disableFallback") @Nullable Boolean disableFallback,
-        @CustomType.Parameter("domain") @Nullable String domain,
-        @CustomType.Parameter("isHttpOnly") @Nullable Boolean isHttpOnly,
-        @CustomType.Parameter("isSecure") @Nullable Boolean isSecure,
-        @CustomType.Parameter("maxAgeInSeconds") @Nullable Integer maxAgeInSeconds,
-        @CustomType.Parameter("path") @Nullable String path) {
-        this.cookieName = cookieName;
-        this.disableFallback = disableFallback;
-        this.domain = domain;
-        this.isHttpOnly = isHttpOnly;
-        this.isSecure = isSecure;
-        this.maxAgeInSeconds = maxAgeInSeconds;
-        this.path = path;
-    }
-
+    private BackendSetLbCookieSessionPersistenceConfiguration() {}
     /**
      * @return (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
      * 
@@ -124,7 +107,7 @@ public final class BackendSetLbCookieSessionPersistenceConfiguration {
     public static Builder builder(BackendSetLbCookieSessionPersistenceConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String cookieName;
         private @Nullable Boolean disableFallback;
@@ -133,11 +116,7 @@ public final class BackendSetLbCookieSessionPersistenceConfiguration {
         private @Nullable Boolean isSecure;
         private @Nullable Integer maxAgeInSeconds;
         private @Nullable String path;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BackendSetLbCookieSessionPersistenceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cookieName = defaults.cookieName;
@@ -149,35 +128,51 @@ public final class BackendSetLbCookieSessionPersistenceConfiguration {
     	      this.path = defaults.path;
         }
 
+        @CustomType.Setter
         public Builder cookieName(@Nullable String cookieName) {
             this.cookieName = cookieName;
             return this;
         }
+        @CustomType.Setter
         public Builder disableFallback(@Nullable Boolean disableFallback) {
             this.disableFallback = disableFallback;
             return this;
         }
+        @CustomType.Setter
         public Builder domain(@Nullable String domain) {
             this.domain = domain;
             return this;
         }
+        @CustomType.Setter
         public Builder isHttpOnly(@Nullable Boolean isHttpOnly) {
             this.isHttpOnly = isHttpOnly;
             return this;
         }
+        @CustomType.Setter
         public Builder isSecure(@Nullable Boolean isSecure) {
             this.isSecure = isSecure;
             return this;
         }
+        @CustomType.Setter
         public Builder maxAgeInSeconds(@Nullable Integer maxAgeInSeconds) {
             this.maxAgeInSeconds = maxAgeInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder path(@Nullable String path) {
             this.path = path;
             return this;
-        }        public BackendSetLbCookieSessionPersistenceConfiguration build() {
-            return new BackendSetLbCookieSessionPersistenceConfiguration(cookieName, disableFallback, domain, isHttpOnly, isSecure, maxAgeInSeconds, path);
+        }
+        public BackendSetLbCookieSessionPersistenceConfiguration build() {
+            final var o = new BackendSetLbCookieSessionPersistenceConfiguration();
+            o.cookieName = cookieName;
+            o.disableFallback = disableFallback;
+            o.domain = domain;
+            o.isHttpOnly = isHttpOnly;
+            o.isSecure = isSecure;
+            o.maxAgeInSeconds = maxAgeInSeconds;
+            o.path = path;
+            return o;
         }
     }
 }

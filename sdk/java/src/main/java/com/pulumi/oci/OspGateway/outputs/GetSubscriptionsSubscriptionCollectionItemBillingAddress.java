@@ -13,84 +13,59 @@ public final class GetSubscriptionsSubscriptionCollectionItemBillingAddress {
      * @return Address identifier.
      * 
      */
-    private final String addressKey;
+    private String addressKey;
     /**
      * @return Name of the city.
      * 
      */
-    private final String city;
+    private String city;
     /**
      * @return Name of the customer company.
      * 
      */
-    private final String companyName;
+    private String companyName;
     /**
      * @return Country of the address.
      * 
      */
-    private final String country;
+    private String country;
     /**
      * @return The email address of the paypal user.
      * 
      */
-    private final String emailAddress;
+    private String emailAddress;
     /**
      * @return First name of the paypal user.
      * 
      */
-    private final String firstName;
+    private String firstName;
     /**
      * @return Last name of the paypal user.
      * 
      */
-    private final String lastName;
+    private String lastName;
     /**
      * @return Address line 1.
      * 
      */
-    private final String line1;
+    private String line1;
     /**
      * @return Address line 2.
      * 
      */
-    private final String line2;
+    private String line2;
     /**
      * @return Post code of the address.
      * 
      */
-    private final String postalCode;
+    private String postalCode;
     /**
      * @return State of the address.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetSubscriptionsSubscriptionCollectionItemBillingAddress(
-        @CustomType.Parameter("addressKey") String addressKey,
-        @CustomType.Parameter("city") String city,
-        @CustomType.Parameter("companyName") String companyName,
-        @CustomType.Parameter("country") String country,
-        @CustomType.Parameter("emailAddress") String emailAddress,
-        @CustomType.Parameter("firstName") String firstName,
-        @CustomType.Parameter("lastName") String lastName,
-        @CustomType.Parameter("line1") String line1,
-        @CustomType.Parameter("line2") String line2,
-        @CustomType.Parameter("postalCode") String postalCode,
-        @CustomType.Parameter("state") String state) {
-        this.addressKey = addressKey;
-        this.city = city;
-        this.companyName = companyName;
-        this.country = country;
-        this.emailAddress = emailAddress;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.line1 = line1;
-        this.line2 = line2;
-        this.postalCode = postalCode;
-        this.state = state;
-    }
-
+    private GetSubscriptionsSubscriptionCollectionItemBillingAddress() {}
     /**
      * @return Address identifier.
      * 
@@ -176,7 +151,7 @@ public final class GetSubscriptionsSubscriptionCollectionItemBillingAddress {
     public static Builder builder(GetSubscriptionsSubscriptionCollectionItemBillingAddress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String addressKey;
         private String city;
@@ -189,11 +164,7 @@ public final class GetSubscriptionsSubscriptionCollectionItemBillingAddress {
         private String line2;
         private String postalCode;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsSubscriptionCollectionItemBillingAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addressKey = defaults.addressKey;
@@ -209,51 +180,75 @@ public final class GetSubscriptionsSubscriptionCollectionItemBillingAddress {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder addressKey(String addressKey) {
             this.addressKey = Objects.requireNonNull(addressKey);
             return this;
         }
+        @CustomType.Setter
         public Builder city(String city) {
             this.city = Objects.requireNonNull(city);
             return this;
         }
+        @CustomType.Setter
         public Builder companyName(String companyName) {
             this.companyName = Objects.requireNonNull(companyName);
             return this;
         }
+        @CustomType.Setter
         public Builder country(String country) {
             this.country = Objects.requireNonNull(country);
             return this;
         }
+        @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = Objects.requireNonNull(emailAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder firstName(String firstName) {
             this.firstName = Objects.requireNonNull(firstName);
             return this;
         }
+        @CustomType.Setter
         public Builder lastName(String lastName) {
             this.lastName = Objects.requireNonNull(lastName);
             return this;
         }
+        @CustomType.Setter
         public Builder line1(String line1) {
             this.line1 = Objects.requireNonNull(line1);
             return this;
         }
+        @CustomType.Setter
         public Builder line2(String line2) {
             this.line2 = Objects.requireNonNull(line2);
             return this;
         }
+        @CustomType.Setter
         public Builder postalCode(String postalCode) {
             this.postalCode = Objects.requireNonNull(postalCode);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetSubscriptionsSubscriptionCollectionItemBillingAddress build() {
-            return new GetSubscriptionsSubscriptionCollectionItemBillingAddress(addressKey, city, companyName, country, emailAddress, firstName, lastName, line1, line2, postalCode, state);
+        }
+        public GetSubscriptionsSubscriptionCollectionItemBillingAddress build() {
+            final var o = new GetSubscriptionsSubscriptionCollectionItemBillingAddress();
+            o.addressKey = addressKey;
+            o.city = city;
+            o.companyName = companyName;
+            o.country = country;
+            o.emailAddress = emailAddress;
+            o.firstName = firstName;
+            o.lastName = lastName;
+            o.line1 = line1;
+            o.line2 = line2;
+            o.postalCode = postalCode;
+            o.state = state;
+            return o;
         }
     }
 }

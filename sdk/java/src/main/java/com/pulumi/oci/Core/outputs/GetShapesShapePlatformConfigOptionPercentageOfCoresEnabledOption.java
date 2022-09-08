@@ -13,28 +13,19 @@ public final class GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOpt
      * @return The default percentage of cores enabled.
      * 
      */
-    private final Integer defaultValue;
+    private Integer defaultValue;
     /**
      * @return The maximum allowed percentage of cores enabled.
      * 
      */
-    private final Integer max;
+    private Integer max;
     /**
      * @return The minimum allowed percentage of cores enabled.
      * 
      */
-    private final Integer min;
+    private Integer min;
 
-    @CustomType.Constructor
-    private GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption(
-        @CustomType.Parameter("defaultValue") Integer defaultValue,
-        @CustomType.Parameter("max") Integer max,
-        @CustomType.Parameter("min") Integer min) {
-        this.defaultValue = defaultValue;
-        this.max = max;
-        this.min = min;
-    }
-
+    private GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption() {}
     /**
      * @return The default percentage of cores enabled.
      * 
@@ -64,16 +55,12 @@ public final class GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOpt
     public static Builder builder(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer defaultValue;
         private Integer max;
         private Integer min;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultValue = defaults.defaultValue;
@@ -81,19 +68,27 @@ public final class GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOpt
     	      this.min = defaults.min;
         }
 
+        @CustomType.Setter
         public Builder defaultValue(Integer defaultValue) {
             this.defaultValue = Objects.requireNonNull(defaultValue);
             return this;
         }
+        @CustomType.Setter
         public Builder max(Integer max) {
             this.max = Objects.requireNonNull(max);
             return this;
         }
+        @CustomType.Setter
         public Builder min(Integer min) {
             this.min = Objects.requireNonNull(min);
             return this;
-        }        public GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption build() {
-            return new GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption(defaultValue, max, min);
+        }
+        public GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption build() {
+            final var o = new GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption();
+            o.defaultValue = defaultValue;
+            o.max = max;
+            o.min = min;
+            return o;
         }
     }
 }

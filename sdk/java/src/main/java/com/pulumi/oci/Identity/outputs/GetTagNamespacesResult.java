@@ -19,41 +19,26 @@ public final class GetTagNamespacesResult {
      * @return The OCID of the compartment that contains the tag namespace.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetTagNamespacesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetTagNamespacesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean includeSubcompartments;
+    private String id;
+    private @Nullable Boolean includeSubcompartments;
     /**
      * @return The tagnamespace&#39;s current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of tag_namespaces.
      * 
      */
-    private final List<GetTagNamespacesTagNamespace> tagNamespaces;
+    private List<GetTagNamespacesTagNamespace> tagNamespaces;
 
-    @CustomType.Constructor
-    private GetTagNamespacesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetTagNamespacesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("includeSubcompartments") @Nullable Boolean includeSubcompartments,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("tagNamespaces") List<GetTagNamespacesTagNamespace> tagNamespaces) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.includeSubcompartments = includeSubcompartments;
-        this.state = state;
-        this.tagNamespaces = tagNamespaces;
-    }
-
+    private GetTagNamespacesResult() {}
     /**
      * @return The OCID of the compartment that contains the tag namespace.
      * 
@@ -96,7 +81,7 @@ public final class GetTagNamespacesResult {
     public static Builder builder(GetTagNamespacesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetTagNamespacesFilter> filters;
@@ -104,11 +89,7 @@ public final class GetTagNamespacesResult {
         private @Nullable Boolean includeSubcompartments;
         private @Nullable String state;
         private List<GetTagNamespacesTagNamespace> tagNamespaces;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTagNamespacesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -119,10 +100,12 @@ public final class GetTagNamespacesResult {
     	      this.tagNamespaces = defaults.tagNamespaces;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTagNamespacesFilter> filters) {
             this.filters = filters;
             return this;
@@ -130,26 +113,38 @@ public final class GetTagNamespacesResult {
         public Builder filters(GetTagNamespacesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder includeSubcompartments(@Nullable Boolean includeSubcompartments) {
             this.includeSubcompartments = includeSubcompartments;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder tagNamespaces(List<GetTagNamespacesTagNamespace> tagNamespaces) {
             this.tagNamespaces = Objects.requireNonNull(tagNamespaces);
             return this;
         }
         public Builder tagNamespaces(GetTagNamespacesTagNamespace... tagNamespaces) {
             return tagNamespaces(List.of(tagNamespaces));
-        }        public GetTagNamespacesResult build() {
-            return new GetTagNamespacesResult(compartmentId, filters, id, includeSubcompartments, state, tagNamespaces);
+        }
+        public GetTagNamespacesResult build() {
+            final var o = new GetTagNamespacesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.includeSubcompartments = includeSubcompartments;
+            o.state = state;
+            o.tagNamespaces = tagNamespaces;
+            return o;
         }
     }
 }

@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataKeysResult {
-    private final String apmDomainId;
-    private final @Nullable String dataKeyType;
+    private String apmDomainId;
+    private @Nullable String dataKeyType;
     /**
      * @return The list of data_keys.
      * 
      */
-    private final List<GetDataKeysDataKey> dataKeys;
-    private final @Nullable List<GetDataKeysFilter> filters;
+    private List<GetDataKeysDataKey> dataKeys;
+    private @Nullable List<GetDataKeysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDataKeysResult(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("dataKeyType") @Nullable String dataKeyType,
-        @CustomType.Parameter("dataKeys") List<GetDataKeysDataKey> dataKeys,
-        @CustomType.Parameter("filters") @Nullable List<GetDataKeysFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.apmDomainId = apmDomainId;
-        this.dataKeyType = dataKeyType;
-        this.dataKeys = dataKeys;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetDataKeysResult() {}
     public String apmDomainId() {
         return this.apmDomainId;
     }
@@ -73,18 +60,14 @@ public final class GetDataKeysResult {
     public static Builder builder(GetDataKeysResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private @Nullable String dataKeyType;
         private List<GetDataKeysDataKey> dataKeys;
         private @Nullable List<GetDataKeysFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -94,14 +77,17 @@ public final class GetDataKeysResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataKeyType(@Nullable String dataKeyType) {
             this.dataKeyType = dataKeyType;
             return this;
         }
+        @CustomType.Setter
         public Builder dataKeys(List<GetDataKeysDataKey> dataKeys) {
             this.dataKeys = Objects.requireNonNull(dataKeys);
             return this;
@@ -109,6 +95,7 @@ public final class GetDataKeysResult {
         public Builder dataKeys(GetDataKeysDataKey... dataKeys) {
             return dataKeys(List.of(dataKeys));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDataKeysFilter> filters) {
             this.filters = filters;
             return this;
@@ -116,11 +103,19 @@ public final class GetDataKeysResult {
         public Builder filters(GetDataKeysFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDataKeysResult build() {
-            return new GetDataKeysResult(apmDomainId, dataKeyType, dataKeys, filters, id);
+        }
+        public GetDataKeysResult build() {
+            final var o = new GetDataKeysResult();
+            o.apmDomainId = apmDomainId;
+            o.dataKeyType = dataKeyType;
+            o.dataKeys = dataKeys;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

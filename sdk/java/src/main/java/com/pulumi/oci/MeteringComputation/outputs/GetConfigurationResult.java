@@ -15,24 +15,15 @@ public final class GetConfigurationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of available configurations.
      * 
      */
-    private final List<GetConfigurationItem> items;
-    private final String tenantId;
+    private List<GetConfigurationItem> items;
+    private String tenantId;
 
-    @CustomType.Constructor
-    private GetConfigurationResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetConfigurationItem> items,
-        @CustomType.Parameter("tenantId") String tenantId) {
-        this.id = id;
-        this.items = items;
-        this.tenantId = tenantId;
-    }
-
+    private GetConfigurationResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -58,16 +49,12 @@ public final class GetConfigurationResult {
     public static Builder builder(GetConfigurationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetConfigurationItem> items;
         private String tenantId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -75,10 +62,12 @@ public final class GetConfigurationResult {
     	      this.tenantId = defaults.tenantId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetConfigurationItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -86,11 +75,17 @@ public final class GetConfigurationResult {
         public Builder items(GetConfigurationItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder tenantId(String tenantId) {
             this.tenantId = Objects.requireNonNull(tenantId);
             return this;
-        }        public GetConfigurationResult build() {
-            return new GetConfigurationResult(id, items, tenantId);
+        }
+        public GetConfigurationResult build() {
+            final var o = new GetConfigurationResult();
+            o.id = id;
+            o.items = items;
+            o.tenantId = tenantId;
+            return o;
         }
     }
 }

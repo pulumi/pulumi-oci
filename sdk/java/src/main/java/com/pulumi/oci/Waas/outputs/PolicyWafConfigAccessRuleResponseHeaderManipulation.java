@@ -15,28 +15,19 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulation {
      * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
      * 
      */
-    private final String header;
+    private String header;
     /**
      * @return (Updatable) The value of the header.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private PolicyWafConfigAccessRuleResponseHeaderManipulation(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("header") String header,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.action = action;
-        this.header = header;
-        this.value = value;
-    }
-
+    private PolicyWafConfigAccessRuleResponseHeaderManipulation() {}
     /**
      * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
@@ -66,16 +57,12 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulation {
     public static Builder builder(PolicyWafConfigAccessRuleResponseHeaderManipulation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private String header;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyWafConfigAccessRuleResponseHeaderManipulation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -83,19 +70,27 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulation {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder header(String header) {
             this.header = Objects.requireNonNull(header);
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public PolicyWafConfigAccessRuleResponseHeaderManipulation build() {
-            return new PolicyWafConfigAccessRuleResponseHeaderManipulation(action, header, value);
+        }
+        public PolicyWafConfigAccessRuleResponseHeaderManipulation build() {
+            final var o = new PolicyWafConfigAccessRuleResponseHeaderManipulation();
+            o.action = action;
+            o.header = header;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -15,126 +15,89 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
      * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String autonomousDatabaseId;
+    private String autonomousDatabaseId;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The size of the database in terabytes at the time the backup was taken.
      * 
      */
-    private final Double databaseSizeInTbs;
+    private Double databaseSizeInTbs;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether the backup is user-initiated or automatic.
      * 
      */
-    private final Boolean isAutomatic;
+    private Boolean isAutomatic;
     /**
      * @return Indicates whether the backup can be used to restore the associated Autonomous Database.
      * 
      */
-    private final Boolean isRestorable;
+    private Boolean isRestorable;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    private final String keyStoreId;
+    private String keyStoreId;
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    private final String keyStoreWalletName;
+    private String keyStoreWalletName;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private final String kmsKeyVersionId;
+    private String kmsKeyVersionId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the backup completed.
      * 
      */
-    private final String timeEnded;
+    private String timeEnded;
     /**
      * @return The date and time the backup started.
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
     /**
      * @return The type of backup.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final String vaultId;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabaseBackupsAutonomousDatabaseBackup(
-        @CustomType.Parameter("autonomousDatabaseId") String autonomousDatabaseId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("databaseSizeInTbs") Double databaseSizeInTbs,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAutomatic") Boolean isAutomatic,
-        @CustomType.Parameter("isRestorable") Boolean isRestorable,
-        @CustomType.Parameter("keyStoreId") String keyStoreId,
-        @CustomType.Parameter("keyStoreWalletName") String keyStoreWalletName,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("kmsKeyVersionId") String kmsKeyVersionId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeEnded") String timeEnded,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.autonomousDatabaseId = autonomousDatabaseId;
-        this.compartmentId = compartmentId;
-        this.databaseSizeInTbs = databaseSizeInTbs;
-        this.displayName = displayName;
-        this.id = id;
-        this.isAutomatic = isAutomatic;
-        this.isRestorable = isRestorable;
-        this.keyStoreId = keyStoreId;
-        this.keyStoreWalletName = keyStoreWalletName;
-        this.kmsKeyId = kmsKeyId;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeEnded = timeEnded;
-        this.timeStarted = timeStarted;
-        this.type = type;
-        this.vaultId = vaultId;
-    }
-
+    private GetAutonomousDatabaseBackupsAutonomousDatabaseBackup() {}
     /**
      * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -262,7 +225,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
     public static Builder builder(GetAutonomousDatabaseBackupsAutonomousDatabaseBackup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String autonomousDatabaseId;
         private String compartmentId;
@@ -281,11 +244,7 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
         private String timeStarted;
         private String type;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabaseBackupsAutonomousDatabaseBackup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
@@ -307,75 +266,111 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSizeInTbs(Double databaseSizeInTbs) {
             this.databaseSizeInTbs = Objects.requireNonNull(databaseSizeInTbs);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAutomatic(Boolean isAutomatic) {
             this.isAutomatic = Objects.requireNonNull(isAutomatic);
             return this;
         }
+        @CustomType.Setter
         public Builder isRestorable(Boolean isRestorable) {
             this.isRestorable = Objects.requireNonNull(isRestorable);
             return this;
         }
+        @CustomType.Setter
         public Builder keyStoreId(String keyStoreId) {
             this.keyStoreId = Objects.requireNonNull(keyStoreId);
             return this;
         }
+        @CustomType.Setter
         public Builder keyStoreWalletName(String keyStoreWalletName) {
             this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             this.timeEnded = Objects.requireNonNull(timeEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public GetAutonomousDatabaseBackupsAutonomousDatabaseBackup build() {
-            return new GetAutonomousDatabaseBackupsAutonomousDatabaseBackup(autonomousDatabaseId, compartmentId, databaseSizeInTbs, displayName, id, isAutomatic, isRestorable, keyStoreId, keyStoreWalletName, kmsKeyId, kmsKeyVersionId, lifecycleDetails, state, timeEnded, timeStarted, type, vaultId);
+        }
+        public GetAutonomousDatabaseBackupsAutonomousDatabaseBackup build() {
+            final var o = new GetAutonomousDatabaseBackupsAutonomousDatabaseBackup();
+            o.autonomousDatabaseId = autonomousDatabaseId;
+            o.compartmentId = compartmentId;
+            o.databaseSizeInTbs = databaseSizeInTbs;
+            o.displayName = displayName;
+            o.id = id;
+            o.isAutomatic = isAutomatic;
+            o.isRestorable = isRestorable;
+            o.keyStoreId = keyStoreId;
+            o.keyStoreWalletName = keyStoreWalletName;
+            o.kmsKeyId = kmsKeyId;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeEnded = timeEnded;
+            o.timeStarted = timeStarted;
+            o.type = type;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

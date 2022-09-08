@@ -16,70 +16,49 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
      * @return (Updatable) The algorithm intended for use with this key.
      * 
      */
-    private final @Nullable String alg;
+    private @Nullable String alg;
     /**
      * @return (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
      * 
      */
-    private final @Nullable String e;
+    private @Nullable String e;
     /**
      * @return (Updatable) The format of the public key.
      * 
      */
-    private final String format;
+    private String format;
     /**
      * @return (Updatable) Name of the claim.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return (Updatable) The operations for which this key is to be used.
      * 
      */
-    private final @Nullable List<String> keyOps;
+    private @Nullable List<String> keyOps;
     /**
      * @return (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching &#34;kid&#34;.
      * 
      */
-    private final @Nullable String kid;
+    private @Nullable String kid;
     /**
      * @return (Updatable) The key type.
      * 
      */
-    private final @Nullable String kty;
+    private @Nullable String kty;
     /**
      * @return (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
      * 
      */
-    private final @Nullable String n;
+    private @Nullable String n;
     /**
      * @return (Updatable) The intended use of the public key.
      * 
      */
-    private final @Nullable String use;
+    private @Nullable String use;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey(
-        @CustomType.Parameter("alg") @Nullable String alg,
-        @CustomType.Parameter("e") @Nullable String e,
-        @CustomType.Parameter("format") String format,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("keyOps") @Nullable List<String> keyOps,
-        @CustomType.Parameter("kid") @Nullable String kid,
-        @CustomType.Parameter("kty") @Nullable String kty,
-        @CustomType.Parameter("n") @Nullable String n,
-        @CustomType.Parameter("use") @Nullable String use) {
-        this.alg = alg;
-        this.e = e;
-        this.format = format;
-        this.key = key;
-        this.keyOps = keyOps;
-        this.kid = kid;
-        this.kty = kty;
-        this.n = n;
-        this.use = use;
-    }
-
+    private DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey() {}
     /**
      * @return (Updatable) The algorithm intended for use with this key.
      * 
@@ -151,7 +130,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
     public static Builder builder(DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String alg;
         private @Nullable String e;
@@ -162,11 +141,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
         private @Nullable String kty;
         private @Nullable String n;
         private @Nullable String use;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alg = defaults.alg;
@@ -180,22 +155,27 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
     	      this.use = defaults.use;
         }
 
+        @CustomType.Setter
         public Builder alg(@Nullable String alg) {
             this.alg = alg;
             return this;
         }
+        @CustomType.Setter
         public Builder e(@Nullable String e) {
             this.e = e;
             return this;
         }
+        @CustomType.Setter
         public Builder format(String format) {
             this.format = Objects.requireNonNull(format);
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder keyOps(@Nullable List<String> keyOps) {
             this.keyOps = keyOps;
             return this;
@@ -203,23 +183,38 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
         public Builder keyOps(String... keyOps) {
             return keyOps(List.of(keyOps));
         }
+        @CustomType.Setter
         public Builder kid(@Nullable String kid) {
             this.kid = kid;
             return this;
         }
+        @CustomType.Setter
         public Builder kty(@Nullable String kty) {
             this.kty = kty;
             return this;
         }
+        @CustomType.Setter
         public Builder n(@Nullable String n) {
             this.n = n;
             return this;
         }
+        @CustomType.Setter
         public Builder use(@Nullable String use) {
             this.use = use;
             return this;
-        }        public DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey build() {
-            return new DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey(alg, e, format, key, keyOps, kid, kty, n, use);
+        }
+        public DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey build() {
+            final var o = new DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey();
+            o.alg = alg;
+            o.e = e;
+            o.format = format;
+            o.key = key;
+            o.keyOps = keyOps;
+            o.kid = kid;
+            o.kty = kty;
+            o.n = n;
+            o.use = use;
+            return o;
         }
     }
 }

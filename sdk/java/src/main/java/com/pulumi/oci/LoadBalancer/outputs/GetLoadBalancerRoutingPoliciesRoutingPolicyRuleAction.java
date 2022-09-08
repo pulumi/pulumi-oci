@@ -13,21 +13,14 @@ public final class GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction {
      * @return Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
      * 
      */
-    private final String backendSetName;
+    private String backendSetName;
     /**
      * @return A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction(
-        @CustomType.Parameter("backendSetName") String backendSetName,
-        @CustomType.Parameter("name") String name) {
-        this.backendSetName = backendSetName;
-        this.name = name;
-    }
-
+    private GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction() {}
     /**
      * @return Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
      * 
@@ -50,30 +43,32 @@ public final class GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction {
     public static Builder builder(GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backendSetName;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendSetName = defaults.backendSetName;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction build() {
-            return new GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction(backendSetName, name);
+        }
+        public GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction build() {
+            final var o = new GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction();
+            o.backendSetName = backendSetName;
+            o.name = name;
+            return o;
         }
     }
 }

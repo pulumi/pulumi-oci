@@ -14,63 +14,44 @@ public final class GetDbHomePatchesPatch {
      * @return Actions that can possibly be performed using this patch.
      * 
      */
-    private final List<String> availableActions;
+    private List<String> availableActions;
     /**
      * @return The text describing this patch package.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Action that is currently being performed or was completed last.
      * 
      */
-    private final String lastAction;
+    private String lastAction;
     /**
      * @return A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The current state of the patch as a result of lastAction.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time that the patch was released.
      * 
      */
-    private final String timeReleased;
+    private String timeReleased;
     /**
      * @return The version of this patch package.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetDbHomePatchesPatch(
-        @CustomType.Parameter("availableActions") List<String> availableActions,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lastAction") String lastAction,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeReleased") String timeReleased,
-        @CustomType.Parameter("version") String version) {
-        this.availableActions = availableActions;
-        this.description = description;
-        this.id = id;
-        this.lastAction = lastAction;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeReleased = timeReleased;
-        this.version = version;
-    }
-
+    private GetDbHomePatchesPatch() {}
     /**
      * @return Actions that can possibly be performed using this patch.
      * 
@@ -135,7 +116,7 @@ public final class GetDbHomePatchesPatch {
     public static Builder builder(GetDbHomePatchesPatch defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> availableActions;
         private String description;
@@ -145,11 +126,7 @@ public final class GetDbHomePatchesPatch {
         private String state;
         private String timeReleased;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbHomePatchesPatch defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableActions = defaults.availableActions;
@@ -162,6 +139,7 @@ public final class GetDbHomePatchesPatch {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder availableActions(List<String> availableActions) {
             this.availableActions = Objects.requireNonNull(availableActions);
             return this;
@@ -169,35 +147,52 @@ public final class GetDbHomePatchesPatch {
         public Builder availableActions(String... availableActions) {
             return availableActions(List.of(availableActions));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lastAction(String lastAction) {
             this.lastAction = Objects.requireNonNull(lastAction);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
             this.timeReleased = Objects.requireNonNull(timeReleased);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetDbHomePatchesPatch build() {
-            return new GetDbHomePatchesPatch(availableActions, description, id, lastAction, lifecycleDetails, state, timeReleased, version);
+        }
+        public GetDbHomePatchesPatch build() {
+            final var o = new GetDbHomePatchesPatch();
+            o.availableActions = availableActions;
+            o.description = description;
+            o.id = id;
+            o.lastAction = lastAction;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeReleased = timeReleased;
+            o.version = version;
+            return o;
         }
     }
 }

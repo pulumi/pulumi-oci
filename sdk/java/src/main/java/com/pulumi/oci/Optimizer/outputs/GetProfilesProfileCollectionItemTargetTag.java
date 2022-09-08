@@ -14,13 +14,9 @@ public final class GetProfilesProfileCollectionItemTargetTag {
      * @return The list of tags specified in the current profile override.
      * 
      */
-    private final List<GetProfilesProfileCollectionItemTargetTagItem> items;
+    private List<GetProfilesProfileCollectionItemTargetTagItem> items;
 
-    @CustomType.Constructor
-    private GetProfilesProfileCollectionItemTargetTag(@CustomType.Parameter("items") List<GetProfilesProfileCollectionItemTargetTagItem> items) {
-        this.items = items;
-    }
-
+    private GetProfilesProfileCollectionItemTargetTag() {}
     /**
      * @return The list of tags specified in the current profile override.
      * 
@@ -36,27 +32,27 @@ public final class GetProfilesProfileCollectionItemTargetTag {
     public static Builder builder(GetProfilesProfileCollectionItemTargetTag defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetProfilesProfileCollectionItemTargetTagItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfilesProfileCollectionItemTargetTag defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetProfilesProfileCollectionItemTargetTagItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetProfilesProfileCollectionItemTargetTagItem... items) {
             return items(List.of(items));
-        }        public GetProfilesProfileCollectionItemTargetTag build() {
-            return new GetProfilesProfileCollectionItemTargetTag(items);
+        }
+        public GetProfilesProfileCollectionItemTargetTag build() {
+            final var o = new GetProfilesProfileCollectionItemTargetTag();
+            o.items = items;
+            return o;
         }
     }
 }

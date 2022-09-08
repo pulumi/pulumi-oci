@@ -20,118 +20,81 @@ public final class GetListingPackageResult {
      * @return The ID of the listing resource associated with this listing package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
      * 
      */
-    private final String appCatalogListingId;
+    private String appCatalogListingId;
     /**
      * @return The resource version of the listing resource associated with this listing package.
      * 
      */
-    private final String appCatalogListingResourceVersion;
-    private final @Nullable String compartmentId;
+    private String appCatalogListingResourceVersion;
+    private @Nullable String compartmentId;
     /**
      * @return A description of the variable.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The ID of the image corresponding to the package.
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return The ID of the listing that the specified package belongs to.
      * 
      */
-    private final String listingId;
+    private String listingId;
     /**
      * @return The operating system used by the listing.
      * 
      */
-    private final List<GetListingPackageOperatingSystem> operatingSystems;
+    private List<GetListingPackageOperatingSystem> operatingSystems;
     /**
      * @return The specified package&#39;s type.
      * 
      */
-    private final String packageType;
-    private final String packageVersion;
+    private String packageType;
+    private String packageVersion;
     /**
      * @return The model for pricing.
      * 
      */
-    private final List<GetListingPackagePricing> pricings;
+    private List<GetListingPackagePricing> pricings;
     /**
      * @return The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
      * 
      */
-    private final List<GetListingPackageRegion> regions;
+    private List<GetListingPackageRegion> regions;
     /**
      * @return The unique identifier for the package resource.
      * 
      */
-    private final String resourceId;
+    private String resourceId;
     /**
      * @return Link to the orchestration resource.
      * 
      */
-    private final String resourceLink;
+    private String resourceLink;
     /**
      * @return The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return List of variables for the orchestration resource.
      * 
      */
-    private final List<GetListingPackageVariable> variables;
+    private List<GetListingPackageVariable> variables;
     /**
      * @return The package version.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetListingPackageResult(
-        @CustomType.Parameter("appCatalogListingId") String appCatalogListingId,
-        @CustomType.Parameter("appCatalogListingResourceVersion") String appCatalogListingResourceVersion,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("operatingSystems") List<GetListingPackageOperatingSystem> operatingSystems,
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("packageVersion") String packageVersion,
-        @CustomType.Parameter("pricings") List<GetListingPackagePricing> pricings,
-        @CustomType.Parameter("regions") List<GetListingPackageRegion> regions,
-        @CustomType.Parameter("resourceId") String resourceId,
-        @CustomType.Parameter("resourceLink") String resourceLink,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("variables") List<GetListingPackageVariable> variables,
-        @CustomType.Parameter("version") String version) {
-        this.appCatalogListingId = appCatalogListingId;
-        this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
-        this.compartmentId = compartmentId;
-        this.description = description;
-        this.id = id;
-        this.imageId = imageId;
-        this.listingId = listingId;
-        this.operatingSystems = operatingSystems;
-        this.packageType = packageType;
-        this.packageVersion = packageVersion;
-        this.pricings = pricings;
-        this.regions = regions;
-        this.resourceId = resourceId;
-        this.resourceLink = resourceLink;
-        this.timeCreated = timeCreated;
-        this.variables = variables;
-        this.version = version;
-    }
-
+    private GetListingPackageResult() {}
     /**
      * @return The ID of the listing resource associated with this listing package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
      * 
@@ -251,7 +214,7 @@ public final class GetListingPackageResult {
     public static Builder builder(GetListingPackageResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String appCatalogListingId;
         private String appCatalogListingResourceVersion;
@@ -270,11 +233,7 @@ public final class GetListingPackageResult {
         private String timeCreated;
         private List<GetListingPackageVariable> variables;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPackageResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.appCatalogListingId = defaults.appCatalogListingId;
@@ -296,34 +255,42 @@ public final class GetListingPackageResult {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder appCatalogListingId(String appCatalogListingId) {
             this.appCatalogListingId = Objects.requireNonNull(appCatalogListingId);
             return this;
         }
+        @CustomType.Setter
         public Builder appCatalogListingResourceVersion(String appCatalogListingResourceVersion) {
             this.appCatalogListingResourceVersion = Objects.requireNonNull(appCatalogListingResourceVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystems(List<GetListingPackageOperatingSystem> operatingSystems) {
             this.operatingSystems = Objects.requireNonNull(operatingSystems);
             return this;
@@ -331,14 +298,17 @@ public final class GetListingPackageResult {
         public Builder operatingSystems(GetListingPackageOperatingSystem... operatingSystems) {
             return operatingSystems(List.of(operatingSystems));
         }
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = Objects.requireNonNull(packageVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder pricings(List<GetListingPackagePricing> pricings) {
             this.pricings = Objects.requireNonNull(pricings);
             return this;
@@ -346,6 +316,7 @@ public final class GetListingPackageResult {
         public Builder pricings(GetListingPackagePricing... pricings) {
             return pricings(List.of(pricings));
         }
+        @CustomType.Setter
         public Builder regions(List<GetListingPackageRegion> regions) {
             this.regions = Objects.requireNonNull(regions);
             return this;
@@ -353,18 +324,22 @@ public final class GetListingPackageResult {
         public Builder regions(GetListingPackageRegion... regions) {
             return regions(List.of(regions));
         }
+        @CustomType.Setter
         public Builder resourceId(String resourceId) {
             this.resourceId = Objects.requireNonNull(resourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceLink(String resourceLink) {
             this.resourceLink = Objects.requireNonNull(resourceLink);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder variables(List<GetListingPackageVariable> variables) {
             this.variables = Objects.requireNonNull(variables);
             return this;
@@ -372,11 +347,31 @@ public final class GetListingPackageResult {
         public Builder variables(GetListingPackageVariable... variables) {
             return variables(List.of(variables));
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetListingPackageResult build() {
-            return new GetListingPackageResult(appCatalogListingId, appCatalogListingResourceVersion, compartmentId, description, id, imageId, listingId, operatingSystems, packageType, packageVersion, pricings, regions, resourceId, resourceLink, timeCreated, variables, version);
+        }
+        public GetListingPackageResult build() {
+            final var o = new GetListingPackageResult();
+            o.appCatalogListingId = appCatalogListingId;
+            o.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
+            o.compartmentId = compartmentId;
+            o.description = description;
+            o.id = id;
+            o.imageId = imageId;
+            o.listingId = listingId;
+            o.operatingSystems = operatingSystems;
+            o.packageType = packageType;
+            o.packageVersion = packageVersion;
+            o.pricings = pricings;
+            o.regions = regions;
+            o.resourceId = resourceId;
+            o.resourceLink = resourceLink;
+            o.timeCreated = timeCreated;
+            o.variables = variables;
+            o.version = version;
+            return o;
         }
     }
 }

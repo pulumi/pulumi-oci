@@ -14,13 +14,9 @@ public final class GetManagedDatabaseUserDataAccessContainersDataAccessContainer
      * @return An array of container resources.
      * 
      */
-    private final List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items;
+    private List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection(@CustomType.Parameter("items") List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection() {}
     /**
      * @return An array of container resources.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseUserDataAccessContainersDataAccessContainer
     public static Builder builder(GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection build() {
-            return new GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection(items);
+        }
+        public GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection build() {
+            final var o = new GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemParentRef {
      * @return Key of the parent object.
      * 
      */
-    private final String parent;
+    private String parent;
 
-    @CustomType.Constructor
-    private GetRegistryFoldersFolderSummaryCollectionItemParentRef(@CustomType.Parameter("parent") String parent) {
-        this.parent = parent;
-    }
-
+    private GetRegistryFoldersFolderSummaryCollectionItemParentRef() {}
     /**
      * @return Key of the parent object.
      * 
@@ -35,24 +31,24 @@ public final class GetRegistryFoldersFolderSummaryCollectionItemParentRef {
     public static Builder builder(GetRegistryFoldersFolderSummaryCollectionItemParentRef defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String parent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryFoldersFolderSummaryCollectionItemParentRef defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parent = defaults.parent;
         }
 
+        @CustomType.Setter
         public Builder parent(String parent) {
             this.parent = Objects.requireNonNull(parent);
             return this;
-        }        public GetRegistryFoldersFolderSummaryCollectionItemParentRef build() {
-            return new GetRegistryFoldersFolderSummaryCollectionItemParentRef(parent);
+        }
+        public GetRegistryFoldersFolderSummaryCollectionItemParentRef build() {
+            final var o = new GetRegistryFoldersFolderSummaryCollectionItemParentRef();
+            o.parent = parent;
+            return o;
         }
     }
 }

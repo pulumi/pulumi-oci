@@ -13,28 +13,19 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValue {
      * @return (Updatable) configuration list item type, either CUSTOM or MANAGED
      * 
      */
-    private final String listType;
+    private String listType;
     /**
      * @return (Updatable) type of the managed list
      * 
      */
-    private final String managedListType;
+    private String managedListType;
     /**
      * @return (Updatable) configuration value
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private DetectorRecipeDetectorRuleDetailsConfigurationValue(
-        @CustomType.Parameter("listType") String listType,
-        @CustomType.Parameter("managedListType") String managedListType,
-        @CustomType.Parameter("value") String value) {
-        this.listType = listType;
-        this.managedListType = managedListType;
-        this.value = value;
-    }
-
+    private DetectorRecipeDetectorRuleDetailsConfigurationValue() {}
     /**
      * @return (Updatable) configuration list item type, either CUSTOM or MANAGED
      * 
@@ -64,16 +55,12 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValue {
     public static Builder builder(DetectorRecipeDetectorRuleDetailsConfigurationValue defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String listType;
         private String managedListType;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DetectorRecipeDetectorRuleDetailsConfigurationValue defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.listType = defaults.listType;
@@ -81,19 +68,27 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValue {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder listType(String listType) {
             this.listType = Objects.requireNonNull(listType);
             return this;
         }
+        @CustomType.Setter
         public Builder managedListType(String managedListType) {
             this.managedListType = Objects.requireNonNull(managedListType);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public DetectorRecipeDetectorRuleDetailsConfigurationValue build() {
-            return new DetectorRecipeDetectorRuleDetailsConfigurationValue(listType, managedListType, value);
+        }
+        public DetectorRecipeDetectorRuleDetailsConfigurationValue build() {
+            final var o = new DetectorRecipeDetectorRuleDetailsConfigurationValue();
+            o.listType = listType;
+            o.managedListType = managedListType;
+            o.value = value;
+            return o;
         }
     }
 }

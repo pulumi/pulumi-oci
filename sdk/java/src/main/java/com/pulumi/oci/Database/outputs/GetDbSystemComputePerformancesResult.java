@@ -18,27 +18,16 @@ public final class GetDbSystemComputePerformancesResult {
      * @return The list of db_system_compute_performances.
      * 
      */
-    private final List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances;
-    private final @Nullable String dbSystemShape;
-    private final @Nullable List<GetDbSystemComputePerformancesFilter> filters;
+    private List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances;
+    private @Nullable String dbSystemShape;
+    private @Nullable List<GetDbSystemComputePerformancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDbSystemComputePerformancesResult(
-        @CustomType.Parameter("dbSystemComputePerformances") List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances,
-        @CustomType.Parameter("dbSystemShape") @Nullable String dbSystemShape,
-        @CustomType.Parameter("filters") @Nullable List<GetDbSystemComputePerformancesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.dbSystemComputePerformances = dbSystemComputePerformances;
-        this.dbSystemShape = dbSystemShape;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetDbSystemComputePerformancesResult() {}
     /**
      * @return The list of db_system_compute_performances.
      * 
@@ -67,17 +56,13 @@ public final class GetDbSystemComputePerformancesResult {
     public static Builder builder(GetDbSystemComputePerformancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances;
         private @Nullable String dbSystemShape;
         private @Nullable List<GetDbSystemComputePerformancesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemComputePerformancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbSystemComputePerformances = defaults.dbSystemComputePerformances;
@@ -86,6 +71,7 @@ public final class GetDbSystemComputePerformancesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder dbSystemComputePerformances(List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances) {
             this.dbSystemComputePerformances = Objects.requireNonNull(dbSystemComputePerformances);
             return this;
@@ -93,10 +79,12 @@ public final class GetDbSystemComputePerformancesResult {
         public Builder dbSystemComputePerformances(GetDbSystemComputePerformancesDbSystemComputePerformance... dbSystemComputePerformances) {
             return dbSystemComputePerformances(List.of(dbSystemComputePerformances));
         }
+        @CustomType.Setter
         public Builder dbSystemShape(@Nullable String dbSystemShape) {
             this.dbSystemShape = dbSystemShape;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemComputePerformancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,11 +92,18 @@ public final class GetDbSystemComputePerformancesResult {
         public Builder filters(GetDbSystemComputePerformancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDbSystemComputePerformancesResult build() {
-            return new GetDbSystemComputePerformancesResult(dbSystemComputePerformances, dbSystemShape, filters, id);
+        }
+        public GetDbSystemComputePerformancesResult build() {
+            final var o = new GetDbSystemComputePerformancesResult();
+            o.dbSystemComputePerformances = dbSystemComputePerformances;
+            o.dbSystemShape = dbSystemShape;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

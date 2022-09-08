@@ -13,35 +13,24 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
      * @return The number of distinct SQL statements.
      * 
      */
-    private final Integer distinctSql;
+    private Integer distinctSql;
     /**
      * @return The number of distinct SQL statements with errors.
      * 
      */
-    private final Integer errorCount;
+    private Integer errorCount;
     /**
      * @return The number of distinct SQL statements with findings.
      * 
      */
-    private final Integer findingCount;
+    private Integer findingCount;
     /**
      * @return The total number of SQL statements.
      * 
      */
-    private final Integer totalSql;
+    private Integer totalSql;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount(
-        @CustomType.Parameter("distinctSql") Integer distinctSql,
-        @CustomType.Parameter("errorCount") Integer errorCount,
-        @CustomType.Parameter("findingCount") Integer findingCount,
-        @CustomType.Parameter("totalSql") Integer totalSql) {
-        this.distinctSql = distinctSql;
-        this.errorCount = errorCount;
-        this.findingCount = findingCount;
-        this.totalSql = totalSql;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount() {}
     /**
      * @return The number of distinct SQL statements.
      * 
@@ -78,17 +67,13 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer distinctSql;
         private Integer errorCount;
         private Integer findingCount;
         private Integer totalSql;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.distinctSql = defaults.distinctSql;
@@ -97,23 +82,33 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     	      this.totalSql = defaults.totalSql;
         }
 
+        @CustomType.Setter
         public Builder distinctSql(Integer distinctSql) {
             this.distinctSql = Objects.requireNonNull(distinctSql);
             return this;
         }
+        @CustomType.Setter
         public Builder errorCount(Integer errorCount) {
             this.errorCount = Objects.requireNonNull(errorCount);
             return this;
         }
+        @CustomType.Setter
         public Builder findingCount(Integer findingCount) {
             this.findingCount = Objects.requireNonNull(findingCount);
             return this;
         }
+        @CustomType.Setter
         public Builder totalSql(Integer totalSql) {
             this.totalSql = Objects.requireNonNull(totalSql);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount(distinctSql, errorCount, findingCount, totalSql);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount();
+            o.distinctSql = distinctSql;
+            o.errorCount = errorCount;
+            o.findingCount = findingCount;
+            o.totalSql = totalSql;
+            return o;
         }
     }
 }

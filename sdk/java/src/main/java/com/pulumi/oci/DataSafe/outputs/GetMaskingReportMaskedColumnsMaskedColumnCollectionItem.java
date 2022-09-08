@@ -13,77 +13,54 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollectionItem {
      * @return A filter to return only a specific column based on column name.
      * 
      */
-    private final String columnName;
+    private String columnName;
     /**
      * @return The unique key that identifies the masked column. It&#39;s numeric and unique within a masking policy.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return A filter to return only the resources that match the specified masking column group.
      * 
      */
-    private final String maskingColumnGroup;
+    private String maskingColumnGroup;
     /**
      * @return The masking format used for masking the column.
      * 
      */
-    private final String maskingFormatUsed;
+    private String maskingFormatUsed;
     /**
      * @return A filter to return only items related to a specific object name.
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return A filter to return only items related to a specific object type.
      * 
      */
-    private final String objectType;
+    private String objectType;
     /**
      * @return The unique key that identifies the parent column of the masked column.
      * 
      */
-    private final String parentColumnKey;
+    private String parentColumnKey;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private final String schemaName;
+    private String schemaName;
     /**
      * @return A filter to return only items related to a specific sensitive type OCID.
      * 
      */
-    private final String sensitiveTypeId;
+    private String sensitiveTypeId;
     /**
      * @return The total number of values masked in the column.
      * 
      */
-    private final String totalMaskedValues;
+    private String totalMaskedValues;
 
-    @CustomType.Constructor
-    private GetMaskingReportMaskedColumnsMaskedColumnCollectionItem(
-        @CustomType.Parameter("columnName") String columnName,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("maskingColumnGroup") String maskingColumnGroup,
-        @CustomType.Parameter("maskingFormatUsed") String maskingFormatUsed,
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("objectType") String objectType,
-        @CustomType.Parameter("parentColumnKey") String parentColumnKey,
-        @CustomType.Parameter("schemaName") String schemaName,
-        @CustomType.Parameter("sensitiveTypeId") String sensitiveTypeId,
-        @CustomType.Parameter("totalMaskedValues") String totalMaskedValues) {
-        this.columnName = columnName;
-        this.key = key;
-        this.maskingColumnGroup = maskingColumnGroup;
-        this.maskingFormatUsed = maskingFormatUsed;
-        this.object = object;
-        this.objectType = objectType;
-        this.parentColumnKey = parentColumnKey;
-        this.schemaName = schemaName;
-        this.sensitiveTypeId = sensitiveTypeId;
-        this.totalMaskedValues = totalMaskedValues;
-    }
-
+    private GetMaskingReportMaskedColumnsMaskedColumnCollectionItem() {}
     /**
      * @return A filter to return only a specific column based on column name.
      * 
@@ -162,7 +139,7 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollectionItem {
     public static Builder builder(GetMaskingReportMaskedColumnsMaskedColumnCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String columnName;
         private String key;
@@ -174,11 +151,7 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollectionItem {
         private String schemaName;
         private String sensitiveTypeId;
         private String totalMaskedValues;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingReportMaskedColumnsMaskedColumnCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnName = defaults.columnName;
@@ -193,47 +166,69 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollectionItem {
     	      this.totalMaskedValues = defaults.totalMaskedValues;
         }
 
+        @CustomType.Setter
         public Builder columnName(String columnName) {
             this.columnName = Objects.requireNonNull(columnName);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder maskingColumnGroup(String maskingColumnGroup) {
             this.maskingColumnGroup = Objects.requireNonNull(maskingColumnGroup);
             return this;
         }
+        @CustomType.Setter
         public Builder maskingFormatUsed(String maskingFormatUsed) {
             this.maskingFormatUsed = Objects.requireNonNull(maskingFormatUsed);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder objectType(String objectType) {
             this.objectType = Objects.requireNonNull(objectType);
             return this;
         }
+        @CustomType.Setter
         public Builder parentColumnKey(String parentColumnKey) {
             this.parentColumnKey = Objects.requireNonNull(parentColumnKey);
             return this;
         }
+        @CustomType.Setter
         public Builder schemaName(String schemaName) {
             this.schemaName = Objects.requireNonNull(schemaName);
             return this;
         }
+        @CustomType.Setter
         public Builder sensitiveTypeId(String sensitiveTypeId) {
             this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
             return this;
         }
+        @CustomType.Setter
         public Builder totalMaskedValues(String totalMaskedValues) {
             this.totalMaskedValues = Objects.requireNonNull(totalMaskedValues);
             return this;
-        }        public GetMaskingReportMaskedColumnsMaskedColumnCollectionItem build() {
-            return new GetMaskingReportMaskedColumnsMaskedColumnCollectionItem(columnName, key, maskingColumnGroup, maskingFormatUsed, object, objectType, parentColumnKey, schemaName, sensitiveTypeId, totalMaskedValues);
+        }
+        public GetMaskingReportMaskedColumnsMaskedColumnCollectionItem build() {
+            final var o = new GetMaskingReportMaskedColumnsMaskedColumnCollectionItem();
+            o.columnName = columnName;
+            o.key = key;
+            o.maskingColumnGroup = maskingColumnGroup;
+            o.maskingFormatUsed = maskingFormatUsed;
+            o.object = object;
+            o.objectType = objectType;
+            o.parentColumnKey = parentColumnKey;
+            o.schemaName = schemaName;
+            o.sensitiveTypeId = sensitiveTypeId;
+            o.totalMaskedValues = totalMaskedValues;
+            return o;
         }
     }
 }

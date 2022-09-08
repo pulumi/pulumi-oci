@@ -18,45 +18,30 @@ public final class GetDrgRouteDistributionsResult {
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that contains this route distribution.
      * 
      */
-    private final String drgId;
+    private String drgId;
     /**
      * @return The list of drg_route_distributions.
      * 
      */
-    private final List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions;
-    private final @Nullable List<GetDrgRouteDistributionsFilter> filters;
+    private List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions;
+    private @Nullable List<GetDrgRouteDistributionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The route distribution&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDrgRouteDistributionsResult(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("drgId") String drgId,
-        @CustomType.Parameter("drgRouteDistributions") List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions,
-        @CustomType.Parameter("filters") @Nullable List<GetDrgRouteDistributionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.displayName = displayName;
-        this.drgId = drgId;
-        this.drgRouteDistributions = drgRouteDistributions;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetDrgRouteDistributionsResult() {}
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -103,7 +88,7 @@ public final class GetDrgRouteDistributionsResult {
     public static Builder builder(GetDrgRouteDistributionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private String drgId;
@@ -111,11 +96,7 @@ public final class GetDrgRouteDistributionsResult {
         private @Nullable List<GetDrgRouteDistributionsFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDrgRouteDistributionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -126,14 +107,17 @@ public final class GetDrgRouteDistributionsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder drgId(String drgId) {
             this.drgId = Objects.requireNonNull(drgId);
             return this;
         }
+        @CustomType.Setter
         public Builder drgRouteDistributions(List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions) {
             this.drgRouteDistributions = Objects.requireNonNull(drgRouteDistributions);
             return this;
@@ -141,6 +125,7 @@ public final class GetDrgRouteDistributionsResult {
         public Builder drgRouteDistributions(GetDrgRouteDistributionsDrgRouteDistribution... drgRouteDistributions) {
             return drgRouteDistributions(List.of(drgRouteDistributions));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDrgRouteDistributionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -148,15 +133,25 @@ public final class GetDrgRouteDistributionsResult {
         public Builder filters(GetDrgRouteDistributionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDrgRouteDistributionsResult build() {
-            return new GetDrgRouteDistributionsResult(displayName, drgId, drgRouteDistributions, filters, id, state);
+        }
+        public GetDrgRouteDistributionsResult build() {
+            final var o = new GetDrgRouteDistributionsResult();
+            o.displayName = displayName;
+            o.drgId = drgId;
+            o.drgRouteDistributions = drgRouteDistributions;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

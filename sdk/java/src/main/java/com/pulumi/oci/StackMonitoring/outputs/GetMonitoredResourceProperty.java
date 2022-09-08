@@ -13,21 +13,14 @@ public final class GetMonitoredResourceProperty {
      * @return property name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return property value
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetMonitoredResourceProperty(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetMonitoredResourceProperty() {}
     /**
      * @return property name
      * 
@@ -50,30 +43,32 @@ public final class GetMonitoredResourceProperty {
     public static Builder builder(GetMonitoredResourceProperty defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitoredResourceProperty defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetMonitoredResourceProperty build() {
-            return new GetMonitoredResourceProperty(name, value);
+        }
+        public GetMonitoredResourceProperty build() {
+            final var o = new GetMonitoredResourceProperty();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection {
-    private final List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem> items;
+    private List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection(@CustomType.Parameter("items") List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection() {}
     public List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     public static Builder builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection build() {
-            return new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection(items);
+        }
+        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection build() {
+            final var o = new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

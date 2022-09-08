@@ -13,28 +13,19 @@ public final class GetAlarmSuppression {
      * @return Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private final String timeSuppressFrom;
+    private String timeSuppressFrom;
     /**
      * @return The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
      * 
      */
-    private final String timeSuppressUntil;
+    private String timeSuppressUntil;
 
-    @CustomType.Constructor
-    private GetAlarmSuppression(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("timeSuppressFrom") String timeSuppressFrom,
-        @CustomType.Parameter("timeSuppressUntil") String timeSuppressUntil) {
-        this.description = description;
-        this.timeSuppressFrom = timeSuppressFrom;
-        this.timeSuppressUntil = timeSuppressUntil;
-    }
-
+    private GetAlarmSuppression() {}
     /**
      * @return Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -64,16 +55,12 @@ public final class GetAlarmSuppression {
     public static Builder builder(GetAlarmSuppression defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String timeSuppressFrom;
         private String timeSuppressUntil;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlarmSuppression defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -81,19 +68,27 @@ public final class GetAlarmSuppression {
     	      this.timeSuppressUntil = defaults.timeSuppressUntil;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder timeSuppressFrom(String timeSuppressFrom) {
             this.timeSuppressFrom = Objects.requireNonNull(timeSuppressFrom);
             return this;
         }
+        @CustomType.Setter
         public Builder timeSuppressUntil(String timeSuppressUntil) {
             this.timeSuppressUntil = Objects.requireNonNull(timeSuppressUntil);
             return this;
-        }        public GetAlarmSuppression build() {
-            return new GetAlarmSuppression(description, timeSuppressFrom, timeSuppressUntil);
+        }
+        public GetAlarmSuppression build() {
+            final var o = new GetAlarmSuppression();
+            o.description = description;
+            o.timeSuppressFrom = timeSuppressFrom;
+            o.timeSuppressUntil = timeSuppressUntil;
+            return o;
         }
     }
 }

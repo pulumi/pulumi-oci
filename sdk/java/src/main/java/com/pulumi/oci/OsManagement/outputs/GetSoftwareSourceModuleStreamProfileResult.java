@@ -15,59 +15,40 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
      * @return A description of the contents of the module stream profile
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if this profile is the default for its module stream.
      * 
      */
-    private final Boolean isDefault;
+    private Boolean isDefault;
     /**
      * @return The name of the module that contains the stream profile
      * 
      */
-    private final String moduleName;
+    private String moduleName;
     /**
      * @return A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management APIs that interact directly with packages.
      * 
      */
-    private final List<String> packages;
+    private List<String> packages;
     /**
      * @return The name of the profile
      * 
      */
-    private final String profileName;
-    private final String softwareSourceId;
+    private String profileName;
+    private String softwareSourceId;
     /**
      * @return The name of the stream that contains the profile
      * 
      */
-    private final String streamName;
+    private String streamName;
 
-    @CustomType.Constructor
-    private GetSoftwareSourceModuleStreamProfileResult(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isDefault") Boolean isDefault,
-        @CustomType.Parameter("moduleName") String moduleName,
-        @CustomType.Parameter("packages") List<String> packages,
-        @CustomType.Parameter("profileName") String profileName,
-        @CustomType.Parameter("softwareSourceId") String softwareSourceId,
-        @CustomType.Parameter("streamName") String streamName) {
-        this.description = description;
-        this.id = id;
-        this.isDefault = isDefault;
-        this.moduleName = moduleName;
-        this.packages = packages;
-        this.profileName = profileName;
-        this.softwareSourceId = softwareSourceId;
-        this.streamName = streamName;
-    }
-
+    private GetSoftwareSourceModuleStreamProfileResult() {}
     /**
      * @return A description of the contents of the module stream profile
      * 
@@ -128,7 +109,7 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
     public static Builder builder(GetSoftwareSourceModuleStreamProfileResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String id;
@@ -138,11 +119,7 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
         private String profileName;
         private String softwareSourceId;
         private String streamName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSoftwareSourceModuleStreamProfileResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -155,22 +132,27 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
     	      this.streamName = defaults.streamName;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = Objects.requireNonNull(isDefault);
             return this;
         }
+        @CustomType.Setter
         public Builder moduleName(String moduleName) {
             this.moduleName = Objects.requireNonNull(moduleName);
             return this;
         }
+        @CustomType.Setter
         public Builder packages(List<String> packages) {
             this.packages = Objects.requireNonNull(packages);
             return this;
@@ -178,19 +160,32 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
         public Builder packages(String... packages) {
             return packages(List.of(packages));
         }
+        @CustomType.Setter
         public Builder profileName(String profileName) {
             this.profileName = Objects.requireNonNull(profileName);
             return this;
         }
+        @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder streamName(String streamName) {
             this.streamName = Objects.requireNonNull(streamName);
             return this;
-        }        public GetSoftwareSourceModuleStreamProfileResult build() {
-            return new GetSoftwareSourceModuleStreamProfileResult(description, id, isDefault, moduleName, packages, profileName, softwareSourceId, streamName);
+        }
+        public GetSoftwareSourceModuleStreamProfileResult build() {
+            final var o = new GetSoftwareSourceModuleStreamProfileResult();
+            o.description = description;
+            o.id = id;
+            o.isDefault = isDefault;
+            o.moduleName = moduleName;
+            o.packages = packages;
+            o.profileName = profileName;
+            o.softwareSourceId = softwareSourceId;
+            o.streamName = streamName;
+            return o;
         }
     }
 }

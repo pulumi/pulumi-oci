@@ -13,35 +13,24 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
      * @return The OCID of the audit.
      * 
      */
-    private final String auditProfileId;
+    private String auditProfileId;
     /**
      * @return Represents the month under consideration for which aggregated audit data volume available at the target is computed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
      * 
      */
-    private final String monthInConsideration;
+    private String monthInConsideration;
     /**
      * @return The audit trail location.
      * 
      */
-    private final String trailLocation;
+    private String trailLocation;
     /**
      * @return Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
      * 
      */
-    private final String volume;
+    private String volume;
 
-    @CustomType.Constructor
-    private GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem(
-        @CustomType.Parameter("auditProfileId") String auditProfileId,
-        @CustomType.Parameter("monthInConsideration") String monthInConsideration,
-        @CustomType.Parameter("trailLocation") String trailLocation,
-        @CustomType.Parameter("volume") String volume) {
-        this.auditProfileId = auditProfileId;
-        this.monthInConsideration = monthInConsideration;
-        this.trailLocation = trailLocation;
-        this.volume = volume;
-    }
-
+    private GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem() {}
     /**
      * @return The OCID of the audit.
      * 
@@ -78,17 +67,13 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
     public static Builder builder(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String auditProfileId;
         private String monthInConsideration;
         private String trailLocation;
         private String volume;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditProfileId = defaults.auditProfileId;
@@ -97,23 +82,33 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
     	      this.volume = defaults.volume;
         }
 
+        @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = Objects.requireNonNull(auditProfileId);
             return this;
         }
+        @CustomType.Setter
         public Builder monthInConsideration(String monthInConsideration) {
             this.monthInConsideration = Objects.requireNonNull(monthInConsideration);
             return this;
         }
+        @CustomType.Setter
         public Builder trailLocation(String trailLocation) {
             this.trailLocation = Objects.requireNonNull(trailLocation);
             return this;
         }
+        @CustomType.Setter
         public Builder volume(String volume) {
             this.volume = Objects.requireNonNull(volume);
             return this;
-        }        public GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem build() {
-            return new GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem(auditProfileId, monthInConsideration, trailLocation, volume);
+        }
+        public GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem build() {
+            final var o = new GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem();
+            o.auditProfileId = auditProfileId;
+            o.monthInConsideration = monthInConsideration;
+            o.trailLocation = trailLocation;
+            o.volume = volume;
+            return o;
         }
     }
 }

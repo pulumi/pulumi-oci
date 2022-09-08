@@ -14,13 +14,9 @@ public final class GetProfileLevelsProfileLevelCollection {
      * @return A collection of profile levels.
      * 
      */
-    private final List<GetProfileLevelsProfileLevelCollectionItem> items;
+    private List<GetProfileLevelsProfileLevelCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetProfileLevelsProfileLevelCollection(@CustomType.Parameter("items") List<GetProfileLevelsProfileLevelCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetProfileLevelsProfileLevelCollection() {}
     /**
      * @return A collection of profile levels.
      * 
@@ -36,27 +32,27 @@ public final class GetProfileLevelsProfileLevelCollection {
     public static Builder builder(GetProfileLevelsProfileLevelCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetProfileLevelsProfileLevelCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfileLevelsProfileLevelCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetProfileLevelsProfileLevelCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetProfileLevelsProfileLevelCollectionItem... items) {
             return items(List.of(items));
-        }        public GetProfileLevelsProfileLevelCollection build() {
-            return new GetProfileLevelsProfileLevelCollection(items);
+        }
+        public GetProfileLevelsProfileLevelCollection build() {
+            final var o = new GetProfileLevelsProfileLevelCollection();
+            o.items = items;
+            return o;
         }
     }
 }

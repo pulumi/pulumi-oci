@@ -22,126 +22,89 @@ public final class GetClustersCluster {
      * @return Available Kubernetes versions to which the clusters masters may be upgraded.
      * 
      */
-    private final List<String> availableKubernetesUpgrades;
+    private List<String> availableKubernetesUpgrades;
     /**
      * @return Available CNIs and network options for existing and new node pools of the cluster
      * 
      */
-    private final List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions;
+    private List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The network configuration for access to the Cluster control plane.
      * 
      */
-    private final List<GetClustersClusterEndpointConfig> endpointConfigs;
+    private List<GetClustersClusterEndpointConfig> endpointConfigs;
     /**
      * @return Endpoints served up by the cluster masters.
      * 
      */
-    private final List<GetClustersClusterEndpoint> endpoints;
+    private List<GetClustersClusterEndpoint> endpoints;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the cluster.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The image verification policy for signature validation.
      * 
      */
-    private final List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs;
+    private List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs;
     /**
      * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The version of Kubernetes running on the cluster masters.
      * 
      */
-    private final String kubernetesVersion;
+    private String kubernetesVersion;
     /**
      * @return Details about the state of the cluster masters.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Metadata about the cluster.
      * 
      */
-    private final List<GetClustersClusterMetadata> metadatas;
+    private List<GetClustersClusterMetadata> metadatas;
     /**
      * @return The name to filter on.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Optional attributes for the cluster.
      * 
      */
-    private final List<GetClustersClusterOption> options;
+    private List<GetClustersClusterOption> options;
     /**
      * @return A cluster lifecycle state to filter on. Can have multiple parameters of this name.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The OCID of the virtual cloud network (VCN) in which the cluster exists.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetClustersCluster(
-        @CustomType.Parameter("availableKubernetesUpgrades") List<String> availableKubernetesUpgrades,
-        @CustomType.Parameter("clusterPodNetworkOptions") List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("endpointConfigs") List<GetClustersClusterEndpointConfig> endpointConfigs,
-        @CustomType.Parameter("endpoints") List<GetClustersClusterEndpoint> endpoints,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imagePolicyConfigs") List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("kubernetesVersion") String kubernetesVersion,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("metadatas") List<GetClustersClusterMetadata> metadatas,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("options") List<GetClustersClusterOption> options,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.availableKubernetesUpgrades = availableKubernetesUpgrades;
-        this.clusterPodNetworkOptions = clusterPodNetworkOptions;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.endpointConfigs = endpointConfigs;
-        this.endpoints = endpoints;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.imagePolicyConfigs = imagePolicyConfigs;
-        this.kmsKeyId = kmsKeyId;
-        this.kubernetesVersion = kubernetesVersion;
-        this.lifecycleDetails = lifecycleDetails;
-        this.metadatas = metadatas;
-        this.name = name;
-        this.options = options;
-        this.state = state;
-        this.vcnId = vcnId;
-    }
-
+    private GetClustersCluster() {}
     /**
      * @return Available Kubernetes versions to which the clusters masters may be upgraded.
      * 
@@ -269,7 +232,7 @@ public final class GetClustersCluster {
     public static Builder builder(GetClustersCluster defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> availableKubernetesUpgrades;
         private List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions;
@@ -288,11 +251,7 @@ public final class GetClustersCluster {
         private List<GetClustersClusterOption> options;
         private String state;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClustersCluster defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableKubernetesUpgrades = defaults.availableKubernetesUpgrades;
@@ -314,6 +273,7 @@ public final class GetClustersCluster {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder availableKubernetesUpgrades(List<String> availableKubernetesUpgrades) {
             this.availableKubernetesUpgrades = Objects.requireNonNull(availableKubernetesUpgrades);
             return this;
@@ -321,6 +281,7 @@ public final class GetClustersCluster {
         public Builder availableKubernetesUpgrades(String... availableKubernetesUpgrades) {
             return availableKubernetesUpgrades(List.of(availableKubernetesUpgrades));
         }
+        @CustomType.Setter
         public Builder clusterPodNetworkOptions(List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions) {
             this.clusterPodNetworkOptions = Objects.requireNonNull(clusterPodNetworkOptions);
             return this;
@@ -328,14 +289,17 @@ public final class GetClustersCluster {
         public Builder clusterPodNetworkOptions(GetClustersClusterClusterPodNetworkOption... clusterPodNetworkOptions) {
             return clusterPodNetworkOptions(List.of(clusterPodNetworkOptions));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder endpointConfigs(List<GetClustersClusterEndpointConfig> endpointConfigs) {
             this.endpointConfigs = Objects.requireNonNull(endpointConfigs);
             return this;
@@ -343,6 +307,7 @@ public final class GetClustersCluster {
         public Builder endpointConfigs(GetClustersClusterEndpointConfig... endpointConfigs) {
             return endpointConfigs(List.of(endpointConfigs));
         }
+        @CustomType.Setter
         public Builder endpoints(List<GetClustersClusterEndpoint> endpoints) {
             this.endpoints = Objects.requireNonNull(endpoints);
             return this;
@@ -350,14 +315,17 @@ public final class GetClustersCluster {
         public Builder endpoints(GetClustersClusterEndpoint... endpoints) {
             return endpoints(List.of(endpoints));
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imagePolicyConfigs(List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs) {
             this.imagePolicyConfigs = Objects.requireNonNull(imagePolicyConfigs);
             return this;
@@ -365,18 +333,22 @@ public final class GetClustersCluster {
         public Builder imagePolicyConfigs(GetClustersClusterImagePolicyConfig... imagePolicyConfigs) {
             return imagePolicyConfigs(List.of(imagePolicyConfigs));
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder kubernetesVersion(String kubernetesVersion) {
             this.kubernetesVersion = Objects.requireNonNull(kubernetesVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder metadatas(List<GetClustersClusterMetadata> metadatas) {
             this.metadatas = Objects.requireNonNull(metadatas);
             return this;
@@ -384,10 +356,12 @@ public final class GetClustersCluster {
         public Builder metadatas(GetClustersClusterMetadata... metadatas) {
             return metadatas(List.of(metadatas));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder options(List<GetClustersClusterOption> options) {
             this.options = Objects.requireNonNull(options);
             return this;
@@ -395,15 +369,36 @@ public final class GetClustersCluster {
         public Builder options(GetClustersClusterOption... options) {
             return options(List.of(options));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetClustersCluster build() {
-            return new GetClustersCluster(availableKubernetesUpgrades, clusterPodNetworkOptions, compartmentId, definedTags, endpointConfigs, endpoints, freeformTags, id, imagePolicyConfigs, kmsKeyId, kubernetesVersion, lifecycleDetails, metadatas, name, options, state, vcnId);
+        }
+        public GetClustersCluster build() {
+            final var o = new GetClustersCluster();
+            o.availableKubernetesUpgrades = availableKubernetesUpgrades;
+            o.clusterPodNetworkOptions = clusterPodNetworkOptions;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.endpointConfigs = endpointConfigs;
+            o.endpoints = endpoints;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.imagePolicyConfigs = imagePolicyConfigs;
+            o.kmsKeyId = kmsKeyId;
+            o.kubernetesVersion = kubernetesVersion;
+            o.lifecycleDetails = lifecycleDetails;
+            o.metadatas = metadatas;
+            o.name = name;
+            o.options = options;
+            o.state = state;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

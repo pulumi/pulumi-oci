@@ -15,21 +15,14 @@ public final class GetInstanceMeasuredBootReportMeasurement {
      * @return The list of actual PCR entries measured during boot.
      * 
      */
-    private final List<GetInstanceMeasuredBootReportMeasurementActual> actuals;
+    private List<GetInstanceMeasuredBootReportMeasurementActual> actuals;
     /**
      * @return The list of expected PCR entries to use during verification.
      * 
      */
-    private final List<GetInstanceMeasuredBootReportMeasurementPolicy> policies;
+    private List<GetInstanceMeasuredBootReportMeasurementPolicy> policies;
 
-    @CustomType.Constructor
-    private GetInstanceMeasuredBootReportMeasurement(
-        @CustomType.Parameter("actuals") List<GetInstanceMeasuredBootReportMeasurementActual> actuals,
-        @CustomType.Parameter("policies") List<GetInstanceMeasuredBootReportMeasurementPolicy> policies) {
-        this.actuals = actuals;
-        this.policies = policies;
-    }
-
+    private GetInstanceMeasuredBootReportMeasurement() {}
     /**
      * @return The list of actual PCR entries measured during boot.
      * 
@@ -52,21 +45,18 @@ public final class GetInstanceMeasuredBootReportMeasurement {
     public static Builder builder(GetInstanceMeasuredBootReportMeasurement defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetInstanceMeasuredBootReportMeasurementActual> actuals;
         private List<GetInstanceMeasuredBootReportMeasurementPolicy> policies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceMeasuredBootReportMeasurement defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actuals = defaults.actuals;
     	      this.policies = defaults.policies;
         }
 
+        @CustomType.Setter
         public Builder actuals(List<GetInstanceMeasuredBootReportMeasurementActual> actuals) {
             this.actuals = Objects.requireNonNull(actuals);
             return this;
@@ -74,14 +64,19 @@ public final class GetInstanceMeasuredBootReportMeasurement {
         public Builder actuals(GetInstanceMeasuredBootReportMeasurementActual... actuals) {
             return actuals(List.of(actuals));
         }
+        @CustomType.Setter
         public Builder policies(List<GetInstanceMeasuredBootReportMeasurementPolicy> policies) {
             this.policies = Objects.requireNonNull(policies);
             return this;
         }
         public Builder policies(GetInstanceMeasuredBootReportMeasurementPolicy... policies) {
             return policies(List.of(policies));
-        }        public GetInstanceMeasuredBootReportMeasurement build() {
-            return new GetInstanceMeasuredBootReportMeasurement(actuals, policies);
+        }
+        public GetInstanceMeasuredBootReportMeasurement build() {
+            final var o = new GetInstanceMeasuredBootReportMeasurement();
+            o.actuals = actuals;
+            o.policies = policies;
+            return o;
         }
     }
 }

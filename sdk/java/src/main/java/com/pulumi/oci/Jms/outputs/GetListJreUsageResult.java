@@ -13,51 +13,32 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListJreUsageResult {
-    private final @Nullable String applicationId;
-    private final @Nullable String applicationName;
-    private final @Nullable String compartmentId;
-    private final @Nullable String hostId;
+    private @Nullable String applicationId;
+    private @Nullable String applicationName;
+    private @Nullable String compartmentId;
+    private @Nullable String hostId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A list of Java Runtimes.
      * 
      */
-    private final List<GetListJreUsageItem> items;
+    private List<GetListJreUsageItem> items;
     /**
      * @return Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      * 
      */
-    private final @Nullable String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      * 
      */
-    private final @Nullable String timeStart;
+    private @Nullable String timeStart;
 
-    @CustomType.Constructor
-    private GetListJreUsageResult(
-        @CustomType.Parameter("applicationId") @Nullable String applicationId,
-        @CustomType.Parameter("applicationName") @Nullable String applicationName,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("hostId") @Nullable String hostId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetListJreUsageItem> items,
-        @CustomType.Parameter("timeEnd") @Nullable String timeEnd,
-        @CustomType.Parameter("timeStart") @Nullable String timeStart) {
-        this.applicationId = applicationId;
-        this.applicationName = applicationName;
-        this.compartmentId = compartmentId;
-        this.hostId = hostId;
-        this.id = id;
-        this.items = items;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetListJreUsageResult() {}
     public Optional<String> applicationId() {
         return Optional.ofNullable(this.applicationId);
     }
@@ -106,7 +87,7 @@ public final class GetListJreUsageResult {
     public static Builder builder(GetListJreUsageResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String applicationId;
         private @Nullable String applicationName;
@@ -116,11 +97,7 @@ public final class GetListJreUsageResult {
         private List<GetListJreUsageItem> items;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListJreUsageResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationId = defaults.applicationId;
@@ -133,26 +110,32 @@ public final class GetListJreUsageResult {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder applicationId(@Nullable String applicationId) {
             this.applicationId = applicationId;
             return this;
         }
+        @CustomType.Setter
         public Builder applicationName(@Nullable String applicationName) {
             this.applicationName = applicationName;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder hostId(@Nullable String hostId) {
             this.hostId = hostId;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetListJreUsageItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -160,15 +143,27 @@ public final class GetListJreUsageResult {
         public Builder items(GetListJreUsageItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder timeEnd(@Nullable String timeEnd) {
             this.timeEnd = timeEnd;
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
             this.timeStart = timeStart;
             return this;
-        }        public GetListJreUsageResult build() {
-            return new GetListJreUsageResult(applicationId, applicationName, compartmentId, hostId, id, items, timeEnd, timeStart);
+        }
+        public GetListJreUsageResult build() {
+            final var o = new GetListJreUsageResult();
+            o.applicationId = applicationId;
+            o.applicationName = applicationName;
+            o.compartmentId = compartmentId;
+            o.hostId = hostId;
+            o.id = id;
+            o.items = items;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

@@ -18,42 +18,29 @@ public final class ScriptParameter {
      * @return If parameter value is default or overwritten.
      * 
      */
-    private final @Nullable Boolean isOverwritten;
+    private @Nullable Boolean isOverwritten;
     /**
      * @return (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
      */
-    private final @Nullable Boolean isSecret;
+    private @Nullable Boolean isSecret;
     /**
      * @return (Updatable) Name of the parameter.
      * 
      */
-    private final String paramName;
+    private String paramName;
     /**
      * @return (Updatable) Value of the parameter.
      * 
      */
-    private final @Nullable String paramValue;
+    private @Nullable String paramValue;
     /**
      * @return Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
      * 
      */
-    private final @Nullable List<ScriptParameterScriptParameter> scriptParameters;
+    private @Nullable List<ScriptParameterScriptParameter> scriptParameters;
 
-    @CustomType.Constructor
-    private ScriptParameter(
-        @CustomType.Parameter("isOverwritten") @Nullable Boolean isOverwritten,
-        @CustomType.Parameter("isSecret") @Nullable Boolean isSecret,
-        @CustomType.Parameter("paramName") String paramName,
-        @CustomType.Parameter("paramValue") @Nullable String paramValue,
-        @CustomType.Parameter("scriptParameters") @Nullable List<ScriptParameterScriptParameter> scriptParameters) {
-        this.isOverwritten = isOverwritten;
-        this.isSecret = isSecret;
-        this.paramName = paramName;
-        this.paramValue = paramValue;
-        this.scriptParameters = scriptParameters;
-    }
-
+    private ScriptParameter() {}
     /**
      * @return If parameter value is default or overwritten.
      * 
@@ -97,18 +84,14 @@ public final class ScriptParameter {
     public static Builder builder(ScriptParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isOverwritten;
         private @Nullable Boolean isSecret;
         private String paramName;
         private @Nullable String paramValue;
         private @Nullable List<ScriptParameterScriptParameter> scriptParameters;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ScriptParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isOverwritten = defaults.isOverwritten;
@@ -118,30 +101,42 @@ public final class ScriptParameter {
     	      this.scriptParameters = defaults.scriptParameters;
         }
 
+        @CustomType.Setter
         public Builder isOverwritten(@Nullable Boolean isOverwritten) {
             this.isOverwritten = isOverwritten;
             return this;
         }
+        @CustomType.Setter
         public Builder isSecret(@Nullable Boolean isSecret) {
             this.isSecret = isSecret;
             return this;
         }
+        @CustomType.Setter
         public Builder paramName(String paramName) {
             this.paramName = Objects.requireNonNull(paramName);
             return this;
         }
+        @CustomType.Setter
         public Builder paramValue(@Nullable String paramValue) {
             this.paramValue = paramValue;
             return this;
         }
+        @CustomType.Setter
         public Builder scriptParameters(@Nullable List<ScriptParameterScriptParameter> scriptParameters) {
             this.scriptParameters = scriptParameters;
             return this;
         }
         public Builder scriptParameters(ScriptParameterScriptParameter... scriptParameters) {
             return scriptParameters(List.of(scriptParameters));
-        }        public ScriptParameter build() {
-            return new ScriptParameter(isOverwritten, isSecret, paramName, paramValue, scriptParameters);
+        }
+        public ScriptParameter build() {
+            final var o = new ScriptParameter();
+            o.isOverwritten = isOverwritten;
+            o.isSecret = isSecret;
+            o.paramName = paramName;
+            o.paramValue = paramValue;
+            o.scriptParameters = scriptParameters;
+            return o;
         }
     }
 }

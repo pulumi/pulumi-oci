@@ -14,13 +14,9 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookS
      * @return A collection of Git repository configurations.
      * 
      */
-    private final List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections;
+    private List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections;
 
-    @CustomType.Constructor
-    private GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail(@CustomType.Parameter("notebookSessionGitRepoConfigCollections") List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections) {
-        this.notebookSessionGitRepoConfigCollections = notebookSessionGitRepoConfigCollections;
-    }
-
+    private GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail() {}
     /**
      * @return A collection of Git repository configurations.
      * 
@@ -36,27 +32,27 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookS
     public static Builder builder(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.notebookSessionGitRepoConfigCollections = defaults.notebookSessionGitRepoConfigCollections;
         }
 
+        @CustomType.Setter
         public Builder notebookSessionGitRepoConfigCollections(List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections) {
             this.notebookSessionGitRepoConfigCollections = Objects.requireNonNull(notebookSessionGitRepoConfigCollections);
             return this;
         }
         public Builder notebookSessionGitRepoConfigCollections(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection... notebookSessionGitRepoConfigCollections) {
             return notebookSessionGitRepoConfigCollections(List.of(notebookSessionGitRepoConfigCollections));
-        }        public GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail build() {
-            return new GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail(notebookSessionGitRepoConfigCollections);
+        }
+        public GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail build() {
+            final var o = new GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail();
+            o.notebookSessionGitRepoConfigCollections = notebookSessionGitRepoConfigCollections;
+            return o;
         }
     }
 }

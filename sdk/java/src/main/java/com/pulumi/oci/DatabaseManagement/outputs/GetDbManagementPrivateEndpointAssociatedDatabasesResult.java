@@ -17,34 +17,21 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
      * @return The list of associated_database_collection.
      * 
      */
-    private final List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections;
+    private List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private final String compartmentId;
-    private final String dbManagementPrivateEndpointId;
-    private final @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesFilter> filters;
+    private String compartmentId;
+    private String dbManagementPrivateEndpointId;
+    private @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDbManagementPrivateEndpointAssociatedDatabasesResult(
-        @CustomType.Parameter("associatedDatabaseCollections") List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbManagementPrivateEndpointId") String dbManagementPrivateEndpointId,
-        @CustomType.Parameter("filters") @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.associatedDatabaseCollections = associatedDatabaseCollections;
-        this.compartmentId = compartmentId;
-        this.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetDbManagementPrivateEndpointAssociatedDatabasesResult() {}
     /**
      * @return The list of associated_database_collection.
      * 
@@ -80,18 +67,14 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
     public static Builder builder(GetDbManagementPrivateEndpointAssociatedDatabasesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections;
         private String compartmentId;
         private String dbManagementPrivateEndpointId;
         private @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbManagementPrivateEndpointAssociatedDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.associatedDatabaseCollections = defaults.associatedDatabaseCollections;
@@ -101,6 +84,7 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder associatedDatabaseCollections(List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection> associatedDatabaseCollections) {
             this.associatedDatabaseCollections = Objects.requireNonNull(associatedDatabaseCollections);
             return this;
@@ -108,14 +92,17 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
         public Builder associatedDatabaseCollections(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection... associatedDatabaseCollections) {
             return associatedDatabaseCollections(List.of(associatedDatabaseCollections));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbManagementPrivateEndpointId(String dbManagementPrivateEndpointId) {
             this.dbManagementPrivateEndpointId = Objects.requireNonNull(dbManagementPrivateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbManagementPrivateEndpointAssociatedDatabasesFilter> filters) {
             this.filters = filters;
             return this;
@@ -123,11 +110,19 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
         public Builder filters(GetDbManagementPrivateEndpointAssociatedDatabasesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDbManagementPrivateEndpointAssociatedDatabasesResult build() {
-            return new GetDbManagementPrivateEndpointAssociatedDatabasesResult(associatedDatabaseCollections, compartmentId, dbManagementPrivateEndpointId, filters, id);
+        }
+        public GetDbManagementPrivateEndpointAssociatedDatabasesResult build() {
+            final var o = new GetDbManagementPrivateEndpointAssociatedDatabasesResult();
+            o.associatedDatabaseCollections = associatedDatabaseCollections;
+            o.compartmentId = compartmentId;
+            o.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

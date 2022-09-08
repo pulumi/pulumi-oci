@@ -18,87 +18,60 @@ public final class GetAutonomousContainerDatabasesResult {
      * @return The list of autonomous_container_databases.
      * 
      */
-    private final List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases;
+    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases;
     /**
      * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      * 
      */
-    private final @Nullable String autonomousExadataInfrastructureId;
+    private @Nullable String autonomousExadataInfrastructureId;
     /**
      * @return The OCID of the Autonomous VM Cluster.
      * 
      */
-    private final @Nullable String autonomousVmClusterId;
+    private @Nullable String autonomousVmClusterId;
     /**
      * @return The availability domain of the Autonomous Container Database.
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * 
      */
-    private final @Nullable String cloudAutonomousVmClusterId;
+    private @Nullable String cloudAutonomousVmClusterId;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The user-provided name for the Autonomous Container Database.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAutonomousContainerDatabasesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAutonomousContainerDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The infrastructure type this resource belongs to.
      * 
      */
-    private final @Nullable String infrastructureType;
+    private @Nullable String infrastructureType;
     /**
      * @return The service level agreement type of the container database. The default is STANDARD.
      * 
      */
-    private final @Nullable String serviceLevelAgreementType;
+    private @Nullable String serviceLevelAgreementType;
     /**
      * @return The current state of the Autonomous Container Database.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetAutonomousContainerDatabasesResult(
-        @CustomType.Parameter("autonomousContainerDatabases") List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases,
-        @CustomType.Parameter("autonomousExadataInfrastructureId") @Nullable String autonomousExadataInfrastructureId,
-        @CustomType.Parameter("autonomousVmClusterId") @Nullable String autonomousVmClusterId,
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("cloudAutonomousVmClusterId") @Nullable String cloudAutonomousVmClusterId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAutonomousContainerDatabasesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("infrastructureType") @Nullable String infrastructureType,
-        @CustomType.Parameter("serviceLevelAgreementType") @Nullable String serviceLevelAgreementType,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.autonomousContainerDatabases = autonomousContainerDatabases;
-        this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
-        this.autonomousVmClusterId = autonomousVmClusterId;
-        this.availabilityDomain = availabilityDomain;
-        this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.infrastructureType = infrastructureType;
-        this.serviceLevelAgreementType = serviceLevelAgreementType;
-        this.state = state;
-    }
-
+    private GetAutonomousContainerDatabasesResult() {}
     /**
      * @return The list of autonomous_container_databases.
      * 
@@ -187,7 +160,7 @@ public final class GetAutonomousContainerDatabasesResult {
     public static Builder builder(GetAutonomousContainerDatabasesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases;
         private @Nullable String autonomousExadataInfrastructureId;
@@ -201,11 +174,7 @@ public final class GetAutonomousContainerDatabasesResult {
         private @Nullable String infrastructureType;
         private @Nullable String serviceLevelAgreementType;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousContainerDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousContainerDatabases = defaults.autonomousContainerDatabases;
@@ -222,6 +191,7 @@ public final class GetAutonomousContainerDatabasesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder autonomousContainerDatabases(List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases) {
             this.autonomousContainerDatabases = Objects.requireNonNull(autonomousContainerDatabases);
             return this;
@@ -229,30 +199,37 @@ public final class GetAutonomousContainerDatabasesResult {
         public Builder autonomousContainerDatabases(GetAutonomousContainerDatabasesAutonomousContainerDatabase... autonomousContainerDatabases) {
             return autonomousContainerDatabases(List.of(autonomousContainerDatabases));
         }
+        @CustomType.Setter
         public Builder autonomousExadataInfrastructureId(@Nullable String autonomousExadataInfrastructureId) {
             this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             return this;
         }
+        @CustomType.Setter
         public Builder autonomousVmClusterId(@Nullable String autonomousVmClusterId) {
             this.autonomousVmClusterId = autonomousVmClusterId;
             return this;
         }
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder cloudAutonomousVmClusterId(@Nullable String cloudAutonomousVmClusterId) {
             this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousContainerDatabasesFilter> filters) {
             this.filters = filters;
             return this;
@@ -260,23 +237,41 @@ public final class GetAutonomousContainerDatabasesResult {
         public Builder filters(GetAutonomousContainerDatabasesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder infrastructureType(@Nullable String infrastructureType) {
             this.infrastructureType = infrastructureType;
             return this;
         }
+        @CustomType.Setter
         public Builder serviceLevelAgreementType(@Nullable String serviceLevelAgreementType) {
             this.serviceLevelAgreementType = serviceLevelAgreementType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetAutonomousContainerDatabasesResult build() {
-            return new GetAutonomousContainerDatabasesResult(autonomousContainerDatabases, autonomousExadataInfrastructureId, autonomousVmClusterId, availabilityDomain, cloudAutonomousVmClusterId, compartmentId, displayName, filters, id, infrastructureType, serviceLevelAgreementType, state);
+        }
+        public GetAutonomousContainerDatabasesResult build() {
+            final var o = new GetAutonomousContainerDatabasesResult();
+            o.autonomousContainerDatabases = autonomousContainerDatabases;
+            o.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
+            o.autonomousVmClusterId = autonomousVmClusterId;
+            o.availabilityDomain = availabilityDomain;
+            o.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.infrastructureType = infrastructureType;
+            o.serviceLevelAgreementType = serviceLevelAgreementType;
+            o.state = state;
+            return o;
         }
     }
 }

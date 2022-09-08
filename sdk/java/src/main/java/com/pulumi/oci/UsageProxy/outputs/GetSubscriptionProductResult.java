@@ -17,33 +17,18 @@ public final class GetSubscriptionProductResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of product rewards summaries.
      * 
      */
-    private final List<GetSubscriptionProductItem> items;
-    private final @Nullable String producttype;
-    private final String subscriptionId;
-    private final String tenancyId;
-    private final String usagePeriodKey;
+    private List<GetSubscriptionProductItem> items;
+    private @Nullable String producttype;
+    private String subscriptionId;
+    private String tenancyId;
+    private String usagePeriodKey;
 
-    @CustomType.Constructor
-    private GetSubscriptionProductResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetSubscriptionProductItem> items,
-        @CustomType.Parameter("producttype") @Nullable String producttype,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("tenancyId") String tenancyId,
-        @CustomType.Parameter("usagePeriodKey") String usagePeriodKey) {
-        this.id = id;
-        this.items = items;
-        this.producttype = producttype;
-        this.subscriptionId = subscriptionId;
-        this.tenancyId = tenancyId;
-        this.usagePeriodKey = usagePeriodKey;
-    }
-
+    private GetSubscriptionProductResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -78,7 +63,7 @@ public final class GetSubscriptionProductResult {
     public static Builder builder(GetSubscriptionProductResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetSubscriptionProductItem> items;
@@ -86,11 +71,7 @@ public final class GetSubscriptionProductResult {
         private String subscriptionId;
         private String tenancyId;
         private String usagePeriodKey;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionProductResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -101,10 +82,12 @@ public final class GetSubscriptionProductResult {
     	      this.usagePeriodKey = defaults.usagePeriodKey;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetSubscriptionProductItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -112,23 +95,35 @@ public final class GetSubscriptionProductResult {
         public Builder items(GetSubscriptionProductItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder producttype(@Nullable String producttype) {
             this.producttype = producttype;
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
         }
+        @CustomType.Setter
         public Builder usagePeriodKey(String usagePeriodKey) {
             this.usagePeriodKey = Objects.requireNonNull(usagePeriodKey);
             return this;
-        }        public GetSubscriptionProductResult build() {
-            return new GetSubscriptionProductResult(id, items, producttype, subscriptionId, tenancyId, usagePeriodKey);
+        }
+        public GetSubscriptionProductResult build() {
+            final var o = new GetSubscriptionProductResult();
+            o.id = id;
+            o.items = items;
+            o.producttype = producttype;
+            o.subscriptionId = subscriptionId;
+            o.tenancyId = tenancyId;
+            o.usagePeriodKey = usagePeriodKey;
+            return o;
         }
     }
 }

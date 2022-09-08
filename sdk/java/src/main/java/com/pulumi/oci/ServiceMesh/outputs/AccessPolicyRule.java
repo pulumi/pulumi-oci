@@ -15,28 +15,19 @@ public final class AccessPolicyRule {
      * @return (Updatable) Action for the traffic between the source and the destination.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
-    private final AccessPolicyRuleDestination destination;
+    private AccessPolicyRuleDestination destination;
     /**
      * @return (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
-    private final AccessPolicyRuleSource source;
+    private AccessPolicyRuleSource source;
 
-    @CustomType.Constructor
-    private AccessPolicyRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("destination") AccessPolicyRuleDestination destination,
-        @CustomType.Parameter("source") AccessPolicyRuleSource source) {
-        this.action = action;
-        this.destination = destination;
-        this.source = source;
-    }
-
+    private AccessPolicyRule() {}
     /**
      * @return (Updatable) Action for the traffic between the source and the destination.
      * 
@@ -66,16 +57,12 @@ public final class AccessPolicyRule {
     public static Builder builder(AccessPolicyRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private AccessPolicyRuleDestination destination;
         private AccessPolicyRuleSource source;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AccessPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -83,19 +70,27 @@ public final class AccessPolicyRule {
     	      this.source = defaults.source;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder destination(AccessPolicyRuleDestination destination) {
             this.destination = Objects.requireNonNull(destination);
             return this;
         }
+        @CustomType.Setter
         public Builder source(AccessPolicyRuleSource source) {
             this.source = Objects.requireNonNull(source);
             return this;
-        }        public AccessPolicyRule build() {
-            return new AccessPolicyRule(action, destination, source);
+        }
+        public AccessPolicyRule build() {
+            final var o = new AccessPolicyRule();
+            o.action = action;
+            o.destination = destination;
+            o.source = source;
+            return o;
         }
     }
 }

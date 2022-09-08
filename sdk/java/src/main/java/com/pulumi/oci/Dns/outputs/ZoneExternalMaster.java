@@ -16,28 +16,19 @@ public final class ZoneExternalMaster {
      * @return (Updatable) The server&#39;s IP address (IPv4 or IPv6).
      * 
      */
-    private final String address;
+    private String address;
     /**
      * @return (Updatable) The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
     /**
      * @return (Updatable) The OCID of the TSIG key.
      * 
      */
-    private final @Nullable String tsigKeyId;
+    private @Nullable String tsigKeyId;
 
-    @CustomType.Constructor
-    private ZoneExternalMaster(
-        @CustomType.Parameter("address") String address,
-        @CustomType.Parameter("port") @Nullable Integer port,
-        @CustomType.Parameter("tsigKeyId") @Nullable String tsigKeyId) {
-        this.address = address;
-        this.port = port;
-        this.tsigKeyId = tsigKeyId;
-    }
-
+    private ZoneExternalMaster() {}
     /**
      * @return (Updatable) The server&#39;s IP address (IPv4 or IPv6).
      * 
@@ -67,16 +58,12 @@ public final class ZoneExternalMaster {
     public static Builder builder(ZoneExternalMaster defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String address;
         private @Nullable Integer port;
         private @Nullable String tsigKeyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ZoneExternalMaster defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.address = defaults.address;
@@ -84,19 +71,27 @@ public final class ZoneExternalMaster {
     	      this.tsigKeyId = defaults.tsigKeyId;
         }
 
+        @CustomType.Setter
         public Builder address(String address) {
             this.address = Objects.requireNonNull(address);
             return this;
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
         }
+        @CustomType.Setter
         public Builder tsigKeyId(@Nullable String tsigKeyId) {
             this.tsigKeyId = tsigKeyId;
             return this;
-        }        public ZoneExternalMaster build() {
-            return new ZoneExternalMaster(address, port, tsigKeyId);
+        }
+        public ZoneExternalMaster build() {
+            final var o = new ZoneExternalMaster();
+            o.address = address;
+            o.port = port;
+            o.tsigKeyId = tsigKeyId;
+            return o;
         }
     }
 }

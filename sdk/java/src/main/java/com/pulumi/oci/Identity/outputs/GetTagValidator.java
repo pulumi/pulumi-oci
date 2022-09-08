@@ -14,21 +14,14 @@ public final class GetTagValidator {
      * @return Specifies the type of validation: a static value (no validation) or a list.
      * 
      */
-    private final String validatorType;
+    private String validatorType;
     /**
      * @return The list of allowed values for a definedTag value.
      * 
      */
-    private final List<String> values;
+    private List<String> values;
 
-    @CustomType.Constructor
-    private GetTagValidator(
-        @CustomType.Parameter("validatorType") String validatorType,
-        @CustomType.Parameter("values") List<String> values) {
-        this.validatorType = validatorType;
-        this.values = values;
-    }
-
+    private GetTagValidator() {}
     /**
      * @return Specifies the type of validation: a static value (no validation) or a list.
      * 
@@ -51,33 +44,35 @@ public final class GetTagValidator {
     public static Builder builder(GetTagValidator defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String validatorType;
         private List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTagValidator defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.validatorType = defaults.validatorType;
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder validatorType(String validatorType) {
             this.validatorType = Objects.requireNonNull(validatorType);
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<String> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public GetTagValidator build() {
-            return new GetTagValidator(validatorType, values);
+        }
+        public GetTagValidator build() {
+            final var o = new GetTagValidator();
+            o.validatorType = validatorType;
+            o.values = values;
+            return o;
         }
     }
 }

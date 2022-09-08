@@ -17,35 +17,24 @@ public final class BlockchainPlatformComponentDetailOsn {
      * @return Availability Domain of peer
      * 
      */
-    private final @Nullable String ad;
+    private @Nullable String ad;
     /**
      * @return OCPU allocation parameter
      * 
      */
-    private final @Nullable List<BlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams;
+    private @Nullable List<BlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams;
     /**
      * @return OSN identifier
      * 
      */
-    private final @Nullable String osnKey;
+    private @Nullable String osnKey;
     /**
      * @return The current state of the Platform Instance.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private BlockchainPlatformComponentDetailOsn(
-        @CustomType.Parameter("ad") @Nullable String ad,
-        @CustomType.Parameter("ocpuAllocationParams") @Nullable List<BlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams,
-        @CustomType.Parameter("osnKey") @Nullable String osnKey,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.ad = ad;
-        this.ocpuAllocationParams = ocpuAllocationParams;
-        this.osnKey = osnKey;
-        this.state = state;
-    }
-
+    private BlockchainPlatformComponentDetailOsn() {}
     /**
      * @return Availability Domain of peer
      * 
@@ -82,17 +71,13 @@ public final class BlockchainPlatformComponentDetailOsn {
     public static Builder builder(BlockchainPlatformComponentDetailOsn defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String ad;
         private @Nullable List<BlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams;
         private @Nullable String osnKey;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BlockchainPlatformComponentDetailOsn defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ad = defaults.ad;
@@ -101,10 +86,12 @@ public final class BlockchainPlatformComponentDetailOsn {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder ad(@Nullable String ad) {
             this.ad = ad;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuAllocationParams(@Nullable List<BlockchainPlatformComponentDetailOsnOcpuAllocationParam> ocpuAllocationParams) {
             this.ocpuAllocationParams = ocpuAllocationParams;
             return this;
@@ -112,15 +99,23 @@ public final class BlockchainPlatformComponentDetailOsn {
         public Builder ocpuAllocationParams(BlockchainPlatformComponentDetailOsnOcpuAllocationParam... ocpuAllocationParams) {
             return ocpuAllocationParams(List.of(ocpuAllocationParams));
         }
+        @CustomType.Setter
         public Builder osnKey(@Nullable String osnKey) {
             this.osnKey = osnKey;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public BlockchainPlatformComponentDetailOsn build() {
-            return new BlockchainPlatformComponentDetailOsn(ad, ocpuAllocationParams, osnKey, state);
+        }
+        public BlockchainPlatformComponentDetailOsn build() {
+            final var o = new BlockchainPlatformComponentDetailOsn();
+            o.ad = ad;
+            o.ocpuAllocationParams = ocpuAllocationParams;
+            o.osnKey = osnKey;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class LogAnalyticsPreferencesManagementItem {
      * @return The preference name. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The preference value.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private LogAnalyticsPreferencesManagementItem(
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private LogAnalyticsPreferencesManagementItem() {}
     /**
      * @return The preference name. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
      * 
@@ -52,30 +45,32 @@ public final class LogAnalyticsPreferencesManagementItem {
     public static Builder builder(LogAnalyticsPreferencesManagementItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(LogAnalyticsPreferencesManagementItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public LogAnalyticsPreferencesManagementItem build() {
-            return new LogAnalyticsPreferencesManagementItem(name, value);
+        }
+        public LogAnalyticsPreferencesManagementItem build() {
+            final var o = new LogAnalyticsPreferencesManagementItem();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

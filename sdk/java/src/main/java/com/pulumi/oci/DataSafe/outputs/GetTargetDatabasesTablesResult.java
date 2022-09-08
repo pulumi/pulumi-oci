@@ -14,51 +14,32 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabasesTablesResult {
-    private final @Nullable List<GetTargetDatabasesTablesFilter> filters;
+    private @Nullable List<GetTargetDatabasesTablesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String schemaNameContains;
+    private String id;
+    private @Nullable String schemaNameContains;
     /**
      * @return Name of the schema.
      * 
      */
-    private final @Nullable List<String> schemaNames;
-    private final @Nullable String tableNameContains;
+    private @Nullable List<String> schemaNames;
+    private @Nullable String tableNameContains;
     /**
      * @return Name of the table.
      * 
      */
-    private final @Nullable List<String> tableNames;
+    private @Nullable List<String> tableNames;
     /**
      * @return The list of tables.
      * 
      */
-    private final List<GetTargetDatabasesTablesTable> tables;
-    private final String targetDatabaseId;
+    private List<GetTargetDatabasesTablesTable> tables;
+    private String targetDatabaseId;
 
-    @CustomType.Constructor
-    private GetTargetDatabasesTablesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetTargetDatabasesTablesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("schemaNameContains") @Nullable String schemaNameContains,
-        @CustomType.Parameter("schemaNames") @Nullable List<String> schemaNames,
-        @CustomType.Parameter("tableNameContains") @Nullable String tableNameContains,
-        @CustomType.Parameter("tableNames") @Nullable List<String> tableNames,
-        @CustomType.Parameter("tables") List<GetTargetDatabasesTablesTable> tables,
-        @CustomType.Parameter("targetDatabaseId") String targetDatabaseId) {
-        this.filters = filters;
-        this.id = id;
-        this.schemaNameContains = schemaNameContains;
-        this.schemaNames = schemaNames;
-        this.tableNameContains = tableNameContains;
-        this.tableNames = tableNames;
-        this.tables = tables;
-        this.targetDatabaseId = targetDatabaseId;
-    }
-
+    private GetTargetDatabasesTablesResult() {}
     public List<GetTargetDatabasesTablesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -107,7 +88,7 @@ public final class GetTargetDatabasesTablesResult {
     public static Builder builder(GetTargetDatabasesTablesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetTargetDatabasesTablesFilter> filters;
         private String id;
@@ -117,11 +98,7 @@ public final class GetTargetDatabasesTablesResult {
         private @Nullable List<String> tableNames;
         private List<GetTargetDatabasesTablesTable> tables;
         private String targetDatabaseId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabasesTablesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -134,6 +111,7 @@ public final class GetTargetDatabasesTablesResult {
     	      this.targetDatabaseId = defaults.targetDatabaseId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetDatabasesTablesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,14 +119,17 @@ public final class GetTargetDatabasesTablesResult {
         public Builder filters(GetTargetDatabasesTablesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder schemaNameContains(@Nullable String schemaNameContains) {
             this.schemaNameContains = schemaNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
             this.schemaNames = schemaNames;
             return this;
@@ -156,10 +137,12 @@ public final class GetTargetDatabasesTablesResult {
         public Builder schemaNames(String... schemaNames) {
             return schemaNames(List.of(schemaNames));
         }
+        @CustomType.Setter
         public Builder tableNameContains(@Nullable String tableNameContains) {
             this.tableNameContains = tableNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder tableNames(@Nullable List<String> tableNames) {
             this.tableNames = tableNames;
             return this;
@@ -167,6 +150,7 @@ public final class GetTargetDatabasesTablesResult {
         public Builder tableNames(String... tableNames) {
             return tableNames(List.of(tableNames));
         }
+        @CustomType.Setter
         public Builder tables(List<GetTargetDatabasesTablesTable> tables) {
             this.tables = Objects.requireNonNull(tables);
             return this;
@@ -174,11 +158,22 @@ public final class GetTargetDatabasesTablesResult {
         public Builder tables(GetTargetDatabasesTablesTable... tables) {
             return tables(List.of(tables));
         }
+        @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
             this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
             return this;
-        }        public GetTargetDatabasesTablesResult build() {
-            return new GetTargetDatabasesTablesResult(filters, id, schemaNameContains, schemaNames, tableNameContains, tableNames, tables, targetDatabaseId);
+        }
+        public GetTargetDatabasesTablesResult build() {
+            final var o = new GetTargetDatabasesTablesResult();
+            o.filters = filters;
+            o.id = id;
+            o.schemaNameContains = schemaNameContains;
+            o.schemaNames = schemaNames;
+            o.tableNameContains = tableNameContains;
+            o.tableNames = tableNames;
+            o.tables = tables;
+            o.targetDatabaseId = targetDatabaseId;
+            return o;
         }
     }
 }

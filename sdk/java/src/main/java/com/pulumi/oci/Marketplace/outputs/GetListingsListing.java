@@ -21,115 +21,80 @@ public final class GetListingsListing {
      * @return The model for upload data for images and icons.
      * 
      */
-    private final List<GetListingsListingBanner> banners;
+    private List<GetListingsListingBanner> banners;
     /**
      * @return Product categories that the listing belongs to.
      * 
      */
-    private final List<String> categories;
+    private List<String> categories;
     /**
      * @return The list of compatible architectures supported by the listing
      * 
      */
-    private final List<String> compatibleArchitectures;
+    private List<String> compatibleArchitectures;
     /**
      * @return The default package version.
      * 
      */
-    private final String defaultPackageVersion;
+    private String defaultPackageVersion;
     /**
      * @return Links to additional documentation provided by the publisher specifically for the listing.
      * 
      */
-    private final List<GetListingsListingDocumentationLink> documentationLinks;
+    private List<GetListingsListingDocumentationLink> documentationLinks;
     /**
      * @return The model for upload data for images and icons.
      * 
      */
-    private final List<GetListingsListingIcon> icons;
+    private List<GetListingsListingIcon> icons;
     /**
      * @return The unique identifier for the publisher.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
      * 
      */
-    private final Boolean isFeatured;
+    private Boolean isFeatured;
     /**
      * @return The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
      * 
      */
-    private final String listingType;
+    private String listingType;
     /**
      * @return The name of the listing.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A filter to return only packages that match the given package type exactly.
      * 
      */
-    private final String packageType;
-    private final List<String> pricingTypes;
+    private String packageType;
+    private List<String> pricingTypes;
     /**
      * @return Summary details about the publisher of the listing.
      * 
      */
-    private final List<GetListingsListingPublisher> publishers;
+    private List<GetListingsListingPublisher> publishers;
     /**
      * @return The regions where the listing is eligible to be deployed.
      * 
      */
-    private final List<GetListingsListingRegion> regions;
+    private List<GetListingsListingRegion> regions;
     /**
      * @return A short description of the listing.
      * 
      */
-    private final String shortDescription;
+    private String shortDescription;
     /**
      * @return The list of operating systems supported by the listing.
      * 
      */
-    private final List<GetListingsListingSupportedOperatingSystem> supportedOperatingSystems;
+    private List<GetListingsListingSupportedOperatingSystem> supportedOperatingSystems;
 
-    @CustomType.Constructor
-    private GetListingsListing(
-        @CustomType.Parameter("banners") List<GetListingsListingBanner> banners,
-        @CustomType.Parameter("categories") List<String> categories,
-        @CustomType.Parameter("compatibleArchitectures") List<String> compatibleArchitectures,
-        @CustomType.Parameter("defaultPackageVersion") String defaultPackageVersion,
-        @CustomType.Parameter("documentationLinks") List<GetListingsListingDocumentationLink> documentationLinks,
-        @CustomType.Parameter("icons") List<GetListingsListingIcon> icons,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isFeatured") Boolean isFeatured,
-        @CustomType.Parameter("listingType") String listingType,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("pricingTypes") List<String> pricingTypes,
-        @CustomType.Parameter("publishers") List<GetListingsListingPublisher> publishers,
-        @CustomType.Parameter("regions") List<GetListingsListingRegion> regions,
-        @CustomType.Parameter("shortDescription") String shortDescription,
-        @CustomType.Parameter("supportedOperatingSystems") List<GetListingsListingSupportedOperatingSystem> supportedOperatingSystems) {
-        this.banners = banners;
-        this.categories = categories;
-        this.compatibleArchitectures = compatibleArchitectures;
-        this.defaultPackageVersion = defaultPackageVersion;
-        this.documentationLinks = documentationLinks;
-        this.icons = icons;
-        this.id = id;
-        this.isFeatured = isFeatured;
-        this.listingType = listingType;
-        this.name = name;
-        this.packageType = packageType;
-        this.pricingTypes = pricingTypes;
-        this.publishers = publishers;
-        this.regions = regions;
-        this.shortDescription = shortDescription;
-        this.supportedOperatingSystems = supportedOperatingSystems;
-    }
-
+    private GetListingsListing() {}
     /**
      * @return The model for upload data for images and icons.
      * 
@@ -246,7 +211,7 @@ public final class GetListingsListing {
     public static Builder builder(GetListingsListing defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetListingsListingBanner> banners;
         private List<String> categories;
@@ -264,11 +229,7 @@ public final class GetListingsListing {
         private List<GetListingsListingRegion> regions;
         private String shortDescription;
         private List<GetListingsListingSupportedOperatingSystem> supportedOperatingSystems;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingsListing defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.banners = defaults.banners;
@@ -289,6 +250,7 @@ public final class GetListingsListing {
     	      this.supportedOperatingSystems = defaults.supportedOperatingSystems;
         }
 
+        @CustomType.Setter
         public Builder banners(List<GetListingsListingBanner> banners) {
             this.banners = Objects.requireNonNull(banners);
             return this;
@@ -296,6 +258,7 @@ public final class GetListingsListing {
         public Builder banners(GetListingsListingBanner... banners) {
             return banners(List.of(banners));
         }
+        @CustomType.Setter
         public Builder categories(List<String> categories) {
             this.categories = Objects.requireNonNull(categories);
             return this;
@@ -303,6 +266,7 @@ public final class GetListingsListing {
         public Builder categories(String... categories) {
             return categories(List.of(categories));
         }
+        @CustomType.Setter
         public Builder compatibleArchitectures(List<String> compatibleArchitectures) {
             this.compatibleArchitectures = Objects.requireNonNull(compatibleArchitectures);
             return this;
@@ -310,10 +274,12 @@ public final class GetListingsListing {
         public Builder compatibleArchitectures(String... compatibleArchitectures) {
             return compatibleArchitectures(List.of(compatibleArchitectures));
         }
+        @CustomType.Setter
         public Builder defaultPackageVersion(String defaultPackageVersion) {
             this.defaultPackageVersion = Objects.requireNonNull(defaultPackageVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder documentationLinks(List<GetListingsListingDocumentationLink> documentationLinks) {
             this.documentationLinks = Objects.requireNonNull(documentationLinks);
             return this;
@@ -321,6 +287,7 @@ public final class GetListingsListing {
         public Builder documentationLinks(GetListingsListingDocumentationLink... documentationLinks) {
             return documentationLinks(List.of(documentationLinks));
         }
+        @CustomType.Setter
         public Builder icons(List<GetListingsListingIcon> icons) {
             this.icons = Objects.requireNonNull(icons);
             return this;
@@ -328,26 +295,32 @@ public final class GetListingsListing {
         public Builder icons(GetListingsListingIcon... icons) {
             return icons(List.of(icons));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isFeatured(Boolean isFeatured) {
             this.isFeatured = Objects.requireNonNull(isFeatured);
             return this;
         }
+        @CustomType.Setter
         public Builder listingType(String listingType) {
             this.listingType = Objects.requireNonNull(listingType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder pricingTypes(List<String> pricingTypes) {
             this.pricingTypes = Objects.requireNonNull(pricingTypes);
             return this;
@@ -355,6 +328,7 @@ public final class GetListingsListing {
         public Builder pricingTypes(String... pricingTypes) {
             return pricingTypes(List.of(pricingTypes));
         }
+        @CustomType.Setter
         public Builder publishers(List<GetListingsListingPublisher> publishers) {
             this.publishers = Objects.requireNonNull(publishers);
             return this;
@@ -362,6 +336,7 @@ public final class GetListingsListing {
         public Builder publishers(GetListingsListingPublisher... publishers) {
             return publishers(List.of(publishers));
         }
+        @CustomType.Setter
         public Builder regions(List<GetListingsListingRegion> regions) {
             this.regions = Objects.requireNonNull(regions);
             return this;
@@ -369,18 +344,38 @@ public final class GetListingsListing {
         public Builder regions(GetListingsListingRegion... regions) {
             return regions(List.of(regions));
         }
+        @CustomType.Setter
         public Builder shortDescription(String shortDescription) {
             this.shortDescription = Objects.requireNonNull(shortDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder supportedOperatingSystems(List<GetListingsListingSupportedOperatingSystem> supportedOperatingSystems) {
             this.supportedOperatingSystems = Objects.requireNonNull(supportedOperatingSystems);
             return this;
         }
         public Builder supportedOperatingSystems(GetListingsListingSupportedOperatingSystem... supportedOperatingSystems) {
             return supportedOperatingSystems(List.of(supportedOperatingSystems));
-        }        public GetListingsListing build() {
-            return new GetListingsListing(banners, categories, compatibleArchitectures, defaultPackageVersion, documentationLinks, icons, id, isFeatured, listingType, name, packageType, pricingTypes, publishers, regions, shortDescription, supportedOperatingSystems);
+        }
+        public GetListingsListing build() {
+            final var o = new GetListingsListing();
+            o.banners = banners;
+            o.categories = categories;
+            o.compatibleArchitectures = compatibleArchitectures;
+            o.defaultPackageVersion = defaultPackageVersion;
+            o.documentationLinks = documentationLinks;
+            o.icons = icons;
+            o.id = id;
+            o.isFeatured = isFeatured;
+            o.listingType = listingType;
+            o.name = name;
+            o.packageType = packageType;
+            o.pricingTypes = pricingTypes;
+            o.publishers = publishers;
+            o.regions = regions;
+            o.shortDescription = shortDescription;
+            o.supportedOperatingSystems = supportedOperatingSystems;
+            return o;
         }
     }
 }

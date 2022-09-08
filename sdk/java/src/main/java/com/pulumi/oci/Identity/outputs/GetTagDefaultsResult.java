@@ -18,45 +18,30 @@ public final class GetTagDefaultsResult {
      * @return The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetTagDefaultsFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetTagDefaultsFilter> filters;
     /**
      * @return The OCID of the tag default.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The tag default&#39;s current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of tag_defaults.
      * 
      */
-    private final List<GetTagDefaultsTagDefault> tagDefaults;
+    private List<GetTagDefaultsTagDefault> tagDefaults;
     /**
      * @return The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      * 
      */
-    private final @Nullable String tagDefinitionId;
+    private @Nullable String tagDefinitionId;
 
-    @CustomType.Constructor
-    private GetTagDefaultsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetTagDefaultsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("tagDefaults") List<GetTagDefaultsTagDefault> tagDefaults,
-        @CustomType.Parameter("tagDefinitionId") @Nullable String tagDefinitionId) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.tagDefaults = tagDefaults;
-        this.tagDefinitionId = tagDefinitionId;
-    }
-
+    private GetTagDefaultsResult() {}
     /**
      * @return The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.
      * 
@@ -103,7 +88,7 @@ public final class GetTagDefaultsResult {
     public static Builder builder(GetTagDefaultsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetTagDefaultsFilter> filters;
@@ -111,11 +96,7 @@ public final class GetTagDefaultsResult {
         private @Nullable String state;
         private List<GetTagDefaultsTagDefault> tagDefaults;
         private @Nullable String tagDefinitionId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTagDefaultsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetTagDefaultsResult {
     	      this.tagDefinitionId = defaults.tagDefinitionId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTagDefaultsFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,14 +120,17 @@ public final class GetTagDefaultsResult {
         public Builder filters(GetTagDefaultsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder tagDefaults(List<GetTagDefaultsTagDefault> tagDefaults) {
             this.tagDefaults = Objects.requireNonNull(tagDefaults);
             return this;
@@ -152,11 +138,20 @@ public final class GetTagDefaultsResult {
         public Builder tagDefaults(GetTagDefaultsTagDefault... tagDefaults) {
             return tagDefaults(List.of(tagDefaults));
         }
+        @CustomType.Setter
         public Builder tagDefinitionId(@Nullable String tagDefinitionId) {
             this.tagDefinitionId = tagDefinitionId;
             return this;
-        }        public GetTagDefaultsResult build() {
-            return new GetTagDefaultsResult(compartmentId, filters, id, state, tagDefaults, tagDefinitionId);
+        }
+        public GetTagDefaultsResult build() {
+            final var o = new GetTagDefaultsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.tagDefaults = tagDefaults;
+            o.tagDefinitionId = tagDefinitionId;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetAnnotationFormatsAnnotationFormatCollection {
      * @return List of annotation formats.
      * 
      */
-    private final List<GetAnnotationFormatsAnnotationFormatCollectionItem> items;
+    private List<GetAnnotationFormatsAnnotationFormatCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAnnotationFormatsAnnotationFormatCollection(@CustomType.Parameter("items") List<GetAnnotationFormatsAnnotationFormatCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAnnotationFormatsAnnotationFormatCollection() {}
     /**
      * @return List of annotation formats.
      * 
@@ -36,27 +32,27 @@ public final class GetAnnotationFormatsAnnotationFormatCollection {
     public static Builder builder(GetAnnotationFormatsAnnotationFormatCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAnnotationFormatsAnnotationFormatCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnnotationFormatsAnnotationFormatCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAnnotationFormatsAnnotationFormatCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAnnotationFormatsAnnotationFormatCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAnnotationFormatsAnnotationFormatCollection build() {
-            return new GetAnnotationFormatsAnnotationFormatCollection(items);
+        }
+        public GetAnnotationFormatsAnnotationFormatCollection build() {
+            final var o = new GetAnnotationFormatsAnnotationFormatCollection();
+            o.items = items;
+            return o;
         }
     }
 }

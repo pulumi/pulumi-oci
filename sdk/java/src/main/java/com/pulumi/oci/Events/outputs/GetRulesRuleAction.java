@@ -14,13 +14,9 @@ public final class GetRulesRuleAction {
      * @return A list of one or more Action objects.
      * 
      */
-    private final List<GetRulesRuleActionAction> actions;
+    private List<GetRulesRuleActionAction> actions;
 
-    @CustomType.Constructor
-    private GetRulesRuleAction(@CustomType.Parameter("actions") List<GetRulesRuleActionAction> actions) {
-        this.actions = actions;
-    }
-
+    private GetRulesRuleAction() {}
     /**
      * @return A list of one or more Action objects.
      * 
@@ -36,27 +32,27 @@ public final class GetRulesRuleAction {
     public static Builder builder(GetRulesRuleAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRulesRuleActionAction> actions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRulesRuleAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actions = defaults.actions;
         }
 
+        @CustomType.Setter
         public Builder actions(List<GetRulesRuleActionAction> actions) {
             this.actions = Objects.requireNonNull(actions);
             return this;
         }
         public Builder actions(GetRulesRuleActionAction... actions) {
             return actions(List.of(actions));
-        }        public GetRulesRuleAction build() {
-            return new GetRulesRuleAction(actions);
+        }
+        public GetRulesRuleAction build() {
+            final var o = new GetRulesRuleAction();
+            o.actions = actions;
+            return o;
         }
     }
 }

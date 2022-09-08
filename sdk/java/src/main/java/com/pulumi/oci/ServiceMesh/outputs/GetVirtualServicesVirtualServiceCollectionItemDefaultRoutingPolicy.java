@@ -13,13 +13,9 @@ public final class GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingP
      * @return Type of the virtual service routing policy.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy(@CustomType.Parameter("type") String type) {
-        this.type = type;
-    }
-
+    private GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy() {}
     /**
      * @return Type of the virtual service routing policy.
      * 
@@ -35,24 +31,24 @@ public final class GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingP
     public static Builder builder(GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy build() {
-            return new GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy(type);
+        }
+        public GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy build() {
+            final var o = new GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy();
+            o.type = type;
+            return o;
         }
     }
 }

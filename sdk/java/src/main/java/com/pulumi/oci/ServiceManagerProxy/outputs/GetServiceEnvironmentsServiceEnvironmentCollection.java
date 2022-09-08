@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetServiceEnvironmentsServiceEnvironmentCollection {
-    private final List<GetServiceEnvironmentsServiceEnvironmentCollectionItem> items;
+    private List<GetServiceEnvironmentsServiceEnvironmentCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetServiceEnvironmentsServiceEnvironmentCollection(@CustomType.Parameter("items") List<GetServiceEnvironmentsServiceEnvironmentCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetServiceEnvironmentsServiceEnvironmentCollection() {}
     public List<GetServiceEnvironmentsServiceEnvironmentCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollection {
     public static Builder builder(GetServiceEnvironmentsServiceEnvironmentCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetServiceEnvironmentsServiceEnvironmentCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceEnvironmentsServiceEnvironmentCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetServiceEnvironmentsServiceEnvironmentCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetServiceEnvironmentsServiceEnvironmentCollectionItem... items) {
             return items(List.of(items));
-        }        public GetServiceEnvironmentsServiceEnvironmentCollection build() {
-            return new GetServiceEnvironmentsServiceEnvironmentCollection(items);
+        }
+        public GetServiceEnvironmentsServiceEnvironmentCollection build() {
+            final var o = new GetServiceEnvironmentsServiceEnvironmentCollection();
+            o.items = items;
+            return o;
         }
     }
 }

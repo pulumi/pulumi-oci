@@ -15,21 +15,14 @@ public final class OdaInstanceRestrictedOperation {
      * @return Name of the restricted operation.
      * 
      */
-    private final @Nullable String operationName;
+    private @Nullable String operationName;
     /**
      * @return Name of the service restricting the operation.
      * 
      */
-    private final @Nullable String restrictingService;
+    private @Nullable String restrictingService;
 
-    @CustomType.Constructor
-    private OdaInstanceRestrictedOperation(
-        @CustomType.Parameter("operationName") @Nullable String operationName,
-        @CustomType.Parameter("restrictingService") @Nullable String restrictingService) {
-        this.operationName = operationName;
-        this.restrictingService = restrictingService;
-    }
-
+    private OdaInstanceRestrictedOperation() {}
     /**
      * @return Name of the restricted operation.
      * 
@@ -52,30 +45,32 @@ public final class OdaInstanceRestrictedOperation {
     public static Builder builder(OdaInstanceRestrictedOperation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String operationName;
         private @Nullable String restrictingService;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(OdaInstanceRestrictedOperation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.operationName = defaults.operationName;
     	      this.restrictingService = defaults.restrictingService;
         }
 
+        @CustomType.Setter
         public Builder operationName(@Nullable String operationName) {
             this.operationName = operationName;
             return this;
         }
+        @CustomType.Setter
         public Builder restrictingService(@Nullable String restrictingService) {
             this.restrictingService = restrictingService;
             return this;
-        }        public OdaInstanceRestrictedOperation build() {
-            return new OdaInstanceRestrictedOperation(operationName, restrictingService);
+        }
+        public OdaInstanceRestrictedOperation build() {
+            final var o = new OdaInstanceRestrictedOperation();
+            o.operationName = operationName;
+            o.restrictingService = restrictingService;
+            return o;
         }
     }
 }

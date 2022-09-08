@@ -13,86 +13,61 @@ public final class GetReplicationPoliciesReplicationPolicy {
      * @return The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @deprecated
      * The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
      * 
      */
     @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
-    private final String deleteObjectInDestinationBucket;
+    private String deleteObjectInDestinationBucket;
     /**
      * @return The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
      * 
      */
-    private final String destinationBucketName;
+    private String destinationBucketName;
     /**
      * @return The destination region to replicate to, for example &#34;us-ashburn-1&#34;.
      * 
      */
-    private final String destinationRegionName;
+    private String destinationRegionName;
     /**
      * @return The id of the replication policy.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the policy.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The Object Storage namespace used for the request.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return A human-readable description of the status.
      * 
      */
-    private final String statusMessage;
+    private String statusMessage;
     /**
      * @return The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Changes made to the source bucket before this time has been replicated.
      * 
      */
-    private final String timeLastSync;
+    private String timeLastSync;
 
-    @CustomType.Constructor
-    private GetReplicationPoliciesReplicationPolicy(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("deleteObjectInDestinationBucket") String deleteObjectInDestinationBucket,
-        @CustomType.Parameter("destinationBucketName") String destinationBucketName,
-        @CustomType.Parameter("destinationRegionName") String destinationRegionName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("statusMessage") String statusMessage,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastSync") String timeLastSync) {
-        this.bucket = bucket;
-        this.deleteObjectInDestinationBucket = deleteObjectInDestinationBucket;
-        this.destinationBucketName = destinationBucketName;
-        this.destinationRegionName = destinationRegionName;
-        this.id = id;
-        this.name = name;
-        this.namespace = namespace;
-        this.status = status;
-        this.statusMessage = statusMessage;
-        this.timeCreated = timeCreated;
-        this.timeLastSync = timeLastSync;
-    }
-
+    private GetReplicationPoliciesReplicationPolicy() {}
     /**
      * @return The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
@@ -180,7 +155,7 @@ public final class GetReplicationPoliciesReplicationPolicy {
     public static Builder builder(GetReplicationPoliciesReplicationPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String deleteObjectInDestinationBucket;
@@ -193,11 +168,7 @@ public final class GetReplicationPoliciesReplicationPolicy {
         private String statusMessage;
         private String timeCreated;
         private String timeLastSync;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReplicationPoliciesReplicationPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -213,51 +184,75 @@ public final class GetReplicationPoliciesReplicationPolicy {
     	      this.timeLastSync = defaults.timeLastSync;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder deleteObjectInDestinationBucket(String deleteObjectInDestinationBucket) {
             this.deleteObjectInDestinationBucket = Objects.requireNonNull(deleteObjectInDestinationBucket);
             return this;
         }
+        @CustomType.Setter
         public Builder destinationBucketName(String destinationBucketName) {
             this.destinationBucketName = Objects.requireNonNull(destinationBucketName);
             return this;
         }
+        @CustomType.Setter
         public Builder destinationRegionName(String destinationRegionName) {
             this.destinationRegionName = Objects.requireNonNull(destinationRegionName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder statusMessage(String statusMessage) {
             this.statusMessage = Objects.requireNonNull(statusMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastSync(String timeLastSync) {
             this.timeLastSync = Objects.requireNonNull(timeLastSync);
             return this;
-        }        public GetReplicationPoliciesReplicationPolicy build() {
-            return new GetReplicationPoliciesReplicationPolicy(bucket, deleteObjectInDestinationBucket, destinationBucketName, destinationRegionName, id, name, namespace, status, statusMessage, timeCreated, timeLastSync);
+        }
+        public GetReplicationPoliciesReplicationPolicy build() {
+            final var o = new GetReplicationPoliciesReplicationPolicy();
+            o.bucket = bucket;
+            o.deleteObjectInDestinationBucket = deleteObjectInDestinationBucket;
+            o.destinationBucketName = destinationBucketName;
+            o.destinationRegionName = destinationRegionName;
+            o.id = id;
+            o.name = name;
+            o.namespace = namespace;
+            o.status = status;
+            o.statusMessage = statusMessage;
+            o.timeCreated = timeCreated;
+            o.timeLastSync = timeLastSync;
+            return o;
         }
     }
 }

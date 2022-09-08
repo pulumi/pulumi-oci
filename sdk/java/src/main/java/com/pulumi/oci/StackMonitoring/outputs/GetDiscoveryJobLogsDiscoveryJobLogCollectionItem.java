@@ -13,35 +13,24 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
      * @return The OCID of Discovery job
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Log message
      * 
      */
-    private final String logMessage;
+    private String logMessage;
     /**
      * @return The log type like INFO, WARNING, ERROR, SUCCESS
      * 
      */
-    private final String logType;
+    private String logType;
     /**
      * @return Time the Job log was created
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobLogsDiscoveryJobLogCollectionItem(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("logMessage") String logMessage,
-        @CustomType.Parameter("logType") String logType,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.id = id;
-        this.logMessage = logMessage;
-        this.logType = logType;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetDiscoveryJobLogsDiscoveryJobLogCollectionItem() {}
     /**
      * @return The OCID of Discovery job
      * 
@@ -78,17 +67,13 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
     public static Builder builder(GetDiscoveryJobLogsDiscoveryJobLogCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String logMessage;
         private String logType;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobLogsDiscoveryJobLogCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -97,23 +82,33 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder logMessage(String logMessage) {
             this.logMessage = Objects.requireNonNull(logMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder logType(String logType) {
             this.logType = Objects.requireNonNull(logType);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetDiscoveryJobLogsDiscoveryJobLogCollectionItem build() {
-            return new GetDiscoveryJobLogsDiscoveryJobLogCollectionItem(id, logMessage, logType, timeCreated);
+        }
+        public GetDiscoveryJobLogsDiscoveryJobLogCollectionItem build() {
+            final var o = new GetDiscoveryJobLogsDiscoveryJobLogCollectionItem();
+            o.id = id;
+            o.logMessage = logMessage;
+            o.logType = logType;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

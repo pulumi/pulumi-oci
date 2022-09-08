@@ -15,28 +15,19 @@ public final class GetMonitoredResourceAlias {
      * @return Monitored Resource Alias Reference Source Credential
      * 
      */
-    private final List<GetMonitoredResourceAliasCredential> credentials;
+    private List<GetMonitoredResourceAliasCredential> credentials;
     /**
      * @return property name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
-    private final String source;
+    private String source;
 
-    @CustomType.Constructor
-    private GetMonitoredResourceAlias(
-        @CustomType.Parameter("credentials") List<GetMonitoredResourceAliasCredential> credentials,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("source") String source) {
-        this.credentials = credentials;
-        this.name = name;
-        this.source = source;
-    }
-
+    private GetMonitoredResourceAlias() {}
     /**
      * @return Monitored Resource Alias Reference Source Credential
      * 
@@ -66,16 +57,12 @@ public final class GetMonitoredResourceAlias {
     public static Builder builder(GetMonitoredResourceAlias defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMonitoredResourceAliasCredential> credentials;
         private String name;
         private String source;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitoredResourceAlias defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.credentials = defaults.credentials;
@@ -83,6 +70,7 @@ public final class GetMonitoredResourceAlias {
     	      this.source = defaults.source;
         }
 
+        @CustomType.Setter
         public Builder credentials(List<GetMonitoredResourceAliasCredential> credentials) {
             this.credentials = Objects.requireNonNull(credentials);
             return this;
@@ -90,15 +78,22 @@ public final class GetMonitoredResourceAlias {
         public Builder credentials(GetMonitoredResourceAliasCredential... credentials) {
             return credentials(List.of(credentials));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
-        }        public GetMonitoredResourceAlias build() {
-            return new GetMonitoredResourceAlias(credentials, name, source);
+        }
+        public GetMonitoredResourceAlias build() {
+            final var o = new GetMonitoredResourceAlias();
+            o.credentials = credentials;
+            o.name = name;
+            o.source = source;
+            return o;
         }
     }
 }

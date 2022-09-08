@@ -19,51 +19,32 @@ public final class GetSecurityZonesResult {
      * @return The OCID of the compartment for the security zone
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The security zone&#39;s name
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetSecurityZonesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetSecurityZonesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private final @Nullable String id;
-    private final @Nullable Boolean isRequiredSecurityZonesInSubtree;
-    private final @Nullable String securityRecipeId;
+    private @Nullable String id;
+    private @Nullable Boolean isRequiredSecurityZonesInSubtree;
+    private @Nullable String securityRecipeId;
     /**
      * @return The list of security_zone_collection.
      * 
      */
-    private final List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections;
+    private List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections;
     /**
      * @return The current state of the security zone
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetSecurityZonesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetSecurityZonesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("isRequiredSecurityZonesInSubtree") @Nullable Boolean isRequiredSecurityZonesInSubtree,
-        @CustomType.Parameter("securityRecipeId") @Nullable String securityRecipeId,
-        @CustomType.Parameter("securityZoneCollections") List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isRequiredSecurityZonesInSubtree = isRequiredSecurityZonesInSubtree;
-        this.securityRecipeId = securityRecipeId;
-        this.securityZoneCollections = securityZoneCollections;
-        this.state = state;
-    }
-
+    private GetSecurityZonesResult() {}
     /**
      * @return The OCID of the compartment for the security zone
      * 
@@ -116,7 +97,7 @@ public final class GetSecurityZonesResult {
     public static Builder builder(GetSecurityZonesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +107,7 @@ public final class GetSecurityZonesResult {
         private @Nullable String securityRecipeId;
         private List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityZonesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -143,14 +120,17 @@ public final class GetSecurityZonesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityZonesFilter> filters) {
             this.filters = filters;
             return this;
@@ -158,18 +138,22 @@ public final class GetSecurityZonesResult {
         public Builder filters(GetSecurityZonesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder isRequiredSecurityZonesInSubtree(@Nullable Boolean isRequiredSecurityZonesInSubtree) {
             this.isRequiredSecurityZonesInSubtree = isRequiredSecurityZonesInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder securityRecipeId(@Nullable String securityRecipeId) {
             this.securityRecipeId = securityRecipeId;
             return this;
         }
+        @CustomType.Setter
         public Builder securityZoneCollections(List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections) {
             this.securityZoneCollections = Objects.requireNonNull(securityZoneCollections);
             return this;
@@ -177,11 +161,22 @@ public final class GetSecurityZonesResult {
         public Builder securityZoneCollections(GetSecurityZonesSecurityZoneCollection... securityZoneCollections) {
             return securityZoneCollections(List.of(securityZoneCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetSecurityZonesResult build() {
-            return new GetSecurityZonesResult(compartmentId, displayName, filters, id, isRequiredSecurityZonesInSubtree, securityRecipeId, securityZoneCollections, state);
+        }
+        public GetSecurityZonesResult build() {
+            final var o = new GetSecurityZonesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isRequiredSecurityZonesInSubtree = isRequiredSecurityZonesInSubtree;
+            o.securityRecipeId = securityRecipeId;
+            o.securityZoneCollections = securityZoneCollections;
+            o.state = state;
+            return o;
         }
     }
 }

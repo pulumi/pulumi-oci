@@ -16,77 +16,54 @@ public final class GetListingPublisher {
      * @return The email address of the publisher.
      * 
      */
-    private final String contactEmail;
+    private String contactEmail;
     /**
      * @return The phone number of the publisher.
      * 
      */
-    private final String contactPhone;
+    private String contactPhone;
     /**
      * @return A description of the screenshot.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The address of the publisher&#39;s headquarters.
      * 
      */
-    private final String hqAddress;
+    private String hqAddress;
     /**
      * @return The unique identifier for the publisher.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Reference links.
      * 
      */
-    private final List<GetListingPublisherLink> links;
+    private List<GetListingPublisherLink> links;
     /**
      * @return The model for upload data for images and icons.
      * 
      */
-    private final List<GetListingPublisherLogo> logos;
+    private List<GetListingPublisherLogo> logos;
     /**
      * @return Text that describes the resource.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The publisher&#39;s website.
      * 
      */
-    private final String websiteUrl;
+    private String websiteUrl;
     /**
      * @return The year the publisher&#39;s company or organization was founded.
      * 
      */
-    private final String yearFounded;
+    private String yearFounded;
 
-    @CustomType.Constructor
-    private GetListingPublisher(
-        @CustomType.Parameter("contactEmail") String contactEmail,
-        @CustomType.Parameter("contactPhone") String contactPhone,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("hqAddress") String hqAddress,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("links") List<GetListingPublisherLink> links,
-        @CustomType.Parameter("logos") List<GetListingPublisherLogo> logos,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("websiteUrl") String websiteUrl,
-        @CustomType.Parameter("yearFounded") String yearFounded) {
-        this.contactEmail = contactEmail;
-        this.contactPhone = contactPhone;
-        this.description = description;
-        this.hqAddress = hqAddress;
-        this.id = id;
-        this.links = links;
-        this.logos = logos;
-        this.name = name;
-        this.websiteUrl = websiteUrl;
-        this.yearFounded = yearFounded;
-    }
-
+    private GetListingPublisher() {}
     /**
      * @return The email address of the publisher.
      * 
@@ -165,7 +142,7 @@ public final class GetListingPublisher {
     public static Builder builder(GetListingPublisher defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String contactEmail;
         private String contactPhone;
@@ -177,11 +154,7 @@ public final class GetListingPublisher {
         private String name;
         private String websiteUrl;
         private String yearFounded;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPublisher defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contactEmail = defaults.contactEmail;
@@ -196,26 +169,32 @@ public final class GetListingPublisher {
     	      this.yearFounded = defaults.yearFounded;
         }
 
+        @CustomType.Setter
         public Builder contactEmail(String contactEmail) {
             this.contactEmail = Objects.requireNonNull(contactEmail);
             return this;
         }
+        @CustomType.Setter
         public Builder contactPhone(String contactPhone) {
             this.contactPhone = Objects.requireNonNull(contactPhone);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder hqAddress(String hqAddress) {
             this.hqAddress = Objects.requireNonNull(hqAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder links(List<GetListingPublisherLink> links) {
             this.links = Objects.requireNonNull(links);
             return this;
@@ -223,6 +202,7 @@ public final class GetListingPublisher {
         public Builder links(GetListingPublisherLink... links) {
             return links(List.of(links));
         }
+        @CustomType.Setter
         public Builder logos(List<GetListingPublisherLogo> logos) {
             this.logos = Objects.requireNonNull(logos);
             return this;
@@ -230,19 +210,34 @@ public final class GetListingPublisher {
         public Builder logos(GetListingPublisherLogo... logos) {
             return logos(List.of(logos));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder websiteUrl(String websiteUrl) {
             this.websiteUrl = Objects.requireNonNull(websiteUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder yearFounded(String yearFounded) {
             this.yearFounded = Objects.requireNonNull(yearFounded);
             return this;
-        }        public GetListingPublisher build() {
-            return new GetListingPublisher(contactEmail, contactPhone, description, hqAddress, id, links, logos, name, websiteUrl, yearFounded);
+        }
+        public GetListingPublisher build() {
+            final var o = new GetListingPublisher();
+            o.contactEmail = contactEmail;
+            o.contactPhone = contactPhone;
+            o.description = description;
+            o.hqAddress = hqAddress;
+            o.id = id;
+            o.links = links;
+            o.logos = logos;
+            o.name = name;
+            o.websiteUrl = websiteUrl;
+            o.yearFounded = yearFounded;
+            return o;
         }
     }
 }

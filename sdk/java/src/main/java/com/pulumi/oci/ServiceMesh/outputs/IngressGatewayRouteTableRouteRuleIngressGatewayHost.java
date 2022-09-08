@@ -16,21 +16,14 @@ public final class IngressGatewayRouteTableRouteRuleIngressGatewayHost {
      * @return (Updatable) Name of the ingress gateway host that this route should apply to.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
 
-    @CustomType.Constructor
-    private IngressGatewayRouteTableRouteRuleIngressGatewayHost(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("port") @Nullable Integer port) {
-        this.name = name;
-        this.port = port;
-    }
-
+    private IngressGatewayRouteTableRouteRuleIngressGatewayHost() {}
     /**
      * @return (Updatable) Name of the ingress gateway host that this route should apply to.
      * 
@@ -53,30 +46,32 @@ public final class IngressGatewayRouteTableRouteRuleIngressGatewayHost {
     public static Builder builder(IngressGatewayRouteTableRouteRuleIngressGatewayHost defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private @Nullable Integer port;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IngressGatewayRouteTableRouteRuleIngressGatewayHost defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.port = defaults.port;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
-        }        public IngressGatewayRouteTableRouteRuleIngressGatewayHost build() {
-            return new IngressGatewayRouteTableRouteRuleIngressGatewayHost(name, port);
+        }
+        public IngressGatewayRouteTableRouteRuleIngressGatewayHost build() {
+            final var o = new IngressGatewayRouteTableRouteRuleIngressGatewayHost();
+            o.name = name;
+            o.port = port;
+            return o;
         }
     }
 }

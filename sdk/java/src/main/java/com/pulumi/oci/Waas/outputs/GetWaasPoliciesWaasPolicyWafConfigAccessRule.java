@@ -17,32 +17,32 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRule {
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
      * 
      */
-    private final String blockAction;
+    private String blockAction;
     /**
      * @return The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
      * 
      */
-    private final String blockErrorPageCode;
+    private String blockErrorPageCode;
     /**
      * @return The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
      * 
      */
-    private final String blockErrorPageDescription;
+    private String blockErrorPageDescription;
     /**
      * @return The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
      * 
      */
-    private final String blockErrorPageMessage;
+    private String blockErrorPageMessage;
     /**
      * @return The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
-    private final Integer blockResponseCode;
+    private Integer blockResponseCode;
     /**
      * @return The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
      * * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
@@ -51,91 +51,56 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRule {
      * * **CAPTCHA:** Bypasses CAPTCHA Challenge.
      * 
      */
-    private final List<String> bypassChallenges;
+    private List<String> bypassChallenges;
     /**
      * @return The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
      * 
      */
-    private final String captchaFooter;
+    private String captchaFooter;
     /**
      * @return The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
      * 
      */
-    private final String captchaHeader;
+    private String captchaHeader;
     /**
      * @return The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
      * 
      */
-    private final String captchaSubmitLabel;
+    private String captchaSubmitLabel;
     /**
      * @return The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
      * 
      */
-    private final String captchaTitle;
+    private String captchaTitle;
     /**
      * @return When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria> criterias;
+    private List<GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria> criterias;
     /**
      * @return The unique name of the whitelist.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The response status code to return when `action` is set to `REDIRECT`.
      * * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
      * * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
      * 
      */
-    private final String redirectResponseCode;
+    private String redirectResponseCode;
     /**
      * @return The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
      * 
      */
-    private final String redirectUrl;
+    private String redirectUrl;
     /**
      * @return An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations;
+    private List<GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesWaasPolicyWafConfigAccessRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("blockAction") String blockAction,
-        @CustomType.Parameter("blockErrorPageCode") String blockErrorPageCode,
-        @CustomType.Parameter("blockErrorPageDescription") String blockErrorPageDescription,
-        @CustomType.Parameter("blockErrorPageMessage") String blockErrorPageMessage,
-        @CustomType.Parameter("blockResponseCode") Integer blockResponseCode,
-        @CustomType.Parameter("bypassChallenges") List<String> bypassChallenges,
-        @CustomType.Parameter("captchaFooter") String captchaFooter,
-        @CustomType.Parameter("captchaHeader") String captchaHeader,
-        @CustomType.Parameter("captchaSubmitLabel") String captchaSubmitLabel,
-        @CustomType.Parameter("captchaTitle") String captchaTitle,
-        @CustomType.Parameter("criterias") List<GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria> criterias,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("redirectResponseCode") String redirectResponseCode,
-        @CustomType.Parameter("redirectUrl") String redirectUrl,
-        @CustomType.Parameter("responseHeaderManipulations") List<GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations) {
-        this.action = action;
-        this.blockAction = blockAction;
-        this.blockErrorPageCode = blockErrorPageCode;
-        this.blockErrorPageDescription = blockErrorPageDescription;
-        this.blockErrorPageMessage = blockErrorPageMessage;
-        this.blockResponseCode = blockResponseCode;
-        this.bypassChallenges = bypassChallenges;
-        this.captchaFooter = captchaFooter;
-        this.captchaHeader = captchaHeader;
-        this.captchaSubmitLabel = captchaSubmitLabel;
-        this.captchaTitle = captchaTitle;
-        this.criterias = criterias;
-        this.name = name;
-        this.redirectResponseCode = redirectResponseCode;
-        this.redirectUrl = redirectUrl;
-        this.responseHeaderManipulations = responseHeaderManipulations;
-    }
-
+    private GetWaasPoliciesWaasPolicyWafConfigAccessRule() {}
     /**
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
@@ -262,7 +227,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRule {
     public static Builder builder(GetWaasPoliciesWaasPolicyWafConfigAccessRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private String blockAction;
@@ -280,11 +245,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRule {
         private String redirectResponseCode;
         private String redirectUrl;
         private List<GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigAccessRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -305,30 +266,37 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRule {
     	      this.responseHeaderManipulations = defaults.responseHeaderManipulations;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder blockAction(String blockAction) {
             this.blockAction = Objects.requireNonNull(blockAction);
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageCode(String blockErrorPageCode) {
             this.blockErrorPageCode = Objects.requireNonNull(blockErrorPageCode);
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageDescription(String blockErrorPageDescription) {
             this.blockErrorPageDescription = Objects.requireNonNull(blockErrorPageDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageMessage(String blockErrorPageMessage) {
             this.blockErrorPageMessage = Objects.requireNonNull(blockErrorPageMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder blockResponseCode(Integer blockResponseCode) {
             this.blockResponseCode = Objects.requireNonNull(blockResponseCode);
             return this;
         }
+        @CustomType.Setter
         public Builder bypassChallenges(List<String> bypassChallenges) {
             this.bypassChallenges = Objects.requireNonNull(bypassChallenges);
             return this;
@@ -336,22 +304,27 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRule {
         public Builder bypassChallenges(String... bypassChallenges) {
             return bypassChallenges(List.of(bypassChallenges));
         }
+        @CustomType.Setter
         public Builder captchaFooter(String captchaFooter) {
             this.captchaFooter = Objects.requireNonNull(captchaFooter);
             return this;
         }
+        @CustomType.Setter
         public Builder captchaHeader(String captchaHeader) {
             this.captchaHeader = Objects.requireNonNull(captchaHeader);
             return this;
         }
+        @CustomType.Setter
         public Builder captchaSubmitLabel(String captchaSubmitLabel) {
             this.captchaSubmitLabel = Objects.requireNonNull(captchaSubmitLabel);
             return this;
         }
+        @CustomType.Setter
         public Builder captchaTitle(String captchaTitle) {
             this.captchaTitle = Objects.requireNonNull(captchaTitle);
             return this;
         }
+        @CustomType.Setter
         public Builder criterias(List<GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria> criterias) {
             this.criterias = Objects.requireNonNull(criterias);
             return this;
@@ -359,26 +332,48 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRule {
         public Builder criterias(GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria... criterias) {
             return criterias(List.of(criterias));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder redirectResponseCode(String redirectResponseCode) {
             this.redirectResponseCode = Objects.requireNonNull(redirectResponseCode);
             return this;
         }
+        @CustomType.Setter
         public Builder redirectUrl(String redirectUrl) {
             this.redirectUrl = Objects.requireNonNull(redirectUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder responseHeaderManipulations(List<GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation> responseHeaderManipulations) {
             this.responseHeaderManipulations = Objects.requireNonNull(responseHeaderManipulations);
             return this;
         }
         public Builder responseHeaderManipulations(GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation... responseHeaderManipulations) {
             return responseHeaderManipulations(List.of(responseHeaderManipulations));
-        }        public GetWaasPoliciesWaasPolicyWafConfigAccessRule build() {
-            return new GetWaasPoliciesWaasPolicyWafConfigAccessRule(action, blockAction, blockErrorPageCode, blockErrorPageDescription, blockErrorPageMessage, blockResponseCode, bypassChallenges, captchaFooter, captchaHeader, captchaSubmitLabel, captchaTitle, criterias, name, redirectResponseCode, redirectUrl, responseHeaderManipulations);
+        }
+        public GetWaasPoliciesWaasPolicyWafConfigAccessRule build() {
+            final var o = new GetWaasPoliciesWaasPolicyWafConfigAccessRule();
+            o.action = action;
+            o.blockAction = blockAction;
+            o.blockErrorPageCode = blockErrorPageCode;
+            o.blockErrorPageDescription = blockErrorPageDescription;
+            o.blockErrorPageMessage = blockErrorPageMessage;
+            o.blockResponseCode = blockResponseCode;
+            o.bypassChallenges = bypassChallenges;
+            o.captchaFooter = captchaFooter;
+            o.captchaHeader = captchaHeader;
+            o.captchaSubmitLabel = captchaSubmitLabel;
+            o.captchaTitle = captchaTitle;
+            o.criterias = criterias;
+            o.name = name;
+            o.redirectResponseCode = redirectResponseCode;
+            o.redirectUrl = redirectUrl;
+            o.responseHeaderManipulations = responseHeaderManipulations;
+            return o;
         }
     }
 }

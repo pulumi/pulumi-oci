@@ -17,21 +17,14 @@ public final class IngressGatewayHostListenerTlsClientValidation {
      * @return (Updatable) A list of alternate names to verify the subject identity in the certificate presented by the client.
      * 
      */
-    private final @Nullable List<String> subjectAlternateNames;
+    private @Nullable List<String> subjectAlternateNames;
     /**
      * @return (Updatable) Resource representing the CA bundle.
      * 
      */
-    private final @Nullable IngressGatewayHostListenerTlsClientValidationTrustedCaBundle trustedCaBundle;
+    private @Nullable IngressGatewayHostListenerTlsClientValidationTrustedCaBundle trustedCaBundle;
 
-    @CustomType.Constructor
-    private IngressGatewayHostListenerTlsClientValidation(
-        @CustomType.Parameter("subjectAlternateNames") @Nullable List<String> subjectAlternateNames,
-        @CustomType.Parameter("trustedCaBundle") @Nullable IngressGatewayHostListenerTlsClientValidationTrustedCaBundle trustedCaBundle) {
-        this.subjectAlternateNames = subjectAlternateNames;
-        this.trustedCaBundle = trustedCaBundle;
-    }
-
+    private IngressGatewayHostListenerTlsClientValidation() {}
     /**
      * @return (Updatable) A list of alternate names to verify the subject identity in the certificate presented by the client.
      * 
@@ -54,21 +47,18 @@ public final class IngressGatewayHostListenerTlsClientValidation {
     public static Builder builder(IngressGatewayHostListenerTlsClientValidation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> subjectAlternateNames;
         private @Nullable IngressGatewayHostListenerTlsClientValidationTrustedCaBundle trustedCaBundle;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IngressGatewayHostListenerTlsClientValidation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.subjectAlternateNames = defaults.subjectAlternateNames;
     	      this.trustedCaBundle = defaults.trustedCaBundle;
         }
 
+        @CustomType.Setter
         public Builder subjectAlternateNames(@Nullable List<String> subjectAlternateNames) {
             this.subjectAlternateNames = subjectAlternateNames;
             return this;
@@ -76,11 +66,16 @@ public final class IngressGatewayHostListenerTlsClientValidation {
         public Builder subjectAlternateNames(String... subjectAlternateNames) {
             return subjectAlternateNames(List.of(subjectAlternateNames));
         }
+        @CustomType.Setter
         public Builder trustedCaBundle(@Nullable IngressGatewayHostListenerTlsClientValidationTrustedCaBundle trustedCaBundle) {
             this.trustedCaBundle = trustedCaBundle;
             return this;
-        }        public IngressGatewayHostListenerTlsClientValidation build() {
-            return new IngressGatewayHostListenerTlsClientValidation(subjectAlternateNames, trustedCaBundle);
+        }
+        public IngressGatewayHostListenerTlsClientValidation build() {
+            final var o = new IngressGatewayHostListenerTlsClientValidation();
+            o.subjectAlternateNames = subjectAlternateNames;
+            o.trustedCaBundle = trustedCaBundle;
+            return o;
         }
     }
 }

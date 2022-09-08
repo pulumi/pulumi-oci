@@ -15,28 +15,19 @@ public final class ReportDefinitionColumnSorting {
      * @return (Updatable) Name of the column that must be sorted.
      * 
      */
-    private final String fieldName;
+    private String fieldName;
     /**
      * @return (Updatable) Indicates if the column must be sorted in ascending order. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private final Boolean isAscending;
+    private Boolean isAscending;
     /**
      * @return (Updatable) Indicates the order at which column must be sorted.
      * 
      */
-    private final Integer sortingOrder;
+    private Integer sortingOrder;
 
-    @CustomType.Constructor
-    private ReportDefinitionColumnSorting(
-        @CustomType.Parameter("fieldName") String fieldName,
-        @CustomType.Parameter("isAscending") Boolean isAscending,
-        @CustomType.Parameter("sortingOrder") Integer sortingOrder) {
-        this.fieldName = fieldName;
-        this.isAscending = isAscending;
-        this.sortingOrder = sortingOrder;
-    }
-
+    private ReportDefinitionColumnSorting() {}
     /**
      * @return (Updatable) Name of the column that must be sorted.
      * 
@@ -66,16 +57,12 @@ public final class ReportDefinitionColumnSorting {
     public static Builder builder(ReportDefinitionColumnSorting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String fieldName;
         private Boolean isAscending;
         private Integer sortingOrder;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ReportDefinitionColumnSorting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fieldName = defaults.fieldName;
@@ -83,19 +70,27 @@ public final class ReportDefinitionColumnSorting {
     	      this.sortingOrder = defaults.sortingOrder;
         }
 
+        @CustomType.Setter
         public Builder fieldName(String fieldName) {
             this.fieldName = Objects.requireNonNull(fieldName);
             return this;
         }
+        @CustomType.Setter
         public Builder isAscending(Boolean isAscending) {
             this.isAscending = Objects.requireNonNull(isAscending);
             return this;
         }
+        @CustomType.Setter
         public Builder sortingOrder(Integer sortingOrder) {
             this.sortingOrder = Objects.requireNonNull(sortingOrder);
             return this;
-        }        public ReportDefinitionColumnSorting build() {
-            return new ReportDefinitionColumnSorting(fieldName, isAscending, sortingOrder);
+        }
+        public ReportDefinitionColumnSorting build() {
+            final var o = new ReportDefinitionColumnSorting();
+            o.fieldName = fieldName;
+            o.isAscending = isAscending;
+            o.sortingOrder = sortingOrder;
+            return o;
         }
     }
 }

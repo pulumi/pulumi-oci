@@ -15,35 +15,24 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetail {
      * @return The name of the security zone to associate this compartment with.
      * 
      */
-    private final String securityZoneDisplayName;
+    private String securityZoneDisplayName;
     /**
      * @return The OCID of the security zone to associate this compartment with.
      * 
      */
-    private final String securityZoneId;
+    private String securityZoneId;
     /**
      * @return possible type of targets
      * 
      */
-    private final String targetResourceType;
+    private String targetResourceType;
     /**
      * @return The list of security zone recipes to associate this compartment with.
      * 
      */
-    private final List<GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
+    private List<GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
 
-    @CustomType.Constructor
-    private GetGuardTargetsTargetCollectionItemTargetDetail(
-        @CustomType.Parameter("securityZoneDisplayName") String securityZoneDisplayName,
-        @CustomType.Parameter("securityZoneId") String securityZoneId,
-        @CustomType.Parameter("targetResourceType") String targetResourceType,
-        @CustomType.Parameter("targetSecurityZoneRecipes") List<GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes) {
-        this.securityZoneDisplayName = securityZoneDisplayName;
-        this.securityZoneId = securityZoneId;
-        this.targetResourceType = targetResourceType;
-        this.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
-    }
-
+    private GetGuardTargetsTargetCollectionItemTargetDetail() {}
     /**
      * @return The name of the security zone to associate this compartment with.
      * 
@@ -80,17 +69,13 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetail {
     public static Builder builder(GetGuardTargetsTargetCollectionItemTargetDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String securityZoneDisplayName;
         private String securityZoneId;
         private String targetResourceType;
         private List<GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.securityZoneDisplayName = defaults.securityZoneDisplayName;
@@ -99,26 +84,36 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetail {
     	      this.targetSecurityZoneRecipes = defaults.targetSecurityZoneRecipes;
         }
 
+        @CustomType.Setter
         public Builder securityZoneDisplayName(String securityZoneDisplayName) {
             this.securityZoneDisplayName = Objects.requireNonNull(securityZoneDisplayName);
             return this;
         }
+        @CustomType.Setter
         public Builder securityZoneId(String securityZoneId) {
             this.securityZoneId = Objects.requireNonNull(securityZoneId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceType(String targetResourceType) {
             this.targetResourceType = Objects.requireNonNull(targetResourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder targetSecurityZoneRecipes(List<GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes) {
             this.targetSecurityZoneRecipes = Objects.requireNonNull(targetSecurityZoneRecipes);
             return this;
         }
         public Builder targetSecurityZoneRecipes(GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe... targetSecurityZoneRecipes) {
             return targetSecurityZoneRecipes(List.of(targetSecurityZoneRecipes));
-        }        public GetGuardTargetsTargetCollectionItemTargetDetail build() {
-            return new GetGuardTargetsTargetCollectionItemTargetDetail(securityZoneDisplayName, securityZoneId, targetResourceType, targetSecurityZoneRecipes);
+        }
+        public GetGuardTargetsTargetCollectionItemTargetDetail build() {
+            final var o = new GetGuardTargetsTargetCollectionItemTargetDetail();
+            o.securityZoneDisplayName = securityZoneDisplayName;
+            o.securityZoneId = securityZoneId;
+            o.targetResourceType = targetResourceType;
+            o.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
+            return o;
         }
     }
 }

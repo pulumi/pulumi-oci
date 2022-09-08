@@ -17,31 +17,20 @@ public final class GetCpesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of cpes.
      * 
      */
-    private final List<GetCpesCpe> cpes;
-    private final @Nullable List<GetCpesFilter> filters;
+    private List<GetCpesCpe> cpes;
+    private @Nullable List<GetCpesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetCpesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("cpes") List<GetCpesCpe> cpes,
-        @CustomType.Parameter("filters") @Nullable List<GetCpesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.compartmentId = compartmentId;
-        this.cpes = cpes;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetCpesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
      * 
@@ -74,17 +63,13 @@ public final class GetCpesResult {
     public static Builder builder(GetCpesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetCpesCpe> cpes;
         private @Nullable List<GetCpesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCpesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -93,10 +78,12 @@ public final class GetCpesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder cpes(List<GetCpesCpe> cpes) {
             this.cpes = Objects.requireNonNull(cpes);
             return this;
@@ -104,6 +91,7 @@ public final class GetCpesResult {
         public Builder cpes(GetCpesCpe... cpes) {
             return cpes(List.of(cpes));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCpesFilter> filters) {
             this.filters = filters;
             return this;
@@ -111,11 +99,18 @@ public final class GetCpesResult {
         public Builder filters(GetCpesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetCpesResult build() {
-            return new GetCpesResult(compartmentId, cpes, filters, id);
+        }
+        public GetCpesResult build() {
+            final var o = new GetCpesResult();
+            o.compartmentId = compartmentId;
+            o.cpes = cpes;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

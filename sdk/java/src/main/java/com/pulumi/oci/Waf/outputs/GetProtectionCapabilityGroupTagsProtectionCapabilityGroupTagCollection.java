@@ -14,13 +14,9 @@ public final class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagC
      * @return List of protection capabilities group tags.
      * 
      */
-    private final List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem> items;
+    private List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection(@CustomType.Parameter("items") List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection() {}
     /**
      * @return List of protection capabilities group tags.
      * 
@@ -36,27 +32,27 @@ public final class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagC
     public static Builder builder(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem... items) {
             return items(List.of(items));
-        }        public GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection build() {
-            return new GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection(items);
+        }
+        public GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection build() {
+            final var o = new GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection();
+            o.items = items;
+            return o;
         }
     }
 }

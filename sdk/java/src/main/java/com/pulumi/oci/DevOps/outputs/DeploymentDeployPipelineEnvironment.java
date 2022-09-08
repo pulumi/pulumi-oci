@@ -15,13 +15,9 @@ public final class DeploymentDeployPipelineEnvironment {
      * @return List of arguments provided at the time of deployment.
      * 
      */
-    private final @Nullable List<DeploymentDeployPipelineEnvironmentItem> items;
+    private @Nullable List<DeploymentDeployPipelineEnvironmentItem> items;
 
-    @CustomType.Constructor
-    private DeploymentDeployPipelineEnvironment(@CustomType.Parameter("items") @Nullable List<DeploymentDeployPipelineEnvironmentItem> items) {
-        this.items = items;
-    }
-
+    private DeploymentDeployPipelineEnvironment() {}
     /**
      * @return List of arguments provided at the time of deployment.
      * 
@@ -37,27 +33,27 @@ public final class DeploymentDeployPipelineEnvironment {
     public static Builder builder(DeploymentDeployPipelineEnvironment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<DeploymentDeployPipelineEnvironmentItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentDeployPipelineEnvironment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<DeploymentDeployPipelineEnvironmentItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(DeploymentDeployPipelineEnvironmentItem... items) {
             return items(List.of(items));
-        }        public DeploymentDeployPipelineEnvironment build() {
-            return new DeploymentDeployPipelineEnvironment(items);
+        }
+        public DeploymentDeployPipelineEnvironment build() {
+            final var o = new DeploymentDeployPipelineEnvironment();
+            o.items = items;
+            return o;
         }
     }
 }

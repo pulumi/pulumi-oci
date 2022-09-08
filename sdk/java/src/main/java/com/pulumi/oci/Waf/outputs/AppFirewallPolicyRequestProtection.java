@@ -18,28 +18,19 @@ public final class AppFirewallPolicyRequestProtection {
      * @return (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
      * 
      */
-    private final @Nullable String bodyInspectionSizeLimitExceededActionName;
+    private @Nullable String bodyInspectionSizeLimitExceededActionName;
     /**
      * @return (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
      * 
      */
-    private final @Nullable Integer bodyInspectionSizeLimitInBytes;
+    private @Nullable Integer bodyInspectionSizeLimitInBytes;
     /**
      * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private final @Nullable List<AppFirewallPolicyRequestProtectionRule> rules;
+    private @Nullable List<AppFirewallPolicyRequestProtectionRule> rules;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyRequestProtection(
-        @CustomType.Parameter("bodyInspectionSizeLimitExceededActionName") @Nullable String bodyInspectionSizeLimitExceededActionName,
-        @CustomType.Parameter("bodyInspectionSizeLimitInBytes") @Nullable Integer bodyInspectionSizeLimitInBytes,
-        @CustomType.Parameter("rules") @Nullable List<AppFirewallPolicyRequestProtectionRule> rules) {
-        this.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
-        this.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
-        this.rules = rules;
-    }
-
+    private AppFirewallPolicyRequestProtection() {}
     /**
      * @return (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
      * 
@@ -69,16 +60,12 @@ public final class AppFirewallPolicyRequestProtection {
     public static Builder builder(AppFirewallPolicyRequestProtection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String bodyInspectionSizeLimitExceededActionName;
         private @Nullable Integer bodyInspectionSizeLimitInBytes;
         private @Nullable List<AppFirewallPolicyRequestProtectionRule> rules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyRequestProtection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bodyInspectionSizeLimitExceededActionName = defaults.bodyInspectionSizeLimitExceededActionName;
@@ -86,22 +73,30 @@ public final class AppFirewallPolicyRequestProtection {
     	      this.rules = defaults.rules;
         }
 
+        @CustomType.Setter
         public Builder bodyInspectionSizeLimitExceededActionName(@Nullable String bodyInspectionSizeLimitExceededActionName) {
             this.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
             return this;
         }
+        @CustomType.Setter
         public Builder bodyInspectionSizeLimitInBytes(@Nullable Integer bodyInspectionSizeLimitInBytes) {
             this.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
             return this;
         }
+        @CustomType.Setter
         public Builder rules(@Nullable List<AppFirewallPolicyRequestProtectionRule> rules) {
             this.rules = rules;
             return this;
         }
         public Builder rules(AppFirewallPolicyRequestProtectionRule... rules) {
             return rules(List.of(rules));
-        }        public AppFirewallPolicyRequestProtection build() {
-            return new AppFirewallPolicyRequestProtection(bodyInspectionSizeLimitExceededActionName, bodyInspectionSizeLimitInBytes, rules);
+        }
+        public AppFirewallPolicyRequestProtection build() {
+            final var o = new AppFirewallPolicyRequestProtection();
+            o.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
+            o.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
+            o.rules = rules;
+            return o;
         }
     }
 }

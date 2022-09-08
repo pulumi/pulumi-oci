@@ -14,35 +14,24 @@ public final class GetTablesTableCollectionTableLimit {
      * @return The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
      * 
      */
-    private final String capacityMode;
+    private String capacityMode;
     /**
      * @return Maximum sustained read throughput limit for the table.
      * 
      */
-    private final Integer maxReadUnits;
+    private Integer maxReadUnits;
     /**
      * @return Maximum size of storage used by the table.
      * 
      */
-    private final Integer maxStorageInGbs;
+    private Integer maxStorageInGbs;
     /**
      * @return Maximum sustained write throughput limit for the table.
      * 
      */
-    private final Integer maxWriteUnits;
+    private Integer maxWriteUnits;
 
-    @CustomType.Constructor
-    private GetTablesTableCollectionTableLimit(
-        @CustomType.Parameter("capacityMode") String capacityMode,
-        @CustomType.Parameter("maxReadUnits") Integer maxReadUnits,
-        @CustomType.Parameter("maxStorageInGbs") Integer maxStorageInGbs,
-        @CustomType.Parameter("maxWriteUnits") Integer maxWriteUnits) {
-        this.capacityMode = capacityMode;
-        this.maxReadUnits = maxReadUnits;
-        this.maxStorageInGbs = maxStorageInGbs;
-        this.maxWriteUnits = maxWriteUnits;
-    }
-
+    private GetTablesTableCollectionTableLimit() {}
     /**
      * @return The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
      * 
@@ -79,17 +68,13 @@ public final class GetTablesTableCollectionTableLimit {
     public static Builder builder(GetTablesTableCollectionTableLimit defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String capacityMode;
         private Integer maxReadUnits;
         private Integer maxStorageInGbs;
         private Integer maxWriteUnits;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTablesTableCollectionTableLimit defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.capacityMode = defaults.capacityMode;
@@ -98,23 +83,33 @@ public final class GetTablesTableCollectionTableLimit {
     	      this.maxWriteUnits = defaults.maxWriteUnits;
         }
 
+        @CustomType.Setter
         public Builder capacityMode(String capacityMode) {
             this.capacityMode = Objects.requireNonNull(capacityMode);
             return this;
         }
+        @CustomType.Setter
         public Builder maxReadUnits(Integer maxReadUnits) {
             this.maxReadUnits = Objects.requireNonNull(maxReadUnits);
             return this;
         }
+        @CustomType.Setter
         public Builder maxStorageInGbs(Integer maxStorageInGbs) {
             this.maxStorageInGbs = Objects.requireNonNull(maxStorageInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder maxWriteUnits(Integer maxWriteUnits) {
             this.maxWriteUnits = Objects.requireNonNull(maxWriteUnits);
             return this;
-        }        public GetTablesTableCollectionTableLimit build() {
-            return new GetTablesTableCollectionTableLimit(capacityMode, maxReadUnits, maxStorageInGbs, maxWriteUnits);
+        }
+        public GetTablesTableCollectionTableLimit build() {
+            final var o = new GetTablesTableCollectionTableLimit();
+            o.capacityMode = capacityMode;
+            o.maxReadUnits = maxReadUnits;
+            o.maxStorageInGbs = maxStorageInGbs;
+            o.maxWriteUnits = maxWriteUnits;
+            return o;
         }
     }
 }

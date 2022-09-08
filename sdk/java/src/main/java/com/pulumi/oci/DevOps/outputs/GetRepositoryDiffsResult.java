@@ -15,40 +15,23 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryDiffsResult {
-    private final String baseVersion;
+    private String baseVersion;
     /**
      * @return The list of diff_collection.
      * 
      */
-    private final List<GetRepositoryDiffsDiffCollection> diffCollections;
-    private final @Nullable List<GetRepositoryDiffsFilter> filters;
+    private List<GetRepositoryDiffsDiffCollection> diffCollections;
+    private @Nullable List<GetRepositoryDiffsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isComparisonFromMergeBase;
-    private final String repositoryId;
-    private final String targetVersion;
+    private String id;
+    private @Nullable Boolean isComparisonFromMergeBase;
+    private String repositoryId;
+    private String targetVersion;
 
-    @CustomType.Constructor
-    private GetRepositoryDiffsResult(
-        @CustomType.Parameter("baseVersion") String baseVersion,
-        @CustomType.Parameter("diffCollections") List<GetRepositoryDiffsDiffCollection> diffCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetRepositoryDiffsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isComparisonFromMergeBase") @Nullable Boolean isComparisonFromMergeBase,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("targetVersion") String targetVersion) {
-        this.baseVersion = baseVersion;
-        this.diffCollections = diffCollections;
-        this.filters = filters;
-        this.id = id;
-        this.isComparisonFromMergeBase = isComparisonFromMergeBase;
-        this.repositoryId = repositoryId;
-        this.targetVersion = targetVersion;
-    }
-
+    private GetRepositoryDiffsResult() {}
     public String baseVersion() {
         return this.baseVersion;
     }
@@ -86,7 +69,7 @@ public final class GetRepositoryDiffsResult {
     public static Builder builder(GetRepositoryDiffsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String baseVersion;
         private List<GetRepositoryDiffsDiffCollection> diffCollections;
@@ -95,11 +78,7 @@ public final class GetRepositoryDiffsResult {
         private @Nullable Boolean isComparisonFromMergeBase;
         private String repositoryId;
         private String targetVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryDiffsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baseVersion = defaults.baseVersion;
@@ -111,10 +90,12 @@ public final class GetRepositoryDiffsResult {
     	      this.targetVersion = defaults.targetVersion;
         }
 
+        @CustomType.Setter
         public Builder baseVersion(String baseVersion) {
             this.baseVersion = Objects.requireNonNull(baseVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder diffCollections(List<GetRepositoryDiffsDiffCollection> diffCollections) {
             this.diffCollections = Objects.requireNonNull(diffCollections);
             return this;
@@ -122,6 +103,7 @@ public final class GetRepositoryDiffsResult {
         public Builder diffCollections(GetRepositoryDiffsDiffCollection... diffCollections) {
             return diffCollections(List.of(diffCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryDiffsFilter> filters) {
             this.filters = filters;
             return this;
@@ -129,23 +111,36 @@ public final class GetRepositoryDiffsResult {
         public Builder filters(GetRepositoryDiffsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isComparisonFromMergeBase(@Nullable Boolean isComparisonFromMergeBase) {
             this.isComparisonFromMergeBase = isComparisonFromMergeBase;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetVersion(String targetVersion) {
             this.targetVersion = Objects.requireNonNull(targetVersion);
             return this;
-        }        public GetRepositoryDiffsResult build() {
-            return new GetRepositoryDiffsResult(baseVersion, diffCollections, filters, id, isComparisonFromMergeBase, repositoryId, targetVersion);
+        }
+        public GetRepositoryDiffsResult build() {
+            final var o = new GetRepositoryDiffsResult();
+            o.baseVersion = baseVersion;
+            o.diffCollections = diffCollections;
+            o.filters = filters;
+            o.id = id;
+            o.isComparisonFromMergeBase = isComparisonFromMergeBase;
+            o.repositoryId = repositoryId;
+            o.targetVersion = targetVersion;
+            return o;
         }
     }
 }

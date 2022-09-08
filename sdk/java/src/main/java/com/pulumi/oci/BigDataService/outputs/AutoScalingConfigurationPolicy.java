@@ -15,21 +15,14 @@ public final class AutoScalingConfigurationPolicy {
      * @return Type of autoscaling policy.
      * 
      */
-    private final String policyType;
+    private String policyType;
     /**
      * @return (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
      * 
      */
-    private final List<AutoScalingConfigurationPolicyRule> rules;
+    private List<AutoScalingConfigurationPolicyRule> rules;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicy(
-        @CustomType.Parameter("policyType") String policyType,
-        @CustomType.Parameter("rules") List<AutoScalingConfigurationPolicyRule> rules) {
-        this.policyType = policyType;
-        this.rules = rules;
-    }
-
+    private AutoScalingConfigurationPolicy() {}
     /**
      * @return Type of autoscaling policy.
      * 
@@ -52,33 +45,35 @@ public final class AutoScalingConfigurationPolicy {
     public static Builder builder(AutoScalingConfigurationPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String policyType;
         private List<AutoScalingConfigurationPolicyRule> rules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.policyType = defaults.policyType;
     	      this.rules = defaults.rules;
         }
 
+        @CustomType.Setter
         public Builder policyType(String policyType) {
             this.policyType = Objects.requireNonNull(policyType);
             return this;
         }
+        @CustomType.Setter
         public Builder rules(List<AutoScalingConfigurationPolicyRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
         }
         public Builder rules(AutoScalingConfigurationPolicyRule... rules) {
             return rules(List.of(rules));
-        }        public AutoScalingConfigurationPolicy build() {
-            return new AutoScalingConfigurationPolicy(policyType, rules);
+        }
+        public AutoScalingConfigurationPolicy build() {
+            final var o = new AutoScalingConfigurationPolicy();
+            o.policyType = policyType;
+            o.rules = rules;
+            return o;
         }
     }
 }

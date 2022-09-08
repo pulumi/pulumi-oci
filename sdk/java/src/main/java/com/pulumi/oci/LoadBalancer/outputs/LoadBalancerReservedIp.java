@@ -15,13 +15,9 @@ public final class LoadBalancerReservedIp {
      * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
 
-    @CustomType.Constructor
-    private LoadBalancerReservedIp(@CustomType.Parameter("id") @Nullable String id) {
-        this.id = id;
-    }
-
+    private LoadBalancerReservedIp() {}
     /**
      * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
      * 
@@ -37,24 +33,24 @@ public final class LoadBalancerReservedIp {
     public static Builder builder(LoadBalancerReservedIp defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(LoadBalancerReservedIp defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
-        }        public LoadBalancerReservedIp build() {
-            return new LoadBalancerReservedIp(id);
+        }
+        public LoadBalancerReservedIp build() {
+            final var o = new LoadBalancerReservedIp();
+            o.id = id;
+            return o;
         }
     }
 }

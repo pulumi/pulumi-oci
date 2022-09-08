@@ -15,13 +15,9 @@ public final class InstanceInstanceOptions {
      * @return (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
      * 
      */
-    private final @Nullable Boolean areLegacyImdsEndpointsDisabled;
+    private @Nullable Boolean areLegacyImdsEndpointsDisabled;
 
-    @CustomType.Constructor
-    private InstanceInstanceOptions(@CustomType.Parameter("areLegacyImdsEndpointsDisabled") @Nullable Boolean areLegacyImdsEndpointsDisabled) {
-        this.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
-    }
-
+    private InstanceInstanceOptions() {}
     /**
      * @return (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
      * 
@@ -37,24 +33,24 @@ public final class InstanceInstanceOptions {
     public static Builder builder(InstanceInstanceOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean areLegacyImdsEndpointsDisabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstanceInstanceOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areLegacyImdsEndpointsDisabled = defaults.areLegacyImdsEndpointsDisabled;
         }
 
+        @CustomType.Setter
         public Builder areLegacyImdsEndpointsDisabled(@Nullable Boolean areLegacyImdsEndpointsDisabled) {
             this.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
             return this;
-        }        public InstanceInstanceOptions build() {
-            return new InstanceInstanceOptions(areLegacyImdsEndpointsDisabled);
+        }
+        public InstanceInstanceOptions build() {
+            final var o = new InstanceInstanceOptions();
+            o.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
+            return o;
         }
     }
 }

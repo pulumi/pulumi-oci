@@ -9,34 +9,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult {
-    private final String executionName;
+    private String executionName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
+    private String id;
+    private String managedDatabaseId;
     /**
      * @return The Optimizer Statistics Advisor execution script.
      * 
      */
-    private final String script;
-    private final String taskName;
+    private String script;
+    private String taskName;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult(
-        @CustomType.Parameter("executionName") String executionName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("script") String script,
-        @CustomType.Parameter("taskName") String taskName) {
-        this.executionName = executionName;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.script = script;
-        this.taskName = taskName;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult() {}
     public String executionName() {
         return this.executionName;
     }
@@ -68,18 +55,14 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptRe
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String executionName;
         private String id;
         private String managedDatabaseId;
         private String script;
         private String taskName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.executionName = defaults.executionName;
@@ -89,27 +72,39 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptRe
     	      this.taskName = defaults.taskName;
         }
 
+        @CustomType.Setter
         public Builder executionName(String executionName) {
             this.executionName = Objects.requireNonNull(executionName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder script(String script) {
             this.script = Objects.requireNonNull(script);
             return this;
         }
+        @CustomType.Setter
         public Builder taskName(String taskName) {
             this.taskName = Objects.requireNonNull(taskName);
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult(executionName, id, managedDatabaseId, script, taskName);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult();
+            o.executionName = executionName;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.script = script;
+            o.taskName = taskName;
+            return o;
         }
     }
 }

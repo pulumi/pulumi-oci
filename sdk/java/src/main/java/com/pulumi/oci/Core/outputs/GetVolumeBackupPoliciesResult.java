@@ -18,31 +18,20 @@ public final class GetVolumeBackupPoliciesResult {
      * @return The OCID of the compartment that contains the volume backup.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetVolumeBackupPoliciesFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetVolumeBackupPoliciesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of volume_backup_policies.
      * 
      */
-    private final List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies;
+    private List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies;
 
-    @CustomType.Constructor
-    private GetVolumeBackupPoliciesResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetVolumeBackupPoliciesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("volumeBackupPolicies") List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.volumeBackupPolicies = volumeBackupPolicies;
-    }
-
+    private GetVolumeBackupPoliciesResult() {}
     /**
      * @return The OCID of the compartment that contains the volume backup.
      * 
@@ -75,17 +64,13 @@ public final class GetVolumeBackupPoliciesResult {
     public static Builder builder(GetVolumeBackupPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetVolumeBackupPoliciesFilter> filters;
         private String id;
         private List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeBackupPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -94,10 +79,12 @@ public final class GetVolumeBackupPoliciesResult {
     	      this.volumeBackupPolicies = defaults.volumeBackupPolicies;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeBackupPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -105,18 +92,26 @@ public final class GetVolumeBackupPoliciesResult {
         public Builder filters(GetVolumeBackupPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeBackupPolicies(List<GetVolumeBackupPoliciesVolumeBackupPolicy> volumeBackupPolicies) {
             this.volumeBackupPolicies = Objects.requireNonNull(volumeBackupPolicies);
             return this;
         }
         public Builder volumeBackupPolicies(GetVolumeBackupPoliciesVolumeBackupPolicy... volumeBackupPolicies) {
             return volumeBackupPolicies(List.of(volumeBackupPolicies));
-        }        public GetVolumeBackupPoliciesResult build() {
-            return new GetVolumeBackupPoliciesResult(compartmentId, filters, id, volumeBackupPolicies);
+        }
+        public GetVolumeBackupPoliciesResult build() {
+            final var o = new GetVolumeBackupPoliciesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.volumeBackupPolicies = volumeBackupPolicies;
+            return o;
         }
     }
 }

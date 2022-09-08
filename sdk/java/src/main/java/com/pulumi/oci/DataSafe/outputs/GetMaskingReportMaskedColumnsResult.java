@@ -18,69 +18,46 @@ public final class GetMaskingReportMaskedColumnsResult {
      * @return The name of the masked column.
      * 
      */
-    private final @Nullable List<String> columnNames;
-    private final @Nullable List<GetMaskingReportMaskedColumnsFilter> filters;
+    private @Nullable List<String> columnNames;
+    private @Nullable List<GetMaskingReportMaskedColumnsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of masked_column_collection.
      * 
      */
-    private final List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections;
+    private List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections;
     /**
      * @return The masking group of the masked column.
      * 
      */
-    private final @Nullable List<String> maskingColumnGroups;
-    private final String maskingReportId;
+    private @Nullable List<String> maskingColumnGroups;
+    private String maskingReportId;
     /**
      * @return The type of the object (table or editioning view) that contains the masked column.
      * 
      */
-    private final @Nullable List<String> objectTypes;
+    private @Nullable List<String> objectTypes;
     /**
      * @return The name of the object (table or editioning view) that contains the masked column.
      * 
      */
-    private final @Nullable List<String> objects;
+    private @Nullable List<String> objects;
     /**
      * @return The name of the schema that contains the masked column.
      * 
      */
-    private final @Nullable List<String> schemaNames;
+    private @Nullable List<String> schemaNames;
     /**
      * @return The OCID of the sensitive type associated with the masked column.
      * 
      */
-    private final @Nullable String sensitiveTypeId;
+    private @Nullable String sensitiveTypeId;
 
-    @CustomType.Constructor
-    private GetMaskingReportMaskedColumnsResult(
-        @CustomType.Parameter("columnNames") @Nullable List<String> columnNames,
-        @CustomType.Parameter("filters") @Nullable List<GetMaskingReportMaskedColumnsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("maskedColumnCollections") List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections,
-        @CustomType.Parameter("maskingColumnGroups") @Nullable List<String> maskingColumnGroups,
-        @CustomType.Parameter("maskingReportId") String maskingReportId,
-        @CustomType.Parameter("objectTypes") @Nullable List<String> objectTypes,
-        @CustomType.Parameter("objects") @Nullable List<String> objects,
-        @CustomType.Parameter("schemaNames") @Nullable List<String> schemaNames,
-        @CustomType.Parameter("sensitiveTypeId") @Nullable String sensitiveTypeId) {
-        this.columnNames = columnNames;
-        this.filters = filters;
-        this.id = id;
-        this.maskedColumnCollections = maskedColumnCollections;
-        this.maskingColumnGroups = maskingColumnGroups;
-        this.maskingReportId = maskingReportId;
-        this.objectTypes = objectTypes;
-        this.objects = objects;
-        this.schemaNames = schemaNames;
-        this.sensitiveTypeId = sensitiveTypeId;
-    }
-
+    private GetMaskingReportMaskedColumnsResult() {}
     /**
      * @return The name of the masked column.
      * 
@@ -151,7 +128,7 @@ public final class GetMaskingReportMaskedColumnsResult {
     public static Builder builder(GetMaskingReportMaskedColumnsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> columnNames;
         private @Nullable List<GetMaskingReportMaskedColumnsFilter> filters;
@@ -163,11 +140,7 @@ public final class GetMaskingReportMaskedColumnsResult {
         private @Nullable List<String> objects;
         private @Nullable List<String> schemaNames;
         private @Nullable String sensitiveTypeId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingReportMaskedColumnsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnNames = defaults.columnNames;
@@ -182,6 +155,7 @@ public final class GetMaskingReportMaskedColumnsResult {
     	      this.sensitiveTypeId = defaults.sensitiveTypeId;
         }
 
+        @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
             this.columnNames = columnNames;
             return this;
@@ -189,6 +163,7 @@ public final class GetMaskingReportMaskedColumnsResult {
         public Builder columnNames(String... columnNames) {
             return columnNames(List.of(columnNames));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMaskingReportMaskedColumnsFilter> filters) {
             this.filters = filters;
             return this;
@@ -196,10 +171,12 @@ public final class GetMaskingReportMaskedColumnsResult {
         public Builder filters(GetMaskingReportMaskedColumnsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder maskedColumnCollections(List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections) {
             this.maskedColumnCollections = Objects.requireNonNull(maskedColumnCollections);
             return this;
@@ -207,6 +184,7 @@ public final class GetMaskingReportMaskedColumnsResult {
         public Builder maskedColumnCollections(GetMaskingReportMaskedColumnsMaskedColumnCollection... maskedColumnCollections) {
             return maskedColumnCollections(List.of(maskedColumnCollections));
         }
+        @CustomType.Setter
         public Builder maskingColumnGroups(@Nullable List<String> maskingColumnGroups) {
             this.maskingColumnGroups = maskingColumnGroups;
             return this;
@@ -214,10 +192,12 @@ public final class GetMaskingReportMaskedColumnsResult {
         public Builder maskingColumnGroups(String... maskingColumnGroups) {
             return maskingColumnGroups(List.of(maskingColumnGroups));
         }
+        @CustomType.Setter
         public Builder maskingReportId(String maskingReportId) {
             this.maskingReportId = Objects.requireNonNull(maskingReportId);
             return this;
         }
+        @CustomType.Setter
         public Builder objectTypes(@Nullable List<String> objectTypes) {
             this.objectTypes = objectTypes;
             return this;
@@ -225,6 +205,7 @@ public final class GetMaskingReportMaskedColumnsResult {
         public Builder objectTypes(String... objectTypes) {
             return objectTypes(List.of(objectTypes));
         }
+        @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
             this.objects = objects;
             return this;
@@ -232,6 +213,7 @@ public final class GetMaskingReportMaskedColumnsResult {
         public Builder objects(String... objects) {
             return objects(List.of(objects));
         }
+        @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
             this.schemaNames = schemaNames;
             return this;
@@ -239,11 +221,24 @@ public final class GetMaskingReportMaskedColumnsResult {
         public Builder schemaNames(String... schemaNames) {
             return schemaNames(List.of(schemaNames));
         }
+        @CustomType.Setter
         public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
             this.sensitiveTypeId = sensitiveTypeId;
             return this;
-        }        public GetMaskingReportMaskedColumnsResult build() {
-            return new GetMaskingReportMaskedColumnsResult(columnNames, filters, id, maskedColumnCollections, maskingColumnGroups, maskingReportId, objectTypes, objects, schemaNames, sensitiveTypeId);
+        }
+        public GetMaskingReportMaskedColumnsResult build() {
+            final var o = new GetMaskingReportMaskedColumnsResult();
+            o.columnNames = columnNames;
+            o.filters = filters;
+            o.id = id;
+            o.maskedColumnCollections = maskedColumnCollections;
+            o.maskingColumnGroups = maskingColumnGroups;
+            o.maskingReportId = maskingReportId;
+            o.objectTypes = objectTypes;
+            o.objects = objects;
+            o.schemaNames = schemaNames;
+            o.sensitiveTypeId = sensitiveTypeId;
+            return o;
         }
     }
 }

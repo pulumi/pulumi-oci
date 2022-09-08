@@ -13,21 +13,14 @@ public final class GetWebAppFirewallPolicyActionHeader {
      * @return Rule name. Must be unique within the module.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The value of the header field.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPolicyActionHeader(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetWebAppFirewallPolicyActionHeader() {}
     /**
      * @return Rule name. Must be unique within the module.
      * 
@@ -50,30 +43,32 @@ public final class GetWebAppFirewallPolicyActionHeader {
     public static Builder builder(GetWebAppFirewallPolicyActionHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPolicyActionHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetWebAppFirewallPolicyActionHeader build() {
-            return new GetWebAppFirewallPolicyActionHeader(name, value);
+        }
+        public GetWebAppFirewallPolicyActionHeader build() {
+            final var o = new GetWebAppFirewallPolicyActionHeader();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

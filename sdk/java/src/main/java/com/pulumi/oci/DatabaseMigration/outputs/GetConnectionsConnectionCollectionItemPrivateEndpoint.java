@@ -13,35 +13,24 @@ public final class GetConnectionsConnectionCollectionItemPrivateEndpoint {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer&#39;s subnet where the private endpoint VNIC will reside.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetConnectionsConnectionCollectionItemPrivateEndpoint(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.subnetId = subnetId;
-        this.vcnId = vcnId;
-    }
-
+    private GetConnectionsConnectionCollectionItemPrivateEndpoint() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -78,17 +67,13 @@ public final class GetConnectionsConnectionCollectionItemPrivateEndpoint {
     public static Builder builder(GetConnectionsConnectionCollectionItemPrivateEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private String subnetId;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionsConnectionCollectionItemPrivateEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -97,23 +82,33 @@ public final class GetConnectionsConnectionCollectionItemPrivateEndpoint {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetConnectionsConnectionCollectionItemPrivateEndpoint build() {
-            return new GetConnectionsConnectionCollectionItemPrivateEndpoint(compartmentId, id, subnetId, vcnId);
+        }
+        public GetConnectionsConnectionCollectionItemPrivateEndpoint build() {
+            final var o = new GetConnectionsConnectionCollectionItemPrivateEndpoint();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.subnetId = subnetId;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

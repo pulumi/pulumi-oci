@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelsModelCollection {
-    private final List<GetModelsModelCollectionItem> items;
+    private List<GetModelsModelCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetModelsModelCollection(@CustomType.Parameter("items") List<GetModelsModelCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetModelsModelCollection() {}
     public List<GetModelsModelCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetModelsModelCollection {
     public static Builder builder(GetModelsModelCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetModelsModelCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelsModelCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetModelsModelCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetModelsModelCollectionItem... items) {
             return items(List.of(items));
-        }        public GetModelsModelCollection build() {
-            return new GetModelsModelCollection(items);
+        }
+        public GetModelsModelCollection build() {
+            final var o = new GetModelsModelCollection();
+            o.items = items;
+            return o;
         }
     }
 }

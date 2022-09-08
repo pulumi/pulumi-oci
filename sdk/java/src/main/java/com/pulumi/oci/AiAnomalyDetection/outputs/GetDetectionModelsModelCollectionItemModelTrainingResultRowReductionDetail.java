@@ -15,30 +15,21 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultRowRe
      * @return A boolean value to indicate if row reduction is applied
      * 
      */
-    private final Boolean isReductionEnabled;
+    private Boolean isReductionEnabled;
     /**
      * @return Method for row reduction:
      * * DELETE_ROW - delete rows with equal intervals
      * * AVERAGE_ROW - average multiple rows to one row
      * 
      */
-    private final String reductionMethod;
+    private String reductionMethod;
     /**
      * @return A percentage to reduce data size down to on top of original data
      * 
      */
-    private final Double reductionPercentage;
+    private Double reductionPercentage;
 
-    @CustomType.Constructor
-    private GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail(
-        @CustomType.Parameter("isReductionEnabled") Boolean isReductionEnabled,
-        @CustomType.Parameter("reductionMethod") String reductionMethod,
-        @CustomType.Parameter("reductionPercentage") Double reductionPercentage) {
-        this.isReductionEnabled = isReductionEnabled;
-        this.reductionMethod = reductionMethod;
-        this.reductionPercentage = reductionPercentage;
-    }
-
+    private GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail() {}
     /**
      * @return A boolean value to indicate if row reduction is applied
      * 
@@ -70,16 +61,12 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultRowRe
     public static Builder builder(GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isReductionEnabled;
         private String reductionMethod;
         private Double reductionPercentage;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isReductionEnabled = defaults.isReductionEnabled;
@@ -87,19 +74,27 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultRowRe
     	      this.reductionPercentage = defaults.reductionPercentage;
         }
 
+        @CustomType.Setter
         public Builder isReductionEnabled(Boolean isReductionEnabled) {
             this.isReductionEnabled = Objects.requireNonNull(isReductionEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder reductionMethod(String reductionMethod) {
             this.reductionMethod = Objects.requireNonNull(reductionMethod);
             return this;
         }
+        @CustomType.Setter
         public Builder reductionPercentage(Double reductionPercentage) {
             this.reductionPercentage = Objects.requireNonNull(reductionPercentage);
             return this;
-        }        public GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail build() {
-            return new GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail(isReductionEnabled, reductionMethod, reductionPercentage);
+        }
+        public GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail build() {
+            final var o = new GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail();
+            o.isReductionEnabled = isReductionEnabled;
+            o.reductionMethod = reductionMethod;
+            o.reductionPercentage = reductionPercentage;
+            return o;
         }
     }
 }

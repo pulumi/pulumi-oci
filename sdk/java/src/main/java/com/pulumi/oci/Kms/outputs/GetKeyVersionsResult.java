@@ -13,38 +13,25 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetKeyVersionsResult {
-    private final @Nullable List<GetKeyVersionsFilter> filters;
+    private @Nullable List<GetKeyVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the master encryption key associated with this key version.
      * 
      */
-    private final String keyId;
+    private String keyId;
     /**
      * @return The list of key_versions.
      * 
      */
-    private final List<GetKeyVersionsKeyVersion> keyVersions;
-    private final String managementEndpoint;
+    private List<GetKeyVersionsKeyVersion> keyVersions;
+    private String managementEndpoint;
 
-    @CustomType.Constructor
-    private GetKeyVersionsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetKeyVersionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("keyId") String keyId,
-        @CustomType.Parameter("keyVersions") List<GetKeyVersionsKeyVersion> keyVersions,
-        @CustomType.Parameter("managementEndpoint") String managementEndpoint) {
-        this.filters = filters;
-        this.id = id;
-        this.keyId = keyId;
-        this.keyVersions = keyVersions;
-        this.managementEndpoint = managementEndpoint;
-    }
-
+    private GetKeyVersionsResult() {}
     public List<GetKeyVersionsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -80,18 +67,14 @@ public final class GetKeyVersionsResult {
     public static Builder builder(GetKeyVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetKeyVersionsFilter> filters;
         private String id;
         private String keyId;
         private List<GetKeyVersionsKeyVersion> keyVersions;
         private String managementEndpoint;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetKeyVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -101,6 +84,7 @@ public final class GetKeyVersionsResult {
     	      this.managementEndpoint = defaults.managementEndpoint;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetKeyVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -108,14 +92,17 @@ public final class GetKeyVersionsResult {
         public Builder filters(GetKeyVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder keyId(String keyId) {
             this.keyId = Objects.requireNonNull(keyId);
             return this;
         }
+        @CustomType.Setter
         public Builder keyVersions(List<GetKeyVersionsKeyVersion> keyVersions) {
             this.keyVersions = Objects.requireNonNull(keyVersions);
             return this;
@@ -123,11 +110,19 @@ public final class GetKeyVersionsResult {
         public Builder keyVersions(GetKeyVersionsKeyVersion... keyVersions) {
             return keyVersions(List.of(keyVersions));
         }
+        @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
             this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
             return this;
-        }        public GetKeyVersionsResult build() {
-            return new GetKeyVersionsResult(filters, id, keyId, keyVersions, managementEndpoint);
+        }
+        public GetKeyVersionsResult build() {
+            final var o = new GetKeyVersionsResult();
+            o.filters = filters;
+            o.id = id;
+            o.keyId = keyId;
+            o.keyVersions = keyVersions;
+            o.managementEndpoint = managementEndpoint;
+            return o;
         }
     }
 }

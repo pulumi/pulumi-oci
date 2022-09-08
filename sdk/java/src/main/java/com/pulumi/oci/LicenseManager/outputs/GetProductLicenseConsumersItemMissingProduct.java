@@ -14,28 +14,19 @@ public final class GetProductLicenseConsumersItemMissingProduct {
      * @return Product category base or option.
      * 
      */
-    private final String category;
+    private String category;
     /**
      * @return Units required for the missing product.
      * 
      */
-    private final Double count;
+    private Double count;
     /**
      * @return Name of the product.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetProductLicenseConsumersItemMissingProduct(
-        @CustomType.Parameter("category") String category,
-        @CustomType.Parameter("count") Double count,
-        @CustomType.Parameter("name") String name) {
-        this.category = category;
-        this.count = count;
-        this.name = name;
-    }
-
+    private GetProductLicenseConsumersItemMissingProduct() {}
     /**
      * @return Product category base or option.
      * 
@@ -65,16 +56,12 @@ public final class GetProductLicenseConsumersItemMissingProduct {
     public static Builder builder(GetProductLicenseConsumersItemMissingProduct defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String category;
         private Double count;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProductLicenseConsumersItemMissingProduct defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
@@ -82,19 +69,27 @@ public final class GetProductLicenseConsumersItemMissingProduct {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder category(String category) {
             this.category = Objects.requireNonNull(category);
             return this;
         }
+        @CustomType.Setter
         public Builder count(Double count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetProductLicenseConsumersItemMissingProduct build() {
-            return new GetProductLicenseConsumersItemMissingProduct(category, count, name);
+        }
+        public GetProductLicenseConsumersItemMissingProduct build() {
+            final var o = new GetProductLicenseConsumersItemMissingProduct();
+            o.category = category;
+            o.count = count;
+            o.name = name;
+            return o;
         }
     }
 }

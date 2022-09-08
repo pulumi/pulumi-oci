@@ -15,35 +15,24 @@ public final class ConnectionSshDetails {
      * @return (Updatable) Name of the host the SSH key is valid for.
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return (Updatable) Private SSH key string.
      * 
      */
-    private final String sshkey;
+    private String sshkey;
     /**
      * @return (Updatable) Sudo location
      * 
      */
-    private final @Nullable String sudoLocation;
+    private @Nullable String sudoLocation;
     /**
      * @return (Updatable) SSH user
      * 
      */
-    private final String user;
+    private String user;
 
-    @CustomType.Constructor
-    private ConnectionSshDetails(
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("sshkey") String sshkey,
-        @CustomType.Parameter("sudoLocation") @Nullable String sudoLocation,
-        @CustomType.Parameter("user") String user) {
-        this.host = host;
-        this.sshkey = sshkey;
-        this.sudoLocation = sudoLocation;
-        this.user = user;
-    }
-
+    private ConnectionSshDetails() {}
     /**
      * @return (Updatable) Name of the host the SSH key is valid for.
      * 
@@ -80,17 +69,13 @@ public final class ConnectionSshDetails {
     public static Builder builder(ConnectionSshDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String host;
         private String sshkey;
         private @Nullable String sudoLocation;
         private String user;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectionSshDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.host = defaults.host;
@@ -99,23 +84,33 @@ public final class ConnectionSshDetails {
     	      this.user = defaults.user;
         }
 
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder sshkey(String sshkey) {
             this.sshkey = Objects.requireNonNull(sshkey);
             return this;
         }
+        @CustomType.Setter
         public Builder sudoLocation(@Nullable String sudoLocation) {
             this.sudoLocation = sudoLocation;
             return this;
         }
+        @CustomType.Setter
         public Builder user(String user) {
             this.user = Objects.requireNonNull(user);
             return this;
-        }        public ConnectionSshDetails build() {
-            return new ConnectionSshDetails(host, sshkey, sudoLocation, user);
+        }
+        public ConnectionSshDetails build() {
+            final var o = new ConnectionSshDetails();
+            o.host = host;
+            o.sshkey = sshkey;
+            o.sudoLocation = sudoLocation;
+            o.user = user;
+            return o;
         }
     }
 }

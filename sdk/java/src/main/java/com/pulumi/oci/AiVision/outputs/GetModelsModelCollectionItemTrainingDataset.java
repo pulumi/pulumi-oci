@@ -13,38 +13,25 @@ public final class GetModelsModelCollectionItemTrainingDataset {
      * @return The name of the ObjectStorage bucket that contains the input data file.
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return The OCID of the Data Science Labeling Dataset.
      * 
      */
-    private final String datasetId;
+    private String datasetId;
     /**
      * @return Type of the Dataset.
      * 
      */
-    private final String datasetType;
-    private final String namespaceName;
+    private String datasetType;
+    private String namespaceName;
     /**
      * @return The object name of the input data file.
      * 
      */
-    private final String object;
+    private String object;
 
-    @CustomType.Constructor
-    private GetModelsModelCollectionItemTrainingDataset(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("datasetId") String datasetId,
-        @CustomType.Parameter("datasetType") String datasetType,
-        @CustomType.Parameter("namespaceName") String namespaceName,
-        @CustomType.Parameter("object") String object) {
-        this.bucket = bucket;
-        this.datasetId = datasetId;
-        this.datasetType = datasetType;
-        this.namespaceName = namespaceName;
-        this.object = object;
-    }
-
+    private GetModelsModelCollectionItemTrainingDataset() {}
     /**
      * @return The name of the ObjectStorage bucket that contains the input data file.
      * 
@@ -84,18 +71,14 @@ public final class GetModelsModelCollectionItemTrainingDataset {
     public static Builder builder(GetModelsModelCollectionItemTrainingDataset defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String datasetId;
         private String datasetType;
         private String namespaceName;
         private String object;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelsModelCollectionItemTrainingDataset defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -105,27 +88,39 @@ public final class GetModelsModelCollectionItemTrainingDataset {
     	      this.object = defaults.object;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder datasetId(String datasetId) {
             this.datasetId = Objects.requireNonNull(datasetId);
             return this;
         }
+        @CustomType.Setter
         public Builder datasetType(String datasetType) {
             this.datasetType = Objects.requireNonNull(datasetType);
             return this;
         }
+        @CustomType.Setter
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = Objects.requireNonNull(namespaceName);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
-        }        public GetModelsModelCollectionItemTrainingDataset build() {
-            return new GetModelsModelCollectionItemTrainingDataset(bucket, datasetId, datasetType, namespaceName, object);
+        }
+        public GetModelsModelCollectionItemTrainingDataset build() {
+            final var o = new GetModelsModelCollectionItemTrainingDataset();
+            o.bucket = bucket;
+            o.datasetId = datasetId;
+            o.datasetType = datasetType;
+            o.namespaceName = namespaceName;
+            o.object = object;
+            return o;
         }
     }
 }

@@ -18,52 +18,35 @@ public final class GetExportSetsResult {
      * @return The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of export_sets.
      * 
      */
-    private final List<GetExportSetsExportSet> exportSets;
-    private final @Nullable List<GetExportSetsFilter> filters;
+    private List<GetExportSetsExportSet> exportSets;
+    private @Nullable List<GetExportSetsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the export set.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetExportSetsResult(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("exportSets") List<GetExportSetsExportSet> exportSets,
-        @CustomType.Parameter("filters") @Nullable List<GetExportSetsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.exportSets = exportSets;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetExportSetsResult() {}
     /**
      * @return The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
@@ -117,7 +100,7 @@ public final class GetExportSetsResult {
     public static Builder builder(GetExportSetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -126,11 +109,7 @@ public final class GetExportSetsResult {
         private @Nullable List<GetExportSetsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExportSetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -142,18 +121,22 @@ public final class GetExportSetsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder exportSets(List<GetExportSetsExportSet> exportSets) {
             this.exportSets = Objects.requireNonNull(exportSets);
             return this;
@@ -161,6 +144,7 @@ public final class GetExportSetsResult {
         public Builder exportSets(GetExportSetsExportSet... exportSets) {
             return exportSets(List.of(exportSets));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetExportSetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,15 +152,26 @@ public final class GetExportSetsResult {
         public Builder filters(GetExportSetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetExportSetsResult build() {
-            return new GetExportSetsResult(availabilityDomain, compartmentId, displayName, exportSets, filters, id, state);
+        }
+        public GetExportSetsResult build() {
+            final var o = new GetExportSetsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.exportSets = exportSets;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

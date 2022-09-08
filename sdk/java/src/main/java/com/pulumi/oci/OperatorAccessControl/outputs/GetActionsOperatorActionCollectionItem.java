@@ -17,70 +17,49 @@ public final class GetActionsOperatorActionCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Name of the infrastructure layer associated with the operator action.
      * 
      */
-    private final String component;
+    private String component;
     /**
      * @return Display Name of the operator action.
      * 
      */
-    private final String customerDisplayName;
+    private String customerDisplayName;
     /**
      * @return Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Unique Oracle assigned identifier for the operator action.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Fine grained properties associated with the operator control.
      * 
      */
-    private final List<GetActionsOperatorActionCollectionItemProperty> properties;
+    private List<GetActionsOperatorActionCollectionItemProperty> properties;
     /**
      * @return A filter to return only lists of resources that match the entire given service type.
      * 
      */
-    private final String resourceType;
+    private String resourceType;
     /**
      * @return A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetActionsOperatorActionCollectionItem(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("component") String component,
-        @CustomType.Parameter("customerDisplayName") String customerDisplayName,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("properties") List<GetActionsOperatorActionCollectionItemProperty> properties,
-        @CustomType.Parameter("resourceType") String resourceType,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.component = component;
-        this.customerDisplayName = customerDisplayName;
-        this.description = description;
-        this.id = id;
-        this.name = name;
-        this.properties = properties;
-        this.resourceType = resourceType;
-        this.state = state;
-    }
-
+    private GetActionsOperatorActionCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -152,7 +131,7 @@ public final class GetActionsOperatorActionCollectionItem {
     public static Builder builder(GetActionsOperatorActionCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private String component;
@@ -163,11 +142,7 @@ public final class GetActionsOperatorActionCollectionItem {
         private List<GetActionsOperatorActionCollectionItemProperty> properties;
         private String resourceType;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetActionsOperatorActionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -181,30 +156,37 @@ public final class GetActionsOperatorActionCollectionItem {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder component(String component) {
             this.component = Objects.requireNonNull(component);
             return this;
         }
+        @CustomType.Setter
         public Builder customerDisplayName(String customerDisplayName) {
             this.customerDisplayName = Objects.requireNonNull(customerDisplayName);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder properties(List<GetActionsOperatorActionCollectionItemProperty> properties) {
             this.properties = Objects.requireNonNull(properties);
             return this;
@@ -212,15 +194,28 @@ public final class GetActionsOperatorActionCollectionItem {
         public Builder properties(GetActionsOperatorActionCollectionItemProperty... properties) {
             return properties(List.of(properties));
         }
+        @CustomType.Setter
         public Builder resourceType(String resourceType) {
             this.resourceType = Objects.requireNonNull(resourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetActionsOperatorActionCollectionItem build() {
-            return new GetActionsOperatorActionCollectionItem(compartmentId, component, customerDisplayName, description, id, name, properties, resourceType, state);
+        }
+        public GetActionsOperatorActionCollectionItem build() {
+            final var o = new GetActionsOperatorActionCollectionItem();
+            o.compartmentId = compartmentId;
+            o.component = component;
+            o.customerDisplayName = customerDisplayName;
+            o.description = description;
+            o.id = id;
+            o.name = name;
+            o.properties = properties;
+            o.resourceType = resourceType;
+            o.state = state;
+            return o;
         }
     }
 }

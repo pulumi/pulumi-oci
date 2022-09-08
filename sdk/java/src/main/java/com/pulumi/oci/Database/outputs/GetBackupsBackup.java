@@ -14,126 +14,89 @@ public final class GetBackupsBackup {
      * @return The name of the availability domain where the database backup is stored.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The Oracle Database edition of the DB system from which the database backup was taken.
      * 
      */
-    private final String databaseEdition;
+    private String databaseEdition;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private final String databaseId;
+    private String databaseId;
     /**
      * @return The size of the database in gigabytes at the time the backup was taken.
      * 
      */
-    private final Double databaseSizeInGbs;
+    private Double databaseSizeInGbs;
     /**
      * @return The user-friendly name for the backup. The name does not have to be unique.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private final String kmsKeyVersionId;
+    private String kmsKeyVersionId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Shape of the backup&#39;s source database.
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return The current state of the backup.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the backup was completed.
      * 
      */
-    private final String timeEnded;
+    private String timeEnded;
     /**
      * @return The date and time the backup started.
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
     /**
      * @return The type of backup.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final String vaultId;
+    private String vaultId;
     /**
      * @return Version of the backup&#39;s source database
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetBackupsBackup(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("databaseEdition") String databaseEdition,
-        @CustomType.Parameter("databaseId") String databaseId,
-        @CustomType.Parameter("databaseSizeInGbs") Double databaseSizeInGbs,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("kmsKeyVersionId") String kmsKeyVersionId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeEnded") String timeEnded,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vaultId") String vaultId,
-        @CustomType.Parameter("version") String version) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.databaseEdition = databaseEdition;
-        this.databaseId = databaseId;
-        this.databaseSizeInGbs = databaseSizeInGbs;
-        this.displayName = displayName;
-        this.id = id;
-        this.kmsKeyId = kmsKeyId;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.shape = shape;
-        this.state = state;
-        this.timeEnded = timeEnded;
-        this.timeStarted = timeStarted;
-        this.type = type;
-        this.vaultId = vaultId;
-        this.version = version;
-    }
-
+    private GetBackupsBackup() {}
     /**
      * @return The name of the availability domain where the database backup is stored.
      * 
@@ -261,7 +224,7 @@ public final class GetBackupsBackup {
     public static Builder builder(GetBackupsBackup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -280,11 +243,7 @@ public final class GetBackupsBackup {
         private String type;
         private String vaultId;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackupsBackup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -306,75 +265,111 @@ public final class GetBackupsBackup {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseEdition(String databaseEdition) {
             this.databaseEdition = Objects.requireNonNull(databaseEdition);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseId(String databaseId) {
             this.databaseId = Objects.requireNonNull(databaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSizeInGbs(Double databaseSizeInGbs) {
             this.databaseSizeInGbs = Objects.requireNonNull(databaseSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             this.timeEnded = Objects.requireNonNull(timeEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetBackupsBackup build() {
-            return new GetBackupsBackup(availabilityDomain, compartmentId, databaseEdition, databaseId, databaseSizeInGbs, displayName, id, kmsKeyId, kmsKeyVersionId, lifecycleDetails, shape, state, timeEnded, timeStarted, type, vaultId, version);
+        }
+        public GetBackupsBackup build() {
+            final var o = new GetBackupsBackup();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.databaseEdition = databaseEdition;
+            o.databaseId = databaseId;
+            o.databaseSizeInGbs = databaseSizeInGbs;
+            o.displayName = displayName;
+            o.id = id;
+            o.kmsKeyId = kmsKeyId;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.shape = shape;
+            o.state = state;
+            o.timeEnded = timeEnded;
+            o.timeStarted = timeStarted;
+            o.type = type;
+            o.vaultId = vaultId;
+            o.version = version;
+            return o;
         }
     }
 }

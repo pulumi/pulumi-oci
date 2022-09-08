@@ -16,28 +16,19 @@ public final class GetAccessPolicyRule {
      * @return Action for the traffic between the source and the destination.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
-    private final List<GetAccessPolicyRuleDestination> destinations;
+    private List<GetAccessPolicyRuleDestination> destinations;
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
-    private final List<GetAccessPolicyRuleSource> sources;
+    private List<GetAccessPolicyRuleSource> sources;
 
-    @CustomType.Constructor
-    private GetAccessPolicyRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("destinations") List<GetAccessPolicyRuleDestination> destinations,
-        @CustomType.Parameter("sources") List<GetAccessPolicyRuleSource> sources) {
-        this.action = action;
-        this.destinations = destinations;
-        this.sources = sources;
-    }
-
+    private GetAccessPolicyRule() {}
     /**
      * @return Action for the traffic between the source and the destination.
      * 
@@ -67,16 +58,12 @@ public final class GetAccessPolicyRule {
     public static Builder builder(GetAccessPolicyRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private List<GetAccessPolicyRuleDestination> destinations;
         private List<GetAccessPolicyRuleSource> sources;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAccessPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -84,10 +71,12 @@ public final class GetAccessPolicyRule {
     	      this.sources = defaults.sources;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder destinations(List<GetAccessPolicyRuleDestination> destinations) {
             this.destinations = Objects.requireNonNull(destinations);
             return this;
@@ -95,14 +84,20 @@ public final class GetAccessPolicyRule {
         public Builder destinations(GetAccessPolicyRuleDestination... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder sources(List<GetAccessPolicyRuleSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
         }
         public Builder sources(GetAccessPolicyRuleSource... sources) {
             return sources(List.of(sources));
-        }        public GetAccessPolicyRule build() {
-            return new GetAccessPolicyRule(action, destinations, sources);
+        }
+        public GetAccessPolicyRule build() {
+            final var o = new GetAccessPolicyRule();
+            o.action = action;
+            o.destinations = destinations;
+            o.sources = sources;
+            return o;
         }
     }
 }

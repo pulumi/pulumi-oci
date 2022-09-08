@@ -13,28 +13,19 @@ public final class GetManagedDatabaseUserProxiedForUserItem {
      * @return Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
      * 
      */
-    private final String authentication;
+    private String authentication;
     /**
      * @return The flags associated with the proxy/client pair.
      * 
      */
-    private final String flags;
+    private String flags;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserProxiedForUserItem(
-        @CustomType.Parameter("authentication") String authentication,
-        @CustomType.Parameter("flags") String flags,
-        @CustomType.Parameter("name") String name) {
-        this.authentication = authentication;
-        this.flags = flags;
-        this.name = name;
-    }
-
+    private GetManagedDatabaseUserProxiedForUserItem() {}
     /**
      * @return Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
      * 
@@ -64,16 +55,12 @@ public final class GetManagedDatabaseUserProxiedForUserItem {
     public static Builder builder(GetManagedDatabaseUserProxiedForUserItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String authentication;
         private String flags;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserProxiedForUserItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authentication = defaults.authentication;
@@ -81,19 +68,27 @@ public final class GetManagedDatabaseUserProxiedForUserItem {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder authentication(String authentication) {
             this.authentication = Objects.requireNonNull(authentication);
             return this;
         }
+        @CustomType.Setter
         public Builder flags(String flags) {
             this.flags = Objects.requireNonNull(flags);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetManagedDatabaseUserProxiedForUserItem build() {
-            return new GetManagedDatabaseUserProxiedForUserItem(authentication, flags, name);
+        }
+        public GetManagedDatabaseUserProxiedForUserItem build() {
+            final var o = new GetManagedDatabaseUserProxiedForUserItem();
+            o.authentication = authentication;
+            o.flags = flags;
+            o.name = name;
+            return o;
         }
     }
 }

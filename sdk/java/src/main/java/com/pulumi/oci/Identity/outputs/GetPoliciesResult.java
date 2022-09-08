@@ -18,45 +18,30 @@ public final class GetPoliciesResult {
      * @return The OCID of the compartment containing the policy (either the tenancy or another compartment).
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetPoliciesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetPoliciesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of policies.
      * 
      */
-    private final List<GetPoliciesPolicy> policies;
+    private List<GetPoliciesPolicy> policies;
     /**
      * @return The policy&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetPoliciesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetPoliciesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("policies") List<GetPoliciesPolicy> policies,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.policies = policies;
-        this.state = state;
-    }
-
+    private GetPoliciesResult() {}
     /**
      * @return The OCID of the compartment containing the policy (either the tenancy or another compartment).
      * 
@@ -103,7 +88,7 @@ public final class GetPoliciesResult {
     public static Builder builder(GetPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetPoliciesFilter> filters;
@@ -111,11 +96,7 @@ public final class GetPoliciesResult {
         private @Nullable String name;
         private List<GetPoliciesPolicy> policies;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetPoliciesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,14 +120,17 @@ public final class GetPoliciesResult {
         public Builder filters(GetPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder policies(List<GetPoliciesPolicy> policies) {
             this.policies = Objects.requireNonNull(policies);
             return this;
@@ -152,11 +138,20 @@ public final class GetPoliciesResult {
         public Builder policies(GetPoliciesPolicy... policies) {
             return policies(List.of(policies));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetPoliciesResult build() {
-            return new GetPoliciesResult(compartmentId, filters, id, name, policies, state);
+        }
+        public GetPoliciesResult build() {
+            final var o = new GetPoliciesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.policies = policies;
+            o.state = state;
+            return o;
         }
     }
 }

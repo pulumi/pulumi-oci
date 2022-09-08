@@ -13,13 +13,9 @@ public final class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagC
      * @return A filter to return only resources that match the entire name given.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem() {}
     /**
      * @return A filter to return only resources that match the entire name given.
      * 
@@ -35,24 +31,24 @@ public final class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagC
     public static Builder builder(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem build() {
-            return new GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem(name);
+        }
+        public GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem build() {
+            final var o = new GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem();
+            o.name = name;
+            return o;
         }
     }
 }

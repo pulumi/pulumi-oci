@@ -19,51 +19,32 @@ public final class GetTargetDatabaseRolesResult {
      * @return Type of authentication.
      * 
      */
-    private final @Nullable String authenticationType;
-    private final @Nullable List<GetTargetDatabaseRolesFilter> filters;
+    private @Nullable String authenticationType;
+    private @Nullable List<GetTargetDatabaseRolesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Is the role oracle maintained.
      * 
      */
-    private final @Nullable Boolean isOracleMaintained;
-    private final @Nullable String roleNameContains;
+    private @Nullable Boolean isOracleMaintained;
+    private @Nullable String roleNameContains;
     /**
      * @return Name of the role.
      * 
      */
-    private final @Nullable List<String> roleNames;
+    private @Nullable List<String> roleNames;
     /**
      * @return The list of roles.
      * 
      */
-    private final List<GetTargetDatabaseRolesRole> roles;
-    private final String targetDatabaseId;
+    private List<GetTargetDatabaseRolesRole> roles;
+    private String targetDatabaseId;
 
-    @CustomType.Constructor
-    private GetTargetDatabaseRolesResult(
-        @CustomType.Parameter("authenticationType") @Nullable String authenticationType,
-        @CustomType.Parameter("filters") @Nullable List<GetTargetDatabaseRolesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isOracleMaintained") @Nullable Boolean isOracleMaintained,
-        @CustomType.Parameter("roleNameContains") @Nullable String roleNameContains,
-        @CustomType.Parameter("roleNames") @Nullable List<String> roleNames,
-        @CustomType.Parameter("roles") List<GetTargetDatabaseRolesRole> roles,
-        @CustomType.Parameter("targetDatabaseId") String targetDatabaseId) {
-        this.authenticationType = authenticationType;
-        this.filters = filters;
-        this.id = id;
-        this.isOracleMaintained = isOracleMaintained;
-        this.roleNameContains = roleNameContains;
-        this.roleNames = roleNames;
-        this.roles = roles;
-        this.targetDatabaseId = targetDatabaseId;
-    }
-
+    private GetTargetDatabaseRolesResult() {}
     /**
      * @return Type of authentication.
      * 
@@ -116,7 +97,7 @@ public final class GetTargetDatabaseRolesResult {
     public static Builder builder(GetTargetDatabaseRolesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String authenticationType;
         private @Nullable List<GetTargetDatabaseRolesFilter> filters;
@@ -126,11 +107,7 @@ public final class GetTargetDatabaseRolesResult {
         private @Nullable List<String> roleNames;
         private List<GetTargetDatabaseRolesRole> roles;
         private String targetDatabaseId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabaseRolesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authenticationType = defaults.authenticationType;
@@ -143,10 +120,12 @@ public final class GetTargetDatabaseRolesResult {
     	      this.targetDatabaseId = defaults.targetDatabaseId;
         }
 
+        @CustomType.Setter
         public Builder authenticationType(@Nullable String authenticationType) {
             this.authenticationType = authenticationType;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetDatabaseRolesFilter> filters) {
             this.filters = filters;
             return this;
@@ -154,18 +133,22 @@ public final class GetTargetDatabaseRolesResult {
         public Builder filters(GetTargetDatabaseRolesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isOracleMaintained(@Nullable Boolean isOracleMaintained) {
             this.isOracleMaintained = isOracleMaintained;
             return this;
         }
+        @CustomType.Setter
         public Builder roleNameContains(@Nullable String roleNameContains) {
             this.roleNameContains = roleNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder roleNames(@Nullable List<String> roleNames) {
             this.roleNames = roleNames;
             return this;
@@ -173,6 +156,7 @@ public final class GetTargetDatabaseRolesResult {
         public Builder roleNames(String... roleNames) {
             return roleNames(List.of(roleNames));
         }
+        @CustomType.Setter
         public Builder roles(List<GetTargetDatabaseRolesRole> roles) {
             this.roles = Objects.requireNonNull(roles);
             return this;
@@ -180,11 +164,22 @@ public final class GetTargetDatabaseRolesResult {
         public Builder roles(GetTargetDatabaseRolesRole... roles) {
             return roles(List.of(roles));
         }
+        @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
             this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
             return this;
-        }        public GetTargetDatabaseRolesResult build() {
-            return new GetTargetDatabaseRolesResult(authenticationType, filters, id, isOracleMaintained, roleNameContains, roleNames, roles, targetDatabaseId);
+        }
+        public GetTargetDatabaseRolesResult build() {
+            final var o = new GetTargetDatabaseRolesResult();
+            o.authenticationType = authenticationType;
+            o.filters = filters;
+            o.id = id;
+            o.isOracleMaintained = isOracleMaintained;
+            o.roleNameContains = roleNameContains;
+            o.roleNames = roleNames;
+            o.roles = roles;
+            o.targetDatabaseId = targetDatabaseId;
+            return o;
         }
     }
 }

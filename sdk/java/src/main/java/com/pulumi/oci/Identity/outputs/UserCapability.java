@@ -15,56 +15,39 @@ public final class UserCapability {
      * @return Indicates if the user can use API keys.
      * 
      */
-    private final @Nullable Boolean canUseApiKeys;
+    private @Nullable Boolean canUseApiKeys;
     /**
      * @return Indicates if the user can use SWIFT passwords / auth tokens.
      * 
      */
-    private final @Nullable Boolean canUseAuthTokens;
+    private @Nullable Boolean canUseAuthTokens;
     /**
      * @return Indicates if the user can log in to the console.
      * 
      */
-    private final @Nullable Boolean canUseConsolePassword;
+    private @Nullable Boolean canUseConsolePassword;
     /**
      * @return Indicates if the user can use SigV4 symmetric keys.
      * 
      */
-    private final @Nullable Boolean canUseCustomerSecretKeys;
+    private @Nullable Boolean canUseCustomerSecretKeys;
     /**
      * @return Indicates if the user can use DB passwords.
      * 
      */
-    private final @Nullable Boolean canUseDbCredentials;
+    private @Nullable Boolean canUseDbCredentials;
     /**
      * @return Indicates if the user can use OAuth2 credentials and tokens.
      * 
      */
-    private final @Nullable Boolean canUseOauth2clientCredentials;
+    private @Nullable Boolean canUseOauth2clientCredentials;
     /**
      * @return Indicates if the user can use SMTP passwords.
      * 
      */
-    private final @Nullable Boolean canUseSmtpCredentials;
+    private @Nullable Boolean canUseSmtpCredentials;
 
-    @CustomType.Constructor
-    private UserCapability(
-        @CustomType.Parameter("canUseApiKeys") @Nullable Boolean canUseApiKeys,
-        @CustomType.Parameter("canUseAuthTokens") @Nullable Boolean canUseAuthTokens,
-        @CustomType.Parameter("canUseConsolePassword") @Nullable Boolean canUseConsolePassword,
-        @CustomType.Parameter("canUseCustomerSecretKeys") @Nullable Boolean canUseCustomerSecretKeys,
-        @CustomType.Parameter("canUseDbCredentials") @Nullable Boolean canUseDbCredentials,
-        @CustomType.Parameter("canUseOauth2clientCredentials") @Nullable Boolean canUseOauth2clientCredentials,
-        @CustomType.Parameter("canUseSmtpCredentials") @Nullable Boolean canUseSmtpCredentials) {
-        this.canUseApiKeys = canUseApiKeys;
-        this.canUseAuthTokens = canUseAuthTokens;
-        this.canUseConsolePassword = canUseConsolePassword;
-        this.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
-        this.canUseDbCredentials = canUseDbCredentials;
-        this.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
-        this.canUseSmtpCredentials = canUseSmtpCredentials;
-    }
-
+    private UserCapability() {}
     /**
      * @return Indicates if the user can use API keys.
      * 
@@ -122,7 +105,7 @@ public final class UserCapability {
     public static Builder builder(UserCapability defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean canUseApiKeys;
         private @Nullable Boolean canUseAuthTokens;
@@ -131,11 +114,7 @@ public final class UserCapability {
         private @Nullable Boolean canUseDbCredentials;
         private @Nullable Boolean canUseOauth2clientCredentials;
         private @Nullable Boolean canUseSmtpCredentials;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(UserCapability defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.canUseApiKeys = defaults.canUseApiKeys;
@@ -147,35 +126,51 @@ public final class UserCapability {
     	      this.canUseSmtpCredentials = defaults.canUseSmtpCredentials;
         }
 
+        @CustomType.Setter
         public Builder canUseApiKeys(@Nullable Boolean canUseApiKeys) {
             this.canUseApiKeys = canUseApiKeys;
             return this;
         }
+        @CustomType.Setter
         public Builder canUseAuthTokens(@Nullable Boolean canUseAuthTokens) {
             this.canUseAuthTokens = canUseAuthTokens;
             return this;
         }
+        @CustomType.Setter
         public Builder canUseConsolePassword(@Nullable Boolean canUseConsolePassword) {
             this.canUseConsolePassword = canUseConsolePassword;
             return this;
         }
+        @CustomType.Setter
         public Builder canUseCustomerSecretKeys(@Nullable Boolean canUseCustomerSecretKeys) {
             this.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
             return this;
         }
+        @CustomType.Setter
         public Builder canUseDbCredentials(@Nullable Boolean canUseDbCredentials) {
             this.canUseDbCredentials = canUseDbCredentials;
             return this;
         }
+        @CustomType.Setter
         public Builder canUseOauth2clientCredentials(@Nullable Boolean canUseOauth2clientCredentials) {
             this.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
             return this;
         }
+        @CustomType.Setter
         public Builder canUseSmtpCredentials(@Nullable Boolean canUseSmtpCredentials) {
             this.canUseSmtpCredentials = canUseSmtpCredentials;
             return this;
-        }        public UserCapability build() {
-            return new UserCapability(canUseApiKeys, canUseAuthTokens, canUseConsolePassword, canUseCustomerSecretKeys, canUseDbCredentials, canUseOauth2clientCredentials, canUseSmtpCredentials);
+        }
+        public UserCapability build() {
+            final var o = new UserCapability();
+            o.canUseApiKeys = canUseApiKeys;
+            o.canUseAuthTokens = canUseAuthTokens;
+            o.canUseConsolePassword = canUseConsolePassword;
+            o.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
+            o.canUseDbCredentials = canUseDbCredentials;
+            o.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
+            o.canUseSmtpCredentials = canUseSmtpCredentials;
+            return o;
         }
     }
 }

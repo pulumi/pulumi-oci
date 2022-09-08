@@ -18,115 +18,80 @@ public final class GetPingMonitorResult {
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly and mutable name suitable for display in a user interface.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The region where updates must be made and where results must be fetched from.
      * 
      */
-    private final String homeRegion;
+    private String homeRegion;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The monitor interval in seconds. Valid values: 10, 30, and 60.
      * 
      */
-    private final Integer intervalInSeconds;
+    private Integer intervalInSeconds;
     /**
      * @return Enables or disables the monitor. Set to &#39;true&#39; to launch monitoring.
      * 
      */
-    private final Boolean isEnabled;
-    private final String monitorId;
+    private Boolean isEnabled;
+    private String monitorId;
     /**
      * @return The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The protocols for ping probes.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return A URL for fetching the probe results.
      * 
      */
-    private final String resultsUrl;
+    private String resultsUrl;
     /**
      * @return A list of targets (hostnames or IP addresses) of the probe.
      * 
      */
-    private final List<String> targets;
+    private List<String> targets;
     /**
      * @return The RFC 3339-formatted creation date and time of the probe.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      * 
      */
-    private final Integer timeoutInSeconds;
+    private Integer timeoutInSeconds;
     /**
      * @return A list of names of vantage points from which to execute the probe.
      * 
      */
-    private final List<String> vantagePointNames;
+    private List<String> vantagePointNames;
 
-    @CustomType.Constructor
-    private GetPingMonitorResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("homeRegion") String homeRegion,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("intervalInSeconds") Integer intervalInSeconds,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("monitorId") String monitorId,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("resultsUrl") String resultsUrl,
-        @CustomType.Parameter("targets") List<String> targets,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeoutInSeconds") Integer timeoutInSeconds,
-        @CustomType.Parameter("vantagePointNames") List<String> vantagePointNames) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.homeRegion = homeRegion;
-        this.id = id;
-        this.intervalInSeconds = intervalInSeconds;
-        this.isEnabled = isEnabled;
-        this.monitorId = monitorId;
-        this.port = port;
-        this.protocol = protocol;
-        this.resultsUrl = resultsUrl;
-        this.targets = targets;
-        this.timeCreated = timeCreated;
-        this.timeoutInSeconds = timeoutInSeconds;
-        this.vantagePointNames = vantagePointNames;
-    }
-
+    private GetPingMonitorResult() {}
     /**
      * @return The OCID of the compartment.
      * 
@@ -243,7 +208,7 @@ public final class GetPingMonitorResult {
     public static Builder builder(GetPingMonitorResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -261,11 +226,7 @@ public final class GetPingMonitorResult {
         private String timeCreated;
         private Integer timeoutInSeconds;
         private List<String> vantagePointNames;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPingMonitorResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -286,54 +247,67 @@ public final class GetPingMonitorResult {
     	      this.vantagePointNames = defaults.vantagePointNames;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder homeRegion(String homeRegion) {
             this.homeRegion = Objects.requireNonNull(homeRegion);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder intervalInSeconds(Integer intervalInSeconds) {
             this.intervalInSeconds = Objects.requireNonNull(intervalInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder monitorId(String monitorId) {
             this.monitorId = Objects.requireNonNull(monitorId);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder resultsUrl(String resultsUrl) {
             this.resultsUrl = Objects.requireNonNull(resultsUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder targets(List<String> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
@@ -341,22 +315,43 @@ public final class GetPingMonitorResult {
         public Builder targets(String... targets) {
             return targets(List.of(targets));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder vantagePointNames(List<String> vantagePointNames) {
             this.vantagePointNames = Objects.requireNonNull(vantagePointNames);
             return this;
         }
         public Builder vantagePointNames(String... vantagePointNames) {
             return vantagePointNames(List.of(vantagePointNames));
-        }        public GetPingMonitorResult build() {
-            return new GetPingMonitorResult(compartmentId, definedTags, displayName, freeformTags, homeRegion, id, intervalInSeconds, isEnabled, monitorId, port, protocol, resultsUrl, targets, timeCreated, timeoutInSeconds, vantagePointNames);
+        }
+        public GetPingMonitorResult build() {
+            final var o = new GetPingMonitorResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.homeRegion = homeRegion;
+            o.id = id;
+            o.intervalInSeconds = intervalInSeconds;
+            o.isEnabled = isEnabled;
+            o.monitorId = monitorId;
+            o.port = port;
+            o.protocol = protocol;
+            o.resultsUrl = resultsUrl;
+            o.targets = targets;
+            o.timeCreated = timeCreated;
+            o.timeoutInSeconds = timeoutInSeconds;
+            o.vantagePointNames = vantagePointNames;
+            return o;
         }
     }
 }

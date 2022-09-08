@@ -16,38 +16,25 @@ public final class GetBdsInstanceUtilNode {
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    private final String blockVolumeSizeInGbs;
+    private String blockVolumeSizeInGbs;
     /**
      * @return The number of nodes that form the cluster.
      * 
      */
-    private final Integer numberOfNodes;
+    private Integer numberOfNodes;
     /**
      * @return Shape of the node.
      * 
      */
-    private final String shape;
-    private final List<GetBdsInstanceUtilNodeShapeConfig> shapeConfigs;
+    private String shape;
+    private List<GetBdsInstanceUtilNodeShapeConfig> shapeConfigs;
     /**
      * @return The OCID of the subnet in which the node is to be created.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private GetBdsInstanceUtilNode(
-        @CustomType.Parameter("blockVolumeSizeInGbs") String blockVolumeSizeInGbs,
-        @CustomType.Parameter("numberOfNodes") Integer numberOfNodes,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("shapeConfigs") List<GetBdsInstanceUtilNodeShapeConfig> shapeConfigs,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
-        this.numberOfNodes = numberOfNodes;
-        this.shape = shape;
-        this.shapeConfigs = shapeConfigs;
-        this.subnetId = subnetId;
-    }
-
+    private GetBdsInstanceUtilNode() {}
     /**
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
@@ -87,18 +74,14 @@ public final class GetBdsInstanceUtilNode {
     public static Builder builder(GetBdsInstanceUtilNode defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String blockVolumeSizeInGbs;
         private Integer numberOfNodes;
         private String shape;
         private List<GetBdsInstanceUtilNodeShapeConfig> shapeConfigs;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstanceUtilNode defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockVolumeSizeInGbs = defaults.blockVolumeSizeInGbs;
@@ -108,18 +91,22 @@ public final class GetBdsInstanceUtilNode {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder blockVolumeSizeInGbs(String blockVolumeSizeInGbs) {
             this.blockVolumeSizeInGbs = Objects.requireNonNull(blockVolumeSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder numberOfNodes(Integer numberOfNodes) {
             this.numberOfNodes = Objects.requireNonNull(numberOfNodes);
             return this;
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeConfigs(List<GetBdsInstanceUtilNodeShapeConfig> shapeConfigs) {
             this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
             return this;
@@ -127,11 +114,19 @@ public final class GetBdsInstanceUtilNode {
         public Builder shapeConfigs(GetBdsInstanceUtilNodeShapeConfig... shapeConfigs) {
             return shapeConfigs(List.of(shapeConfigs));
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public GetBdsInstanceUtilNode build() {
-            return new GetBdsInstanceUtilNode(blockVolumeSizeInGbs, numberOfNodes, shape, shapeConfigs, subnetId);
+        }
+        public GetBdsInstanceUtilNode build() {
+            final var o = new GetBdsInstanceUtilNode();
+            o.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
+            o.numberOfNodes = numberOfNodes;
+            o.shape = shape;
+            o.shapeConfigs = shapeConfigs;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

@@ -13,28 +13,19 @@ public final class GetJavaReleaseLicenseDetail {
      * @return Commonly used name for the license type.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return License type for the Java version.
      * 
      */
-    private final String licenseType;
+    private String licenseType;
     /**
      * @return Publicly accessible license URL containing the detailed terms and conditions.
      * 
      */
-    private final String licenseUrl;
+    private String licenseUrl;
 
-    @CustomType.Constructor
-    private GetJavaReleaseLicenseDetail(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("licenseType") String licenseType,
-        @CustomType.Parameter("licenseUrl") String licenseUrl) {
-        this.displayName = displayName;
-        this.licenseType = licenseType;
-        this.licenseUrl = licenseUrl;
-    }
-
+    private GetJavaReleaseLicenseDetail() {}
     /**
      * @return Commonly used name for the license type.
      * 
@@ -64,16 +55,12 @@ public final class GetJavaReleaseLicenseDetail {
     public static Builder builder(GetJavaReleaseLicenseDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String licenseType;
         private String licenseUrl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJavaReleaseLicenseDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -81,19 +68,27 @@ public final class GetJavaReleaseLicenseDetail {
     	      this.licenseUrl = defaults.licenseUrl;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseType(String licenseType) {
             this.licenseType = Objects.requireNonNull(licenseType);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseUrl(String licenseUrl) {
             this.licenseUrl = Objects.requireNonNull(licenseUrl);
             return this;
-        }        public GetJavaReleaseLicenseDetail build() {
-            return new GetJavaReleaseLicenseDetail(displayName, licenseType, licenseUrl);
+        }
+        public GetJavaReleaseLicenseDetail build() {
+            final var o = new GetJavaReleaseLicenseDetail();
+            o.displayName = displayName;
+            o.licenseType = licenseType;
+            o.licenseUrl = licenseUrl;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDiscoveryJobsResultsDiscoveryJobResultCollection {
-    private final List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items;
+    private List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobsResultsDiscoveryJobResultCollection(@CustomType.Parameter("items") List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDiscoveryJobsResultsDiscoveryJobResultCollection() {}
     public List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollection {
     public static Builder builder(GetDiscoveryJobsResultsDiscoveryJobResultCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobsResultsDiscoveryJobResultCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDiscoveryJobsResultsDiscoveryJobResultCollection build() {
-            return new GetDiscoveryJobsResultsDiscoveryJobResultCollection(items);
+        }
+        public GetDiscoveryJobsResultsDiscoveryJobResultCollection build() {
+            final var o = new GetDiscoveryJobsResultsDiscoveryJobResultCollection();
+            o.items = items;
+            return o;
         }
     }
 }

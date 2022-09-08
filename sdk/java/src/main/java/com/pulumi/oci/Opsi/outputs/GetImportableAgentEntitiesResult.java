@@ -11,28 +11,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetImportableAgentEntitiesResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Array of importable agent entity objects.
      * 
      */
-    private final List<GetImportableAgentEntitiesItem> items;
+    private List<GetImportableAgentEntitiesItem> items;
 
-    @CustomType.Constructor
-    private GetImportableAgentEntitiesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetImportableAgentEntitiesItem> items) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetImportableAgentEntitiesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -58,16 +49,12 @@ public final class GetImportableAgentEntitiesResult {
     public static Builder builder(GetImportableAgentEntitiesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private List<GetImportableAgentEntitiesItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImportableAgentEntitiesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -75,22 +62,30 @@ public final class GetImportableAgentEntitiesResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetImportableAgentEntitiesItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetImportableAgentEntitiesItem... items) {
             return items(List.of(items));
-        }        public GetImportableAgentEntitiesResult build() {
-            return new GetImportableAgentEntitiesResult(compartmentId, id, items);
+        }
+        public GetImportableAgentEntitiesResult build() {
+            final var o = new GetImportableAgentEntitiesResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

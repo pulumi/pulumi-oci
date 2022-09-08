@@ -13,27 +13,16 @@ public final class GetPrivateEndpointReachableIpResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An IP address for the Resource Manager service to use for connection to the private resource.
      * 
      */
-    private final String ipAddress;
-    private final String privateEndpointId;
-    private final String privateIp;
+    private String ipAddress;
+    private String privateEndpointId;
+    private String privateIp;
 
-    @CustomType.Constructor
-    private GetPrivateEndpointReachableIpResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("privateEndpointId") String privateEndpointId,
-        @CustomType.Parameter("privateIp") String privateIp) {
-        this.id = id;
-        this.ipAddress = ipAddress;
-        this.privateEndpointId = privateEndpointId;
-        this.privateIp = privateIp;
-    }
-
+    private GetPrivateEndpointReachableIpResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -62,17 +51,13 @@ public final class GetPrivateEndpointReachableIpResult {
     public static Builder builder(GetPrivateEndpointReachableIpResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String ipAddress;
         private String privateEndpointId;
         private String privateIp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateEndpointReachableIpResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -81,23 +66,33 @@ public final class GetPrivateEndpointReachableIpResult {
     	      this.privateIp = defaults.privateIp;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder privateIp(String privateIp) {
             this.privateIp = Objects.requireNonNull(privateIp);
             return this;
-        }        public GetPrivateEndpointReachableIpResult build() {
-            return new GetPrivateEndpointReachableIpResult(id, ipAddress, privateEndpointId, privateIp);
+        }
+        public GetPrivateEndpointReachableIpResult build() {
+            final var o = new GetPrivateEndpointReachableIpResult();
+            o.id = id;
+            o.ipAddress = ipAddress;
+            o.privateEndpointId = privateEndpointId;
+            o.privateIp = privateIp;
+            return o;
         }
     }
 }

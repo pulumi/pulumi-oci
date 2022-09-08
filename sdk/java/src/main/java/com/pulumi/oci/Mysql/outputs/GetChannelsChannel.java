@@ -19,98 +19,69 @@ public final class GetChannelsChannel {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return User provided description of the Channel.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only the resource matching the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the Channel.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return A message describing the state of the Channel.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Parameters detailing how to provision the source for the given Channel.
      * 
      */
-    private final List<GetChannelsChannelSource> sources;
+    private List<GetChannelsChannelSource> sources;
     /**
      * @return The LifecycleState of the Channel.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Details about the Channel target.
      * 
      */
-    private final List<GetChannelsChannelTarget> targets;
+    private List<GetChannelsChannelTarget> targets;
     /**
      * @return The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetChannelsChannel(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("sources") List<GetChannelsChannelSource> sources,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("targets") List<GetChannelsChannelTarget> targets,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.lifecycleDetails = lifecycleDetails;
-        this.sources = sources;
-        this.state = state;
-        this.targets = targets;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetChannelsChannel() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -210,7 +181,7 @@ public final class GetChannelsChannel {
     public static Builder builder(GetChannelsChannel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -225,11 +196,7 @@ public final class GetChannelsChannel {
         private List<GetChannelsChannelTarget> targets;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetChannelsChannel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -247,38 +214,47 @@ public final class GetChannelsChannel {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder sources(List<GetChannelsChannelSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
@@ -286,10 +262,12 @@ public final class GetChannelsChannel {
         public Builder sources(GetChannelsChannelSource... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder targets(List<GetChannelsChannelTarget> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
@@ -297,15 +275,32 @@ public final class GetChannelsChannel {
         public Builder targets(GetChannelsChannelTarget... targets) {
             return targets(List.of(targets));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetChannelsChannel build() {
-            return new GetChannelsChannel(compartmentId, definedTags, description, displayName, freeformTags, id, isEnabled, lifecycleDetails, sources, state, targets, timeCreated, timeUpdated);
+        }
+        public GetChannelsChannel build() {
+            final var o = new GetChannelsChannel();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.lifecycleDetails = lifecycleDetails;
+            o.sources = sources;
+            o.state = state;
+            o.targets = targets;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

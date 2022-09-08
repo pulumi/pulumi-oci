@@ -14,31 +14,20 @@ public final class GetBackupDestinationMountTypeDetail {
      * @return The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      * 
      */
-    private final String localMountPointPath;
-    private final String mountType;
+    private String localMountPointPath;
+    private String mountType;
     /**
      * @return Specifies the directory on which to mount the file system
      * 
      */
-    private final String nfsServerExport;
+    private String nfsServerExport;
     /**
      * @return Host names or IP addresses for NFS Auto mount.
      * 
      */
-    private final List<String> nfsServers;
+    private List<String> nfsServers;
 
-    @CustomType.Constructor
-    private GetBackupDestinationMountTypeDetail(
-        @CustomType.Parameter("localMountPointPath") String localMountPointPath,
-        @CustomType.Parameter("mountType") String mountType,
-        @CustomType.Parameter("nfsServerExport") String nfsServerExport,
-        @CustomType.Parameter("nfsServers") List<String> nfsServers) {
-        this.localMountPointPath = localMountPointPath;
-        this.mountType = mountType;
-        this.nfsServerExport = nfsServerExport;
-        this.nfsServers = nfsServers;
-    }
-
+    private GetBackupDestinationMountTypeDetail() {}
     /**
      * @return The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      * 
@@ -71,17 +60,13 @@ public final class GetBackupDestinationMountTypeDetail {
     public static Builder builder(GetBackupDestinationMountTypeDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String localMountPointPath;
         private String mountType;
         private String nfsServerExport;
         private List<String> nfsServers;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackupDestinationMountTypeDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.localMountPointPath = defaults.localMountPointPath;
@@ -90,26 +75,36 @@ public final class GetBackupDestinationMountTypeDetail {
     	      this.nfsServers = defaults.nfsServers;
         }
 
+        @CustomType.Setter
         public Builder localMountPointPath(String localMountPointPath) {
             this.localMountPointPath = Objects.requireNonNull(localMountPointPath);
             return this;
         }
+        @CustomType.Setter
         public Builder mountType(String mountType) {
             this.mountType = Objects.requireNonNull(mountType);
             return this;
         }
+        @CustomType.Setter
         public Builder nfsServerExport(String nfsServerExport) {
             this.nfsServerExport = Objects.requireNonNull(nfsServerExport);
             return this;
         }
+        @CustomType.Setter
         public Builder nfsServers(List<String> nfsServers) {
             this.nfsServers = Objects.requireNonNull(nfsServers);
             return this;
         }
         public Builder nfsServers(String... nfsServers) {
             return nfsServers(List.of(nfsServers));
-        }        public GetBackupDestinationMountTypeDetail build() {
-            return new GetBackupDestinationMountTypeDetail(localMountPointPath, mountType, nfsServerExport, nfsServers);
+        }
+        public GetBackupDestinationMountTypeDetail build() {
+            final var o = new GetBackupDestinationMountTypeDetail();
+            o.localMountPointPath = localMountPointPath;
+            o.mountType = mountType;
+            o.nfsServerExport = nfsServerExport;
+            o.nfsServers = nfsServers;
+            return o;
         }
     }
 }

@@ -15,71 +15,44 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSensitiveDataModelsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The OCID of the compartment that contains the sensitive data model.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The display name of the sensitive data model.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetSensitiveDataModelsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetSensitiveDataModelsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of sensitive_data_model_collection.
      * 
      */
-    private final List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections;
-    private final @Nullable String sensitiveDataModelId;
+    private List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections;
+    private @Nullable String sensitiveDataModelId;
     /**
      * @return The current state of the sensitive data model.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
      * 
      */
-    private final @Nullable String targetId;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private @Nullable String targetId;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
 
-    @CustomType.Constructor
-    private GetSensitiveDataModelsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetSensitiveDataModelsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("sensitiveDataModelCollections") List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections,
-        @CustomType.Parameter("sensitiveDataModelId") @Nullable String sensitiveDataModelId,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targetId") @Nullable String targetId,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.sensitiveDataModelCollections = sensitiveDataModelCollections;
-        this.sensitiveDataModelId = sensitiveDataModelId;
-        this.state = state;
-        this.targetId = targetId;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-    }
-
+    private GetSensitiveDataModelsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -148,7 +121,7 @@ public final class GetSensitiveDataModelsResult {
     public static Builder builder(GetSensitiveDataModelsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -162,11 +135,7 @@ public final class GetSensitiveDataModelsResult {
         private @Nullable String targetId;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSensitiveDataModelsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -183,22 +152,27 @@ public final class GetSensitiveDataModelsResult {
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSensitiveDataModelsFilter> filters) {
             this.filters = filters;
             return this;
@@ -206,10 +180,12 @@ public final class GetSensitiveDataModelsResult {
         public Builder filters(GetSensitiveDataModelsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder sensitiveDataModelCollections(List<GetSensitiveDataModelsSensitiveDataModelCollection> sensitiveDataModelCollections) {
             this.sensitiveDataModelCollections = Objects.requireNonNull(sensitiveDataModelCollections);
             return this;
@@ -217,27 +193,46 @@ public final class GetSensitiveDataModelsResult {
         public Builder sensitiveDataModelCollections(GetSensitiveDataModelsSensitiveDataModelCollection... sensitiveDataModelCollections) {
             return sensitiveDataModelCollections(List.of(sensitiveDataModelCollections));
         }
+        @CustomType.Setter
         public Builder sensitiveDataModelId(@Nullable String sensitiveDataModelId) {
             this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
-        }        public GetSensitiveDataModelsResult build() {
-            return new GetSensitiveDataModelsResult(accessLevel, compartmentId, compartmentIdInSubtree, displayName, filters, id, sensitiveDataModelCollections, sensitiveDataModelId, state, targetId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan);
+        }
+        public GetSensitiveDataModelsResult build() {
+            final var o = new GetSensitiveDataModelsResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.sensitiveDataModelCollections = sensitiveDataModelCollections;
+            o.sensitiveDataModelId = sensitiveDataModelId;
+            o.state = state;
+            o.targetId = targetId;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            return o;
         }
     }
 }

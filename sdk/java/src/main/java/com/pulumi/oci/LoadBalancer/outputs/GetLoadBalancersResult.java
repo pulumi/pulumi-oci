@@ -18,48 +18,31 @@ public final class GetLoadBalancersResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable String detail;
+    private String compartmentId;
+    private @Nullable String detail;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `example_load_balancer`
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetLoadBalancersFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetLoadBalancersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of load_balancers.
      * 
      */
-    private final List<GetLoadBalancersLoadBalancer> loadBalancers;
+    private List<GetLoadBalancersLoadBalancer> loadBalancers;
     /**
      * @return The current state of the load balancer.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetLoadBalancersResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("detail") @Nullable String detail,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetLoadBalancersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancers") List<GetLoadBalancersLoadBalancer> loadBalancers,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.detail = detail;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.loadBalancers = loadBalancers;
-        this.state = state;
-    }
-
+    private GetLoadBalancersResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
      * 
@@ -109,7 +92,7 @@ public final class GetLoadBalancersResult {
     public static Builder builder(GetLoadBalancersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String detail;
@@ -118,11 +101,7 @@ public final class GetLoadBalancersResult {
         private String id;
         private List<GetLoadBalancersLoadBalancer> loadBalancers;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLoadBalancersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,18 +113,22 @@ public final class GetLoadBalancersResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder detail(@Nullable String detail) {
             this.detail = detail;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLoadBalancersFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,10 +136,12 @@ public final class GetLoadBalancersResult {
         public Builder filters(GetLoadBalancersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancers(List<GetLoadBalancersLoadBalancer> loadBalancers) {
             this.loadBalancers = Objects.requireNonNull(loadBalancers);
             return this;
@@ -164,11 +149,21 @@ public final class GetLoadBalancersResult {
         public Builder loadBalancers(GetLoadBalancersLoadBalancer... loadBalancers) {
             return loadBalancers(List.of(loadBalancers));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetLoadBalancersResult build() {
-            return new GetLoadBalancersResult(compartmentId, detail, displayName, filters, id, loadBalancers, state);
+        }
+        public GetLoadBalancersResult build() {
+            final var o = new GetLoadBalancersResult();
+            o.compartmentId = compartmentId;
+            o.detail = detail;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.loadBalancers = loadBalancers;
+            o.state = state;
+            return o;
         }
     }
 }

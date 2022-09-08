@@ -14,42 +14,29 @@ public final class GetExadataInfrastructuresExadataInfrastructureContact {
      * @return The email for the Exadata Infrastructure contact.
      * 
      */
-    private final String email;
+    private String email;
     /**
      * @return If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
      * 
      */
-    private final Boolean isContactMosValidated;
+    private Boolean isContactMosValidated;
     /**
      * @return If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
      * 
      */
-    private final Boolean isPrimary;
+    private Boolean isPrimary;
     /**
      * @return Name of the month of the year.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The phone number for the Exadata Infrastructure contact.
      * 
      */
-    private final String phoneNumber;
+    private String phoneNumber;
 
-    @CustomType.Constructor
-    private GetExadataInfrastructuresExadataInfrastructureContact(
-        @CustomType.Parameter("email") String email,
-        @CustomType.Parameter("isContactMosValidated") Boolean isContactMosValidated,
-        @CustomType.Parameter("isPrimary") Boolean isPrimary,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("phoneNumber") String phoneNumber) {
-        this.email = email;
-        this.isContactMosValidated = isContactMosValidated;
-        this.isPrimary = isPrimary;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-    }
-
+    private GetExadataInfrastructuresExadataInfrastructureContact() {}
     /**
      * @return The email for the Exadata Infrastructure contact.
      * 
@@ -93,18 +80,14 @@ public final class GetExadataInfrastructuresExadataInfrastructureContact {
     public static Builder builder(GetExadataInfrastructuresExadataInfrastructureContact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String email;
         private Boolean isContactMosValidated;
         private Boolean isPrimary;
         private String name;
         private String phoneNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExadataInfrastructuresExadataInfrastructureContact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.email = defaults.email;
@@ -114,27 +97,39 @@ public final class GetExadataInfrastructuresExadataInfrastructureContact {
     	      this.phoneNumber = defaults.phoneNumber;
         }
 
+        @CustomType.Setter
         public Builder email(String email) {
             this.email = Objects.requireNonNull(email);
             return this;
         }
+        @CustomType.Setter
         public Builder isContactMosValidated(Boolean isContactMosValidated) {
             this.isContactMosValidated = Objects.requireNonNull(isContactMosValidated);
             return this;
         }
+        @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = Objects.requireNonNull(isPrimary);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder phoneNumber(String phoneNumber) {
             this.phoneNumber = Objects.requireNonNull(phoneNumber);
             return this;
-        }        public GetExadataInfrastructuresExadataInfrastructureContact build() {
-            return new GetExadataInfrastructuresExadataInfrastructureContact(email, isContactMosValidated, isPrimary, name, phoneNumber);
+        }
+        public GetExadataInfrastructuresExadataInfrastructureContact build() {
+            final var o = new GetExadataInfrastructuresExadataInfrastructureContact();
+            o.email = email;
+            o.isContactMosValidated = isContactMosValidated;
+            o.isPrimary = isPrimary;
+            o.name = name;
+            o.phoneNumber = phoneNumber;
+            return o;
         }
     }
 }

@@ -13,42 +13,29 @@ public final class GetDetectionDataAssetDataSourceDetailVersionSpecificDetail {
      * @return Bucket Name for influx connection
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return DB Name for influx connection
      * 
      */
-    private final String databaseName;
+    private String databaseName;
     /**
      * @return Data source type where actually data asset is being stored
      * 
      */
-    private final String influxVersion;
+    private String influxVersion;
     /**
      * @return Org name for the influx db
      * 
      */
-    private final String organizationName;
+    private String organizationName;
     /**
      * @return retention policy is how long the bucket would last
      * 
      */
-    private final String retentionPolicyName;
+    private String retentionPolicyName;
 
-    @CustomType.Constructor
-    private GetDetectionDataAssetDataSourceDetailVersionSpecificDetail(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("databaseName") String databaseName,
-        @CustomType.Parameter("influxVersion") String influxVersion,
-        @CustomType.Parameter("organizationName") String organizationName,
-        @CustomType.Parameter("retentionPolicyName") String retentionPolicyName) {
-        this.bucket = bucket;
-        this.databaseName = databaseName;
-        this.influxVersion = influxVersion;
-        this.organizationName = organizationName;
-        this.retentionPolicyName = retentionPolicyName;
-    }
-
+    private GetDetectionDataAssetDataSourceDetailVersionSpecificDetail() {}
     /**
      * @return Bucket Name for influx connection
      * 
@@ -92,18 +79,14 @@ public final class GetDetectionDataAssetDataSourceDetailVersionSpecificDetail {
     public static Builder builder(GetDetectionDataAssetDataSourceDetailVersionSpecificDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String databaseName;
         private String influxVersion;
         private String organizationName;
         private String retentionPolicyName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionDataAssetDataSourceDetailVersionSpecificDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -113,27 +96,39 @@ public final class GetDetectionDataAssetDataSourceDetailVersionSpecificDetail {
     	      this.retentionPolicyName = defaults.retentionPolicyName;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseName(String databaseName) {
             this.databaseName = Objects.requireNonNull(databaseName);
             return this;
         }
+        @CustomType.Setter
         public Builder influxVersion(String influxVersion) {
             this.influxVersion = Objects.requireNonNull(influxVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder organizationName(String organizationName) {
             this.organizationName = Objects.requireNonNull(organizationName);
             return this;
         }
+        @CustomType.Setter
         public Builder retentionPolicyName(String retentionPolicyName) {
             this.retentionPolicyName = Objects.requireNonNull(retentionPolicyName);
             return this;
-        }        public GetDetectionDataAssetDataSourceDetailVersionSpecificDetail build() {
-            return new GetDetectionDataAssetDataSourceDetailVersionSpecificDetail(bucket, databaseName, influxVersion, organizationName, retentionPolicyName);
+        }
+        public GetDetectionDataAssetDataSourceDetailVersionSpecificDetail build() {
+            final var o = new GetDetectionDataAssetDataSourceDetailVersionSpecificDetail();
+            o.bucket = bucket;
+            o.databaseName = databaseName;
+            o.influxVersion = influxVersion;
+            o.organizationName = organizationName;
+            o.retentionPolicyName = retentionPolicyName;
+            return o;
         }
     }
 }

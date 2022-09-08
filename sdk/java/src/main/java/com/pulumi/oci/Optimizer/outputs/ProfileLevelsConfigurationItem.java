@@ -15,21 +15,14 @@ public final class ProfileLevelsConfigurationItem {
      * @return (Updatable) The pre-defined profile level.
      * 
      */
-    private final @Nullable String level;
+    private @Nullable String level;
     /**
      * @return (Updatable) The unique OCID of the recommendation.
      * 
      */
-    private final @Nullable String recommendationId;
+    private @Nullable String recommendationId;
 
-    @CustomType.Constructor
-    private ProfileLevelsConfigurationItem(
-        @CustomType.Parameter("level") @Nullable String level,
-        @CustomType.Parameter("recommendationId") @Nullable String recommendationId) {
-        this.level = level;
-        this.recommendationId = recommendationId;
-    }
-
+    private ProfileLevelsConfigurationItem() {}
     /**
      * @return (Updatable) The pre-defined profile level.
      * 
@@ -52,30 +45,32 @@ public final class ProfileLevelsConfigurationItem {
     public static Builder builder(ProfileLevelsConfigurationItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String level;
         private @Nullable String recommendationId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ProfileLevelsConfigurationItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.level = defaults.level;
     	      this.recommendationId = defaults.recommendationId;
         }
 
+        @CustomType.Setter
         public Builder level(@Nullable String level) {
             this.level = level;
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationId(@Nullable String recommendationId) {
             this.recommendationId = recommendationId;
             return this;
-        }        public ProfileLevelsConfigurationItem build() {
-            return new ProfileLevelsConfigurationItem(level, recommendationId);
+        }
+        public ProfileLevelsConfigurationItem build() {
+            final var o = new ProfileLevelsConfigurationItem();
+            o.level = level;
+            o.recommendationId = recommendationId;
+            return o;
         }
     }
 }

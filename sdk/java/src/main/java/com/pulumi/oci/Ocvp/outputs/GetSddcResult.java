@@ -5,6 +5,8 @@ package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Ocvp.outputs.GetSddcHcxOnPremLicense;
+import com.pulumi.oci.Ocvp.outputs.GetSddcUpgradeLicense;
+import com.pulumi.oci.Ocvp.outputs.GetSddcVsphereUpgradeObject;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -20,383 +22,283 @@ public final class GetSddcResult {
      * @return The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
      * 
      */
-    private final Integer actualEsxiHostsCount;
+    private Integer actualEsxiHostsCount;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
      */
-    private final String capacityReservationId;
+    private String capacityReservationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
      * 
      */
-    private final String computeAvailabilityDomain;
+    private String computeAvailabilityDomain;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The number of ESXi hosts in the SDDC.
      * 
      */
-    private final Integer esxiHostsCount;
+    private Integer esxiHostsCount;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
-    private final String hcxAction;
+    private Map<String,Object> freeformTags;
+    private String hcxAction;
     /**
      * @return The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    private final String hcxFqdn;
+    private String hcxFqdn;
     /**
      * @return The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
      * 
      */
-    private final String hcxInitialPassword;
+    private String hcxInitialPassword;
     /**
      * @return The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
      * 
      */
-    private final String hcxOnPremKey;
+    private String hcxOnPremKey;
     /**
      * @return The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
      * 
      */
-    private final List<GetSddcHcxOnPremLicense> hcxOnPremLicenses;
+    private List<GetSddcHcxOnPremLicense> hcxOnPremLicenses;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    private final String hcxPrivateIpId;
+    private String hcxPrivateIpId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
      * 
      */
-    private final String hcxVlanId;
+    private String hcxVlanId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The initial OCPU count of the SDDC&#39;s ESXi hosts.
      * 
      */
-    private final Double initialHostOcpuCount;
+    private Double initialHostOcpuCount;
     /**
      * @return The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
-    private final String initialHostShapeName;
+    private String initialHostShapeName;
     /**
      * @return The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
-    private final String initialSku;
+    private String initialSku;
     /**
      * @return A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
      * 
      */
-    private final String instanceDisplayNamePrefix;
+    private String instanceDisplayNamePrefix;
     /**
      * @return Indicates whether HCX is enabled for this SDDC.
      * 
      */
-    private final Boolean isHcxEnabled;
+    private Boolean isHcxEnabled;
     /**
      * @return Indicates whether HCX Enterprise is enabled for this SDDC.
      * 
      */
-    private final Boolean isHcxEnterpriseEnabled;
+    private Boolean isHcxEnterpriseEnabled;
     /**
      * @return Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
      * 
      */
-    private final Boolean isHcxPendingDowngrade;
+    private Boolean isHcxPendingDowngrade;
     /**
      * @return Indicates whether shielded instance is enabled at the SDDC level.
      * 
      */
-    private final Boolean isShieldedInstanceEnabled;
+    private Boolean isShieldedInstanceEnabled;
     /**
      * @return Indicates whether this SDDC is designated for only single ESXi host.
      * 
      */
-    private final Boolean isSingleHostSddc;
+    private Boolean isSingleHostSddc;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
      * 
      */
-    private final String nsxEdgeUplink1vlanId;
+    private String nsxEdgeUplink1vlanId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
      * 
      */
-    private final String nsxEdgeUplink2vlanId;
+    private String nsxEdgeUplink2vlanId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    private final String nsxEdgeUplinkIpId;
+    private String nsxEdgeUplinkIpId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
      * 
      */
-    private final String nsxEdgeVtepVlanId;
+    private String nsxEdgeVtepVlanId;
     /**
      * @return The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    private final String nsxManagerFqdn;
+    private String nsxManagerFqdn;
     /**
      * @return The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
      * 
      */
-    private final String nsxManagerInitialPassword;
+    private String nsxManagerInitialPassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    private final String nsxManagerPrivateIpId;
+    private String nsxManagerPrivateIpId;
     /**
      * @return The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
      * 
      */
-    private final String nsxManagerUsername;
+    private String nsxManagerUsername;
     /**
      * @return The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
      * 
      */
-    private final String nsxOverlaySegmentName;
+    private String nsxOverlaySegmentName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
      * 
      */
-    private final String nsxVtepVlanId;
+    private String nsxVtepVlanId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
      * 
      */
-    private final String provisioningSubnetId;
+    private String provisioningSubnetId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
      * 
      */
-    private final String provisioningVlanId;
-    private final Boolean refreshHcxLicenseStatus;
+    private String provisioningVlanId;
+    private Boolean refreshHcxLicenseStatus;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
      * 
      */
-    private final String replicationVlanId;
-    private final List<String> reservingHcxOnPremiseLicenseKeys;
-    private final String sddcId;
+    private String replicationVlanId;
+    private List<String> reservingHcxOnPremiseLicenseKeys;
+    private String sddcId;
     /**
      * @return One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file.
      * 
      */
-    private final String sshAuthorizedKeys;
+    private String sshAuthorizedKeys;
     /**
      * @return The current state of the SDDC.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeHcxBillingCycleEnd;
+    private String timeHcxBillingCycleEnd;
     /**
      * @return The date and time the SDDC&#39;s HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeHcxLicenseStatusUpdated;
+    private String timeHcxLicenseStatusUpdated;
     /**
      * @return The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
+    /**
+     * @return The vSphere licenses to be used when upgrade SDDC.
+     * 
+     */
+    private List<GetSddcUpgradeLicense> upgradeLicenses;
     /**
      * @return The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    private final String vcenterFqdn;
+    private String vcenterFqdn;
     /**
      * @return The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
      * 
      */
-    private final String vcenterInitialPassword;
+    private String vcenterInitialPassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    private final String vcenterPrivateIpId;
+    private String vcenterPrivateIpId;
     /**
      * @return The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
      * 
      */
-    private final String vcenterUsername;
+    private String vcenterUsername;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
      * 
      */
-    private final String vmotionVlanId;
+    private String vmotionVlanId;
     /**
      * @return In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
      * 
      */
-    private final String vmwareSoftwareVersion;
+    private String vmwareSoftwareVersion;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
      * 
      */
-    private final String vsanVlanId;
+    private String vsanVlanId;
+    /**
+     * @return The link of guidance to upgrade vSphere.
+     * 
+     */
+    private String vsphereUpgradeGuide;
+    /**
+     * @return The links of binary objects needed for upgrade vSphere.
+     * 
+     */
+    private List<GetSddcVsphereUpgradeObject> vsphereUpgradeObjects;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
      * 
      */
-    private final String vsphereVlanId;
+    private String vsphereVlanId;
     /**
      * @return The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
      * 
      */
-    private final String workloadNetworkCidr;
+    private String workloadNetworkCidr;
 
-    @CustomType.Constructor
-    private GetSddcResult(
-        @CustomType.Parameter("actualEsxiHostsCount") Integer actualEsxiHostsCount,
-        @CustomType.Parameter("capacityReservationId") String capacityReservationId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computeAvailabilityDomain") String computeAvailabilityDomain,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("esxiHostsCount") Integer esxiHostsCount,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hcxAction") String hcxAction,
-        @CustomType.Parameter("hcxFqdn") String hcxFqdn,
-        @CustomType.Parameter("hcxInitialPassword") String hcxInitialPassword,
-        @CustomType.Parameter("hcxOnPremKey") String hcxOnPremKey,
-        @CustomType.Parameter("hcxOnPremLicenses") List<GetSddcHcxOnPremLicense> hcxOnPremLicenses,
-        @CustomType.Parameter("hcxPrivateIpId") String hcxPrivateIpId,
-        @CustomType.Parameter("hcxVlanId") String hcxVlanId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("initialHostOcpuCount") Double initialHostOcpuCount,
-        @CustomType.Parameter("initialHostShapeName") String initialHostShapeName,
-        @CustomType.Parameter("initialSku") String initialSku,
-        @CustomType.Parameter("instanceDisplayNamePrefix") String instanceDisplayNamePrefix,
-        @CustomType.Parameter("isHcxEnabled") Boolean isHcxEnabled,
-        @CustomType.Parameter("isHcxEnterpriseEnabled") Boolean isHcxEnterpriseEnabled,
-        @CustomType.Parameter("isHcxPendingDowngrade") Boolean isHcxPendingDowngrade,
-        @CustomType.Parameter("isShieldedInstanceEnabled") Boolean isShieldedInstanceEnabled,
-        @CustomType.Parameter("isSingleHostSddc") Boolean isSingleHostSddc,
-        @CustomType.Parameter("nsxEdgeUplink1vlanId") String nsxEdgeUplink1vlanId,
-        @CustomType.Parameter("nsxEdgeUplink2vlanId") String nsxEdgeUplink2vlanId,
-        @CustomType.Parameter("nsxEdgeUplinkIpId") String nsxEdgeUplinkIpId,
-        @CustomType.Parameter("nsxEdgeVtepVlanId") String nsxEdgeVtepVlanId,
-        @CustomType.Parameter("nsxManagerFqdn") String nsxManagerFqdn,
-        @CustomType.Parameter("nsxManagerInitialPassword") String nsxManagerInitialPassword,
-        @CustomType.Parameter("nsxManagerPrivateIpId") String nsxManagerPrivateIpId,
-        @CustomType.Parameter("nsxManagerUsername") String nsxManagerUsername,
-        @CustomType.Parameter("nsxOverlaySegmentName") String nsxOverlaySegmentName,
-        @CustomType.Parameter("nsxVtepVlanId") String nsxVtepVlanId,
-        @CustomType.Parameter("provisioningSubnetId") String provisioningSubnetId,
-        @CustomType.Parameter("provisioningVlanId") String provisioningVlanId,
-        @CustomType.Parameter("refreshHcxLicenseStatus") Boolean refreshHcxLicenseStatus,
-        @CustomType.Parameter("replicationVlanId") String replicationVlanId,
-        @CustomType.Parameter("reservingHcxOnPremiseLicenseKeys") List<String> reservingHcxOnPremiseLicenseKeys,
-        @CustomType.Parameter("sddcId") String sddcId,
-        @CustomType.Parameter("sshAuthorizedKeys") String sshAuthorizedKeys,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeHcxBillingCycleEnd") String timeHcxBillingCycleEnd,
-        @CustomType.Parameter("timeHcxLicenseStatusUpdated") String timeHcxLicenseStatusUpdated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("vcenterFqdn") String vcenterFqdn,
-        @CustomType.Parameter("vcenterInitialPassword") String vcenterInitialPassword,
-        @CustomType.Parameter("vcenterPrivateIpId") String vcenterPrivateIpId,
-        @CustomType.Parameter("vcenterUsername") String vcenterUsername,
-        @CustomType.Parameter("vmotionVlanId") String vmotionVlanId,
-        @CustomType.Parameter("vmwareSoftwareVersion") String vmwareSoftwareVersion,
-        @CustomType.Parameter("vsanVlanId") String vsanVlanId,
-        @CustomType.Parameter("vsphereVlanId") String vsphereVlanId,
-        @CustomType.Parameter("workloadNetworkCidr") String workloadNetworkCidr) {
-        this.actualEsxiHostsCount = actualEsxiHostsCount;
-        this.capacityReservationId = capacityReservationId;
-        this.compartmentId = compartmentId;
-        this.computeAvailabilityDomain = computeAvailabilityDomain;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.esxiHostsCount = esxiHostsCount;
-        this.freeformTags = freeformTags;
-        this.hcxAction = hcxAction;
-        this.hcxFqdn = hcxFqdn;
-        this.hcxInitialPassword = hcxInitialPassword;
-        this.hcxOnPremKey = hcxOnPremKey;
-        this.hcxOnPremLicenses = hcxOnPremLicenses;
-        this.hcxPrivateIpId = hcxPrivateIpId;
-        this.hcxVlanId = hcxVlanId;
-        this.id = id;
-        this.initialHostOcpuCount = initialHostOcpuCount;
-        this.initialHostShapeName = initialHostShapeName;
-        this.initialSku = initialSku;
-        this.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
-        this.isHcxEnabled = isHcxEnabled;
-        this.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
-        this.isHcxPendingDowngrade = isHcxPendingDowngrade;
-        this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
-        this.isSingleHostSddc = isSingleHostSddc;
-        this.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
-        this.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
-        this.nsxEdgeUplinkIpId = nsxEdgeUplinkIpId;
-        this.nsxEdgeVtepVlanId = nsxEdgeVtepVlanId;
-        this.nsxManagerFqdn = nsxManagerFqdn;
-        this.nsxManagerInitialPassword = nsxManagerInitialPassword;
-        this.nsxManagerPrivateIpId = nsxManagerPrivateIpId;
-        this.nsxManagerUsername = nsxManagerUsername;
-        this.nsxOverlaySegmentName = nsxOverlaySegmentName;
-        this.nsxVtepVlanId = nsxVtepVlanId;
-        this.provisioningSubnetId = provisioningSubnetId;
-        this.provisioningVlanId = provisioningVlanId;
-        this.refreshHcxLicenseStatus = refreshHcxLicenseStatus;
-        this.replicationVlanId = replicationVlanId;
-        this.reservingHcxOnPremiseLicenseKeys = reservingHcxOnPremiseLicenseKeys;
-        this.sddcId = sddcId;
-        this.sshAuthorizedKeys = sshAuthorizedKeys;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
-        this.timeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;
-        this.timeUpdated = timeUpdated;
-        this.vcenterFqdn = vcenterFqdn;
-        this.vcenterInitialPassword = vcenterInitialPassword;
-        this.vcenterPrivateIpId = vcenterPrivateIpId;
-        this.vcenterUsername = vcenterUsername;
-        this.vmotionVlanId = vmotionVlanId;
-        this.vmwareSoftwareVersion = vmwareSoftwareVersion;
-        this.vsanVlanId = vsanVlanId;
-        this.vsphereVlanId = vsphereVlanId;
-        this.workloadNetworkCidr = workloadNetworkCidr;
-    }
-
+    private GetSddcResult() {}
     /**
      * @return The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
      * 
@@ -711,6 +613,13 @@ public final class GetSddcResult {
         return this.timeUpdated;
     }
     /**
+     * @return The vSphere licenses to be used when upgrade SDDC.
+     * 
+     */
+    public List<GetSddcUpgradeLicense> upgradeLicenses() {
+        return this.upgradeLicenses;
+    }
+    /**
      * @return The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
@@ -760,6 +669,20 @@ public final class GetSddcResult {
         return this.vsanVlanId;
     }
     /**
+     * @return The link of guidance to upgrade vSphere.
+     * 
+     */
+    public String vsphereUpgradeGuide() {
+        return this.vsphereUpgradeGuide;
+    }
+    /**
+     * @return The links of binary objects needed for upgrade vSphere.
+     * 
+     */
+    public List<GetSddcVsphereUpgradeObject> vsphereUpgradeObjects() {
+        return this.vsphereUpgradeObjects;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
      * 
      */
@@ -781,7 +704,7 @@ public final class GetSddcResult {
     public static Builder builder(GetSddcResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer actualEsxiHostsCount;
         private String capacityReservationId;
@@ -830,6 +753,7 @@ public final class GetSddcResult {
         private String timeHcxBillingCycleEnd;
         private String timeHcxLicenseStatusUpdated;
         private String timeUpdated;
+        private List<GetSddcUpgradeLicense> upgradeLicenses;
         private String vcenterFqdn;
         private String vcenterInitialPassword;
         private String vcenterPrivateIpId;
@@ -837,13 +761,11 @@ public final class GetSddcResult {
         private String vmotionVlanId;
         private String vmwareSoftwareVersion;
         private String vsanVlanId;
+        private String vsphereUpgradeGuide;
+        private List<GetSddcVsphereUpgradeObject> vsphereUpgradeObjects;
         private String vsphereVlanId;
         private String workloadNetworkCidr;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSddcResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actualEsxiHostsCount = defaults.actualEsxiHostsCount;
@@ -893,6 +815,7 @@ public final class GetSddcResult {
     	      this.timeHcxBillingCycleEnd = defaults.timeHcxBillingCycleEnd;
     	      this.timeHcxLicenseStatusUpdated = defaults.timeHcxLicenseStatusUpdated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.upgradeLicenses = defaults.upgradeLicenses;
     	      this.vcenterFqdn = defaults.vcenterFqdn;
     	      this.vcenterInitialPassword = defaults.vcenterInitialPassword;
     	      this.vcenterPrivateIpId = defaults.vcenterPrivateIpId;
@@ -900,58 +823,73 @@ public final class GetSddcResult {
     	      this.vmotionVlanId = defaults.vmotionVlanId;
     	      this.vmwareSoftwareVersion = defaults.vmwareSoftwareVersion;
     	      this.vsanVlanId = defaults.vsanVlanId;
+    	      this.vsphereUpgradeGuide = defaults.vsphereUpgradeGuide;
+    	      this.vsphereUpgradeObjects = defaults.vsphereUpgradeObjects;
     	      this.vsphereVlanId = defaults.vsphereVlanId;
     	      this.workloadNetworkCidr = defaults.workloadNetworkCidr;
         }
 
+        @CustomType.Setter
         public Builder actualEsxiHostsCount(Integer actualEsxiHostsCount) {
             this.actualEsxiHostsCount = Objects.requireNonNull(actualEsxiHostsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             this.computeAvailabilityDomain = Objects.requireNonNull(computeAvailabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder esxiHostsCount(Integer esxiHostsCount) {
             this.esxiHostsCount = Objects.requireNonNull(esxiHostsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hcxAction(String hcxAction) {
             this.hcxAction = Objects.requireNonNull(hcxAction);
             return this;
         }
+        @CustomType.Setter
         public Builder hcxFqdn(String hcxFqdn) {
             this.hcxFqdn = Objects.requireNonNull(hcxFqdn);
             return this;
         }
+        @CustomType.Setter
         public Builder hcxInitialPassword(String hcxInitialPassword) {
             this.hcxInitialPassword = Objects.requireNonNull(hcxInitialPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder hcxOnPremKey(String hcxOnPremKey) {
             this.hcxOnPremKey = Objects.requireNonNull(hcxOnPremKey);
             return this;
         }
+        @CustomType.Setter
         public Builder hcxOnPremLicenses(List<GetSddcHcxOnPremLicense> hcxOnPremLicenses) {
             this.hcxOnPremLicenses = Objects.requireNonNull(hcxOnPremLicenses);
             return this;
@@ -959,110 +897,137 @@ public final class GetSddcResult {
         public Builder hcxOnPremLicenses(GetSddcHcxOnPremLicense... hcxOnPremLicenses) {
             return hcxOnPremLicenses(List.of(hcxOnPremLicenses));
         }
+        @CustomType.Setter
         public Builder hcxPrivateIpId(String hcxPrivateIpId) {
             this.hcxPrivateIpId = Objects.requireNonNull(hcxPrivateIpId);
             return this;
         }
+        @CustomType.Setter
         public Builder hcxVlanId(String hcxVlanId) {
             this.hcxVlanId = Objects.requireNonNull(hcxVlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder initialHostOcpuCount(Double initialHostOcpuCount) {
             this.initialHostOcpuCount = Objects.requireNonNull(initialHostOcpuCount);
             return this;
         }
+        @CustomType.Setter
         public Builder initialHostShapeName(String initialHostShapeName) {
             this.initialHostShapeName = Objects.requireNonNull(initialHostShapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder initialSku(String initialSku) {
             this.initialSku = Objects.requireNonNull(initialSku);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceDisplayNamePrefix(String instanceDisplayNamePrefix) {
             this.instanceDisplayNamePrefix = Objects.requireNonNull(instanceDisplayNamePrefix);
             return this;
         }
+        @CustomType.Setter
         public Builder isHcxEnabled(Boolean isHcxEnabled) {
             this.isHcxEnabled = Objects.requireNonNull(isHcxEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isHcxEnterpriseEnabled(Boolean isHcxEnterpriseEnabled) {
             this.isHcxEnterpriseEnabled = Objects.requireNonNull(isHcxEnterpriseEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isHcxPendingDowngrade(Boolean isHcxPendingDowngrade) {
             this.isHcxPendingDowngrade = Objects.requireNonNull(isHcxPendingDowngrade);
             return this;
         }
+        @CustomType.Setter
         public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
             this.isShieldedInstanceEnabled = Objects.requireNonNull(isShieldedInstanceEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isSingleHostSddc(Boolean isSingleHostSddc) {
             this.isSingleHostSddc = Objects.requireNonNull(isSingleHostSddc);
             return this;
         }
+        @CustomType.Setter
         public Builder nsxEdgeUplink1vlanId(String nsxEdgeUplink1vlanId) {
             this.nsxEdgeUplink1vlanId = Objects.requireNonNull(nsxEdgeUplink1vlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder nsxEdgeUplink2vlanId(String nsxEdgeUplink2vlanId) {
             this.nsxEdgeUplink2vlanId = Objects.requireNonNull(nsxEdgeUplink2vlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder nsxEdgeUplinkIpId(String nsxEdgeUplinkIpId) {
             this.nsxEdgeUplinkIpId = Objects.requireNonNull(nsxEdgeUplinkIpId);
             return this;
         }
+        @CustomType.Setter
         public Builder nsxEdgeVtepVlanId(String nsxEdgeVtepVlanId) {
             this.nsxEdgeVtepVlanId = Objects.requireNonNull(nsxEdgeVtepVlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder nsxManagerFqdn(String nsxManagerFqdn) {
             this.nsxManagerFqdn = Objects.requireNonNull(nsxManagerFqdn);
             return this;
         }
+        @CustomType.Setter
         public Builder nsxManagerInitialPassword(String nsxManagerInitialPassword) {
             this.nsxManagerInitialPassword = Objects.requireNonNull(nsxManagerInitialPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder nsxManagerPrivateIpId(String nsxManagerPrivateIpId) {
             this.nsxManagerPrivateIpId = Objects.requireNonNull(nsxManagerPrivateIpId);
             return this;
         }
+        @CustomType.Setter
         public Builder nsxManagerUsername(String nsxManagerUsername) {
             this.nsxManagerUsername = Objects.requireNonNull(nsxManagerUsername);
             return this;
         }
+        @CustomType.Setter
         public Builder nsxOverlaySegmentName(String nsxOverlaySegmentName) {
             this.nsxOverlaySegmentName = Objects.requireNonNull(nsxOverlaySegmentName);
             return this;
         }
+        @CustomType.Setter
         public Builder nsxVtepVlanId(String nsxVtepVlanId) {
             this.nsxVtepVlanId = Objects.requireNonNull(nsxVtepVlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder provisioningSubnetId(String provisioningSubnetId) {
             this.provisioningSubnetId = Objects.requireNonNull(provisioningSubnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder provisioningVlanId(String provisioningVlanId) {
             this.provisioningVlanId = Objects.requireNonNull(provisioningVlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder refreshHcxLicenseStatus(Boolean refreshHcxLicenseStatus) {
             this.refreshHcxLicenseStatus = Objects.requireNonNull(refreshHcxLicenseStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder replicationVlanId(String replicationVlanId) {
             this.replicationVlanId = Objects.requireNonNull(replicationVlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder reservingHcxOnPremiseLicenseKeys(List<String> reservingHcxOnPremiseLicenseKeys) {
             this.reservingHcxOnPremiseLicenseKeys = Objects.requireNonNull(reservingHcxOnPremiseLicenseKeys);
             return this;
@@ -1070,71 +1035,169 @@ public final class GetSddcResult {
         public Builder reservingHcxOnPremiseLicenseKeys(String... reservingHcxOnPremiseLicenseKeys) {
             return reservingHcxOnPremiseLicenseKeys(List.of(reservingHcxOnPremiseLicenseKeys));
         }
+        @CustomType.Setter
         public Builder sddcId(String sddcId) {
             this.sddcId = Objects.requireNonNull(sddcId);
             return this;
         }
+        @CustomType.Setter
         public Builder sshAuthorizedKeys(String sshAuthorizedKeys) {
             this.sshAuthorizedKeys = Objects.requireNonNull(sshAuthorizedKeys);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeHcxBillingCycleEnd(String timeHcxBillingCycleEnd) {
             this.timeHcxBillingCycleEnd = Objects.requireNonNull(timeHcxBillingCycleEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeHcxLicenseStatusUpdated(String timeHcxLicenseStatusUpdated) {
             this.timeHcxLicenseStatusUpdated = Objects.requireNonNull(timeHcxLicenseStatusUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
+        public Builder upgradeLicenses(List<GetSddcUpgradeLicense> upgradeLicenses) {
+            this.upgradeLicenses = Objects.requireNonNull(upgradeLicenses);
+            return this;
+        }
+        public Builder upgradeLicenses(GetSddcUpgradeLicense... upgradeLicenses) {
+            return upgradeLicenses(List.of(upgradeLicenses));
+        }
+        @CustomType.Setter
         public Builder vcenterFqdn(String vcenterFqdn) {
             this.vcenterFqdn = Objects.requireNonNull(vcenterFqdn);
             return this;
         }
+        @CustomType.Setter
         public Builder vcenterInitialPassword(String vcenterInitialPassword) {
             this.vcenterInitialPassword = Objects.requireNonNull(vcenterInitialPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder vcenterPrivateIpId(String vcenterPrivateIpId) {
             this.vcenterPrivateIpId = Objects.requireNonNull(vcenterPrivateIpId);
             return this;
         }
+        @CustomType.Setter
         public Builder vcenterUsername(String vcenterUsername) {
             this.vcenterUsername = Objects.requireNonNull(vcenterUsername);
             return this;
         }
+        @CustomType.Setter
         public Builder vmotionVlanId(String vmotionVlanId) {
             this.vmotionVlanId = Objects.requireNonNull(vmotionVlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
             this.vmwareSoftwareVersion = Objects.requireNonNull(vmwareSoftwareVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder vsanVlanId(String vsanVlanId) {
             this.vsanVlanId = Objects.requireNonNull(vsanVlanId);
             return this;
         }
+        @CustomType.Setter
+        public Builder vsphereUpgradeGuide(String vsphereUpgradeGuide) {
+            this.vsphereUpgradeGuide = Objects.requireNonNull(vsphereUpgradeGuide);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vsphereUpgradeObjects(List<GetSddcVsphereUpgradeObject> vsphereUpgradeObjects) {
+            this.vsphereUpgradeObjects = Objects.requireNonNull(vsphereUpgradeObjects);
+            return this;
+        }
+        public Builder vsphereUpgradeObjects(GetSddcVsphereUpgradeObject... vsphereUpgradeObjects) {
+            return vsphereUpgradeObjects(List.of(vsphereUpgradeObjects));
+        }
+        @CustomType.Setter
         public Builder vsphereVlanId(String vsphereVlanId) {
             this.vsphereVlanId = Objects.requireNonNull(vsphereVlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder workloadNetworkCidr(String workloadNetworkCidr) {
             this.workloadNetworkCidr = Objects.requireNonNull(workloadNetworkCidr);
             return this;
-        }        public GetSddcResult build() {
-            return new GetSddcResult(actualEsxiHostsCount, capacityReservationId, compartmentId, computeAvailabilityDomain, definedTags, displayName, esxiHostsCount, freeformTags, hcxAction, hcxFqdn, hcxInitialPassword, hcxOnPremKey, hcxOnPremLicenses, hcxPrivateIpId, hcxVlanId, id, initialHostOcpuCount, initialHostShapeName, initialSku, instanceDisplayNamePrefix, isHcxEnabled, isHcxEnterpriseEnabled, isHcxPendingDowngrade, isShieldedInstanceEnabled, isSingleHostSddc, nsxEdgeUplink1vlanId, nsxEdgeUplink2vlanId, nsxEdgeUplinkIpId, nsxEdgeVtepVlanId, nsxManagerFqdn, nsxManagerInitialPassword, nsxManagerPrivateIpId, nsxManagerUsername, nsxOverlaySegmentName, nsxVtepVlanId, provisioningSubnetId, provisioningVlanId, refreshHcxLicenseStatus, replicationVlanId, reservingHcxOnPremiseLicenseKeys, sddcId, sshAuthorizedKeys, state, timeCreated, timeHcxBillingCycleEnd, timeHcxLicenseStatusUpdated, timeUpdated, vcenterFqdn, vcenterInitialPassword, vcenterPrivateIpId, vcenterUsername, vmotionVlanId, vmwareSoftwareVersion, vsanVlanId, vsphereVlanId, workloadNetworkCidr);
+        }
+        public GetSddcResult build() {
+            final var o = new GetSddcResult();
+            o.actualEsxiHostsCount = actualEsxiHostsCount;
+            o.capacityReservationId = capacityReservationId;
+            o.compartmentId = compartmentId;
+            o.computeAvailabilityDomain = computeAvailabilityDomain;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.esxiHostsCount = esxiHostsCount;
+            o.freeformTags = freeformTags;
+            o.hcxAction = hcxAction;
+            o.hcxFqdn = hcxFqdn;
+            o.hcxInitialPassword = hcxInitialPassword;
+            o.hcxOnPremKey = hcxOnPremKey;
+            o.hcxOnPremLicenses = hcxOnPremLicenses;
+            o.hcxPrivateIpId = hcxPrivateIpId;
+            o.hcxVlanId = hcxVlanId;
+            o.id = id;
+            o.initialHostOcpuCount = initialHostOcpuCount;
+            o.initialHostShapeName = initialHostShapeName;
+            o.initialSku = initialSku;
+            o.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
+            o.isHcxEnabled = isHcxEnabled;
+            o.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
+            o.isHcxPendingDowngrade = isHcxPendingDowngrade;
+            o.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
+            o.isSingleHostSddc = isSingleHostSddc;
+            o.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
+            o.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
+            o.nsxEdgeUplinkIpId = nsxEdgeUplinkIpId;
+            o.nsxEdgeVtepVlanId = nsxEdgeVtepVlanId;
+            o.nsxManagerFqdn = nsxManagerFqdn;
+            o.nsxManagerInitialPassword = nsxManagerInitialPassword;
+            o.nsxManagerPrivateIpId = nsxManagerPrivateIpId;
+            o.nsxManagerUsername = nsxManagerUsername;
+            o.nsxOverlaySegmentName = nsxOverlaySegmentName;
+            o.nsxVtepVlanId = nsxVtepVlanId;
+            o.provisioningSubnetId = provisioningSubnetId;
+            o.provisioningVlanId = provisioningVlanId;
+            o.refreshHcxLicenseStatus = refreshHcxLicenseStatus;
+            o.replicationVlanId = replicationVlanId;
+            o.reservingHcxOnPremiseLicenseKeys = reservingHcxOnPremiseLicenseKeys;
+            o.sddcId = sddcId;
+            o.sshAuthorizedKeys = sshAuthorizedKeys;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
+            o.timeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;
+            o.timeUpdated = timeUpdated;
+            o.upgradeLicenses = upgradeLicenses;
+            o.vcenterFqdn = vcenterFqdn;
+            o.vcenterInitialPassword = vcenterInitialPassword;
+            o.vcenterPrivateIpId = vcenterPrivateIpId;
+            o.vcenterUsername = vcenterUsername;
+            o.vmotionVlanId = vmotionVlanId;
+            o.vmwareSoftwareVersion = vmwareSoftwareVersion;
+            o.vsanVlanId = vsanVlanId;
+            o.vsphereUpgradeGuide = vsphereUpgradeGuide;
+            o.vsphereUpgradeObjects = vsphereUpgradeObjects;
+            o.vsphereVlanId = vsphereVlanId;
+            o.workloadNetworkCidr = workloadNetworkCidr;
+            return o;
         }
     }
 }

@@ -18,48 +18,31 @@ public final class GetFleetsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name of the Fleet.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable String displayNameContains;
-    private final @Nullable List<GetFleetsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable String displayNameContains;
+    private @Nullable List<GetFleetsFilter> filters;
     /**
      * @return The list of fleet_collection.
      * 
      */
-    private final List<GetFleetsFleetCollection> fleetCollections;
+    private List<GetFleetsFleetCollection> fleetCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The lifecycle state of the Fleet.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetFleetsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("displayNameContains") @Nullable String displayNameContains,
-        @CustomType.Parameter("filters") @Nullable List<GetFleetsFilter> filters,
-        @CustomType.Parameter("fleetCollections") List<GetFleetsFleetCollection> fleetCollections,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.displayNameContains = displayNameContains;
-        this.filters = filters;
-        this.fleetCollections = fleetCollections;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetFleetsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
      * 
@@ -109,7 +92,7 @@ public final class GetFleetsResult {
     public static Builder builder(GetFleetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
@@ -118,11 +101,7 @@ public final class GetFleetsResult {
         private List<GetFleetsFleetCollection> fleetCollections;
         private @Nullable String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFleetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,18 +113,22 @@ public final class GetFleetsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
             this.displayNameContains = displayNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetFleetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,6 +136,7 @@ public final class GetFleetsResult {
         public Builder filters(GetFleetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder fleetCollections(List<GetFleetsFleetCollection> fleetCollections) {
             this.fleetCollections = Objects.requireNonNull(fleetCollections);
             return this;
@@ -160,15 +144,26 @@ public final class GetFleetsResult {
         public Builder fleetCollections(GetFleetsFleetCollection... fleetCollections) {
             return fleetCollections(List.of(fleetCollections));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetFleetsResult build() {
-            return new GetFleetsResult(compartmentId, displayName, displayNameContains, filters, fleetCollections, id, state);
+        }
+        public GetFleetsResult build() {
+            final var o = new GetFleetsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.displayNameContains = displayNameContains;
+            o.filters = filters;
+            o.fleetCollections = fleetCollections;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

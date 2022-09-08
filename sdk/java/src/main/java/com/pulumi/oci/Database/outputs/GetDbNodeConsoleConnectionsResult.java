@@ -17,31 +17,20 @@ public final class GetDbNodeConsoleConnectionsResult {
      * @return The list of console_connections.
      * 
      */
-    private final List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections;
+    private List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections;
     /**
      * @return The OCID of the database node.
      * 
      */
-    private final String dbNodeId;
-    private final @Nullable List<GetDbNodeConsoleConnectionsFilter> filters;
+    private String dbNodeId;
+    private @Nullable List<GetDbNodeConsoleConnectionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDbNodeConsoleConnectionsResult(
-        @CustomType.Parameter("consoleConnections") List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections,
-        @CustomType.Parameter("dbNodeId") String dbNodeId,
-        @CustomType.Parameter("filters") @Nullable List<GetDbNodeConsoleConnectionsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.consoleConnections = consoleConnections;
-        this.dbNodeId = dbNodeId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetDbNodeConsoleConnectionsResult() {}
     /**
      * @return The list of console_connections.
      * 
@@ -74,17 +63,13 @@ public final class GetDbNodeConsoleConnectionsResult {
     public static Builder builder(GetDbNodeConsoleConnectionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections;
         private String dbNodeId;
         private @Nullable List<GetDbNodeConsoleConnectionsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbNodeConsoleConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.consoleConnections = defaults.consoleConnections;
@@ -93,6 +78,7 @@ public final class GetDbNodeConsoleConnectionsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder consoleConnections(List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections) {
             this.consoleConnections = Objects.requireNonNull(consoleConnections);
             return this;
@@ -100,10 +86,12 @@ public final class GetDbNodeConsoleConnectionsResult {
         public Builder consoleConnections(GetDbNodeConsoleConnectionsConsoleConnection... consoleConnections) {
             return consoleConnections(List.of(consoleConnections));
         }
+        @CustomType.Setter
         public Builder dbNodeId(String dbNodeId) {
             this.dbNodeId = Objects.requireNonNull(dbNodeId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbNodeConsoleConnectionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -111,11 +99,18 @@ public final class GetDbNodeConsoleConnectionsResult {
         public Builder filters(GetDbNodeConsoleConnectionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDbNodeConsoleConnectionsResult build() {
-            return new GetDbNodeConsoleConnectionsResult(consoleConnections, dbNodeId, filters, id);
+        }
+        public GetDbNodeConsoleConnectionsResult build() {
+            final var o = new GetDbNodeConsoleConnectionsResult();
+            o.consoleConnections = consoleConnections;
+            o.dbNodeId = dbNodeId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

@@ -13,28 +13,19 @@ public final class GetShapesShapeNetworkingBandwidthOption {
      * @return The default amount of networking bandwidth per OCPU, in gigabits per second.
      * 
      */
-    private final Double defaultPerOcpuInGbps;
+    private Double defaultPerOcpuInGbps;
     /**
      * @return The maximum amount of networking bandwidth, in gigabits per second.
      * 
      */
-    private final Double maxInGbps;
+    private Double maxInGbps;
     /**
      * @return The minimum amount of networking bandwidth, in gigabits per second.
      * 
      */
-    private final Double minInGbps;
+    private Double minInGbps;
 
-    @CustomType.Constructor
-    private GetShapesShapeNetworkingBandwidthOption(
-        @CustomType.Parameter("defaultPerOcpuInGbps") Double defaultPerOcpuInGbps,
-        @CustomType.Parameter("maxInGbps") Double maxInGbps,
-        @CustomType.Parameter("minInGbps") Double minInGbps) {
-        this.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
-        this.maxInGbps = maxInGbps;
-        this.minInGbps = minInGbps;
-    }
-
+    private GetShapesShapeNetworkingBandwidthOption() {}
     /**
      * @return The default amount of networking bandwidth per OCPU, in gigabits per second.
      * 
@@ -64,16 +55,12 @@ public final class GetShapesShapeNetworkingBandwidthOption {
     public static Builder builder(GetShapesShapeNetworkingBandwidthOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double defaultPerOcpuInGbps;
         private Double maxInGbps;
         private Double minInGbps;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapesShapeNetworkingBandwidthOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultPerOcpuInGbps = defaults.defaultPerOcpuInGbps;
@@ -81,19 +68,27 @@ public final class GetShapesShapeNetworkingBandwidthOption {
     	      this.minInGbps = defaults.minInGbps;
         }
 
+        @CustomType.Setter
         public Builder defaultPerOcpuInGbps(Double defaultPerOcpuInGbps) {
             this.defaultPerOcpuInGbps = Objects.requireNonNull(defaultPerOcpuInGbps);
             return this;
         }
+        @CustomType.Setter
         public Builder maxInGbps(Double maxInGbps) {
             this.maxInGbps = Objects.requireNonNull(maxInGbps);
             return this;
         }
+        @CustomType.Setter
         public Builder minInGbps(Double minInGbps) {
             this.minInGbps = Objects.requireNonNull(minInGbps);
             return this;
-        }        public GetShapesShapeNetworkingBandwidthOption build() {
-            return new GetShapesShapeNetworkingBandwidthOption(defaultPerOcpuInGbps, maxInGbps, minInGbps);
+        }
+        public GetShapesShapeNetworkingBandwidthOption build() {
+            final var o = new GetShapesShapeNetworkingBandwidthOption();
+            o.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
+            o.maxInGbps = maxInGbps;
+            o.minInGbps = minInGbps;
+            return o;
         }
     }
 }

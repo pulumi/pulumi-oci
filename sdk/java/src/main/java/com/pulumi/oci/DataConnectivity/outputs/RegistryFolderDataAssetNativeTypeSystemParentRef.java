@@ -15,13 +15,9 @@ public final class RegistryFolderDataAssetNativeTypeSystemParentRef {
      * @return (Updatable) Key of the parent object.
      * 
      */
-    private final @Nullable String parent;
+    private @Nullable String parent;
 
-    @CustomType.Constructor
-    private RegistryFolderDataAssetNativeTypeSystemParentRef(@CustomType.Parameter("parent") @Nullable String parent) {
-        this.parent = parent;
-    }
-
+    private RegistryFolderDataAssetNativeTypeSystemParentRef() {}
     /**
      * @return (Updatable) Key of the parent object.
      * 
@@ -37,24 +33,24 @@ public final class RegistryFolderDataAssetNativeTypeSystemParentRef {
     public static Builder builder(RegistryFolderDataAssetNativeTypeSystemParentRef defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String parent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryFolderDataAssetNativeTypeSystemParentRef defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parent = defaults.parent;
         }
 
+        @CustomType.Setter
         public Builder parent(@Nullable String parent) {
             this.parent = parent;
             return this;
-        }        public RegistryFolderDataAssetNativeTypeSystemParentRef build() {
-            return new RegistryFolderDataAssetNativeTypeSystemParentRef(parent);
+        }
+        public RegistryFolderDataAssetNativeTypeSystemParentRef build() {
+            final var o = new RegistryFolderDataAssetNativeTypeSystemParentRef();
+            o.parent = parent;
+            return o;
         }
     }
 }

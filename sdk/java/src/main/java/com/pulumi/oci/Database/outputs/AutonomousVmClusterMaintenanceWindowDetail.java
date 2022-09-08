@@ -16,63 +16,43 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class AutonomousVmClusterMaintenanceWindowDetail {
-    private final @Nullable Integer customActionTimeoutInMins;
+    private @Nullable Integer customActionTimeoutInMins;
     /**
      * @return (Updatable) Days during the week when maintenance should be performed.
      * 
      */
-    private final @Nullable List<AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
+    private @Nullable List<AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
     /**
      * @return (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
      * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
-    private final @Nullable List<Integer> hoursOfDays;
-    private final @Nullable Boolean isCustomActionTimeoutEnabled;
+    private @Nullable List<Integer> hoursOfDays;
+    private @Nullable Boolean isCustomActionTimeoutEnabled;
+    private @Nullable Boolean isMonthlyPatchingEnabled;
     /**
      * @return (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
-    private final @Nullable Integer leadTimeInWeeks;
+    private @Nullable Integer leadTimeInWeeks;
     /**
      * @return (Updatable) Months during the year when maintenance should be performed.
      * 
      */
-    private final @Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months;
-    private final @Nullable String patchingMode;
+    private @Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months;
+    private @Nullable String patchingMode;
     /**
      * @return (Updatable) The maintenance window scheduling preference.
      * 
      */
-    private final String preference;
+    private String preference;
     /**
      * @return (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
      * 
      */
-    private final @Nullable List<Integer> weeksOfMonths;
+    private @Nullable List<Integer> weeksOfMonths;
 
-    @CustomType.Constructor
-    private AutonomousVmClusterMaintenanceWindowDetail(
-        @CustomType.Parameter("customActionTimeoutInMins") @Nullable Integer customActionTimeoutInMins,
-        @CustomType.Parameter("daysOfWeeks") @Nullable List<AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek> daysOfWeeks,
-        @CustomType.Parameter("hoursOfDays") @Nullable List<Integer> hoursOfDays,
-        @CustomType.Parameter("isCustomActionTimeoutEnabled") @Nullable Boolean isCustomActionTimeoutEnabled,
-        @CustomType.Parameter("leadTimeInWeeks") @Nullable Integer leadTimeInWeeks,
-        @CustomType.Parameter("months") @Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months,
-        @CustomType.Parameter("patchingMode") @Nullable String patchingMode,
-        @CustomType.Parameter("preference") String preference,
-        @CustomType.Parameter("weeksOfMonths") @Nullable List<Integer> weeksOfMonths) {
-        this.customActionTimeoutInMins = customActionTimeoutInMins;
-        this.daysOfWeeks = daysOfWeeks;
-        this.hoursOfDays = hoursOfDays;
-        this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
-        this.leadTimeInWeeks = leadTimeInWeeks;
-        this.months = months;
-        this.patchingMode = patchingMode;
-        this.preference = preference;
-        this.weeksOfMonths = weeksOfMonths;
-    }
-
+    private AutonomousVmClusterMaintenanceWindowDetail() {}
     public Optional<Integer> customActionTimeoutInMins() {
         return Optional.ofNullable(this.customActionTimeoutInMins);
     }
@@ -93,6 +73,9 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
     }
     public Optional<Boolean> isCustomActionTimeoutEnabled() {
         return Optional.ofNullable(this.isCustomActionTimeoutEnabled);
+    }
+    public Optional<Boolean> isMonthlyPatchingEnabled() {
+        return Optional.ofNullable(this.isMonthlyPatchingEnabled);
     }
     /**
      * @return (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -133,28 +116,26 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
     public static Builder builder(AutonomousVmClusterMaintenanceWindowDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer customActionTimeoutInMins;
         private @Nullable List<AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
         private @Nullable List<Integer> hoursOfDays;
         private @Nullable Boolean isCustomActionTimeoutEnabled;
+        private @Nullable Boolean isMonthlyPatchingEnabled;
         private @Nullable Integer leadTimeInWeeks;
         private @Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months;
         private @Nullable String patchingMode;
         private String preference;
         private @Nullable List<Integer> weeksOfMonths;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousVmClusterMaintenanceWindowDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customActionTimeoutInMins = defaults.customActionTimeoutInMins;
     	      this.daysOfWeeks = defaults.daysOfWeeks;
     	      this.hoursOfDays = defaults.hoursOfDays;
     	      this.isCustomActionTimeoutEnabled = defaults.isCustomActionTimeoutEnabled;
+    	      this.isMonthlyPatchingEnabled = defaults.isMonthlyPatchingEnabled;
     	      this.leadTimeInWeeks = defaults.leadTimeInWeeks;
     	      this.months = defaults.months;
     	      this.patchingMode = defaults.patchingMode;
@@ -162,10 +143,12 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
     	      this.weeksOfMonths = defaults.weeksOfMonths;
         }
 
+        @CustomType.Setter
         public Builder customActionTimeoutInMins(@Nullable Integer customActionTimeoutInMins) {
             this.customActionTimeoutInMins = customActionTimeoutInMins;
             return this;
         }
+        @CustomType.Setter
         public Builder daysOfWeeks(@Nullable List<AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek> daysOfWeeks) {
             this.daysOfWeeks = daysOfWeeks;
             return this;
@@ -173,6 +156,7 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
         public Builder daysOfWeeks(AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek... daysOfWeeks) {
             return daysOfWeeks(List.of(daysOfWeeks));
         }
+        @CustomType.Setter
         public Builder hoursOfDays(@Nullable List<Integer> hoursOfDays) {
             this.hoursOfDays = hoursOfDays;
             return this;
@@ -180,14 +164,22 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
         public Builder hoursOfDays(Integer... hoursOfDays) {
             return hoursOfDays(List.of(hoursOfDays));
         }
+        @CustomType.Setter
         public Builder isCustomActionTimeoutEnabled(@Nullable Boolean isCustomActionTimeoutEnabled) {
             this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             return this;
         }
+        @CustomType.Setter
+        public Builder isMonthlyPatchingEnabled(@Nullable Boolean isMonthlyPatchingEnabled) {
+            this.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder leadTimeInWeeks(@Nullable Integer leadTimeInWeeks) {
             this.leadTimeInWeeks = leadTimeInWeeks;
             return this;
         }
+        @CustomType.Setter
         public Builder months(@Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months) {
             this.months = months;
             return this;
@@ -195,22 +187,37 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
         public Builder months(AutonomousVmClusterMaintenanceWindowDetailMonth... months) {
             return months(List.of(months));
         }
+        @CustomType.Setter
         public Builder patchingMode(@Nullable String patchingMode) {
             this.patchingMode = patchingMode;
             return this;
         }
+        @CustomType.Setter
         public Builder preference(String preference) {
             this.preference = Objects.requireNonNull(preference);
             return this;
         }
+        @CustomType.Setter
         public Builder weeksOfMonths(@Nullable List<Integer> weeksOfMonths) {
             this.weeksOfMonths = weeksOfMonths;
             return this;
         }
         public Builder weeksOfMonths(Integer... weeksOfMonths) {
             return weeksOfMonths(List.of(weeksOfMonths));
-        }        public AutonomousVmClusterMaintenanceWindowDetail build() {
-            return new AutonomousVmClusterMaintenanceWindowDetail(customActionTimeoutInMins, daysOfWeeks, hoursOfDays, isCustomActionTimeoutEnabled, leadTimeInWeeks, months, patchingMode, preference, weeksOfMonths);
+        }
+        public AutonomousVmClusterMaintenanceWindowDetail build() {
+            final var o = new AutonomousVmClusterMaintenanceWindowDetail();
+            o.customActionTimeoutInMins = customActionTimeoutInMins;
+            o.daysOfWeeks = daysOfWeeks;
+            o.hoursOfDays = hoursOfDays;
+            o.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            o.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
+            o.leadTimeInWeeks = leadTimeInWeeks;
+            o.months = months;
+            o.patchingMode = patchingMode;
+            o.preference = preference;
+            o.weeksOfMonths = weeksOfMonths;
+            return o;
         }
     }
 }

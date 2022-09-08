@@ -9,41 +9,26 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUiPasswordResult {
-    private final String id;
-    private final String inactiveStatus;
-    private final String password;
+    private String id;
+    private String inactiveStatus;
+    private String password;
     /**
      * @return The password&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The OCID of the user.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetUiPasswordResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inactiveStatus") String inactiveStatus,
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("userId") String userId) {
-        this.id = id;
-        this.inactiveStatus = inactiveStatus;
-        this.password = password;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.userId = userId;
-    }
-
+    private GetUiPasswordResult() {}
     public String id() {
         return this.id;
     }
@@ -82,7 +67,7 @@ public final class GetUiPasswordResult {
     public static Builder builder(GetUiPasswordResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String inactiveStatus;
@@ -90,11 +75,7 @@ public final class GetUiPasswordResult {
         private String state;
         private String timeCreated;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUiPasswordResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -105,31 +86,45 @@ public final class GetUiPasswordResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inactiveStatus(String inactiveStatus) {
             this.inactiveStatus = Objects.requireNonNull(inactiveStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetUiPasswordResult build() {
-            return new GetUiPasswordResult(id, inactiveStatus, password, state, timeCreated, userId);
+        }
+        public GetUiPasswordResult build() {
+            final var o = new GetUiPasswordResult();
+            o.id = id;
+            o.inactiveStatus = inactiveStatus;
+            o.password = password;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.userId = userId;
+            return o;
         }
     }
 }

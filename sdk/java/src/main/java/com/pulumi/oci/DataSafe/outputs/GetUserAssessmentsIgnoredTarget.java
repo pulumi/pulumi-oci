@@ -9,24 +9,15 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUserAssessmentsIgnoredTarget {
-    private final String lifecycleState;
+    private String lifecycleState;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private final String targetId;
-    private final String userAssessmentId;
+    private String targetId;
+    private String userAssessmentId;
 
-    @CustomType.Constructor
-    private GetUserAssessmentsIgnoredTarget(
-        @CustomType.Parameter("lifecycleState") String lifecycleState,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("userAssessmentId") String userAssessmentId) {
-        this.lifecycleState = lifecycleState;
-        this.targetId = targetId;
-        this.userAssessmentId = userAssessmentId;
-    }
-
+    private GetUserAssessmentsIgnoredTarget() {}
     public String lifecycleState() {
         return this.lifecycleState;
     }
@@ -48,16 +39,12 @@ public final class GetUserAssessmentsIgnoredTarget {
     public static Builder builder(GetUserAssessmentsIgnoredTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String lifecycleState;
         private String targetId;
         private String userAssessmentId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentsIgnoredTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.lifecycleState = defaults.lifecycleState;
@@ -65,19 +52,27 @@ public final class GetUserAssessmentsIgnoredTarget {
     	      this.userAssessmentId = defaults.userAssessmentId;
         }
 
+        @CustomType.Setter
         public Builder lifecycleState(String lifecycleState) {
             this.lifecycleState = Objects.requireNonNull(lifecycleState);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
             this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
             return this;
-        }        public GetUserAssessmentsIgnoredTarget build() {
-            return new GetUserAssessmentsIgnoredTarget(lifecycleState, targetId, userAssessmentId);
+        }
+        public GetUserAssessmentsIgnoredTarget build() {
+            final var o = new GetUserAssessmentsIgnoredTarget();
+            o.lifecycleState = lifecycleState;
+            o.targetId = targetId;
+            o.userAssessmentId = userAssessmentId;
+            return o;
         }
     }
 }

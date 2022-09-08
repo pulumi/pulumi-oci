@@ -19,42 +19,29 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
      * @return (Updatable) Defines whether or not to uphold SSL verification.
      * 
      */
-    private final @Nullable Boolean isSslVerifyDisabled;
+    private @Nullable Boolean isSslVerifyDisabled;
     /**
      * @return (Updatable) The set of static public keys.
      * 
      */
-    private final @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey> keys;
+    private @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey> keys;
     /**
      * @return (Updatable) The duration for which the JWKS should be cached before it is fetched again.
      * 
      */
-    private final @Nullable Integer maxCacheDurationInHours;
+    private @Nullable Integer maxCacheDurationInHours;
     /**
      * @return (Updatable) Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
      * 
      */
-    private final @Nullable String uri;
+    private @Nullable String uri;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys(
-        @CustomType.Parameter("isSslVerifyDisabled") @Nullable Boolean isSslVerifyDisabled,
-        @CustomType.Parameter("keys") @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey> keys,
-        @CustomType.Parameter("maxCacheDurationInHours") @Nullable Integer maxCacheDurationInHours,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("uri") @Nullable String uri) {
-        this.isSslVerifyDisabled = isSslVerifyDisabled;
-        this.keys = keys;
-        this.maxCacheDurationInHours = maxCacheDurationInHours;
-        this.type = type;
-        this.uri = uri;
-    }
-
+    private DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys() {}
     /**
      * @return (Updatable) Defines whether or not to uphold SSL verification.
      * 
@@ -98,18 +85,14 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
     public static Builder builder(DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isSslVerifyDisabled;
         private @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey> keys;
         private @Nullable Integer maxCacheDurationInHours;
         private String type;
         private @Nullable String uri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isSslVerifyDisabled = defaults.isSslVerifyDisabled;
@@ -119,10 +102,12 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
     	      this.uri = defaults.uri;
         }
 
+        @CustomType.Setter
         public Builder isSslVerifyDisabled(@Nullable Boolean isSslVerifyDisabled) {
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
+        @CustomType.Setter
         public Builder keys(@Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey> keys) {
             this.keys = keys;
             return this;
@@ -130,19 +115,29 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
         public Builder keys(DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey... keys) {
             return keys(List.of(keys));
         }
+        @CustomType.Setter
         public Builder maxCacheDurationInHours(@Nullable Integer maxCacheDurationInHours) {
             this.maxCacheDurationInHours = maxCacheDurationInHours;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder uri(@Nullable String uri) {
             this.uri = uri;
             return this;
-        }        public DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys build() {
-            return new DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys(isSslVerifyDisabled, keys, maxCacheDurationInHours, type, uri);
+        }
+        public DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys build() {
+            final var o = new DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys();
+            o.isSslVerifyDisabled = isSslVerifyDisabled;
+            o.keys = keys;
+            o.maxCacheDurationInHours = maxCacheDurationInHours;
+            o.type = type;
+            o.uri = uri;
+            return o;
         }
     }
 }

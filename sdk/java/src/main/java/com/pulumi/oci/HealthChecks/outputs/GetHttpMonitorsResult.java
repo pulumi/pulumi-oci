@@ -18,45 +18,30 @@ public final class GetHttpMonitorsResult {
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly and mutable name suitable for display in a user interface.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetHttpMonitorsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetHttpMonitorsFilter> filters;
     /**
      * @return The region where updates must be made and where results must be fetched from.
      * 
      */
-    private final @Nullable String homeRegion;
+    private @Nullable String homeRegion;
     /**
      * @return The list of http_monitors.
      * 
      */
-    private final List<GetHttpMonitorsHttpMonitor> httpMonitors;
+    private List<GetHttpMonitorsHttpMonitor> httpMonitors;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetHttpMonitorsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetHttpMonitorsFilter> filters,
-        @CustomType.Parameter("homeRegion") @Nullable String homeRegion,
-        @CustomType.Parameter("httpMonitors") List<GetHttpMonitorsHttpMonitor> httpMonitors,
-        @CustomType.Parameter("id") String id) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.homeRegion = homeRegion;
-        this.httpMonitors = httpMonitors;
-        this.id = id;
-    }
-
+    private GetHttpMonitorsResult() {}
     /**
      * @return The OCID of the compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetHttpMonitorsResult {
     public static Builder builder(GetHttpMonitorsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetHttpMonitorsResult {
         private @Nullable String homeRegion;
         private List<GetHttpMonitorsHttpMonitor> httpMonitors;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHttpMonitorsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetHttpMonitorsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetHttpMonitorsFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetHttpMonitorsResult {
         public Builder filters(GetHttpMonitorsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder homeRegion(@Nullable String homeRegion) {
             this.homeRegion = homeRegion;
             return this;
         }
+        @CustomType.Setter
         public Builder httpMonitors(List<GetHttpMonitorsHttpMonitor> httpMonitors) {
             this.httpMonitors = Objects.requireNonNull(httpMonitors);
             return this;
@@ -152,11 +138,20 @@ public final class GetHttpMonitorsResult {
         public Builder httpMonitors(GetHttpMonitorsHttpMonitor... httpMonitors) {
             return httpMonitors(List.of(httpMonitors));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetHttpMonitorsResult build() {
-            return new GetHttpMonitorsResult(compartmentId, displayName, filters, homeRegion, httpMonitors, id);
+        }
+        public GetHttpMonitorsResult build() {
+            final var o = new GetHttpMonitorsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.homeRegion = homeRegion;
+            o.httpMonitors = httpMonitors;
+            o.id = id;
+            return o;
         }
     }
 }

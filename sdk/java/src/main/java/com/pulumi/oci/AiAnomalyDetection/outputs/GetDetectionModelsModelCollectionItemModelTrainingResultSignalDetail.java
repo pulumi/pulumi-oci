@@ -15,37 +15,37 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultSigna
      * @return detailed information for a signal.
      * 
      */
-    private final String details;
+    private String details;
     /**
      * @return Accuracy metric for a signal.
      * 
      */
-    private final Double fap;
+    private Double fap;
     /**
      * @return A boolean value to indicate if a signal is quantized or not.
      * 
      */
-    private final Boolean isQuantized;
+    private Boolean isQuantized;
     /**
      * @return Max value within a signal.
      * 
      */
-    private final Double max;
+    private Double max;
     /**
      * @return Min value within a signal.
      * 
      */
-    private final Double min;
+    private Double min;
     /**
      * @return The ratio of missing values in a signal filled/imputed by the IDP algorithm.
      * 
      */
-    private final Double mviRatio;
+    private Double mviRatio;
     /**
      * @return The name of a signal.
      * 
      */
-    private final String signalName;
+    private String signalName;
     /**
      * @return Status of the signal:
      * * ACCEPTED - the signal is used for training the model
@@ -53,35 +53,14 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultSigna
      * * OTHER - placeholder for other status
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return Standard deviation of values within a signal.
      * 
      */
-    private final Double std;
+    private Double std;
 
-    @CustomType.Constructor
-    private GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail(
-        @CustomType.Parameter("details") String details,
-        @CustomType.Parameter("fap") Double fap,
-        @CustomType.Parameter("isQuantized") Boolean isQuantized,
-        @CustomType.Parameter("max") Double max,
-        @CustomType.Parameter("min") Double min,
-        @CustomType.Parameter("mviRatio") Double mviRatio,
-        @CustomType.Parameter("signalName") String signalName,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("std") Double std) {
-        this.details = details;
-        this.fap = fap;
-        this.isQuantized = isQuantized;
-        this.max = max;
-        this.min = min;
-        this.mviRatio = mviRatio;
-        this.signalName = signalName;
-        this.status = status;
-        this.std = std;
-    }
-
+    private GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail() {}
     /**
      * @return detailed information for a signal.
      * 
@@ -156,7 +135,7 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultSigna
     public static Builder builder(GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String details;
         private Double fap;
@@ -167,11 +146,7 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultSigna
         private String signalName;
         private String status;
         private Double std;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.details = defaults.details;
@@ -185,43 +160,63 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultSigna
     	      this.std = defaults.std;
         }
 
+        @CustomType.Setter
         public Builder details(String details) {
             this.details = Objects.requireNonNull(details);
             return this;
         }
+        @CustomType.Setter
         public Builder fap(Double fap) {
             this.fap = Objects.requireNonNull(fap);
             return this;
         }
+        @CustomType.Setter
         public Builder isQuantized(Boolean isQuantized) {
             this.isQuantized = Objects.requireNonNull(isQuantized);
             return this;
         }
+        @CustomType.Setter
         public Builder max(Double max) {
             this.max = Objects.requireNonNull(max);
             return this;
         }
+        @CustomType.Setter
         public Builder min(Double min) {
             this.min = Objects.requireNonNull(min);
             return this;
         }
+        @CustomType.Setter
         public Builder mviRatio(Double mviRatio) {
             this.mviRatio = Objects.requireNonNull(mviRatio);
             return this;
         }
+        @CustomType.Setter
         public Builder signalName(String signalName) {
             this.signalName = Objects.requireNonNull(signalName);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder std(Double std) {
             this.std = Objects.requireNonNull(std);
             return this;
-        }        public GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail build() {
-            return new GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail(details, fap, isQuantized, max, min, mviRatio, signalName, status, std);
+        }
+        public GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail build() {
+            final var o = new GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail();
+            o.details = details;
+            o.fap = fap;
+            o.isQuantized = isQuantized;
+            o.max = max;
+            o.min = min;
+            o.mviRatio = mviRatio;
+            o.signalName = signalName;
+            o.status = status;
+            o.std = std;
+            return o;
         }
     }
 }

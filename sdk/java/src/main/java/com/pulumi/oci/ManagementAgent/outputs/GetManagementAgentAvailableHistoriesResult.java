@@ -18,37 +18,22 @@ public final class GetManagementAgentAvailableHistoriesResult {
      * @return The list of availability_histories.
      * 
      */
-    private final List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories;
-    private final @Nullable List<GetManagementAgentAvailableHistoriesFilter> filters;
+    private List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories;
+    private @Nullable List<GetManagementAgentAvailableHistoriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return agent identifier
      * 
      */
-    private final String managementAgentId;
-    private final @Nullable String timeAvailabilityStatusEndedGreaterThan;
-    private final @Nullable String timeAvailabilityStatusStartedLessThan;
+    private String managementAgentId;
+    private @Nullable String timeAvailabilityStatusEndedGreaterThan;
+    private @Nullable String timeAvailabilityStatusStartedLessThan;
 
-    @CustomType.Constructor
-    private GetManagementAgentAvailableHistoriesResult(
-        @CustomType.Parameter("availabilityHistories") List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories,
-        @CustomType.Parameter("filters") @Nullable List<GetManagementAgentAvailableHistoriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managementAgentId") String managementAgentId,
-        @CustomType.Parameter("timeAvailabilityStatusEndedGreaterThan") @Nullable String timeAvailabilityStatusEndedGreaterThan,
-        @CustomType.Parameter("timeAvailabilityStatusStartedLessThan") @Nullable String timeAvailabilityStatusStartedLessThan) {
-        this.availabilityHistories = availabilityHistories;
-        this.filters = filters;
-        this.id = id;
-        this.managementAgentId = managementAgentId;
-        this.timeAvailabilityStatusEndedGreaterThan = timeAvailabilityStatusEndedGreaterThan;
-        this.timeAvailabilityStatusStartedLessThan = timeAvailabilityStatusStartedLessThan;
-    }
-
+    private GetManagementAgentAvailableHistoriesResult() {}
     /**
      * @return The list of availability_histories.
      * 
@@ -87,7 +72,7 @@ public final class GetManagementAgentAvailableHistoriesResult {
     public static Builder builder(GetManagementAgentAvailableHistoriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories;
         private @Nullable List<GetManagementAgentAvailableHistoriesFilter> filters;
@@ -95,11 +80,7 @@ public final class GetManagementAgentAvailableHistoriesResult {
         private String managementAgentId;
         private @Nullable String timeAvailabilityStatusEndedGreaterThan;
         private @Nullable String timeAvailabilityStatusStartedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentAvailableHistoriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityHistories = defaults.availabilityHistories;
@@ -110,6 +91,7 @@ public final class GetManagementAgentAvailableHistoriesResult {
     	      this.timeAvailabilityStatusStartedLessThan = defaults.timeAvailabilityStatusStartedLessThan;
         }
 
+        @CustomType.Setter
         public Builder availabilityHistories(List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories) {
             this.availabilityHistories = Objects.requireNonNull(availabilityHistories);
             return this;
@@ -117,6 +99,7 @@ public final class GetManagementAgentAvailableHistoriesResult {
         public Builder availabilityHistories(GetManagementAgentAvailableHistoriesAvailabilityHistory... availabilityHistories) {
             return availabilityHistories(List.of(availabilityHistories));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementAgentAvailableHistoriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -124,23 +107,35 @@ public final class GetManagementAgentAvailableHistoriesResult {
         public Builder filters(GetManagementAgentAvailableHistoriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = Objects.requireNonNull(managementAgentId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAvailabilityStatusEndedGreaterThan(@Nullable String timeAvailabilityStatusEndedGreaterThan) {
             this.timeAvailabilityStatusEndedGreaterThan = timeAvailabilityStatusEndedGreaterThan;
             return this;
         }
+        @CustomType.Setter
         public Builder timeAvailabilityStatusStartedLessThan(@Nullable String timeAvailabilityStatusStartedLessThan) {
             this.timeAvailabilityStatusStartedLessThan = timeAvailabilityStatusStartedLessThan;
             return this;
-        }        public GetManagementAgentAvailableHistoriesResult build() {
-            return new GetManagementAgentAvailableHistoriesResult(availabilityHistories, filters, id, managementAgentId, timeAvailabilityStatusEndedGreaterThan, timeAvailabilityStatusStartedLessThan);
+        }
+        public GetManagementAgentAvailableHistoriesResult build() {
+            final var o = new GetManagementAgentAvailableHistoriesResult();
+            o.availabilityHistories = availabilityHistories;
+            o.filters = filters;
+            o.id = id;
+            o.managementAgentId = managementAgentId;
+            o.timeAvailabilityStatusEndedGreaterThan = timeAvailabilityStatusEndedGreaterThan;
+            o.timeAvailabilityStatusStartedLessThan = timeAvailabilityStatusStartedLessThan;
+            return o;
         }
     }
 }

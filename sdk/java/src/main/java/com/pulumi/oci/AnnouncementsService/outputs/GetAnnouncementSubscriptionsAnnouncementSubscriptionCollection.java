@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection {
-    private final List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem> items;
+    private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection(@CustomType.Parameter("items") List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection() {}
     public List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
     public static Builder builder(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection build() {
-            return new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection(items);
+        }
+        public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection build() {
+            final var o = new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection();
+            o.items = items;
+            return o;
         }
     }
 }

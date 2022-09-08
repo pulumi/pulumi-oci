@@ -13,34 +13,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTunnelSecurityAssociationsResult {
-    private final @Nullable List<GetTunnelSecurityAssociationsFilter> filters;
+    private @Nullable List<GetTunnelSecurityAssociationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String ipsecId;
-    private final String tunnelId;
+    private String id;
+    private String ipsecId;
+    private String tunnelId;
     /**
      * @return The list of tunnel_security_associations.
      * 
      */
-    private final List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations;
+    private List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations;
 
-    @CustomType.Constructor
-    private GetTunnelSecurityAssociationsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetTunnelSecurityAssociationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipsecId") String ipsecId,
-        @CustomType.Parameter("tunnelId") String tunnelId,
-        @CustomType.Parameter("tunnelSecurityAssociations") List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations) {
-        this.filters = filters;
-        this.id = id;
-        this.ipsecId = ipsecId;
-        this.tunnelId = tunnelId;
-        this.tunnelSecurityAssociations = tunnelSecurityAssociations;
-    }
-
+    private GetTunnelSecurityAssociationsResult() {}
     public List<GetTunnelSecurityAssociationsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -72,18 +59,14 @@ public final class GetTunnelSecurityAssociationsResult {
     public static Builder builder(GetTunnelSecurityAssociationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetTunnelSecurityAssociationsFilter> filters;
         private String id;
         private String ipsecId;
         private String tunnelId;
         private List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTunnelSecurityAssociationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -93,6 +76,7 @@ public final class GetTunnelSecurityAssociationsResult {
     	      this.tunnelSecurityAssociations = defaults.tunnelSecurityAssociations;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTunnelSecurityAssociationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -100,26 +84,37 @@ public final class GetTunnelSecurityAssociationsResult {
         public Builder filters(GetTunnelSecurityAssociationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipsecId(String ipsecId) {
             this.ipsecId = Objects.requireNonNull(ipsecId);
             return this;
         }
+        @CustomType.Setter
         public Builder tunnelId(String tunnelId) {
             this.tunnelId = Objects.requireNonNull(tunnelId);
             return this;
         }
+        @CustomType.Setter
         public Builder tunnelSecurityAssociations(List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations) {
             this.tunnelSecurityAssociations = Objects.requireNonNull(tunnelSecurityAssociations);
             return this;
         }
         public Builder tunnelSecurityAssociations(GetTunnelSecurityAssociationsTunnelSecurityAssociation... tunnelSecurityAssociations) {
             return tunnelSecurityAssociations(List.of(tunnelSecurityAssociations));
-        }        public GetTunnelSecurityAssociationsResult build() {
-            return new GetTunnelSecurityAssociationsResult(filters, id, ipsecId, tunnelId, tunnelSecurityAssociations);
+        }
+        public GetTunnelSecurityAssociationsResult build() {
+            final var o = new GetTunnelSecurityAssociationsResult();
+            o.filters = filters;
+            o.id = id;
+            o.ipsecId = ipsecId;
+            o.tunnelId = tunnelId;
+            o.tunnelSecurityAssociations = tunnelSecurityAssociations;
+            return o;
         }
     }
 }

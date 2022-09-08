@@ -18,45 +18,30 @@ public final class GetQuotasResult {
      * @return The OCID of the compartment containing the resource this quota applies to.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetQuotasFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetQuotasFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of quotas.
      * 
      */
-    private final List<GetQuotasQuota> quotas;
+    private List<GetQuotasQuota> quotas;
     /**
      * @return The quota&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetQuotasResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetQuotasFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("quotas") List<GetQuotasQuota> quotas,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.quotas = quotas;
-        this.state = state;
-    }
-
+    private GetQuotasResult() {}
     /**
      * @return The OCID of the compartment containing the resource this quota applies to.
      * 
@@ -103,7 +88,7 @@ public final class GetQuotasResult {
     public static Builder builder(GetQuotasResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetQuotasFilter> filters;
@@ -111,11 +96,7 @@ public final class GetQuotasResult {
         private @Nullable String name;
         private List<GetQuotasQuota> quotas;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQuotasResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetQuotasResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetQuotasFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,14 +120,17 @@ public final class GetQuotasResult {
         public Builder filters(GetQuotasFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder quotas(List<GetQuotasQuota> quotas) {
             this.quotas = Objects.requireNonNull(quotas);
             return this;
@@ -152,11 +138,20 @@ public final class GetQuotasResult {
         public Builder quotas(GetQuotasQuota... quotas) {
             return quotas(List.of(quotas));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetQuotasResult build() {
-            return new GetQuotasResult(compartmentId, filters, id, name, quotas, state);
+        }
+        public GetQuotasResult build() {
+            final var o = new GetQuotasResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.quotas = quotas;
+            o.state = state;
+            return o;
         }
     }
 }

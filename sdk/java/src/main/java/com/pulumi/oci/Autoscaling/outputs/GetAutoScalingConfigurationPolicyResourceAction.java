@@ -13,21 +13,14 @@ public final class GetAutoScalingConfigurationPolicyResourceAction {
      * @return The action to take when autoscaling is triggered.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return The type of resource action.
      * 
      */
-    private final String actionType;
+    private String actionType;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationPolicyResourceAction(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("actionType") String actionType) {
-        this.action = action;
-        this.actionType = actionType;
-    }
-
+    private GetAutoScalingConfigurationPolicyResourceAction() {}
     /**
      * @return The action to take when autoscaling is triggered.
      * 
@@ -50,30 +43,32 @@ public final class GetAutoScalingConfigurationPolicyResourceAction {
     public static Builder builder(GetAutoScalingConfigurationPolicyResourceAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private String actionType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyResourceAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
     	      this.actionType = defaults.actionType;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder actionType(String actionType) {
             this.actionType = Objects.requireNonNull(actionType);
             return this;
-        }        public GetAutoScalingConfigurationPolicyResourceAction build() {
-            return new GetAutoScalingConfigurationPolicyResourceAction(action, actionType);
+        }
+        public GetAutoScalingConfigurationPolicyResourceAction build() {
+            final var o = new GetAutoScalingConfigurationPolicyResourceAction();
+            o.action = action;
+            o.actionType = actionType;
+            return o;
         }
     }
 }

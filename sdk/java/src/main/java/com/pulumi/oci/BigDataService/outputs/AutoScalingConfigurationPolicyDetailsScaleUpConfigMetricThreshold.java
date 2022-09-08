@@ -16,28 +16,19 @@ public final class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThres
      * @return (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      * 
      */
-    private final @Nullable Integer durationInMinutes;
+    private @Nullable Integer durationInMinutes;
     /**
      * @return (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
      * 
      */
-    private final @Nullable String operator;
+    private @Nullable String operator;
     /**
      * @return (Updatable) Integer non-negative value. 0 &lt; value &lt; 100
      * 
      */
-    private final @Nullable Integer value;
+    private @Nullable Integer value;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold(
-        @CustomType.Parameter("durationInMinutes") @Nullable Integer durationInMinutes,
-        @CustomType.Parameter("operator") @Nullable String operator,
-        @CustomType.Parameter("value") @Nullable Integer value) {
-        this.durationInMinutes = durationInMinutes;
-        this.operator = operator;
-        this.value = value;
-    }
-
+    private AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold() {}
     /**
      * @return (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      * 
@@ -67,16 +58,12 @@ public final class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThres
     public static Builder builder(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer durationInMinutes;
         private @Nullable String operator;
         private @Nullable Integer value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.durationInMinutes = defaults.durationInMinutes;
@@ -84,19 +71,27 @@ public final class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThres
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder durationInMinutes(@Nullable Integer durationInMinutes) {
             this.durationInMinutes = durationInMinutes;
             return this;
         }
+        @CustomType.Setter
         public Builder operator(@Nullable String operator) {
             this.operator = operator;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable Integer value) {
             this.value = value;
             return this;
-        }        public AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold build() {
-            return new AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold(durationInMinutes, operator, value);
+        }
+        public AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold build() {
+            final var o = new AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold();
+            o.durationInMinutes = durationInMinutes;
+            o.operator = operator;
+            o.value = value;
+            return o;
         }
     }
 }

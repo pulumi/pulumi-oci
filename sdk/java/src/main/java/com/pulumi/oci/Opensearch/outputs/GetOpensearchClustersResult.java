@@ -18,45 +18,30 @@ public final class GetOpensearchClustersResult {
      * @return The OCID of the compartment where the cluster is located.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The name of the cluster. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetOpensearchClustersFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetOpensearchClustersFilter> filters;
     /**
      * @return The OCID of the cluster.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of opensearch_cluster_collection.
      * 
      */
-    private final List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections;
+    private List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections;
     /**
      * @return The current state of the cluster.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetOpensearchClustersResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetOpensearchClustersFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("opensearchClusterCollections") List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.opensearchClusterCollections = opensearchClusterCollections;
-        this.state = state;
-    }
-
+    private GetOpensearchClustersResult() {}
     /**
      * @return The OCID of the compartment where the cluster is located.
      * 
@@ -103,7 +88,7 @@ public final class GetOpensearchClustersResult {
     public static Builder builder(GetOpensearchClustersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetOpensearchClustersResult {
         private @Nullable String id;
         private List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOpensearchClustersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetOpensearchClustersResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOpensearchClustersFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetOpensearchClustersResult {
         public Builder filters(GetOpensearchClustersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder opensearchClusterCollections(List<GetOpensearchClustersOpensearchClusterCollection> opensearchClusterCollections) {
             this.opensearchClusterCollections = Objects.requireNonNull(opensearchClusterCollections);
             return this;
@@ -152,11 +138,20 @@ public final class GetOpensearchClustersResult {
         public Builder opensearchClusterCollections(GetOpensearchClustersOpensearchClusterCollection... opensearchClusterCollections) {
             return opensearchClusterCollections(List.of(opensearchClusterCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetOpensearchClustersResult build() {
-            return new GetOpensearchClustersResult(compartmentId, displayName, filters, id, opensearchClusterCollections, state);
+        }
+        public GetOpensearchClustersResult build() {
+            final var o = new GetOpensearchClustersResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.opensearchClusterCollections = opensearchClusterCollections;
+            o.state = state;
+            return o;
         }
     }
 }

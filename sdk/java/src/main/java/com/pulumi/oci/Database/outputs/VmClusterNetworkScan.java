@@ -17,42 +17,29 @@ public final class VmClusterNetworkScan {
      * @return (Updatable) The node host name.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
      * 
      */
-    private final List<String> ips;
+    private List<String> ips;
     /**
      * @return (Updatable) The SCAN TCPIP port. Default is 1521.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return (Updatable) The SCAN TCPIP port. Default is 1521.
      * 
      */
-    private final @Nullable Integer scanListenerPortTcp;
+    private @Nullable Integer scanListenerPortTcp;
     /**
      * @return (Updatable) The SCAN TCPIP SSL port. Default is 2484.
      * 
      */
-    private final @Nullable Integer scanListenerPortTcpSsl;
+    private @Nullable Integer scanListenerPortTcpSsl;
 
-    @CustomType.Constructor
-    private VmClusterNetworkScan(
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("ips") List<String> ips,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("scanListenerPortTcp") @Nullable Integer scanListenerPortTcp,
-        @CustomType.Parameter("scanListenerPortTcpSsl") @Nullable Integer scanListenerPortTcpSsl) {
-        this.hostname = hostname;
-        this.ips = ips;
-        this.port = port;
-        this.scanListenerPortTcp = scanListenerPortTcp;
-        this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
-    }
-
+    private VmClusterNetworkScan() {}
     /**
      * @return (Updatable) The node host name.
      * 
@@ -96,18 +83,14 @@ public final class VmClusterNetworkScan {
     public static Builder builder(VmClusterNetworkScan defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostname;
         private List<String> ips;
         private Integer port;
         private @Nullable Integer scanListenerPortTcp;
         private @Nullable Integer scanListenerPortTcpSsl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VmClusterNetworkScan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
@@ -117,10 +100,12 @@ public final class VmClusterNetworkScan {
     	      this.scanListenerPortTcpSsl = defaults.scanListenerPortTcpSsl;
         }
 
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder ips(List<String> ips) {
             this.ips = Objects.requireNonNull(ips);
             return this;
@@ -128,19 +113,29 @@ public final class VmClusterNetworkScan {
         public Builder ips(String... ips) {
             return ips(List.of(ips));
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder scanListenerPortTcp(@Nullable Integer scanListenerPortTcp) {
             this.scanListenerPortTcp = scanListenerPortTcp;
             return this;
         }
+        @CustomType.Setter
         public Builder scanListenerPortTcpSsl(@Nullable Integer scanListenerPortTcpSsl) {
             this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             return this;
-        }        public VmClusterNetworkScan build() {
-            return new VmClusterNetworkScan(hostname, ips, port, scanListenerPortTcp, scanListenerPortTcpSsl);
+        }
+        public VmClusterNetworkScan build() {
+            final var o = new VmClusterNetworkScan();
+            o.hostname = hostname;
+            o.ips = ips;
+            o.port = port;
+            o.scanListenerPortTcp = scanListenerPortTcp;
+            o.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            return o;
         }
     }
 }

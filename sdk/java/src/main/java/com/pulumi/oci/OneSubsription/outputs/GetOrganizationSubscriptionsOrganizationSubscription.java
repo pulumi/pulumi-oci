@@ -15,63 +15,44 @@ public final class GetOrganizationSubscriptionsOrganizationSubscription {
      * @return Currency details
      * 
      */
-    private final List<GetOrganizationSubscriptionsOrganizationSubscriptionCurrency> currencies;
+    private List<GetOrganizationSubscriptionsOrganizationSubscriptionCurrency> currencies;
     /**
      * @return SPM internal Subscription ID
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Customer friendly service name provided by PRG
      * 
      */
-    private final String serviceName;
+    private String serviceName;
     /**
      * @return Status of the plan
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return Represents the date when the last service of the subscription ends
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Represents the date when the first service of the subscription was activated
      * 
      */
-    private final String timeStart;
+    private String timeStart;
     /**
      * @return Total aggregate TCLV of all lines for the subscription including expired, active, and signed
      * 
      */
-    private final String totalValue;
+    private String totalValue;
     /**
      * @return Subscription Type i.e. IAAS,SAAS,PAAS
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetOrganizationSubscriptionsOrganizationSubscription(
-        @CustomType.Parameter("currencies") List<GetOrganizationSubscriptionsOrganizationSubscriptionCurrency> currencies,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("serviceName") String serviceName,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart,
-        @CustomType.Parameter("totalValue") String totalValue,
-        @CustomType.Parameter("type") String type) {
-        this.currencies = currencies;
-        this.id = id;
-        this.serviceName = serviceName;
-        this.status = status;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-        this.totalValue = totalValue;
-        this.type = type;
-    }
-
+    private GetOrganizationSubscriptionsOrganizationSubscription() {}
     /**
      * @return Currency details
      * 
@@ -136,7 +117,7 @@ public final class GetOrganizationSubscriptionsOrganizationSubscription {
     public static Builder builder(GetOrganizationSubscriptionsOrganizationSubscription defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetOrganizationSubscriptionsOrganizationSubscriptionCurrency> currencies;
         private String id;
@@ -146,11 +127,7 @@ public final class GetOrganizationSubscriptionsOrganizationSubscription {
         private String timeStart;
         private String totalValue;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOrganizationSubscriptionsOrganizationSubscription defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currencies = defaults.currencies;
@@ -163,6 +140,7 @@ public final class GetOrganizationSubscriptionsOrganizationSubscription {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder currencies(List<GetOrganizationSubscriptionsOrganizationSubscriptionCurrency> currencies) {
             this.currencies = Objects.requireNonNull(currencies);
             return this;
@@ -170,35 +148,52 @@ public final class GetOrganizationSubscriptionsOrganizationSubscription {
         public Builder currencies(GetOrganizationSubscriptionsOrganizationSubscriptionCurrency... currencies) {
             return currencies(List.of(currencies));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(String serviceName) {
             this.serviceName = Objects.requireNonNull(serviceName);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
         }
+        @CustomType.Setter
         public Builder totalValue(String totalValue) {
             this.totalValue = Objects.requireNonNull(totalValue);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetOrganizationSubscriptionsOrganizationSubscription build() {
-            return new GetOrganizationSubscriptionsOrganizationSubscription(currencies, id, serviceName, status, timeEnd, timeStart, totalValue, type);
+        }
+        public GetOrganizationSubscriptionsOrganizationSubscription build() {
+            final var o = new GetOrganizationSubscriptionsOrganizationSubscription();
+            o.currencies = currencies;
+            o.id = id;
+            o.serviceName = serviceName;
+            o.status = status;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            o.totalValue = totalValue;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -16,56 +16,39 @@ public final class GetObjectLifecyclePolicyRule {
      * @return The action of the object lifecycle policy rule. Rules using the action &#39;ARCHIVE&#39; move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action &#39;INFREQUENT_ACCESS&#39; move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action &#39;DELETE&#39; permanently delete objects from buckets. Rules using &#39;ABORT&#39; abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return A Boolean that determines whether this rule is currently enabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return The name of the lifecycle rule to be applied.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
      * 
      */
-    private final List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters;
+    private List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters;
     /**
      * @return The target of the object lifecycle policy rule. The values of target can be either &#34;objects&#34;, &#34;multipart-uploads&#34; or &#34;previous-object-versions&#34;. This field when declared as &#34;objects&#34; is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as &#34;previous-object-versions&#34; is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as &#34;multipart-uploads&#34; is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
      * 
      */
-    private final String target;
+    private String target;
     /**
      * @return Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified time.
      * 
      */
-    private final String timeAmount;
+    private String timeAmount;
     /**
      * @return The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
      * 
      */
-    private final String timeUnit;
+    private String timeUnit;
 
-    @CustomType.Constructor
-    private GetObjectLifecyclePolicyRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectNameFilters") List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters,
-        @CustomType.Parameter("target") String target,
-        @CustomType.Parameter("timeAmount") String timeAmount,
-        @CustomType.Parameter("timeUnit") String timeUnit) {
-        this.action = action;
-        this.isEnabled = isEnabled;
-        this.name = name;
-        this.objectNameFilters = objectNameFilters;
-        this.target = target;
-        this.timeAmount = timeAmount;
-        this.timeUnit = timeUnit;
-    }
-
+    private GetObjectLifecyclePolicyRule() {}
     /**
      * @return The action of the object lifecycle policy rule. Rules using the action &#39;ARCHIVE&#39; move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action &#39;INFREQUENT_ACCESS&#39; move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action &#39;DELETE&#39; permanently delete objects from buckets. Rules using &#39;ABORT&#39; abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
      * 
@@ -123,7 +106,7 @@ public final class GetObjectLifecyclePolicyRule {
     public static Builder builder(GetObjectLifecyclePolicyRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private Boolean isEnabled;
@@ -132,11 +115,7 @@ public final class GetObjectLifecyclePolicyRule {
         private String target;
         private String timeAmount;
         private String timeUnit;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetObjectLifecyclePolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -148,18 +127,22 @@ public final class GetObjectLifecyclePolicyRule {
     	      this.timeUnit = defaults.timeUnit;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectNameFilters(List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters) {
             this.objectNameFilters = Objects.requireNonNull(objectNameFilters);
             return this;
@@ -167,19 +150,31 @@ public final class GetObjectLifecyclePolicyRule {
         public Builder objectNameFilters(GetObjectLifecyclePolicyRuleObjectNameFilter... objectNameFilters) {
             return objectNameFilters(List.of(objectNameFilters));
         }
+        @CustomType.Setter
         public Builder target(String target) {
             this.target = Objects.requireNonNull(target);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAmount(String timeAmount) {
             this.timeAmount = Objects.requireNonNull(timeAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUnit(String timeUnit) {
             this.timeUnit = Objects.requireNonNull(timeUnit);
             return this;
-        }        public GetObjectLifecyclePolicyRule build() {
-            return new GetObjectLifecyclePolicyRule(action, isEnabled, name, objectNameFilters, target, timeAmount, timeUnit);
+        }
+        public GetObjectLifecyclePolicyRule build() {
+            final var o = new GetObjectLifecyclePolicyRule();
+            o.action = action;
+            o.isEnabled = isEnabled;
+            o.name = name;
+            o.objectNameFilters = objectNameFilters;
+            o.target = target;
+            o.timeAmount = timeAmount;
+            o.timeUnit = timeUnit;
+            return o;
         }
     }
 }

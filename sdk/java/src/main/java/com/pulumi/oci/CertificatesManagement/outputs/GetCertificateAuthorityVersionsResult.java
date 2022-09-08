@@ -18,38 +18,25 @@ public final class GetCertificateAuthorityVersionsResult {
      * @return The OCID of the CA.
      * 
      */
-    private final String certificateAuthorityId;
+    private String certificateAuthorityId;
     /**
      * @return The list of certificate_authority_version_collection.
      * 
      */
-    private final List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection> certificateAuthorityVersionCollections;
-    private final @Nullable List<GetCertificateAuthorityVersionsFilter> filters;
+    private List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection> certificateAuthorityVersionCollections;
+    private @Nullable List<GetCertificateAuthorityVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The version number of the CA.
      * 
      */
-    private final @Nullable String versionNumber;
+    private @Nullable String versionNumber;
 
-    @CustomType.Constructor
-    private GetCertificateAuthorityVersionsResult(
-        @CustomType.Parameter("certificateAuthorityId") String certificateAuthorityId,
-        @CustomType.Parameter("certificateAuthorityVersionCollections") List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection> certificateAuthorityVersionCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetCertificateAuthorityVersionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("versionNumber") @Nullable String versionNumber) {
-        this.certificateAuthorityId = certificateAuthorityId;
-        this.certificateAuthorityVersionCollections = certificateAuthorityVersionCollections;
-        this.filters = filters;
-        this.id = id;
-        this.versionNumber = versionNumber;
-    }
-
+    private GetCertificateAuthorityVersionsResult() {}
     /**
      * @return The OCID of the CA.
      * 
@@ -89,18 +76,14 @@ public final class GetCertificateAuthorityVersionsResult {
     public static Builder builder(GetCertificateAuthorityVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificateAuthorityId;
         private List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection> certificateAuthorityVersionCollections;
         private @Nullable List<GetCertificateAuthorityVersionsFilter> filters;
         private String id;
         private @Nullable String versionNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateAuthorityVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateAuthorityId = defaults.certificateAuthorityId;
@@ -110,10 +93,12 @@ public final class GetCertificateAuthorityVersionsResult {
     	      this.versionNumber = defaults.versionNumber;
         }
 
+        @CustomType.Setter
         public Builder certificateAuthorityId(String certificateAuthorityId) {
             this.certificateAuthorityId = Objects.requireNonNull(certificateAuthorityId);
             return this;
         }
+        @CustomType.Setter
         public Builder certificateAuthorityVersionCollections(List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection> certificateAuthorityVersionCollections) {
             this.certificateAuthorityVersionCollections = Objects.requireNonNull(certificateAuthorityVersionCollections);
             return this;
@@ -121,6 +106,7 @@ public final class GetCertificateAuthorityVersionsResult {
         public Builder certificateAuthorityVersionCollections(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection... certificateAuthorityVersionCollections) {
             return certificateAuthorityVersionCollections(List.of(certificateAuthorityVersionCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCertificateAuthorityVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -128,15 +114,24 @@ public final class GetCertificateAuthorityVersionsResult {
         public Builder filters(GetCertificateAuthorityVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder versionNumber(@Nullable String versionNumber) {
             this.versionNumber = versionNumber;
             return this;
-        }        public GetCertificateAuthorityVersionsResult build() {
-            return new GetCertificateAuthorityVersionsResult(certificateAuthorityId, certificateAuthorityVersionCollections, filters, id, versionNumber);
+        }
+        public GetCertificateAuthorityVersionsResult build() {
+            final var o = new GetCertificateAuthorityVersionsResult();
+            o.certificateAuthorityId = certificateAuthorityId;
+            o.certificateAuthorityVersionCollections = certificateAuthorityVersionCollections;
+            o.filters = filters;
+            o.id = id;
+            o.versionNumber = versionNumber;
+            return o;
         }
     }
 }

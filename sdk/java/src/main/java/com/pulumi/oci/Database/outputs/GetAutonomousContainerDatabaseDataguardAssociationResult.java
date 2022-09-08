@@ -14,129 +14,90 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
      * @return The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
      * 
      */
-    private final String applyLag;
+    private String applyLag;
     /**
      * @return The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      * 
      */
-    private final String applyRate;
-    private final String autonomousContainerDatabaseDataguardAssociationId;
+    private String applyRate;
+    private String autonomousContainerDatabaseDataguardAssociationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
      * 
      */
-    private final String autonomousContainerDatabaseId;
+    private String autonomousContainerDatabaseId;
     /**
      * @return The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      * 
      */
-    private final Boolean isAutomaticFailoverEnabled;
+    private Boolean isAutomaticFailoverEnabled;
     /**
      * @return Additional information about the current lifecycleState, if available.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      * 
      */
-    private final String peerAutonomousContainerDatabaseDataguardAssociationId;
+    private String peerAutonomousContainerDatabaseDataguardAssociationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      * 
      */
-    private final String peerAutonomousContainerDatabaseId;
+    private String peerAutonomousContainerDatabaseId;
     /**
      * @return The current state of Autonomous Data Guard.
      * 
      */
-    private final String peerLifecycleState;
+    private String peerLifecycleState;
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    private final String peerRole;
+    private String peerRole;
     /**
      * @return The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
-    private final String protectionMode;
+    private String protectionMode;
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    private final String role;
+    private String role;
     /**
      * @return The current state of Autonomous Data Guard.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the Autonomous DataGuard association was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time when the last role change action happened.
      * 
      */
-    private final String timeLastRoleChanged;
+    private String timeLastRoleChanged;
     /**
      * @return The date and time of the last update to the apply lag, apply rate, and transport lag values.
      * 
      */
-    private final String timeLastSynced;
+    private String timeLastSynced;
     /**
      * @return The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
      * 
      */
-    private final String transportLag;
+    private String transportLag;
 
-    @CustomType.Constructor
-    private GetAutonomousContainerDatabaseDataguardAssociationResult(
-        @CustomType.Parameter("applyLag") String applyLag,
-        @CustomType.Parameter("applyRate") String applyRate,
-        @CustomType.Parameter("autonomousContainerDatabaseDataguardAssociationId") String autonomousContainerDatabaseDataguardAssociationId,
-        @CustomType.Parameter("autonomousContainerDatabaseId") String autonomousContainerDatabaseId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAutomaticFailoverEnabled") Boolean isAutomaticFailoverEnabled,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("peerAutonomousContainerDatabaseDataguardAssociationId") String peerAutonomousContainerDatabaseDataguardAssociationId,
-        @CustomType.Parameter("peerAutonomousContainerDatabaseId") String peerAutonomousContainerDatabaseId,
-        @CustomType.Parameter("peerLifecycleState") String peerLifecycleState,
-        @CustomType.Parameter("peerRole") String peerRole,
-        @CustomType.Parameter("protectionMode") String protectionMode,
-        @CustomType.Parameter("role") String role,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastRoleChanged") String timeLastRoleChanged,
-        @CustomType.Parameter("timeLastSynced") String timeLastSynced,
-        @CustomType.Parameter("transportLag") String transportLag) {
-        this.applyLag = applyLag;
-        this.applyRate = applyRate;
-        this.autonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
-        this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
-        this.id = id;
-        this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
-        this.lifecycleDetails = lifecycleDetails;
-        this.peerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
-        this.peerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
-        this.peerLifecycleState = peerLifecycleState;
-        this.peerRole = peerRole;
-        this.protectionMode = protectionMode;
-        this.role = role;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeLastRoleChanged = timeLastRoleChanged;
-        this.timeLastSynced = timeLastSynced;
-        this.transportLag = transportLag;
-    }
-
+    private GetAutonomousContainerDatabaseDataguardAssociationResult() {}
     /**
      * @return The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
      * 
@@ -267,7 +228,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
     public static Builder builder(GetAutonomousContainerDatabaseDataguardAssociationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String applyLag;
         private String applyRate;
@@ -287,11 +248,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
         private String timeLastRoleChanged;
         private String timeLastSynced;
         private String transportLag;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousContainerDatabaseDataguardAssociationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applyLag = defaults.applyLag;
@@ -314,79 +271,117 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
     	      this.transportLag = defaults.transportLag;
         }
 
+        @CustomType.Setter
         public Builder applyLag(String applyLag) {
             this.applyLag = Objects.requireNonNull(applyLag);
             return this;
         }
+        @CustomType.Setter
         public Builder applyRate(String applyRate) {
             this.applyRate = Objects.requireNonNull(applyRate);
             return this;
         }
+        @CustomType.Setter
         public Builder autonomousContainerDatabaseDataguardAssociationId(String autonomousContainerDatabaseDataguardAssociationId) {
             this.autonomousContainerDatabaseDataguardAssociationId = Objects.requireNonNull(autonomousContainerDatabaseDataguardAssociationId);
             return this;
         }
+        @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
             this.isAutomaticFailoverEnabled = Objects.requireNonNull(isAutomaticFailoverEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseDataguardAssociationId(String peerAutonomousContainerDatabaseDataguardAssociationId) {
             this.peerAutonomousContainerDatabaseDataguardAssociationId = Objects.requireNonNull(peerAutonomousContainerDatabaseDataguardAssociationId);
             return this;
         }
+        @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseId(String peerAutonomousContainerDatabaseId) {
             this.peerAutonomousContainerDatabaseId = Objects.requireNonNull(peerAutonomousContainerDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder peerLifecycleState(String peerLifecycleState) {
             this.peerLifecycleState = Objects.requireNonNull(peerLifecycleState);
             return this;
         }
+        @CustomType.Setter
         public Builder peerRole(String peerRole) {
             this.peerRole = Objects.requireNonNull(peerRole);
             return this;
         }
+        @CustomType.Setter
         public Builder protectionMode(String protectionMode) {
             this.protectionMode = Objects.requireNonNull(protectionMode);
             return this;
         }
+        @CustomType.Setter
         public Builder role(String role) {
             this.role = Objects.requireNonNull(role);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastRoleChanged(String timeLastRoleChanged) {
             this.timeLastRoleChanged = Objects.requireNonNull(timeLastRoleChanged);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastSynced(String timeLastSynced) {
             this.timeLastSynced = Objects.requireNonNull(timeLastSynced);
             return this;
         }
+        @CustomType.Setter
         public Builder transportLag(String transportLag) {
             this.transportLag = Objects.requireNonNull(transportLag);
             return this;
-        }        public GetAutonomousContainerDatabaseDataguardAssociationResult build() {
-            return new GetAutonomousContainerDatabaseDataguardAssociationResult(applyLag, applyRate, autonomousContainerDatabaseDataguardAssociationId, autonomousContainerDatabaseId, id, isAutomaticFailoverEnabled, lifecycleDetails, peerAutonomousContainerDatabaseDataguardAssociationId, peerAutonomousContainerDatabaseId, peerLifecycleState, peerRole, protectionMode, role, state, timeCreated, timeLastRoleChanged, timeLastSynced, transportLag);
+        }
+        public GetAutonomousContainerDatabaseDataguardAssociationResult build() {
+            final var o = new GetAutonomousContainerDatabaseDataguardAssociationResult();
+            o.applyLag = applyLag;
+            o.applyRate = applyRate;
+            o.autonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
+            o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            o.id = id;
+            o.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+            o.lifecycleDetails = lifecycleDetails;
+            o.peerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
+            o.peerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
+            o.peerLifecycleState = peerLifecycleState;
+            o.peerRole = peerRole;
+            o.protectionMode = protectionMode;
+            o.role = role;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeLastRoleChanged = timeLastRoleChanged;
+            o.timeLastSynced = timeLastSynced;
+            o.transportLag = transportLag;
+            return o;
         }
     }
 }

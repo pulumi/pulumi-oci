@@ -13,21 +13,14 @@ public final class GetSecretbundleSecretBundleContent {
      * @return The base64-encoded content of the secret.
      * 
      */
-    private final String content;
+    private String content;
     /**
      * @return The formatting type of the secret contents.
      * 
      */
-    private final String contentType;
+    private String contentType;
 
-    @CustomType.Constructor
-    private GetSecretbundleSecretBundleContent(
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("contentType") String contentType) {
-        this.content = content;
-        this.contentType = contentType;
-    }
-
+    private GetSecretbundleSecretBundleContent() {}
     /**
      * @return The base64-encoded content of the secret.
      * 
@@ -50,30 +43,32 @@ public final class GetSecretbundleSecretBundleContent {
     public static Builder builder(GetSecretbundleSecretBundleContent defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String content;
         private String contentType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecretbundleSecretBundleContent defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.content = defaults.content;
     	      this.contentType = defaults.contentType;
         }
 
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder contentType(String contentType) {
             this.contentType = Objects.requireNonNull(contentType);
             return this;
-        }        public GetSecretbundleSecretBundleContent build() {
-            return new GetSecretbundleSecretBundleContent(content, contentType);
+        }
+        public GetSecretbundleSecretBundleContent build() {
+            final var o = new GetSecretbundleSecretBundleContent();
+            o.content = content;
+            o.contentType = contentType;
+            return o;
         }
     }
 }

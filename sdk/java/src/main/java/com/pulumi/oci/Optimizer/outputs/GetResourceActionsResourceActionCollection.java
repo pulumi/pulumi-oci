@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetResourceActionsResourceActionCollection {
-    private final List<GetResourceActionsResourceActionCollectionItem> items;
+    private List<GetResourceActionsResourceActionCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetResourceActionsResourceActionCollection(@CustomType.Parameter("items") List<GetResourceActionsResourceActionCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetResourceActionsResourceActionCollection() {}
     public List<GetResourceActionsResourceActionCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetResourceActionsResourceActionCollection {
     public static Builder builder(GetResourceActionsResourceActionCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetResourceActionsResourceActionCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResourceActionsResourceActionCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetResourceActionsResourceActionCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetResourceActionsResourceActionCollectionItem... items) {
             return items(List.of(items));
-        }        public GetResourceActionsResourceActionCollection build() {
-            return new GetResourceActionsResourceActionCollection(items);
+        }
+        public GetResourceActionsResourceActionCollection build() {
+            final var o = new GetResourceActionsResourceActionCollection();
+            o.items = items;
+            return o;
         }
     }
 }

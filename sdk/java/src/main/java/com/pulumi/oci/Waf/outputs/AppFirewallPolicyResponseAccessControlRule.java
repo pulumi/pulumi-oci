@@ -15,43 +15,30 @@ public final class AppFirewallPolicyResponseAccessControlRule {
      * @return (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    private final String actionName;
+    private String actionName;
     /**
      * @return (Updatable) An expression that determines whether or not the rule action should be executed.
      * 
      */
-    private final @Nullable String condition;
+    private @Nullable String condition;
     /**
      * @return (Updatable) The language used to parse condition from field `condition`. Available languages:
      * * **JMESPATH** an extended JMESPath language syntax.
      * 
      */
-    private final @Nullable String conditionLanguage;
+    private @Nullable String conditionLanguage;
     /**
      * @return (Updatable) Rule name. Must be unique within the module.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) Type of WebAppFirewallPolicyRule.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyResponseAccessControlRule(
-        @CustomType.Parameter("actionName") String actionName,
-        @CustomType.Parameter("condition") @Nullable String condition,
-        @CustomType.Parameter("conditionLanguage") @Nullable String conditionLanguage,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.actionName = actionName;
-        this.condition = condition;
-        this.conditionLanguage = conditionLanguage;
-        this.name = name;
-        this.type = type;
-    }
-
+    private AppFirewallPolicyResponseAccessControlRule() {}
     /**
      * @return (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
@@ -96,18 +83,14 @@ public final class AppFirewallPolicyResponseAccessControlRule {
     public static Builder builder(AppFirewallPolicyResponseAccessControlRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String actionName;
         private @Nullable String condition;
         private @Nullable String conditionLanguage;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyResponseAccessControlRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionName = defaults.actionName;
@@ -117,27 +100,39 @@ public final class AppFirewallPolicyResponseAccessControlRule {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder actionName(String actionName) {
             this.actionName = Objects.requireNonNull(actionName);
             return this;
         }
+        @CustomType.Setter
         public Builder condition(@Nullable String condition) {
             this.condition = condition;
             return this;
         }
+        @CustomType.Setter
         public Builder conditionLanguage(@Nullable String conditionLanguage) {
             this.conditionLanguage = conditionLanguage;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public AppFirewallPolicyResponseAccessControlRule build() {
-            return new AppFirewallPolicyResponseAccessControlRule(actionName, condition, conditionLanguage, name, type);
+        }
+        public AppFirewallPolicyResponseAccessControlRule build() {
+            final var o = new AppFirewallPolicyResponseAccessControlRule();
+            o.actionName = actionName;
+            o.condition = condition;
+            o.conditionLanguage = conditionLanguage;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

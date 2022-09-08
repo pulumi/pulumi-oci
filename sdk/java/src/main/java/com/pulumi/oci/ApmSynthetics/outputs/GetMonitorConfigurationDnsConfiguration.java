@@ -14,21 +14,14 @@ public final class GetMonitorConfigurationDnsConfiguration {
      * @return If isOverrideDns is true, then dns will be overridden.
      * 
      */
-    private final Boolean isOverrideDns;
+    private Boolean isOverrideDns;
     /**
      * @return Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
      * 
      */
-    private final String overrideDnsIp;
+    private String overrideDnsIp;
 
-    @CustomType.Constructor
-    private GetMonitorConfigurationDnsConfiguration(
-        @CustomType.Parameter("isOverrideDns") Boolean isOverrideDns,
-        @CustomType.Parameter("overrideDnsIp") String overrideDnsIp) {
-        this.isOverrideDns = isOverrideDns;
-        this.overrideDnsIp = overrideDnsIp;
-    }
-
+    private GetMonitorConfigurationDnsConfiguration() {}
     /**
      * @return If isOverrideDns is true, then dns will be overridden.
      * 
@@ -51,30 +44,32 @@ public final class GetMonitorConfigurationDnsConfiguration {
     public static Builder builder(GetMonitorConfigurationDnsConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isOverrideDns;
         private String overrideDnsIp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorConfigurationDnsConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isOverrideDns = defaults.isOverrideDns;
     	      this.overrideDnsIp = defaults.overrideDnsIp;
         }
 
+        @CustomType.Setter
         public Builder isOverrideDns(Boolean isOverrideDns) {
             this.isOverrideDns = Objects.requireNonNull(isOverrideDns);
             return this;
         }
+        @CustomType.Setter
         public Builder overrideDnsIp(String overrideDnsIp) {
             this.overrideDnsIp = Objects.requireNonNull(overrideDnsIp);
             return this;
-        }        public GetMonitorConfigurationDnsConfiguration build() {
-            return new GetMonitorConfigurationDnsConfiguration(isOverrideDns, overrideDnsIp);
+        }
+        public GetMonitorConfigurationDnsConfiguration build() {
+            final var o = new GetMonitorConfigurationDnsConfiguration();
+            o.isOverrideDns = isOverrideDns;
+            o.overrideDnsIp = overrideDnsIp;
+            return o;
         }
     }
 }

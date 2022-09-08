@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetManagedListsManagedListCollection {
-    private final List<GetManagedListsManagedListCollectionItem> items;
+    private List<GetManagedListsManagedListCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedListsManagedListCollection(@CustomType.Parameter("items") List<GetManagedListsManagedListCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedListsManagedListCollection() {}
     public List<GetManagedListsManagedListCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetManagedListsManagedListCollection {
     public static Builder builder(GetManagedListsManagedListCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedListsManagedListCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedListsManagedListCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedListsManagedListCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedListsManagedListCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedListsManagedListCollection build() {
-            return new GetManagedListsManagedListCollection(items);
+        }
+        public GetManagedListsManagedListCollection build() {
+            final var o = new GetManagedListsManagedListCollection();
+            o.items = items;
+            return o;
         }
     }
 }

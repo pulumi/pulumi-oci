@@ -163,14 +163,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataConnectivity/registryConnection:RegistryConnection")
 public class RegistryConnection extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The properties for the connection.
+     * (Updatable) The properties of the connection.
      * 
      */
     @Export(name="connectionProperties", type=List.class, parameters={RegistryConnectionConnectionProperty.class})
     private Output<List<RegistryConnectionConnectionProperty>> connectionProperties;
 
     /**
-     * @return (Updatable) The properties for the connection.
+     * @return (Updatable) The properties of the connection.
      * 
      */
     public Output<List<RegistryConnectionConnectionProperty>> connectionProperties() {
@@ -205,14 +205,14 @@ public class RegistryConnection extends com.pulumi.resources.CustomResource {
         return this.identifier;
     }
     /**
-     * (Updatable) The default property for the connection.
+     * (Updatable) The default property of the connection.
      * 
      */
     @Export(name="isDefault", type=Boolean.class, parameters={})
     private Output<Boolean> isDefault;
 
     /**
-     * @return (Updatable) The default property for the connection.
+     * @return (Updatable) The default property of the connection.
      * 
      */
     public Output<Boolean> isDefault() {
@@ -233,56 +233,56 @@ public class RegistryConnection extends com.pulumi.resources.CustomResource {
         return this.key;
     }
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     @Export(name="metadata", type=RegistryConnectionMetadata.class, parameters={})
     private Output<RegistryConnectionMetadata> metadata;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public Output<RegistryConnectionMetadata> metadata() {
         return this.metadata;
     }
     /**
-     * (Updatable) The object&#39;s type.
+     * (Updatable) The object type.
      * 
      */
     @Export(name="modelType", type=String.class, parameters={})
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The object&#39;s type.
+     * @return (Updatable) The object type.
      * 
      */
     public Output<String> modelType() {
         return this.modelType;
     }
     /**
-     * (Updatable) The object&#39;s model version.
+     * (Updatable) The model version of the object.
      * 
      */
     @Export(name="modelVersion", type=String.class, parameters={})
     private Output<String> modelVersion;
 
     /**
-     * @return (Updatable) The object&#39;s model version.
+     * @return (Updatable) The model version of the object.
      * 
      */
     public Output<String> modelVersion() {
         return this.modelVersion;
     }
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Output<String> name() {
@@ -331,28 +331,28 @@ public class RegistryConnection extends com.pulumi.resources.CustomResource {
         return this.primarySchema;
     }
     /**
-     * (Updatable) All the properties for the connection in a key-value map format.
+     * (Updatable) All the properties of the connection in a key-value map format.
      * 
      */
     @Export(name="properties", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> properties;
 
     /**
-     * @return (Updatable) All the properties for the connection in a key-value map format.
+     * @return (Updatable) All the properties of the connection in a key-value map format.
      * 
      */
     public Output<Map<String,Object>> properties() {
         return this.properties;
     }
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Export(name="registryId", type=String.class, parameters={})
     private Output<String> registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public Output<String> registryId() {

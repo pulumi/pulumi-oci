@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFastConnectProviderServicesResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of fast_connect_provider_services.
      * 
      */
-    private final List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices;
-    private final @Nullable List<GetFastConnectProviderServicesFilter> filters;
+    private List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices;
+    private @Nullable List<GetFastConnectProviderServicesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetFastConnectProviderServicesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("fastConnectProviderServices") List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices,
-        @CustomType.Parameter("filters") @Nullable List<GetFastConnectProviderServicesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.compartmentId = compartmentId;
-        this.fastConnectProviderServices = fastConnectProviderServices;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetFastConnectProviderServicesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetFastConnectProviderServicesResult {
     public static Builder builder(GetFastConnectProviderServicesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices;
         private @Nullable List<GetFastConnectProviderServicesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFastConnectProviderServicesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetFastConnectProviderServicesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder fastConnectProviderServices(List<GetFastConnectProviderServicesFastConnectProviderService> fastConnectProviderServices) {
             this.fastConnectProviderServices = Objects.requireNonNull(fastConnectProviderServices);
             return this;
@@ -96,6 +83,7 @@ public final class GetFastConnectProviderServicesResult {
         public Builder fastConnectProviderServices(GetFastConnectProviderServicesFastConnectProviderService... fastConnectProviderServices) {
             return fastConnectProviderServices(List.of(fastConnectProviderServices));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetFastConnectProviderServicesFilter> filters) {
             this.filters = filters;
             return this;
@@ -103,11 +91,18 @@ public final class GetFastConnectProviderServicesResult {
         public Builder filters(GetFastConnectProviderServicesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetFastConnectProviderServicesResult build() {
-            return new GetFastConnectProviderServicesResult(compartmentId, fastConnectProviderServices, filters, id);
+        }
+        public GetFastConnectProviderServicesResult build() {
+            final var o = new GetFastConnectProviderServicesResult();
+            o.compartmentId = compartmentId;
+            o.fastConnectProviderServices = fastConnectProviderServices;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

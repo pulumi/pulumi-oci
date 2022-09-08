@@ -15,52 +15,35 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
      * @return The ocid of the compute global image capability schema
      * 
      */
-    private final String computeGlobalImageCapabilitySchemaId;
-    private final String computeGlobalImageCapabilitySchemaVersionName;
+    private String computeGlobalImageCapabilitySchemaId;
+    private String computeGlobalImageCapabilitySchemaVersionName;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the compute global image capability schema version
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The map of each capability name to its ImageCapabilityDescriptor.
      * 
      */
-    private final Map<String,Object> schemaData;
+    private Map<String,Object> schemaData;
     /**
      * @return The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetComputeGlobalImageCapabilitySchemasVersionResult(
-        @CustomType.Parameter("computeGlobalImageCapabilitySchemaId") String computeGlobalImageCapabilitySchemaId,
-        @CustomType.Parameter("computeGlobalImageCapabilitySchemaVersionName") String computeGlobalImageCapabilitySchemaVersionName,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("schemaData") Map<String,Object> schemaData,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
-        this.computeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;
-        this.displayName = displayName;
-        this.id = id;
-        this.name = name;
-        this.schemaData = schemaData;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetComputeGlobalImageCapabilitySchemasVersionResult() {}
     /**
      * @return The ocid of the compute global image capability schema
      * 
@@ -114,7 +97,7 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
     public static Builder builder(GetComputeGlobalImageCapabilitySchemasVersionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String computeGlobalImageCapabilitySchemaId;
         private String computeGlobalImageCapabilitySchemaVersionName;
@@ -123,11 +106,7 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
         private String name;
         private Map<String,Object> schemaData;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeGlobalImageCapabilitySchemasVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.computeGlobalImageCapabilitySchemaId = defaults.computeGlobalImageCapabilitySchemaId;
@@ -139,35 +118,51 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaId(String computeGlobalImageCapabilitySchemaId) {
             this.computeGlobalImageCapabilitySchemaId = Objects.requireNonNull(computeGlobalImageCapabilitySchemaId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaVersionName(String computeGlobalImageCapabilitySchemaVersionName) {
             this.computeGlobalImageCapabilitySchemaVersionName = Objects.requireNonNull(computeGlobalImageCapabilitySchemaVersionName);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder schemaData(Map<String,Object> schemaData) {
             this.schemaData = Objects.requireNonNull(schemaData);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetComputeGlobalImageCapabilitySchemasVersionResult build() {
-            return new GetComputeGlobalImageCapabilitySchemasVersionResult(computeGlobalImageCapabilitySchemaId, computeGlobalImageCapabilitySchemaVersionName, displayName, id, name, schemaData, timeCreated);
+        }
+        public GetComputeGlobalImageCapabilitySchemasVersionResult build() {
+            final var o = new GetComputeGlobalImageCapabilitySchemasVersionResult();
+            o.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
+            o.computeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;
+            o.displayName = displayName;
+            o.id = id;
+            o.name = name;
+            o.schemaData = schemaData;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

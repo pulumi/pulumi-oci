@@ -6,6 +6,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.CloudGuard.inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs;
+import com.pulumi.oci.CloudGuard.inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final TargetTargetDetectorRecipeEffectiveDetectorRuleArgs Empty = new TargetTargetDetectorRecipeEffectiveDetectorRuleArgs();
+
+    /**
+     * The id of the attached DataSource.
+     * 
+     */
+    @Import(name="dataSourceId")
+    private @Nullable Output<String> dataSourceId;
+
+    /**
+     * @return The id of the attached DataSource.
+     * 
+     */
+    public Optional<Output<String>> dataSourceId() {
+        return Optional.ofNullable(this.dataSourceId);
+    }
 
     /**
      * The target description.
@@ -90,6 +106,21 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * Data Source entities mapping for a Detector Rule
+     * 
+     */
+    @Import(name="entitiesMappings")
+    private @Nullable Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs>> entitiesMappings;
+
+    /**
+     * @return Data Source entities mapping for a Detector Rule
+     * 
+     */
+    public Optional<Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs>>> entitiesMappings() {
+        return Optional.ofNullable(this.entitiesMappings);
     }
 
     /**
@@ -215,11 +246,13 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     private TargetTargetDetectorRecipeEffectiveDetectorRuleArgs() {}
 
     private TargetTargetDetectorRecipeEffectiveDetectorRuleArgs(TargetTargetDetectorRecipeEffectiveDetectorRuleArgs $) {
+        this.dataSourceId = $.dataSourceId;
         this.description = $.description;
         this.details = $.details;
         this.detector = $.detector;
         this.detectorRuleId = $.detectorRuleId;
         this.displayName = $.displayName;
+        this.entitiesMappings = $.entitiesMappings;
         this.lifecycleDetails = $.lifecycleDetails;
         this.managedListTypes = $.managedListTypes;
         this.recommendation = $.recommendation;
@@ -246,6 +279,27 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
 
         public Builder(TargetTargetDetectorRecipeEffectiveDetectorRuleArgs defaults) {
             $ = new TargetTargetDetectorRecipeEffectiveDetectorRuleArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param dataSourceId The id of the attached DataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceId(@Nullable Output<String> dataSourceId) {
+            $.dataSourceId = dataSourceId;
+            return this;
+        }
+
+        /**
+         * @param dataSourceId The id of the attached DataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceId(String dataSourceId) {
+            return dataSourceId(Output.of(dataSourceId));
         }
 
         /**
@@ -361,6 +415,37 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param entitiesMappings Data Source entities mapping for a Detector Rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(@Nullable Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs>> entitiesMappings) {
+            $.entitiesMappings = entitiesMappings;
+            return this;
+        }
+
+        /**
+         * @param entitiesMappings Data Source entities mapping for a Detector Rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs> entitiesMappings) {
+            return entitiesMappings(Output.of(entitiesMappings));
+        }
+
+        /**
+         * @param entitiesMappings Data Source entities mapping for a Detector Rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs... entitiesMappings) {
+            return entitiesMappings(List.of(entitiesMappings));
         }
 
         /**

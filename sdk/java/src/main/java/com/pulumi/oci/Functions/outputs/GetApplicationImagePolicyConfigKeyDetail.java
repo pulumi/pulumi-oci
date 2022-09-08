@@ -13,13 +13,9 @@ public final class GetApplicationImagePolicyConfigKeyDetail {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
 
-    @CustomType.Constructor
-    private GetApplicationImagePolicyConfigKeyDetail(@CustomType.Parameter("kmsKeyId") String kmsKeyId) {
-        this.kmsKeyId = kmsKeyId;
-    }
-
+    private GetApplicationImagePolicyConfigKeyDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
      * 
@@ -35,24 +31,24 @@ public final class GetApplicationImagePolicyConfigKeyDetail {
     public static Builder builder(GetApplicationImagePolicyConfigKeyDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kmsKeyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApplicationImagePolicyConfigKeyDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kmsKeyId = defaults.kmsKeyId;
         }
 
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
-        }        public GetApplicationImagePolicyConfigKeyDetail build() {
-            return new GetApplicationImagePolicyConfigKeyDetail(kmsKeyId);
+        }
+        public GetApplicationImagePolicyConfigKeyDetail build() {
+            final var o = new GetApplicationImagePolicyConfigKeyDetail();
+            o.kmsKeyId = kmsKeyId;
+            return o;
         }
     }
 }

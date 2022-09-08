@@ -14,21 +14,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Determines if the parameter is required in the request.
      * 
      */
-    private final Boolean required;
+    private Boolean required;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("required") Boolean required) {
-        this.name = name;
-        this.required = required;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader() {}
     /**
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
@@ -51,30 +44,32 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private Boolean required;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.required = defaults.required;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder required(Boolean required) {
             this.required = Objects.requireNonNull(required);
             return this;
-        }        public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader(name, required);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader();
+            o.name = name;
+            o.required = required;
+            return o;
         }
     }
 }

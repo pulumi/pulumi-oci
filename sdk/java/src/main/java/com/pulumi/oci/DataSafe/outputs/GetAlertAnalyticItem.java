@@ -15,42 +15,29 @@ public final class GetAlertAnalyticItem {
      * @return Total count of aggregated values.
      * 
      */
-    private final String count;
+    private String count;
     /**
      * @return Details of aggregation dimension summarizing alerts.
      * 
      */
-    private final List<GetAlertAnalyticItemDimension> dimensions;
+    private List<GetAlertAnalyticItemDimension> dimensions;
     /**
      * @return The name of the aggregation.
      * 
      */
-    private final String metricName;
+    private String metricName;
     /**
      * @return An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeEnded;
+    private String timeEnded;
     /**
      * @return An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
 
-    @CustomType.Constructor
-    private GetAlertAnalyticItem(
-        @CustomType.Parameter("count") String count,
-        @CustomType.Parameter("dimensions") List<GetAlertAnalyticItemDimension> dimensions,
-        @CustomType.Parameter("metricName") String metricName,
-        @CustomType.Parameter("timeEnded") String timeEnded,
-        @CustomType.Parameter("timeStarted") String timeStarted) {
-        this.count = count;
-        this.dimensions = dimensions;
-        this.metricName = metricName;
-        this.timeEnded = timeEnded;
-        this.timeStarted = timeStarted;
-    }
-
+    private GetAlertAnalyticItem() {}
     /**
      * @return Total count of aggregated values.
      * 
@@ -94,18 +81,14 @@ public final class GetAlertAnalyticItem {
     public static Builder builder(GetAlertAnalyticItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String count;
         private List<GetAlertAnalyticItemDimension> dimensions;
         private String metricName;
         private String timeEnded;
         private String timeStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertAnalyticItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
@@ -115,10 +98,12 @@ public final class GetAlertAnalyticItem {
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
         public Builder count(String count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(List<GetAlertAnalyticItemDimension> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
@@ -126,19 +111,29 @@ public final class GetAlertAnalyticItem {
         public Builder dimensions(GetAlertAnalyticItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
+        @CustomType.Setter
         public Builder metricName(String metricName) {
             this.metricName = Objects.requireNonNull(metricName);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             this.timeEnded = Objects.requireNonNull(timeEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
-        }        public GetAlertAnalyticItem build() {
-            return new GetAlertAnalyticItem(count, dimensions, metricName, timeEnded, timeStarted);
+        }
+        public GetAlertAnalyticItem build() {
+            final var o = new GetAlertAnalyticItem();
+            o.count = count;
+            o.dimensions = dimensions;
+            o.metricName = metricName;
+            o.timeEnded = timeEnded;
+            o.timeStarted = timeStarted;
+            return o;
         }
     }
 }

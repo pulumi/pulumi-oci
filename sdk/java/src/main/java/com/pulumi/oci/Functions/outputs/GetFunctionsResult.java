@@ -18,45 +18,30 @@ public final class GetFunctionsResult {
      * @return The OCID of the application the function belongs to.
      * 
      */
-    private final String applicationId;
+    private String applicationId;
     /**
      * @return The display name of the function. The display name is unique within the application containing the function.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetFunctionsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetFunctionsFilter> filters;
     /**
      * @return The list of functions.
      * 
      */
-    private final List<GetFunctionsFunction> functions;
+    private List<GetFunctionsFunction> functions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the function.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetFunctionsResult(
-        @CustomType.Parameter("applicationId") String applicationId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetFunctionsFilter> filters,
-        @CustomType.Parameter("functions") List<GetFunctionsFunction> functions,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.applicationId = applicationId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.functions = functions;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetFunctionsResult() {}
     /**
      * @return The OCID of the application the function belongs to.
      * 
@@ -103,7 +88,7 @@ public final class GetFunctionsResult {
     public static Builder builder(GetFunctionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String applicationId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetFunctionsResult {
         private List<GetFunctionsFunction> functions;
         private @Nullable String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFunctionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationId = defaults.applicationId;
@@ -126,14 +107,17 @@ public final class GetFunctionsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder applicationId(String applicationId) {
             this.applicationId = Objects.requireNonNull(applicationId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetFunctionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,6 +125,7 @@ public final class GetFunctionsResult {
         public Builder filters(GetFunctionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder functions(List<GetFunctionsFunction> functions) {
             this.functions = Objects.requireNonNull(functions);
             return this;
@@ -148,15 +133,25 @@ public final class GetFunctionsResult {
         public Builder functions(GetFunctionsFunction... functions) {
             return functions(List.of(functions));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetFunctionsResult build() {
-            return new GetFunctionsResult(applicationId, displayName, filters, functions, id, state);
+        }
+        public GetFunctionsResult build() {
+            final var o = new GetFunctionsResult();
+            o.applicationId = applicationId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.functions = functions;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

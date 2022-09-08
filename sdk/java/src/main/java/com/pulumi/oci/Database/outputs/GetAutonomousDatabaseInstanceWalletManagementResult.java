@@ -15,41 +15,26 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
      * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String autonomousDatabaseId;
-    private final Integer gracePeriod;
-    private final String id;
+    private String autonomousDatabaseId;
+    private Integer gracePeriod;
+    private String id;
     /**
      * @return Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      * 
      */
-    private final Boolean shouldRotate;
+    private Boolean shouldRotate;
     /**
      * @return The current lifecycle state of the Autonomous Database wallet.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the wallet was last rotated.
      * 
      */
-    private final String timeRotated;
+    private String timeRotated;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabaseInstanceWalletManagementResult(
-        @CustomType.Parameter("autonomousDatabaseId") String autonomousDatabaseId,
-        @CustomType.Parameter("gracePeriod") Integer gracePeriod,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("shouldRotate") Boolean shouldRotate,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeRotated") String timeRotated) {
-        this.autonomousDatabaseId = autonomousDatabaseId;
-        this.gracePeriod = gracePeriod;
-        this.id = id;
-        this.shouldRotate = shouldRotate;
-        this.state = state;
-        this.timeRotated = timeRotated;
-    }
-
+    private GetAutonomousDatabaseInstanceWalletManagementResult() {}
     /**
      * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -92,7 +77,7 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
     public static Builder builder(GetAutonomousDatabaseInstanceWalletManagementResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String autonomousDatabaseId;
         private Integer gracePeriod;
@@ -100,11 +85,7 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
         private Boolean shouldRotate;
         private String state;
         private String timeRotated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabaseInstanceWalletManagementResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
@@ -115,31 +96,45 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
     	      this.timeRotated = defaults.timeRotated;
         }
 
+        @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder gracePeriod(Integer gracePeriod) {
             this.gracePeriod = Objects.requireNonNull(gracePeriod);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder shouldRotate(Boolean shouldRotate) {
             this.shouldRotate = Objects.requireNonNull(shouldRotate);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRotated(String timeRotated) {
             this.timeRotated = Objects.requireNonNull(timeRotated);
             return this;
-        }        public GetAutonomousDatabaseInstanceWalletManagementResult build() {
-            return new GetAutonomousDatabaseInstanceWalletManagementResult(autonomousDatabaseId, gracePeriod, id, shouldRotate, state, timeRotated);
+        }
+        public GetAutonomousDatabaseInstanceWalletManagementResult build() {
+            final var o = new GetAutonomousDatabaseInstanceWalletManagementResult();
+            o.autonomousDatabaseId = autonomousDatabaseId;
+            o.gracePeriod = gracePeriod;
+            o.id = id;
+            o.shouldRotate = shouldRotate;
+            o.state = state;
+            o.timeRotated = timeRotated;
+            return o;
         }
     }
 }

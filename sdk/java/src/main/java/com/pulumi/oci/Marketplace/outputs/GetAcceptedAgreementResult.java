@@ -11,80 +11,55 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAcceptedAgreementResult {
-    private final String acceptedAgreementId;
+    private String acceptedAgreementId;
     /**
      * @return The unique identifier for the terms of use agreement itself.
      * 
      */
-    private final String agreementId;
+    private String agreementId;
     /**
      * @return The unique identifier for the compartment where the agreement was accepted.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A display name for the accepted agreement.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The unique identifier for the acceptance of the agreement within a specific compartment.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The unique identifier for the listing associated with the agreement.
      * 
      */
-    private final String listingId;
+    private String listingId;
     /**
      * @return The package version associated with the agreement.
      * 
      */
-    private final String packageVersion;
-    private final String signature;
+    private String packageVersion;
+    private String signature;
     /**
      * @return The time the agreement was accepted.
      * 
      */
-    private final String timeAccepted;
+    private String timeAccepted;
 
-    @CustomType.Constructor
-    private GetAcceptedAgreementResult(
-        @CustomType.Parameter("acceptedAgreementId") String acceptedAgreementId,
-        @CustomType.Parameter("agreementId") String agreementId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("packageVersion") String packageVersion,
-        @CustomType.Parameter("signature") String signature,
-        @CustomType.Parameter("timeAccepted") String timeAccepted) {
-        this.acceptedAgreementId = acceptedAgreementId;
-        this.agreementId = agreementId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.listingId = listingId;
-        this.packageVersion = packageVersion;
-        this.signature = signature;
-        this.timeAccepted = timeAccepted;
-    }
-
+    private GetAcceptedAgreementResult() {}
     public String acceptedAgreementId() {
         return this.acceptedAgreementId;
     }
@@ -162,7 +137,7 @@ public final class GetAcceptedAgreementResult {
     public static Builder builder(GetAcceptedAgreementResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String acceptedAgreementId;
         private String agreementId;
@@ -175,11 +150,7 @@ public final class GetAcceptedAgreementResult {
         private String packageVersion;
         private String signature;
         private String timeAccepted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAcceptedAgreementResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.acceptedAgreementId = defaults.acceptedAgreementId;
@@ -195,51 +166,75 @@ public final class GetAcceptedAgreementResult {
     	      this.timeAccepted = defaults.timeAccepted;
         }
 
+        @CustomType.Setter
         public Builder acceptedAgreementId(String acceptedAgreementId) {
             this.acceptedAgreementId = Objects.requireNonNull(acceptedAgreementId);
             return this;
         }
+        @CustomType.Setter
         public Builder agreementId(String agreementId) {
             this.agreementId = Objects.requireNonNull(agreementId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = Objects.requireNonNull(packageVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder signature(String signature) {
             this.signature = Objects.requireNonNull(signature);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
             this.timeAccepted = Objects.requireNonNull(timeAccepted);
             return this;
-        }        public GetAcceptedAgreementResult build() {
-            return new GetAcceptedAgreementResult(acceptedAgreementId, agreementId, compartmentId, definedTags, displayName, freeformTags, id, listingId, packageVersion, signature, timeAccepted);
+        }
+        public GetAcceptedAgreementResult build() {
+            final var o = new GetAcceptedAgreementResult();
+            o.acceptedAgreementId = acceptedAgreementId;
+            o.agreementId = agreementId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.listingId = listingId;
+            o.packageVersion = packageVersion;
+            o.signature = signature;
+            o.timeAccepted = timeAccepted;
+            return o;
         }
     }
 }

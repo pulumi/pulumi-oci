@@ -14,38 +14,25 @@ public final class GetConfigurationResult {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the configuration is specified.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of associated configuration email IDs.
      * 
      */
-    private final List<String> emailIds;
-    private final String id;
+    private List<String> emailIds;
+    private String id;
     /**
      * @return The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetConfigurationResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("emailIds") List<String> emailIds,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.emailIds = emailIds;
-        this.id = id;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetConfigurationResult() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the configuration is specified.
      * 
@@ -85,18 +72,14 @@ public final class GetConfigurationResult {
     public static Builder builder(GetConfigurationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<String> emailIds;
         private String id;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -106,10 +89,12 @@ public final class GetConfigurationResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder emailIds(List<String> emailIds) {
             this.emailIds = Objects.requireNonNull(emailIds);
             return this;
@@ -117,19 +102,29 @@ public final class GetConfigurationResult {
         public Builder emailIds(String... emailIds) {
             return emailIds(List.of(emailIds));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetConfigurationResult build() {
-            return new GetConfigurationResult(compartmentId, emailIds, id, timeCreated, timeUpdated);
+        }
+        public GetConfigurationResult build() {
+            final var o = new GetConfigurationResult();
+            o.compartmentId = compartmentId;
+            o.emailIds = emailIds;
+            o.id = id;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

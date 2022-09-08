@@ -14,42 +14,29 @@ public final class GetOsnsOsnCollectionItem {
      * @return Availability Domain of OSN
      * 
      */
-    private final String ad;
+    private String ad;
     /**
      * @return Unique service identifier.
      * 
      */
-    private final String blockchainPlatformId;
+    private String blockchainPlatformId;
     /**
      * @return OCPU allocation parameter
      * 
      */
-    private final GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam;
+    private GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam;
     /**
      * @return OSN identifier
      * 
      */
-    private final String osnKey;
+    private String osnKey;
     /**
      * @return The current state of the OSN.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetOsnsOsnCollectionItem(
-        @CustomType.Parameter("ad") String ad,
-        @CustomType.Parameter("blockchainPlatformId") String blockchainPlatformId,
-        @CustomType.Parameter("ocpuAllocationParam") GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam,
-        @CustomType.Parameter("osnKey") String osnKey,
-        @CustomType.Parameter("state") String state) {
-        this.ad = ad;
-        this.blockchainPlatformId = blockchainPlatformId;
-        this.ocpuAllocationParam = ocpuAllocationParam;
-        this.osnKey = osnKey;
-        this.state = state;
-    }
-
+    private GetOsnsOsnCollectionItem() {}
     /**
      * @return Availability Domain of OSN
      * 
@@ -93,18 +80,14 @@ public final class GetOsnsOsnCollectionItem {
     public static Builder builder(GetOsnsOsnCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ad;
         private String blockchainPlatformId;
         private GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam;
         private String osnKey;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOsnsOsnCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ad = defaults.ad;
@@ -114,27 +97,39 @@ public final class GetOsnsOsnCollectionItem {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder ad(String ad) {
             this.ad = Objects.requireNonNull(ad);
             return this;
         }
+        @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
             this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuAllocationParam(GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam) {
             this.ocpuAllocationParam = Objects.requireNonNull(ocpuAllocationParam);
             return this;
         }
+        @CustomType.Setter
         public Builder osnKey(String osnKey) {
             this.osnKey = Objects.requireNonNull(osnKey);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetOsnsOsnCollectionItem build() {
-            return new GetOsnsOsnCollectionItem(ad, blockchainPlatformId, ocpuAllocationParam, osnKey, state);
+        }
+        public GetOsnsOsnCollectionItem build() {
+            final var o = new GetOsnsOsnCollectionItem();
+            o.ad = ad;
+            o.blockchainPlatformId = blockchainPlatformId;
+            o.ocpuAllocationParam = ocpuAllocationParam;
+            o.osnKey = osnKey;
+            o.state = state;
+            return o;
         }
     }
 }

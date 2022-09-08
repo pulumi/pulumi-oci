@@ -13,21 +13,14 @@ public final class GetImageShapeMemoryConstraint {
      * @return The maximum amount of memory, in gigabytes.
      * 
      */
-    private final Integer maxInGbs;
+    private Integer maxInGbs;
     /**
      * @return The minimum amount of memory, in gigabytes.
      * 
      */
-    private final Integer minInGbs;
+    private Integer minInGbs;
 
-    @CustomType.Constructor
-    private GetImageShapeMemoryConstraint(
-        @CustomType.Parameter("maxInGbs") Integer maxInGbs,
-        @CustomType.Parameter("minInGbs") Integer minInGbs) {
-        this.maxInGbs = maxInGbs;
-        this.minInGbs = minInGbs;
-    }
-
+    private GetImageShapeMemoryConstraint() {}
     /**
      * @return The maximum amount of memory, in gigabytes.
      * 
@@ -50,30 +43,32 @@ public final class GetImageShapeMemoryConstraint {
     public static Builder builder(GetImageShapeMemoryConstraint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer maxInGbs;
         private Integer minInGbs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImageShapeMemoryConstraint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.maxInGbs = defaults.maxInGbs;
     	      this.minInGbs = defaults.minInGbs;
         }
 
+        @CustomType.Setter
         public Builder maxInGbs(Integer maxInGbs) {
             this.maxInGbs = Objects.requireNonNull(maxInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder minInGbs(Integer minInGbs) {
             this.minInGbs = Objects.requireNonNull(minInGbs);
             return this;
-        }        public GetImageShapeMemoryConstraint build() {
-            return new GetImageShapeMemoryConstraint(maxInGbs, minInGbs);
+        }
+        public GetImageShapeMemoryConstraint build() {
+            final var o = new GetImageShapeMemoryConstraint();
+            o.maxInGbs = maxInGbs;
+            o.minInGbs = minInGbs;
+            return o;
         }
     }
 }

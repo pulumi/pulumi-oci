@@ -18,198 +18,137 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBlockchainPlatformResult {
-    private final String blockchainPlatformId;
-    private final String caCertArchiveText;
+    private String blockchainPlatformId;
+    private String caCertArchiveText;
     /**
      * @return Compartment Identifier
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Blockchain Platform component details.
      * 
      */
-    private final List<GetBlockchainPlatformComponentDetail> componentDetails;
+    private List<GetBlockchainPlatformComponentDetail> componentDetails;
     /**
      * @return Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
      * 
      */
-    private final String computeShape;
+    private String computeShape;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Platform Instance Description
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Platform Instance Display name, can be renamed
      * 
      */
-    private final String displayName;
-    private final String federatedUserId;
+    private String displayName;
+    private String federatedUserId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return List of OcpuUtilization for all hosts
      * 
      */
-    private final List<GetBlockchainPlatformHostOcpuUtilizationInfo> hostOcpuUtilizationInfos;
+    private List<GetBlockchainPlatformHostOcpuUtilizationInfo> hostOcpuUtilizationInfos;
     /**
      * @return unique identifier that is immutable on creation
      * 
      */
-    private final String id;
-    private final String idcsAccessToken;
+    private String id;
+    private String idcsAccessToken;
     /**
      * @return Bring your own license
      * 
      */
-    private final Boolean isByol;
+    private Boolean isByol;
     /**
      * @return True for multi-AD blockchain plaforms, false for single-AD
      * 
      */
-    private final Boolean isMultiAd;
+    private Boolean isMultiAd;
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      * 
      */
-    private final String loadBalancerShape;
+    private String loadBalancerShape;
     /**
      * @return Role of platform - FOUNDER or PARTICIPANT
      * 
      */
-    private final String platformRole;
+    private String platformRole;
     /**
      * @return Type of Platform shape - DEFAULT or CUSTOM
      * 
      */
-    private final String platformShapeType;
+    private String platformShapeType;
     /**
      * @return Platform Version
      * 
      */
-    private final String platformVersion;
+    private String platformVersion;
     /**
      * @return Number of replicas of service components like Rest Proxy, CA and Console
      * 
      */
-    private final List<GetBlockchainPlatformReplica> replicas;
+    private List<GetBlockchainPlatformReplica> replicas;
     /**
      * @return Service endpoint URL, valid post-provisioning
      * 
      */
-    private final String serviceEndpoint;
+    private String serviceEndpoint;
     /**
      * @return The version of the Platform Instance.
      * 
      */
-    private final String serviceVersion;
+    private String serviceVersion;
     /**
      * @return The current state of the Platform Instance.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Storage size in TBs
      * 
      */
-    private final Double storageSizeInTbs;
+    private Double storageSizeInTbs;
     /**
      * @return Storage used in TBs
      * 
      */
-    private final Double storageUsedInTbs;
+    private Double storageUsedInTbs;
     /**
      * @return The time the the Platform Instance was created. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the Platform Instance was updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Number of total OCPUs allocated to the platform cluster
      * 
      */
-    private final Integer totalOcpuCapacity;
+    private Integer totalOcpuCapacity;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformResult(
-        @CustomType.Parameter("blockchainPlatformId") String blockchainPlatformId,
-        @CustomType.Parameter("caCertArchiveText") String caCertArchiveText,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("componentDetails") List<GetBlockchainPlatformComponentDetail> componentDetails,
-        @CustomType.Parameter("computeShape") String computeShape,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("federatedUserId") String federatedUserId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostOcpuUtilizationInfos") List<GetBlockchainPlatformHostOcpuUtilizationInfo> hostOcpuUtilizationInfos,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("idcsAccessToken") String idcsAccessToken,
-        @CustomType.Parameter("isByol") Boolean isByol,
-        @CustomType.Parameter("isMultiAd") Boolean isMultiAd,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("loadBalancerShape") String loadBalancerShape,
-        @CustomType.Parameter("platformRole") String platformRole,
-        @CustomType.Parameter("platformShapeType") String platformShapeType,
-        @CustomType.Parameter("platformVersion") String platformVersion,
-        @CustomType.Parameter("replicas") List<GetBlockchainPlatformReplica> replicas,
-        @CustomType.Parameter("serviceEndpoint") String serviceEndpoint,
-        @CustomType.Parameter("serviceVersion") String serviceVersion,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("storageSizeInTbs") Double storageSizeInTbs,
-        @CustomType.Parameter("storageUsedInTbs") Double storageUsedInTbs,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("totalOcpuCapacity") Integer totalOcpuCapacity) {
-        this.blockchainPlatformId = blockchainPlatformId;
-        this.caCertArchiveText = caCertArchiveText;
-        this.compartmentId = compartmentId;
-        this.componentDetails = componentDetails;
-        this.computeShape = computeShape;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.federatedUserId = federatedUserId;
-        this.freeformTags = freeformTags;
-        this.hostOcpuUtilizationInfos = hostOcpuUtilizationInfos;
-        this.id = id;
-        this.idcsAccessToken = idcsAccessToken;
-        this.isByol = isByol;
-        this.isMultiAd = isMultiAd;
-        this.lifecycleDetails = lifecycleDetails;
-        this.loadBalancerShape = loadBalancerShape;
-        this.platformRole = platformRole;
-        this.platformShapeType = platformShapeType;
-        this.platformVersion = platformVersion;
-        this.replicas = replicas;
-        this.serviceEndpoint = serviceEndpoint;
-        this.serviceVersion = serviceVersion;
-        this.state = state;
-        this.storageSizeInTbs = storageSizeInTbs;
-        this.storageUsedInTbs = storageUsedInTbs;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.totalOcpuCapacity = totalOcpuCapacity;
-    }
-
+    private GetBlockchainPlatformResult() {}
     public String blockchainPlatformId() {
         return this.blockchainPlatformId;
     }
@@ -405,7 +344,7 @@ public final class GetBlockchainPlatformResult {
     public static Builder builder(GetBlockchainPlatformResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String blockchainPlatformId;
         private String caCertArchiveText;
@@ -436,11 +375,7 @@ public final class GetBlockchainPlatformResult {
         private String timeCreated;
         private String timeUpdated;
         private Integer totalOcpuCapacity;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockchainPlatformId = defaults.blockchainPlatformId;
@@ -474,18 +409,22 @@ public final class GetBlockchainPlatformResult {
     	      this.totalOcpuCapacity = defaults.totalOcpuCapacity;
         }
 
+        @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
             this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
             return this;
         }
+        @CustomType.Setter
         public Builder caCertArchiveText(String caCertArchiveText) {
             this.caCertArchiveText = Objects.requireNonNull(caCertArchiveText);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder componentDetails(List<GetBlockchainPlatformComponentDetail> componentDetails) {
             this.componentDetails = Objects.requireNonNull(componentDetails);
             return this;
@@ -493,30 +432,37 @@ public final class GetBlockchainPlatformResult {
         public Builder componentDetails(GetBlockchainPlatformComponentDetail... componentDetails) {
             return componentDetails(List.of(componentDetails));
         }
+        @CustomType.Setter
         public Builder computeShape(String computeShape) {
             this.computeShape = Objects.requireNonNull(computeShape);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder federatedUserId(String federatedUserId) {
             this.federatedUserId = Objects.requireNonNull(federatedUserId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hostOcpuUtilizationInfos(List<GetBlockchainPlatformHostOcpuUtilizationInfo> hostOcpuUtilizationInfos) {
             this.hostOcpuUtilizationInfos = Objects.requireNonNull(hostOcpuUtilizationInfos);
             return this;
@@ -524,42 +470,52 @@ public final class GetBlockchainPlatformResult {
         public Builder hostOcpuUtilizationInfos(GetBlockchainPlatformHostOcpuUtilizationInfo... hostOcpuUtilizationInfos) {
             return hostOcpuUtilizationInfos(List.of(hostOcpuUtilizationInfos));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder idcsAccessToken(String idcsAccessToken) {
             this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
             return this;
         }
+        @CustomType.Setter
         public Builder isByol(Boolean isByol) {
             this.isByol = Objects.requireNonNull(isByol);
             return this;
         }
+        @CustomType.Setter
         public Builder isMultiAd(Boolean isMultiAd) {
             this.isMultiAd = Objects.requireNonNull(isMultiAd);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerShape(String loadBalancerShape) {
             this.loadBalancerShape = Objects.requireNonNull(loadBalancerShape);
             return this;
         }
+        @CustomType.Setter
         public Builder platformRole(String platformRole) {
             this.platformRole = Objects.requireNonNull(platformRole);
             return this;
         }
+        @CustomType.Setter
         public Builder platformShapeType(String platformShapeType) {
             this.platformShapeType = Objects.requireNonNull(platformShapeType);
             return this;
         }
+        @CustomType.Setter
         public Builder platformVersion(String platformVersion) {
             this.platformVersion = Objects.requireNonNull(platformVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder replicas(List<GetBlockchainPlatformReplica> replicas) {
             this.replicas = Objects.requireNonNull(replicas);
             return this;
@@ -567,39 +523,78 @@ public final class GetBlockchainPlatformResult {
         public Builder replicas(GetBlockchainPlatformReplica... replicas) {
             return replicas(List.of(replicas));
         }
+        @CustomType.Setter
         public Builder serviceEndpoint(String serviceEndpoint) {
             this.serviceEndpoint = Objects.requireNonNull(serviceEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceVersion(String serviceVersion) {
             this.serviceVersion = Objects.requireNonNull(serviceVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder storageSizeInTbs(Double storageSizeInTbs) {
             this.storageSizeInTbs = Objects.requireNonNull(storageSizeInTbs);
             return this;
         }
+        @CustomType.Setter
         public Builder storageUsedInTbs(Double storageUsedInTbs) {
             this.storageUsedInTbs = Objects.requireNonNull(storageUsedInTbs);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder totalOcpuCapacity(Integer totalOcpuCapacity) {
             this.totalOcpuCapacity = Objects.requireNonNull(totalOcpuCapacity);
             return this;
-        }        public GetBlockchainPlatformResult build() {
-            return new GetBlockchainPlatformResult(blockchainPlatformId, caCertArchiveText, compartmentId, componentDetails, computeShape, definedTags, description, displayName, federatedUserId, freeformTags, hostOcpuUtilizationInfos, id, idcsAccessToken, isByol, isMultiAd, lifecycleDetails, loadBalancerShape, platformRole, platformShapeType, platformVersion, replicas, serviceEndpoint, serviceVersion, state, storageSizeInTbs, storageUsedInTbs, timeCreated, timeUpdated, totalOcpuCapacity);
+        }
+        public GetBlockchainPlatformResult build() {
+            final var o = new GetBlockchainPlatformResult();
+            o.blockchainPlatformId = blockchainPlatformId;
+            o.caCertArchiveText = caCertArchiveText;
+            o.compartmentId = compartmentId;
+            o.componentDetails = componentDetails;
+            o.computeShape = computeShape;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.federatedUserId = federatedUserId;
+            o.freeformTags = freeformTags;
+            o.hostOcpuUtilizationInfos = hostOcpuUtilizationInfos;
+            o.id = id;
+            o.idcsAccessToken = idcsAccessToken;
+            o.isByol = isByol;
+            o.isMultiAd = isMultiAd;
+            o.lifecycleDetails = lifecycleDetails;
+            o.loadBalancerShape = loadBalancerShape;
+            o.platformRole = platformRole;
+            o.platformShapeType = platformShapeType;
+            o.platformVersion = platformVersion;
+            o.replicas = replicas;
+            o.serviceEndpoint = serviceEndpoint;
+            o.serviceVersion = serviceVersion;
+            o.state = state;
+            o.storageSizeInTbs = storageSizeInTbs;
+            o.storageUsedInTbs = storageUsedInTbs;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.totalOcpuCapacity = totalOcpuCapacity;
+            return o;
         }
     }
 }

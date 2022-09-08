@@ -15,21 +15,14 @@ public final class GetTraceSpanLog {
      * @return List of logs associated with the span at the given timestamp.
      * 
      */
-    private final List<GetTraceSpanLogSpanLog> spanLogs;
+    private List<GetTraceSpanLogSpanLog> spanLogs;
     /**
      * @return Timestamp at which the log is created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetTraceSpanLog(
-        @CustomType.Parameter("spanLogs") List<GetTraceSpanLogSpanLog> spanLogs,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.spanLogs = spanLogs;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetTraceSpanLog() {}
     /**
      * @return List of logs associated with the span at the given timestamp.
      * 
@@ -52,21 +45,18 @@ public final class GetTraceSpanLog {
     public static Builder builder(GetTraceSpanLog defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetTraceSpanLogSpanLog> spanLogs;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTraceSpanLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.spanLogs = defaults.spanLogs;
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder spanLogs(List<GetTraceSpanLogSpanLog> spanLogs) {
             this.spanLogs = Objects.requireNonNull(spanLogs);
             return this;
@@ -74,11 +64,16 @@ public final class GetTraceSpanLog {
         public Builder spanLogs(GetTraceSpanLogSpanLog... spanLogs) {
             return spanLogs(List.of(spanLogs));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetTraceSpanLog build() {
-            return new GetTraceSpanLog(spanLogs, timeCreated);
+        }
+        public GetTraceSpanLog build() {
+            final var o = new GetTraceSpanLog();
+            o.spanLogs = spanLogs;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

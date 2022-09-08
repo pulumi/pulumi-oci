@@ -13,28 +13,19 @@ public final class GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTempla
      * @return The default description of the tag namespace that users can use to create the tag namespace
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The reserved name of this standard tag namespace
      * 
      */
-    private final String standardTagNamespaceName;
+    private String standardTagNamespaceName;
     /**
      * @return The status of the standard tag namespace
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("standardTagNamespaceName") String standardTagNamespaceName,
-        @CustomType.Parameter("status") String status) {
-        this.description = description;
-        this.standardTagNamespaceName = standardTagNamespaceName;
-        this.status = status;
-    }
-
+    private GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate() {}
     /**
      * @return The default description of the tag namespace that users can use to create the tag namespace
      * 
@@ -64,16 +55,12 @@ public final class GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTempla
     public static Builder builder(GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String standardTagNamespaceName;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -81,19 +68,27 @@ public final class GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTempla
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder standardTagNamespaceName(String standardTagNamespaceName) {
             this.standardTagNamespaceName = Objects.requireNonNull(standardTagNamespaceName);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate build() {
-            return new GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate(description, standardTagNamespaceName, status);
+        }
+        public GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate build() {
+            final var o = new GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate();
+            o.description = description;
+            o.standardTagNamespaceName = standardTagNamespaceName;
+            o.status = status;
+            return o;
         }
     }
 }

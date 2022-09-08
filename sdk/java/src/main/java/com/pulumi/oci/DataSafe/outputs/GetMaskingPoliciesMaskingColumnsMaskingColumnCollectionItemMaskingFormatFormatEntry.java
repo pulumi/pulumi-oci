@@ -16,168 +16,119 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMa
      * @return A filter to return only a specific column based on column name.
      * 
      */
-    private final String columnName;
+    private String columnName;
     /**
      * @return The description of the format entry.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
      * 
      */
-    private final String endDate;
+    private String endDate;
     /**
      * @return The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
      * 
      */
-    private final Integer endLength;
+    private Integer endLength;
     /**
      * @return The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
      * 
      */
-    private final Double endValue;
+    private Double endValue;
     /**
      * @return The constant number to be used for masking.
      * 
      */
-    private final Double fixedNumber;
+    private Double fixedNumber;
     /**
      * @return The constant string to be used for masking.
      * 
      */
-    private final String fixedString;
+    private String fixedString;
     /**
      * @return One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
      * 
      */
-    private final List<String> groupingColumns;
+    private List<String> groupingColumns;
     /**
      * @return The number of characters that should be there in the substring. It should be an integer and greater than zero.
      * 
      */
-    private final Integer length;
+    private Integer length;
     /**
      * @return The OCID of the library masking format.
      * 
      */
-    private final String libraryMaskingFormatId;
+    private String libraryMaskingFormatId;
     /**
      * @return The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
-    private final String postProcessingFunction;
+    private String postProcessingFunction;
     /**
      * @return A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
      * 
      */
-    private final List<String> randomLists;
+    private List<String> randomLists;
     /**
      * @return The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
      * 
      */
-    private final String regularExpression;
+    private String regularExpression;
     /**
      * @return The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
      * 
      */
-    private final String replaceWith;
+    private String replaceWith;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private final String schemaName;
+    private String schemaName;
     /**
      * @return The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
      * 
      */
-    private final String sqlExpression;
+    private String sqlExpression;
     /**
      * @return The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
      * 
      */
-    private final String startDate;
+    private String startDate;
     /**
      * @return The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
      * 
      */
-    private final Integer startLength;
+    private Integer startLength;
     /**
      * @return The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It&#39;s negative, the counting starts from the end of the string.
      * 
      */
-    private final Integer startPosition;
+    private Integer startPosition;
     /**
      * @return The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
      * 
      */
-    private final Double startValue;
+    private Double startValue;
     /**
      * @return The name of the table that contains the substitution column.
      * 
      */
-    private final String tableName;
+    private String tableName;
     /**
      * @return The type of the format entry.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
-    private final String userDefinedFunction;
+    private String userDefinedFunction;
 
-    @CustomType.Constructor
-    private GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry(
-        @CustomType.Parameter("columnName") String columnName,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("endDate") String endDate,
-        @CustomType.Parameter("endLength") Integer endLength,
-        @CustomType.Parameter("endValue") Double endValue,
-        @CustomType.Parameter("fixedNumber") Double fixedNumber,
-        @CustomType.Parameter("fixedString") String fixedString,
-        @CustomType.Parameter("groupingColumns") List<String> groupingColumns,
-        @CustomType.Parameter("length") Integer length,
-        @CustomType.Parameter("libraryMaskingFormatId") String libraryMaskingFormatId,
-        @CustomType.Parameter("postProcessingFunction") String postProcessingFunction,
-        @CustomType.Parameter("randomLists") List<String> randomLists,
-        @CustomType.Parameter("regularExpression") String regularExpression,
-        @CustomType.Parameter("replaceWith") String replaceWith,
-        @CustomType.Parameter("schemaName") String schemaName,
-        @CustomType.Parameter("sqlExpression") String sqlExpression,
-        @CustomType.Parameter("startDate") String startDate,
-        @CustomType.Parameter("startLength") Integer startLength,
-        @CustomType.Parameter("startPosition") Integer startPosition,
-        @CustomType.Parameter("startValue") Double startValue,
-        @CustomType.Parameter("tableName") String tableName,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("userDefinedFunction") String userDefinedFunction) {
-        this.columnName = columnName;
-        this.description = description;
-        this.endDate = endDate;
-        this.endLength = endLength;
-        this.endValue = endValue;
-        this.fixedNumber = fixedNumber;
-        this.fixedString = fixedString;
-        this.groupingColumns = groupingColumns;
-        this.length = length;
-        this.libraryMaskingFormatId = libraryMaskingFormatId;
-        this.postProcessingFunction = postProcessingFunction;
-        this.randomLists = randomLists;
-        this.regularExpression = regularExpression;
-        this.replaceWith = replaceWith;
-        this.schemaName = schemaName;
-        this.sqlExpression = sqlExpression;
-        this.startDate = startDate;
-        this.startLength = startLength;
-        this.startPosition = startPosition;
-        this.startValue = startValue;
-        this.tableName = tableName;
-        this.type = type;
-        this.userDefinedFunction = userDefinedFunction;
-    }
-
+    private GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry() {}
     /**
      * @return A filter to return only a specific column based on column name.
      * 
@@ -347,7 +298,7 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMa
     public static Builder builder(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String columnName;
         private String description;
@@ -372,11 +323,7 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMa
         private String tableName;
         private String type;
         private String userDefinedFunction;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnName = defaults.columnName;
@@ -404,34 +351,42 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMa
     	      this.userDefinedFunction = defaults.userDefinedFunction;
         }
 
+        @CustomType.Setter
         public Builder columnName(String columnName) {
             this.columnName = Objects.requireNonNull(columnName);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder endDate(String endDate) {
             this.endDate = Objects.requireNonNull(endDate);
             return this;
         }
+        @CustomType.Setter
         public Builder endLength(Integer endLength) {
             this.endLength = Objects.requireNonNull(endLength);
             return this;
         }
+        @CustomType.Setter
         public Builder endValue(Double endValue) {
             this.endValue = Objects.requireNonNull(endValue);
             return this;
         }
+        @CustomType.Setter
         public Builder fixedNumber(Double fixedNumber) {
             this.fixedNumber = Objects.requireNonNull(fixedNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder fixedString(String fixedString) {
             this.fixedString = Objects.requireNonNull(fixedString);
             return this;
         }
+        @CustomType.Setter
         public Builder groupingColumns(List<String> groupingColumns) {
             this.groupingColumns = Objects.requireNonNull(groupingColumns);
             return this;
@@ -439,18 +394,22 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMa
         public Builder groupingColumns(String... groupingColumns) {
             return groupingColumns(List.of(groupingColumns));
         }
+        @CustomType.Setter
         public Builder length(Integer length) {
             this.length = Objects.requireNonNull(length);
             return this;
         }
+        @CustomType.Setter
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
             this.libraryMaskingFormatId = Objects.requireNonNull(libraryMaskingFormatId);
             return this;
         }
+        @CustomType.Setter
         public Builder postProcessingFunction(String postProcessingFunction) {
             this.postProcessingFunction = Objects.requireNonNull(postProcessingFunction);
             return this;
         }
+        @CustomType.Setter
         public Builder randomLists(List<String> randomLists) {
             this.randomLists = Objects.requireNonNull(randomLists);
             return this;
@@ -458,51 +417,87 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMa
         public Builder randomLists(String... randomLists) {
             return randomLists(List.of(randomLists));
         }
+        @CustomType.Setter
         public Builder regularExpression(String regularExpression) {
             this.regularExpression = Objects.requireNonNull(regularExpression);
             return this;
         }
+        @CustomType.Setter
         public Builder replaceWith(String replaceWith) {
             this.replaceWith = Objects.requireNonNull(replaceWith);
             return this;
         }
+        @CustomType.Setter
         public Builder schemaName(String schemaName) {
             this.schemaName = Objects.requireNonNull(schemaName);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlExpression(String sqlExpression) {
             this.sqlExpression = Objects.requireNonNull(sqlExpression);
             return this;
         }
+        @CustomType.Setter
         public Builder startDate(String startDate) {
             this.startDate = Objects.requireNonNull(startDate);
             return this;
         }
+        @CustomType.Setter
         public Builder startLength(Integer startLength) {
             this.startLength = Objects.requireNonNull(startLength);
             return this;
         }
+        @CustomType.Setter
         public Builder startPosition(Integer startPosition) {
             this.startPosition = Objects.requireNonNull(startPosition);
             return this;
         }
+        @CustomType.Setter
         public Builder startValue(Double startValue) {
             this.startValue = Objects.requireNonNull(startValue);
             return this;
         }
+        @CustomType.Setter
         public Builder tableName(String tableName) {
             this.tableName = Objects.requireNonNull(tableName);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder userDefinedFunction(String userDefinedFunction) {
             this.userDefinedFunction = Objects.requireNonNull(userDefinedFunction);
             return this;
-        }        public GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry build() {
-            return new GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry(columnName, description, endDate, endLength, endValue, fixedNumber, fixedString, groupingColumns, length, libraryMaskingFormatId, postProcessingFunction, randomLists, regularExpression, replaceWith, schemaName, sqlExpression, startDate, startLength, startPosition, startValue, tableName, type, userDefinedFunction);
+        }
+        public GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry build() {
+            final var o = new GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry();
+            o.columnName = columnName;
+            o.description = description;
+            o.endDate = endDate;
+            o.endLength = endLength;
+            o.endValue = endValue;
+            o.fixedNumber = fixedNumber;
+            o.fixedString = fixedString;
+            o.groupingColumns = groupingColumns;
+            o.length = length;
+            o.libraryMaskingFormatId = libraryMaskingFormatId;
+            o.postProcessingFunction = postProcessingFunction;
+            o.randomLists = randomLists;
+            o.regularExpression = regularExpression;
+            o.replaceWith = replaceWith;
+            o.schemaName = schemaName;
+            o.sqlExpression = sqlExpression;
+            o.startDate = startDate;
+            o.startLength = startLength;
+            o.startPosition = startPosition;
+            o.startValue = startValue;
+            o.tableName = tableName;
+            o.type = type;
+            o.userDefinedFunction = userDefinedFunction;
+            return o;
         }
     }
 }

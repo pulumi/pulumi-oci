@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Analytics.AnalyticsInstancePrivateAccessChannelArgs;
 import com.pulumi.oci.Analytics.inputs.AnalyticsInstancePrivateAccessChannelState;
 import com.pulumi.oci.Analytics.outputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone;
+import com.pulumi.oci.Analytics.outputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
@@ -31,6 +32,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Analytics.AnalyticsInstancePrivateAccessChannel;
  * import com.pulumi.oci.Analytics.AnalyticsInstancePrivateAccessChannelArgs;
  * import com.pulumi.oci.Analytics.inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs;
+ * import com.pulumi.oci.Analytics.inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -53,6 +55,12 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .subnetId(oci_core_subnet.test_subnet().id())
  *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .networkSecurityGroupIds(var_.analytics_instance_private_access_channel_network_security_group_ids())
+ *             .privateSourceScanHosts(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs.builder()
+ *                 .scanHostname(var_.analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname())
+ *                 .scanPort(var_.analytics_instance_private_access_channel_private_source_scan_hosts_scan_port())
+ *                 .description(var_.analytics_instance_private_access_channel_private_source_scan_hosts_description())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -141,6 +149,20 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
         return this.key;
     }
     /**
+     * (Updatable) Network Security Group OCIDs for an Analytics instance.
+     * 
+     */
+    @Export(name="networkSecurityGroupIds", type=List.class, parameters={String.class})
+    private Output<List<String>> networkSecurityGroupIds;
+
+    /**
+     * @return (Updatable) Network Security Group OCIDs for an Analytics instance.
+     * 
+     */
+    public Output<List<String>> networkSecurityGroupIds() {
+        return this.networkSecurityGroupIds;
+    }
+    /**
      * (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      * 
      */
@@ -153,6 +175,20 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      */
     public Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone>> privateSourceDnsZones() {
         return this.privateSourceDnsZones;
+    }
+    /**
+     * (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * 
+     */
+    @Export(name="privateSourceScanHosts", type=List.class, parameters={AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost.class})
+    private Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>> privateSourceScanHosts;
+
+    /**
+     * @return (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * 
+     */
+    public Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>> privateSourceScanHosts() {
+        return this.privateSourceScanHosts;
     }
     /**
      * (Updatable) OCID of the customer subnet connected to private access channel.

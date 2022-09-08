@@ -16,147 +16,104 @@ public final class DataAssetDataSourceDetails {
      * @return atp db password Secret Id
      * 
      */
-    private final @Nullable String atpPasswordSecretId;
+    private @Nullable String atpPasswordSecretId;
     /**
      * @return atp db user name
      * 
      */
-    private final @Nullable String atpUserName;
+    private @Nullable String atpUserName;
     /**
      * @return Bucket Name for influx connection
      * 
      */
-    private final @Nullable String bucket;
+    private @Nullable String bucket;
     /**
      * @return OCID of the secret containing the containers certificates of ATP wallet
      * 
      */
-    private final @Nullable String cwalletFileSecretId;
+    private @Nullable String cwalletFileSecretId;
     /**
      * @return Data source type where actually data asset is being stored
      * 
      */
-    private final String dataSourceType;
+    private String dataSourceType;
     /**
      * @return DB Name for influx connection
      * 
      */
-    private final @Nullable String databaseName;
+    private @Nullable String databaseName;
     /**
      * @return OCID of the secret containing the PDB&#39;S certificates of ATP wallet
      * 
      */
-    private final @Nullable String ewalletFileSecretId;
+    private @Nullable String ewalletFileSecretId;
     /**
      * @return OCID of the secret containing Keystore.jks file of the ATP wallet
      * 
      */
-    private final @Nullable String keyStoreFileSecretId;
+    private @Nullable String keyStoreFileSecretId;
     /**
      * @return Measurement name for influx
      * 
      */
-    private final @Nullable String measurementName;
+    private @Nullable String measurementName;
     /**
      * @return Object storage namespace
      * 
      */
-    private final @Nullable String namespace;
+    private @Nullable String namespace;
     /**
      * @return File name
      * 
      */
-    private final @Nullable String object;
+    private @Nullable String object;
     /**
      * @return OCID of the secret that contains jdbc properties file of ATP wallet
      * 
      */
-    private final @Nullable String ojdbcFileSecretId;
+    private @Nullable String ojdbcFileSecretId;
     /**
      * @return Password Secret Id for the influx connection
      * 
      */
-    private final @Nullable String passwordSecretId;
+    private @Nullable String passwordSecretId;
     /**
      * @return atp database table name
      * 
      */
-    private final @Nullable String tableName;
+    private @Nullable String tableName;
     /**
      * @return OCID of the secret that contains the tnsnames file of ATP wallet
      * 
      */
-    private final @Nullable String tnsnamesFileSecretId;
+    private @Nullable String tnsnamesFileSecretId;
     /**
      * @return OCID of the secret containing truststore.jks file of the ATP wallet
      * 
      */
-    private final @Nullable String truststoreFileSecretId;
+    private @Nullable String truststoreFileSecretId;
     /**
      * @return public IP address and port to influx DB
      * 
      */
-    private final @Nullable String url;
+    private @Nullable String url;
     /**
      * @return Username for connection to Influx
      * 
      */
-    private final @Nullable String userName;
+    private @Nullable String userName;
     /**
      * @return Possible data sources
      * 
      */
-    private final @Nullable DataAssetDataSourceDetailsVersionSpecificDetails versionSpecificDetails;
+    private @Nullable DataAssetDataSourceDetailsVersionSpecificDetails versionSpecificDetails;
     /**
      * @return wallet password Secret ID in String format
      * 
      */
-    private final @Nullable String walletPasswordSecretId;
+    private @Nullable String walletPasswordSecretId;
 
-    @CustomType.Constructor
-    private DataAssetDataSourceDetails(
-        @CustomType.Parameter("atpPasswordSecretId") @Nullable String atpPasswordSecretId,
-        @CustomType.Parameter("atpUserName") @Nullable String atpUserName,
-        @CustomType.Parameter("bucket") @Nullable String bucket,
-        @CustomType.Parameter("cwalletFileSecretId") @Nullable String cwalletFileSecretId,
-        @CustomType.Parameter("dataSourceType") String dataSourceType,
-        @CustomType.Parameter("databaseName") @Nullable String databaseName,
-        @CustomType.Parameter("ewalletFileSecretId") @Nullable String ewalletFileSecretId,
-        @CustomType.Parameter("keyStoreFileSecretId") @Nullable String keyStoreFileSecretId,
-        @CustomType.Parameter("measurementName") @Nullable String measurementName,
-        @CustomType.Parameter("namespace") @Nullable String namespace,
-        @CustomType.Parameter("object") @Nullable String object,
-        @CustomType.Parameter("ojdbcFileSecretId") @Nullable String ojdbcFileSecretId,
-        @CustomType.Parameter("passwordSecretId") @Nullable String passwordSecretId,
-        @CustomType.Parameter("tableName") @Nullable String tableName,
-        @CustomType.Parameter("tnsnamesFileSecretId") @Nullable String tnsnamesFileSecretId,
-        @CustomType.Parameter("truststoreFileSecretId") @Nullable String truststoreFileSecretId,
-        @CustomType.Parameter("url") @Nullable String url,
-        @CustomType.Parameter("userName") @Nullable String userName,
-        @CustomType.Parameter("versionSpecificDetails") @Nullable DataAssetDataSourceDetailsVersionSpecificDetails versionSpecificDetails,
-        @CustomType.Parameter("walletPasswordSecretId") @Nullable String walletPasswordSecretId) {
-        this.atpPasswordSecretId = atpPasswordSecretId;
-        this.atpUserName = atpUserName;
-        this.bucket = bucket;
-        this.cwalletFileSecretId = cwalletFileSecretId;
-        this.dataSourceType = dataSourceType;
-        this.databaseName = databaseName;
-        this.ewalletFileSecretId = ewalletFileSecretId;
-        this.keyStoreFileSecretId = keyStoreFileSecretId;
-        this.measurementName = measurementName;
-        this.namespace = namespace;
-        this.object = object;
-        this.ojdbcFileSecretId = ojdbcFileSecretId;
-        this.passwordSecretId = passwordSecretId;
-        this.tableName = tableName;
-        this.tnsnamesFileSecretId = tnsnamesFileSecretId;
-        this.truststoreFileSecretId = truststoreFileSecretId;
-        this.url = url;
-        this.userName = userName;
-        this.versionSpecificDetails = versionSpecificDetails;
-        this.walletPasswordSecretId = walletPasswordSecretId;
-    }
-
+    private DataAssetDataSourceDetails() {}
     /**
      * @return atp db password Secret Id
      * 
@@ -305,7 +262,7 @@ public final class DataAssetDataSourceDetails {
     public static Builder builder(DataAssetDataSourceDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String atpPasswordSecretId;
         private @Nullable String atpUserName;
@@ -327,11 +284,7 @@ public final class DataAssetDataSourceDetails {
         private @Nullable String userName;
         private @Nullable DataAssetDataSourceDetailsVersionSpecificDetails versionSpecificDetails;
         private @Nullable String walletPasswordSecretId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DataAssetDataSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.atpPasswordSecretId = defaults.atpPasswordSecretId;
@@ -356,87 +309,129 @@ public final class DataAssetDataSourceDetails {
     	      this.walletPasswordSecretId = defaults.walletPasswordSecretId;
         }
 
+        @CustomType.Setter
         public Builder atpPasswordSecretId(@Nullable String atpPasswordSecretId) {
             this.atpPasswordSecretId = atpPasswordSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder atpUserName(@Nullable String atpUserName) {
             this.atpUserName = atpUserName;
             return this;
         }
+        @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
             this.bucket = bucket;
             return this;
         }
+        @CustomType.Setter
         public Builder cwalletFileSecretId(@Nullable String cwalletFileSecretId) {
             this.cwalletFileSecretId = cwalletFileSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder dataSourceType(String dataSourceType) {
             this.dataSourceType = Objects.requireNonNull(dataSourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseName(@Nullable String databaseName) {
             this.databaseName = databaseName;
             return this;
         }
+        @CustomType.Setter
         public Builder ewalletFileSecretId(@Nullable String ewalletFileSecretId) {
             this.ewalletFileSecretId = ewalletFileSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder keyStoreFileSecretId(@Nullable String keyStoreFileSecretId) {
             this.keyStoreFileSecretId = keyStoreFileSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder measurementName(@Nullable String measurementName) {
             this.measurementName = measurementName;
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
             this.namespace = namespace;
             return this;
         }
+        @CustomType.Setter
         public Builder object(@Nullable String object) {
             this.object = object;
             return this;
         }
+        @CustomType.Setter
         public Builder ojdbcFileSecretId(@Nullable String ojdbcFileSecretId) {
             this.ojdbcFileSecretId = ojdbcFileSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder passwordSecretId(@Nullable String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder tableName(@Nullable String tableName) {
             this.tableName = tableName;
             return this;
         }
+        @CustomType.Setter
         public Builder tnsnamesFileSecretId(@Nullable String tnsnamesFileSecretId) {
             this.tnsnamesFileSecretId = tnsnamesFileSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder truststoreFileSecretId(@Nullable String truststoreFileSecretId) {
             this.truststoreFileSecretId = truststoreFileSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder url(@Nullable String url) {
             this.url = url;
             return this;
         }
+        @CustomType.Setter
         public Builder userName(@Nullable String userName) {
             this.userName = userName;
             return this;
         }
+        @CustomType.Setter
         public Builder versionSpecificDetails(@Nullable DataAssetDataSourceDetailsVersionSpecificDetails versionSpecificDetails) {
             this.versionSpecificDetails = versionSpecificDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder walletPasswordSecretId(@Nullable String walletPasswordSecretId) {
             this.walletPasswordSecretId = walletPasswordSecretId;
             return this;
-        }        public DataAssetDataSourceDetails build() {
-            return new DataAssetDataSourceDetails(atpPasswordSecretId, atpUserName, bucket, cwalletFileSecretId, dataSourceType, databaseName, ewalletFileSecretId, keyStoreFileSecretId, measurementName, namespace, object, ojdbcFileSecretId, passwordSecretId, tableName, tnsnamesFileSecretId, truststoreFileSecretId, url, userName, versionSpecificDetails, walletPasswordSecretId);
+        }
+        public DataAssetDataSourceDetails build() {
+            final var o = new DataAssetDataSourceDetails();
+            o.atpPasswordSecretId = atpPasswordSecretId;
+            o.atpUserName = atpUserName;
+            o.bucket = bucket;
+            o.cwalletFileSecretId = cwalletFileSecretId;
+            o.dataSourceType = dataSourceType;
+            o.databaseName = databaseName;
+            o.ewalletFileSecretId = ewalletFileSecretId;
+            o.keyStoreFileSecretId = keyStoreFileSecretId;
+            o.measurementName = measurementName;
+            o.namespace = namespace;
+            o.object = object;
+            o.ojdbcFileSecretId = ojdbcFileSecretId;
+            o.passwordSecretId = passwordSecretId;
+            o.tableName = tableName;
+            o.tnsnamesFileSecretId = tnsnamesFileSecretId;
+            o.truststoreFileSecretId = truststoreFileSecretId;
+            o.url = url;
+            o.userName = userName;
+            o.versionSpecificDetails = versionSpecificDetails;
+            o.walletPasswordSecretId = walletPasswordSecretId;
+            return o;
         }
     }
 }

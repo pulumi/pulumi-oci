@@ -14,28 +14,19 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
      * @return Allowed phase two authentication algorithms.
      * 
      */
-    private final List<String> authenticationAlgorithms;
+    private List<String> authenticationAlgorithms;
     /**
      * @return Allowed phase one Diffie-Hellman groups.
      * 
      */
-    private final List<String> dhGroups;
+    private List<String> dhGroups;
     /**
      * @return Allowed phase two encryption algorithms.
      * 
      */
-    private final List<String> encryptionAlgorithms;
+    private List<String> encryptionAlgorithms;
 
-    @CustomType.Constructor
-    private GetIpsecAlgorithmAllowedPhaseOneParameter(
-        @CustomType.Parameter("authenticationAlgorithms") List<String> authenticationAlgorithms,
-        @CustomType.Parameter("dhGroups") List<String> dhGroups,
-        @CustomType.Parameter("encryptionAlgorithms") List<String> encryptionAlgorithms) {
-        this.authenticationAlgorithms = authenticationAlgorithms;
-        this.dhGroups = dhGroups;
-        this.encryptionAlgorithms = encryptionAlgorithms;
-    }
-
+    private GetIpsecAlgorithmAllowedPhaseOneParameter() {}
     /**
      * @return Allowed phase two authentication algorithms.
      * 
@@ -65,16 +56,12 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
     public static Builder builder(GetIpsecAlgorithmAllowedPhaseOneParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> authenticationAlgorithms;
         private List<String> dhGroups;
         private List<String> encryptionAlgorithms;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecAlgorithmAllowedPhaseOneParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authenticationAlgorithms = defaults.authenticationAlgorithms;
@@ -82,6 +69,7 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
     	      this.encryptionAlgorithms = defaults.encryptionAlgorithms;
         }
 
+        @CustomType.Setter
         public Builder authenticationAlgorithms(List<String> authenticationAlgorithms) {
             this.authenticationAlgorithms = Objects.requireNonNull(authenticationAlgorithms);
             return this;
@@ -89,6 +77,7 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
         public Builder authenticationAlgorithms(String... authenticationAlgorithms) {
             return authenticationAlgorithms(List.of(authenticationAlgorithms));
         }
+        @CustomType.Setter
         public Builder dhGroups(List<String> dhGroups) {
             this.dhGroups = Objects.requireNonNull(dhGroups);
             return this;
@@ -96,14 +85,20 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
         public Builder dhGroups(String... dhGroups) {
             return dhGroups(List.of(dhGroups));
         }
+        @CustomType.Setter
         public Builder encryptionAlgorithms(List<String> encryptionAlgorithms) {
             this.encryptionAlgorithms = Objects.requireNonNull(encryptionAlgorithms);
             return this;
         }
         public Builder encryptionAlgorithms(String... encryptionAlgorithms) {
             return encryptionAlgorithms(List.of(encryptionAlgorithms));
-        }        public GetIpsecAlgorithmAllowedPhaseOneParameter build() {
-            return new GetIpsecAlgorithmAllowedPhaseOneParameter(authenticationAlgorithms, dhGroups, encryptionAlgorithms);
+        }
+        public GetIpsecAlgorithmAllowedPhaseOneParameter build() {
+            final var o = new GetIpsecAlgorithmAllowedPhaseOneParameter();
+            o.authenticationAlgorithms = authenticationAlgorithms;
+            o.dhGroups = dhGroups;
+            o.encryptionAlgorithms = encryptionAlgorithms;
+            return o;
         }
     }
 }

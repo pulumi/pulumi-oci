@@ -12,30 +12,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPublicationsPublicationPackageDetail {
-    private final List<GetPublicationsPublicationPackageDetailEula> eulas;
-    private final String imageId;
-    private final List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems;
+    private List<GetPublicationsPublicationPackageDetailEula> eulas;
+    private String imageId;
+    private List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems;
     /**
      * @return The listing&#39;s package type.
      * 
      */
-    private final String packageType;
-    private final String packageVersion;
+    private String packageType;
+    private String packageVersion;
 
-    @CustomType.Constructor
-    private GetPublicationsPublicationPackageDetail(
-        @CustomType.Parameter("eulas") List<GetPublicationsPublicationPackageDetailEula> eulas,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("operatingSystems") List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems,
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("packageVersion") String packageVersion) {
-        this.eulas = eulas;
-        this.imageId = imageId;
-        this.operatingSystems = operatingSystems;
-        this.packageType = packageType;
-        this.packageVersion = packageVersion;
-    }
-
+    private GetPublicationsPublicationPackageDetail() {}
     public List<GetPublicationsPublicationPackageDetailEula> eulas() {
         return this.eulas;
     }
@@ -63,18 +50,14 @@ public final class GetPublicationsPublicationPackageDetail {
     public static Builder builder(GetPublicationsPublicationPackageDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetPublicationsPublicationPackageDetailEula> eulas;
         private String imageId;
         private List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems;
         private String packageType;
         private String packageVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationsPublicationPackageDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.eulas = defaults.eulas;
@@ -84,6 +67,7 @@ public final class GetPublicationsPublicationPackageDetail {
     	      this.packageVersion = defaults.packageVersion;
         }
 
+        @CustomType.Setter
         public Builder eulas(List<GetPublicationsPublicationPackageDetailEula> eulas) {
             this.eulas = Objects.requireNonNull(eulas);
             return this;
@@ -91,10 +75,12 @@ public final class GetPublicationsPublicationPackageDetail {
         public Builder eulas(GetPublicationsPublicationPackageDetailEula... eulas) {
             return eulas(List.of(eulas));
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystems(List<GetPublicationsPublicationPackageDetailOperatingSystem> operatingSystems) {
             this.operatingSystems = Objects.requireNonNull(operatingSystems);
             return this;
@@ -102,15 +88,24 @@ public final class GetPublicationsPublicationPackageDetail {
         public Builder operatingSystems(GetPublicationsPublicationPackageDetailOperatingSystem... operatingSystems) {
             return operatingSystems(List.of(operatingSystems));
         }
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = Objects.requireNonNull(packageVersion);
             return this;
-        }        public GetPublicationsPublicationPackageDetail build() {
-            return new GetPublicationsPublicationPackageDetail(eulas, imageId, operatingSystems, packageType, packageVersion);
+        }
+        public GetPublicationsPublicationPackageDetail build() {
+            final var o = new GetPublicationsPublicationPackageDetail();
+            o.eulas = eulas;
+            o.imageId = imageId;
+            o.operatingSystems = operatingSystems;
+            o.packageType = packageType;
+            o.packageVersion = packageVersion;
+            return o;
         }
     }
 }

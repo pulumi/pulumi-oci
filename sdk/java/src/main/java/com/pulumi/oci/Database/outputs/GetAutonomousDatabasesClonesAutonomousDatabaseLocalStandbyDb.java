@@ -14,35 +14,24 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb 
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
      */
-    private final Integer lagTimeInSeconds;
+    private Integer lagTimeInSeconds;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
-    private final String timeDataGuardRoleChanged;
+    private String timeDataGuardRoleChanged;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb(
-        @CustomType.Parameter("lagTimeInSeconds") Integer lagTimeInSeconds,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeDataGuardRoleChanged") String timeDataGuardRoleChanged) {
-        this.lagTimeInSeconds = lagTimeInSeconds;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
-    }
-
+    private GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb() {}
     /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
@@ -79,17 +68,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb 
     public static Builder builder(GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer lagTimeInSeconds;
         private String lifecycleDetails;
         private String state;
         private String timeDataGuardRoleChanged;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.lagTimeInSeconds = defaults.lagTimeInSeconds;
@@ -98,23 +83,33 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb 
     	      this.timeDataGuardRoleChanged = defaults.timeDataGuardRoleChanged;
         }
 
+        @CustomType.Setter
         public Builder lagTimeInSeconds(Integer lagTimeInSeconds) {
             this.lagTimeInSeconds = Objects.requireNonNull(lagTimeInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeDataGuardRoleChanged(String timeDataGuardRoleChanged) {
             this.timeDataGuardRoleChanged = Objects.requireNonNull(timeDataGuardRoleChanged);
             return this;
-        }        public GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb build() {
-            return new GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb(lagTimeInSeconds, lifecycleDetails, state, timeDataGuardRoleChanged);
+        }
+        public GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb build() {
+            final var o = new GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb();
+            o.lagTimeInSeconds = lagTimeInSeconds;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
+            return o;
         }
     }
 }

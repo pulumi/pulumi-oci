@@ -17,30 +17,21 @@ public final class ModelModelTrainingResultRowReductionDetail {
      * @return A boolean value to indicate if row reduction is applied
      * 
      */
-    private final @Nullable Boolean isReductionEnabled;
+    private @Nullable Boolean isReductionEnabled;
     /**
      * @return Method for row reduction:
      * * DELETE_ROW - delete rows with equal intervals
      * * AVERAGE_ROW - average multiple rows to one row
      * 
      */
-    private final @Nullable String reductionMethod;
+    private @Nullable String reductionMethod;
     /**
      * @return A percentage to reduce data size down to on top of original data
      * 
      */
-    private final @Nullable Double reductionPercentage;
+    private @Nullable Double reductionPercentage;
 
-    @CustomType.Constructor
-    private ModelModelTrainingResultRowReductionDetail(
-        @CustomType.Parameter("isReductionEnabled") @Nullable Boolean isReductionEnabled,
-        @CustomType.Parameter("reductionMethod") @Nullable String reductionMethod,
-        @CustomType.Parameter("reductionPercentage") @Nullable Double reductionPercentage) {
-        this.isReductionEnabled = isReductionEnabled;
-        this.reductionMethod = reductionMethod;
-        this.reductionPercentage = reductionPercentage;
-    }
-
+    private ModelModelTrainingResultRowReductionDetail() {}
     /**
      * @return A boolean value to indicate if row reduction is applied
      * 
@@ -72,16 +63,12 @@ public final class ModelModelTrainingResultRowReductionDetail {
     public static Builder builder(ModelModelTrainingResultRowReductionDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isReductionEnabled;
         private @Nullable String reductionMethod;
         private @Nullable Double reductionPercentage;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelModelTrainingResultRowReductionDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isReductionEnabled = defaults.isReductionEnabled;
@@ -89,19 +76,27 @@ public final class ModelModelTrainingResultRowReductionDetail {
     	      this.reductionPercentage = defaults.reductionPercentage;
         }
 
+        @CustomType.Setter
         public Builder isReductionEnabled(@Nullable Boolean isReductionEnabled) {
             this.isReductionEnabled = isReductionEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder reductionMethod(@Nullable String reductionMethod) {
             this.reductionMethod = reductionMethod;
             return this;
         }
+        @CustomType.Setter
         public Builder reductionPercentage(@Nullable Double reductionPercentage) {
             this.reductionPercentage = reductionPercentage;
             return this;
-        }        public ModelModelTrainingResultRowReductionDetail build() {
-            return new ModelModelTrainingResultRowReductionDetail(isReductionEnabled, reductionMethod, reductionPercentage);
+        }
+        public ModelModelTrainingResultRowReductionDetail build() {
+            final var o = new ModelModelTrainingResultRowReductionDetail();
+            o.isReductionEnabled = isReductionEnabled;
+            o.reductionMethod = reductionMethod;
+            o.reductionPercentage = reductionPercentage;
+            return o;
         }
     }
 }

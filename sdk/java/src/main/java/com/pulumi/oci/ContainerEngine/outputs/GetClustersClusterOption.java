@@ -19,49 +19,34 @@ public final class GetClustersClusterOption {
      * @return Configurable cluster add-ons
      * 
      */
-    private final List<GetClustersClusterOptionAddOn> addOns;
+    private List<GetClustersClusterOptionAddOn> addOns;
     /**
      * @return Configurable cluster admission controllers
      * 
      */
-    private final List<GetClustersClusterOptionAdmissionControllerOption> admissionControllerOptions;
+    private List<GetClustersClusterOptionAdmissionControllerOption> admissionControllerOptions;
     /**
      * @return Network configuration for Kubernetes.
      * 
      */
-    private final List<GetClustersClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs;
+    private List<GetClustersClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs;
     /**
      * @return Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
      * 
      */
-    private final List<GetClustersClusterOptionPersistentVolumeConfig> persistentVolumeConfigs;
+    private List<GetClustersClusterOptionPersistentVolumeConfig> persistentVolumeConfigs;
     /**
      * @return Configuration to be applied to load balancers created by Kubernetes services
      * 
      */
-    private final List<GetClustersClusterOptionServiceLbConfig> serviceLbConfigs;
+    private List<GetClustersClusterOptionServiceLbConfig> serviceLbConfigs;
     /**
      * @return The OCIDs of the subnets used for Kubernetes services load balancers.
      * 
      */
-    private final List<String> serviceLbSubnetIds;
+    private List<String> serviceLbSubnetIds;
 
-    @CustomType.Constructor
-    private GetClustersClusterOption(
-        @CustomType.Parameter("addOns") List<GetClustersClusterOptionAddOn> addOns,
-        @CustomType.Parameter("admissionControllerOptions") List<GetClustersClusterOptionAdmissionControllerOption> admissionControllerOptions,
-        @CustomType.Parameter("kubernetesNetworkConfigs") List<GetClustersClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs,
-        @CustomType.Parameter("persistentVolumeConfigs") List<GetClustersClusterOptionPersistentVolumeConfig> persistentVolumeConfigs,
-        @CustomType.Parameter("serviceLbConfigs") List<GetClustersClusterOptionServiceLbConfig> serviceLbConfigs,
-        @CustomType.Parameter("serviceLbSubnetIds") List<String> serviceLbSubnetIds) {
-        this.addOns = addOns;
-        this.admissionControllerOptions = admissionControllerOptions;
-        this.kubernetesNetworkConfigs = kubernetesNetworkConfigs;
-        this.persistentVolumeConfigs = persistentVolumeConfigs;
-        this.serviceLbConfigs = serviceLbConfigs;
-        this.serviceLbSubnetIds = serviceLbSubnetIds;
-    }
-
+    private GetClustersClusterOption() {}
     /**
      * @return Configurable cluster add-ons
      * 
@@ -112,7 +97,7 @@ public final class GetClustersClusterOption {
     public static Builder builder(GetClustersClusterOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetClustersClusterOptionAddOn> addOns;
         private List<GetClustersClusterOptionAdmissionControllerOption> admissionControllerOptions;
@@ -120,11 +105,7 @@ public final class GetClustersClusterOption {
         private List<GetClustersClusterOptionPersistentVolumeConfig> persistentVolumeConfigs;
         private List<GetClustersClusterOptionServiceLbConfig> serviceLbConfigs;
         private List<String> serviceLbSubnetIds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClustersClusterOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addOns = defaults.addOns;
@@ -135,6 +116,7 @@ public final class GetClustersClusterOption {
     	      this.serviceLbSubnetIds = defaults.serviceLbSubnetIds;
         }
 
+        @CustomType.Setter
         public Builder addOns(List<GetClustersClusterOptionAddOn> addOns) {
             this.addOns = Objects.requireNonNull(addOns);
             return this;
@@ -142,6 +124,7 @@ public final class GetClustersClusterOption {
         public Builder addOns(GetClustersClusterOptionAddOn... addOns) {
             return addOns(List.of(addOns));
         }
+        @CustomType.Setter
         public Builder admissionControllerOptions(List<GetClustersClusterOptionAdmissionControllerOption> admissionControllerOptions) {
             this.admissionControllerOptions = Objects.requireNonNull(admissionControllerOptions);
             return this;
@@ -149,6 +132,7 @@ public final class GetClustersClusterOption {
         public Builder admissionControllerOptions(GetClustersClusterOptionAdmissionControllerOption... admissionControllerOptions) {
             return admissionControllerOptions(List.of(admissionControllerOptions));
         }
+        @CustomType.Setter
         public Builder kubernetesNetworkConfigs(List<GetClustersClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs) {
             this.kubernetesNetworkConfigs = Objects.requireNonNull(kubernetesNetworkConfigs);
             return this;
@@ -156,6 +140,7 @@ public final class GetClustersClusterOption {
         public Builder kubernetesNetworkConfigs(GetClustersClusterOptionKubernetesNetworkConfig... kubernetesNetworkConfigs) {
             return kubernetesNetworkConfigs(List.of(kubernetesNetworkConfigs));
         }
+        @CustomType.Setter
         public Builder persistentVolumeConfigs(List<GetClustersClusterOptionPersistentVolumeConfig> persistentVolumeConfigs) {
             this.persistentVolumeConfigs = Objects.requireNonNull(persistentVolumeConfigs);
             return this;
@@ -163,6 +148,7 @@ public final class GetClustersClusterOption {
         public Builder persistentVolumeConfigs(GetClustersClusterOptionPersistentVolumeConfig... persistentVolumeConfigs) {
             return persistentVolumeConfigs(List.of(persistentVolumeConfigs));
         }
+        @CustomType.Setter
         public Builder serviceLbConfigs(List<GetClustersClusterOptionServiceLbConfig> serviceLbConfigs) {
             this.serviceLbConfigs = Objects.requireNonNull(serviceLbConfigs);
             return this;
@@ -170,14 +156,23 @@ public final class GetClustersClusterOption {
         public Builder serviceLbConfigs(GetClustersClusterOptionServiceLbConfig... serviceLbConfigs) {
             return serviceLbConfigs(List.of(serviceLbConfigs));
         }
+        @CustomType.Setter
         public Builder serviceLbSubnetIds(List<String> serviceLbSubnetIds) {
             this.serviceLbSubnetIds = Objects.requireNonNull(serviceLbSubnetIds);
             return this;
         }
         public Builder serviceLbSubnetIds(String... serviceLbSubnetIds) {
             return serviceLbSubnetIds(List.of(serviceLbSubnetIds));
-        }        public GetClustersClusterOption build() {
-            return new GetClustersClusterOption(addOns, admissionControllerOptions, kubernetesNetworkConfigs, persistentVolumeConfigs, serviceLbConfigs, serviceLbSubnetIds);
+        }
+        public GetClustersClusterOption build() {
+            final var o = new GetClustersClusterOption();
+            o.addOns = addOns;
+            o.admissionControllerOptions = admissionControllerOptions;
+            o.kubernetesNetworkConfigs = kubernetesNetworkConfigs;
+            o.persistentVolumeConfigs = persistentVolumeConfigs;
+            o.serviceLbConfigs = serviceLbConfigs;
+            o.serviceLbSubnetIds = serviceLbSubnetIds;
+            return o;
         }
     }
 }

@@ -17,21 +17,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidations 
      * @return (Updatable)
      * 
      */
-    private final @Nullable List<DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader> headers;
+    private @Nullable List<DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader> headers;
     /**
      * @return (Updatable) Validation behavior mode.
      * 
      */
-    private final @Nullable String validationMode;
+    private @Nullable String validationMode;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteRequestPoliciesHeaderValidations(
-        @CustomType.Parameter("headers") @Nullable List<DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader> headers,
-        @CustomType.Parameter("validationMode") @Nullable String validationMode) {
-        this.headers = headers;
-        this.validationMode = validationMode;
-    }
-
+    private DeploymentSpecificationRouteRequestPoliciesHeaderValidations() {}
     /**
      * @return (Updatable)
      * 
@@ -54,21 +47,18 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidations 
     public static Builder builder(DeploymentSpecificationRouteRequestPoliciesHeaderValidations defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader> headers;
         private @Nullable String validationMode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteRequestPoliciesHeaderValidations defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.headers = defaults.headers;
     	      this.validationMode = defaults.validationMode;
         }
 
+        @CustomType.Setter
         public Builder headers(@Nullable List<DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader> headers) {
             this.headers = headers;
             return this;
@@ -76,11 +66,16 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidations 
         public Builder headers(DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader... headers) {
             return headers(List.of(headers));
         }
+        @CustomType.Setter
         public Builder validationMode(@Nullable String validationMode) {
             this.validationMode = validationMode;
             return this;
-        }        public DeploymentSpecificationRouteRequestPoliciesHeaderValidations build() {
-            return new DeploymentSpecificationRouteRequestPoliciesHeaderValidations(headers, validationMode);
+        }
+        public DeploymentSpecificationRouteRequestPoliciesHeaderValidations build() {
+            final var o = new DeploymentSpecificationRouteRequestPoliciesHeaderValidations();
+            o.headers = headers;
+            o.validationMode = validationMode;
+            return o;
         }
     }
 }

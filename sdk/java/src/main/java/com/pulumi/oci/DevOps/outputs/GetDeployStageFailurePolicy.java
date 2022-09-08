@@ -14,28 +14,19 @@ public final class GetDeployStageFailurePolicy {
      * @return The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
      * 
      */
-    private final Integer failureCount;
+    private Integer failureCount;
     /**
      * @return The failure percentage threshold, which when reached or exceeded sets the stage as FAILED. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
      * 
      */
-    private final Integer failurePercentage;
+    private Integer failurePercentage;
     /**
      * @return The type of policy used for rolling out a deployment stage.
      * 
      */
-    private final String policyType;
+    private String policyType;
 
-    @CustomType.Constructor
-    private GetDeployStageFailurePolicy(
-        @CustomType.Parameter("failureCount") Integer failureCount,
-        @CustomType.Parameter("failurePercentage") Integer failurePercentage,
-        @CustomType.Parameter("policyType") String policyType) {
-        this.failureCount = failureCount;
-        this.failurePercentage = failurePercentage;
-        this.policyType = policyType;
-    }
-
+    private GetDeployStageFailurePolicy() {}
     /**
      * @return The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
      * 
@@ -65,16 +56,12 @@ public final class GetDeployStageFailurePolicy {
     public static Builder builder(GetDeployStageFailurePolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer failureCount;
         private Integer failurePercentage;
         private String policyType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStageFailurePolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.failureCount = defaults.failureCount;
@@ -82,19 +69,27 @@ public final class GetDeployStageFailurePolicy {
     	      this.policyType = defaults.policyType;
         }
 
+        @CustomType.Setter
         public Builder failureCount(Integer failureCount) {
             this.failureCount = Objects.requireNonNull(failureCount);
             return this;
         }
+        @CustomType.Setter
         public Builder failurePercentage(Integer failurePercentage) {
             this.failurePercentage = Objects.requireNonNull(failurePercentage);
             return this;
         }
+        @CustomType.Setter
         public Builder policyType(String policyType) {
             this.policyType = Objects.requireNonNull(policyType);
             return this;
-        }        public GetDeployStageFailurePolicy build() {
-            return new GetDeployStageFailurePolicy(failureCount, failurePercentage, policyType);
+        }
+        public GetDeployStageFailurePolicy build() {
+            final var o = new GetDeployStageFailurePolicy();
+            o.failureCount = failureCount;
+            o.failurePercentage = failurePercentage;
+            o.policyType = policyType;
+            return o;
         }
     }
 }

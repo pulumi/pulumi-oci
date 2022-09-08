@@ -14,21 +14,14 @@ public final class GetDeployStagesDeployStageCollectionItemApprovalPolicy {
      * @return Approval policy type.
      * 
      */
-    private final String approvalPolicyType;
+    private String approvalPolicyType;
     /**
      * @return A minimum number of approvals required for stage to proceed.
      * 
      */
-    private final Integer numberOfApprovalsRequired;
+    private Integer numberOfApprovalsRequired;
 
-    @CustomType.Constructor
-    private GetDeployStagesDeployStageCollectionItemApprovalPolicy(
-        @CustomType.Parameter("approvalPolicyType") String approvalPolicyType,
-        @CustomType.Parameter("numberOfApprovalsRequired") Integer numberOfApprovalsRequired) {
-        this.approvalPolicyType = approvalPolicyType;
-        this.numberOfApprovalsRequired = numberOfApprovalsRequired;
-    }
-
+    private GetDeployStagesDeployStageCollectionItemApprovalPolicy() {}
     /**
      * @return Approval policy type.
      * 
@@ -51,30 +44,32 @@ public final class GetDeployStagesDeployStageCollectionItemApprovalPolicy {
     public static Builder builder(GetDeployStagesDeployStageCollectionItemApprovalPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String approvalPolicyType;
         private Integer numberOfApprovalsRequired;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStagesDeployStageCollectionItemApprovalPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.approvalPolicyType = defaults.approvalPolicyType;
     	      this.numberOfApprovalsRequired = defaults.numberOfApprovalsRequired;
         }
 
+        @CustomType.Setter
         public Builder approvalPolicyType(String approvalPolicyType) {
             this.approvalPolicyType = Objects.requireNonNull(approvalPolicyType);
             return this;
         }
+        @CustomType.Setter
         public Builder numberOfApprovalsRequired(Integer numberOfApprovalsRequired) {
             this.numberOfApprovalsRequired = Objects.requireNonNull(numberOfApprovalsRequired);
             return this;
-        }        public GetDeployStagesDeployStageCollectionItemApprovalPolicy build() {
-            return new GetDeployStagesDeployStageCollectionItemApprovalPolicy(approvalPolicyType, numberOfApprovalsRequired);
+        }
+        public GetDeployStagesDeployStageCollectionItemApprovalPolicy build() {
+            final var o = new GetDeployStagesDeployStageCollectionItemApprovalPolicy();
+            o.approvalPolicyType = approvalPolicyType;
+            o.numberOfApprovalsRequired = numberOfApprovalsRequired;
+            return o;
         }
     }
 }

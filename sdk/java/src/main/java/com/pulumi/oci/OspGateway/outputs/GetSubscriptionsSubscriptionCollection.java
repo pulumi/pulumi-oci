@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionCollection {
-    private final List<GetSubscriptionsSubscriptionCollectionItem> items;
+    private List<GetSubscriptionsSubscriptionCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetSubscriptionsSubscriptionCollection(@CustomType.Parameter("items") List<GetSubscriptionsSubscriptionCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetSubscriptionsSubscriptionCollection() {}
     public List<GetSubscriptionsSubscriptionCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetSubscriptionsSubscriptionCollection {
     public static Builder builder(GetSubscriptionsSubscriptionCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionsSubscriptionCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsSubscriptionCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSubscriptionsSubscriptionCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSubscriptionsSubscriptionCollectionItem... items) {
             return items(List.of(items));
-        }        public GetSubscriptionsSubscriptionCollection build() {
-            return new GetSubscriptionsSubscriptionCollection(items);
+        }
+        public GetSubscriptionsSubscriptionCollection build() {
+            final var o = new GetSubscriptionsSubscriptionCollection();
+            o.items = items;
+            return o;
         }
     }
 }

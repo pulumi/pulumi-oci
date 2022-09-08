@@ -19,67 +19,40 @@ public final class GetListUserGrantsResult {
      * @return The grant depth level of the indirect grant. An indirectly granted role/privilege is granted to the user through another role. The depth level indicates how deep a privilege is within the grant hierarchy.
      * 
      */
-    private final @Nullable Integer depthLevel;
-    private final @Nullable Integer depthLevelGreaterThanOrEqualTo;
-    private final @Nullable Integer depthLevelLessThan;
-    private final @Nullable List<GetListUserGrantsFilter> filters;
-    private final @Nullable String grantKey;
+    private @Nullable Integer depthLevel;
+    private @Nullable Integer depthLevelGreaterThanOrEqualTo;
+    private @Nullable Integer depthLevelLessThan;
+    private @Nullable List<GetListUserGrantsFilter> filters;
+    private @Nullable String grantKey;
     /**
      * @return The name of a user grant.
      * 
      */
-    private final @Nullable String grantName;
+    private @Nullable String grantName;
     /**
      * @return The list of grants.
      * 
      */
-    private final List<GetListUserGrantsGrant> grants;
+    private List<GetListUserGrantsGrant> grants;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The privilege category.
      * 
      */
-    private final @Nullable String privilegeCategory;
+    private @Nullable String privilegeCategory;
     /**
      * @return The type of a user grant.
      * 
      */
-    private final @Nullable String privilegeType;
-    private final String userAssessmentId;
-    private final String userKey;
+    private @Nullable String privilegeType;
+    private String userAssessmentId;
+    private String userKey;
 
-    @CustomType.Constructor
-    private GetListUserGrantsResult(
-        @CustomType.Parameter("depthLevel") @Nullable Integer depthLevel,
-        @CustomType.Parameter("depthLevelGreaterThanOrEqualTo") @Nullable Integer depthLevelGreaterThanOrEqualTo,
-        @CustomType.Parameter("depthLevelLessThan") @Nullable Integer depthLevelLessThan,
-        @CustomType.Parameter("filters") @Nullable List<GetListUserGrantsFilter> filters,
-        @CustomType.Parameter("grantKey") @Nullable String grantKey,
-        @CustomType.Parameter("grantName") @Nullable String grantName,
-        @CustomType.Parameter("grants") List<GetListUserGrantsGrant> grants,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("privilegeCategory") @Nullable String privilegeCategory,
-        @CustomType.Parameter("privilegeType") @Nullable String privilegeType,
-        @CustomType.Parameter("userAssessmentId") String userAssessmentId,
-        @CustomType.Parameter("userKey") String userKey) {
-        this.depthLevel = depthLevel;
-        this.depthLevelGreaterThanOrEqualTo = depthLevelGreaterThanOrEqualTo;
-        this.depthLevelLessThan = depthLevelLessThan;
-        this.filters = filters;
-        this.grantKey = grantKey;
-        this.grantName = grantName;
-        this.grants = grants;
-        this.id = id;
-        this.privilegeCategory = privilegeCategory;
-        this.privilegeType = privilegeType;
-        this.userAssessmentId = userAssessmentId;
-        this.userKey = userKey;
-    }
-
+    private GetListUserGrantsResult() {}
     /**
      * @return The grant depth level of the indirect grant. An indirectly granted role/privilege is granted to the user through another role. The depth level indicates how deep a privilege is within the grant hierarchy.
      * 
@@ -148,7 +121,7 @@ public final class GetListUserGrantsResult {
     public static Builder builder(GetListUserGrantsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer depthLevel;
         private @Nullable Integer depthLevelGreaterThanOrEqualTo;
@@ -162,11 +135,7 @@ public final class GetListUserGrantsResult {
         private @Nullable String privilegeType;
         private String userAssessmentId;
         private String userKey;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListUserGrantsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.depthLevel = defaults.depthLevel;
@@ -183,18 +152,22 @@ public final class GetListUserGrantsResult {
     	      this.userKey = defaults.userKey;
         }
 
+        @CustomType.Setter
         public Builder depthLevel(@Nullable Integer depthLevel) {
             this.depthLevel = depthLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder depthLevelGreaterThanOrEqualTo(@Nullable Integer depthLevelGreaterThanOrEqualTo) {
             this.depthLevelGreaterThanOrEqualTo = depthLevelGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder depthLevelLessThan(@Nullable Integer depthLevelLessThan) {
             this.depthLevelLessThan = depthLevelLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetListUserGrantsFilter> filters) {
             this.filters = filters;
             return this;
@@ -202,14 +175,17 @@ public final class GetListUserGrantsResult {
         public Builder filters(GetListUserGrantsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder grantKey(@Nullable String grantKey) {
             this.grantKey = grantKey;
             return this;
         }
+        @CustomType.Setter
         public Builder grantName(@Nullable String grantName) {
             this.grantName = grantName;
             return this;
         }
+        @CustomType.Setter
         public Builder grants(List<GetListUserGrantsGrant> grants) {
             this.grants = Objects.requireNonNull(grants);
             return this;
@@ -217,27 +193,46 @@ public final class GetListUserGrantsResult {
         public Builder grants(GetListUserGrantsGrant... grants) {
             return grants(List.of(grants));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder privilegeCategory(@Nullable String privilegeCategory) {
             this.privilegeCategory = privilegeCategory;
             return this;
         }
+        @CustomType.Setter
         public Builder privilegeType(@Nullable String privilegeType) {
             this.privilegeType = privilegeType;
             return this;
         }
+        @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
             this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder userKey(String userKey) {
             this.userKey = Objects.requireNonNull(userKey);
             return this;
-        }        public GetListUserGrantsResult build() {
-            return new GetListUserGrantsResult(depthLevel, depthLevelGreaterThanOrEqualTo, depthLevelLessThan, filters, grantKey, grantName, grants, id, privilegeCategory, privilegeType, userAssessmentId, userKey);
+        }
+        public GetListUserGrantsResult build() {
+            final var o = new GetListUserGrantsResult();
+            o.depthLevel = depthLevel;
+            o.depthLevelGreaterThanOrEqualTo = depthLevelGreaterThanOrEqualTo;
+            o.depthLevelLessThan = depthLevelLessThan;
+            o.filters = filters;
+            o.grantKey = grantKey;
+            o.grantName = grantName;
+            o.grants = grants;
+            o.id = id;
+            o.privilegeCategory = privilegeCategory;
+            o.privilegeType = privilegeType;
+            o.userAssessmentId = userAssessmentId;
+            o.userKey = userKey;
+            return o;
         }
     }
 }

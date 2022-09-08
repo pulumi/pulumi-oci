@@ -17,28 +17,19 @@ public final class DatabaseToolsConnectionKeyStore {
      * @return (Updatable) The key store content.
      * 
      */
-    private final @Nullable DatabaseToolsConnectionKeyStoreKeyStoreContent keyStoreContent;
+    private @Nullable DatabaseToolsConnectionKeyStoreKeyStoreContent keyStoreContent;
     /**
      * @return (Updatable) The key store password.
      * 
      */
-    private final @Nullable DatabaseToolsConnectionKeyStoreKeyStorePassword keyStorePassword;
+    private @Nullable DatabaseToolsConnectionKeyStoreKeyStorePassword keyStorePassword;
     /**
      * @return (Updatable) The key store type.
      * 
      */
-    private final @Nullable String keyStoreType;
+    private @Nullable String keyStoreType;
 
-    @CustomType.Constructor
-    private DatabaseToolsConnectionKeyStore(
-        @CustomType.Parameter("keyStoreContent") @Nullable DatabaseToolsConnectionKeyStoreKeyStoreContent keyStoreContent,
-        @CustomType.Parameter("keyStorePassword") @Nullable DatabaseToolsConnectionKeyStoreKeyStorePassword keyStorePassword,
-        @CustomType.Parameter("keyStoreType") @Nullable String keyStoreType) {
-        this.keyStoreContent = keyStoreContent;
-        this.keyStorePassword = keyStorePassword;
-        this.keyStoreType = keyStoreType;
-    }
-
+    private DatabaseToolsConnectionKeyStore() {}
     /**
      * @return (Updatable) The key store content.
      * 
@@ -68,16 +59,12 @@ public final class DatabaseToolsConnectionKeyStore {
     public static Builder builder(DatabaseToolsConnectionKeyStore defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable DatabaseToolsConnectionKeyStoreKeyStoreContent keyStoreContent;
         private @Nullable DatabaseToolsConnectionKeyStoreKeyStorePassword keyStorePassword;
         private @Nullable String keyStoreType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseToolsConnectionKeyStore defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.keyStoreContent = defaults.keyStoreContent;
@@ -85,19 +72,27 @@ public final class DatabaseToolsConnectionKeyStore {
     	      this.keyStoreType = defaults.keyStoreType;
         }
 
+        @CustomType.Setter
         public Builder keyStoreContent(@Nullable DatabaseToolsConnectionKeyStoreKeyStoreContent keyStoreContent) {
             this.keyStoreContent = keyStoreContent;
             return this;
         }
+        @CustomType.Setter
         public Builder keyStorePassword(@Nullable DatabaseToolsConnectionKeyStoreKeyStorePassword keyStorePassword) {
             this.keyStorePassword = keyStorePassword;
             return this;
         }
+        @CustomType.Setter
         public Builder keyStoreType(@Nullable String keyStoreType) {
             this.keyStoreType = keyStoreType;
             return this;
-        }        public DatabaseToolsConnectionKeyStore build() {
-            return new DatabaseToolsConnectionKeyStore(keyStoreContent, keyStorePassword, keyStoreType);
+        }
+        public DatabaseToolsConnectionKeyStore build() {
+            final var o = new DatabaseToolsConnectionKeyStore();
+            o.keyStoreContent = keyStoreContent;
+            o.keyStorePassword = keyStorePassword;
+            o.keyStoreType = keyStoreType;
+            return o;
         }
     }
 }

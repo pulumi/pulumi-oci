@@ -15,84 +15,59 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
      * @return Phase two authentication algorithm proposed during tunnel negotiation.
      * 
      */
-    private final String customAuthenticationAlgorithm;
+    private String customAuthenticationAlgorithm;
     /**
      * @return The proposed custom Diffie-Hellman group.
      * 
      */
-    private final String customDhGroup;
+    private String customDhGroup;
     /**
      * @return The proposed custom phase two encryption algorithm.
      * 
      */
-    private final String customEncryptionAlgorithm;
+    private String customEncryptionAlgorithm;
     /**
      * @return Indicates whether custom phase one configuration is enabled. If this option is not enabled, default settings are proposed.
      * 
      */
-    private final Boolean isCustomPhaseOneConfig;
+    private Boolean isCustomPhaseOneConfig;
     /**
      * @return Indicates whether IKE phase one is established.
      * 
      */
-    private final Boolean isIkeEstablished;
+    private Boolean isIkeEstablished;
     /**
      * @return The total configured lifetime of the IKE security association.
      * 
      */
-    private final Integer lifetime;
+    private Integer lifetime;
     /**
      * @return The negotiated phase two authentication algorithm.
      * 
      */
-    private final String negotiatedAuthenticationAlgorithm;
+    private String negotiatedAuthenticationAlgorithm;
     /**
      * @return The negotiated Diffie-Hellman group.
      * 
      */
-    private final String negotiatedDhGroup;
+    private String negotiatedDhGroup;
     /**
      * @return The negotiated encryption algorithm.
      * 
      */
-    private final String negotiatedEncryptionAlgorithm;
+    private String negotiatedEncryptionAlgorithm;
     /**
      * @return The remaining lifetime before the key is refreshed.
      * 
      */
-    private final String remainingLifetime;
+    private String remainingLifetime;
     /**
      * @return The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String remainingLifetimeLastRetrieved;
+    private String remainingLifetimeLastRetrieved;
 
-    @CustomType.Constructor
-    private GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail(
-        @CustomType.Parameter("customAuthenticationAlgorithm") String customAuthenticationAlgorithm,
-        @CustomType.Parameter("customDhGroup") String customDhGroup,
-        @CustomType.Parameter("customEncryptionAlgorithm") String customEncryptionAlgorithm,
-        @CustomType.Parameter("isCustomPhaseOneConfig") Boolean isCustomPhaseOneConfig,
-        @CustomType.Parameter("isIkeEstablished") Boolean isIkeEstablished,
-        @CustomType.Parameter("lifetime") Integer lifetime,
-        @CustomType.Parameter("negotiatedAuthenticationAlgorithm") String negotiatedAuthenticationAlgorithm,
-        @CustomType.Parameter("negotiatedDhGroup") String negotiatedDhGroup,
-        @CustomType.Parameter("negotiatedEncryptionAlgorithm") String negotiatedEncryptionAlgorithm,
-        @CustomType.Parameter("remainingLifetime") String remainingLifetime,
-        @CustomType.Parameter("remainingLifetimeLastRetrieved") String remainingLifetimeLastRetrieved) {
-        this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
-        this.customDhGroup = customDhGroup;
-        this.customEncryptionAlgorithm = customEncryptionAlgorithm;
-        this.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
-        this.isIkeEstablished = isIkeEstablished;
-        this.lifetime = lifetime;
-        this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
-        this.negotiatedDhGroup = negotiatedDhGroup;
-        this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
-        this.remainingLifetime = remainingLifetime;
-        this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
-    }
-
+    private GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail() {}
     /**
      * @return Phase two authentication algorithm proposed during tunnel negotiation.
      * 
@@ -178,7 +153,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
     public static Builder builder(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String customAuthenticationAlgorithm;
         private String customDhGroup;
@@ -191,11 +166,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
         private String negotiatedEncryptionAlgorithm;
         private String remainingLifetime;
         private String remainingLifetimeLastRetrieved;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customAuthenticationAlgorithm = defaults.customAuthenticationAlgorithm;
@@ -211,51 +182,75 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
     	      this.remainingLifetimeLastRetrieved = defaults.remainingLifetimeLastRetrieved;
         }
 
+        @CustomType.Setter
         public Builder customAuthenticationAlgorithm(String customAuthenticationAlgorithm) {
             this.customAuthenticationAlgorithm = Objects.requireNonNull(customAuthenticationAlgorithm);
             return this;
         }
+        @CustomType.Setter
         public Builder customDhGroup(String customDhGroup) {
             this.customDhGroup = Objects.requireNonNull(customDhGroup);
             return this;
         }
+        @CustomType.Setter
         public Builder customEncryptionAlgorithm(String customEncryptionAlgorithm) {
             this.customEncryptionAlgorithm = Objects.requireNonNull(customEncryptionAlgorithm);
             return this;
         }
+        @CustomType.Setter
         public Builder isCustomPhaseOneConfig(Boolean isCustomPhaseOneConfig) {
             this.isCustomPhaseOneConfig = Objects.requireNonNull(isCustomPhaseOneConfig);
             return this;
         }
+        @CustomType.Setter
         public Builder isIkeEstablished(Boolean isIkeEstablished) {
             this.isIkeEstablished = Objects.requireNonNull(isIkeEstablished);
             return this;
         }
+        @CustomType.Setter
         public Builder lifetime(Integer lifetime) {
             this.lifetime = Objects.requireNonNull(lifetime);
             return this;
         }
+        @CustomType.Setter
         public Builder negotiatedAuthenticationAlgorithm(String negotiatedAuthenticationAlgorithm) {
             this.negotiatedAuthenticationAlgorithm = Objects.requireNonNull(negotiatedAuthenticationAlgorithm);
             return this;
         }
+        @CustomType.Setter
         public Builder negotiatedDhGroup(String negotiatedDhGroup) {
             this.negotiatedDhGroup = Objects.requireNonNull(negotiatedDhGroup);
             return this;
         }
+        @CustomType.Setter
         public Builder negotiatedEncryptionAlgorithm(String negotiatedEncryptionAlgorithm) {
             this.negotiatedEncryptionAlgorithm = Objects.requireNonNull(negotiatedEncryptionAlgorithm);
             return this;
         }
+        @CustomType.Setter
         public Builder remainingLifetime(String remainingLifetime) {
             this.remainingLifetime = Objects.requireNonNull(remainingLifetime);
             return this;
         }
+        @CustomType.Setter
         public Builder remainingLifetimeLastRetrieved(String remainingLifetimeLastRetrieved) {
             this.remainingLifetimeLastRetrieved = Objects.requireNonNull(remainingLifetimeLastRetrieved);
             return this;
-        }        public GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail build() {
-            return new GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail(customAuthenticationAlgorithm, customDhGroup, customEncryptionAlgorithm, isCustomPhaseOneConfig, isIkeEstablished, lifetime, negotiatedAuthenticationAlgorithm, negotiatedDhGroup, negotiatedEncryptionAlgorithm, remainingLifetime, remainingLifetimeLastRetrieved);
+        }
+        public GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail build() {
+            final var o = new GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail();
+            o.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
+            o.customDhGroup = customDhGroup;
+            o.customEncryptionAlgorithm = customEncryptionAlgorithm;
+            o.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
+            o.isIkeEstablished = isIkeEstablished;
+            o.lifetime = lifetime;
+            o.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
+            o.negotiatedDhGroup = negotiatedDhGroup;
+            o.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
+            o.remainingLifetime = remainingLifetime;
+            o.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
+            return o;
         }
     }
 }

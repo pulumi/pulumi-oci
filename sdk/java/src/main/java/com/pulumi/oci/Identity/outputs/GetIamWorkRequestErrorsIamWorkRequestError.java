@@ -13,28 +13,19 @@ public final class GetIamWorkRequestErrorsIamWorkRequestError {
      * @return A machine-usable code for the error that occured.
      * 
      */
-    private final String code;
+    private String code;
     /**
      * @return A human-readable error string.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The date and time the error occurred.
      * 
      */
-    private final String timestamp;
+    private String timestamp;
 
-    @CustomType.Constructor
-    private GetIamWorkRequestErrorsIamWorkRequestError(
-        @CustomType.Parameter("code") String code,
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("timestamp") String timestamp) {
-        this.code = code;
-        this.message = message;
-        this.timestamp = timestamp;
-    }
-
+    private GetIamWorkRequestErrorsIamWorkRequestError() {}
     /**
      * @return A machine-usable code for the error that occured.
      * 
@@ -64,16 +55,12 @@ public final class GetIamWorkRequestErrorsIamWorkRequestError {
     public static Builder builder(GetIamWorkRequestErrorsIamWorkRequestError defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String code;
         private String message;
         private String timestamp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIamWorkRequestErrorsIamWorkRequestError defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
@@ -81,19 +68,27 @@ public final class GetIamWorkRequestErrorsIamWorkRequestError {
     	      this.timestamp = defaults.timestamp;
         }
 
+        @CustomType.Setter
         public Builder code(String code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder timestamp(String timestamp) {
             this.timestamp = Objects.requireNonNull(timestamp);
             return this;
-        }        public GetIamWorkRequestErrorsIamWorkRequestError build() {
-            return new GetIamWorkRequestErrorsIamWorkRequestError(code, message, timestamp);
+        }
+        public GetIamWorkRequestErrorsIamWorkRequestError build() {
+            final var o = new GetIamWorkRequestErrorsIamWorkRequestError();
+            o.code = code;
+            o.message = message;
+            o.timestamp = timestamp;
+            return o;
         }
     }
 }

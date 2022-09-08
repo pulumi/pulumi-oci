@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAlertsAlertCollection {
-    private final List<GetAlertsAlertCollectionItem> items;
+    private List<GetAlertsAlertCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAlertsAlertCollection(@CustomType.Parameter("items") List<GetAlertsAlertCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAlertsAlertCollection() {}
     public List<GetAlertsAlertCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAlertsAlertCollection {
     public static Builder builder(GetAlertsAlertCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAlertsAlertCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertsAlertCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAlertsAlertCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAlertsAlertCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAlertsAlertCollection build() {
-            return new GetAlertsAlertCollection(items);
+        }
+        public GetAlertsAlertCollection build() {
+            final var o = new GetAlertsAlertCollection();
+            o.items = items;
+            return o;
         }
     }
 }

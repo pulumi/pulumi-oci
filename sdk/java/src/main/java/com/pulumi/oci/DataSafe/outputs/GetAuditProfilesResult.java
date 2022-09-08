@@ -15,86 +15,57 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditProfilesResult {
-    private final @Nullable String accessLevel;
-    private final @Nullable String auditCollectedVolumeGreaterThanOrEqualTo;
+    private @Nullable String accessLevel;
+    private @Nullable String auditCollectedVolumeGreaterThanOrEqualTo;
     /**
      * @return The list of audit_profile_collection.
      * 
      */
-    private final List<GetAuditProfilesAuditProfileCollection> auditProfileCollections;
+    private List<GetAuditProfilesAuditProfileCollection> auditProfileCollections;
     /**
      * @return The OCID of the  parent audit.
      * 
      */
-    private final @Nullable String auditProfileId;
+    private @Nullable String auditProfileId;
     /**
      * @return The OCID of the compartment that contains the audit.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The display name of the audit profile.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAuditProfilesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAuditProfilesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
      * 
      */
-    private final @Nullable Boolean isOverrideGlobalRetentionSetting;
+    private @Nullable Boolean isOverrideGlobalRetentionSetting;
     /**
      * @return Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      * 
      */
-    private final @Nullable Boolean isPaidUsageEnabled;
+    private @Nullable Boolean isPaidUsageEnabled;
     /**
      * @return The current state of the audit profile.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the Data Safe target for which the audit profile is created.
      * 
      */
-    private final @Nullable String targetId;
+    private @Nullable String targetId;
 
-    @CustomType.Constructor
-    private GetAuditProfilesResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("auditCollectedVolumeGreaterThanOrEqualTo") @Nullable String auditCollectedVolumeGreaterThanOrEqualTo,
-        @CustomType.Parameter("auditProfileCollections") List<GetAuditProfilesAuditProfileCollection> auditProfileCollections,
-        @CustomType.Parameter("auditProfileId") @Nullable String auditProfileId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAuditProfilesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isOverrideGlobalRetentionSetting") @Nullable Boolean isOverrideGlobalRetentionSetting,
-        @CustomType.Parameter("isPaidUsageEnabled") @Nullable Boolean isPaidUsageEnabled,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targetId") @Nullable String targetId) {
-        this.accessLevel = accessLevel;
-        this.auditCollectedVolumeGreaterThanOrEqualTo = auditCollectedVolumeGreaterThanOrEqualTo;
-        this.auditProfileCollections = auditProfileCollections;
-        this.auditProfileId = auditProfileId;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
-        this.isPaidUsageEnabled = isPaidUsageEnabled;
-        this.state = state;
-        this.targetId = targetId;
-    }
-
+    private GetAuditProfilesResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -178,7 +149,7 @@ public final class GetAuditProfilesResult {
     public static Builder builder(GetAuditProfilesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private @Nullable String auditCollectedVolumeGreaterThanOrEqualTo;
@@ -193,11 +164,7 @@ public final class GetAuditProfilesResult {
         private @Nullable Boolean isPaidUsageEnabled;
         private @Nullable String state;
         private @Nullable String targetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditProfilesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -215,14 +182,17 @@ public final class GetAuditProfilesResult {
     	      this.targetId = defaults.targetId;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder auditCollectedVolumeGreaterThanOrEqualTo(@Nullable String auditCollectedVolumeGreaterThanOrEqualTo) {
             this.auditCollectedVolumeGreaterThanOrEqualTo = auditCollectedVolumeGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder auditProfileCollections(List<GetAuditProfilesAuditProfileCollection> auditProfileCollections) {
             this.auditProfileCollections = Objects.requireNonNull(auditProfileCollections);
             return this;
@@ -230,22 +200,27 @@ public final class GetAuditProfilesResult {
         public Builder auditProfileCollections(GetAuditProfilesAuditProfileCollection... auditProfileCollections) {
             return auditProfileCollections(List.of(auditProfileCollections));
         }
+        @CustomType.Setter
         public Builder auditProfileId(@Nullable String auditProfileId) {
             this.auditProfileId = auditProfileId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAuditProfilesFilter> filters) {
             this.filters = filters;
             return this;
@@ -253,27 +228,47 @@ public final class GetAuditProfilesResult {
         public Builder filters(GetAuditProfilesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isOverrideGlobalRetentionSetting(@Nullable Boolean isOverrideGlobalRetentionSetting) {
             this.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             return this;
         }
+        @CustomType.Setter
         public Builder isPaidUsageEnabled(@Nullable Boolean isPaidUsageEnabled) {
             this.isPaidUsageEnabled = isPaidUsageEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
-        }        public GetAuditProfilesResult build() {
-            return new GetAuditProfilesResult(accessLevel, auditCollectedVolumeGreaterThanOrEqualTo, auditProfileCollections, auditProfileId, compartmentId, compartmentIdInSubtree, displayName, filters, id, isOverrideGlobalRetentionSetting, isPaidUsageEnabled, state, targetId);
+        }
+        public GetAuditProfilesResult build() {
+            final var o = new GetAuditProfilesResult();
+            o.accessLevel = accessLevel;
+            o.auditCollectedVolumeGreaterThanOrEqualTo = auditCollectedVolumeGreaterThanOrEqualTo;
+            o.auditProfileCollections = auditProfileCollections;
+            o.auditProfileId = auditProfileId;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
+            o.isPaidUsageEnabled = isPaidUsageEnabled;
+            o.state = state;
+            o.targetId = targetId;
+            return o;
         }
     }
 }

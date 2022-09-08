@@ -13,21 +13,14 @@ public final class GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader {
      * @return The unique name of the whitelist.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The value of the header.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader() {}
     /**
      * @return The unique name of the whitelist.
      * 
@@ -50,30 +43,32 @@ public final class GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader {
     public static Builder builder(GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader build() {
-            return new GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader(name, value);
+        }
+        public GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader build() {
+            final var o = new GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetClusterNetworksClusterNetworkPlacementConfigurationSeconda
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.displayName = displayName;
-        this.subnetId = subnetId;
-    }
-
+    private GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet() {}
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
@@ -50,30 +43,32 @@ public final class GetClusterNetworksClusterNetworkPlacementConfigurationSeconda
     public static Builder builder(GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet build() {
-            return new GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet(displayName, subnetId);
+        }
+        public GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet build() {
+            final var o = new GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet();
+            o.displayName = displayName;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

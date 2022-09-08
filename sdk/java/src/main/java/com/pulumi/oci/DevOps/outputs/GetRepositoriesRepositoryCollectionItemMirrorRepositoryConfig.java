@@ -15,28 +15,19 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
      * @return Upstream git repository connection identifer.
      * 
      */
-    private final String connectorId;
+    private String connectorId;
     /**
      * @return URL of external repository you want to mirror.
      * 
      */
-    private final String repositoryUrl;
+    private String repositoryUrl;
     /**
      * @return Specifies a trigger schedule. Timing information for when to initiate automated syncs.
      * 
      */
-    private final List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule> triggerSchedules;
+    private List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule> triggerSchedules;
 
-    @CustomType.Constructor
-    private GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig(
-        @CustomType.Parameter("connectorId") String connectorId,
-        @CustomType.Parameter("repositoryUrl") String repositoryUrl,
-        @CustomType.Parameter("triggerSchedules") List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule> triggerSchedules) {
-        this.connectorId = connectorId;
-        this.repositoryUrl = repositoryUrl;
-        this.triggerSchedules = triggerSchedules;
-    }
-
+    private GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig() {}
     /**
      * @return Upstream git repository connection identifer.
      * 
@@ -66,16 +57,12 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
     public static Builder builder(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String connectorId;
         private String repositoryUrl;
         private List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule> triggerSchedules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectorId = defaults.connectorId;
@@ -83,22 +70,30 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
     	      this.triggerSchedules = defaults.triggerSchedules;
         }
 
+        @CustomType.Setter
         public Builder connectorId(String connectorId) {
             this.connectorId = Objects.requireNonNull(connectorId);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder triggerSchedules(List<GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule> triggerSchedules) {
             this.triggerSchedules = Objects.requireNonNull(triggerSchedules);
             return this;
         }
         public Builder triggerSchedules(GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule... triggerSchedules) {
             return triggerSchedules(List.of(triggerSchedules));
-        }        public GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig build() {
-            return new GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig(connectorId, repositoryUrl, triggerSchedules);
+        }
+        public GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig build() {
+            final var o = new GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig();
+            o.connectorId = connectorId;
+            o.repositoryUrl = repositoryUrl;
+            o.triggerSchedules = triggerSchedules;
+            return o;
         }
     }
 }

@@ -13,28 +13,19 @@ public final class GetFleetBlocklistsItemTarget {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
      */
-    private final String fleetId;
+    private String fleetId;
     /**
      * @return The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
      * 
      */
-    private final String installationKey;
+    private String installationKey;
     /**
      * @return The Fleet-unique identifier of the related managed instance.
      * 
      */
-    private final String managedInstanceId;
+    private String managedInstanceId;
 
-    @CustomType.Constructor
-    private GetFleetBlocklistsItemTarget(
-        @CustomType.Parameter("fleetId") String fleetId,
-        @CustomType.Parameter("installationKey") String installationKey,
-        @CustomType.Parameter("managedInstanceId") String managedInstanceId) {
-        this.fleetId = fleetId;
-        this.installationKey = installationKey;
-        this.managedInstanceId = managedInstanceId;
-    }
-
+    private GetFleetBlocklistsItemTarget() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
@@ -64,16 +55,12 @@ public final class GetFleetBlocklistsItemTarget {
     public static Builder builder(GetFleetBlocklistsItemTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String fleetId;
         private String installationKey;
         private String managedInstanceId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFleetBlocklistsItemTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fleetId = defaults.fleetId;
@@ -81,19 +68,27 @@ public final class GetFleetBlocklistsItemTarget {
     	      this.managedInstanceId = defaults.managedInstanceId;
         }
 
+        @CustomType.Setter
         public Builder fleetId(String fleetId) {
             this.fleetId = Objects.requireNonNull(fleetId);
             return this;
         }
+        @CustomType.Setter
         public Builder installationKey(String installationKey) {
             this.installationKey = Objects.requireNonNull(installationKey);
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
             return this;
-        }        public GetFleetBlocklistsItemTarget build() {
-            return new GetFleetBlocklistsItemTarget(fleetId, installationKey, managedInstanceId);
+        }
+        public GetFleetBlocklistsItemTarget build() {
+            final var o = new GetFleetBlocklistsItemTarget();
+            o.fleetId = fleetId;
+            o.installationKey = installationKey;
+            o.managedInstanceId = managedInstanceId;
+            return o;
         }
     }
 }

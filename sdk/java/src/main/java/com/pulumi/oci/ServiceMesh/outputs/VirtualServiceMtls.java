@@ -16,28 +16,19 @@ public final class VirtualServiceMtls {
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
-    private final @Nullable String certificateId;
+    private @Nullable String certificateId;
     /**
      * @return (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
      * 
      */
-    private final @Nullable Integer maximumValidity;
+    private @Nullable Integer maximumValidity;
     /**
      * @return (Updatable) DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
      * 
      */
-    private final String mode;
+    private String mode;
 
-    @CustomType.Constructor
-    private VirtualServiceMtls(
-        @CustomType.Parameter("certificateId") @Nullable String certificateId,
-        @CustomType.Parameter("maximumValidity") @Nullable Integer maximumValidity,
-        @CustomType.Parameter("mode") String mode) {
-        this.certificateId = certificateId;
-        this.maximumValidity = maximumValidity;
-        this.mode = mode;
-    }
-
+    private VirtualServiceMtls() {}
     /**
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
@@ -67,16 +58,12 @@ public final class VirtualServiceMtls {
     public static Builder builder(VirtualServiceMtls defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String certificateId;
         private @Nullable Integer maximumValidity;
         private String mode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VirtualServiceMtls defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateId = defaults.certificateId;
@@ -84,19 +71,27 @@ public final class VirtualServiceMtls {
     	      this.mode = defaults.mode;
         }
 
+        @CustomType.Setter
         public Builder certificateId(@Nullable String certificateId) {
             this.certificateId = certificateId;
             return this;
         }
+        @CustomType.Setter
         public Builder maximumValidity(@Nullable Integer maximumValidity) {
             this.maximumValidity = maximumValidity;
             return this;
         }
+        @CustomType.Setter
         public Builder mode(String mode) {
             this.mode = Objects.requireNonNull(mode);
             return this;
-        }        public VirtualServiceMtls build() {
-            return new VirtualServiceMtls(certificateId, maximumValidity, mode);
+        }
+        public VirtualServiceMtls build() {
+            final var o = new VirtualServiceMtls();
+            o.certificateId = certificateId;
+            o.maximumValidity = maximumValidity;
+            o.mode = mode;
+            return o;
         }
     }
 }

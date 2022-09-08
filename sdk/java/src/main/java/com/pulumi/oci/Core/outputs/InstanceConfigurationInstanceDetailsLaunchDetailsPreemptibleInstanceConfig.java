@@ -13,13 +13,9 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleI
      * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    private final InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction preemptionAction;
+    private InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction preemptionAction;
 
-    @CustomType.Constructor
-    private InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig(@CustomType.Parameter("preemptionAction") InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction preemptionAction) {
-        this.preemptionAction = preemptionAction;
-    }
-
+    private InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig() {}
     /**
      * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
@@ -35,24 +31,24 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleI
     public static Builder builder(InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction preemptionAction;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.preemptionAction = defaults.preemptionAction;
         }
 
+        @CustomType.Setter
         public Builder preemptionAction(InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction preemptionAction) {
             this.preemptionAction = Objects.requireNonNull(preemptionAction);
             return this;
-        }        public InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig build() {
-            return new InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig(preemptionAction);
+        }
+        public InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig build() {
+            final var o = new InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig();
+            o.preemptionAction = preemptionAction;
+            return o;
         }
     }
 }

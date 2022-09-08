@@ -13,13 +13,9 @@ public final class AutonomousVmClusterMaintenanceWindowDetailMonth {
      * @return (Updatable) Name of the month of the year.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private AutonomousVmClusterMaintenanceWindowDetailMonth(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private AutonomousVmClusterMaintenanceWindowDetailMonth() {}
     /**
      * @return (Updatable) Name of the month of the year.
      * 
@@ -35,24 +31,24 @@ public final class AutonomousVmClusterMaintenanceWindowDetailMonth {
     public static Builder builder(AutonomousVmClusterMaintenanceWindowDetailMonth defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousVmClusterMaintenanceWindowDetailMonth defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public AutonomousVmClusterMaintenanceWindowDetailMonth build() {
-            return new AutonomousVmClusterMaintenanceWindowDetailMonth(name);
+        }
+        public AutonomousVmClusterMaintenanceWindowDetailMonth build() {
+            final var o = new AutonomousVmClusterMaintenanceWindowDetailMonth();
+            o.name = name;
+            return o;
         }
     }
 }

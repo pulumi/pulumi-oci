@@ -19,34 +19,21 @@ public final class GetProductLicensesResult {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetProductLicensesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetProductLicensesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isCompartmentIdInSubtree;
+    private String id;
+    private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return The list of product_license_collection.
      * 
      */
-    private final List<GetProductLicensesProductLicenseCollection> productLicenseCollections;
+    private List<GetProductLicensesProductLicenseCollection> productLicenseCollections;
 
-    @CustomType.Constructor
-    private GetProductLicensesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetProductLicensesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCompartmentIdInSubtree") @Nullable Boolean isCompartmentIdInSubtree,
-        @CustomType.Parameter("productLicenseCollections") List<GetProductLicensesProductLicenseCollection> productLicenseCollections) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-        this.productLicenseCollections = productLicenseCollections;
-    }
-
+    private GetProductLicensesResult() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.
      * 
@@ -82,18 +69,14 @@ public final class GetProductLicensesResult {
     public static Builder builder(GetProductLicensesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetProductLicensesFilter> filters;
         private String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
         private List<GetProductLicensesProductLicenseCollection> productLicenseCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProductLicensesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -103,10 +86,12 @@ public final class GetProductLicensesResult {
     	      this.productLicenseCollections = defaults.productLicenseCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetProductLicensesFilter> filters) {
             this.filters = filters;
             return this;
@@ -114,22 +99,32 @@ public final class GetProductLicensesResult {
         public Builder filters(GetProductLicensesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder productLicenseCollections(List<GetProductLicensesProductLicenseCollection> productLicenseCollections) {
             this.productLicenseCollections = Objects.requireNonNull(productLicenseCollections);
             return this;
         }
         public Builder productLicenseCollections(GetProductLicensesProductLicenseCollection... productLicenseCollections) {
             return productLicenseCollections(List.of(productLicenseCollections));
-        }        public GetProductLicensesResult build() {
-            return new GetProductLicensesResult(compartmentId, filters, id, isCompartmentIdInSubtree, productLicenseCollections);
+        }
+        public GetProductLicensesResult build() {
+            final var o = new GetProductLicensesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            o.productLicenseCollections = productLicenseCollections;
+            return o;
         }
     }
 }

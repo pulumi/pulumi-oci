@@ -8,10 +8,7 @@ import java.util.Objects;
 
 @CustomType
 public final class DatasetInitialRecordGenerationConfiguration {
-    @CustomType.Constructor
-    private DatasetInitialRecordGenerationConfiguration() {
-    }
-
+    private DatasetInitialRecordGenerationConfiguration() {}
 
     public static Builder builder() {
         return new Builder();
@@ -20,18 +17,16 @@ public final class DatasetInitialRecordGenerationConfiguration {
     public static Builder builder(DatasetInitialRecordGenerationConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatasetInitialRecordGenerationConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
         }
+
         public DatasetInitialRecordGenerationConfiguration build() {
-            return new DatasetInitialRecordGenerationConfiguration();
+            final var o = new DatasetInitialRecordGenerationConfiguration();
+            return o;
         }
     }
 }

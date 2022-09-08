@@ -15,28 +15,19 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
      * @return The OCID of an artifact
      * 
      */
-    private final String deployArtifactId;
+    private String deployArtifactId;
     /**
      * @return List of stages.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
+    private List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem(
-        @CustomType.Parameter("deployArtifactId") String deployArtifactId,
-        @CustomType.Parameter("deployPipelineStages") List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages,
-        @CustomType.Parameter("displayName") String displayName) {
-        this.deployArtifactId = deployArtifactId;
-        this.deployPipelineStages = deployPipelineStages;
-        this.displayName = displayName;
-    }
-
+    private GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem() {}
     /**
      * @return The OCID of an artifact
      * 
@@ -66,16 +57,12 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
     public static Builder builder(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String deployArtifactId;
         private List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
         private String displayName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deployArtifactId = defaults.deployArtifactId;
@@ -83,10 +70,12 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
     	      this.displayName = defaults.displayName;
         }
 
+        @CustomType.Setter
         public Builder deployArtifactId(String deployArtifactId) {
             this.deployArtifactId = Objects.requireNonNull(deployArtifactId);
             return this;
         }
+        @CustomType.Setter
         public Builder deployPipelineStages(List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages) {
             this.deployPipelineStages = Objects.requireNonNull(deployPipelineStages);
             return this;
@@ -94,11 +83,17 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
         public Builder deployPipelineStages(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage... deployPipelineStages) {
             return deployPipelineStages(List.of(deployPipelineStages));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
-        }        public GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem build() {
-            return new GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem(deployArtifactId, deployPipelineStages, displayName);
+        }
+        public GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem build() {
+            final var o = new GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem();
+            o.deployArtifactId = deployArtifactId;
+            o.deployPipelineStages = deployPipelineStages;
+            o.displayName = displayName;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class GetClustersClusterOptionServiceLbConfig {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
 
-    @CustomType.Constructor
-    private GetClustersClusterOptionServiceLbConfig(
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags) {
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-    }
-
+    private GetClustersClusterOptionServiceLbConfig() {}
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -52,30 +45,32 @@ public final class GetClustersClusterOptionServiceLbConfig {
     public static Builder builder(GetClustersClusterOptionServiceLbConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> definedTags;
         private Map<String,Object> freeformTags;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClustersClusterOptionServiceLbConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
         }
 
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
-        }        public GetClustersClusterOptionServiceLbConfig build() {
-            return new GetClustersClusterOptionServiceLbConfig(definedTags, freeformTags);
+        }
+        public GetClustersClusterOptionServiceLbConfig build() {
+            final var o = new GetClustersClusterOptionServiceLbConfig();
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            return o;
         }
     }
 }

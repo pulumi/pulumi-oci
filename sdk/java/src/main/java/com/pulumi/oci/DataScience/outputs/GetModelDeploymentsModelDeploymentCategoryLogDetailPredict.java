@@ -13,21 +13,14 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetailPredict {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
      * 
      */
-    private final String logGroupId;
+    private String logGroupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
      * 
      */
-    private final String logId;
+    private String logId;
 
-    @CustomType.Constructor
-    private GetModelDeploymentsModelDeploymentCategoryLogDetailPredict(
-        @CustomType.Parameter("logGroupId") String logGroupId,
-        @CustomType.Parameter("logId") String logId) {
-        this.logGroupId = logGroupId;
-        this.logId = logId;
-    }
-
+    private GetModelDeploymentsModelDeploymentCategoryLogDetailPredict() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
      * 
@@ -50,30 +43,32 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetailPredict {
     public static Builder builder(GetModelDeploymentsModelDeploymentCategoryLogDetailPredict defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String logGroupId;
         private String logId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentCategoryLogDetailPredict defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.logGroupId = defaults.logGroupId;
     	      this.logId = defaults.logId;
         }
 
+        @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder logId(String logId) {
             this.logId = Objects.requireNonNull(logId);
             return this;
-        }        public GetModelDeploymentsModelDeploymentCategoryLogDetailPredict build() {
-            return new GetModelDeploymentsModelDeploymentCategoryLogDetailPredict(logGroupId, logId);
+        }
+        public GetModelDeploymentsModelDeploymentCategoryLogDetailPredict build() {
+            final var o = new GetModelDeploymentsModelDeploymentCategoryLogDetailPredict();
+            o.logGroupId = logGroupId;
+            o.logId = logId;
+            return o;
         }
     }
 }

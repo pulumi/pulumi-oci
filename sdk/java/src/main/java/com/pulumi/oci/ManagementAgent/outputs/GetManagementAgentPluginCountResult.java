@@ -11,31 +11,20 @@ import java.util.Objects;
 
 @CustomType
 public final class GetManagementAgentPluginCountResult {
-    private final String compartmentId;
-    private final String groupBy;
+    private String compartmentId;
+    private String groupBy;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return List in which each item describes an aggregation of Managment Agent Plugins
      * 
      */
-    private final List<GetManagementAgentPluginCountItem> items;
+    private List<GetManagementAgentPluginCountItem> items;
 
-    @CustomType.Constructor
-    private GetManagementAgentPluginCountResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("groupBy") String groupBy,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetManagementAgentPluginCountItem> items) {
-        this.compartmentId = compartmentId;
-        this.groupBy = groupBy;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetManagementAgentPluginCountResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -64,17 +53,13 @@ public final class GetManagementAgentPluginCountResult {
     public static Builder builder(GetManagementAgentPluginCountResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String groupBy;
         private String id;
         private List<GetManagementAgentPluginCountItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentPluginCountResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -83,26 +68,36 @@ public final class GetManagementAgentPluginCountResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder groupBy(String groupBy) {
             this.groupBy = Objects.requireNonNull(groupBy);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagementAgentPluginCountItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagementAgentPluginCountItem... items) {
             return items(List.of(items));
-        }        public GetManagementAgentPluginCountResult build() {
-            return new GetManagementAgentPluginCountResult(compartmentId, groupBy, id, items);
+        }
+        public GetManagementAgentPluginCountResult build() {
+            final var o = new GetManagementAgentPluginCountResult();
+            o.compartmentId = compartmentId;
+            o.groupBy = groupBy;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

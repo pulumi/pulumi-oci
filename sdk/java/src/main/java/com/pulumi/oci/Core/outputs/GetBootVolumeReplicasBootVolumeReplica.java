@@ -15,98 +15,69 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The OCID of the source boot volume.
      * 
      */
-    private final String bootVolumeId;
+    private String bootVolumeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The boot volume replica&#39;s Oracle ID (OCID).
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The image OCID used to create the boot volume the replica is replicated from.
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return The size of the source boot volume, in GBs.
      * 
      */
-    private final String sizeInGbs;
+    private String sizeInGbs;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the boot volume replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the boot volume replica was last synced from the source boot volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeLastSynced;
+    private String timeLastSynced;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
      * 
      */
-    private final String volumeGroupReplicaId;
+    private String volumeGroupReplicaId;
 
-    @CustomType.Constructor
-    private GetBootVolumeReplicasBootVolumeReplica(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("bootVolumeId") String bootVolumeId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("sizeInGbs") String sizeInGbs,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastSynced") String timeLastSynced,
-        @CustomType.Parameter("volumeGroupReplicaId") String volumeGroupReplicaId) {
-        this.availabilityDomain = availabilityDomain;
-        this.bootVolumeId = bootVolumeId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.imageId = imageId;
-        this.sizeInGbs = sizeInGbs;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeLastSynced = timeLastSynced;
-        this.volumeGroupReplicaId = volumeGroupReplicaId;
-    }
-
+    private GetBootVolumeReplicasBootVolumeReplica() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -206,7 +177,7 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
     public static Builder builder(GetBootVolumeReplicasBootVolumeReplica defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String bootVolumeId;
@@ -221,11 +192,7 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
         private String timeCreated;
         private String timeLastSynced;
         private String volumeGroupReplicaId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBootVolumeReplicasBootVolumeReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -243,59 +210,87 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
     	      this.volumeGroupReplicaId = defaults.volumeGroupReplicaId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder bootVolumeId(String bootVolumeId) {
             this.bootVolumeId = Objects.requireNonNull(bootVolumeId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
             this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastSynced(String timeLastSynced) {
             this.timeLastSynced = Objects.requireNonNull(timeLastSynced);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
             this.volumeGroupReplicaId = Objects.requireNonNull(volumeGroupReplicaId);
             return this;
-        }        public GetBootVolumeReplicasBootVolumeReplica build() {
-            return new GetBootVolumeReplicasBootVolumeReplica(availabilityDomain, bootVolumeId, compartmentId, definedTags, displayName, freeformTags, id, imageId, sizeInGbs, state, timeCreated, timeLastSynced, volumeGroupReplicaId);
+        }
+        public GetBootVolumeReplicasBootVolumeReplica build() {
+            final var o = new GetBootVolumeReplicasBootVolumeReplica();
+            o.availabilityDomain = availabilityDomain;
+            o.bootVolumeId = bootVolumeId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.imageId = imageId;
+            o.sizeInGbs = sizeInGbs;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeLastSynced = timeLastSynced;
+            o.volumeGroupReplicaId = volumeGroupReplicaId;
+            return o;
         }
     }
 }

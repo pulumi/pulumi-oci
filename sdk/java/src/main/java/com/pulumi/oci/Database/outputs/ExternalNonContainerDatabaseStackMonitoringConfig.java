@@ -15,21 +15,14 @@ public final class ExternalNonContainerDatabaseStackMonitoringConfig {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    private final @Nullable String stackMonitoringConnectorId;
+    private @Nullable String stackMonitoringConnectorId;
     /**
      * @return The status of Stack Monitoring.
      * 
      */
-    private final @Nullable String stackMonitoringStatus;
+    private @Nullable String stackMonitoringStatus;
 
-    @CustomType.Constructor
-    private ExternalNonContainerDatabaseStackMonitoringConfig(
-        @CustomType.Parameter("stackMonitoringConnectorId") @Nullable String stackMonitoringConnectorId,
-        @CustomType.Parameter("stackMonitoringStatus") @Nullable String stackMonitoringStatus) {
-        this.stackMonitoringConnectorId = stackMonitoringConnectorId;
-        this.stackMonitoringStatus = stackMonitoringStatus;
-    }
-
+    private ExternalNonContainerDatabaseStackMonitoringConfig() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
@@ -52,30 +45,32 @@ public final class ExternalNonContainerDatabaseStackMonitoringConfig {
     public static Builder builder(ExternalNonContainerDatabaseStackMonitoringConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String stackMonitoringConnectorId;
         private @Nullable String stackMonitoringStatus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ExternalNonContainerDatabaseStackMonitoringConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.stackMonitoringConnectorId = defaults.stackMonitoringConnectorId;
     	      this.stackMonitoringStatus = defaults.stackMonitoringStatus;
         }
 
+        @CustomType.Setter
         public Builder stackMonitoringConnectorId(@Nullable String stackMonitoringConnectorId) {
             this.stackMonitoringConnectorId = stackMonitoringConnectorId;
             return this;
         }
+        @CustomType.Setter
         public Builder stackMonitoringStatus(@Nullable String stackMonitoringStatus) {
             this.stackMonitoringStatus = stackMonitoringStatus;
             return this;
-        }        public ExternalNonContainerDatabaseStackMonitoringConfig build() {
-            return new ExternalNonContainerDatabaseStackMonitoringConfig(stackMonitoringConnectorId, stackMonitoringStatus);
+        }
+        public ExternalNonContainerDatabaseStackMonitoringConfig build() {
+            final var o = new ExternalNonContainerDatabaseStackMonitoringConfig();
+            o.stackMonitoringConnectorId = stackMonitoringConnectorId;
+            o.stackMonitoringStatus = stackMonitoringStatus;
+            return o;
         }
     }
 }

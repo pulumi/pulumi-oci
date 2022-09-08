@@ -13,28 +13,19 @@ public final class GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC is attached to (for example, a Compute instance).
      * 
      */
-    private final String resourceId;
+    private String resourceId;
     /**
      * @return The date and time the VNIC was added to the network security group, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeAssociated;
+    private String timeAssociated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * 
      */
-    private final String vnicId;
+    private String vnicId;
 
-    @CustomType.Constructor
-    private GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic(
-        @CustomType.Parameter("resourceId") String resourceId,
-        @CustomType.Parameter("timeAssociated") String timeAssociated,
-        @CustomType.Parameter("vnicId") String vnicId) {
-        this.resourceId = resourceId;
-        this.timeAssociated = timeAssociated;
-        this.vnicId = vnicId;
-    }
-
+    private GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC is attached to (for example, a Compute instance).
      * 
@@ -64,16 +55,12 @@ public final class GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic {
     public static Builder builder(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String resourceId;
         private String timeAssociated;
         private String vnicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.resourceId = defaults.resourceId;
@@ -81,19 +68,27 @@ public final class GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic {
     	      this.vnicId = defaults.vnicId;
         }
 
+        @CustomType.Setter
         public Builder resourceId(String resourceId) {
             this.resourceId = Objects.requireNonNull(resourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAssociated(String timeAssociated) {
             this.timeAssociated = Objects.requireNonNull(timeAssociated);
             return this;
         }
+        @CustomType.Setter
         public Builder vnicId(String vnicId) {
             this.vnicId = Objects.requireNonNull(vnicId);
             return this;
-        }        public GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic build() {
-            return new GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic(resourceId, timeAssociated, vnicId);
+        }
+        public GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic build() {
+            final var o = new GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic();
+            o.resourceId = resourceId;
+            o.timeAssociated = timeAssociated;
+            o.vnicId = vnicId;
+            return o;
         }
     }
 }

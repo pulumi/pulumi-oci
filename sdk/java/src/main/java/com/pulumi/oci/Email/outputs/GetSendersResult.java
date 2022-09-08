@@ -18,48 +18,31 @@ public final class GetSendersResult {
      * @return The OCID for the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable String domain;
+    private String compartmentId;
+    private @Nullable String domain;
     /**
      * @return The email address of the sender.
      * 
      */
-    private final @Nullable String emailAddress;
-    private final @Nullable List<GetSendersFilter> filters;
+    private @Nullable String emailAddress;
+    private @Nullable List<GetSendersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of senders.
      * 
      */
-    private final List<GetSendersSender> senders;
+    private List<GetSendersSender> senders;
     /**
      * @return The current status of the approved sender.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetSendersResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("domain") @Nullable String domain,
-        @CustomType.Parameter("emailAddress") @Nullable String emailAddress,
-        @CustomType.Parameter("filters") @Nullable List<GetSendersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("senders") List<GetSendersSender> senders,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.domain = domain;
-        this.emailAddress = emailAddress;
-        this.filters = filters;
-        this.id = id;
-        this.senders = senders;
-        this.state = state;
-    }
-
+    private GetSendersResult() {}
     /**
      * @return The OCID for the compartment.
      * 
@@ -109,7 +92,7 @@ public final class GetSendersResult {
     public static Builder builder(GetSendersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String domain;
@@ -118,11 +101,7 @@ public final class GetSendersResult {
         private String id;
         private List<GetSendersSender> senders;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSendersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,18 +113,22 @@ public final class GetSendersResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder domain(@Nullable String domain) {
             this.domain = domain;
             return this;
         }
+        @CustomType.Setter
         public Builder emailAddress(@Nullable String emailAddress) {
             this.emailAddress = emailAddress;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSendersFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,10 +136,12 @@ public final class GetSendersResult {
         public Builder filters(GetSendersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder senders(List<GetSendersSender> senders) {
             this.senders = Objects.requireNonNull(senders);
             return this;
@@ -164,11 +149,21 @@ public final class GetSendersResult {
         public Builder senders(GetSendersSender... senders) {
             return senders(List.of(senders));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetSendersResult build() {
-            return new GetSendersResult(compartmentId, domain, emailAddress, filters, id, senders, state);
+        }
+        public GetSendersResult build() {
+            final var o = new GetSendersResult();
+            o.compartmentId = compartmentId;
+            o.domain = domain;
+            o.emailAddress = emailAddress;
+            o.filters = filters;
+            o.id = id;
+            o.senders = senders;
+            o.state = state;
+            return o;
         }
     }
 }

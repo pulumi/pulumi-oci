@@ -18,91 +18,64 @@ public final class GetQueryQueryDefinitionReportQuery {
      * @return The compartment depth level.
      * 
      */
-    private final Double compartmentDepth;
+    private Double compartmentDepth;
     /**
      * @return The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
      * 
      */
-    private final String dateRangeName;
+    private String dateRangeName;
     /**
      * @return The filter object for query usage.
      * 
      */
-    private final String filter;
+    private String filter;
     /**
      * @return Forecast configuration of usage/cost.
      * 
      */
-    private final List<GetQueryQueryDefinitionReportQueryForecast> forecasts;
+    private List<GetQueryQueryDefinitionReportQueryForecast> forecasts;
     /**
      * @return The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
      * 
      */
-    private final String granularity;
+    private String granularity;
     /**
      * @return Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
-    private final List<String> groupBies;
+    private List<String> groupBies;
     /**
      * @return GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{&#34;namespace&#34;:&#34;oracle&#34;, &#34;key&#34;:&#34;createdBy&#34;]`
      * 
      */
-    private final List<GetQueryQueryDefinitionReportQueryGroupByTag> groupByTags;
+    private List<GetQueryQueryDefinitionReportQueryGroupByTag> groupByTags;
     /**
      * @return Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      * 
      */
-    private final Boolean isAggregateByTime;
+    private Boolean isAggregateByTime;
     /**
      * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
      * 
      */
-    private final String queryType;
+    private String queryType;
     /**
      * @return Tenant ID.
      * 
      */
-    private final String tenantId;
+    private String tenantId;
     /**
      * @return The usage end time.
      * 
      */
-    private final String timeUsageEnded;
+    private String timeUsageEnded;
     /**
      * @return The usage start time.
      * 
      */
-    private final String timeUsageStarted;
+    private String timeUsageStarted;
 
-    @CustomType.Constructor
-    private GetQueryQueryDefinitionReportQuery(
-        @CustomType.Parameter("compartmentDepth") Double compartmentDepth,
-        @CustomType.Parameter("dateRangeName") String dateRangeName,
-        @CustomType.Parameter("filter") String filter,
-        @CustomType.Parameter("forecasts") List<GetQueryQueryDefinitionReportQueryForecast> forecasts,
-        @CustomType.Parameter("granularity") String granularity,
-        @CustomType.Parameter("groupBies") List<String> groupBies,
-        @CustomType.Parameter("groupByTags") List<GetQueryQueryDefinitionReportQueryGroupByTag> groupByTags,
-        @CustomType.Parameter("isAggregateByTime") Boolean isAggregateByTime,
-        @CustomType.Parameter("queryType") String queryType,
-        @CustomType.Parameter("tenantId") String tenantId,
-        @CustomType.Parameter("timeUsageEnded") String timeUsageEnded,
-        @CustomType.Parameter("timeUsageStarted") String timeUsageStarted) {
-        this.compartmentDepth = compartmentDepth;
-        this.dateRangeName = dateRangeName;
-        this.filter = filter;
-        this.forecasts = forecasts;
-        this.granularity = granularity;
-        this.groupBies = groupBies;
-        this.groupByTags = groupByTags;
-        this.isAggregateByTime = isAggregateByTime;
-        this.queryType = queryType;
-        this.tenantId = tenantId;
-        this.timeUsageEnded = timeUsageEnded;
-        this.timeUsageStarted = timeUsageStarted;
-    }
-
+    private GetQueryQueryDefinitionReportQuery() {}
     /**
      * @return The compartment depth level.
      * 
@@ -195,7 +168,7 @@ public final class GetQueryQueryDefinitionReportQuery {
     public static Builder builder(GetQueryQueryDefinitionReportQuery defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double compartmentDepth;
         private String dateRangeName;
@@ -209,11 +182,7 @@ public final class GetQueryQueryDefinitionReportQuery {
         private String tenantId;
         private String timeUsageEnded;
         private String timeUsageStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQueryQueryDefinitionReportQuery defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentDepth = defaults.compartmentDepth;
@@ -230,18 +199,22 @@ public final class GetQueryQueryDefinitionReportQuery {
     	      this.timeUsageStarted = defaults.timeUsageStarted;
         }
 
+        @CustomType.Setter
         public Builder compartmentDepth(Double compartmentDepth) {
             this.compartmentDepth = Objects.requireNonNull(compartmentDepth);
             return this;
         }
+        @CustomType.Setter
         public Builder dateRangeName(String dateRangeName) {
             this.dateRangeName = Objects.requireNonNull(dateRangeName);
             return this;
         }
+        @CustomType.Setter
         public Builder filter(String filter) {
             this.filter = Objects.requireNonNull(filter);
             return this;
         }
+        @CustomType.Setter
         public Builder forecasts(List<GetQueryQueryDefinitionReportQueryForecast> forecasts) {
             this.forecasts = Objects.requireNonNull(forecasts);
             return this;
@@ -249,10 +222,12 @@ public final class GetQueryQueryDefinitionReportQuery {
         public Builder forecasts(GetQueryQueryDefinitionReportQueryForecast... forecasts) {
             return forecasts(List.of(forecasts));
         }
+        @CustomType.Setter
         public Builder granularity(String granularity) {
             this.granularity = Objects.requireNonNull(granularity);
             return this;
         }
+        @CustomType.Setter
         public Builder groupBies(List<String> groupBies) {
             this.groupBies = Objects.requireNonNull(groupBies);
             return this;
@@ -260,6 +235,7 @@ public final class GetQueryQueryDefinitionReportQuery {
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
+        @CustomType.Setter
         public Builder groupByTags(List<GetQueryQueryDefinitionReportQueryGroupByTag> groupByTags) {
             this.groupByTags = Objects.requireNonNull(groupByTags);
             return this;
@@ -267,27 +243,46 @@ public final class GetQueryQueryDefinitionReportQuery {
         public Builder groupByTags(GetQueryQueryDefinitionReportQueryGroupByTag... groupByTags) {
             return groupByTags(List.of(groupByTags));
         }
+        @CustomType.Setter
         public Builder isAggregateByTime(Boolean isAggregateByTime) {
             this.isAggregateByTime = Objects.requireNonNull(isAggregateByTime);
             return this;
         }
+        @CustomType.Setter
         public Builder queryType(String queryType) {
             this.queryType = Objects.requireNonNull(queryType);
             return this;
         }
+        @CustomType.Setter
         public Builder tenantId(String tenantId) {
             this.tenantId = Objects.requireNonNull(tenantId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUsageEnded(String timeUsageEnded) {
             this.timeUsageEnded = Objects.requireNonNull(timeUsageEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUsageStarted(String timeUsageStarted) {
             this.timeUsageStarted = Objects.requireNonNull(timeUsageStarted);
             return this;
-        }        public GetQueryQueryDefinitionReportQuery build() {
-            return new GetQueryQueryDefinitionReportQuery(compartmentDepth, dateRangeName, filter, forecasts, granularity, groupBies, groupByTags, isAggregateByTime, queryType, tenantId, timeUsageEnded, timeUsageStarted);
+        }
+        public GetQueryQueryDefinitionReportQuery build() {
+            final var o = new GetQueryQueryDefinitionReportQuery();
+            o.compartmentDepth = compartmentDepth;
+            o.dateRangeName = dateRangeName;
+            o.filter = filter;
+            o.forecasts = forecasts;
+            o.granularity = granularity;
+            o.groupBies = groupBies;
+            o.groupByTags = groupByTags;
+            o.isAggregateByTime = isAggregateByTime;
+            o.queryType = queryType;
+            o.tenantId = tenantId;
+            o.timeUsageEnded = timeUsageEnded;
+            o.timeUsageStarted = timeUsageStarted;
+            return o;
         }
     }
 }

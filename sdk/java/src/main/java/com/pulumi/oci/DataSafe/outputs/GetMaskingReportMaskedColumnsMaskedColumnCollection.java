@@ -14,13 +14,9 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollection {
      * @return An array of masking column summary objects.
      * 
      */
-    private final List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items;
+    private List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetMaskingReportMaskedColumnsMaskedColumnCollection(@CustomType.Parameter("items") List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetMaskingReportMaskedColumnsMaskedColumnCollection() {}
     /**
      * @return An array of masking column summary objects.
      * 
@@ -36,27 +32,27 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollection {
     public static Builder builder(GetMaskingReportMaskedColumnsMaskedColumnCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingReportMaskedColumnsMaskedColumnCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetMaskingReportMaskedColumnsMaskedColumnCollectionItem... items) {
             return items(List.of(items));
-        }        public GetMaskingReportMaskedColumnsMaskedColumnCollection build() {
-            return new GetMaskingReportMaskedColumnsMaskedColumnCollection(items);
+        }
+        public GetMaskingReportMaskedColumnsMaskedColumnCollection build() {
+            final var o = new GetMaskingReportMaskedColumnsMaskedColumnCollection();
+            o.items = items;
+            return o;
         }
     }
 }

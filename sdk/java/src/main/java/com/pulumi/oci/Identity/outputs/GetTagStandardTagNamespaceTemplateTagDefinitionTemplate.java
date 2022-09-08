@@ -15,49 +15,34 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
      * @return The default description of the tag namespace that users can use to create the tag definition
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
      * 
      */
-    private final String enumMutability;
+    private String enumMutability;
     /**
      * @return Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
      * 
      */
-    private final Boolean isCostTracking;
+    private Boolean isCostTracking;
     /**
      * @return List of possible values. An optional parameter that will be present if the type of definition is enum.
      * 
      */
-    private final List<String> possibleValues;
+    private List<String> possibleValues;
     /**
      * @return The name of this standard tag definition
      * 
      */
-    private final String tagDefinitionName;
+    private String tagDefinitionName;
     /**
      * @return The type of tag definition. Enum or string.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetTagStandardTagNamespaceTemplateTagDefinitionTemplate(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("enumMutability") String enumMutability,
-        @CustomType.Parameter("isCostTracking") Boolean isCostTracking,
-        @CustomType.Parameter("possibleValues") List<String> possibleValues,
-        @CustomType.Parameter("tagDefinitionName") String tagDefinitionName,
-        @CustomType.Parameter("type") String type) {
-        this.description = description;
-        this.enumMutability = enumMutability;
-        this.isCostTracking = isCostTracking;
-        this.possibleValues = possibleValues;
-        this.tagDefinitionName = tagDefinitionName;
-        this.type = type;
-    }
-
+    private GetTagStandardTagNamespaceTemplateTagDefinitionTemplate() {}
     /**
      * @return The default description of the tag namespace that users can use to create the tag definition
      * 
@@ -108,7 +93,7 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
     public static Builder builder(GetTagStandardTagNamespaceTemplateTagDefinitionTemplate defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String enumMutability;
@@ -116,11 +101,7 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
         private List<String> possibleValues;
         private String tagDefinitionName;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTagStandardTagNamespaceTemplateTagDefinitionTemplate defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -131,18 +112,22 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder enumMutability(String enumMutability) {
             this.enumMutability = Objects.requireNonNull(enumMutability);
             return this;
         }
+        @CustomType.Setter
         public Builder isCostTracking(Boolean isCostTracking) {
             this.isCostTracking = Objects.requireNonNull(isCostTracking);
             return this;
         }
+        @CustomType.Setter
         public Builder possibleValues(List<String> possibleValues) {
             this.possibleValues = Objects.requireNonNull(possibleValues);
             return this;
@@ -150,15 +135,25 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
         public Builder possibleValues(String... possibleValues) {
             return possibleValues(List.of(possibleValues));
         }
+        @CustomType.Setter
         public Builder tagDefinitionName(String tagDefinitionName) {
             this.tagDefinitionName = Objects.requireNonNull(tagDefinitionName);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetTagStandardTagNamespaceTemplateTagDefinitionTemplate build() {
-            return new GetTagStandardTagNamespaceTemplateTagDefinitionTemplate(description, enumMutability, isCostTracking, possibleValues, tagDefinitionName, type);
+        }
+        public GetTagStandardTagNamespaceTemplateTagDefinitionTemplate build() {
+            final var o = new GetTagStandardTagNamespaceTemplateTagDefinitionTemplate();
+            o.description = description;
+            o.enumMutability = enumMutability;
+            o.isCostTracking = isCostTracking;
+            o.possibleValues = possibleValues;
+            o.tagDefinitionName = tagDefinitionName;
+            o.type = type;
+            return o;
         }
     }
 }

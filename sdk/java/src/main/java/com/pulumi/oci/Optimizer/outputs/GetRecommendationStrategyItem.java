@@ -15,21 +15,14 @@ public final class GetRecommendationStrategyItem {
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The list of strategies used.
      * 
      */
-    private final List<GetRecommendationStrategyItemStrategy> strategies;
+    private List<GetRecommendationStrategyItemStrategy> strategies;
 
-    @CustomType.Constructor
-    private GetRecommendationStrategyItem(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("strategies") List<GetRecommendationStrategyItemStrategy> strategies) {
-        this.name = name;
-        this.strategies = strategies;
-    }
-
+    private GetRecommendationStrategyItem() {}
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
@@ -52,33 +45,35 @@ public final class GetRecommendationStrategyItem {
     public static Builder builder(GetRecommendationStrategyItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private List<GetRecommendationStrategyItemStrategy> strategies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationStrategyItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.strategies = defaults.strategies;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder strategies(List<GetRecommendationStrategyItemStrategy> strategies) {
             this.strategies = Objects.requireNonNull(strategies);
             return this;
         }
         public Builder strategies(GetRecommendationStrategyItemStrategy... strategies) {
             return strategies(List.of(strategies));
-        }        public GetRecommendationStrategyItem build() {
-            return new GetRecommendationStrategyItem(name, strategies);
+        }
+        public GetRecommendationStrategyItem build() {
+            final var o = new GetRecommendationStrategyItem();
+            o.name = name;
+            o.strategies = strategies;
+            return o;
         }
     }
 }

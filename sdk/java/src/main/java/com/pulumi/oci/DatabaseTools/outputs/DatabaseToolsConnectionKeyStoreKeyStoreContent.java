@@ -15,21 +15,14 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContent {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    private final @Nullable String secretId;
+    private @Nullable String secretId;
     /**
      * @return (Updatable) The value type of the user password.
      * 
      */
-    private final String valueType;
+    private String valueType;
 
-    @CustomType.Constructor
-    private DatabaseToolsConnectionKeyStoreKeyStoreContent(
-        @CustomType.Parameter("secretId") @Nullable String secretId,
-        @CustomType.Parameter("valueType") String valueType) {
-        this.secretId = secretId;
-        this.valueType = valueType;
-    }
-
+    private DatabaseToolsConnectionKeyStoreKeyStoreContent() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
@@ -52,30 +45,32 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContent {
     public static Builder builder(DatabaseToolsConnectionKeyStoreKeyStoreContent defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String secretId;
         private String valueType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseToolsConnectionKeyStoreKeyStoreContent defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.secretId = defaults.secretId;
     	      this.valueType = defaults.valueType;
         }
 
+        @CustomType.Setter
         public Builder secretId(@Nullable String secretId) {
             this.secretId = secretId;
             return this;
         }
+        @CustomType.Setter
         public Builder valueType(String valueType) {
             this.valueType = Objects.requireNonNull(valueType);
             return this;
-        }        public DatabaseToolsConnectionKeyStoreKeyStoreContent build() {
-            return new DatabaseToolsConnectionKeyStoreKeyStoreContent(secretId, valueType);
+        }
+        public DatabaseToolsConnectionKeyStoreKeyStoreContent build() {
+            final var o = new DatabaseToolsConnectionKeyStoreKeyStoreContent();
+            o.secretId = secretId;
+            o.valueType = valueType;
+            return o;
         }
     }
 }

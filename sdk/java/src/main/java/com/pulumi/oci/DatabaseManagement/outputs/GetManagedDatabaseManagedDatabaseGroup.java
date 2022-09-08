@@ -13,28 +13,19 @@ public final class GetManagedDatabaseManagedDatabaseGroup {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the Managed Database.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseManagedDatabaseGroup(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.name = name;
-    }
-
+    private GetManagedDatabaseManagedDatabaseGroup() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      * 
@@ -64,16 +55,12 @@ public final class GetManagedDatabaseManagedDatabaseGroup {
     public static Builder builder(GetManagedDatabaseManagedDatabaseGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseManagedDatabaseGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -81,19 +68,27 @@ public final class GetManagedDatabaseManagedDatabaseGroup {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetManagedDatabaseManagedDatabaseGroup build() {
-            return new GetManagedDatabaseManagedDatabaseGroup(compartmentId, id, name);
+        }
+        public GetManagedDatabaseManagedDatabaseGroup build() {
+            final var o = new GetManagedDatabaseManagedDatabaseGroup();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

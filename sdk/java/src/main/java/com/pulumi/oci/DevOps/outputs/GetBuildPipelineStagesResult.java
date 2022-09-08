@@ -18,52 +18,35 @@ public final class GetBuildPipelineStagesResult {
      * @return The OCID of the build pipeline.
      * 
      */
-    private final @Nullable String buildPipelineId;
+    private @Nullable String buildPipelineId;
     /**
      * @return The list of build_pipeline_stage_collection.
      * 
      */
-    private final List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections;
+    private List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections;
     /**
      * @return The OCID of the compartment where the pipeline is created.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetBuildPipelineStagesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetBuildPipelineStagesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the stage.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStagesResult(
-        @CustomType.Parameter("buildPipelineId") @Nullable String buildPipelineId,
-        @CustomType.Parameter("buildPipelineStageCollections") List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetBuildPipelineStagesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.buildPipelineId = buildPipelineId;
-        this.buildPipelineStageCollections = buildPipelineStageCollections;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetBuildPipelineStagesResult() {}
     /**
      * @return The OCID of the build pipeline.
      * 
@@ -117,7 +100,7 @@ public final class GetBuildPipelineStagesResult {
     public static Builder builder(GetBuildPipelineStagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String buildPipelineId;
         private List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections;
@@ -126,11 +109,7 @@ public final class GetBuildPipelineStagesResult {
         private @Nullable List<GetBuildPipelineStagesFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildPipelineId = defaults.buildPipelineId;
@@ -142,10 +121,12 @@ public final class GetBuildPipelineStagesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder buildPipelineId(@Nullable String buildPipelineId) {
             this.buildPipelineId = buildPipelineId;
             return this;
         }
+        @CustomType.Setter
         public Builder buildPipelineStageCollections(List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections) {
             this.buildPipelineStageCollections = Objects.requireNonNull(buildPipelineStageCollections);
             return this;
@@ -153,14 +134,17 @@ public final class GetBuildPipelineStagesResult {
         public Builder buildPipelineStageCollections(GetBuildPipelineStagesBuildPipelineStageCollection... buildPipelineStageCollections) {
             return buildPipelineStageCollections(List.of(buildPipelineStageCollections));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBuildPipelineStagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,15 +152,26 @@ public final class GetBuildPipelineStagesResult {
         public Builder filters(GetBuildPipelineStagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetBuildPipelineStagesResult build() {
-            return new GetBuildPipelineStagesResult(buildPipelineId, buildPipelineStageCollections, compartmentId, displayName, filters, id, state);
+        }
+        public GetBuildPipelineStagesResult build() {
+            final var o = new GetBuildPipelineStagesResult();
+            o.buildPipelineId = buildPipelineId;
+            o.buildPipelineStageCollections = buildPipelineStageCollections;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

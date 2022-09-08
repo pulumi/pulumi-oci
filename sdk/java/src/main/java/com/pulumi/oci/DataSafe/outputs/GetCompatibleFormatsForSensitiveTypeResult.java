@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCompatibleFormatsForSensitiveTypeResult {
-    private final @Nullable String accessLevel;
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable String accessLevel;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return An array of library masking formats compatible with the existing sensitive types.
      * 
      */
-    private final List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes;
+    private List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetCompatibleFormatsForSensitiveTypeResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("formatsForSensitiveTypes") List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes,
-        @CustomType.Parameter("id") String id) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.formatsForSensitiveTypes = formatsForSensitiveTypes;
-        this.id = id;
-    }
-
+    private GetCompatibleFormatsForSensitiveTypeResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -73,18 +60,14 @@ public final class GetCompatibleFormatsForSensitiveTypeResult {
     public static Builder builder(GetCompatibleFormatsForSensitiveTypeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCompatibleFormatsForSensitiveTypeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -94,18 +77,22 @@ public final class GetCompatibleFormatsForSensitiveTypeResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder formatsForSensitiveTypes(List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes) {
             this.formatsForSensitiveTypes = Objects.requireNonNull(formatsForSensitiveTypes);
             return this;
@@ -113,11 +100,19 @@ public final class GetCompatibleFormatsForSensitiveTypeResult {
         public Builder formatsForSensitiveTypes(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType... formatsForSensitiveTypes) {
             return formatsForSensitiveTypes(List.of(formatsForSensitiveTypes));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetCompatibleFormatsForSensitiveTypeResult build() {
-            return new GetCompatibleFormatsForSensitiveTypeResult(accessLevel, compartmentId, compartmentIdInSubtree, formatsForSensitiveTypes, id);
+        }
+        public GetCompatibleFormatsForSensitiveTypeResult build() {
+            final var o = new GetCompatibleFormatsForSensitiveTypeResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.formatsForSensitiveTypes = formatsForSensitiveTypes;
+            o.id = id;
+            return o;
         }
     }
 }

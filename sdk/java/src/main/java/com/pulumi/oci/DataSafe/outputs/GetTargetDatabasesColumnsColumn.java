@@ -14,63 +14,44 @@ public final class GetTargetDatabasesColumnsColumn {
      * @return Character length.
      * 
      */
-    private final Integer characterLength;
+    private Integer characterLength;
     /**
      * @return A filter to return only a specific column based on column name.
      * 
      */
-    private final String columnName;
+    private String columnName;
     /**
      * @return Data type of the column.
      * 
      */
-    private final String dataType;
+    private String dataType;
     /**
      * @return Length of the data represented by the column.
      * 
      */
-    private final String length;
+    private String length;
     /**
      * @return Precision of the column.
      * 
      */
-    private final Integer precision;
+    private Integer precision;
     /**
      * @return Scale of the column.
      * 
      */
-    private final Integer scale;
+    private Integer scale;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private final String schemaName;
+    private String schemaName;
     /**
      * @return A filter to return only items related to specific table name.
      * 
      */
-    private final String tableName;
+    private String tableName;
 
-    @CustomType.Constructor
-    private GetTargetDatabasesColumnsColumn(
-        @CustomType.Parameter("characterLength") Integer characterLength,
-        @CustomType.Parameter("columnName") String columnName,
-        @CustomType.Parameter("dataType") String dataType,
-        @CustomType.Parameter("length") String length,
-        @CustomType.Parameter("precision") Integer precision,
-        @CustomType.Parameter("scale") Integer scale,
-        @CustomType.Parameter("schemaName") String schemaName,
-        @CustomType.Parameter("tableName") String tableName) {
-        this.characterLength = characterLength;
-        this.columnName = columnName;
-        this.dataType = dataType;
-        this.length = length;
-        this.precision = precision;
-        this.scale = scale;
-        this.schemaName = schemaName;
-        this.tableName = tableName;
-    }
-
+    private GetTargetDatabasesColumnsColumn() {}
     /**
      * @return Character length.
      * 
@@ -135,7 +116,7 @@ public final class GetTargetDatabasesColumnsColumn {
     public static Builder builder(GetTargetDatabasesColumnsColumn defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer characterLength;
         private String columnName;
@@ -145,11 +126,7 @@ public final class GetTargetDatabasesColumnsColumn {
         private Integer scale;
         private String schemaName;
         private String tableName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabasesColumnsColumn defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.characterLength = defaults.characterLength;
@@ -162,39 +139,57 @@ public final class GetTargetDatabasesColumnsColumn {
     	      this.tableName = defaults.tableName;
         }
 
+        @CustomType.Setter
         public Builder characterLength(Integer characterLength) {
             this.characterLength = Objects.requireNonNull(characterLength);
             return this;
         }
+        @CustomType.Setter
         public Builder columnName(String columnName) {
             this.columnName = Objects.requireNonNull(columnName);
             return this;
         }
+        @CustomType.Setter
         public Builder dataType(String dataType) {
             this.dataType = Objects.requireNonNull(dataType);
             return this;
         }
+        @CustomType.Setter
         public Builder length(String length) {
             this.length = Objects.requireNonNull(length);
             return this;
         }
+        @CustomType.Setter
         public Builder precision(Integer precision) {
             this.precision = Objects.requireNonNull(precision);
             return this;
         }
+        @CustomType.Setter
         public Builder scale(Integer scale) {
             this.scale = Objects.requireNonNull(scale);
             return this;
         }
+        @CustomType.Setter
         public Builder schemaName(String schemaName) {
             this.schemaName = Objects.requireNonNull(schemaName);
             return this;
         }
+        @CustomType.Setter
         public Builder tableName(String tableName) {
             this.tableName = Objects.requireNonNull(tableName);
             return this;
-        }        public GetTargetDatabasesColumnsColumn build() {
-            return new GetTargetDatabasesColumnsColumn(characterLength, columnName, dataType, length, precision, scale, schemaName, tableName);
+        }
+        public GetTargetDatabasesColumnsColumn build() {
+            final var o = new GetTargetDatabasesColumnsColumn();
+            o.characterLength = characterLength;
+            o.columnName = columnName;
+            o.dataType = dataType;
+            o.length = length;
+            o.precision = precision;
+            o.scale = scale;
+            o.schemaName = schemaName;
+            o.tableName = tableName;
+            return o;
         }
     }
 }

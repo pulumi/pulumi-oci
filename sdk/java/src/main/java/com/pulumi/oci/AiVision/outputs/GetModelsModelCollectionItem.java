@@ -22,196 +22,139 @@ public final class GetModelsModelCollectionItem {
      * @return Average precision of the trained model
      * 
      */
-    private final Double averagePrecision;
+    private Double averagePrecision;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Confidence ratio of the calculation
      * 
      */
-    private final Double confidenceThreshold;
+    private Double confidenceThreshold;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A short description of the model.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return unique Model identifier
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return If It&#39;s true, Training is set for recommended epochs needed for quick training.
      * 
      */
-    private final Boolean isQuickMode;
+    private Boolean isQuickMode;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The maximum duration in hours for which the training will run.
      * 
      */
-    private final Double maxTrainingDurationInHours;
+    private Double maxTrainingDurationInHours;
     /**
      * @return Complete Training Metrics for successful trained model
      * 
      */
-    private final String metrics;
+    private String metrics;
     /**
      * @return Type of the Model.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
      * @return The version of the model
      * 
      */
-    private final String modelVersion;
+    private String modelVersion;
     /**
      * @return Precision of the trained model
      * 
      */
-    private final Double precision;
+    private Double precision;
     /**
      * @return The ID of the project for which to list the objects.
      * 
      */
-    private final String projectId;
+    private String projectId;
     /**
      * @return Recall of the trained model
      * 
      */
-    private final Double recall;
+    private Double recall;
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return Total number of testing Images
      * 
      */
-    private final Integer testImageCount;
+    private Integer testImageCount;
     /**
      * @return The base entity for a Dataset, which is the input for Model creation.
      * 
      */
-    private final List<GetModelsModelCollectionItemTestingDataset> testingDatasets;
+    private List<GetModelsModelCollectionItemTestingDataset> testingDatasets;
     /**
      * @return The time the Model was created. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the Model was updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Total number of training Images
      * 
      */
-    private final Integer totalImageCount;
+    private Integer totalImageCount;
     /**
      * @return Total hours actually used for training
      * 
      */
-    private final Double trainedDurationInHours;
+    private Double trainedDurationInHours;
     /**
      * @return The base entity for a Dataset, which is the input for Model creation.
      * 
      */
-    private final List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets;
+    private List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets;
     /**
      * @return The base entity for a Dataset, which is the input for Model creation.
      * 
      */
-    private final List<GetModelsModelCollectionItemValidationDataset> validationDatasets;
+    private List<GetModelsModelCollectionItemValidationDataset> validationDatasets;
 
-    @CustomType.Constructor
-    private GetModelsModelCollectionItem(
-        @CustomType.Parameter("averagePrecision") Double averagePrecision,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("confidenceThreshold") Double confidenceThreshold,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isQuickMode") Boolean isQuickMode,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("maxTrainingDurationInHours") Double maxTrainingDurationInHours,
-        @CustomType.Parameter("metrics") String metrics,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") String modelVersion,
-        @CustomType.Parameter("precision") Double precision,
-        @CustomType.Parameter("projectId") String projectId,
-        @CustomType.Parameter("recall") Double recall,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("testImageCount") Integer testImageCount,
-        @CustomType.Parameter("testingDatasets") List<GetModelsModelCollectionItemTestingDataset> testingDatasets,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("totalImageCount") Integer totalImageCount,
-        @CustomType.Parameter("trainedDurationInHours") Double trainedDurationInHours,
-        @CustomType.Parameter("trainingDatasets") List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets,
-        @CustomType.Parameter("validationDatasets") List<GetModelsModelCollectionItemValidationDataset> validationDatasets) {
-        this.averagePrecision = averagePrecision;
-        this.compartmentId = compartmentId;
-        this.confidenceThreshold = confidenceThreshold;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isQuickMode = isQuickMode;
-        this.lifecycleDetails = lifecycleDetails;
-        this.maxTrainingDurationInHours = maxTrainingDurationInHours;
-        this.metrics = metrics;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.precision = precision;
-        this.projectId = projectId;
-        this.recall = recall;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.testImageCount = testImageCount;
-        this.testingDatasets = testingDatasets;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.totalImageCount = totalImageCount;
-        this.trainedDurationInHours = trainedDurationInHours;
-        this.trainingDatasets = trainingDatasets;
-        this.validationDatasets = validationDatasets;
-    }
-
+    private GetModelsModelCollectionItem() {}
     /**
      * @return Average precision of the trained model
      * 
@@ -409,7 +352,7 @@ public final class GetModelsModelCollectionItem {
     public static Builder builder(GetModelsModelCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double averagePrecision;
         private String compartmentId;
@@ -438,11 +381,7 @@ public final class GetModelsModelCollectionItem {
         private Double trainedDurationInHours;
         private List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets;
         private List<GetModelsModelCollectionItemValidationDataset> validationDatasets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelsModelCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.averagePrecision = defaults.averagePrecision;
@@ -474,86 +413,107 @@ public final class GetModelsModelCollectionItem {
     	      this.validationDatasets = defaults.validationDatasets;
         }
 
+        @CustomType.Setter
         public Builder averagePrecision(Double averagePrecision) {
             this.averagePrecision = Objects.requireNonNull(averagePrecision);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder confidenceThreshold(Double confidenceThreshold) {
             this.confidenceThreshold = Objects.requireNonNull(confidenceThreshold);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isQuickMode(Boolean isQuickMode) {
             this.isQuickMode = Objects.requireNonNull(isQuickMode);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder maxTrainingDurationInHours(Double maxTrainingDurationInHours) {
             this.maxTrainingDurationInHours = Objects.requireNonNull(maxTrainingDurationInHours);
             return this;
         }
+        @CustomType.Setter
         public Builder metrics(String metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = Objects.requireNonNull(modelVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder precision(Double precision) {
             this.precision = Objects.requireNonNull(precision);
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        @CustomType.Setter
         public Builder recall(Double recall) {
             this.recall = Objects.requireNonNull(recall);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder testImageCount(Integer testImageCount) {
             this.testImageCount = Objects.requireNonNull(testImageCount);
             return this;
         }
+        @CustomType.Setter
         public Builder testingDatasets(List<GetModelsModelCollectionItemTestingDataset> testingDatasets) {
             this.testingDatasets = Objects.requireNonNull(testingDatasets);
             return this;
@@ -561,22 +521,27 @@ public final class GetModelsModelCollectionItem {
         public Builder testingDatasets(GetModelsModelCollectionItemTestingDataset... testingDatasets) {
             return testingDatasets(List.of(testingDatasets));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder totalImageCount(Integer totalImageCount) {
             this.totalImageCount = Objects.requireNonNull(totalImageCount);
             return this;
         }
+        @CustomType.Setter
         public Builder trainedDurationInHours(Double trainedDurationInHours) {
             this.trainedDurationInHours = Objects.requireNonNull(trainedDurationInHours);
             return this;
         }
+        @CustomType.Setter
         public Builder trainingDatasets(List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets) {
             this.trainingDatasets = Objects.requireNonNull(trainingDatasets);
             return this;
@@ -584,14 +549,44 @@ public final class GetModelsModelCollectionItem {
         public Builder trainingDatasets(GetModelsModelCollectionItemTrainingDataset... trainingDatasets) {
             return trainingDatasets(List.of(trainingDatasets));
         }
+        @CustomType.Setter
         public Builder validationDatasets(List<GetModelsModelCollectionItemValidationDataset> validationDatasets) {
             this.validationDatasets = Objects.requireNonNull(validationDatasets);
             return this;
         }
         public Builder validationDatasets(GetModelsModelCollectionItemValidationDataset... validationDatasets) {
             return validationDatasets(List.of(validationDatasets));
-        }        public GetModelsModelCollectionItem build() {
-            return new GetModelsModelCollectionItem(averagePrecision, compartmentId, confidenceThreshold, definedTags, description, displayName, freeformTags, id, isQuickMode, lifecycleDetails, maxTrainingDurationInHours, metrics, modelType, modelVersion, precision, projectId, recall, state, systemTags, testImageCount, testingDatasets, timeCreated, timeUpdated, totalImageCount, trainedDurationInHours, trainingDatasets, validationDatasets);
+        }
+        public GetModelsModelCollectionItem build() {
+            final var o = new GetModelsModelCollectionItem();
+            o.averagePrecision = averagePrecision;
+            o.compartmentId = compartmentId;
+            o.confidenceThreshold = confidenceThreshold;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isQuickMode = isQuickMode;
+            o.lifecycleDetails = lifecycleDetails;
+            o.maxTrainingDurationInHours = maxTrainingDurationInHours;
+            o.metrics = metrics;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.precision = precision;
+            o.projectId = projectId;
+            o.recall = recall;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.testImageCount = testImageCount;
+            o.testingDatasets = testingDatasets;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.totalImageCount = totalImageCount;
+            o.trainedDurationInHours = trainedDurationInHours;
+            o.trainingDatasets = trainingDatasets;
+            o.validationDatasets = validationDatasets;
+            return o;
         }
     }
 }

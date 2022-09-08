@@ -19,62 +19,41 @@ public final class GetExadataInsightsResult {
      * @return Compartment identifier of the Exadata insight resource
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    private final @Nullable String enterpriseManagerBridgeId;
+    private @Nullable String enterpriseManagerBridgeId;
     /**
      * @return The list of exadata_insight_summary_collection.
      * 
      */
-    private final List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections;
+    private List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections;
     /**
      * @return Operations Insights internal representation of the the Exadata system type.
      * 
      */
-    private final @Nullable List<String> exadataTypes;
-    private final @Nullable List<GetExadataInsightsFilter> filters;
+    private @Nullable List<String> exadataTypes;
+    private @Nullable List<GetExadataInsightsFilter> filters;
     /**
      * @return Exadata insight identifier
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Exadata insight.
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
     /**
      * @return Indicates the status of an Exadata insight in Operations Insights
      * 
      */
-    private final @Nullable List<String> statuses;
+    private @Nullable List<String> statuses;
 
-    @CustomType.Constructor
-    private GetExadataInsightsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("enterpriseManagerBridgeId") @Nullable String enterpriseManagerBridgeId,
-        @CustomType.Parameter("exadataInsightSummaryCollections") List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections,
-        @CustomType.Parameter("exadataTypes") @Nullable List<String> exadataTypes,
-        @CustomType.Parameter("filters") @Nullable List<GetExadataInsightsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("states") @Nullable List<String> states,
-        @CustomType.Parameter("statuses") @Nullable List<String> statuses) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
-        this.exadataInsightSummaryCollections = exadataInsightSummaryCollections;
-        this.exadataTypes = exadataTypes;
-        this.filters = filters;
-        this.id = id;
-        this.states = states;
-        this.statuses = statuses;
-    }
-
+    private GetExadataInsightsResult() {}
     /**
      * @return Compartment identifier of the Exadata insight resource
      * 
@@ -138,7 +117,7 @@ public final class GetExadataInsightsResult {
     public static Builder builder(GetExadataInsightsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -149,11 +128,7 @@ public final class GetExadataInsightsResult {
         private @Nullable String id;
         private @Nullable List<String> states;
         private @Nullable List<String> statuses;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExadataInsightsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -167,18 +142,22 @@ public final class GetExadataInsightsResult {
     	      this.statuses = defaults.statuses;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder enterpriseManagerBridgeId(@Nullable String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
+        @CustomType.Setter
         public Builder exadataInsightSummaryCollections(List<GetExadataInsightsExadataInsightSummaryCollection> exadataInsightSummaryCollections) {
             this.exadataInsightSummaryCollections = Objects.requireNonNull(exadataInsightSummaryCollections);
             return this;
@@ -186,6 +165,7 @@ public final class GetExadataInsightsResult {
         public Builder exadataInsightSummaryCollections(GetExadataInsightsExadataInsightSummaryCollection... exadataInsightSummaryCollections) {
             return exadataInsightSummaryCollections(List.of(exadataInsightSummaryCollections));
         }
+        @CustomType.Setter
         public Builder exadataTypes(@Nullable List<String> exadataTypes) {
             this.exadataTypes = exadataTypes;
             return this;
@@ -193,6 +173,7 @@ public final class GetExadataInsightsResult {
         public Builder exadataTypes(String... exadataTypes) {
             return exadataTypes(List.of(exadataTypes));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetExadataInsightsFilter> filters) {
             this.filters = filters;
             return this;
@@ -200,10 +181,12 @@ public final class GetExadataInsightsResult {
         public Builder filters(GetExadataInsightsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
@@ -211,14 +194,26 @@ public final class GetExadataInsightsResult {
         public Builder states(String... states) {
             return states(List.of(states));
         }
+        @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
             this.statuses = statuses;
             return this;
         }
         public Builder statuses(String... statuses) {
             return statuses(List.of(statuses));
-        }        public GetExadataInsightsResult build() {
-            return new GetExadataInsightsResult(compartmentId, compartmentIdInSubtree, enterpriseManagerBridgeId, exadataInsightSummaryCollections, exadataTypes, filters, id, states, statuses);
+        }
+        public GetExadataInsightsResult build() {
+            final var o = new GetExadataInsightsResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            o.exadataInsightSummaryCollections = exadataInsightSummaryCollections;
+            o.exadataTypes = exadataTypes;
+            o.filters = filters;
+            o.id = id;
+            o.states = states;
+            o.statuses = statuses;
+            return o;
         }
     }
 }

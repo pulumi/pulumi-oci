@@ -14,35 +14,24 @@ public final class GetConnectionsConnectionCollectionItemConnectDescriptor {
      * @return Connect string.
      * 
      */
-    private final String connectString;
+    private String connectString;
     /**
      * @return Database service name.
      * 
      */
-    private final String databaseServiceName;
+    private String databaseServiceName;
     /**
      * @return Name of the host the SSH key is valid for.
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return Port of the connect descriptor.
      * 
      */
-    private final Integer port;
+    private Integer port;
 
-    @CustomType.Constructor
-    private GetConnectionsConnectionCollectionItemConnectDescriptor(
-        @CustomType.Parameter("connectString") String connectString,
-        @CustomType.Parameter("databaseServiceName") String databaseServiceName,
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("port") Integer port) {
-        this.connectString = connectString;
-        this.databaseServiceName = databaseServiceName;
-        this.host = host;
-        this.port = port;
-    }
-
+    private GetConnectionsConnectionCollectionItemConnectDescriptor() {}
     /**
      * @return Connect string.
      * 
@@ -79,17 +68,13 @@ public final class GetConnectionsConnectionCollectionItemConnectDescriptor {
     public static Builder builder(GetConnectionsConnectionCollectionItemConnectDescriptor defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String connectString;
         private String databaseServiceName;
         private String host;
         private Integer port;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionsConnectionCollectionItemConnectDescriptor defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectString = defaults.connectString;
@@ -98,23 +83,33 @@ public final class GetConnectionsConnectionCollectionItemConnectDescriptor {
     	      this.port = defaults.port;
         }
 
+        @CustomType.Setter
         public Builder connectString(String connectString) {
             this.connectString = Objects.requireNonNull(connectString);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseServiceName(String databaseServiceName) {
             this.databaseServiceName = Objects.requireNonNull(databaseServiceName);
             return this;
         }
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
-        }        public GetConnectionsConnectionCollectionItemConnectDescriptor build() {
-            return new GetConnectionsConnectionCollectionItemConnectDescriptor(connectString, databaseServiceName, host, port);
+        }
+        public GetConnectionsConnectionCollectionItemConnectDescriptor build() {
+            final var o = new GetConnectionsConnectionCollectionItemConnectDescriptor();
+            o.connectString = connectString;
+            o.databaseServiceName = databaseServiceName;
+            o.host = host;
+            o.port = port;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
      * @return An array of the library masking formats compatible with the sensitive type.
      * 
      */
-    private final List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats;
+    private List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats;
     /**
      * @return The OCID of the sensitive type.
      * 
      */
-    private final String sensitiveTypeId;
+    private String sensitiveTypeId;
 
-    @CustomType.Constructor
-    private GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType(
-        @CustomType.Parameter("maskingFormats") List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats,
-        @CustomType.Parameter("sensitiveTypeId") String sensitiveTypeId) {
-        this.maskingFormats = maskingFormats;
-        this.sensitiveTypeId = sensitiveTypeId;
-    }
-
+    private GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType() {}
     /**
      * @return An array of the library masking formats compatible with the sensitive type.
      * 
@@ -52,21 +45,18 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
     public static Builder builder(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats;
         private String sensitiveTypeId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.maskingFormats = defaults.maskingFormats;
     	      this.sensitiveTypeId = defaults.sensitiveTypeId;
         }
 
+        @CustomType.Setter
         public Builder maskingFormats(List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat> maskingFormats) {
             this.maskingFormats = Objects.requireNonNull(maskingFormats);
             return this;
@@ -74,11 +64,16 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
         public Builder maskingFormats(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat... maskingFormats) {
             return maskingFormats(List.of(maskingFormats));
         }
+        @CustomType.Setter
         public Builder sensitiveTypeId(String sensitiveTypeId) {
             this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
             return this;
-        }        public GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType build() {
-            return new GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType(maskingFormats, sensitiveTypeId);
+        }
+        public GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType build() {
+            final var o = new GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType();
+            o.maskingFormats = maskingFormats;
+            o.sensitiveTypeId = sensitiveTypeId;
+            return o;
         }
     }
 }

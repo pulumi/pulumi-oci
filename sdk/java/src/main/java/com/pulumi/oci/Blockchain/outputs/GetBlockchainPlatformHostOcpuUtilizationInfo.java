@@ -14,28 +14,19 @@ public final class GetBlockchainPlatformHostOcpuUtilizationInfo {
      * @return Host name of VM
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return Number of total OCPU capacity on the host
      * 
      */
-    private final Double ocpuCapacityNumber;
+    private Double ocpuCapacityNumber;
     /**
      * @return Number of OCPU utilized
      * 
      */
-    private final Double ocpuUtilizationNumber;
+    private Double ocpuUtilizationNumber;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformHostOcpuUtilizationInfo(
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("ocpuCapacityNumber") Double ocpuCapacityNumber,
-        @CustomType.Parameter("ocpuUtilizationNumber") Double ocpuUtilizationNumber) {
-        this.host = host;
-        this.ocpuCapacityNumber = ocpuCapacityNumber;
-        this.ocpuUtilizationNumber = ocpuUtilizationNumber;
-    }
-
+    private GetBlockchainPlatformHostOcpuUtilizationInfo() {}
     /**
      * @return Host name of VM
      * 
@@ -65,16 +56,12 @@ public final class GetBlockchainPlatformHostOcpuUtilizationInfo {
     public static Builder builder(GetBlockchainPlatformHostOcpuUtilizationInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String host;
         private Double ocpuCapacityNumber;
         private Double ocpuUtilizationNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformHostOcpuUtilizationInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.host = defaults.host;
@@ -82,19 +69,27 @@ public final class GetBlockchainPlatformHostOcpuUtilizationInfo {
     	      this.ocpuUtilizationNumber = defaults.ocpuUtilizationNumber;
         }
 
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuCapacityNumber(Double ocpuCapacityNumber) {
             this.ocpuCapacityNumber = Objects.requireNonNull(ocpuCapacityNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuUtilizationNumber(Double ocpuUtilizationNumber) {
             this.ocpuUtilizationNumber = Objects.requireNonNull(ocpuUtilizationNumber);
             return this;
-        }        public GetBlockchainPlatformHostOcpuUtilizationInfo build() {
-            return new GetBlockchainPlatformHostOcpuUtilizationInfo(host, ocpuCapacityNumber, ocpuUtilizationNumber);
+        }
+        public GetBlockchainPlatformHostOcpuUtilizationInfo build() {
+            final var o = new GetBlockchainPlatformHostOcpuUtilizationInfo();
+            o.host = host;
+            o.ocpuCapacityNumber = ocpuCapacityNumber;
+            o.ocpuUtilizationNumber = ocpuUtilizationNumber;
+            return o;
         }
     }
 }

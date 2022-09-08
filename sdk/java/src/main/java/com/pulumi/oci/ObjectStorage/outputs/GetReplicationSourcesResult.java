@@ -13,34 +13,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReplicationSourcesResult {
-    private final String bucket;
-    private final @Nullable List<GetReplicationSourcesFilter> filters;
+    private String bucket;
+    private @Nullable List<GetReplicationSourcesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String namespace;
+    private String id;
+    private String namespace;
     /**
      * @return The list of replication_sources.
      * 
      */
-    private final List<GetReplicationSourcesReplicationSource> replicationSources;
+    private List<GetReplicationSourcesReplicationSource> replicationSources;
 
-    @CustomType.Constructor
-    private GetReplicationSourcesResult(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("filters") @Nullable List<GetReplicationSourcesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("replicationSources") List<GetReplicationSourcesReplicationSource> replicationSources) {
-        this.bucket = bucket;
-        this.filters = filters;
-        this.id = id;
-        this.namespace = namespace;
-        this.replicationSources = replicationSources;
-    }
-
+    private GetReplicationSourcesResult() {}
     public String bucket() {
         return this.bucket;
     }
@@ -72,18 +59,14 @@ public final class GetReplicationSourcesResult {
     public static Builder builder(GetReplicationSourcesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private @Nullable List<GetReplicationSourcesFilter> filters;
         private String id;
         private String namespace;
         private List<GetReplicationSourcesReplicationSource> replicationSources;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReplicationSourcesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -93,10 +76,12 @@ public final class GetReplicationSourcesResult {
     	      this.replicationSources = defaults.replicationSources;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetReplicationSourcesFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,22 +89,32 @@ public final class GetReplicationSourcesResult {
         public Builder filters(GetReplicationSourcesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder replicationSources(List<GetReplicationSourcesReplicationSource> replicationSources) {
             this.replicationSources = Objects.requireNonNull(replicationSources);
             return this;
         }
         public Builder replicationSources(GetReplicationSourcesReplicationSource... replicationSources) {
             return replicationSources(List.of(replicationSources));
-        }        public GetReplicationSourcesResult build() {
-            return new GetReplicationSourcesResult(bucket, filters, id, namespace, replicationSources);
+        }
+        public GetReplicationSourcesResult build() {
+            final var o = new GetReplicationSourcesResult();
+            o.bucket = bucket;
+            o.filters = filters;
+            o.id = id;
+            o.namespace = namespace;
+            o.replicationSources = replicationSources;
+            return o;
         }
     }
 }

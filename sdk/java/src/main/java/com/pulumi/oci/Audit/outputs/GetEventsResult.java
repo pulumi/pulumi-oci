@@ -17,37 +17,22 @@ public final class GetEventsResult {
      * @return The list of audit_events.
      * 
      */
-    private final List<GetEventsAuditEvent> auditEvents;
+    private List<GetEventsAuditEvent> auditEvents;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the resource  emitting the event.
      * 
      */
-    private final String compartmentId;
-    private final String endTime;
-    private final @Nullable List<GetEventsFilter> filters;
+    private String compartmentId;
+    private String endTime;
+    private @Nullable List<GetEventsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String startTime;
+    private String id;
+    private String startTime;
 
-    @CustomType.Constructor
-    private GetEventsResult(
-        @CustomType.Parameter("auditEvents") List<GetEventsAuditEvent> auditEvents,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("endTime") String endTime,
-        @CustomType.Parameter("filters") @Nullable List<GetEventsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("startTime") String startTime) {
-        this.auditEvents = auditEvents;
-        this.compartmentId = compartmentId;
-        this.endTime = endTime;
-        this.filters = filters;
-        this.id = id;
-        this.startTime = startTime;
-    }
-
+    private GetEventsResult() {}
     /**
      * @return The list of audit_events.
      * 
@@ -86,7 +71,7 @@ public final class GetEventsResult {
     public static Builder builder(GetEventsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetEventsAuditEvent> auditEvents;
         private String compartmentId;
@@ -94,11 +79,7 @@ public final class GetEventsResult {
         private @Nullable List<GetEventsFilter> filters;
         private String id;
         private String startTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEventsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditEvents = defaults.auditEvents;
@@ -109,6 +90,7 @@ public final class GetEventsResult {
     	      this.startTime = defaults.startTime;
         }
 
+        @CustomType.Setter
         public Builder auditEvents(List<GetEventsAuditEvent> auditEvents) {
             this.auditEvents = Objects.requireNonNull(auditEvents);
             return this;
@@ -116,14 +98,17 @@ public final class GetEventsResult {
         public Builder auditEvents(GetEventsAuditEvent... auditEvents) {
             return auditEvents(List.of(auditEvents));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder endTime(String endTime) {
             this.endTime = Objects.requireNonNull(endTime);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetEventsFilter> filters) {
             this.filters = filters;
             return this;
@@ -131,15 +116,25 @@ public final class GetEventsResult {
         public Builder filters(GetEventsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder startTime(String startTime) {
             this.startTime = Objects.requireNonNull(startTime);
             return this;
-        }        public GetEventsResult build() {
-            return new GetEventsResult(auditEvents, compartmentId, endTime, filters, id, startTime);
+        }
+        public GetEventsResult build() {
+            final var o = new GetEventsResult();
+            o.auditEvents = auditEvents;
+            o.compartmentId = compartmentId;
+            o.endTime = endTime;
+            o.filters = filters;
+            o.id = id;
+            o.startTime = startTime;
+            return o;
         }
     }
 }

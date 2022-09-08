@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNamespaceScheduledTaskSchedule {
-    private final List<GetNamespaceScheduledTaskScheduleSchedule> schedules;
+    private List<GetNamespaceScheduledTaskScheduleSchedule> schedules;
 
-    @CustomType.Constructor
-    private GetNamespaceScheduledTaskSchedule(@CustomType.Parameter("schedules") List<GetNamespaceScheduledTaskScheduleSchedule> schedules) {
-        this.schedules = schedules;
-    }
-
+    private GetNamespaceScheduledTaskSchedule() {}
     public List<GetNamespaceScheduledTaskScheduleSchedule> schedules() {
         return this.schedules;
     }
@@ -28,27 +24,27 @@ public final class GetNamespaceScheduledTaskSchedule {
     public static Builder builder(GetNamespaceScheduledTaskSchedule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetNamespaceScheduledTaskScheduleSchedule> schedules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNamespaceScheduledTaskSchedule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.schedules = defaults.schedules;
         }
 
+        @CustomType.Setter
         public Builder schedules(List<GetNamespaceScheduledTaskScheduleSchedule> schedules) {
             this.schedules = Objects.requireNonNull(schedules);
             return this;
         }
         public Builder schedules(GetNamespaceScheduledTaskScheduleSchedule... schedules) {
             return schedules(List.of(schedules));
-        }        public GetNamespaceScheduledTaskSchedule build() {
-            return new GetNamespaceScheduledTaskSchedule(schedules);
+        }
+        public GetNamespaceScheduledTaskSchedule build() {
+            final var o = new GetNamespaceScheduledTaskSchedule();
+            o.schedules = schedules;
+            return o;
         }
     }
 }

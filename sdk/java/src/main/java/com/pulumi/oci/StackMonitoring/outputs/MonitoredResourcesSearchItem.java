@@ -17,91 +17,64 @@ public final class MonitoredResourcesSearchItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Monitored resource display name.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A filter to return resources with host name match
      * 
      */
-    private final @Nullable String hostName;
+    private @Nullable String hostName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return A filter to return resources with matching management agent id.
      * 
      */
-    private final @Nullable String managementAgentId;
+    private @Nullable String managementAgentId;
     /**
      * @return A filter to return resources that match exact resource name
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return A filter to return resources with matching lifecycle state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Monitored resource creation time. An RFC3339 formatted datetime string
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Monitored resource updation time. An RFC3339 formatted datetime string
      * 
      */
-    private final @Nullable String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return A filter to return resources that match resource type
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private MonitoredResourcesSearchItem(
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostName") @Nullable String hostName,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("managementAgentId") @Nullable String managementAgentId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("systemTags") @Nullable Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeUpdated") @Nullable String timeUpdated,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.hostName = hostName;
-        this.id = id;
-        this.managementAgentId = managementAgentId;
-        this.name = name;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.type = type;
-    }
-
+    private MonitoredResourcesSearchItem() {}
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -194,7 +167,7 @@ public final class MonitoredResourcesSearchItem {
     public static Builder builder(MonitoredResourcesSearchItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> definedTags;
         private @Nullable String displayName;
@@ -208,11 +181,7 @@ public final class MonitoredResourcesSearchItem {
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MonitoredResourcesSearchItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
@@ -229,55 +198,81 @@ public final class MonitoredResourcesSearchItem {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
         public Builder hostName(@Nullable String hostName) {
             this.hostName = hostName;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentId(@Nullable String managementAgentId) {
             this.managementAgentId = managementAgentId;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(@Nullable Map<String,Object> systemTags) {
             this.systemTags = systemTags;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public MonitoredResourcesSearchItem build() {
-            return new MonitoredResourcesSearchItem(definedTags, displayName, freeformTags, hostName, id, managementAgentId, name, state, systemTags, timeCreated, timeUpdated, type);
+        }
+        public MonitoredResourcesSearchItem build() {
+            final var o = new MonitoredResourcesSearchItem();
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.hostName = hostName;
+            o.id = id;
+            o.managementAgentId = managementAgentId;
+            o.name = name;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.type = type;
+            return o;
         }
     }
 }

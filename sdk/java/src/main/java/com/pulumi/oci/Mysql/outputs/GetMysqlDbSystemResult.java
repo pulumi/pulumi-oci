@@ -24,272 +24,191 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMysqlDbSystemResult {
-    private final String adminPassword;
-    private final String adminUsername;
+    private String adminPassword;
+    private String adminUsername;
     /**
      * @return DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
      * 
      */
-    private final List<GetMysqlDbSystemAnalyticsCluster> analyticsClusters;
+    private List<GetMysqlDbSystemAnalyticsCluster> analyticsClusters;
     /**
      * @return The availability domain in which the DB System is placed.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The Backup policy for the DB System.
      * 
      */
-    private final List<GetMysqlDbSystemBackupPolicy> backupPolicies;
+    private List<GetMysqlDbSystemBackupPolicy> backupPolicies;
     /**
      * @return A list with a summary of all the Channels attached to the DB System.
      * 
      */
-    private final List<GetMysqlDbSystemChannel> channels;
+    private List<GetMysqlDbSystemChannel> channels;
     /**
      * @return The OCID of the compartment the DB System belongs in.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the Configuration to be used for Instances in this DB System.
      * 
      */
-    private final String configurationId;
+    private String configurationId;
     /**
      * @return Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      * 
      */
-    private final String crashRecovery;
+    private String crashRecovery;
     /**
      * @return The availability domain and fault domain a DB System is placed in.
      * 
      */
-    private final List<GetMysqlDbSystemCurrentPlacement> currentPlacements;
+    private List<GetMysqlDbSystemCurrentPlacement> currentPlacements;
     /**
      * @return Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
-    private final Integer dataStorageSizeInGb;
+    private Integer dataStorageSizeInGb;
     /**
      * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
-    private final String dbSystemId;
+    private String dbSystemId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The Deletion policy for the DB System.
      * 
      */
-    private final List<GetMysqlDbSystemDeletionPolicy> deletionPolicies;
+    private List<GetMysqlDbSystemDeletionPolicy> deletionPolicies;
     /**
      * @return User-provided data about the DB System.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The user-friendly name for the DB System. It does not have to be unique.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The network endpoints available for this DB System.
      * 
      */
-    private final List<GetMysqlDbSystemEndpoint> endpoints;
+    private List<GetMysqlDbSystemEndpoint> endpoints;
     /**
      * @return The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
      */
-    private final String faultDomain;
+    private String faultDomain;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return A summary of a HeatWave cluster.
      * 
      */
-    private final List<GetMysqlDbSystemHeatWaveCluster> heatWaveClusters;
+    private List<GetMysqlDbSystemHeatWaveCluster> heatWaveClusters;
     /**
      * @return The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, &#34;dbsystem-1&#34; in FQDN &#34;dbsystem-1.subnet123.vcn1.oraclevcn.com&#34;). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      * 
      */
-    private final String hostnameLabel;
+    private String hostnameLabel;
     /**
      * @return The OCID of the DB System.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet&#39;s CIDR. This will be a &#34;dotted-quad&#34; style IPv4 address.
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
      * 
      */
-    private final Boolean isAnalyticsClusterAttached;
+    private Boolean isAnalyticsClusterAttached;
     /**
      * @return If the DB System has a HeatWave Cluster attached.
      * 
      */
-    private final Boolean isHeatWaveClusterAttached;
+    private Boolean isHeatWaveClusterAttached;
     /**
      * @return Specifies if the DB System is highly available.
      * 
      */
-    private final Boolean isHighlyAvailable;
+    private Boolean isHighlyAvailable;
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The Maintenance Policy for the DB System.
      * 
      */
-    private final List<GetMysqlDbSystemMaintenance> maintenances;
+    private List<GetMysqlDbSystemMaintenance> maintenances;
     /**
      * @return Name of the MySQL Version in use for the DB System.
      * 
      */
-    private final String mysqlVersion;
+    private String mysqlVersion;
     /**
      * @return Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      * 
      */
-    private final List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails;
+    private List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails;
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
      * 
      */
-    private final Integer portX;
+    private Integer portX;
     /**
      * @return The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      * 
      */
-    private final String shapeName;
-    private final String shutdownType;
+    private String shapeName;
+    private String shutdownType;
     /**
      * @return Parameters detailing how to provision the initial data of the DB System.
      * 
      */
-    private final List<GetMysqlDbSystemSource> sources;
+    private List<GetMysqlDbSystemSource> sources;
     /**
      * @return The current state of the DB System.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The OCID of the subnet the DB System is associated with.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The date and time the DB System was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the DB System was last updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetMysqlDbSystemResult(
-        @CustomType.Parameter("adminPassword") String adminPassword,
-        @CustomType.Parameter("adminUsername") String adminUsername,
-        @CustomType.Parameter("analyticsClusters") List<GetMysqlDbSystemAnalyticsCluster> analyticsClusters,
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("backupPolicies") List<GetMysqlDbSystemBackupPolicy> backupPolicies,
-        @CustomType.Parameter("channels") List<GetMysqlDbSystemChannel> channels,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("configurationId") String configurationId,
-        @CustomType.Parameter("crashRecovery") String crashRecovery,
-        @CustomType.Parameter("currentPlacements") List<GetMysqlDbSystemCurrentPlacement> currentPlacements,
-        @CustomType.Parameter("dataStorageSizeInGb") Integer dataStorageSizeInGb,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("deletionPolicies") List<GetMysqlDbSystemDeletionPolicy> deletionPolicies,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("endpoints") List<GetMysqlDbSystemEndpoint> endpoints,
-        @CustomType.Parameter("faultDomain") String faultDomain,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("heatWaveClusters") List<GetMysqlDbSystemHeatWaveCluster> heatWaveClusters,
-        @CustomType.Parameter("hostnameLabel") String hostnameLabel,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("isAnalyticsClusterAttached") Boolean isAnalyticsClusterAttached,
-        @CustomType.Parameter("isHeatWaveClusterAttached") Boolean isHeatWaveClusterAttached,
-        @CustomType.Parameter("isHighlyAvailable") Boolean isHighlyAvailable,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("maintenances") List<GetMysqlDbSystemMaintenance> maintenances,
-        @CustomType.Parameter("mysqlVersion") String mysqlVersion,
-        @CustomType.Parameter("pointInTimeRecoveryDetails") List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("portX") Integer portX,
-        @CustomType.Parameter("shapeName") String shapeName,
-        @CustomType.Parameter("shutdownType") String shutdownType,
-        @CustomType.Parameter("sources") List<GetMysqlDbSystemSource> sources,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.adminPassword = adminPassword;
-        this.adminUsername = adminUsername;
-        this.analyticsClusters = analyticsClusters;
-        this.availabilityDomain = availabilityDomain;
-        this.backupPolicies = backupPolicies;
-        this.channels = channels;
-        this.compartmentId = compartmentId;
-        this.configurationId = configurationId;
-        this.crashRecovery = crashRecovery;
-        this.currentPlacements = currentPlacements;
-        this.dataStorageSizeInGb = dataStorageSizeInGb;
-        this.dbSystemId = dbSystemId;
-        this.definedTags = definedTags;
-        this.deletionPolicies = deletionPolicies;
-        this.description = description;
-        this.displayName = displayName;
-        this.endpoints = endpoints;
-        this.faultDomain = faultDomain;
-        this.freeformTags = freeformTags;
-        this.heatWaveClusters = heatWaveClusters;
-        this.hostnameLabel = hostnameLabel;
-        this.id = id;
-        this.ipAddress = ipAddress;
-        this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-        this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
-        this.isHighlyAvailable = isHighlyAvailable;
-        this.lifecycleDetails = lifecycleDetails;
-        this.maintenances = maintenances;
-        this.mysqlVersion = mysqlVersion;
-        this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
-        this.port = port;
-        this.portX = portX;
-        this.shapeName = shapeName;
-        this.shutdownType = shutdownType;
-        this.sources = sources;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetMysqlDbSystemResult() {}
     public String adminPassword() {
         return this.adminPassword;
     }
@@ -559,7 +478,7 @@ public final class GetMysqlDbSystemResult {
     public static Builder builder(GetMysqlDbSystemResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminPassword;
         private String adminUsername;
@@ -600,11 +519,7 @@ public final class GetMysqlDbSystemResult {
         private String subnetId;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlDbSystemResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
@@ -648,14 +563,17 @@ public final class GetMysqlDbSystemResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = Objects.requireNonNull(adminPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = Objects.requireNonNull(adminUsername);
             return this;
         }
+        @CustomType.Setter
         public Builder analyticsClusters(List<GetMysqlDbSystemAnalyticsCluster> analyticsClusters) {
             this.analyticsClusters = Objects.requireNonNull(analyticsClusters);
             return this;
@@ -663,10 +581,12 @@ public final class GetMysqlDbSystemResult {
         public Builder analyticsClusters(GetMysqlDbSystemAnalyticsCluster... analyticsClusters) {
             return analyticsClusters(List.of(analyticsClusters));
         }
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder backupPolicies(List<GetMysqlDbSystemBackupPolicy> backupPolicies) {
             this.backupPolicies = Objects.requireNonNull(backupPolicies);
             return this;
@@ -674,6 +594,7 @@ public final class GetMysqlDbSystemResult {
         public Builder backupPolicies(GetMysqlDbSystemBackupPolicy... backupPolicies) {
             return backupPolicies(List.of(backupPolicies));
         }
+        @CustomType.Setter
         public Builder channels(List<GetMysqlDbSystemChannel> channels) {
             this.channels = Objects.requireNonNull(channels);
             return this;
@@ -681,18 +602,22 @@ public final class GetMysqlDbSystemResult {
         public Builder channels(GetMysqlDbSystemChannel... channels) {
             return channels(List.of(channels));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder configurationId(String configurationId) {
             this.configurationId = Objects.requireNonNull(configurationId);
             return this;
         }
+        @CustomType.Setter
         public Builder crashRecovery(String crashRecovery) {
             this.crashRecovery = Objects.requireNonNull(crashRecovery);
             return this;
         }
+        @CustomType.Setter
         public Builder currentPlacements(List<GetMysqlDbSystemCurrentPlacement> currentPlacements) {
             this.currentPlacements = Objects.requireNonNull(currentPlacements);
             return this;
@@ -700,18 +625,22 @@ public final class GetMysqlDbSystemResult {
         public Builder currentPlacements(GetMysqlDbSystemCurrentPlacement... currentPlacements) {
             return currentPlacements(List.of(currentPlacements));
         }
+        @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder deletionPolicies(List<GetMysqlDbSystemDeletionPolicy> deletionPolicies) {
             this.deletionPolicies = Objects.requireNonNull(deletionPolicies);
             return this;
@@ -719,14 +648,17 @@ public final class GetMysqlDbSystemResult {
         public Builder deletionPolicies(GetMysqlDbSystemDeletionPolicy... deletionPolicies) {
             return deletionPolicies(List.of(deletionPolicies));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder endpoints(List<GetMysqlDbSystemEndpoint> endpoints) {
             this.endpoints = Objects.requireNonNull(endpoints);
             return this;
@@ -734,14 +666,17 @@ public final class GetMysqlDbSystemResult {
         public Builder endpoints(GetMysqlDbSystemEndpoint... endpoints) {
             return endpoints(List.of(endpoints));
         }
+        @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = Objects.requireNonNull(faultDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder heatWaveClusters(List<GetMysqlDbSystemHeatWaveCluster> heatWaveClusters) {
             this.heatWaveClusters = Objects.requireNonNull(heatWaveClusters);
             return this;
@@ -749,34 +684,42 @@ public final class GetMysqlDbSystemResult {
         public Builder heatWaveClusters(GetMysqlDbSystemHeatWaveCluster... heatWaveClusters) {
             return heatWaveClusters(List.of(heatWaveClusters));
         }
+        @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
             this.isAnalyticsClusterAttached = Objects.requireNonNull(isAnalyticsClusterAttached);
             return this;
         }
+        @CustomType.Setter
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
             this.isHeatWaveClusterAttached = Objects.requireNonNull(isHeatWaveClusterAttached);
             return this;
         }
+        @CustomType.Setter
         public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
             this.isHighlyAvailable = Objects.requireNonNull(isHighlyAvailable);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder maintenances(List<GetMysqlDbSystemMaintenance> maintenances) {
             this.maintenances = Objects.requireNonNull(maintenances);
             return this;
@@ -784,10 +727,12 @@ public final class GetMysqlDbSystemResult {
         public Builder maintenances(GetMysqlDbSystemMaintenance... maintenances) {
             return maintenances(List.of(maintenances));
         }
+        @CustomType.Setter
         public Builder mysqlVersion(String mysqlVersion) {
             this.mysqlVersion = Objects.requireNonNull(mysqlVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder pointInTimeRecoveryDetails(List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails) {
             this.pointInTimeRecoveryDetails = Objects.requireNonNull(pointInTimeRecoveryDetails);
             return this;
@@ -795,22 +740,27 @@ public final class GetMysqlDbSystemResult {
         public Builder pointInTimeRecoveryDetails(GetMysqlDbSystemPointInTimeRecoveryDetail... pointInTimeRecoveryDetails) {
             return pointInTimeRecoveryDetails(List.of(pointInTimeRecoveryDetails));
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder portX(Integer portX) {
             this.portX = Objects.requireNonNull(portX);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder shutdownType(String shutdownType) {
             this.shutdownType = Objects.requireNonNull(shutdownType);
             return this;
         }
+        @CustomType.Setter
         public Builder sources(List<GetMysqlDbSystemSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
@@ -818,23 +768,68 @@ public final class GetMysqlDbSystemResult {
         public Builder sources(GetMysqlDbSystemSource... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetMysqlDbSystemResult build() {
-            return new GetMysqlDbSystemResult(adminPassword, adminUsername, analyticsClusters, availabilityDomain, backupPolicies, channels, compartmentId, configurationId, crashRecovery, currentPlacements, dataStorageSizeInGb, dbSystemId, definedTags, deletionPolicies, description, displayName, endpoints, faultDomain, freeformTags, heatWaveClusters, hostnameLabel, id, ipAddress, isAnalyticsClusterAttached, isHeatWaveClusterAttached, isHighlyAvailable, lifecycleDetails, maintenances, mysqlVersion, pointInTimeRecoveryDetails, port, portX, shapeName, shutdownType, sources, state, subnetId, timeCreated, timeUpdated);
+        }
+        public GetMysqlDbSystemResult build() {
+            final var o = new GetMysqlDbSystemResult();
+            o.adminPassword = adminPassword;
+            o.adminUsername = adminUsername;
+            o.analyticsClusters = analyticsClusters;
+            o.availabilityDomain = availabilityDomain;
+            o.backupPolicies = backupPolicies;
+            o.channels = channels;
+            o.compartmentId = compartmentId;
+            o.configurationId = configurationId;
+            o.crashRecovery = crashRecovery;
+            o.currentPlacements = currentPlacements;
+            o.dataStorageSizeInGb = dataStorageSizeInGb;
+            o.dbSystemId = dbSystemId;
+            o.definedTags = definedTags;
+            o.deletionPolicies = deletionPolicies;
+            o.description = description;
+            o.displayName = displayName;
+            o.endpoints = endpoints;
+            o.faultDomain = faultDomain;
+            o.freeformTags = freeformTags;
+            o.heatWaveClusters = heatWaveClusters;
+            o.hostnameLabel = hostnameLabel;
+            o.id = id;
+            o.ipAddress = ipAddress;
+            o.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
+            o.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            o.isHighlyAvailable = isHighlyAvailable;
+            o.lifecycleDetails = lifecycleDetails;
+            o.maintenances = maintenances;
+            o.mysqlVersion = mysqlVersion;
+            o.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
+            o.port = port;
+            o.portX = portX;
+            o.shapeName = shapeName;
+            o.shutdownType = shutdownType;
+            o.sources = sources;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

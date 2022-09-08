@@ -14,21 +14,14 @@ public final class GetCategoryRecommendationCount {
      * @return The count of resources.
      * 
      */
-    private final Integer count;
+    private Integer count;
     /**
      * @return The level of importance assigned to the recommendation.
      * 
      */
-    private final String importance;
+    private String importance;
 
-    @CustomType.Constructor
-    private GetCategoryRecommendationCount(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("importance") String importance) {
-        this.count = count;
-        this.importance = importance;
-    }
-
+    private GetCategoryRecommendationCount() {}
     /**
      * @return The count of resources.
      * 
@@ -51,30 +44,32 @@ public final class GetCategoryRecommendationCount {
     public static Builder builder(GetCategoryRecommendationCount defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private String importance;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCategoryRecommendationCount defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.importance = defaults.importance;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder importance(String importance) {
             this.importance = Objects.requireNonNull(importance);
             return this;
-        }        public GetCategoryRecommendationCount build() {
-            return new GetCategoryRecommendationCount(count, importance);
+        }
+        public GetCategoryRecommendationCount build() {
+            final var o = new GetCategoryRecommendationCount();
+            o.count = count;
+            o.importance = importance;
+            return o;
         }
     }
 }

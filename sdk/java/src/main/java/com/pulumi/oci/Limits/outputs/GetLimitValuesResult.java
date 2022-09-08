@@ -18,51 +18,32 @@ public final class GetLimitValuesResult {
      * @return If present, the returned value is only specific to this availability domain.
      * 
      */
-    private final @Nullable String availabilityDomain;
-    private final String compartmentId;
-    private final @Nullable List<GetLimitValuesFilter> filters;
+    private @Nullable String availabilityDomain;
+    private String compartmentId;
+    private @Nullable List<GetLimitValuesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of limit_values.
      * 
      */
-    private final List<GetLimitValuesLimitValue> limitValues;
+    private List<GetLimitValuesLimitValue> limitValues;
     /**
      * @return The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The scope type of the limit.
      * 
      */
-    private final @Nullable String scopeType;
-    private final String serviceName;
+    private @Nullable String scopeType;
+    private String serviceName;
 
-    @CustomType.Constructor
-    private GetLimitValuesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetLimitValuesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("limitValues") List<GetLimitValuesLimitValue> limitValues,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("scopeType") @Nullable String scopeType,
-        @CustomType.Parameter("serviceName") String serviceName) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.limitValues = limitValues;
-        this.name = name;
-        this.scopeType = scopeType;
-        this.serviceName = serviceName;
-    }
-
+    private GetLimitValuesResult() {}
     /**
      * @return If present, the returned value is only specific to this availability domain.
      * 
@@ -115,7 +96,7 @@ public final class GetLimitValuesResult {
     public static Builder builder(GetLimitValuesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -125,11 +106,7 @@ public final class GetLimitValuesResult {
         private @Nullable String name;
         private @Nullable String scopeType;
         private String serviceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLimitValuesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -142,14 +119,17 @@ public final class GetLimitValuesResult {
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLimitValuesFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,10 +137,12 @@ public final class GetLimitValuesResult {
         public Builder filters(GetLimitValuesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder limitValues(List<GetLimitValuesLimitValue> limitValues) {
             this.limitValues = Objects.requireNonNull(limitValues);
             return this;
@@ -168,19 +150,32 @@ public final class GetLimitValuesResult {
         public Builder limitValues(GetLimitValuesLimitValue... limitValues) {
             return limitValues(List.of(limitValues));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder scopeType(@Nullable String scopeType) {
             this.scopeType = scopeType;
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(String serviceName) {
             this.serviceName = Objects.requireNonNull(serviceName);
             return this;
-        }        public GetLimitValuesResult build() {
-            return new GetLimitValuesResult(availabilityDomain, compartmentId, filters, id, limitValues, name, scopeType, serviceName);
+        }
+        public GetLimitValuesResult build() {
+            final var o = new GetLimitValuesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.limitValues = limitValues;
+            o.name = name;
+            o.scopeType = scopeType;
+            o.serviceName = serviceName;
+            return o;
         }
     }
 }

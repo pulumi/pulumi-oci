@@ -13,28 +13,19 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExe
      * @return A cron expression that represents the time at which to execute the autoscaling policy.
      * 
      */
-    private final String expression;
+    private String expression;
     /**
      * @return The time zone for the execution schedule.
      * 
      */
-    private final String timezone;
+    private String timezone;
     /**
      * @return The type of action to take.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedule(
-        @CustomType.Parameter("expression") String expression,
-        @CustomType.Parameter("timezone") String timezone,
-        @CustomType.Parameter("type") String type) {
-        this.expression = expression;
-        this.timezone = timezone;
-        this.type = type;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedule() {}
     /**
      * @return A cron expression that represents the time at which to execute the autoscaling policy.
      * 
@@ -64,16 +55,12 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExe
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String expression;
         private String timezone;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.expression = defaults.expression;
@@ -81,19 +68,27 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExe
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder expression(String expression) {
             this.expression = Objects.requireNonNull(expression);
             return this;
         }
+        @CustomType.Setter
         public Builder timezone(String timezone) {
             this.timezone = Objects.requireNonNull(timezone);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedule build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedule(expression, timezone, type);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedule build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedule();
+            o.expression = expression;
+            o.timezone = timezone;
+            o.type = type;
+            return o;
         }
     }
 }

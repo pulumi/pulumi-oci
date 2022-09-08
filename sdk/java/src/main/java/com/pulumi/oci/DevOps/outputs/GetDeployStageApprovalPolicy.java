@@ -14,21 +14,14 @@ public final class GetDeployStageApprovalPolicy {
      * @return Approval policy type.
      * 
      */
-    private final String approvalPolicyType;
+    private String approvalPolicyType;
     /**
      * @return A minimum number of approvals required for stage to proceed.
      * 
      */
-    private final Integer numberOfApprovalsRequired;
+    private Integer numberOfApprovalsRequired;
 
-    @CustomType.Constructor
-    private GetDeployStageApprovalPolicy(
-        @CustomType.Parameter("approvalPolicyType") String approvalPolicyType,
-        @CustomType.Parameter("numberOfApprovalsRequired") Integer numberOfApprovalsRequired) {
-        this.approvalPolicyType = approvalPolicyType;
-        this.numberOfApprovalsRequired = numberOfApprovalsRequired;
-    }
-
+    private GetDeployStageApprovalPolicy() {}
     /**
      * @return Approval policy type.
      * 
@@ -51,30 +44,32 @@ public final class GetDeployStageApprovalPolicy {
     public static Builder builder(GetDeployStageApprovalPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String approvalPolicyType;
         private Integer numberOfApprovalsRequired;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStageApprovalPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.approvalPolicyType = defaults.approvalPolicyType;
     	      this.numberOfApprovalsRequired = defaults.numberOfApprovalsRequired;
         }
 
+        @CustomType.Setter
         public Builder approvalPolicyType(String approvalPolicyType) {
             this.approvalPolicyType = Objects.requireNonNull(approvalPolicyType);
             return this;
         }
+        @CustomType.Setter
         public Builder numberOfApprovalsRequired(Integer numberOfApprovalsRequired) {
             this.numberOfApprovalsRequired = Objects.requireNonNull(numberOfApprovalsRequired);
             return this;
-        }        public GetDeployStageApprovalPolicy build() {
-            return new GetDeployStageApprovalPolicy(approvalPolicyType, numberOfApprovalsRequired);
+        }
+        public GetDeployStageApprovalPolicy build() {
+            final var o = new GetDeployStageApprovalPolicy();
+            o.approvalPolicyType = approvalPolicyType;
+            o.numberOfApprovalsRequired = numberOfApprovalsRequired;
+            return o;
         }
     }
 }

@@ -22,63 +22,44 @@ public final class DeploymentSpecificationRouteRequestPolicies {
      * @return (Updatable) If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteRequestPoliciesAuthorization authorization;
+    private @Nullable DeploymentSpecificationRouteRequestPoliciesAuthorization authorization;
     /**
      * @return (Updatable) Validate the payload body of the incoming API requests on a specific route.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteRequestPoliciesBodyValidation bodyValidation;
+    private @Nullable DeploymentSpecificationRouteRequestPoliciesBodyValidation bodyValidation;
     /**
      * @return (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteRequestPoliciesCors cors;
+    private @Nullable DeploymentSpecificationRouteRequestPoliciesCors cors;
     /**
      * @return (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteRequestPoliciesHeaderTransformations headerTransformations;
+    private @Nullable DeploymentSpecificationRouteRequestPoliciesHeaderTransformations headerTransformations;
     /**
      * @return (Updatable) Validate the HTTP headers on the incoming API requests on a specific route.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteRequestPoliciesHeaderValidations headerValidations;
+    private @Nullable DeploymentSpecificationRouteRequestPoliciesHeaderValidations headerValidations;
     /**
      * @return (Updatable) A set of transformations to apply to query parameters that pass through the gateway.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations queryParameterTransformations;
+    private @Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations queryParameterTransformations;
     /**
      * @return (Updatable) Validate the URL query parameters on the incoming API requests on a specific route.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations queryParameterValidations;
+    private @Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations queryParameterValidations;
     /**
      * @return (Updatable) Base policy for Response Cache lookup.
      * 
      */
-    private final @Nullable DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup responseCacheLookup;
+    private @Nullable DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup responseCacheLookup;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteRequestPolicies(
-        @CustomType.Parameter("authorization") @Nullable DeploymentSpecificationRouteRequestPoliciesAuthorization authorization,
-        @CustomType.Parameter("bodyValidation") @Nullable DeploymentSpecificationRouteRequestPoliciesBodyValidation bodyValidation,
-        @CustomType.Parameter("cors") @Nullable DeploymentSpecificationRouteRequestPoliciesCors cors,
-        @CustomType.Parameter("headerTransformations") @Nullable DeploymentSpecificationRouteRequestPoliciesHeaderTransformations headerTransformations,
-        @CustomType.Parameter("headerValidations") @Nullable DeploymentSpecificationRouteRequestPoliciesHeaderValidations headerValidations,
-        @CustomType.Parameter("queryParameterTransformations") @Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations queryParameterTransformations,
-        @CustomType.Parameter("queryParameterValidations") @Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations queryParameterValidations,
-        @CustomType.Parameter("responseCacheLookup") @Nullable DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup responseCacheLookup) {
-        this.authorization = authorization;
-        this.bodyValidation = bodyValidation;
-        this.cors = cors;
-        this.headerTransformations = headerTransformations;
-        this.headerValidations = headerValidations;
-        this.queryParameterTransformations = queryParameterTransformations;
-        this.queryParameterValidations = queryParameterValidations;
-        this.responseCacheLookup = responseCacheLookup;
-    }
-
+    private DeploymentSpecificationRouteRequestPolicies() {}
     /**
      * @return (Updatable) If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
      * 
@@ -143,7 +124,7 @@ public final class DeploymentSpecificationRouteRequestPolicies {
     public static Builder builder(DeploymentSpecificationRouteRequestPolicies defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable DeploymentSpecificationRouteRequestPoliciesAuthorization authorization;
         private @Nullable DeploymentSpecificationRouteRequestPoliciesBodyValidation bodyValidation;
@@ -153,11 +134,7 @@ public final class DeploymentSpecificationRouteRequestPolicies {
         private @Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations queryParameterTransformations;
         private @Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations queryParameterValidations;
         private @Nullable DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup responseCacheLookup;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteRequestPolicies defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authorization = defaults.authorization;
@@ -170,39 +147,57 @@ public final class DeploymentSpecificationRouteRequestPolicies {
     	      this.responseCacheLookup = defaults.responseCacheLookup;
         }
 
+        @CustomType.Setter
         public Builder authorization(@Nullable DeploymentSpecificationRouteRequestPoliciesAuthorization authorization) {
             this.authorization = authorization;
             return this;
         }
+        @CustomType.Setter
         public Builder bodyValidation(@Nullable DeploymentSpecificationRouteRequestPoliciesBodyValidation bodyValidation) {
             this.bodyValidation = bodyValidation;
             return this;
         }
+        @CustomType.Setter
         public Builder cors(@Nullable DeploymentSpecificationRouteRequestPoliciesCors cors) {
             this.cors = cors;
             return this;
         }
+        @CustomType.Setter
         public Builder headerTransformations(@Nullable DeploymentSpecificationRouteRequestPoliciesHeaderTransformations headerTransformations) {
             this.headerTransformations = headerTransformations;
             return this;
         }
+        @CustomType.Setter
         public Builder headerValidations(@Nullable DeploymentSpecificationRouteRequestPoliciesHeaderValidations headerValidations) {
             this.headerValidations = headerValidations;
             return this;
         }
+        @CustomType.Setter
         public Builder queryParameterTransformations(@Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations queryParameterTransformations) {
             this.queryParameterTransformations = queryParameterTransformations;
             return this;
         }
+        @CustomType.Setter
         public Builder queryParameterValidations(@Nullable DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations queryParameterValidations) {
             this.queryParameterValidations = queryParameterValidations;
             return this;
         }
+        @CustomType.Setter
         public Builder responseCacheLookup(@Nullable DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup responseCacheLookup) {
             this.responseCacheLookup = responseCacheLookup;
             return this;
-        }        public DeploymentSpecificationRouteRequestPolicies build() {
-            return new DeploymentSpecificationRouteRequestPolicies(authorization, bodyValidation, cors, headerTransformations, headerValidations, queryParameterTransformations, queryParameterValidations, responseCacheLookup);
+        }
+        public DeploymentSpecificationRouteRequestPolicies build() {
+            final var o = new DeploymentSpecificationRouteRequestPolicies();
+            o.authorization = authorization;
+            o.bodyValidation = bodyValidation;
+            o.cors = cors;
+            o.headerTransformations = headerTransformations;
+            o.headerValidations = headerValidations;
+            o.queryParameterTransformations = queryParameterTransformations;
+            o.queryParameterValidations = queryParameterValidations;
+            o.responseCacheLookup = responseCacheLookup;
+            return o;
         }
     }
 }

@@ -14,63 +14,44 @@ public final class GetBackendSetsBackendsetHealthChecker {
      * @return The interval between health checks, in milliseconds. The default is 30000 (30 seconds).  Example: `30000`
      * 
      */
-    private final Integer intervalMs;
+    private Integer intervalMs;
     /**
      * @return The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
      * 
      */
-    private final String responseBodyRegex;
+    private String responseBodyRegex;
     /**
      * @return The number of retries to attempt before a backend server is considered &#34;unhealthy&#34;. This number also applies when recovering a server to the &#34;healthy&#34; state. Defaults to 3.  Example: `3`
      * 
      */
-    private final Integer retries;
+    private Integer retries;
     /**
      * @return The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, you can use common HTTP status codes such as &#34;200&#34;.  Example: `200`
      * 
      */
-    private final Integer returnCode;
+    private Integer returnCode;
     /**
      * @return The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. Defaults to 3000 (3 seconds).  Example: `3000`
      * 
      */
-    private final Integer timeoutInMillis;
+    private Integer timeoutInMillis;
     /**
      * @return The path against which to run the health check.  Example: `/healthcheck`
      * 
      */
-    private final String urlPath;
+    private String urlPath;
 
-    @CustomType.Constructor
-    private GetBackendSetsBackendsetHealthChecker(
-        @CustomType.Parameter("intervalMs") Integer intervalMs,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("responseBodyRegex") String responseBodyRegex,
-        @CustomType.Parameter("retries") Integer retries,
-        @CustomType.Parameter("returnCode") Integer returnCode,
-        @CustomType.Parameter("timeoutInMillis") Integer timeoutInMillis,
-        @CustomType.Parameter("urlPath") String urlPath) {
-        this.intervalMs = intervalMs;
-        this.port = port;
-        this.protocol = protocol;
-        this.responseBodyRegex = responseBodyRegex;
-        this.retries = retries;
-        this.returnCode = returnCode;
-        this.timeoutInMillis = timeoutInMillis;
-        this.urlPath = urlPath;
-    }
-
+    private GetBackendSetsBackendsetHealthChecker() {}
     /**
      * @return The interval between health checks, in milliseconds. The default is 30000 (30 seconds).  Example: `30000`
      * 
@@ -135,7 +116,7 @@ public final class GetBackendSetsBackendsetHealthChecker {
     public static Builder builder(GetBackendSetsBackendsetHealthChecker defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer intervalMs;
         private Integer port;
@@ -145,11 +126,7 @@ public final class GetBackendSetsBackendsetHealthChecker {
         private Integer returnCode;
         private Integer timeoutInMillis;
         private String urlPath;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendSetsBackendsetHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.intervalMs = defaults.intervalMs;
@@ -162,39 +139,57 @@ public final class GetBackendSetsBackendsetHealthChecker {
     	      this.urlPath = defaults.urlPath;
         }
 
+        @CustomType.Setter
         public Builder intervalMs(Integer intervalMs) {
             this.intervalMs = Objects.requireNonNull(intervalMs);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder responseBodyRegex(String responseBodyRegex) {
             this.responseBodyRegex = Objects.requireNonNull(responseBodyRegex);
             return this;
         }
+        @CustomType.Setter
         public Builder retries(Integer retries) {
             this.retries = Objects.requireNonNull(retries);
             return this;
         }
+        @CustomType.Setter
         public Builder returnCode(Integer returnCode) {
             this.returnCode = Objects.requireNonNull(returnCode);
             return this;
         }
+        @CustomType.Setter
         public Builder timeoutInMillis(Integer timeoutInMillis) {
             this.timeoutInMillis = Objects.requireNonNull(timeoutInMillis);
             return this;
         }
+        @CustomType.Setter
         public Builder urlPath(String urlPath) {
             this.urlPath = Objects.requireNonNull(urlPath);
             return this;
-        }        public GetBackendSetsBackendsetHealthChecker build() {
-            return new GetBackendSetsBackendsetHealthChecker(intervalMs, port, protocol, responseBodyRegex, retries, returnCode, timeoutInMillis, urlPath);
+        }
+        public GetBackendSetsBackendsetHealthChecker build() {
+            final var o = new GetBackendSetsBackendsetHealthChecker();
+            o.intervalMs = intervalMs;
+            o.port = port;
+            o.protocol = protocol;
+            o.responseBodyRegex = responseBodyRegex;
+            o.retries = retries;
+            o.returnCode = returnCode;
+            o.timeoutInMillis = timeoutInMillis;
+            o.urlPath = urlPath;
+            return o;
         }
     }
 }

@@ -15,13 +15,9 @@ public final class AppFirewallPolicyResponseProtection {
      * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private final @Nullable List<AppFirewallPolicyResponseProtectionRule> rules;
+    private @Nullable List<AppFirewallPolicyResponseProtectionRule> rules;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyResponseProtection(@CustomType.Parameter("rules") @Nullable List<AppFirewallPolicyResponseProtectionRule> rules) {
-        this.rules = rules;
-    }
-
+    private AppFirewallPolicyResponseProtection() {}
     /**
      * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
@@ -37,27 +33,27 @@ public final class AppFirewallPolicyResponseProtection {
     public static Builder builder(AppFirewallPolicyResponseProtection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<AppFirewallPolicyResponseProtectionRule> rules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyResponseProtection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.rules = defaults.rules;
         }
 
+        @CustomType.Setter
         public Builder rules(@Nullable List<AppFirewallPolicyResponseProtectionRule> rules) {
             this.rules = rules;
             return this;
         }
         public Builder rules(AppFirewallPolicyResponseProtectionRule... rules) {
             return rules(List.of(rules));
-        }        public AppFirewallPolicyResponseProtection build() {
-            return new AppFirewallPolicyResponseProtection(rules);
+        }
+        public AppFirewallPolicyResponseProtection build() {
+            final var o = new AppFirewallPolicyResponseProtection();
+            o.rules = rules;
+            return o;
         }
     }
 }

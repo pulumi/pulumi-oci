@@ -14,21 +14,14 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespace {
      * @return (Updatable) The metrics to query for the specified metric namespace.
      * 
      */
-    private final ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics metrics;
+    private ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics metrics;
     /**
      * @return (Updatable) The namespace.
      * 
      */
-    private final String namespace;
+    private String namespace;
 
-    @CustomType.Constructor
-    private ConnectorSourceMonitoringSourceNamespaceDetailsNamespace(
-        @CustomType.Parameter("metrics") ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics metrics,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.metrics = metrics;
-        this.namespace = namespace;
-    }
-
+    private ConnectorSourceMonitoringSourceNamespaceDetailsNamespace() {}
     /**
      * @return (Updatable) The metrics to query for the specified metric namespace.
      * 
@@ -51,30 +44,32 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespace {
     public static Builder builder(ConnectorSourceMonitoringSourceNamespaceDetailsNamespace defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics metrics;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectorSourceMonitoringSourceNamespaceDetailsNamespace defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.metrics = defaults.metrics;
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder metrics(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public ConnectorSourceMonitoringSourceNamespaceDetailsNamespace build() {
-            return new ConnectorSourceMonitoringSourceNamespaceDetailsNamespace(metrics, namespace);
+        }
+        public ConnectorSourceMonitoringSourceNamespaceDetailsNamespace build() {
+            final var o = new ConnectorSourceMonitoringSourceNamespaceDetailsNamespace();
+            o.metrics = metrics;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

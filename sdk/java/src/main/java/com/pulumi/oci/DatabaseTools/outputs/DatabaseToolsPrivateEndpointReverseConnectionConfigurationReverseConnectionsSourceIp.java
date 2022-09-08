@@ -15,13 +15,9 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionConfigurationRev
      * @return The IP address in the customer&#39;s VCN to be used as the source IP for reverse connection packets traveling from the customer&#39;s VCN to the service&#39;s VCN.
      * 
      */
-    private final @Nullable String sourceIp;
+    private @Nullable String sourceIp;
 
-    @CustomType.Constructor
-    private DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp(@CustomType.Parameter("sourceIp") @Nullable String sourceIp) {
-        this.sourceIp = sourceIp;
-    }
-
+    private DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp() {}
     /**
      * @return The IP address in the customer&#39;s VCN to be used as the source IP for reverse connection packets traveling from the customer&#39;s VCN to the service&#39;s VCN.
      * 
@@ -37,24 +33,24 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionConfigurationRev
     public static Builder builder(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String sourceIp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.sourceIp = defaults.sourceIp;
         }
 
+        @CustomType.Setter
         public Builder sourceIp(@Nullable String sourceIp) {
             this.sourceIp = sourceIp;
             return this;
-        }        public DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp build() {
-            return new DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp(sourceIp);
+        }
+        public DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp build() {
+            final var o = new DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp();
+            o.sourceIp = sourceIp;
+            return o;
         }
     }
 }

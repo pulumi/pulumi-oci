@@ -14,13 +14,9 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
      * @return An object that specifies the gzip compression policy.
      * 
      */
-    private final List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions;
+    private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions;
 
-    @CustomType.Constructor
-    private GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy(@CustomType.Parameter("gzipCompressions") List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions) {
-        this.gzipCompressions = gzipCompressions;
-    }
-
+    private GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy() {}
     /**
      * @return An object that specifies the gzip compression policy.
      * 
@@ -36,27 +32,27 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
     public static Builder builder(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.gzipCompressions = defaults.gzipCompressions;
         }
 
+        @CustomType.Setter
         public Builder gzipCompressions(List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions) {
             this.gzipCompressions = Objects.requireNonNull(gzipCompressions);
             return this;
         }
         public Builder gzipCompressions(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression... gzipCompressions) {
             return gzipCompressions(List.of(gzipCompressions));
-        }        public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy build() {
-            return new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy(gzipCompressions);
+        }
+        public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy build() {
+            final var o = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy();
+            o.gzipCompressions = gzipCompressions;
+            return o;
         }
     }
 }

@@ -16,35 +16,24 @@ public final class GetNotebookSessionNotebookSessionConfigDetail {
      * @return A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
      * 
      */
-    private final Integer blockStorageSizeInGbs;
+    private Integer blockStorageSizeInGbs;
     /**
      * @return Details for the notebook session shape configuration.
      * 
      */
-    private final List<GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails;
+    private List<GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails;
     /**
      * @return The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private GetNotebookSessionNotebookSessionConfigDetail(
-        @CustomType.Parameter("blockStorageSizeInGbs") Integer blockStorageSizeInGbs,
-        @CustomType.Parameter("notebookSessionShapeConfigDetails") List<GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.blockStorageSizeInGbs = blockStorageSizeInGbs;
-        this.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
-        this.shape = shape;
-        this.subnetId = subnetId;
-    }
-
+    private GetNotebookSessionNotebookSessionConfigDetail() {}
     /**
      * @return A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
      * 
@@ -81,17 +70,13 @@ public final class GetNotebookSessionNotebookSessionConfigDetail {
     public static Builder builder(GetNotebookSessionNotebookSessionConfigDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer blockStorageSizeInGbs;
         private List<GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails;
         private String shape;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNotebookSessionNotebookSessionConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
@@ -100,10 +85,12 @@ public final class GetNotebookSessionNotebookSessionConfigDetail {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
             this.blockStorageSizeInGbs = Objects.requireNonNull(blockStorageSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder notebookSessionShapeConfigDetails(List<GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails) {
             this.notebookSessionShapeConfigDetails = Objects.requireNonNull(notebookSessionShapeConfigDetails);
             return this;
@@ -111,15 +98,23 @@ public final class GetNotebookSessionNotebookSessionConfigDetail {
         public Builder notebookSessionShapeConfigDetails(GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail... notebookSessionShapeConfigDetails) {
             return notebookSessionShapeConfigDetails(List.of(notebookSessionShapeConfigDetails));
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public GetNotebookSessionNotebookSessionConfigDetail build() {
-            return new GetNotebookSessionNotebookSessionConfigDetail(blockStorageSizeInGbs, notebookSessionShapeConfigDetails, shape, subnetId);
+        }
+        public GetNotebookSessionNotebookSessionConfigDetail build() {
+            final var o = new GetNotebookSessionNotebookSessionConfigDetail();
+            o.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            o.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
+            o.shape = shape;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

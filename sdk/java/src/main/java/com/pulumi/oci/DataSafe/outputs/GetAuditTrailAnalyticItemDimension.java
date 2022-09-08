@@ -13,35 +13,24 @@ public final class GetAuditTrailAnalyticItemDimension {
      * @return The location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      * 
      */
-    private final String location;
+    private String location;
     /**
      * @return The current state of the audit trail.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The current sub-state of the audit trail..
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private final String targetId;
+    private String targetId;
 
-    @CustomType.Constructor
-    private GetAuditTrailAnalyticItemDimension(
-        @CustomType.Parameter("location") String location,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("targetId") String targetId) {
-        this.location = location;
-        this.state = state;
-        this.status = status;
-        this.targetId = targetId;
-    }
-
+    private GetAuditTrailAnalyticItemDimension() {}
     /**
      * @return The location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      * 
@@ -78,17 +67,13 @@ public final class GetAuditTrailAnalyticItemDimension {
     public static Builder builder(GetAuditTrailAnalyticItemDimension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String location;
         private String state;
         private String status;
         private String targetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditTrailAnalyticItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.location = defaults.location;
@@ -97,23 +82,33 @@ public final class GetAuditTrailAnalyticItemDimension {
     	      this.targetId = defaults.targetId;
         }
 
+        @CustomType.Setter
         public Builder location(String location) {
             this.location = Objects.requireNonNull(location);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
-        }        public GetAuditTrailAnalyticItemDimension build() {
-            return new GetAuditTrailAnalyticItemDimension(location, state, status, targetId);
+        }
+        public GetAuditTrailAnalyticItemDimension build() {
+            final var o = new GetAuditTrailAnalyticItemDimension();
+            o.location = location;
+            o.state = state;
+            o.status = status;
+            o.targetId = targetId;
+            return o;
         }
     }
 }

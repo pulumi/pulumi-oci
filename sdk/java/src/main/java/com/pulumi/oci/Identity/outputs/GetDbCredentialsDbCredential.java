@@ -13,55 +13,36 @@ public final class GetDbCredentialsDbCredential {
      * @return The description you assign to the DB credential. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The OCID of the DB credential.
      * 
      */
-    private final String id;
-    private final String lifecycleDetails;
-    private final String password;
+    private String id;
+    private String lifecycleDetails;
+    private String password;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeExpires;
+    private String timeExpires;
     /**
      * @return The OCID of the user.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetDbCredentialsDbCredential(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeExpires") String timeExpires,
-        @CustomType.Parameter("userId") String userId) {
-        this.description = description;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.password = password;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeExpires = timeExpires;
-        this.userId = userId;
-    }
-
+    private GetDbCredentialsDbCredential() {}
     /**
      * @return The description you assign to the DB credential. Does not have to be unique, and it&#39;s changeable.
      * 
@@ -118,7 +99,7 @@ public final class GetDbCredentialsDbCredential {
     public static Builder builder(GetDbCredentialsDbCredential defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String id;
@@ -128,11 +109,7 @@ public final class GetDbCredentialsDbCredential {
         private String timeCreated;
         private String timeExpires;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbCredentialsDbCredential defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -145,39 +122,57 @@ public final class GetDbCredentialsDbCredential {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
             this.timeExpires = Objects.requireNonNull(timeExpires);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetDbCredentialsDbCredential build() {
-            return new GetDbCredentialsDbCredential(description, id, lifecycleDetails, password, state, timeCreated, timeExpires, userId);
+        }
+        public GetDbCredentialsDbCredential build() {
+            final var o = new GetDbCredentialsDbCredential();
+            o.description = description;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.password = password;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeExpires = timeExpires;
+            o.userId = userId;
+            return o;
         }
     }
 }

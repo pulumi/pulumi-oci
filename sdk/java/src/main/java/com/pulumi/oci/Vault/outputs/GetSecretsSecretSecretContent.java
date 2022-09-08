@@ -9,27 +9,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSecretsSecretSecretContent {
-    private final String content;
-    private final String contentType;
+    private String content;
+    private String contentType;
     /**
      * @return The secret name.
      * 
      */
-    private final String name;
-    private final String stage;
+    private String name;
+    private String stage;
 
-    @CustomType.Constructor
-    private GetSecretsSecretSecretContent(
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("contentType") String contentType,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("stage") String stage) {
-        this.content = content;
-        this.contentType = contentType;
-        this.name = name;
-        this.stage = stage;
-    }
-
+    private GetSecretsSecretSecretContent() {}
     public String content() {
         return this.content;
     }
@@ -54,17 +43,13 @@ public final class GetSecretsSecretSecretContent {
     public static Builder builder(GetSecretsSecretSecretContent defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String content;
         private String contentType;
         private String name;
         private String stage;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecretsSecretSecretContent defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.content = defaults.content;
@@ -73,23 +58,33 @@ public final class GetSecretsSecretSecretContent {
     	      this.stage = defaults.stage;
         }
 
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder contentType(String contentType) {
             this.contentType = Objects.requireNonNull(contentType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder stage(String stage) {
             this.stage = Objects.requireNonNull(stage);
             return this;
-        }        public GetSecretsSecretSecretContent build() {
-            return new GetSecretsSecretSecretContent(content, contentType, name, stage);
+        }
+        public GetSecretsSecretSecretContent build() {
+            final var o = new GetSecretsSecretSecretContent();
+            o.content = content;
+            o.contentType = contentType;
+            o.name = name;
+            o.stage = stage;
+            return o;
         }
     }
 }

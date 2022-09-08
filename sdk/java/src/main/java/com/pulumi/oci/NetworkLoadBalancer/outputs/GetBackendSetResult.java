@@ -13,62 +13,41 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBackendSetResult {
-    private final String backendSetName;
+    private String backendSetName;
     /**
      * @return Array of backends.
      * 
      */
-    private final List<GetBackendSetBackend> backends;
+    private List<GetBackendSetBackend> backends;
     /**
      * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
-    private final List<GetBackendSetHealthChecker> healthCheckers;
-    private final String id;
+    private List<GetBackendSetHealthChecker> healthCheckers;
+    private String id;
     /**
      * @return IP version associated with the backend set.
      * 
      */
-    private final String ipVersion;
+    private String ipVersion;
     /**
      * @return If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
      */
-    private final Boolean isPreserveSource;
+    private Boolean isPreserveSource;
     /**
      * @return A user-friendly name for the backend set that must be unique and cannot be changed.
      * 
      */
-    private final String name;
-    private final String networkLoadBalancerId;
+    private String name;
+    private String networkLoadBalancerId;
     /**
      * @return The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
      * 
      */
-    private final String policy;
+    private String policy;
 
-    @CustomType.Constructor
-    private GetBackendSetResult(
-        @CustomType.Parameter("backendSetName") String backendSetName,
-        @CustomType.Parameter("backends") List<GetBackendSetBackend> backends,
-        @CustomType.Parameter("healthCheckers") List<GetBackendSetHealthChecker> healthCheckers,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipVersion") String ipVersion,
-        @CustomType.Parameter("isPreserveSource") Boolean isPreserveSource,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("networkLoadBalancerId") String networkLoadBalancerId,
-        @CustomType.Parameter("policy") String policy) {
-        this.backendSetName = backendSetName;
-        this.backends = backends;
-        this.healthCheckers = healthCheckers;
-        this.id = id;
-        this.ipVersion = ipVersion;
-        this.isPreserveSource = isPreserveSource;
-        this.name = name;
-        this.networkLoadBalancerId = networkLoadBalancerId;
-        this.policy = policy;
-    }
-
+    private GetBackendSetResult() {}
     public String backendSetName() {
         return this.backendSetName;
     }
@@ -128,7 +107,7 @@ public final class GetBackendSetResult {
     public static Builder builder(GetBackendSetResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backendSetName;
         private List<GetBackendSetBackend> backends;
@@ -139,11 +118,7 @@ public final class GetBackendSetResult {
         private String name;
         private String networkLoadBalancerId;
         private String policy;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendSetResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendSetName = defaults.backendSetName;
@@ -157,10 +132,12 @@ public final class GetBackendSetResult {
     	      this.policy = defaults.policy;
         }
 
+        @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder backends(List<GetBackendSetBackend> backends) {
             this.backends = Objects.requireNonNull(backends);
             return this;
@@ -168,6 +145,7 @@ public final class GetBackendSetResult {
         public Builder backends(GetBackendSetBackend... backends) {
             return backends(List.of(backends));
         }
+        @CustomType.Setter
         public Builder healthCheckers(List<GetBackendSetHealthChecker> healthCheckers) {
             this.healthCheckers = Objects.requireNonNull(healthCheckers);
             return this;
@@ -175,31 +153,48 @@ public final class GetBackendSetResult {
         public Builder healthCheckers(GetBackendSetHealthChecker... healthCheckers) {
             return healthCheckers(List.of(healthCheckers));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipVersion(String ipVersion) {
             this.ipVersion = Objects.requireNonNull(ipVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder isPreserveSource(Boolean isPreserveSource) {
             this.isPreserveSource = Objects.requireNonNull(isPreserveSource);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
             this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder policy(String policy) {
             this.policy = Objects.requireNonNull(policy);
             return this;
-        }        public GetBackendSetResult build() {
-            return new GetBackendSetResult(backendSetName, backends, healthCheckers, id, ipVersion, isPreserveSource, name, networkLoadBalancerId, policy);
+        }
+        public GetBackendSetResult build() {
+            final var o = new GetBackendSetResult();
+            o.backendSetName = backendSetName;
+            o.backends = backends;
+            o.healthCheckers = healthCheckers;
+            o.id = id;
+            o.ipVersion = ipVersion;
+            o.isPreserveSource = isPreserveSource;
+            o.name = name;
+            o.networkLoadBalancerId = networkLoadBalancerId;
+            o.policy = policy;
+            return o;
         }
     }
 }

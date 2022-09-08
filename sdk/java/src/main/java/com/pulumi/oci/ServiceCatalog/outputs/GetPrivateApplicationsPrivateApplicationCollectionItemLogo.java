@@ -13,28 +13,19 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItemLogo {
      * @return The content URL of the uploaded data.
      * 
      */
-    private final String contentUrl;
+    private String contentUrl;
     /**
      * @return Exact match name filter.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The MIME type of the uploaded data.
      * 
      */
-    private final String mimeType;
+    private String mimeType;
 
-    @CustomType.Constructor
-    private GetPrivateApplicationsPrivateApplicationCollectionItemLogo(
-        @CustomType.Parameter("contentUrl") String contentUrl,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("mimeType") String mimeType) {
-        this.contentUrl = contentUrl;
-        this.displayName = displayName;
-        this.mimeType = mimeType;
-    }
-
+    private GetPrivateApplicationsPrivateApplicationCollectionItemLogo() {}
     /**
      * @return The content URL of the uploaded data.
      * 
@@ -64,16 +55,12 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItemLogo {
     public static Builder builder(GetPrivateApplicationsPrivateApplicationCollectionItemLogo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String contentUrl;
         private String displayName;
         private String mimeType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateApplicationsPrivateApplicationCollectionItemLogo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contentUrl = defaults.contentUrl;
@@ -81,19 +68,27 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItemLogo {
     	      this.mimeType = defaults.mimeType;
         }
 
+        @CustomType.Setter
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = Objects.requireNonNull(contentUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder mimeType(String mimeType) {
             this.mimeType = Objects.requireNonNull(mimeType);
             return this;
-        }        public GetPrivateApplicationsPrivateApplicationCollectionItemLogo build() {
-            return new GetPrivateApplicationsPrivateApplicationCollectionItemLogo(contentUrl, displayName, mimeType);
+        }
+        public GetPrivateApplicationsPrivateApplicationCollectionItemLogo build() {
+            final var o = new GetPrivateApplicationsPrivateApplicationCollectionItemLogo();
+            o.contentUrl = contentUrl;
+            o.displayName = displayName;
+            o.mimeType = mimeType;
+            return o;
         }
     }
 }

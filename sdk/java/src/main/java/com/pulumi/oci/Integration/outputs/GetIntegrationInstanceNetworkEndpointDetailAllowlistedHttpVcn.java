@@ -14,21 +14,14 @@ public final class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn
      * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
      * 
      */
-    private final List<String> allowlistedIps;
+    private List<String> allowlistedIps;
     /**
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn(
-        @CustomType.Parameter("allowlistedIps") List<String> allowlistedIps,
-        @CustomType.Parameter("id") String id) {
-        this.allowlistedIps = allowlistedIps;
-        this.id = id;
-    }
-
+    private GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn() {}
     /**
      * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
      * 
@@ -51,21 +44,18 @@ public final class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn
     public static Builder builder(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> allowlistedIps;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowlistedIps = defaults.allowlistedIps;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder allowlistedIps(List<String> allowlistedIps) {
             this.allowlistedIps = Objects.requireNonNull(allowlistedIps);
             return this;
@@ -73,11 +63,16 @@ public final class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn
         public Builder allowlistedIps(String... allowlistedIps) {
             return allowlistedIps(List.of(allowlistedIps));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn build() {
-            return new GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn(allowlistedIps, id);
+        }
+        public GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn build() {
+            final var o = new GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn();
+            o.allowlistedIps = allowlistedIps;
+            o.id = id;
+            return o;
         }
     }
 }

@@ -14,72 +14,47 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataMaskRulesResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return Compartment Identifier where the resource is created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of data_mask_rule_collection.
      * 
      */
-    private final List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections;
+    private List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections;
     /**
      * @return The status of the dataMaskRule.
      * 
      */
-    private final @Nullable String dataMaskRuleStatus;
+    private @Nullable String dataMaskRuleStatus;
     /**
      * @return Data Mask Rule Identifier, can be renamed.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDataMaskRulesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDataMaskRulesFilter> filters;
     /**
      * @return IAM Group id associated with the data mask rule
      * 
      */
-    private final @Nullable String iamGroupId;
+    private @Nullable String iamGroupId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the DataMaskRule.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String targetId;
-    private final @Nullable String targetType;
+    private @Nullable String state;
+    private @Nullable String targetId;
+    private @Nullable String targetType;
 
-    @CustomType.Constructor
-    private GetDataMaskRulesResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dataMaskRuleCollections") List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections,
-        @CustomType.Parameter("dataMaskRuleStatus") @Nullable String dataMaskRuleStatus,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDataMaskRulesFilter> filters,
-        @CustomType.Parameter("iamGroupId") @Nullable String iamGroupId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targetId") @Nullable String targetId,
-        @CustomType.Parameter("targetType") @Nullable String targetType) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.dataMaskRuleCollections = dataMaskRuleCollections;
-        this.dataMaskRuleStatus = dataMaskRuleStatus;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.iamGroupId = iamGroupId;
-        this.id = id;
-        this.state = state;
-        this.targetId = targetId;
-        this.targetType = targetType;
-    }
-
+    private GetDataMaskRulesResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -149,7 +124,7 @@ public final class GetDataMaskRulesResult {
     public static Builder builder(GetDataMaskRulesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -162,11 +137,7 @@ public final class GetDataMaskRulesResult {
         private @Nullable String state;
         private @Nullable String targetId;
         private @Nullable String targetType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataMaskRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -182,14 +153,17 @@ public final class GetDataMaskRulesResult {
     	      this.targetType = defaults.targetType;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataMaskRuleCollections(List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections) {
             this.dataMaskRuleCollections = Objects.requireNonNull(dataMaskRuleCollections);
             return this;
@@ -197,14 +171,17 @@ public final class GetDataMaskRulesResult {
         public Builder dataMaskRuleCollections(GetDataMaskRulesDataMaskRuleCollection... dataMaskRuleCollections) {
             return dataMaskRuleCollections(List.of(dataMaskRuleCollections));
         }
+        @CustomType.Setter
         public Builder dataMaskRuleStatus(@Nullable String dataMaskRuleStatus) {
             this.dataMaskRuleStatus = dataMaskRuleStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDataMaskRulesFilter> filters) {
             this.filters = filters;
             return this;
@@ -212,27 +189,45 @@ public final class GetDataMaskRulesResult {
         public Builder filters(GetDataMaskRulesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder iamGroupId(@Nullable String iamGroupId) {
             this.iamGroupId = iamGroupId;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
         public Builder targetType(@Nullable String targetType) {
             this.targetType = targetType;
             return this;
-        }        public GetDataMaskRulesResult build() {
-            return new GetDataMaskRulesResult(accessLevel, compartmentId, dataMaskRuleCollections, dataMaskRuleStatus, displayName, filters, iamGroupId, id, state, targetId, targetType);
+        }
+        public GetDataMaskRulesResult build() {
+            final var o = new GetDataMaskRulesResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.dataMaskRuleCollections = dataMaskRuleCollections;
+            o.dataMaskRuleStatus = dataMaskRuleStatus;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.iamGroupId = iamGroupId;
+            o.id = id;
+            o.state = state;
+            o.targetId = targetId;
+            o.targetType = targetType;
+            return o;
         }
     }
 }

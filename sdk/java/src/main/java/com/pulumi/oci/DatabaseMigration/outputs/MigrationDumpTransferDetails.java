@@ -16,21 +16,14 @@ public final class MigrationDumpTransferDetails {
      * @return (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
      */
-    private final @Nullable MigrationDumpTransferDetailsSource source;
+    private @Nullable MigrationDumpTransferDetailsSource source;
     /**
      * @return (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
      */
-    private final @Nullable MigrationDumpTransferDetailsTarget target;
+    private @Nullable MigrationDumpTransferDetailsTarget target;
 
-    @CustomType.Constructor
-    private MigrationDumpTransferDetails(
-        @CustomType.Parameter("source") @Nullable MigrationDumpTransferDetailsSource source,
-        @CustomType.Parameter("target") @Nullable MigrationDumpTransferDetailsTarget target) {
-        this.source = source;
-        this.target = target;
-    }
-
+    private MigrationDumpTransferDetails() {}
     /**
      * @return (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
@@ -53,30 +46,32 @@ public final class MigrationDumpTransferDetails {
     public static Builder builder(MigrationDumpTransferDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable MigrationDumpTransferDetailsSource source;
         private @Nullable MigrationDumpTransferDetailsTarget target;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationDumpTransferDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.source = defaults.source;
     	      this.target = defaults.target;
         }
 
+        @CustomType.Setter
         public Builder source(@Nullable MigrationDumpTransferDetailsSource source) {
             this.source = source;
             return this;
         }
+        @CustomType.Setter
         public Builder target(@Nullable MigrationDumpTransferDetailsTarget target) {
             this.target = target;
             return this;
-        }        public MigrationDumpTransferDetails build() {
-            return new MigrationDumpTransferDetails(source, target);
+        }
+        public MigrationDumpTransferDetails build() {
+            final var o = new MigrationDumpTransferDetails();
+            o.source = source;
+            o.target = target;
+            return o;
         }
     }
 }

@@ -15,98 +15,69 @@ public final class GetManagementAgentInstallKeysManagementAgentInstallKey {
      * @return Total number of install for this keys
      * 
      */
-    private final Integer allowedKeyInstallCount;
+    private Integer allowedKeyInstallCount;
     /**
      * @return The OCID of the compartment to which a request will be scoped.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Principal id of user who created the Agent Install key
      * 
      */
-    private final String createdByPrincipalId;
+    private String createdByPrincipalId;
     /**
      * @return Total number of install for this keys
      * 
      */
-    private final Integer currentKeyInstallCount;
+    private Integer currentKeyInstallCount;
     /**
      * @return The display name for which the Key needs to be listed.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Agent install Key identifier
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
      * 
      */
-    private final Boolean isUnlimited;
+    private Boolean isUnlimited;
     /**
      * @return Management Agent Install Key
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Filter to return only Management Agents in the particular lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time when Management Agent install Key was created. An RFC3339 formatted date time string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return date after which key would expire after creation
      * 
      */
-    private final String timeExpires;
+    private String timeExpires;
     /**
      * @return The time when Management Agent install Key was updated. An RFC3339 formatted date time string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetManagementAgentInstallKeysManagementAgentInstallKey(
-        @CustomType.Parameter("allowedKeyInstallCount") Integer allowedKeyInstallCount,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdByPrincipalId") String createdByPrincipalId,
-        @CustomType.Parameter("currentKeyInstallCount") Integer currentKeyInstallCount,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isUnlimited") Boolean isUnlimited,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeExpires") String timeExpires,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.allowedKeyInstallCount = allowedKeyInstallCount;
-        this.compartmentId = compartmentId;
-        this.createdByPrincipalId = createdByPrincipalId;
-        this.currentKeyInstallCount = currentKeyInstallCount;
-        this.displayName = displayName;
-        this.id = id;
-        this.isUnlimited = isUnlimited;
-        this.key = key;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeExpires = timeExpires;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetManagementAgentInstallKeysManagementAgentInstallKey() {}
     /**
      * @return Total number of install for this keys
      * 
@@ -206,7 +177,7 @@ public final class GetManagementAgentInstallKeysManagementAgentInstallKey {
     public static Builder builder(GetManagementAgentInstallKeysManagementAgentInstallKey defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer allowedKeyInstallCount;
         private String compartmentId;
@@ -221,11 +192,7 @@ public final class GetManagementAgentInstallKeysManagementAgentInstallKey {
         private String timeCreated;
         private String timeExpires;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentInstallKeysManagementAgentInstallKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedKeyInstallCount = defaults.allowedKeyInstallCount;
@@ -243,59 +210,87 @@ public final class GetManagementAgentInstallKeysManagementAgentInstallKey {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder allowedKeyInstallCount(Integer allowedKeyInstallCount) {
             this.allowedKeyInstallCount = Objects.requireNonNull(allowedKeyInstallCount);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdByPrincipalId(String createdByPrincipalId) {
             this.createdByPrincipalId = Objects.requireNonNull(createdByPrincipalId);
             return this;
         }
+        @CustomType.Setter
         public Builder currentKeyInstallCount(Integer currentKeyInstallCount) {
             this.currentKeyInstallCount = Objects.requireNonNull(currentKeyInstallCount);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isUnlimited(Boolean isUnlimited) {
             this.isUnlimited = Objects.requireNonNull(isUnlimited);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
             this.timeExpires = Objects.requireNonNull(timeExpires);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetManagementAgentInstallKeysManagementAgentInstallKey build() {
-            return new GetManagementAgentInstallKeysManagementAgentInstallKey(allowedKeyInstallCount, compartmentId, createdByPrincipalId, currentKeyInstallCount, displayName, id, isUnlimited, key, lifecycleDetails, state, timeCreated, timeExpires, timeUpdated);
+        }
+        public GetManagementAgentInstallKeysManagementAgentInstallKey build() {
+            final var o = new GetManagementAgentInstallKeysManagementAgentInstallKey();
+            o.allowedKeyInstallCount = allowedKeyInstallCount;
+            o.compartmentId = compartmentId;
+            o.createdByPrincipalId = createdByPrincipalId;
+            o.currentKeyInstallCount = currentKeyInstallCount;
+            o.displayName = displayName;
+            o.id = id;
+            o.isUnlimited = isUnlimited;
+            o.key = key;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeExpires = timeExpires;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

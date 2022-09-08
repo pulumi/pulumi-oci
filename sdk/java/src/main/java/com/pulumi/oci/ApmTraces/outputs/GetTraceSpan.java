@@ -17,91 +17,64 @@ public final class GetTraceSpan {
      * @return Total span duration in milliseconds.
      * 
      */
-    private final String durationInMs;
+    private String durationInMs;
     /**
      * @return Indicates if the span has an error.
      * 
      */
-    private final Boolean isError;
+    private Boolean isError;
     /**
      * @return Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return Kind associated with the span.
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return List of logs associated with the span.
      * 
      */
-    private final List<GetTraceSpanLog> logs;
+    private List<GetTraceSpanLog> logs;
     /**
      * @return Span name associated with the trace.  This is usually the method or URI of the request.
      * 
      */
-    private final String operationName;
+    private String operationName;
     /**
      * @return Unique parent identifier for the span if one exists. For root spans this will be null.
      * 
      */
-    private final String parentSpanKey;
+    private String parentSpanKey;
     /**
      * @return Service name associated with the span.
      * 
      */
-    private final String serviceName;
+    private String serviceName;
     /**
      * @return List of tags associated with the span.
      * 
      */
-    private final List<GetTraceSpanTag> tags;
+    private List<GetTraceSpanTag> tags;
     /**
      * @return Span end time.  Timestamp when the span was completed.
      * 
      */
-    private final String timeEnded;
+    private String timeEnded;
     /**
      * @return Span start time.  Timestamp when the span was started.
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
     /**
      * @return Unique Application Performance Monitoring trace identifier (traceId).
      * 
      */
-    private final String traceKey;
+    private String traceKey;
 
-    @CustomType.Constructor
-    private GetTraceSpan(
-        @CustomType.Parameter("durationInMs") String durationInMs,
-        @CustomType.Parameter("isError") Boolean isError,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("logs") List<GetTraceSpanLog> logs,
-        @CustomType.Parameter("operationName") String operationName,
-        @CustomType.Parameter("parentSpanKey") String parentSpanKey,
-        @CustomType.Parameter("serviceName") String serviceName,
-        @CustomType.Parameter("tags") List<GetTraceSpanTag> tags,
-        @CustomType.Parameter("timeEnded") String timeEnded,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("traceKey") String traceKey) {
-        this.durationInMs = durationInMs;
-        this.isError = isError;
-        this.key = key;
-        this.kind = kind;
-        this.logs = logs;
-        this.operationName = operationName;
-        this.parentSpanKey = parentSpanKey;
-        this.serviceName = serviceName;
-        this.tags = tags;
-        this.timeEnded = timeEnded;
-        this.timeStarted = timeStarted;
-        this.traceKey = traceKey;
-    }
-
+    private GetTraceSpan() {}
     /**
      * @return Total span duration in milliseconds.
      * 
@@ -194,7 +167,7 @@ public final class GetTraceSpan {
     public static Builder builder(GetTraceSpan defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String durationInMs;
         private Boolean isError;
@@ -208,11 +181,7 @@ public final class GetTraceSpan {
         private String timeEnded;
         private String timeStarted;
         private String traceKey;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTraceSpan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.durationInMs = defaults.durationInMs;
@@ -229,22 +198,27 @@ public final class GetTraceSpan {
     	      this.traceKey = defaults.traceKey;
         }
 
+        @CustomType.Setter
         public Builder durationInMs(String durationInMs) {
             this.durationInMs = Objects.requireNonNull(durationInMs);
             return this;
         }
+        @CustomType.Setter
         public Builder isError(Boolean isError) {
             this.isError = Objects.requireNonNull(isError);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder logs(List<GetTraceSpanLog> logs) {
             this.logs = Objects.requireNonNull(logs);
             return this;
@@ -252,18 +226,22 @@ public final class GetTraceSpan {
         public Builder logs(GetTraceSpanLog... logs) {
             return logs(List.of(logs));
         }
+        @CustomType.Setter
         public Builder operationName(String operationName) {
             this.operationName = Objects.requireNonNull(operationName);
             return this;
         }
+        @CustomType.Setter
         public Builder parentSpanKey(String parentSpanKey) {
             this.parentSpanKey = Objects.requireNonNull(parentSpanKey);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(String serviceName) {
             this.serviceName = Objects.requireNonNull(serviceName);
             return this;
         }
+        @CustomType.Setter
         public Builder tags(List<GetTraceSpanTag> tags) {
             this.tags = Objects.requireNonNull(tags);
             return this;
@@ -271,19 +249,36 @@ public final class GetTraceSpan {
         public Builder tags(GetTraceSpanTag... tags) {
             return tags(List.of(tags));
         }
+        @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             this.timeEnded = Objects.requireNonNull(timeEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder traceKey(String traceKey) {
             this.traceKey = Objects.requireNonNull(traceKey);
             return this;
-        }        public GetTraceSpan build() {
-            return new GetTraceSpan(durationInMs, isError, key, kind, logs, operationName, parentSpanKey, serviceName, tags, timeEnded, timeStarted, traceKey);
+        }
+        public GetTraceSpan build() {
+            final var o = new GetTraceSpan();
+            o.durationInMs = durationInMs;
+            o.isError = isError;
+            o.key = key;
+            o.kind = kind;
+            o.logs = logs;
+            o.operationName = operationName;
+            o.parentSpanKey = parentSpanKey;
+            o.serviceName = serviceName;
+            o.tags = tags;
+            o.timeEnded = timeEnded;
+            o.timeStarted = timeStarted;
+            o.traceKey = traceKey;
+            return o;
         }
     }
 }

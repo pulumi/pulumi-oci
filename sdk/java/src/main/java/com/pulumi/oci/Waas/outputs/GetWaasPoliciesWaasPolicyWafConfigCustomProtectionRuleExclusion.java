@@ -14,21 +14,14 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusi
      * @return An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
      */
-    private final List<String> exclusions;
+    private List<String> exclusions;
     /**
      * @return The target of the exclusion.
      * 
      */
-    private final String target;
+    private String target;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion(
-        @CustomType.Parameter("exclusions") List<String> exclusions,
-        @CustomType.Parameter("target") String target) {
-        this.exclusions = exclusions;
-        this.target = target;
-    }
-
+    private GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion() {}
     /**
      * @return An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
@@ -51,21 +44,18 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusi
     public static Builder builder(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> exclusions;
         private String target;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.exclusions = defaults.exclusions;
     	      this.target = defaults.target;
         }
 
+        @CustomType.Setter
         public Builder exclusions(List<String> exclusions) {
             this.exclusions = Objects.requireNonNull(exclusions);
             return this;
@@ -73,11 +63,16 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusi
         public Builder exclusions(String... exclusions) {
             return exclusions(List.of(exclusions));
         }
+        @CustomType.Setter
         public Builder target(String target) {
             this.target = Objects.requireNonNull(target);
             return this;
-        }        public GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion build() {
-            return new GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion(exclusions, target);
+        }
+        public GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion build() {
+            final var o = new GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion();
+            o.exclusions = exclusions;
+            o.target = target;
+            return o;
         }
     }
 }

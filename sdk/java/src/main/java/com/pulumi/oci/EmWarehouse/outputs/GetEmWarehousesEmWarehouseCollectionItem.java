@@ -15,119 +15,84 @@ public final class GetEmWarehousesEmWarehouseCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return EMBridge Identifier
      * 
      */
-    private final String emBridgeId;
+    private String emBridgeId;
     /**
      * @return Type of the EmWarehouse.
      * 
      */
-    private final String emWarehouseType;
+    private String emWarehouseType;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return unique EmWarehouse identifier
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Data Flow Run Status Message
      * 
      */
-    private final String latestEtlRunMessage;
+    private String latestEtlRunMessage;
     /**
      * @return Data Flow Run Status
      * 
      */
-    private final String latestEtlRunStatus;
+    private String latestEtlRunStatus;
     /**
      * @return Data Flow Run Total Time
      * 
      */
-    private final String latestEtlRunTime;
+    private String latestEtlRunTime;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return unique operationsInsightsWarehouseId identifier
      * 
      */
-    private final String operationsInsightsWarehouseId;
+    private String operationsInsightsWarehouseId;
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the the EmWarehouse was created. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the EmWarehouse was updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetEmWarehousesEmWarehouseCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("emBridgeId") String emBridgeId,
-        @CustomType.Parameter("emWarehouseType") String emWarehouseType,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("latestEtlRunMessage") String latestEtlRunMessage,
-        @CustomType.Parameter("latestEtlRunStatus") String latestEtlRunStatus,
-        @CustomType.Parameter("latestEtlRunTime") String latestEtlRunTime,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("operationsInsightsWarehouseId") String operationsInsightsWarehouseId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.emBridgeId = emBridgeId;
-        this.emWarehouseType = emWarehouseType;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.latestEtlRunMessage = latestEtlRunMessage;
-        this.latestEtlRunStatus = latestEtlRunStatus;
-        this.latestEtlRunTime = latestEtlRunTime;
-        this.lifecycleDetails = lifecycleDetails;
-        this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetEmWarehousesEmWarehouseCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -248,7 +213,7 @@ public final class GetEmWarehousesEmWarehouseCollectionItem {
     public static Builder builder(GetEmWarehousesEmWarehouseCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -266,11 +231,7 @@ public final class GetEmWarehousesEmWarehouseCollectionItem {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEmWarehousesEmWarehouseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -291,71 +252,105 @@ public final class GetEmWarehousesEmWarehouseCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder emBridgeId(String emBridgeId) {
             this.emBridgeId = Objects.requireNonNull(emBridgeId);
             return this;
         }
+        @CustomType.Setter
         public Builder emWarehouseType(String emWarehouseType) {
             this.emWarehouseType = Objects.requireNonNull(emWarehouseType);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder latestEtlRunMessage(String latestEtlRunMessage) {
             this.latestEtlRunMessage = Objects.requireNonNull(latestEtlRunMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder latestEtlRunStatus(String latestEtlRunStatus) {
             this.latestEtlRunStatus = Objects.requireNonNull(latestEtlRunStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder latestEtlRunTime(String latestEtlRunTime) {
             this.latestEtlRunTime = Objects.requireNonNull(latestEtlRunTime);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
             this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetEmWarehousesEmWarehouseCollectionItem build() {
-            return new GetEmWarehousesEmWarehouseCollectionItem(compartmentId, definedTags, displayName, emBridgeId, emWarehouseType, freeformTags, id, latestEtlRunMessage, latestEtlRunStatus, latestEtlRunTime, lifecycleDetails, operationsInsightsWarehouseId, state, systemTags, timeCreated, timeUpdated);
+        }
+        public GetEmWarehousesEmWarehouseCollectionItem build() {
+            final var o = new GetEmWarehousesEmWarehouseCollectionItem();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.emBridgeId = emBridgeId;
+            o.emWarehouseType = emWarehouseType;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.latestEtlRunMessage = latestEtlRunMessage;
+            o.latestEtlRunStatus = latestEtlRunStatus;
+            o.latestEtlRunTime = latestEtlRunTime;
+            o.lifecycleDetails = lifecycleDetails;
+            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

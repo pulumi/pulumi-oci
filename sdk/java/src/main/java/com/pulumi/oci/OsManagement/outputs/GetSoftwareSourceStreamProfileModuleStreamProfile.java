@@ -13,28 +13,19 @@ public final class GetSoftwareSourceStreamProfileModuleStreamProfile {
      * @return The name of a module.  This parameter is required if a streamName is specified.
      * 
      */
-    private final String moduleName;
+    private String moduleName;
     /**
      * @return The name of the profile of the containing module stream
      * 
      */
-    private final String profileName;
+    private String profileName;
     /**
      * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
      * 
      */
-    private final String streamName;
+    private String streamName;
 
-    @CustomType.Constructor
-    private GetSoftwareSourceStreamProfileModuleStreamProfile(
-        @CustomType.Parameter("moduleName") String moduleName,
-        @CustomType.Parameter("profileName") String profileName,
-        @CustomType.Parameter("streamName") String streamName) {
-        this.moduleName = moduleName;
-        this.profileName = profileName;
-        this.streamName = streamName;
-    }
-
+    private GetSoftwareSourceStreamProfileModuleStreamProfile() {}
     /**
      * @return The name of a module.  This parameter is required if a streamName is specified.
      * 
@@ -64,16 +55,12 @@ public final class GetSoftwareSourceStreamProfileModuleStreamProfile {
     public static Builder builder(GetSoftwareSourceStreamProfileModuleStreamProfile defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String moduleName;
         private String profileName;
         private String streamName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSoftwareSourceStreamProfileModuleStreamProfile defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.moduleName = defaults.moduleName;
@@ -81,19 +68,27 @@ public final class GetSoftwareSourceStreamProfileModuleStreamProfile {
     	      this.streamName = defaults.streamName;
         }
 
+        @CustomType.Setter
         public Builder moduleName(String moduleName) {
             this.moduleName = Objects.requireNonNull(moduleName);
             return this;
         }
+        @CustomType.Setter
         public Builder profileName(String profileName) {
             this.profileName = Objects.requireNonNull(profileName);
             return this;
         }
+        @CustomType.Setter
         public Builder streamName(String streamName) {
             this.streamName = Objects.requireNonNull(streamName);
             return this;
-        }        public GetSoftwareSourceStreamProfileModuleStreamProfile build() {
-            return new GetSoftwareSourceStreamProfileModuleStreamProfile(moduleName, profileName, streamName);
+        }
+        public GetSoftwareSourceStreamProfileModuleStreamProfile build() {
+            final var o = new GetSoftwareSourceStreamProfileModuleStreamProfile();
+            o.moduleName = moduleName;
+            o.profileName = profileName;
+            o.streamName = streamName;
+            return o;
         }
     }
 }

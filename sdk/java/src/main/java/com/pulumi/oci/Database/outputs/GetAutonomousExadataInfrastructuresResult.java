@@ -18,52 +18,35 @@ public final class GetAutonomousExadataInfrastructuresResult {
      * @return The list of autonomous_exadata_infrastructures.
      * 
      */
-    private final List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures;
+    private List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures;
     /**
      * @return The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The user-friendly name for the Autonomous Exadata Infrastructure.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAutonomousExadataInfrastructuresFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAutonomousExadataInfrastructuresFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetAutonomousExadataInfrastructuresResult(
-        @CustomType.Parameter("autonomousExadataInfrastructures") List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures,
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAutonomousExadataInfrastructuresFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.autonomousExadataInfrastructures = autonomousExadataInfrastructures;
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetAutonomousExadataInfrastructuresResult() {}
     /**
      * @return The list of autonomous_exadata_infrastructures.
      * 
@@ -117,7 +100,7 @@ public final class GetAutonomousExadataInfrastructuresResult {
     public static Builder builder(GetAutonomousExadataInfrastructuresResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures;
         private @Nullable String availabilityDomain;
@@ -126,11 +109,7 @@ public final class GetAutonomousExadataInfrastructuresResult {
         private @Nullable List<GetAutonomousExadataInfrastructuresFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousExadataInfrastructuresResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousExadataInfrastructures = defaults.autonomousExadataInfrastructures;
@@ -142,6 +121,7 @@ public final class GetAutonomousExadataInfrastructuresResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder autonomousExadataInfrastructures(List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures) {
             this.autonomousExadataInfrastructures = Objects.requireNonNull(autonomousExadataInfrastructures);
             return this;
@@ -149,18 +129,22 @@ public final class GetAutonomousExadataInfrastructuresResult {
         public Builder autonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure... autonomousExadataInfrastructures) {
             return autonomousExadataInfrastructures(List.of(autonomousExadataInfrastructures));
         }
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousExadataInfrastructuresFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,15 +152,26 @@ public final class GetAutonomousExadataInfrastructuresResult {
         public Builder filters(GetAutonomousExadataInfrastructuresFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetAutonomousExadataInfrastructuresResult build() {
-            return new GetAutonomousExadataInfrastructuresResult(autonomousExadataInfrastructures, availabilityDomain, compartmentId, displayName, filters, id, state);
+        }
+        public GetAutonomousExadataInfrastructuresResult build() {
+            final var o = new GetAutonomousExadataInfrastructuresResult();
+            o.autonomousExadataInfrastructures = autonomousExadataInfrastructures;
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

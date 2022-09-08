@@ -18,45 +18,30 @@ public final class GetAppAccelerationPoliciesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return WebAppAccelerationPolicy display name, can be renamed.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAppAccelerationPoliciesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAppAccelerationPoliciesFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAccelerationPolicy.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the WebAppAccelerationPolicy.
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
     /**
      * @return The list of web_app_acceleration_policy_collection.
      * 
      */
-    private final List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections;
+    private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections;
 
-    @CustomType.Constructor
-    private GetAppAccelerationPoliciesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAppAccelerationPoliciesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("states") @Nullable List<String> states,
-        @CustomType.Parameter("webAppAccelerationPolicyCollections") List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.states = states;
-        this.webAppAccelerationPolicyCollections = webAppAccelerationPolicyCollections;
-    }
-
+    private GetAppAccelerationPoliciesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetAppAccelerationPoliciesResult {
     public static Builder builder(GetAppAccelerationPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetAppAccelerationPoliciesResult {
         private @Nullable String id;
         private @Nullable List<String> states;
         private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppAccelerationPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetAppAccelerationPoliciesResult {
     	      this.webAppAccelerationPolicyCollections = defaults.webAppAccelerationPolicyCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAppAccelerationPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetAppAccelerationPoliciesResult {
         public Builder filters(GetAppAccelerationPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
@@ -152,14 +138,23 @@ public final class GetAppAccelerationPoliciesResult {
         public Builder states(String... states) {
             return states(List.of(states));
         }
+        @CustomType.Setter
         public Builder webAppAccelerationPolicyCollections(List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections) {
             this.webAppAccelerationPolicyCollections = Objects.requireNonNull(webAppAccelerationPolicyCollections);
             return this;
         }
         public Builder webAppAccelerationPolicyCollections(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection... webAppAccelerationPolicyCollections) {
             return webAppAccelerationPolicyCollections(List.of(webAppAccelerationPolicyCollections));
-        }        public GetAppAccelerationPoliciesResult build() {
-            return new GetAppAccelerationPoliciesResult(compartmentId, displayName, filters, id, states, webAppAccelerationPolicyCollections);
+        }
+        public GetAppAccelerationPoliciesResult build() {
+            final var o = new GetAppAccelerationPoliciesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.states = states;
+            o.webAppAccelerationPolicyCollections = webAppAccelerationPolicyCollections;
+            return o;
         }
     }
 }

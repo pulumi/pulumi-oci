@@ -19,64 +19,39 @@ public final class GetMetricDataResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources from which the aggregated data was returned.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
-    private final @Nullable String endTime;
-    private final @Nullable List<GetMetricDataFilter> filters;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable String endTime;
+    private @Nullable List<GetMetricDataFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of metric_data.
      * 
      */
-    private final List<GetMetricDataMetricData> metricDatas;
+    private List<GetMetricDataMetricData> metricDatas;
     /**
      * @return The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `oci_computeagent`
      * 
      */
-    private final String namespace;
-    private final String query;
+    private String namespace;
+    private String query;
     /**
      * @return The time between calculated aggregation windows. Use with the query interval to vary the frequency at which aggregated data points are returned. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
      * 
      */
-    private final @Nullable String resolution;
+    private @Nullable String resolution;
     /**
      * @return Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
-    private final @Nullable String resourceGroup;
-    private final @Nullable String startTime;
+    private @Nullable String resourceGroup;
+    private @Nullable String startTime;
 
-    @CustomType.Constructor
-    private GetMetricDataResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("endTime") @Nullable String endTime,
-        @CustomType.Parameter("filters") @Nullable List<GetMetricDataFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metricDatas") List<GetMetricDataMetricData> metricDatas,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("query") String query,
-        @CustomType.Parameter("resolution") @Nullable String resolution,
-        @CustomType.Parameter("resourceGroup") @Nullable String resourceGroup,
-        @CustomType.Parameter("startTime") @Nullable String startTime) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.endTime = endTime;
-        this.filters = filters;
-        this.id = id;
-        this.metricDatas = metricDatas;
-        this.namespace = namespace;
-        this.query = query;
-        this.resolution = resolution;
-        this.resourceGroup = resourceGroup;
-        this.startTime = startTime;
-    }
-
+    private GetMetricDataResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources from which the aggregated data was returned.
      * 
@@ -142,7 +117,7 @@ public final class GetMetricDataResult {
     public static Builder builder(GetMetricDataResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -155,11 +130,7 @@ public final class GetMetricDataResult {
         private @Nullable String resolution;
         private @Nullable String resourceGroup;
         private @Nullable String startTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMetricDataResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -175,18 +146,22 @@ public final class GetMetricDataResult {
     	      this.startTime = defaults.startTime;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder endTime(@Nullable String endTime) {
             this.endTime = endTime;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMetricDataFilter> filters) {
             this.filters = filters;
             return this;
@@ -194,10 +169,12 @@ public final class GetMetricDataResult {
         public Builder filters(GetMetricDataFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metricDatas(List<GetMetricDataMetricData> metricDatas) {
             this.metricDatas = Objects.requireNonNull(metricDatas);
             return this;
@@ -205,27 +182,45 @@ public final class GetMetricDataResult {
         public Builder metricDatas(GetMetricDataMetricData... metricDatas) {
             return metricDatas(List.of(metricDatas));
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder query(String query) {
             this.query = Objects.requireNonNull(query);
             return this;
         }
+        @CustomType.Setter
         public Builder resolution(@Nullable String resolution) {
             this.resolution = resolution;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceGroup(@Nullable String resourceGroup) {
             this.resourceGroup = resourceGroup;
             return this;
         }
+        @CustomType.Setter
         public Builder startTime(@Nullable String startTime) {
             this.startTime = startTime;
             return this;
-        }        public GetMetricDataResult build() {
-            return new GetMetricDataResult(compartmentId, compartmentIdInSubtree, endTime, filters, id, metricDatas, namespace, query, resolution, resourceGroup, startTime);
+        }
+        public GetMetricDataResult build() {
+            final var o = new GetMetricDataResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.endTime = endTime;
+            o.filters = filters;
+            o.id = id;
+            o.metricDatas = metricDatas;
+            o.namespace = namespace;
+            o.query = query;
+            o.resolution = resolution;
+            o.resourceGroup = resourceGroup;
+            o.startTime = startTime;
+            return o;
         }
     }
 }

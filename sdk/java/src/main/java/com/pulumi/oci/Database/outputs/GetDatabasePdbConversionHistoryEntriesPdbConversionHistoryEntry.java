@@ -17,85 +17,60 @@ public final class GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEnt
      * * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return Additional container database parameter.
      * 
      */
-    private final String additionalCdbParams;
+    private String additionalCdbParams;
     /**
      * @return The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      * 
      */
-    private final String cdbName;
+    private String cdbName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database conversion history.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional information about the current lifecycle state for the conversion operation.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private final String sourceDatabaseId;
+    private String sourceDatabaseId;
     /**
      * @return A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the &#34;failed&#34; lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
      * * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
      * 
      */
-    private final String target;
+    private String target;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private final String targetDatabaseId;
+    private String targetDatabaseId;
     /**
      * @return The date and time when the database conversion operation ended.
      * 
      */
-    private final String timeEnded;
+    private String timeEnded;
     /**
      * @return The date and time when the database conversion operation started.
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
 
-    @CustomType.Constructor
-    private GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("additionalCdbParams") String additionalCdbParams,
-        @CustomType.Parameter("cdbName") String cdbName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("sourceDatabaseId") String sourceDatabaseId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("target") String target,
-        @CustomType.Parameter("targetDatabaseId") String targetDatabaseId,
-        @CustomType.Parameter("timeEnded") String timeEnded,
-        @CustomType.Parameter("timeStarted") String timeStarted) {
-        this.action = action;
-        this.additionalCdbParams = additionalCdbParams;
-        this.cdbName = cdbName;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.sourceDatabaseId = sourceDatabaseId;
-        this.state = state;
-        this.target = target;
-        this.targetDatabaseId = targetDatabaseId;
-        this.timeEnded = timeEnded;
-        this.timeStarted = timeStarted;
-    }
-
+    private GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry() {}
     /**
      * @return The operations used to convert a non-container database to a pluggable database.
      * * Use `PRECHECK` to run a pre-check operation on non-container database prior to converting it into a pluggable database.
@@ -186,7 +161,7 @@ public final class GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEnt
     public static Builder builder(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private String additionalCdbParams;
@@ -199,11 +174,7 @@ public final class GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEnt
         private String targetDatabaseId;
         private String timeEnded;
         private String timeStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -219,51 +190,75 @@ public final class GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEnt
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder additionalCdbParams(String additionalCdbParams) {
             this.additionalCdbParams = Objects.requireNonNull(additionalCdbParams);
             return this;
         }
+        @CustomType.Setter
         public Builder cdbName(String cdbName) {
             this.cdbName = Objects.requireNonNull(cdbName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceDatabaseId(String sourceDatabaseId) {
             this.sourceDatabaseId = Objects.requireNonNull(sourceDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder target(String target) {
             this.target = Objects.requireNonNull(target);
             return this;
         }
+        @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
             this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             this.timeEnded = Objects.requireNonNull(timeEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
-        }        public GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry build() {
-            return new GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry(action, additionalCdbParams, cdbName, id, lifecycleDetails, sourceDatabaseId, state, target, targetDatabaseId, timeEnded, timeStarted);
+        }
+        public GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry build() {
+            final var o = new GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry();
+            o.action = action;
+            o.additionalCdbParams = additionalCdbParams;
+            o.cdbName = cdbName;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.sourceDatabaseId = sourceDatabaseId;
+            o.state = state;
+            o.target = target;
+            o.targetDatabaseId = targetDatabaseId;
+            o.timeEnded = timeEnded;
+            o.timeStarted = timeStarted;
+            return o;
         }
     }
 }

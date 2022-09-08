@@ -13,13 +13,9 @@ public final class GetSessionsSessionKeyDetail {
      * @return The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
      * 
      */
-    private final String publicKeyContent;
+    private String publicKeyContent;
 
-    @CustomType.Constructor
-    private GetSessionsSessionKeyDetail(@CustomType.Parameter("publicKeyContent") String publicKeyContent) {
-        this.publicKeyContent = publicKeyContent;
-    }
-
+    private GetSessionsSessionKeyDetail() {}
     /**
      * @return The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
      * 
@@ -35,24 +31,24 @@ public final class GetSessionsSessionKeyDetail {
     public static Builder builder(GetSessionsSessionKeyDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String publicKeyContent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSessionsSessionKeyDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.publicKeyContent = defaults.publicKeyContent;
         }
 
+        @CustomType.Setter
         public Builder publicKeyContent(String publicKeyContent) {
             this.publicKeyContent = Objects.requireNonNull(publicKeyContent);
             return this;
-        }        public GetSessionsSessionKeyDetail build() {
-            return new GetSessionsSessionKeyDetail(publicKeyContent);
+        }
+        public GetSessionsSessionKeyDetail build() {
+            final var o = new GetSessionsSessionKeyDetail();
+            o.publicKeyContent = publicKeyContent;
+            return o;
         }
     }
 }

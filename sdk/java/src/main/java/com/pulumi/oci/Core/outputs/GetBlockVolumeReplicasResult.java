@@ -18,55 +18,36 @@ public final class GetBlockVolumeReplicasResult {
      * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The list of block_volume_replicas.
      * 
      */
-    private final List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas;
+    private List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas;
     /**
      * @return The OCID of the compartment that contains the block volume replica.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetBlockVolumeReplicasFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetBlockVolumeReplicasFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of a block volume replica.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String volumeGroupReplicaId;
+    private @Nullable String state;
+    private @Nullable String volumeGroupReplicaId;
 
-    @CustomType.Constructor
-    private GetBlockVolumeReplicasResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("blockVolumeReplicas") List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetBlockVolumeReplicasFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("volumeGroupReplicaId") @Nullable String volumeGroupReplicaId) {
-        this.availabilityDomain = availabilityDomain;
-        this.blockVolumeReplicas = blockVolumeReplicas;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.volumeGroupReplicaId = volumeGroupReplicaId;
-    }
-
+    private GetBlockVolumeReplicasResult() {}
     /**
      * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
@@ -123,7 +104,7 @@ public final class GetBlockVolumeReplicasResult {
     public static Builder builder(GetBlockVolumeReplicasResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas;
@@ -133,11 +114,7 @@ public final class GetBlockVolumeReplicasResult {
         private String id;
         private @Nullable String state;
         private @Nullable String volumeGroupReplicaId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockVolumeReplicasResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -150,10 +127,12 @@ public final class GetBlockVolumeReplicasResult {
     	      this.volumeGroupReplicaId = defaults.volumeGroupReplicaId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder blockVolumeReplicas(List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas) {
             this.blockVolumeReplicas = Objects.requireNonNull(blockVolumeReplicas);
             return this;
@@ -161,14 +140,17 @@ public final class GetBlockVolumeReplicasResult {
         public Builder blockVolumeReplicas(GetBlockVolumeReplicasBlockVolumeReplica... blockVolumeReplicas) {
             return blockVolumeReplicas(List.of(blockVolumeReplicas));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBlockVolumeReplicasFilter> filters) {
             this.filters = filters;
             return this;
@@ -176,19 +158,32 @@ public final class GetBlockVolumeReplicasResult {
         public Builder filters(GetBlockVolumeReplicasFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupReplicaId(@Nullable String volumeGroupReplicaId) {
             this.volumeGroupReplicaId = volumeGroupReplicaId;
             return this;
-        }        public GetBlockVolumeReplicasResult build() {
-            return new GetBlockVolumeReplicasResult(availabilityDomain, blockVolumeReplicas, compartmentId, displayName, filters, id, state, volumeGroupReplicaId);
+        }
+        public GetBlockVolumeReplicasResult build() {
+            final var o = new GetBlockVolumeReplicasResult();
+            o.availabilityDomain = availabilityDomain;
+            o.blockVolumeReplicas = blockVolumeReplicas;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.volumeGroupReplicaId = volumeGroupReplicaId;
+            return o;
         }
     }
 }

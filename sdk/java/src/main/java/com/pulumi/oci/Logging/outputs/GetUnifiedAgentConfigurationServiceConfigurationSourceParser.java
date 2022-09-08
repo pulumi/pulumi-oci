@@ -15,118 +15,65 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser {
-    private final String delimiter;
-    private final String expression;
+    private String delimiter;
+    private String expression;
     /**
      * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
-    private final String fieldTimeKey;
-    private final String formatFirstline;
-    private final List<String> formats;
-    private final String grokFailureKey;
-    private final String grokNameKey;
+    private String fieldTimeKey;
+    private String formatFirstline;
+    private List<String> formats;
+    private String grokFailureKey;
+    private String grokNameKey;
     /**
      * @return If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
      * 
      */
-    private final Boolean isEstimateCurrentEvent;
+    private Boolean isEstimateCurrentEvent;
     /**
      * @return If true, keep time field in the record.
      * 
      */
-    private final Boolean isKeepTimeKey;
+    private Boolean isKeepTimeKey;
     /**
      * @return If true, an empty string field is replaced with nil.
      * 
      */
-    private final Boolean isNullEmptyString;
-    private final Boolean isSupportColonlessIdent;
-    private final Boolean isWithPriority;
-    private final List<String> keys;
-    private final String messageFormat;
-    private final String messageKey;
-    private final String multiLineStartRegexp;
+    private Boolean isNullEmptyString;
+    private Boolean isSupportColonlessIdent;
+    private Boolean isWithPriority;
+    private List<String> keys;
+    private String messageFormat;
+    private String messageKey;
+    private String multiLineStartRegexp;
     /**
      * @return Specify the null value pattern.
      * 
      */
-    private final String nullValuePattern;
+    private String nullValuePattern;
     /**
      * @return Type of fluent parser.
      * 
      */
-    private final String parserType;
-    private final List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
-    private final String rfc5424timeFormat;
-    private final String syslogParserType;
-    private final String timeFormat;
-    private final String timeType;
+    private String parserType;
+    private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
+    private String rfc5424timeFormat;
+    private String syslogParserType;
+    private String timeFormat;
+    private String timeType;
     /**
      * @return Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
      * 
      */
-    private final Integer timeoutInMilliseconds;
+    private Integer timeoutInMilliseconds;
     /**
      * @return Specify types for converting a field into another type.
      * 
      */
-    private final Map<String,Object> types;
+    private Map<String,Object> types;
 
-    @CustomType.Constructor
-    private GetUnifiedAgentConfigurationServiceConfigurationSourceParser(
-        @CustomType.Parameter("delimiter") String delimiter,
-        @CustomType.Parameter("expression") String expression,
-        @CustomType.Parameter("fieldTimeKey") String fieldTimeKey,
-        @CustomType.Parameter("formatFirstline") String formatFirstline,
-        @CustomType.Parameter("formats") List<String> formats,
-        @CustomType.Parameter("grokFailureKey") String grokFailureKey,
-        @CustomType.Parameter("grokNameKey") String grokNameKey,
-        @CustomType.Parameter("isEstimateCurrentEvent") Boolean isEstimateCurrentEvent,
-        @CustomType.Parameter("isKeepTimeKey") Boolean isKeepTimeKey,
-        @CustomType.Parameter("isNullEmptyString") Boolean isNullEmptyString,
-        @CustomType.Parameter("isSupportColonlessIdent") Boolean isSupportColonlessIdent,
-        @CustomType.Parameter("isWithPriority") Boolean isWithPriority,
-        @CustomType.Parameter("keys") List<String> keys,
-        @CustomType.Parameter("messageFormat") String messageFormat,
-        @CustomType.Parameter("messageKey") String messageKey,
-        @CustomType.Parameter("multiLineStartRegexp") String multiLineStartRegexp,
-        @CustomType.Parameter("nullValuePattern") String nullValuePattern,
-        @CustomType.Parameter("parserType") String parserType,
-        @CustomType.Parameter("patterns") List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns,
-        @CustomType.Parameter("rfc5424timeFormat") String rfc5424timeFormat,
-        @CustomType.Parameter("syslogParserType") String syslogParserType,
-        @CustomType.Parameter("timeFormat") String timeFormat,
-        @CustomType.Parameter("timeType") String timeType,
-        @CustomType.Parameter("timeoutInMilliseconds") Integer timeoutInMilliseconds,
-        @CustomType.Parameter("types") Map<String,Object> types) {
-        this.delimiter = delimiter;
-        this.expression = expression;
-        this.fieldTimeKey = fieldTimeKey;
-        this.formatFirstline = formatFirstline;
-        this.formats = formats;
-        this.grokFailureKey = grokFailureKey;
-        this.grokNameKey = grokNameKey;
-        this.isEstimateCurrentEvent = isEstimateCurrentEvent;
-        this.isKeepTimeKey = isKeepTimeKey;
-        this.isNullEmptyString = isNullEmptyString;
-        this.isSupportColonlessIdent = isSupportColonlessIdent;
-        this.isWithPriority = isWithPriority;
-        this.keys = keys;
-        this.messageFormat = messageFormat;
-        this.messageKey = messageKey;
-        this.multiLineStartRegexp = multiLineStartRegexp;
-        this.nullValuePattern = nullValuePattern;
-        this.parserType = parserType;
-        this.patterns = patterns;
-        this.rfc5424timeFormat = rfc5424timeFormat;
-        this.syslogParserType = syslogParserType;
-        this.timeFormat = timeFormat;
-        this.timeType = timeType;
-        this.timeoutInMilliseconds = timeoutInMilliseconds;
-        this.types = types;
-    }
-
+    private GetUnifiedAgentConfigurationServiceConfigurationSourceParser() {}
     public String delimiter() {
         return this.delimiter;
     }
@@ -242,7 +189,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
     public static Builder builder(GetUnifiedAgentConfigurationServiceConfigurationSourceParser defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String delimiter;
         private String expression;
@@ -269,11 +216,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         private String timeType;
         private Integer timeoutInMilliseconds;
         private Map<String,Object> types;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationSourceParser defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.delimiter = defaults.delimiter;
@@ -303,22 +246,27 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
     	      this.types = defaults.types;
         }
 
+        @CustomType.Setter
         public Builder delimiter(String delimiter) {
             this.delimiter = Objects.requireNonNull(delimiter);
             return this;
         }
+        @CustomType.Setter
         public Builder expression(String expression) {
             this.expression = Objects.requireNonNull(expression);
             return this;
         }
+        @CustomType.Setter
         public Builder fieldTimeKey(String fieldTimeKey) {
             this.fieldTimeKey = Objects.requireNonNull(fieldTimeKey);
             return this;
         }
+        @CustomType.Setter
         public Builder formatFirstline(String formatFirstline) {
             this.formatFirstline = Objects.requireNonNull(formatFirstline);
             return this;
         }
+        @CustomType.Setter
         public Builder formats(List<String> formats) {
             this.formats = Objects.requireNonNull(formats);
             return this;
@@ -326,34 +274,42 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         public Builder formats(String... formats) {
             return formats(List.of(formats));
         }
+        @CustomType.Setter
         public Builder grokFailureKey(String grokFailureKey) {
             this.grokFailureKey = Objects.requireNonNull(grokFailureKey);
             return this;
         }
+        @CustomType.Setter
         public Builder grokNameKey(String grokNameKey) {
             this.grokNameKey = Objects.requireNonNull(grokNameKey);
             return this;
         }
+        @CustomType.Setter
         public Builder isEstimateCurrentEvent(Boolean isEstimateCurrentEvent) {
             this.isEstimateCurrentEvent = Objects.requireNonNull(isEstimateCurrentEvent);
             return this;
         }
+        @CustomType.Setter
         public Builder isKeepTimeKey(Boolean isKeepTimeKey) {
             this.isKeepTimeKey = Objects.requireNonNull(isKeepTimeKey);
             return this;
         }
+        @CustomType.Setter
         public Builder isNullEmptyString(Boolean isNullEmptyString) {
             this.isNullEmptyString = Objects.requireNonNull(isNullEmptyString);
             return this;
         }
+        @CustomType.Setter
         public Builder isSupportColonlessIdent(Boolean isSupportColonlessIdent) {
             this.isSupportColonlessIdent = Objects.requireNonNull(isSupportColonlessIdent);
             return this;
         }
+        @CustomType.Setter
         public Builder isWithPriority(Boolean isWithPriority) {
             this.isWithPriority = Objects.requireNonNull(isWithPriority);
             return this;
         }
+        @CustomType.Setter
         public Builder keys(List<String> keys) {
             this.keys = Objects.requireNonNull(keys);
             return this;
@@ -361,26 +317,32 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         public Builder keys(String... keys) {
             return keys(List.of(keys));
         }
+        @CustomType.Setter
         public Builder messageFormat(String messageFormat) {
             this.messageFormat = Objects.requireNonNull(messageFormat);
             return this;
         }
+        @CustomType.Setter
         public Builder messageKey(String messageKey) {
             this.messageKey = Objects.requireNonNull(messageKey);
             return this;
         }
+        @CustomType.Setter
         public Builder multiLineStartRegexp(String multiLineStartRegexp) {
             this.multiLineStartRegexp = Objects.requireNonNull(multiLineStartRegexp);
             return this;
         }
+        @CustomType.Setter
         public Builder nullValuePattern(String nullValuePattern) {
             this.nullValuePattern = Objects.requireNonNull(nullValuePattern);
             return this;
         }
+        @CustomType.Setter
         public Builder parserType(String parserType) {
             this.parserType = Objects.requireNonNull(parserType);
             return this;
         }
+        @CustomType.Setter
         public Builder patterns(List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns) {
             this.patterns = Objects.requireNonNull(patterns);
             return this;
@@ -388,31 +350,64 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         public Builder patterns(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern... patterns) {
             return patterns(List.of(patterns));
         }
+        @CustomType.Setter
         public Builder rfc5424timeFormat(String rfc5424timeFormat) {
             this.rfc5424timeFormat = Objects.requireNonNull(rfc5424timeFormat);
             return this;
         }
+        @CustomType.Setter
         public Builder syslogParserType(String syslogParserType) {
             this.syslogParserType = Objects.requireNonNull(syslogParserType);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFormat(String timeFormat) {
             this.timeFormat = Objects.requireNonNull(timeFormat);
             return this;
         }
+        @CustomType.Setter
         public Builder timeType(String timeType) {
             this.timeType = Objects.requireNonNull(timeType);
             return this;
         }
+        @CustomType.Setter
         public Builder timeoutInMilliseconds(Integer timeoutInMilliseconds) {
             this.timeoutInMilliseconds = Objects.requireNonNull(timeoutInMilliseconds);
             return this;
         }
+        @CustomType.Setter
         public Builder types(Map<String,Object> types) {
             this.types = Objects.requireNonNull(types);
             return this;
-        }        public GetUnifiedAgentConfigurationServiceConfigurationSourceParser build() {
-            return new GetUnifiedAgentConfigurationServiceConfigurationSourceParser(delimiter, expression, fieldTimeKey, formatFirstline, formats, grokFailureKey, grokNameKey, isEstimateCurrentEvent, isKeepTimeKey, isNullEmptyString, isSupportColonlessIdent, isWithPriority, keys, messageFormat, messageKey, multiLineStartRegexp, nullValuePattern, parserType, patterns, rfc5424timeFormat, syslogParserType, timeFormat, timeType, timeoutInMilliseconds, types);
+        }
+        public GetUnifiedAgentConfigurationServiceConfigurationSourceParser build() {
+            final var o = new GetUnifiedAgentConfigurationServiceConfigurationSourceParser();
+            o.delimiter = delimiter;
+            o.expression = expression;
+            o.fieldTimeKey = fieldTimeKey;
+            o.formatFirstline = formatFirstline;
+            o.formats = formats;
+            o.grokFailureKey = grokFailureKey;
+            o.grokNameKey = grokNameKey;
+            o.isEstimateCurrentEvent = isEstimateCurrentEvent;
+            o.isKeepTimeKey = isKeepTimeKey;
+            o.isNullEmptyString = isNullEmptyString;
+            o.isSupportColonlessIdent = isSupportColonlessIdent;
+            o.isWithPriority = isWithPriority;
+            o.keys = keys;
+            o.messageFormat = messageFormat;
+            o.messageKey = messageKey;
+            o.multiLineStartRegexp = multiLineStartRegexp;
+            o.nullValuePattern = nullValuePattern;
+            o.parserType = parserType;
+            o.patterns = patterns;
+            o.rfc5424timeFormat = rfc5424timeFormat;
+            o.syslogParserType = syslogParserType;
+            o.timeFormat = timeFormat;
+            o.timeType = timeType;
+            o.timeoutInMilliseconds = timeoutInMilliseconds;
+            o.types = types;
+            return o;
         }
     }
 }

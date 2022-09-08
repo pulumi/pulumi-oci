@@ -13,21 +13,14 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
      * @return Disk IOPS in thousands.
      * 
      */
-    private final Double diskIops;
+    private Double diskIops;
     /**
      * @return Disk Throughput in Mbps.
      * 
      */
-    private final Double diskThroughputInMbps;
+    private Double diskThroughputInMbps;
 
-    @CustomType.Constructor
-    private GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance(
-        @CustomType.Parameter("diskIops") Double diskIops,
-        @CustomType.Parameter("diskThroughputInMbps") Double diskThroughputInMbps) {
-        this.diskIops = diskIops;
-        this.diskThroughputInMbps = diskThroughputInMbps;
-    }
-
+    private GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance() {}
     /**
      * @return Disk IOPS in thousands.
      * 
@@ -50,30 +43,32 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
     public static Builder builder(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double diskIops;
         private Double diskThroughputInMbps;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.diskIops = defaults.diskIops;
     	      this.diskThroughputInMbps = defaults.diskThroughputInMbps;
         }
 
+        @CustomType.Setter
         public Builder diskIops(Double diskIops) {
             this.diskIops = Objects.requireNonNull(diskIops);
             return this;
         }
+        @CustomType.Setter
         public Builder diskThroughputInMbps(Double diskThroughputInMbps) {
             this.diskThroughputInMbps = Objects.requireNonNull(diskThroughputInMbps);
             return this;
-        }        public GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance build() {
-            return new GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance(diskIops, diskThroughputInMbps);
+        }
+        public GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance build() {
+            final var o = new GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance();
+            o.diskIops = diskIops;
+            o.diskThroughputInMbps = diskThroughputInMbps;
+            return o;
         }
     }
 }

@@ -16,28 +16,19 @@ public final class ExadataIormConfigDbPlan {
      * @return (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
      * 
      */
-    private final String dbName;
+    private String dbName;
     /**
      * @return The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
      * 
      */
-    private final @Nullable String flashCacheLimit;
+    private @Nullable String flashCacheLimit;
     /**
      * @return (Updatable) The relative priority of this database.
      * 
      */
-    private final Integer share;
+    private Integer share;
 
-    @CustomType.Constructor
-    private ExadataIormConfigDbPlan(
-        @CustomType.Parameter("dbName") String dbName,
-        @CustomType.Parameter("flashCacheLimit") @Nullable String flashCacheLimit,
-        @CustomType.Parameter("share") Integer share) {
-        this.dbName = dbName;
-        this.flashCacheLimit = flashCacheLimit;
-        this.share = share;
-    }
-
+    private ExadataIormConfigDbPlan() {}
     /**
      * @return (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
      * 
@@ -67,16 +58,12 @@ public final class ExadataIormConfigDbPlan {
     public static Builder builder(ExadataIormConfigDbPlan defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbName;
         private @Nullable String flashCacheLimit;
         private Integer share;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ExadataIormConfigDbPlan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbName = defaults.dbName;
@@ -84,19 +71,27 @@ public final class ExadataIormConfigDbPlan {
     	      this.share = defaults.share;
         }
 
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
+        @CustomType.Setter
         public Builder flashCacheLimit(@Nullable String flashCacheLimit) {
             this.flashCacheLimit = flashCacheLimit;
             return this;
         }
+        @CustomType.Setter
         public Builder share(Integer share) {
             this.share = Objects.requireNonNull(share);
             return this;
-        }        public ExadataIormConfigDbPlan build() {
-            return new ExadataIormConfigDbPlan(dbName, flashCacheLimit, share);
+        }
+        public ExadataIormConfigDbPlan build() {
+            final var o = new ExadataIormConfigDbPlan();
+            o.dbName = dbName;
+            o.flashCacheLimit = flashCacheLimit;
+            o.share = share;
+            return o;
         }
     }
 }

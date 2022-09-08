@@ -18,41 +18,26 @@ public final class GetLogSavedSearchesResult {
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetLogSavedSearchesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetLogSavedSearchesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String logSavedSearchId;
+    private String id;
+    private @Nullable String logSavedSearchId;
     /**
      * @return The list of log_saved_search_summary_collection.
      * 
      */
-    private final List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections;
+    private List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections;
     /**
      * @return The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private GetLogSavedSearchesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetLogSavedSearchesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("logSavedSearchId") @Nullable String logSavedSearchId,
-        @CustomType.Parameter("logSavedSearchSummaryCollections") List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.logSavedSearchId = logSavedSearchId;
-        this.logSavedSearchSummaryCollections = logSavedSearchSummaryCollections;
-        this.name = name;
-    }
-
+    private GetLogSavedSearchesResult() {}
     /**
      * @return The OCID of the compartment that the resource belongs to.
      * 
@@ -95,7 +80,7 @@ public final class GetLogSavedSearchesResult {
     public static Builder builder(GetLogSavedSearchesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetLogSavedSearchesFilter> filters;
@@ -103,11 +88,7 @@ public final class GetLogSavedSearchesResult {
         private @Nullable String logSavedSearchId;
         private List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogSavedSearchesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,10 +99,12 @@ public final class GetLogSavedSearchesResult {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLogSavedSearchesFilter> filters) {
             this.filters = filters;
             return this;
@@ -129,14 +112,17 @@ public final class GetLogSavedSearchesResult {
         public Builder filters(GetLogSavedSearchesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder logSavedSearchId(@Nullable String logSavedSearchId) {
             this.logSavedSearchId = logSavedSearchId;
             return this;
         }
+        @CustomType.Setter
         public Builder logSavedSearchSummaryCollections(List<GetLogSavedSearchesLogSavedSearchSummaryCollection> logSavedSearchSummaryCollections) {
             this.logSavedSearchSummaryCollections = Objects.requireNonNull(logSavedSearchSummaryCollections);
             return this;
@@ -144,11 +130,20 @@ public final class GetLogSavedSearchesResult {
         public Builder logSavedSearchSummaryCollections(GetLogSavedSearchesLogSavedSearchSummaryCollection... logSavedSearchSummaryCollections) {
             return logSavedSearchSummaryCollections(List.of(logSavedSearchSummaryCollections));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public GetLogSavedSearchesResult build() {
-            return new GetLogSavedSearchesResult(compartmentId, filters, id, logSavedSearchId, logSavedSearchSummaryCollections, name);
+        }
+        public GetLogSavedSearchesResult build() {
+            final var o = new GetLogSavedSearchesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.logSavedSearchId = logSavedSearchId;
+            o.logSavedSearchSummaryCollections = logSavedSearchSummaryCollections;
+            o.name = name;
+            return o;
         }
     }
 }

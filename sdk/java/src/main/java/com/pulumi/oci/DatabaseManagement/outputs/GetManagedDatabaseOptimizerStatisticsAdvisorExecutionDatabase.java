@@ -13,56 +13,39 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
-    private final String dbDeploymentType;
+    private String dbDeploymentType;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      * 
      */
-    private final String dbSubType;
+    private String dbSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private final String dbType;
+    private String dbType;
     /**
      * @return The version of the Oracle Database.
      * 
      */
-    private final String dbVersion;
+    private String dbVersion;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the rule.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbDeploymentType") String dbDeploymentType,
-        @CustomType.Parameter("dbSubType") String dbSubType,
-        @CustomType.Parameter("dbType") String dbType,
-        @CustomType.Parameter("dbVersion") String dbVersion,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name) {
-        this.compartmentId = compartmentId;
-        this.dbDeploymentType = dbDeploymentType;
-        this.dbSubType = dbSubType;
-        this.dbType = dbType;
-        this.dbVersion = dbVersion;
-        this.id = id;
-        this.name = name;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * 
@@ -120,7 +103,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String dbDeploymentType;
@@ -129,11 +112,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase
         private String dbVersion;
         private String id;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -145,35 +124,51 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbDeploymentType(String dbDeploymentType) {
             this.dbDeploymentType = Objects.requireNonNull(dbDeploymentType);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSubType(String dbSubType) {
             this.dbSubType = Objects.requireNonNull(dbSubType);
             return this;
         }
+        @CustomType.Setter
         public Builder dbType(String dbType) {
             this.dbType = Objects.requireNonNull(dbType);
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = Objects.requireNonNull(dbVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase(compartmentId, dbDeploymentType, dbSubType, dbType, dbVersion, id, name);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase();
+            o.compartmentId = compartmentId;
+            o.dbDeploymentType = dbDeploymentType;
+            o.dbSubType = dbSubType;
+            o.dbType = dbType;
+            o.dbVersion = dbVersion;
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

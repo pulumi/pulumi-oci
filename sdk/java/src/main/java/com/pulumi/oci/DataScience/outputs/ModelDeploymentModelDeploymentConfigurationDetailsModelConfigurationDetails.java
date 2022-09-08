@@ -18,35 +18,24 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * @return (Updatable) The network bandwidth for the model.
      * 
      */
-    private final @Nullable Integer bandwidthMbps;
+    private @Nullable Integer bandwidthMbps;
     /**
      * @return (Updatable) The model deployment instance configuration
      * 
      */
-    private final ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration;
+    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration;
     /**
      * @return (Updatable) The OCID of the model you want to deploy.
      * 
      */
-    private final String modelId;
+    private String modelId;
     /**
      * @return (Updatable) The scaling policy to apply to each model of the deployment.
      * 
      */
-    private final @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy scalingPolicy;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy scalingPolicy;
 
-    @CustomType.Constructor
-    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails(
-        @CustomType.Parameter("bandwidthMbps") @Nullable Integer bandwidthMbps,
-        @CustomType.Parameter("instanceConfiguration") ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration,
-        @CustomType.Parameter("modelId") String modelId,
-        @CustomType.Parameter("scalingPolicy") @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy scalingPolicy) {
-        this.bandwidthMbps = bandwidthMbps;
-        this.instanceConfiguration = instanceConfiguration;
-        this.modelId = modelId;
-        this.scalingPolicy = scalingPolicy;
-    }
-
+    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails() {}
     /**
      * @return (Updatable) The network bandwidth for the model.
      * 
@@ -83,17 +72,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     public static Builder builder(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer bandwidthMbps;
         private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration;
         private String modelId;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy scalingPolicy;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bandwidthMbps = defaults.bandwidthMbps;
@@ -102,23 +87,33 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     	      this.scalingPolicy = defaults.scalingPolicy;
         }
 
+        @CustomType.Setter
         public Builder bandwidthMbps(@Nullable Integer bandwidthMbps) {
             this.bandwidthMbps = bandwidthMbps;
             return this;
         }
+        @CustomType.Setter
         public Builder instanceConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration) {
             this.instanceConfiguration = Objects.requireNonNull(instanceConfiguration);
             return this;
         }
+        @CustomType.Setter
         public Builder modelId(String modelId) {
             this.modelId = Objects.requireNonNull(modelId);
             return this;
         }
+        @CustomType.Setter
         public Builder scalingPolicy(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy scalingPolicy) {
             this.scalingPolicy = scalingPolicy;
             return this;
-        }        public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails build() {
-            return new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails(bandwidthMbps, instanceConfiguration, modelId, scalingPolicy);
+        }
+        public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails build() {
+            final var o = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails();
+            o.bandwidthMbps = bandwidthMbps;
+            o.instanceConfiguration = instanceConfiguration;
+            o.modelId = modelId;
+            o.scalingPolicy = scalingPolicy;
+            return o;
         }
     }
 }

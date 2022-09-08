@@ -11,31 +11,20 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudVmClustersCloudVmClusterIormConfigCach {
-    private final List<GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan> dbPlans;
+    private List<GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan> dbPlans;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
-    private final String objective;
+    private String lifecycleDetails;
+    private String objective;
     /**
      * @return A filter to return only cloud VM clusters that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetCloudVmClustersCloudVmClusterIormConfigCach(
-        @CustomType.Parameter("dbPlans") List<GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan> dbPlans,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("objective") String objective,
-        @CustomType.Parameter("state") String state) {
-        this.dbPlans = dbPlans;
-        this.lifecycleDetails = lifecycleDetails;
-        this.objective = objective;
-        this.state = state;
-    }
-
+    private GetCloudVmClustersCloudVmClusterIormConfigCach() {}
     public List<GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan> dbPlans() {
         return this.dbPlans;
     }
@@ -64,17 +53,13 @@ public final class GetCloudVmClustersCloudVmClusterIormConfigCach {
     public static Builder builder(GetCloudVmClustersCloudVmClusterIormConfigCach defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan> dbPlans;
         private String lifecycleDetails;
         private String objective;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCloudVmClustersCloudVmClusterIormConfigCach defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbPlans = defaults.dbPlans;
@@ -83,6 +68,7 @@ public final class GetCloudVmClustersCloudVmClusterIormConfigCach {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder dbPlans(List<GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan> dbPlans) {
             this.dbPlans = Objects.requireNonNull(dbPlans);
             return this;
@@ -90,19 +76,28 @@ public final class GetCloudVmClustersCloudVmClusterIormConfigCach {
         public Builder dbPlans(GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan... dbPlans) {
             return dbPlans(List.of(dbPlans));
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder objective(String objective) {
             this.objective = Objects.requireNonNull(objective);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetCloudVmClustersCloudVmClusterIormConfigCach build() {
-            return new GetCloudVmClustersCloudVmClusterIormConfigCach(dbPlans, lifecycleDetails, objective, state);
+        }
+        public GetCloudVmClustersCloudVmClusterIormConfigCach build() {
+            final var o = new GetCloudVmClustersCloudVmClusterIormConfigCach();
+            o.dbPlans = dbPlans;
+            o.lifecycleDetails = lifecycleDetails;
+            o.objective = objective;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetInstallationSitesInstallationSiteCollectionItem {
      * @return A list of Java installation sites.
      * 
      */
-    private final List<GetInstallationSitesInstallationSiteCollectionItemItem> items;
+    private List<GetInstallationSitesInstallationSiteCollectionItemItem> items;
 
-    @CustomType.Constructor
-    private GetInstallationSitesInstallationSiteCollectionItem(@CustomType.Parameter("items") List<GetInstallationSitesInstallationSiteCollectionItemItem> items) {
-        this.items = items;
-    }
-
+    private GetInstallationSitesInstallationSiteCollectionItem() {}
     /**
      * @return A list of Java installation sites.
      * 
@@ -36,27 +32,27 @@ public final class GetInstallationSitesInstallationSiteCollectionItem {
     public static Builder builder(GetInstallationSitesInstallationSiteCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetInstallationSitesInstallationSiteCollectionItemItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstallationSitesInstallationSiteCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetInstallationSitesInstallationSiteCollectionItemItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetInstallationSitesInstallationSiteCollectionItemItem... items) {
             return items(List.of(items));
-        }        public GetInstallationSitesInstallationSiteCollectionItem build() {
-            return new GetInstallationSitesInstallationSiteCollectionItem(items);
+        }
+        public GetInstallationSitesInstallationSiteCollectionItem build() {
+            final var o = new GetInstallationSitesInstallationSiteCollectionItem();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -16,28 +16,19 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
      * @return Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
      * 
      */
-    private final List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeader> filterHeaders;
+    private List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeader> filterHeaders;
     /**
      * @return Rename HTTP headers as they pass through the gateway.
      * 
      */
-    private final List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader> renameHeaders;
+    private List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader> renameHeaders;
     /**
      * @return Set HTTP headers as they pass through the gateway.
      * 
      */
-    private final List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader> setHeaders;
+    private List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader> setHeaders;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation(
-        @CustomType.Parameter("filterHeaders") List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeader> filterHeaders,
-        @CustomType.Parameter("renameHeaders") List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader> renameHeaders,
-        @CustomType.Parameter("setHeaders") List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader> setHeaders) {
-        this.filterHeaders = filterHeaders;
-        this.renameHeaders = renameHeaders;
-        this.setHeaders = setHeaders;
-    }
-
+    private GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation() {}
     /**
      * @return Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
      * 
@@ -67,16 +58,12 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
     public static Builder builder(GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeader> filterHeaders;
         private List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader> renameHeaders;
         private List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader> setHeaders;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filterHeaders = defaults.filterHeaders;
@@ -84,6 +71,7 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
     	      this.setHeaders = defaults.setHeaders;
         }
 
+        @CustomType.Setter
         public Builder filterHeaders(List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeader> filterHeaders) {
             this.filterHeaders = Objects.requireNonNull(filterHeaders);
             return this;
@@ -91,6 +79,7 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
         public Builder filterHeaders(GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeader... filterHeaders) {
             return filterHeaders(List.of(filterHeaders));
         }
+        @CustomType.Setter
         public Builder renameHeaders(List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader> renameHeaders) {
             this.renameHeaders = Objects.requireNonNull(renameHeaders);
             return this;
@@ -98,14 +87,20 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
         public Builder renameHeaders(GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader... renameHeaders) {
             return renameHeaders(List.of(renameHeaders));
         }
+        @CustomType.Setter
         public Builder setHeaders(List<GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader> setHeaders) {
             this.setHeaders = Objects.requireNonNull(setHeaders);
             return this;
         }
         public Builder setHeaders(GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader... setHeaders) {
             return setHeaders(List.of(setHeaders));
-        }        public GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation build() {
-            return new GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation(filterHeaders, renameHeaders, setHeaders);
+        }
+        public GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation build() {
+            final var o = new GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation();
+            o.filterHeaders = filterHeaders;
+            o.renameHeaders = renameHeaders;
+            o.setHeaders = setHeaders;
+            return o;
         }
     }
 }

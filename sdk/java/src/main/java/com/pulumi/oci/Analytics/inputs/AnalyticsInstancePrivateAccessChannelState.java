@@ -6,6 +6,7 @@ package com.pulumi.oci.Analytics.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Analytics.inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs;
+import com.pulumi.oci.Analytics.inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -93,6 +94,21 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     }
 
     /**
+     * (Updatable) Network Security Group OCIDs for an Analytics instance.
+     * 
+     */
+    @Import(name="networkSecurityGroupIds")
+    private @Nullable Output<List<String>> networkSecurityGroupIds;
+
+    /**
+     * @return (Updatable) Network Security Group OCIDs for an Analytics instance.
+     * 
+     */
+    public Optional<Output<List<String>>> networkSecurityGroupIds() {
+        return Optional.ofNullable(this.networkSecurityGroupIds);
+    }
+
+    /**
      * (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      * 
      */
@@ -105,6 +121,21 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
      */
     public Optional<Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs>>> privateSourceDnsZones() {
         return Optional.ofNullable(this.privateSourceDnsZones);
+    }
+
+    /**
+     * (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * 
+     */
+    @Import(name="privateSourceScanHosts")
+    private @Nullable Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs>> privateSourceScanHosts;
+
+    /**
+     * @return (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * 
+     */
+    public Optional<Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs>>> privateSourceScanHosts() {
+        return Optional.ofNullable(this.privateSourceScanHosts);
     }
 
     /**
@@ -145,7 +176,9 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         this.egressSourceIpAddresses = $.egressSourceIpAddresses;
         this.ipAddress = $.ipAddress;
         this.key = $.key;
+        this.networkSecurityGroupIds = $.networkSecurityGroupIds;
         this.privateSourceDnsZones = $.privateSourceDnsZones;
+        this.privateSourceScanHosts = $.privateSourceScanHosts;
         this.subnetId = $.subnetId;
         this.vcnId = $.vcnId;
     }
@@ -284,6 +317,37 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
+         * @param networkSecurityGroupIds (Updatable) Network Security Group OCIDs for an Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkSecurityGroupIds(@Nullable Output<List<String>> networkSecurityGroupIds) {
+            $.networkSecurityGroupIds = networkSecurityGroupIds;
+            return this;
+        }
+
+        /**
+         * @param networkSecurityGroupIds (Updatable) Network Security Group OCIDs for an Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
+            return networkSecurityGroupIds(Output.of(networkSecurityGroupIds));
+        }
+
+        /**
+         * @param networkSecurityGroupIds (Updatable) Network Security Group OCIDs for an Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
+            return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
+        }
+
+        /**
          * @param privateSourceDnsZones (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
          * 
          * @return builder
@@ -312,6 +376,37 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
          */
         public Builder privateSourceDnsZones(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs... privateSourceDnsZones) {
             return privateSourceDnsZones(List.of(privateSourceDnsZones));
+        }
+
+        /**
+         * @param privateSourceScanHosts (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateSourceScanHosts(@Nullable Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs>> privateSourceScanHosts) {
+            $.privateSourceScanHosts = privateSourceScanHosts;
+            return this;
+        }
+
+        /**
+         * @param privateSourceScanHosts (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateSourceScanHosts(List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs> privateSourceScanHosts) {
+            return privateSourceScanHosts(Output.of(privateSourceScanHosts));
+        }
+
+        /**
+         * @param privateSourceScanHosts (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateSourceScanHosts(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs... privateSourceScanHosts) {
+            return privateSourceScanHosts(List.of(privateSourceScanHosts));
         }
 
         /**

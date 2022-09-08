@@ -14,21 +14,14 @@ public final class GetCategoryResourceCount {
      * @return The count of resources.
      * 
      */
-    private final Integer count;
+    private Integer count;
     /**
      * @return The recommendation status of the resource.
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetCategoryResourceCount(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("status") String status) {
-        this.count = count;
-        this.status = status;
-    }
-
+    private GetCategoryResourceCount() {}
     /**
      * @return The count of resources.
      * 
@@ -51,30 +44,32 @@ public final class GetCategoryResourceCount {
     public static Builder builder(GetCategoryResourceCount defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCategoryResourceCount defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetCategoryResourceCount build() {
-            return new GetCategoryResourceCount(count, status);
+        }
+        public GetCategoryResourceCount build() {
+            final var o = new GetCategoryResourceCount();
+            o.count = count;
+            o.status = status;
+            return o;
         }
     }
 }

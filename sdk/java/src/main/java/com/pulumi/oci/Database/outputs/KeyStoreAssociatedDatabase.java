@@ -15,21 +15,14 @@ public final class KeyStoreAssociatedDatabase {
      * @return The name of the database that is associated with the key store.
      * 
      */
-    private final @Nullable String dbName;
+    private @Nullable String dbName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
 
-    @CustomType.Constructor
-    private KeyStoreAssociatedDatabase(
-        @CustomType.Parameter("dbName") @Nullable String dbName,
-        @CustomType.Parameter("id") @Nullable String id) {
-        this.dbName = dbName;
-        this.id = id;
-    }
-
+    private KeyStoreAssociatedDatabase() {}
     /**
      * @return The name of the database that is associated with the key store.
      * 
@@ -52,30 +45,32 @@ public final class KeyStoreAssociatedDatabase {
     public static Builder builder(KeyStoreAssociatedDatabase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String dbName;
         private @Nullable String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(KeyStoreAssociatedDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbName = defaults.dbName;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder dbName(@Nullable String dbName) {
             this.dbName = dbName;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
-        }        public KeyStoreAssociatedDatabase build() {
-            return new KeyStoreAssociatedDatabase(dbName, id);
+        }
+        public KeyStoreAssociatedDatabase build() {
+            final var o = new KeyStoreAssociatedDatabase();
+            o.dbName = dbName;
+            o.id = id;
+            return o;
         }
     }
 }

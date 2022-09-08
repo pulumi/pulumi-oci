@@ -13,28 +13,19 @@ public final class GetListingDocumentationLink {
      * @return The category that the document belongs to.
      * 
      */
-    private final String documentCategory;
+    private String documentCategory;
     /**
      * @return Text that describes the resource.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The URL of the resource.
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetListingDocumentationLink(
-        @CustomType.Parameter("documentCategory") String documentCategory,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("url") String url) {
-        this.documentCategory = documentCategory;
-        this.name = name;
-        this.url = url;
-    }
-
+    private GetListingDocumentationLink() {}
     /**
      * @return The category that the document belongs to.
      * 
@@ -64,16 +55,12 @@ public final class GetListingDocumentationLink {
     public static Builder builder(GetListingDocumentationLink defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String documentCategory;
         private String name;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingDocumentationLink defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.documentCategory = defaults.documentCategory;
@@ -81,19 +68,27 @@ public final class GetListingDocumentationLink {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder documentCategory(String documentCategory) {
             this.documentCategory = Objects.requireNonNull(documentCategory);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetListingDocumentationLink build() {
-            return new GetListingDocumentationLink(documentCategory, name, url);
+        }
+        public GetListingDocumentationLink build() {
+            final var o = new GetListingDocumentationLink();
+            o.documentCategory = documentCategory;
+            o.name = name;
+            o.url = url;
+            return o;
         }
     }
 }

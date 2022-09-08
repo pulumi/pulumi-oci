@@ -14,45 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClusterUpdatesResult {
-    private final @Nullable List<GetVmClusterUpdatesFilter> filters;
+    private @Nullable List<GetVmClusterUpdatesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the maintenance update. Dependent on value of `lastAction`.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The type of VM cluster maintenance update.
      * 
      */
-    private final @Nullable String updateType;
-    private final String vmClusterId;
+    private @Nullable String updateType;
+    private String vmClusterId;
     /**
      * @return The list of vm_cluster_updates.
      * 
      */
-    private final List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates;
+    private List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates;
 
-    @CustomType.Constructor
-    private GetVmClusterUpdatesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetVmClusterUpdatesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("updateType") @Nullable String updateType,
-        @CustomType.Parameter("vmClusterId") String vmClusterId,
-        @CustomType.Parameter("vmClusterUpdates") List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates) {
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.updateType = updateType;
-        this.vmClusterId = vmClusterId;
-        this.vmClusterUpdates = vmClusterUpdates;
-    }
-
+    private GetVmClusterUpdatesResult() {}
     public List<GetVmClusterUpdatesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -95,7 +80,7 @@ public final class GetVmClusterUpdatesResult {
     public static Builder builder(GetVmClusterUpdatesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVmClusterUpdatesFilter> filters;
         private String id;
@@ -103,11 +88,7 @@ public final class GetVmClusterUpdatesResult {
         private @Nullable String updateType;
         private String vmClusterId;
         private List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterUpdatesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -118,6 +99,7 @@ public final class GetVmClusterUpdatesResult {
     	      this.vmClusterUpdates = defaults.vmClusterUpdates;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVmClusterUpdatesFilter> filters) {
             this.filters = filters;
             return this;
@@ -125,30 +107,43 @@ public final class GetVmClusterUpdatesResult {
         public Builder filters(GetVmClusterUpdatesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder updateType(@Nullable String updateType) {
             this.updateType = updateType;
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = Objects.requireNonNull(vmClusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterUpdates(List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates) {
             this.vmClusterUpdates = Objects.requireNonNull(vmClusterUpdates);
             return this;
         }
         public Builder vmClusterUpdates(GetVmClusterUpdatesVmClusterUpdate... vmClusterUpdates) {
             return vmClusterUpdates(List.of(vmClusterUpdates));
-        }        public GetVmClusterUpdatesResult build() {
-            return new GetVmClusterUpdatesResult(filters, id, state, updateType, vmClusterId, vmClusterUpdates);
+        }
+        public GetVmClusterUpdatesResult build() {
+            final var o = new GetVmClusterUpdatesResult();
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.updateType = updateType;
+            o.vmClusterId = vmClusterId;
+            o.vmClusterUpdates = vmClusterUpdates;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class VcnByoipv6cidrDetail {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
      * 
      */
-    private final String byoipv6rangeId;
+    private String byoipv6rangeId;
     /**
      * @return An IPv6 CIDR block required to create a VCN with a BYOIP prefix. It could be the whole CIDR block identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
      * 
      */
-    private final String ipv6cidrBlock;
+    private String ipv6cidrBlock;
 
-    @CustomType.Constructor
-    private VcnByoipv6cidrDetail(
-        @CustomType.Parameter("byoipv6rangeId") String byoipv6rangeId,
-        @CustomType.Parameter("ipv6cidrBlock") String ipv6cidrBlock) {
-        this.byoipv6rangeId = byoipv6rangeId;
-        this.ipv6cidrBlock = ipv6cidrBlock;
-    }
-
+    private VcnByoipv6cidrDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
      * 
@@ -50,30 +43,32 @@ public final class VcnByoipv6cidrDetail {
     public static Builder builder(VcnByoipv6cidrDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String byoipv6rangeId;
         private String ipv6cidrBlock;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VcnByoipv6cidrDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.byoipv6rangeId = defaults.byoipv6rangeId;
     	      this.ipv6cidrBlock = defaults.ipv6cidrBlock;
         }
 
+        @CustomType.Setter
         public Builder byoipv6rangeId(String byoipv6rangeId) {
             this.byoipv6rangeId = Objects.requireNonNull(byoipv6rangeId);
             return this;
         }
+        @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
             this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
             return this;
-        }        public VcnByoipv6cidrDetail build() {
-            return new VcnByoipv6cidrDetail(byoipv6rangeId, ipv6cidrBlock);
+        }
+        public VcnByoipv6cidrDetail build() {
+            final var o = new VcnByoipv6cidrDetail();
+            o.byoipv6rangeId = byoipv6rangeId;
+            o.ipv6cidrBlock = ipv6cidrBlock;
+            return o;
         }
     }
 }

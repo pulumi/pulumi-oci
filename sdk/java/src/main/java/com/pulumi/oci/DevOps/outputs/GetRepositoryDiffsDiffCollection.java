@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRepositoryDiffsDiffCollection {
-    private final List<GetRepositoryDiffsDiffCollectionItem> items;
+    private List<GetRepositoryDiffsDiffCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRepositoryDiffsDiffCollection(@CustomType.Parameter("items") List<GetRepositoryDiffsDiffCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRepositoryDiffsDiffCollection() {}
     public List<GetRepositoryDiffsDiffCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetRepositoryDiffsDiffCollection {
     public static Builder builder(GetRepositoryDiffsDiffCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRepositoryDiffsDiffCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryDiffsDiffCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRepositoryDiffsDiffCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRepositoryDiffsDiffCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRepositoryDiffsDiffCollection build() {
-            return new GetRepositoryDiffsDiffCollection(items);
+        }
+        public GetRepositoryDiffsDiffCollection build() {
+            final var o = new GetRepositoryDiffsDiffCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -18,55 +18,36 @@ public final class GetControlAssignmentsResult {
      * @return The OCID of the comparment that contains the operator control assignment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetControlAssignmentsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetControlAssignmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of operator_control_assignment_collection.
      * 
      */
-    private final List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections;
-    private final @Nullable String operatorControlName;
+    private List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections;
+    private @Nullable String operatorControlName;
     /**
      * @return Name of the target resource.
      * 
      */
-    private final @Nullable String resourceName;
+    private @Nullable String resourceName;
     /**
      * @return resourceType for which the OperatorControlAssignment is applicable
      * 
      */
-    private final @Nullable String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The current lifcycle state of the OperatorControl.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetControlAssignmentsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetControlAssignmentsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("operatorControlAssignmentCollections") List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections,
-        @CustomType.Parameter("operatorControlName") @Nullable String operatorControlName,
-        @CustomType.Parameter("resourceName") @Nullable String resourceName,
-        @CustomType.Parameter("resourceType") @Nullable String resourceType,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.operatorControlAssignmentCollections = operatorControlAssignmentCollections;
-        this.operatorControlName = operatorControlName;
-        this.resourceName = resourceName;
-        this.resourceType = resourceType;
-        this.state = state;
-    }
-
+    private GetControlAssignmentsResult() {}
     /**
      * @return The OCID of the comparment that contains the operator control assignment.
      * 
@@ -123,7 +104,7 @@ public final class GetControlAssignmentsResult {
     public static Builder builder(GetControlAssignmentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetControlAssignmentsFilter> filters;
@@ -133,11 +114,7 @@ public final class GetControlAssignmentsResult {
         private @Nullable String resourceName;
         private @Nullable String resourceType;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetControlAssignmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -150,10 +127,12 @@ public final class GetControlAssignmentsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetControlAssignmentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -161,10 +140,12 @@ public final class GetControlAssignmentsResult {
         public Builder filters(GetControlAssignmentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder operatorControlAssignmentCollections(List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections) {
             this.operatorControlAssignmentCollections = Objects.requireNonNull(operatorControlAssignmentCollections);
             return this;
@@ -172,23 +153,37 @@ public final class GetControlAssignmentsResult {
         public Builder operatorControlAssignmentCollections(GetControlAssignmentsOperatorControlAssignmentCollection... operatorControlAssignmentCollections) {
             return operatorControlAssignmentCollections(List.of(operatorControlAssignmentCollections));
         }
+        @CustomType.Setter
         public Builder operatorControlName(@Nullable String operatorControlName) {
             this.operatorControlName = operatorControlName;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
             this.resourceName = resourceName;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
             this.resourceType = resourceType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetControlAssignmentsResult build() {
-            return new GetControlAssignmentsResult(compartmentId, filters, id, operatorControlAssignmentCollections, operatorControlName, resourceName, resourceType, state);
+        }
+        public GetControlAssignmentsResult build() {
+            final var o = new GetControlAssignmentsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.operatorControlAssignmentCollections = operatorControlAssignmentCollections;
+            o.operatorControlName = operatorControlName;
+            o.resourceName = resourceName;
+            o.resourceType = resourceType;
+            o.state = state;
+            return o;
         }
     }
 }

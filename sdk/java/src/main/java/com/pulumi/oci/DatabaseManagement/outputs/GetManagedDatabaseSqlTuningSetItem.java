@@ -14,35 +14,24 @@ public final class GetManagedDatabaseSqlTuningSetItem {
      * @return The description of the SQL tuning set.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The name of the SQL tuning set.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The owner of the SQL tuning set.
      * 
      */
-    private final String owner;
+    private String owner;
     /**
      * @return The number of SQL statements in the SQL tuning set.
      * 
      */
-    private final Integer statementCounts;
+    private Integer statementCounts;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningSetItem(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("owner") String owner,
-        @CustomType.Parameter("statementCounts") Integer statementCounts) {
-        this.description = description;
-        this.name = name;
-        this.owner = owner;
-        this.statementCounts = statementCounts;
-    }
-
+    private GetManagedDatabaseSqlTuningSetItem() {}
     /**
      * @return The description of the SQL tuning set.
      * 
@@ -79,17 +68,13 @@ public final class GetManagedDatabaseSqlTuningSetItem {
     public static Builder builder(GetManagedDatabaseSqlTuningSetItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String name;
         private String owner;
         private Integer statementCounts;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningSetItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -98,23 +83,33 @@ public final class GetManagedDatabaseSqlTuningSetItem {
     	      this.statementCounts = defaults.statementCounts;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder owner(String owner) {
             this.owner = Objects.requireNonNull(owner);
             return this;
         }
+        @CustomType.Setter
         public Builder statementCounts(Integer statementCounts) {
             this.statementCounts = Objects.requireNonNull(statementCounts);
             return this;
-        }        public GetManagedDatabaseSqlTuningSetItem build() {
-            return new GetManagedDatabaseSqlTuningSetItem(description, name, owner, statementCounts);
+        }
+        public GetManagedDatabaseSqlTuningSetItem build() {
+            final var o = new GetManagedDatabaseSqlTuningSetItem();
+            o.description = description;
+            o.name = name;
+            o.owner = owner;
+            o.statementCounts = statementCounts;
+            return o;
         }
     }
 }

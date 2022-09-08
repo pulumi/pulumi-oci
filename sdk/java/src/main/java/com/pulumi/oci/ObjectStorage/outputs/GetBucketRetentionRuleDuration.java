@@ -13,21 +13,14 @@ public final class GetBucketRetentionRuleDuration {
      * @return The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
      * 
      */
-    private final String timeAmount;
+    private String timeAmount;
     /**
      * @return The unit that should be used to interpret timeAmount.
      * 
      */
-    private final String timeUnit;
+    private String timeUnit;
 
-    @CustomType.Constructor
-    private GetBucketRetentionRuleDuration(
-        @CustomType.Parameter("timeAmount") String timeAmount,
-        @CustomType.Parameter("timeUnit") String timeUnit) {
-        this.timeAmount = timeAmount;
-        this.timeUnit = timeUnit;
-    }
-
+    private GetBucketRetentionRuleDuration() {}
     /**
      * @return The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
      * 
@@ -50,30 +43,32 @@ public final class GetBucketRetentionRuleDuration {
     public static Builder builder(GetBucketRetentionRuleDuration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String timeAmount;
         private String timeUnit;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBucketRetentionRuleDuration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.timeAmount = defaults.timeAmount;
     	      this.timeUnit = defaults.timeUnit;
         }
 
+        @CustomType.Setter
         public Builder timeAmount(String timeAmount) {
             this.timeAmount = Objects.requireNonNull(timeAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUnit(String timeUnit) {
             this.timeUnit = Objects.requireNonNull(timeUnit);
             return this;
-        }        public GetBucketRetentionRuleDuration build() {
-            return new GetBucketRetentionRuleDuration(timeAmount, timeUnit);
+        }
+        public GetBucketRetentionRuleDuration build() {
+            final var o = new GetBucketRetentionRuleDuration();
+            o.timeAmount = timeAmount;
+            o.timeUnit = timeUnit;
+            return o;
         }
     }
 }

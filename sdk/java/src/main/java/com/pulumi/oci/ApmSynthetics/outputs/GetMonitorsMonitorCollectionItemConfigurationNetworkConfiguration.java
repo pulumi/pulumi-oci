@@ -14,42 +14,29 @@ public final class GetMonitorsMonitorCollectionItemConfigurationNetworkConfigura
      * @return Number of hops.
      * 
      */
-    private final Integer numberOfHops;
+    private Integer numberOfHops;
     /**
      * @return Type of probe mode when TCP protocol is selected.
      * 
      */
-    private final String probeMode;
+    private String probeMode;
     /**
      * @return Number of probes per hop.
      * 
      */
-    private final Integer probePerHop;
+    private Integer probePerHop;
     /**
      * @return Type of protocol.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return Number of probe packets sent out simultaneously.
      * 
      */
-    private final Integer transmissionRate;
+    private Integer transmissionRate;
 
-    @CustomType.Constructor
-    private GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration(
-        @CustomType.Parameter("numberOfHops") Integer numberOfHops,
-        @CustomType.Parameter("probeMode") String probeMode,
-        @CustomType.Parameter("probePerHop") Integer probePerHop,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("transmissionRate") Integer transmissionRate) {
-        this.numberOfHops = numberOfHops;
-        this.probeMode = probeMode;
-        this.probePerHop = probePerHop;
-        this.protocol = protocol;
-        this.transmissionRate = transmissionRate;
-    }
-
+    private GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration() {}
     /**
      * @return Number of hops.
      * 
@@ -93,18 +80,14 @@ public final class GetMonitorsMonitorCollectionItemConfigurationNetworkConfigura
     public static Builder builder(GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer numberOfHops;
         private String probeMode;
         private Integer probePerHop;
         private String protocol;
         private Integer transmissionRate;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.numberOfHops = defaults.numberOfHops;
@@ -114,27 +97,39 @@ public final class GetMonitorsMonitorCollectionItemConfigurationNetworkConfigura
     	      this.transmissionRate = defaults.transmissionRate;
         }
 
+        @CustomType.Setter
         public Builder numberOfHops(Integer numberOfHops) {
             this.numberOfHops = Objects.requireNonNull(numberOfHops);
             return this;
         }
+        @CustomType.Setter
         public Builder probeMode(String probeMode) {
             this.probeMode = Objects.requireNonNull(probeMode);
             return this;
         }
+        @CustomType.Setter
         public Builder probePerHop(Integer probePerHop) {
             this.probePerHop = Objects.requireNonNull(probePerHop);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder transmissionRate(Integer transmissionRate) {
             this.transmissionRate = Objects.requireNonNull(transmissionRate);
             return this;
-        }        public GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration build() {
-            return new GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration(numberOfHops, probeMode, probePerHop, protocol, transmissionRate);
+        }
+        public GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration build() {
+            final var o = new GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration();
+            o.numberOfHops = numberOfHops;
+            o.probeMode = probeMode;
+            o.probePerHop = probePerHop;
+            o.protocol = protocol;
+            o.transmissionRate = transmissionRate;
+            return o;
         }
     }
 }

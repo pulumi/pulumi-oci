@@ -94,14 +94,14 @@ public final class ViewState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Value must be `PRIVATE` when creating a view for private zones.
+     * If specified, must be `PRIVATE` when creating a view for private zones.
      * 
      */
     @Import(name="scope")
     private @Nullable Output<String> scope;
 
     /**
-     * @return Value must be `PRIVATE` when creating a view for private zones.
+     * @return If specified, must be `PRIVATE` when creating a view for private zones.
      * 
      */
     public Optional<Output<String>> scope() {
@@ -307,7 +307,7 @@ public final class ViewState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope Value must be `PRIVATE` when creating a view for private zones.
+         * @param scope If specified, must be `PRIVATE` when creating a view for private zones.
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class ViewState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope Value must be `PRIVATE` when creating a view for private zones.
+         * @param scope If specified, must be `PRIVATE` when creating a view for private zones.
          * 
          * @return builder
          * 

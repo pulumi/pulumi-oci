@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryAuthorsResult {
-    private final @Nullable List<GetRepositoryAuthorsFilter> filters;
+    private @Nullable List<GetRepositoryAuthorsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String refName;
+    private String id;
+    private @Nullable String refName;
     /**
      * @return The list of repository_author_collection.
      * 
      */
-    private final List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections;
-    private final String repositoryId;
+    private List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections;
+    private String repositoryId;
 
-    @CustomType.Constructor
-    private GetRepositoryAuthorsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetRepositoryAuthorsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("refName") @Nullable String refName,
-        @CustomType.Parameter("repositoryAuthorCollections") List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections,
-        @CustomType.Parameter("repositoryId") String repositoryId) {
-        this.filters = filters;
-        this.id = id;
-        this.refName = refName;
-        this.repositoryAuthorCollections = repositoryAuthorCollections;
-        this.repositoryId = repositoryId;
-    }
-
+    private GetRepositoryAuthorsResult() {}
     public List<GetRepositoryAuthorsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -73,18 +60,14 @@ public final class GetRepositoryAuthorsResult {
     public static Builder builder(GetRepositoryAuthorsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRepositoryAuthorsFilter> filters;
         private String id;
         private @Nullable String refName;
         private List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections;
         private String repositoryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryAuthorsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -94,6 +77,7 @@ public final class GetRepositoryAuthorsResult {
     	      this.repositoryId = defaults.repositoryId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryAuthorsFilter> filters) {
             this.filters = filters;
             return this;
@@ -101,14 +85,17 @@ public final class GetRepositoryAuthorsResult {
         public Builder filters(GetRepositoryAuthorsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder refName(@Nullable String refName) {
             this.refName = refName;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryAuthorCollections(List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections) {
             this.repositoryAuthorCollections = Objects.requireNonNull(repositoryAuthorCollections);
             return this;
@@ -116,11 +103,19 @@ public final class GetRepositoryAuthorsResult {
         public Builder repositoryAuthorCollections(GetRepositoryAuthorsRepositoryAuthorCollection... repositoryAuthorCollections) {
             return repositoryAuthorCollections(List.of(repositoryAuthorCollections));
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
-        }        public GetRepositoryAuthorsResult build() {
-            return new GetRepositoryAuthorsResult(filters, id, refName, repositoryAuthorCollections, repositoryId);
+        }
+        public GetRepositoryAuthorsResult build() {
+            final var o = new GetRepositoryAuthorsResult();
+            o.filters = filters;
+            o.id = id;
+            o.refName = refName;
+            o.repositoryAuthorCollections = repositoryAuthorCollections;
+            o.repositoryId = repositoryId;
+            return o;
         }
     }
 }

@@ -17,129 +17,90 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return List of one-off patches for Database Homes.
      * 
      */
-    private final List<String> databaseSoftwareImageIncludedPatches;
+    private List<String> databaseSoftwareImageIncludedPatches;
     /**
      * @return List of one-off patches for Database Homes.
      * 
      */
-    private final List<String> databaseSoftwareImageOneOffPatches;
+    private List<String> databaseSoftwareImageOneOffPatches;
     /**
      * @return The database version with which the database software image is to be built.
      * 
      */
-    private final String databaseVersion;
+    private String databaseVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database software image.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A filter to return only resources that match the given image shape family exactly.
      * 
      */
-    private final String imageShapeFamily;
+    private String imageShapeFamily;
     /**
      * @return A filter to return only resources that match the given image type exactly.
      * 
      */
-    private final String imageType;
+    private String imageType;
     /**
      * @return The patches included in the image and the version of the image
      * 
      */
-    private final String includedPatchesSummary;
+    private String includedPatchesSummary;
     /**
      * @return If provided, filters the results to the set of database versions which are supported for Upgrade.
      * 
      */
-    private final Boolean isUpgradeSupported;
+    private Boolean isUpgradeSupported;
     /**
      * @return Detailed message for the lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
-    private final String lsInventory;
+    private String lsInventory;
     /**
      * @return The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    private final String patchSet;
-    private final String sourceDbHomeId;
+    private String patchSet;
+    private String sourceDbHomeId;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the database software image was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetDatabaseSoftwareImagesDatabaseSoftwareImage(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("databaseSoftwareImageIncludedPatches") List<String> databaseSoftwareImageIncludedPatches,
-        @CustomType.Parameter("databaseSoftwareImageOneOffPatches") List<String> databaseSoftwareImageOneOffPatches,
-        @CustomType.Parameter("databaseVersion") String databaseVersion,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageShapeFamily") String imageShapeFamily,
-        @CustomType.Parameter("imageType") String imageType,
-        @CustomType.Parameter("includedPatchesSummary") String includedPatchesSummary,
-        @CustomType.Parameter("isUpgradeSupported") Boolean isUpgradeSupported,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("lsInventory") String lsInventory,
-        @CustomType.Parameter("patchSet") String patchSet,
-        @CustomType.Parameter("sourceDbHomeId") String sourceDbHomeId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.databaseSoftwareImageIncludedPatches = databaseSoftwareImageIncludedPatches;
-        this.databaseSoftwareImageOneOffPatches = databaseSoftwareImageOneOffPatches;
-        this.databaseVersion = databaseVersion;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.imageShapeFamily = imageShapeFamily;
-        this.imageType = imageType;
-        this.includedPatchesSummary = includedPatchesSummary;
-        this.isUpgradeSupported = isUpgradeSupported;
-        this.lifecycleDetails = lifecycleDetails;
-        this.lsInventory = lsInventory;
-        this.patchSet = patchSet;
-        this.sourceDbHomeId = sourceDbHomeId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetDatabaseSoftwareImagesDatabaseSoftwareImage() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -270,7 +231,7 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
     public static Builder builder(GetDatabaseSoftwareImagesDatabaseSoftwareImage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<String> databaseSoftwareImageIncludedPatches;
@@ -290,11 +251,7 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
         private String sourceDbHomeId;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseSoftwareImagesDatabaseSoftwareImage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -317,10 +274,12 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSoftwareImageIncludedPatches(List<String> databaseSoftwareImageIncludedPatches) {
             this.databaseSoftwareImageIncludedPatches = Objects.requireNonNull(databaseSoftwareImageIncludedPatches);
             return this;
@@ -328,6 +287,7 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
         public Builder databaseSoftwareImageIncludedPatches(String... databaseSoftwareImageIncludedPatches) {
             return databaseSoftwareImageIncludedPatches(List.of(databaseSoftwareImageIncludedPatches));
         }
+        @CustomType.Setter
         public Builder databaseSoftwareImageOneOffPatches(List<String> databaseSoftwareImageOneOffPatches) {
             this.databaseSoftwareImageOneOffPatches = Objects.requireNonNull(databaseSoftwareImageOneOffPatches);
             return this;
@@ -335,67 +295,102 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
         public Builder databaseSoftwareImageOneOffPatches(String... databaseSoftwareImageOneOffPatches) {
             return databaseSoftwareImageOneOffPatches(List.of(databaseSoftwareImageOneOffPatches));
         }
+        @CustomType.Setter
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = Objects.requireNonNull(databaseVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageShapeFamily(String imageShapeFamily) {
             this.imageShapeFamily = Objects.requireNonNull(imageShapeFamily);
             return this;
         }
+        @CustomType.Setter
         public Builder imageType(String imageType) {
             this.imageType = Objects.requireNonNull(imageType);
             return this;
         }
+        @CustomType.Setter
         public Builder includedPatchesSummary(String includedPatchesSummary) {
             this.includedPatchesSummary = Objects.requireNonNull(includedPatchesSummary);
             return this;
         }
+        @CustomType.Setter
         public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
             this.isUpgradeSupported = Objects.requireNonNull(isUpgradeSupported);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder lsInventory(String lsInventory) {
             this.lsInventory = Objects.requireNonNull(lsInventory);
             return this;
         }
+        @CustomType.Setter
         public Builder patchSet(String patchSet) {
             this.patchSet = Objects.requireNonNull(patchSet);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceDbHomeId(String sourceDbHomeId) {
             this.sourceDbHomeId = Objects.requireNonNull(sourceDbHomeId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetDatabaseSoftwareImagesDatabaseSoftwareImage build() {
-            return new GetDatabaseSoftwareImagesDatabaseSoftwareImage(compartmentId, databaseSoftwareImageIncludedPatches, databaseSoftwareImageOneOffPatches, databaseVersion, definedTags, displayName, freeformTags, id, imageShapeFamily, imageType, includedPatchesSummary, isUpgradeSupported, lifecycleDetails, lsInventory, patchSet, sourceDbHomeId, state, timeCreated);
+        }
+        public GetDatabaseSoftwareImagesDatabaseSoftwareImage build() {
+            final var o = new GetDatabaseSoftwareImagesDatabaseSoftwareImage();
+            o.compartmentId = compartmentId;
+            o.databaseSoftwareImageIncludedPatches = databaseSoftwareImageIncludedPatches;
+            o.databaseSoftwareImageOneOffPatches = databaseSoftwareImageOneOffPatches;
+            o.databaseVersion = databaseVersion;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.imageShapeFamily = imageShapeFamily;
+            o.imageType = imageType;
+            o.includedPatchesSummary = includedPatchesSummary;
+            o.isUpgradeSupported = isUpgradeSupported;
+            o.lifecycleDetails = lifecycleDetails;
+            o.lsInventory = lsInventory;
+            o.patchSet = patchSet;
+            o.sourceDbHomeId = sourceDbHomeId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

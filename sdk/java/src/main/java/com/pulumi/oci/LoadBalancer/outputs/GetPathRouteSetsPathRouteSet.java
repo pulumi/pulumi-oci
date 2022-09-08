@@ -15,31 +15,20 @@ public final class GetPathRouteSetsPathRouteSet {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route sets to retrieve.
      * 
      */
-    private final String loadBalancerId;
+    private String loadBalancerId;
     /**
      * @return The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The set of path route rules.
      * 
      */
-    private final List<GetPathRouteSetsPathRouteSetPathRoute> pathRoutes;
-    private final String state;
+    private List<GetPathRouteSetsPathRouteSetPathRoute> pathRoutes;
+    private String state;
 
-    @CustomType.Constructor
-    private GetPathRouteSetsPathRouteSet(
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("pathRoutes") List<GetPathRouteSetsPathRouteSetPathRoute> pathRoutes,
-        @CustomType.Parameter("state") String state) {
-        this.loadBalancerId = loadBalancerId;
-        this.name = name;
-        this.pathRoutes = pathRoutes;
-        this.state = state;
-    }
-
+    private GetPathRouteSetsPathRouteSet() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route sets to retrieve.
      * 
@@ -72,17 +61,13 @@ public final class GetPathRouteSetsPathRouteSet {
     public static Builder builder(GetPathRouteSetsPathRouteSet defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String loadBalancerId;
         private String name;
         private List<GetPathRouteSetsPathRouteSetPathRoute> pathRoutes;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPathRouteSetsPathRouteSet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.loadBalancerId = defaults.loadBalancerId;
@@ -91,14 +76,17 @@ public final class GetPathRouteSetsPathRouteSet {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder pathRoutes(List<GetPathRouteSetsPathRouteSetPathRoute> pathRoutes) {
             this.pathRoutes = Objects.requireNonNull(pathRoutes);
             return this;
@@ -106,11 +94,18 @@ public final class GetPathRouteSetsPathRouteSet {
         public Builder pathRoutes(GetPathRouteSetsPathRouteSetPathRoute... pathRoutes) {
             return pathRoutes(List.of(pathRoutes));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetPathRouteSetsPathRouteSet build() {
-            return new GetPathRouteSetsPathRouteSet(loadBalancerId, name, pathRoutes, state);
+        }
+        public GetPathRouteSetsPathRouteSet build() {
+            final var o = new GetPathRouteSetsPathRouteSet();
+            o.loadBalancerId = loadBalancerId;
+            o.name = name;
+            o.pathRoutes = pathRoutes;
+            o.state = state;
+            return o;
         }
     }
 }

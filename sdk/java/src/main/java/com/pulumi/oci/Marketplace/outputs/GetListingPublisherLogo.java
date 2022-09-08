@@ -13,35 +13,24 @@ public final class GetListingPublisherLogo {
      * @return The content URL of the screenshot.
      * 
      */
-    private final String contentUrl;
+    private String contentUrl;
     /**
      * @return The file extension of the screenshot.
      * 
      */
-    private final String fileExtension;
+    private String fileExtension;
     /**
      * @return The MIME type of the screenshot.
      * 
      */
-    private final String mimeType;
+    private String mimeType;
     /**
      * @return Text that describes the resource.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetListingPublisherLogo(
-        @CustomType.Parameter("contentUrl") String contentUrl,
-        @CustomType.Parameter("fileExtension") String fileExtension,
-        @CustomType.Parameter("mimeType") String mimeType,
-        @CustomType.Parameter("name") String name) {
-        this.contentUrl = contentUrl;
-        this.fileExtension = fileExtension;
-        this.mimeType = mimeType;
-        this.name = name;
-    }
-
+    private GetListingPublisherLogo() {}
     /**
      * @return The content URL of the screenshot.
      * 
@@ -78,17 +67,13 @@ public final class GetListingPublisherLogo {
     public static Builder builder(GetListingPublisherLogo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String contentUrl;
         private String fileExtension;
         private String mimeType;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPublisherLogo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contentUrl = defaults.contentUrl;
@@ -97,23 +82,33 @@ public final class GetListingPublisherLogo {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = Objects.requireNonNull(contentUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder fileExtension(String fileExtension) {
             this.fileExtension = Objects.requireNonNull(fileExtension);
             return this;
         }
+        @CustomType.Setter
         public Builder mimeType(String mimeType) {
             this.mimeType = Objects.requireNonNull(mimeType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetListingPublisherLogo build() {
-            return new GetListingPublisherLogo(contentUrl, fileExtension, mimeType, name);
+        }
+        public GetListingPublisherLogo build() {
+            final var o = new GetListingPublisherLogo();
+            o.contentUrl = contentUrl;
+            o.fileExtension = fileExtension;
+            o.mimeType = mimeType;
+            o.name = name;
+            return o;
         }
     }
 }

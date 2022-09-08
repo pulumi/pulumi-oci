@@ -12,20 +12,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUserAssessmentComparisonSummary {
-    private final List<GetUserAssessmentComparisonSummaryBaseline> baselines;
-    private final List<GetUserAssessmentComparisonSummaryCurrent> currents;
-    private final String status;
+    private List<GetUserAssessmentComparisonSummaryBaseline> baselines;
+    private List<GetUserAssessmentComparisonSummaryCurrent> currents;
+    private String status;
 
-    @CustomType.Constructor
-    private GetUserAssessmentComparisonSummary(
-        @CustomType.Parameter("baselines") List<GetUserAssessmentComparisonSummaryBaseline> baselines,
-        @CustomType.Parameter("currents") List<GetUserAssessmentComparisonSummaryCurrent> currents,
-        @CustomType.Parameter("status") String status) {
-        this.baselines = baselines;
-        this.currents = currents;
-        this.status = status;
-    }
-
+    private GetUserAssessmentComparisonSummary() {}
     public List<GetUserAssessmentComparisonSummaryBaseline> baselines() {
         return this.baselines;
     }
@@ -43,16 +34,12 @@ public final class GetUserAssessmentComparisonSummary {
     public static Builder builder(GetUserAssessmentComparisonSummary defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetUserAssessmentComparisonSummaryBaseline> baselines;
         private List<GetUserAssessmentComparisonSummaryCurrent> currents;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentComparisonSummary defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baselines = defaults.baselines;
@@ -60,6 +47,7 @@ public final class GetUserAssessmentComparisonSummary {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder baselines(List<GetUserAssessmentComparisonSummaryBaseline> baselines) {
             this.baselines = Objects.requireNonNull(baselines);
             return this;
@@ -67,6 +55,7 @@ public final class GetUserAssessmentComparisonSummary {
         public Builder baselines(GetUserAssessmentComparisonSummaryBaseline... baselines) {
             return baselines(List.of(baselines));
         }
+        @CustomType.Setter
         public Builder currents(List<GetUserAssessmentComparisonSummaryCurrent> currents) {
             this.currents = Objects.requireNonNull(currents);
             return this;
@@ -74,11 +63,17 @@ public final class GetUserAssessmentComparisonSummary {
         public Builder currents(GetUserAssessmentComparisonSummaryCurrent... currents) {
             return currents(List.of(currents));
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetUserAssessmentComparisonSummary build() {
-            return new GetUserAssessmentComparisonSummary(baselines, currents, status);
+        }
+        public GetUserAssessmentComparisonSummary build() {
+            final var o = new GetUserAssessmentComparisonSummary();
+            o.baselines = baselines;
+            o.currents = currents;
+            o.status = status;
+            return o;
         }
     }
 }

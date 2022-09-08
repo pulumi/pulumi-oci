@@ -18,38 +18,25 @@ public final class GetRemotePeeringConnectionsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the RPC.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that this RPC belongs to.
      * 
      */
-    private final @Nullable String drgId;
-    private final @Nullable List<GetRemotePeeringConnectionsFilter> filters;
+    private @Nullable String drgId;
+    private @Nullable List<GetRemotePeeringConnectionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of remote_peering_connections.
      * 
      */
-    private final List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections;
+    private List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections;
 
-    @CustomType.Constructor
-    private GetRemotePeeringConnectionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("drgId") @Nullable String drgId,
-        @CustomType.Parameter("filters") @Nullable List<GetRemotePeeringConnectionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("remotePeeringConnections") List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections) {
-        this.compartmentId = compartmentId;
-        this.drgId = drgId;
-        this.filters = filters;
-        this.id = id;
-        this.remotePeeringConnections = remotePeeringConnections;
-    }
-
+    private GetRemotePeeringConnectionsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the RPC.
      * 
@@ -89,18 +76,14 @@ public final class GetRemotePeeringConnectionsResult {
     public static Builder builder(GetRemotePeeringConnectionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String drgId;
         private @Nullable List<GetRemotePeeringConnectionsFilter> filters;
         private String id;
         private List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRemotePeeringConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -110,14 +93,17 @@ public final class GetRemotePeeringConnectionsResult {
     	      this.remotePeeringConnections = defaults.remotePeeringConnections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder drgId(@Nullable String drgId) {
             this.drgId = drgId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRemotePeeringConnectionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -125,18 +111,27 @@ public final class GetRemotePeeringConnectionsResult {
         public Builder filters(GetRemotePeeringConnectionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder remotePeeringConnections(List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections) {
             this.remotePeeringConnections = Objects.requireNonNull(remotePeeringConnections);
             return this;
         }
         public Builder remotePeeringConnections(GetRemotePeeringConnectionsRemotePeeringConnection... remotePeeringConnections) {
             return remotePeeringConnections(List.of(remotePeeringConnections));
-        }        public GetRemotePeeringConnectionsResult build() {
-            return new GetRemotePeeringConnectionsResult(compartmentId, drgId, filters, id, remotePeeringConnections);
+        }
+        public GetRemotePeeringConnectionsResult build() {
+            final var o = new GetRemotePeeringConnectionsResult();
+            o.compartmentId = compartmentId;
+            o.drgId = drgId;
+            o.filters = filters;
+            o.id = id;
+            o.remotePeeringConnections = remotePeeringConnections;
+            return o;
         }
     }
 }

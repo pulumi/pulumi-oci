@@ -17,105 +17,74 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
      * @return The default connection key.
      * 
      */
-    private final String defaultConnection;
+    private String defaultConnection;
     /**
      * @return The description of the aggregator.
      * 
      */
-    private final String description;
+    private String description;
     /**
-     * @return The external key for the object.
+     * @return The external key of the object.
      * 
      */
-    private final String externalKey;
+    private String externalKey;
     /**
      * @return The identifier of the aggregator.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
      * @return Specifies whether the schema has containers.
      * 
      */
-    private final Boolean isHasContainers;
+    private Boolean isHasContainers;
     /**
      * @return The identifying key for the object.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
-    private final GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata metadata;
+    private GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata metadata;
     /**
-     * @return The object&#39;s type.
+     * @return The object type.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
-     * @return The object&#39;s model version.
+     * @return The model version of the object.
      * 
      */
-    private final String modelVersion;
+    private String modelVersion;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final Integer objectStatus;
+    private Integer objectStatus;
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final Integer objectVersion;
+    private Integer objectVersion;
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
-    private final GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef parentRef;
+    private GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef parentRef;
     /**
      * @return A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
      * 
      */
-    private final String resourceName;
+    private String resourceName;
 
-    @CustomType.Constructor
-    private GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema(
-        @CustomType.Parameter("defaultConnection") String defaultConnection,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("externalKey") String externalKey,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("isHasContainers") Boolean isHasContainers,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("metadata") GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata metadata,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStatus") Integer objectStatus,
-        @CustomType.Parameter("objectVersion") Integer objectVersion,
-        @CustomType.Parameter("parentRef") GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef parentRef,
-        @CustomType.Parameter("resourceName") String resourceName) {
-        this.defaultConnection = defaultConnection;
-        this.description = description;
-        this.externalKey = externalKey;
-        this.identifier = identifier;
-        this.isHasContainers = isHasContainers;
-        this.key = key;
-        this.metadata = metadata;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.parentRef = parentRef;
-        this.resourceName = resourceName;
-    }
-
+    private GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema() {}
     /**
      * @return The default connection key.
      * 
@@ -131,7 +100,7 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
         return this.description;
     }
     /**
-     * @return The external key for the object.
+     * @return The external key of the object.
      * 
      */
     public String externalKey() {
@@ -159,21 +128,21 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
         return this.key;
     }
     /**
-     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata metadata() {
         return this.metadata;
     }
     /**
-     * @return The object&#39;s type.
+     * @return The object type.
      * 
      */
     public String modelType() {
         return this.modelType;
     }
     /**
-     * @return The object&#39;s model version.
+     * @return The model version of the object.
      * 
      */
     public String modelVersion() {
@@ -201,7 +170,7 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
         return this.objectVersion;
     }
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
     public GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef parentRef() {
@@ -222,7 +191,7 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
     public static Builder builder(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String defaultConnection;
         private String description;
@@ -238,11 +207,7 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
         private Integer objectVersion;
         private GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef parentRef;
         private String resourceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultConnection = defaults.defaultConnection;
@@ -261,63 +226,93 @@ public final class GetRegistryConnectionsConnectionSummaryCollectionItemPrimaryS
     	      this.resourceName = defaults.resourceName;
         }
 
+        @CustomType.Setter
         public Builder defaultConnection(String defaultConnection) {
             this.defaultConnection = Objects.requireNonNull(defaultConnection);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder externalKey(String externalKey) {
             this.externalKey = Objects.requireNonNull(externalKey);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder isHasContainers(Boolean isHasContainers) {
             this.isHasContainers = Objects.requireNonNull(isHasContainers);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata metadata) {
             this.metadata = Objects.requireNonNull(metadata);
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = Objects.requireNonNull(modelVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = Objects.requireNonNull(objectStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = Objects.requireNonNull(objectVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef parentRef) {
             this.parentRef = Objects.requireNonNull(parentRef);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(String resourceName) {
             this.resourceName = Objects.requireNonNull(resourceName);
             return this;
-        }        public GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema build() {
-            return new GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema(defaultConnection, description, externalKey, identifier, isHasContainers, key, metadata, modelType, modelVersion, name, objectStatus, objectVersion, parentRef, resourceName);
+        }
+        public GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema build() {
+            final var o = new GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema();
+            o.defaultConnection = defaultConnection;
+            o.description = description;
+            o.externalKey = externalKey;
+            o.identifier = identifier;
+            o.isHasContainers = isHasContainers;
+            o.key = key;
+            o.metadata = metadata;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.parentRef = parentRef;
+            o.resourceName = resourceName;
+            return o;
         }
     }
 }

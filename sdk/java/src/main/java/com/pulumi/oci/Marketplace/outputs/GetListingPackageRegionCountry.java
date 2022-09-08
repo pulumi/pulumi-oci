@@ -13,21 +13,14 @@ public final class GetListingPackageRegionCountry {
      * @return A code assigned to the item.
      * 
      */
-    private final String code;
+    private String code;
     /**
      * @return The name of the variable.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetListingPackageRegionCountry(
-        @CustomType.Parameter("code") String code,
-        @CustomType.Parameter("name") String name) {
-        this.code = code;
-        this.name = name;
-    }
-
+    private GetListingPackageRegionCountry() {}
     /**
      * @return A code assigned to the item.
      * 
@@ -50,30 +43,32 @@ public final class GetListingPackageRegionCountry {
     public static Builder builder(GetListingPackageRegionCountry defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String code;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPackageRegionCountry defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder code(String code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetListingPackageRegionCountry build() {
-            return new GetListingPackageRegionCountry(code, name);
+        }
+        public GetListingPackageRegionCountry build() {
+            final var o = new GetListingPackageRegionCountry();
+            o.code = code;
+            o.name = name;
+            return o;
         }
     }
 }

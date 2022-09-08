@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPathAnalyzerTestsPathAnalyzerTestCollection {
-    private final List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items;
+    private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetPathAnalyzerTestsPathAnalyzerTestCollection(@CustomType.Parameter("items") List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetPathAnalyzerTestsPathAnalyzerTestCollection() {}
     public List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollection {
     public static Builder builder(GetPathAnalyzerTestsPathAnalyzerTestCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPathAnalyzerTestsPathAnalyzerTestCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetPathAnalyzerTestsPathAnalyzerTestCollectionItem... items) {
             return items(List.of(items));
-        }        public GetPathAnalyzerTestsPathAnalyzerTestCollection build() {
-            return new GetPathAnalyzerTestsPathAnalyzerTestCollection(items);
+        }
+        public GetPathAnalyzerTestsPathAnalyzerTestCollection build() {
+            final var o = new GetPathAnalyzerTestsPathAnalyzerTestCollection();
+            o.items = items;
+            return o;
         }
     }
 }

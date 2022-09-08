@@ -16,119 +16,84 @@ public final class GetBdsInstancesBdsInstanceNode {
      * @return The list of block volumes attached to a given node.
      * 
      */
-    private final List<GetBdsInstancesBdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes;
+    private List<GetBdsInstancesBdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes;
     /**
      * @return The name of the availability domain in which the node is running.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The name of the fault domain in which the node is running.
      * 
      */
-    private final String faultDomain;
+    private String faultDomain;
     /**
      * @return The fully-qualified hostname (FQDN) of the node.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return The OCID of the image from which the node was created.
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
      * 
      */
-    private final String instanceId;
+    private String instanceId;
     /**
      * @return IP address of the node.
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
-    private final Integer memoryInGbs;
+    private Integer memoryInGbs;
     /**
      * @return Cluster node type.
      * 
      */
-    private final String nodeType;
+    private String nodeType;
     /**
      * @return The total number of OCPUs available to the node.
      * 
      */
-    private final Integer ocpus;
+    private Integer ocpus;
     /**
      * @return Shape of the node.
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return The fingerprint of the SSH key used for node access.
      * 
      */
-    private final String sshFingerprint;
+    private String sshFingerprint;
     /**
      * @return The state of the cluster.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The OCID of the subnet in which the node is to be created.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetBdsInstancesBdsInstanceNode(
-        @CustomType.Parameter("attachedBlockVolumes") List<GetBdsInstancesBdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes,
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("faultDomain") String faultDomain,
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("memoryInGbs") Integer memoryInGbs,
-        @CustomType.Parameter("nodeType") String nodeType,
-        @CustomType.Parameter("ocpus") Integer ocpus,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("sshFingerprint") String sshFingerprint,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.attachedBlockVolumes = attachedBlockVolumes;
-        this.availabilityDomain = availabilityDomain;
-        this.displayName = displayName;
-        this.faultDomain = faultDomain;
-        this.hostname = hostname;
-        this.imageId = imageId;
-        this.instanceId = instanceId;
-        this.ipAddress = ipAddress;
-        this.memoryInGbs = memoryInGbs;
-        this.nodeType = nodeType;
-        this.ocpus = ocpus;
-        this.shape = shape;
-        this.sshFingerprint = sshFingerprint;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetBdsInstancesBdsInstanceNode() {}
     /**
      * @return The list of block volumes attached to a given node.
      * 
@@ -249,7 +214,7 @@ public final class GetBdsInstancesBdsInstanceNode {
     public static Builder builder(GetBdsInstancesBdsInstanceNode defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBdsInstancesBdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes;
         private String availabilityDomain;
@@ -267,11 +232,7 @@ public final class GetBdsInstancesBdsInstanceNode {
         private String state;
         private String subnetId;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstancesBdsInstanceNode defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attachedBlockVolumes = defaults.attachedBlockVolumes;
@@ -292,6 +253,7 @@ public final class GetBdsInstancesBdsInstanceNode {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder attachedBlockVolumes(List<GetBdsInstancesBdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes) {
             this.attachedBlockVolumes = Objects.requireNonNull(attachedBlockVolumes);
             return this;
@@ -299,67 +261,100 @@ public final class GetBdsInstancesBdsInstanceNode {
         public Builder attachedBlockVolumes(GetBdsInstancesBdsInstanceNodeAttachedBlockVolume... attachedBlockVolumes) {
             return attachedBlockVolumes(List.of(attachedBlockVolumes));
         }
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = Objects.requireNonNull(faultDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
             this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder nodeType(String nodeType) {
             this.nodeType = Objects.requireNonNull(nodeType);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(Integer ocpus) {
             this.ocpus = Objects.requireNonNull(ocpus);
             return this;
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder sshFingerprint(String sshFingerprint) {
             this.sshFingerprint = Objects.requireNonNull(sshFingerprint);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetBdsInstancesBdsInstanceNode build() {
-            return new GetBdsInstancesBdsInstanceNode(attachedBlockVolumes, availabilityDomain, displayName, faultDomain, hostname, imageId, instanceId, ipAddress, memoryInGbs, nodeType, ocpus, shape, sshFingerprint, state, subnetId, timeCreated);
+        }
+        public GetBdsInstancesBdsInstanceNode build() {
+            final var o = new GetBdsInstancesBdsInstanceNode();
+            o.attachedBlockVolumes = attachedBlockVolumes;
+            o.availabilityDomain = availabilityDomain;
+            o.displayName = displayName;
+            o.faultDomain = faultDomain;
+            o.hostname = hostname;
+            o.imageId = imageId;
+            o.instanceId = instanceId;
+            o.ipAddress = ipAddress;
+            o.memoryInGbs = memoryInGbs;
+            o.nodeType = nodeType;
+            o.ocpus = ocpus;
+            o.shape = shape;
+            o.sshFingerprint = sshFingerprint;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

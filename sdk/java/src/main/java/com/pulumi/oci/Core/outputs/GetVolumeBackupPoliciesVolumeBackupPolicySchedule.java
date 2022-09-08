@@ -14,77 +14,54 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
      * @return The type of volume backup to create.
      * 
      */
-    private final String backupType;
+    private String backupType;
     /**
      * @return The day of the month to schedule the volume backup.
      * 
      */
-    private final Integer dayOfMonth;
+    private Integer dayOfMonth;
     /**
      * @return The day of the week to schedule the volume backup.
      * 
      */
-    private final String dayOfWeek;
+    private String dayOfWeek;
     /**
      * @return The hour of the day to schedule the volume backup.
      * 
      */
-    private final Integer hourOfDay;
+    private Integer hourOfDay;
     /**
      * @return The month of the year to schedule the volume backup.
      * 
      */
-    private final String month;
+    private String month;
     /**
      * @return The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
      * 
      */
-    private final Integer offsetSeconds;
+    private Integer offsetSeconds;
     /**
      * @return Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
      * 
      */
-    private final String offsetType;
+    private String offsetType;
     /**
      * @return The volume backup frequency.
      * 
      */
-    private final String period;
+    private String period;
     /**
      * @return How long, in seconds, to keep the volume backups created by this schedule.
      * 
      */
-    private final Integer retentionSeconds;
+    private Integer retentionSeconds;
     /**
      * @return Specifies what time zone is the schedule in
      * 
      */
-    private final String timeZone;
+    private String timeZone;
 
-    @CustomType.Constructor
-    private GetVolumeBackupPoliciesVolumeBackupPolicySchedule(
-        @CustomType.Parameter("backupType") String backupType,
-        @CustomType.Parameter("dayOfMonth") Integer dayOfMonth,
-        @CustomType.Parameter("dayOfWeek") String dayOfWeek,
-        @CustomType.Parameter("hourOfDay") Integer hourOfDay,
-        @CustomType.Parameter("month") String month,
-        @CustomType.Parameter("offsetSeconds") Integer offsetSeconds,
-        @CustomType.Parameter("offsetType") String offsetType,
-        @CustomType.Parameter("period") String period,
-        @CustomType.Parameter("retentionSeconds") Integer retentionSeconds,
-        @CustomType.Parameter("timeZone") String timeZone) {
-        this.backupType = backupType;
-        this.dayOfMonth = dayOfMonth;
-        this.dayOfWeek = dayOfWeek;
-        this.hourOfDay = hourOfDay;
-        this.month = month;
-        this.offsetSeconds = offsetSeconds;
-        this.offsetType = offsetType;
-        this.period = period;
-        this.retentionSeconds = retentionSeconds;
-        this.timeZone = timeZone;
-    }
-
+    private GetVolumeBackupPoliciesVolumeBackupPolicySchedule() {}
     /**
      * @return The type of volume backup to create.
      * 
@@ -163,7 +140,7 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
     public static Builder builder(GetVolumeBackupPoliciesVolumeBackupPolicySchedule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backupType;
         private Integer dayOfMonth;
@@ -175,11 +152,7 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
         private String period;
         private Integer retentionSeconds;
         private String timeZone;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeBackupPoliciesVolumeBackupPolicySchedule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupType = defaults.backupType;
@@ -194,47 +167,69 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
     	      this.timeZone = defaults.timeZone;
         }
 
+        @CustomType.Setter
         public Builder backupType(String backupType) {
             this.backupType = Objects.requireNonNull(backupType);
             return this;
         }
+        @CustomType.Setter
         public Builder dayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = Objects.requireNonNull(dayOfMonth);
             return this;
         }
+        @CustomType.Setter
         public Builder dayOfWeek(String dayOfWeek) {
             this.dayOfWeek = Objects.requireNonNull(dayOfWeek);
             return this;
         }
+        @CustomType.Setter
         public Builder hourOfDay(Integer hourOfDay) {
             this.hourOfDay = Objects.requireNonNull(hourOfDay);
             return this;
         }
+        @CustomType.Setter
         public Builder month(String month) {
             this.month = Objects.requireNonNull(month);
             return this;
         }
+        @CustomType.Setter
         public Builder offsetSeconds(Integer offsetSeconds) {
             this.offsetSeconds = Objects.requireNonNull(offsetSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder offsetType(String offsetType) {
             this.offsetType = Objects.requireNonNull(offsetType);
             return this;
         }
+        @CustomType.Setter
         public Builder period(String period) {
             this.period = Objects.requireNonNull(period);
             return this;
         }
+        @CustomType.Setter
         public Builder retentionSeconds(Integer retentionSeconds) {
             this.retentionSeconds = Objects.requireNonNull(retentionSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder timeZone(String timeZone) {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
-        }        public GetVolumeBackupPoliciesVolumeBackupPolicySchedule build() {
-            return new GetVolumeBackupPoliciesVolumeBackupPolicySchedule(backupType, dayOfMonth, dayOfWeek, hourOfDay, month, offsetSeconds, offsetType, period, retentionSeconds, timeZone);
+        }
+        public GetVolumeBackupPoliciesVolumeBackupPolicySchedule build() {
+            final var o = new GetVolumeBackupPoliciesVolumeBackupPolicySchedule();
+            o.backupType = backupType;
+            o.dayOfMonth = dayOfMonth;
+            o.dayOfWeek = dayOfWeek;
+            o.hourOfDay = hourOfDay;
+            o.month = month;
+            o.offsetSeconds = offsetSeconds;
+            o.offsetType = offsetType;
+            o.period = period;
+            o.retentionSeconds = retentionSeconds;
+            o.timeZone = timeZone;
+            return o;
         }
     }
 }

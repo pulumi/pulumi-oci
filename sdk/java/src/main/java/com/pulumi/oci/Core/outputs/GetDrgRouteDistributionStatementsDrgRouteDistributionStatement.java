@@ -16,35 +16,24 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
      * @return `ACCEPT` indicates the route should be imported or exported as-is.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return The Oracle-assigned ID of the route distribution statement.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The action is applied only if all of the match criteria is met. If match type is MATCH_ALL, any input is considered a match.
      * 
      */
-    private final List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias;
+    private List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias;
     /**
      * @return This field specifies the priority of each statement in a route distribution. Priorities must be unique within a particular route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
      * 
      */
-    private final Integer priority;
+    private Integer priority;
 
-    @CustomType.Constructor
-    private GetDrgRouteDistributionStatementsDrgRouteDistributionStatement(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("matchCriterias") List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias,
-        @CustomType.Parameter("priority") Integer priority) {
-        this.action = action;
-        this.id = id;
-        this.matchCriterias = matchCriterias;
-        this.priority = priority;
-    }
-
+    private GetDrgRouteDistributionStatementsDrgRouteDistributionStatement() {}
     /**
      * @return `ACCEPT` indicates the route should be imported or exported as-is.
      * 
@@ -81,17 +70,13 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
     public static Builder builder(GetDrgRouteDistributionStatementsDrgRouteDistributionStatement defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private String id;
         private List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias;
         private Integer priority;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDrgRouteDistributionStatementsDrgRouteDistributionStatement defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -100,14 +85,17 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
     	      this.priority = defaults.priority;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder matchCriterias(List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias) {
             this.matchCriterias = Objects.requireNonNull(matchCriterias);
             return this;
@@ -115,11 +103,18 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
         public Builder matchCriterias(GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria... matchCriterias) {
             return matchCriterias(List.of(matchCriterias));
         }
+        @CustomType.Setter
         public Builder priority(Integer priority) {
             this.priority = Objects.requireNonNull(priority);
             return this;
-        }        public GetDrgRouteDistributionStatementsDrgRouteDistributionStatement build() {
-            return new GetDrgRouteDistributionStatementsDrgRouteDistributionStatement(action, id, matchCriterias, priority);
+        }
+        public GetDrgRouteDistributionStatementsDrgRouteDistributionStatement build() {
+            final var o = new GetDrgRouteDistributionStatementsDrgRouteDistributionStatement();
+            o.action = action;
+            o.id = id;
+            o.matchCriterias = matchCriterias;
+            o.priority = priority;
+            return o;
         }
     }
 }

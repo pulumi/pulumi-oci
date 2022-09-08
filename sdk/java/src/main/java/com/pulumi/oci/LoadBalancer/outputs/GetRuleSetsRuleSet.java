@@ -11,38 +11,25 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRuleSetsRuleSet {
-    private final String id;
+    private String id;
     /**
      * @return An array of rules that compose the rule set.
      * 
      */
-    private final List<GetRuleSetsRuleSetItem> items;
+    private List<GetRuleSetsRuleSetItem> items;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
      * 
      */
-    private final String loadBalancerId;
+    private String loadBalancerId;
     /**
      * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
      * 
      */
-    private final String name;
-    private final String state;
+    private String name;
+    private String state;
 
-    @CustomType.Constructor
-    private GetRuleSetsRuleSet(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetRuleSetsRuleSetItem> items,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state) {
-        this.id = id;
-        this.items = items;
-        this.loadBalancerId = loadBalancerId;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetRuleSetsRuleSet() {}
     public String id() {
         return this.id;
     }
@@ -78,18 +65,14 @@ public final class GetRuleSetsRuleSet {
     public static Builder builder(GetRuleSetsRuleSet defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetRuleSetsRuleSetItem> items;
         private String loadBalancerId;
         private String name;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRuleSetsRuleSet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -99,10 +82,12 @@ public final class GetRuleSetsRuleSet {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetRuleSetsRuleSetItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -110,19 +95,29 @@ public final class GetRuleSetsRuleSet {
         public Builder items(GetRuleSetsRuleSetItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetRuleSetsRuleSet build() {
-            return new GetRuleSetsRuleSet(id, items, loadBalancerId, name, state);
+        }
+        public GetRuleSetsRuleSet build() {
+            final var o = new GetRuleSetsRuleSet();
+            o.id = id;
+            o.items = items;
+            o.loadBalancerId = loadBalancerId;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

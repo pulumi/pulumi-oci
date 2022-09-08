@@ -15,13 +15,9 @@ public final class SubscriptionPaymentGateway {
      * @return (Updatable) Merchant details.
      * 
      */
-    private final @Nullable List<SubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
+    private @Nullable List<SubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
 
-    @CustomType.Constructor
-    private SubscriptionPaymentGateway(@CustomType.Parameter("merchantDefinedDatas") @Nullable List<SubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
-        this.merchantDefinedDatas = merchantDefinedDatas;
-    }
-
+    private SubscriptionPaymentGateway() {}
     /**
      * @return (Updatable) Merchant details.
      * 
@@ -37,27 +33,27 @@ public final class SubscriptionPaymentGateway {
     public static Builder builder(SubscriptionPaymentGateway defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<SubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SubscriptionPaymentGateway defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.merchantDefinedDatas = defaults.merchantDefinedDatas;
         }
 
+        @CustomType.Setter
         public Builder merchantDefinedDatas(@Nullable List<SubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
             this.merchantDefinedDatas = merchantDefinedDatas;
             return this;
         }
         public Builder merchantDefinedDatas(SubscriptionPaymentGatewayMerchantDefinedData... merchantDefinedDatas) {
             return merchantDefinedDatas(List.of(merchantDefinedDatas));
-        }        public SubscriptionPaymentGateway build() {
-            return new SubscriptionPaymentGateway(merchantDefinedDatas);
+        }
+        public SubscriptionPaymentGateway build() {
+            final var o = new SubscriptionPaymentGateway();
+            o.merchantDefinedDatas = merchantDefinedDatas;
+            return o;
         }
     }
 }

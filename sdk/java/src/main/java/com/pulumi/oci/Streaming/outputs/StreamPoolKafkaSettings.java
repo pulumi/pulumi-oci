@@ -17,35 +17,24 @@ public final class StreamPoolKafkaSettings {
      * @return (Updatable) Enable auto creation of topic on the server.
      * 
      */
-    private final @Nullable Boolean autoCreateTopicsEnable;
+    private @Nullable Boolean autoCreateTopicsEnable;
     /**
      * @return (Updatable) Bootstrap servers.
      * 
      */
-    private final @Nullable String bootstrapServers;
+    private @Nullable String bootstrapServers;
     /**
      * @return (Updatable) The number of hours to keep a log file before deleting it (in hours).
      * 
      */
-    private final @Nullable Integer logRetentionHours;
+    private @Nullable Integer logRetentionHours;
     /**
      * @return (Updatable) The default number of log partitions per topic.
      * 
      */
-    private final @Nullable Integer numPartitions;
+    private @Nullable Integer numPartitions;
 
-    @CustomType.Constructor
-    private StreamPoolKafkaSettings(
-        @CustomType.Parameter("autoCreateTopicsEnable") @Nullable Boolean autoCreateTopicsEnable,
-        @CustomType.Parameter("bootstrapServers") @Nullable String bootstrapServers,
-        @CustomType.Parameter("logRetentionHours") @Nullable Integer logRetentionHours,
-        @CustomType.Parameter("numPartitions") @Nullable Integer numPartitions) {
-        this.autoCreateTopicsEnable = autoCreateTopicsEnable;
-        this.bootstrapServers = bootstrapServers;
-        this.logRetentionHours = logRetentionHours;
-        this.numPartitions = numPartitions;
-    }
-
+    private StreamPoolKafkaSettings() {}
     /**
      * @return (Updatable) Enable auto creation of topic on the server.
      * 
@@ -82,17 +71,13 @@ public final class StreamPoolKafkaSettings {
     public static Builder builder(StreamPoolKafkaSettings defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean autoCreateTopicsEnable;
         private @Nullable String bootstrapServers;
         private @Nullable Integer logRetentionHours;
         private @Nullable Integer numPartitions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(StreamPoolKafkaSettings defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoCreateTopicsEnable = defaults.autoCreateTopicsEnable;
@@ -101,23 +86,33 @@ public final class StreamPoolKafkaSettings {
     	      this.numPartitions = defaults.numPartitions;
         }
 
+        @CustomType.Setter
         public Builder autoCreateTopicsEnable(@Nullable Boolean autoCreateTopicsEnable) {
             this.autoCreateTopicsEnable = autoCreateTopicsEnable;
             return this;
         }
+        @CustomType.Setter
         public Builder bootstrapServers(@Nullable String bootstrapServers) {
             this.bootstrapServers = bootstrapServers;
             return this;
         }
+        @CustomType.Setter
         public Builder logRetentionHours(@Nullable Integer logRetentionHours) {
             this.logRetentionHours = logRetentionHours;
             return this;
         }
+        @CustomType.Setter
         public Builder numPartitions(@Nullable Integer numPartitions) {
             this.numPartitions = numPartitions;
             return this;
-        }        public StreamPoolKafkaSettings build() {
-            return new StreamPoolKafkaSettings(autoCreateTopicsEnable, bootstrapServers, logRetentionHours, numPartitions);
+        }
+        public StreamPoolKafkaSettings build() {
+            final var o = new StreamPoolKafkaSettings();
+            o.autoCreateTopicsEnable = autoCreateTopicsEnable;
+            o.bootstrapServers = bootstrapServers;
+            o.logRetentionHours = logRetentionHours;
+            o.numPartitions = numPartitions;
+            return o;
         }
     }
 }

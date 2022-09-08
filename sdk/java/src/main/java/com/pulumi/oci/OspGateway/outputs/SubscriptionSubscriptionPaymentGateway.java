@@ -15,13 +15,9 @@ public final class SubscriptionSubscriptionPaymentGateway {
      * @return (Updatable) Merchant details.
      * 
      */
-    private final @Nullable SubscriptionSubscriptionPaymentGatewayMerchantDefinedData merchantDefinedData;
+    private @Nullable SubscriptionSubscriptionPaymentGatewayMerchantDefinedData merchantDefinedData;
 
-    @CustomType.Constructor
-    private SubscriptionSubscriptionPaymentGateway(@CustomType.Parameter("merchantDefinedData") @Nullable SubscriptionSubscriptionPaymentGatewayMerchantDefinedData merchantDefinedData) {
-        this.merchantDefinedData = merchantDefinedData;
-    }
-
+    private SubscriptionSubscriptionPaymentGateway() {}
     /**
      * @return (Updatable) Merchant details.
      * 
@@ -37,24 +33,24 @@ public final class SubscriptionSubscriptionPaymentGateway {
     public static Builder builder(SubscriptionSubscriptionPaymentGateway defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable SubscriptionSubscriptionPaymentGatewayMerchantDefinedData merchantDefinedData;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SubscriptionSubscriptionPaymentGateway defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.merchantDefinedData = defaults.merchantDefinedData;
         }
 
+        @CustomType.Setter
         public Builder merchantDefinedData(@Nullable SubscriptionSubscriptionPaymentGatewayMerchantDefinedData merchantDefinedData) {
             this.merchantDefinedData = merchantDefinedData;
             return this;
-        }        public SubscriptionSubscriptionPaymentGateway build() {
-            return new SubscriptionSubscriptionPaymentGateway(merchantDefinedData);
+        }
+        public SubscriptionSubscriptionPaymentGateway build() {
+            final var o = new SubscriptionSubscriptionPaymentGateway();
+            o.merchantDefinedData = merchantDefinedData;
+            return o;
         }
     }
 }

@@ -16,21 +16,14 @@ public final class CertificateAuthorityCertificateRevocationListDetails {
      * @return (Updatable) Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      * 
      */
-    private final @Nullable List<String> customFormattedUrls;
+    private @Nullable List<String> customFormattedUrls;
     /**
      * @return (Updatable) The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
      * 
      */
-    private final CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig objectStorageConfig;
+    private CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig objectStorageConfig;
 
-    @CustomType.Constructor
-    private CertificateAuthorityCertificateRevocationListDetails(
-        @CustomType.Parameter("customFormattedUrls") @Nullable List<String> customFormattedUrls,
-        @CustomType.Parameter("objectStorageConfig") CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig objectStorageConfig) {
-        this.customFormattedUrls = customFormattedUrls;
-        this.objectStorageConfig = objectStorageConfig;
-    }
-
+    private CertificateAuthorityCertificateRevocationListDetails() {}
     /**
      * @return (Updatable) Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      * 
@@ -53,21 +46,18 @@ public final class CertificateAuthorityCertificateRevocationListDetails {
     public static Builder builder(CertificateAuthorityCertificateRevocationListDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> customFormattedUrls;
         private CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig objectStorageConfig;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateAuthorityCertificateRevocationListDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customFormattedUrls = defaults.customFormattedUrls;
     	      this.objectStorageConfig = defaults.objectStorageConfig;
         }
 
+        @CustomType.Setter
         public Builder customFormattedUrls(@Nullable List<String> customFormattedUrls) {
             this.customFormattedUrls = customFormattedUrls;
             return this;
@@ -75,11 +65,16 @@ public final class CertificateAuthorityCertificateRevocationListDetails {
         public Builder customFormattedUrls(String... customFormattedUrls) {
             return customFormattedUrls(List.of(customFormattedUrls));
         }
+        @CustomType.Setter
         public Builder objectStorageConfig(CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig objectStorageConfig) {
             this.objectStorageConfig = Objects.requireNonNull(objectStorageConfig);
             return this;
-        }        public CertificateAuthorityCertificateRevocationListDetails build() {
-            return new CertificateAuthorityCertificateRevocationListDetails(customFormattedUrls, objectStorageConfig);
+        }
+        public CertificateAuthorityCertificateRevocationListDetails build() {
+            final var o = new CertificateAuthorityCertificateRevocationListDetails();
+            o.customFormattedUrls = customFormattedUrls;
+            o.objectStorageConfig = objectStorageConfig;
+            return o;
         }
     }
 }

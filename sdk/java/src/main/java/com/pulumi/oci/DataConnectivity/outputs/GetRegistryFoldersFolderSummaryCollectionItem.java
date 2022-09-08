@@ -14,110 +14,85 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryFoldersFolderSummaryCollectionItem {
     /**
-     * @return List of data assets which belongs to this folder
+     * @return The list of data assets that belong to the folder.
      * 
      */
-    private final List<GetRegistryFoldersFolderSummaryCollectionItemDataAsset> dataAssets;
+    private List<GetRegistryFoldersFolderSummaryCollectionItemDataAsset> dataAssets;
     /**
-     * @return User-defined description for the folder.
+     * @return User-defined description of the folder.
      * 
      */
-    private final String description;
+    private String description;
     /**
-     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
-     * @return Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The type of the folder.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
      * @return The model version of an object.
      * 
      */
-    private final String modelVersion;
+    private String modelVersion;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final Integer objectStatus;
+    private Integer objectStatus;
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final Integer objectVersion;
+    private Integer objectVersion;
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
-    private final GetRegistryFoldersFolderSummaryCollectionItemParentRef parentRef;
+    private GetRegistryFoldersFolderSummaryCollectionItemParentRef parentRef;
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
-    private final String registryId;
+    private String registryId;
 
-    @CustomType.Constructor
-    private GetRegistryFoldersFolderSummaryCollectionItem(
-        @CustomType.Parameter("dataAssets") List<GetRegistryFoldersFolderSummaryCollectionItemDataAsset> dataAssets,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStatus") Integer objectStatus,
-        @CustomType.Parameter("objectVersion") Integer objectVersion,
-        @CustomType.Parameter("parentRef") GetRegistryFoldersFolderSummaryCollectionItemParentRef parentRef,
-        @CustomType.Parameter("registryId") String registryId) {
-        this.dataAssets = dataAssets;
-        this.description = description;
-        this.identifier = identifier;
-        this.key = key;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.parentRef = parentRef;
-        this.registryId = registryId;
-    }
-
+    private GetRegistryFoldersFolderSummaryCollectionItem() {}
     /**
-     * @return List of data assets which belongs to this folder
+     * @return The list of data assets that belong to the folder.
      * 
      */
     public List<GetRegistryFoldersFolderSummaryCollectionItemDataAsset> dataAssets() {
         return this.dataAssets;
     }
     /**
-     * @return User-defined description for the folder.
+     * @return User-defined description of the folder.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public String identifier() {
         return this.identifier;
     }
     /**
-     * @return Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public String key() {
@@ -159,14 +134,14 @@ public final class GetRegistryFoldersFolderSummaryCollectionItem {
         return this.objectVersion;
     }
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
     public GetRegistryFoldersFolderSummaryCollectionItemParentRef parentRef() {
         return this.parentRef;
     }
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public String registryId() {
@@ -180,7 +155,7 @@ public final class GetRegistryFoldersFolderSummaryCollectionItem {
     public static Builder builder(GetRegistryFoldersFolderSummaryCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRegistryFoldersFolderSummaryCollectionItemDataAsset> dataAssets;
         private String description;
@@ -193,11 +168,7 @@ public final class GetRegistryFoldersFolderSummaryCollectionItem {
         private Integer objectVersion;
         private GetRegistryFoldersFolderSummaryCollectionItemParentRef parentRef;
         private String registryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryFoldersFolderSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dataAssets = defaults.dataAssets;
@@ -213,6 +184,7 @@ public final class GetRegistryFoldersFolderSummaryCollectionItem {
     	      this.registryId = defaults.registryId;
         }
 
+        @CustomType.Setter
         public Builder dataAssets(List<GetRegistryFoldersFolderSummaryCollectionItemDataAsset> dataAssets) {
             this.dataAssets = Objects.requireNonNull(dataAssets);
             return this;
@@ -220,47 +192,70 @@ public final class GetRegistryFoldersFolderSummaryCollectionItem {
         public Builder dataAssets(GetRegistryFoldersFolderSummaryCollectionItemDataAsset... dataAssets) {
             return dataAssets(List.of(dataAssets));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = Objects.requireNonNull(modelVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = Objects.requireNonNull(objectStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = Objects.requireNonNull(objectVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(GetRegistryFoldersFolderSummaryCollectionItemParentRef parentRef) {
             this.parentRef = Objects.requireNonNull(parentRef);
             return this;
         }
+        @CustomType.Setter
         public Builder registryId(String registryId) {
             this.registryId = Objects.requireNonNull(registryId);
             return this;
-        }        public GetRegistryFoldersFolderSummaryCollectionItem build() {
-            return new GetRegistryFoldersFolderSummaryCollectionItem(dataAssets, description, identifier, key, modelType, modelVersion, name, objectStatus, objectVersion, parentRef, registryId);
+        }
+        public GetRegistryFoldersFolderSummaryCollectionItem build() {
+            final var o = new GetRegistryFoldersFolderSummaryCollectionItem();
+            o.dataAssets = dataAssets;
+            o.description = description;
+            o.identifier = identifier;
+            o.key = key;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.parentRef = parentRef;
+            o.registryId = registryId;
+            return o;
         }
     }
 }

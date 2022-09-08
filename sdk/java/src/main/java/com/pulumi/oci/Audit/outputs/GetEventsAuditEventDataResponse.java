@@ -15,42 +15,29 @@ public final class GetEventsAuditEventDataResponse {
      * @return The headers of the response.
      * 
      */
-    private final Map<String,Object> headers;
+    private Map<String,Object> headers;
     /**
      * @return A friendly description of what happened during the operation. Use this for troubleshooting.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
      * 
      */
-    private final Map<String,Object> payload;
+    private Map<String,Object> payload;
     /**
      * @return The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
      * 
      */
-    private final String responseTime;
+    private String responseTime;
     /**
      * @return The status code of the response.  Example: `200`
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetEventsAuditEventDataResponse(
-        @CustomType.Parameter("headers") Map<String,Object> headers,
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("payload") Map<String,Object> payload,
-        @CustomType.Parameter("responseTime") String responseTime,
-        @CustomType.Parameter("status") String status) {
-        this.headers = headers;
-        this.message = message;
-        this.payload = payload;
-        this.responseTime = responseTime;
-        this.status = status;
-    }
-
+    private GetEventsAuditEventDataResponse() {}
     /**
      * @return The headers of the response.
      * 
@@ -94,18 +81,14 @@ public final class GetEventsAuditEventDataResponse {
     public static Builder builder(GetEventsAuditEventDataResponse defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> headers;
         private String message;
         private Map<String,Object> payload;
         private String responseTime;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEventsAuditEventDataResponse defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.headers = defaults.headers;
@@ -115,27 +98,39 @@ public final class GetEventsAuditEventDataResponse {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder headers(Map<String,Object> headers) {
             this.headers = Objects.requireNonNull(headers);
             return this;
         }
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder payload(Map<String,Object> payload) {
             this.payload = Objects.requireNonNull(payload);
             return this;
         }
+        @CustomType.Setter
         public Builder responseTime(String responseTime) {
             this.responseTime = Objects.requireNonNull(responseTime);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetEventsAuditEventDataResponse build() {
-            return new GetEventsAuditEventDataResponse(headers, message, payload, responseTime, status);
+        }
+        public GetEventsAuditEventDataResponse build() {
+            final var o = new GetEventsAuditEventDataResponse();
+            o.headers = headers;
+            o.message = message;
+            o.payload = payload;
+            o.responseTime = responseTime;
+            o.status = status;
+            return o;
         }
     }
 }

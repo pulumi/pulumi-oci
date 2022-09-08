@@ -9,28 +9,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetManagementDashboardsExportResult {
-    private final String exportDashboardId;
+    private String exportDashboardId;
     /**
      * @return String containing Array of Dashboards exported, check [ManagementDashboardExportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/datatypes/ManagementDashboardExportDetails) for exact contents in the string value. The value of `export_details` can be used to pass as `import_details` (CompartmentIds may have to be changed) in `oci.ManagementDashboard.ManagementDashboardsImport` resource.
      * 
      */
-    private final String exportDetails;
+    private String exportDetails;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetManagementDashboardsExportResult(
-        @CustomType.Parameter("exportDashboardId") String exportDashboardId,
-        @CustomType.Parameter("exportDetails") String exportDetails,
-        @CustomType.Parameter("id") String id) {
-        this.exportDashboardId = exportDashboardId;
-        this.exportDetails = exportDetails;
-        this.id = id;
-    }
-
+    private GetManagementDashboardsExportResult() {}
     public String exportDashboardId() {
         return this.exportDashboardId;
     }
@@ -56,16 +47,12 @@ public final class GetManagementDashboardsExportResult {
     public static Builder builder(GetManagementDashboardsExportResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String exportDashboardId;
         private String exportDetails;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementDashboardsExportResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.exportDashboardId = defaults.exportDashboardId;
@@ -73,19 +60,27 @@ public final class GetManagementDashboardsExportResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder exportDashboardId(String exportDashboardId) {
             this.exportDashboardId = Objects.requireNonNull(exportDashboardId);
             return this;
         }
+        @CustomType.Setter
         public Builder exportDetails(String exportDetails) {
             this.exportDetails = Objects.requireNonNull(exportDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetManagementDashboardsExportResult build() {
-            return new GetManagementDashboardsExportResult(exportDashboardId, exportDetails, id);
+        }
+        public GetManagementDashboardsExportResult build() {
+            final var o = new GetManagementDashboardsExportResult();
+            o.exportDashboardId = exportDashboardId;
+            o.exportDetails = exportDetails;
+            o.id = id;
+            return o;
         }
     }
 }

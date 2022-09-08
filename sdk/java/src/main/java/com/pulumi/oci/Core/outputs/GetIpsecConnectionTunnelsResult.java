@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecConnectionTunnelsResult {
-    private final @Nullable List<GetIpsecConnectionTunnelsFilter> filters;
+    private @Nullable List<GetIpsecConnectionTunnelsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of ip_sec_connection_tunnels.
      * 
      */
-    private final List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels;
-    private final String ipsecId;
+    private List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels;
+    private String ipsecId;
 
-    @CustomType.Constructor
-    private GetIpsecConnectionTunnelsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetIpsecConnectionTunnelsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipSecConnectionTunnels") List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels,
-        @CustomType.Parameter("ipsecId") String ipsecId) {
-        this.filters = filters;
-        this.id = id;
-        this.ipSecConnectionTunnels = ipSecConnectionTunnels;
-        this.ipsecId = ipsecId;
-    }
-
+    private GetIpsecConnectionTunnelsResult() {}
     public List<GetIpsecConnectionTunnelsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetIpsecConnectionTunnelsResult {
     public static Builder builder(GetIpsecConnectionTunnelsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetIpsecConnectionTunnelsFilter> filters;
         private String id;
         private List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels;
         private String ipsecId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecConnectionTunnelsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetIpsecConnectionTunnelsResult {
     	      this.ipsecId = defaults.ipsecId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIpsecConnectionTunnelsFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,10 +78,12 @@ public final class GetIpsecConnectionTunnelsResult {
         public Builder filters(GetIpsecConnectionTunnelsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipSecConnectionTunnels(List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels) {
             this.ipSecConnectionTunnels = Objects.requireNonNull(ipSecConnectionTunnels);
             return this;
@@ -103,11 +91,18 @@ public final class GetIpsecConnectionTunnelsResult {
         public Builder ipSecConnectionTunnels(GetIpsecConnectionTunnelsIpSecConnectionTunnel... ipSecConnectionTunnels) {
             return ipSecConnectionTunnels(List.of(ipSecConnectionTunnels));
         }
+        @CustomType.Setter
         public Builder ipsecId(String ipsecId) {
             this.ipsecId = Objects.requireNonNull(ipsecId);
             return this;
-        }        public GetIpsecConnectionTunnelsResult build() {
-            return new GetIpsecConnectionTunnelsResult(filters, id, ipSecConnectionTunnels, ipsecId);
+        }
+        public GetIpsecConnectionTunnelsResult build() {
+            final var o = new GetIpsecConnectionTunnelsResult();
+            o.filters = filters;
+            o.id = id;
+            o.ipSecConnectionTunnels = ipSecConnectionTunnels;
+            o.ipsecId = ipsecId;
+            return o;
         }
     }
 }

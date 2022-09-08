@@ -15,28 +15,19 @@ public final class IndexKey {
      * @return The name of a column to be included as an index key.
      * 
      */
-    private final String columnName;
+    private String columnName;
     /**
      * @return If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
      * 
      */
-    private final @Nullable String jsonFieldType;
+    private @Nullable String jsonFieldType;
     /**
      * @return If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
      * 
      */
-    private final @Nullable String jsonPath;
+    private @Nullable String jsonPath;
 
-    @CustomType.Constructor
-    private IndexKey(
-        @CustomType.Parameter("columnName") String columnName,
-        @CustomType.Parameter("jsonFieldType") @Nullable String jsonFieldType,
-        @CustomType.Parameter("jsonPath") @Nullable String jsonPath) {
-        this.columnName = columnName;
-        this.jsonFieldType = jsonFieldType;
-        this.jsonPath = jsonPath;
-    }
-
+    private IndexKey() {}
     /**
      * @return The name of a column to be included as an index key.
      * 
@@ -66,16 +57,12 @@ public final class IndexKey {
     public static Builder builder(IndexKey defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String columnName;
         private @Nullable String jsonFieldType;
         private @Nullable String jsonPath;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IndexKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnName = defaults.columnName;
@@ -83,19 +70,27 @@ public final class IndexKey {
     	      this.jsonPath = defaults.jsonPath;
         }
 
+        @CustomType.Setter
         public Builder columnName(String columnName) {
             this.columnName = Objects.requireNonNull(columnName);
             return this;
         }
+        @CustomType.Setter
         public Builder jsonFieldType(@Nullable String jsonFieldType) {
             this.jsonFieldType = jsonFieldType;
             return this;
         }
+        @CustomType.Setter
         public Builder jsonPath(@Nullable String jsonPath) {
             this.jsonPath = jsonPath;
             return this;
-        }        public IndexKey build() {
-            return new IndexKey(columnName, jsonFieldType, jsonPath);
+        }
+        public IndexKey build() {
+            final var o = new IndexKey();
+            o.columnName = columnName;
+            o.jsonFieldType = jsonFieldType;
+            o.jsonPath = jsonPath;
+            return o;
         }
     }
 }

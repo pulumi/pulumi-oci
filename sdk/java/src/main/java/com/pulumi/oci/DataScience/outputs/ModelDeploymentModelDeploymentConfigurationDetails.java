@@ -14,21 +14,14 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
      * @return (Updatable) The type of the model deployment.
      * 
      */
-    private final String deploymentType;
+    private String deploymentType;
     /**
      * @return (Updatable) The model configuration details.
      * 
      */
-    private final ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails;
+    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails;
 
-    @CustomType.Constructor
-    private ModelDeploymentModelDeploymentConfigurationDetails(
-        @CustomType.Parameter("deploymentType") String deploymentType,
-        @CustomType.Parameter("modelConfigurationDetails") ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails) {
-        this.deploymentType = deploymentType;
-        this.modelConfigurationDetails = modelConfigurationDetails;
-    }
-
+    private ModelDeploymentModelDeploymentConfigurationDetails() {}
     /**
      * @return (Updatable) The type of the model deployment.
      * 
@@ -51,30 +44,32 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
     public static Builder builder(ModelDeploymentModelDeploymentConfigurationDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String deploymentType;
         private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deploymentType = defaults.deploymentType;
     	      this.modelConfigurationDetails = defaults.modelConfigurationDetails;
         }
 
+        @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
             this.deploymentType = Objects.requireNonNull(deploymentType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails) {
             this.modelConfigurationDetails = Objects.requireNonNull(modelConfigurationDetails);
             return this;
-        }        public ModelDeploymentModelDeploymentConfigurationDetails build() {
-            return new ModelDeploymentModelDeploymentConfigurationDetails(deploymentType, modelConfigurationDetails);
+        }
+        public ModelDeploymentModelDeploymentConfigurationDetails build() {
+            final var o = new ModelDeploymentModelDeploymentConfigurationDetails();
+            o.deploymentType = deploymentType;
+            o.modelConfigurationDetails = modelConfigurationDetails;
+            return o;
         }
     }
 }

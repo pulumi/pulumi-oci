@@ -14,21 +14,14 @@ public final class GetInvoicesInvoiceOrganization {
      * @return Payment Term name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Organization ID
      * 
      */
-    private final Double number;
+    private Double number;
 
-    @CustomType.Constructor
-    private GetInvoicesInvoiceOrganization(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("number") Double number) {
-        this.name = name;
-        this.number = number;
-    }
-
+    private GetInvoicesInvoiceOrganization() {}
     /**
      * @return Payment Term name
      * 
@@ -51,30 +44,32 @@ public final class GetInvoicesInvoiceOrganization {
     public static Builder builder(GetInvoicesInvoiceOrganization defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private Double number;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesInvoiceOrganization defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.number = defaults.number;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder number(Double number) {
             this.number = Objects.requireNonNull(number);
             return this;
-        }        public GetInvoicesInvoiceOrganization build() {
-            return new GetInvoicesInvoiceOrganization(name, number);
+        }
+        public GetInvoicesInvoiceOrganization build() {
+            final var o = new GetInvoicesInvoiceOrganization();
+            o.name = name;
+            o.number = number;
+            return o;
         }
     }
 }

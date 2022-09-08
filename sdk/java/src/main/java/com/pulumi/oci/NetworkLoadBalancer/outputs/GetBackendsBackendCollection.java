@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBackendsBackendCollection {
-    private final List<GetBackendsBackendCollectionItem> items;
+    private List<GetBackendsBackendCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetBackendsBackendCollection(@CustomType.Parameter("items") List<GetBackendsBackendCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetBackendsBackendCollection() {}
     public List<GetBackendsBackendCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetBackendsBackendCollection {
     public static Builder builder(GetBackendsBackendCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBackendsBackendCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendsBackendCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBackendsBackendCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBackendsBackendCollectionItem... items) {
             return items(List.of(items));
-        }        public GetBackendsBackendCollection build() {
-            return new GetBackendsBackendCollection(items);
+        }
+        public GetBackendsBackendCollection build() {
+            final var o = new GetBackendsBackendCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -13,14 +13,14 @@ public final class GetRegistryPlainArgs extends com.pulumi.resources.InvokeArgs 
     public static final GetRegistryPlainArgs Empty = new GetRegistryPlainArgs();
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId", required=true)
     private String registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public String registryId() {
@@ -52,7 +52,7 @@ public final class GetRegistryPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 

@@ -13,13 +13,9 @@ public final class GetGatewayIpAddress {
      * @return An IP address.
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
 
-    @CustomType.Constructor
-    private GetGatewayIpAddress(@CustomType.Parameter("ipAddress") String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
-
+    private GetGatewayIpAddress() {}
     /**
      * @return An IP address.
      * 
@@ -35,24 +31,24 @@ public final class GetGatewayIpAddress {
     public static Builder builder(GetGatewayIpAddress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ipAddress;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGatewayIpAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipAddress = defaults.ipAddress;
         }
 
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
-        }        public GetGatewayIpAddress build() {
-            return new GetGatewayIpAddress(ipAddress);
+        }
+        public GetGatewayIpAddress build() {
+            final var o = new GetGatewayIpAddress();
+            o.ipAddress = ipAddress;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetAutonomousExadataInfrastructureOcpuByWorkloadType {
      * @return The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
      * 
      */
-    private final Double adw;
+    private Double adw;
     /**
      * @return The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
      * 
      */
-    private final Double atp;
+    private Double atp;
 
-    @CustomType.Constructor
-    private GetAutonomousExadataInfrastructureOcpuByWorkloadType(
-        @CustomType.Parameter("adw") Double adw,
-        @CustomType.Parameter("atp") Double atp) {
-        this.adw = adw;
-        this.atp = atp;
-    }
-
+    private GetAutonomousExadataInfrastructureOcpuByWorkloadType() {}
     /**
      * @return The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
      * 
@@ -50,30 +43,32 @@ public final class GetAutonomousExadataInfrastructureOcpuByWorkloadType {
     public static Builder builder(GetAutonomousExadataInfrastructureOcpuByWorkloadType defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double adw;
         private Double atp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousExadataInfrastructureOcpuByWorkloadType defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adw = defaults.adw;
     	      this.atp = defaults.atp;
         }
 
+        @CustomType.Setter
         public Builder adw(Double adw) {
             this.adw = Objects.requireNonNull(adw);
             return this;
         }
+        @CustomType.Setter
         public Builder atp(Double atp) {
             this.atp = Objects.requireNonNull(atp);
             return this;
-        }        public GetAutonomousExadataInfrastructureOcpuByWorkloadType build() {
-            return new GetAutonomousExadataInfrastructureOcpuByWorkloadType(adw, atp);
+        }
+        public GetAutonomousExadataInfrastructureOcpuByWorkloadType build() {
+            final var o = new GetAutonomousExadataInfrastructureOcpuByWorkloadType();
+            o.adw = adw;
+            o.atp = atp;
+            return o;
         }
     }
 }

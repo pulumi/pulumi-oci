@@ -47,7 +47,7 @@ export interface GetResolverArgs {
     /**
      * Value must be `PRIVATE` when listing private name resolvers.
      */
-    scope: string;
+    scope?: string;
 }
 
 /**
@@ -99,7 +99,7 @@ export interface GetResolverResult {
      * Rules for the resolver. Rules are evaluated in order.
      */
     readonly rules: outputs.Dns.GetResolverRule[];
-    readonly scope: string;
+    readonly scope?: string;
     /**
      * The canonical absolute URL of the resource.
      */
@@ -133,5 +133,5 @@ export interface GetResolverOutputArgs {
     /**
      * Value must be `PRIVATE` when listing private name resolvers.
      */
-    scope: pulumi.Input<string>;
+    scope?: pulumi.Input<string>;
 }

@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Registries in Oracle Cloud Infrastructure Data Connectivity service.
  *
- * Returns a list of Data Connectivity Management Registries.
+ * Retrieves a list of Data Connectivity Management registries.
  *
  * ## Example Usage
  *
@@ -49,7 +49,7 @@ export interface GetRegistriesArgs {
     compartmentId: string;
     filters?: inputs.DataConnectivity.GetRegistriesFilter[];
     /**
-     * This parameter allows list registries to deep look at whole tenancy.
+     * This parameter allows list registries to deep look at the whole tenancy.
      */
     isDeepLookup?: boolean;
     /**
@@ -82,7 +82,7 @@ export interface GetRegistriesResult {
      */
     readonly registrySummaryCollections: outputs.DataConnectivity.GetRegistriesRegistrySummaryCollection[];
     /**
-     * Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+     * Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
      */
     readonly state?: string;
 }
@@ -101,7 +101,7 @@ export interface GetRegistriesOutputArgs {
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.GetRegistriesFilterArgs>[]>;
     /**
-     * This parameter allows list registries to deep look at whole tenancy.
+     * This parameter allows list registries to deep look at the whole tenancy.
      */
     isDeepLookup?: pulumi.Input<boolean>;
     /**

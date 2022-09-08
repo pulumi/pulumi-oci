@@ -56,9 +56,12 @@ export interface GetVmClusterResult {
      */
     readonly cpusEnabled: number;
     /**
-     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
     readonly dataCollectionOptions: outputs.Database.GetVmClusterDataCollectionOption[];
+    /**
+     * Size of the DATA disk group in GBs.
+     */
     readonly dataStorageSizeInGb: number;
     /**
      * Size, in terabytes, of the DATA disk group.

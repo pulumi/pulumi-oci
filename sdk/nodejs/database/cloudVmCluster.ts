@@ -30,6 +30,8 @@ import * as utilities from "../utilities";
  *     clusterName: _var.cloud_vm_cluster_cluster_name,
  *     dataCollectionOptions: {
  *         isDiagnosticsEventsEnabled: _var.cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+ *         isHealthMonitoringEnabled: _var.cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled,
+ *         isIncidentLogsEnabled: _var.cloud_vm_cluster_data_collection_options_is_incident_logs_enabled,
  *     },
  *     dataStoragePercentage: _var.cloud_vm_cluster_data_storage_percentage,
  *     definedTags: _var.cloud_vm_cluster_defined_tags,

@@ -148,7 +148,7 @@ export class Target extends pulumi.CustomResource {
      */
     public readonly targetResourceId!: pulumi.Output<string>;
     /**
-     * possible type of targets(compartment/HCMCloud/ERPCloud)
+     * possible type of targets(COMPARTMENT/FACLOUD)
      */
     public readonly targetResourceType!: pulumi.Output<string>;
     /**
@@ -288,7 +288,7 @@ export interface TargetState {
      */
     targetResourceId?: pulumi.Input<string>;
     /**
-     * possible type of targets(compartment/HCMCloud/ERPCloud)
+     * possible type of targets(COMPARTMENT/FACLOUD)
      */
     targetResourceType?: pulumi.Input<string>;
     /**
@@ -342,7 +342,7 @@ export interface TargetArgs {
      */
     targetResourceId: pulumi.Input<string>;
     /**
-     * possible type of targets(compartment/HCMCloud/ERPCloud)
+     * possible type of targets(COMPARTMENT/FACLOUD)
      */
     targetResourceType: pulumi.Input<string>;
     /**

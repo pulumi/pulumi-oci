@@ -23,7 +23,8 @@ import * as utilities from "../utilities";
  * });
  * ```
  */
-export function getView(args: GetViewArgs, opts?: pulumi.InvokeOptions): Promise<GetViewResult> {
+export function getView(args?: GetViewArgs, opts?: pulumi.InvokeOptions): Promise<GetViewResult> {
+    args = args || {};
     if (!opts) {
         opts = {}
     }
@@ -42,11 +43,11 @@ export interface GetViewArgs {
     /**
      * Value must be `PRIVATE` when listing views for private zones.
      */
-    scope: string;
+    scope?: string;
     /**
      * The OCID of the target view.
      */
-    viewId: string;
+    viewId?: string;
 }
 
 /**
@@ -77,7 +78,7 @@ export interface GetViewResult {
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
     readonly isProtected: boolean;
-    readonly scope: string;
+    readonly scope?: string;
     /**
      * The canonical absolute URL of the resource.
      */
@@ -94,10 +95,10 @@ export interface GetViewResult {
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
     readonly timeUpdated: string;
-    readonly viewId: string;
+    readonly viewId?: string;
 }
 
-export function getViewOutput(args: GetViewOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetViewResult> {
+export function getViewOutput(args?: GetViewOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetViewResult> {
     return pulumi.output(args).apply(a => getView(a, opts))
 }
 
@@ -108,9 +109,9 @@ export interface GetViewOutputArgs {
     /**
      * Value must be `PRIVATE` when listing views for private zones.
      */
-    scope: pulumi.Input<string>;
+    scope?: pulumi.Input<string>;
     /**
      * The OCID of the target view.
      */
-    viewId: pulumi.Input<string>;
+    viewId?: pulumi.Input<string>;
 }

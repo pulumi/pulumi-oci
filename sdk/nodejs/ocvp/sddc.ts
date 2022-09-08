@@ -277,6 +277,10 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
+     * The vSphere licenses to be used when upgrade SDDC.
+     */
+    public /*out*/ readonly upgradeLicenses!: pulumi.Output<outputs.Ocvp.SddcUpgradeLicense[]>;
+    /**
      * The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      */
     public /*out*/ readonly vcenterFqdn!: pulumi.Output<string>;
@@ -304,6 +308,14 @@ export class Sddc extends pulumi.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
      */
     public readonly vsanVlanId!: pulumi.Output<string>;
+    /**
+     * The link of guidance to upgrade vSphere.
+     */
+    public /*out*/ readonly vsphereUpgradeGuide!: pulumi.Output<string>;
+    /**
+     * The links of binary objects needed for upgrade vSphere.
+     */
+    public /*out*/ readonly vsphereUpgradeObjects!: pulumi.Output<outputs.Ocvp.SddcVsphereUpgradeObject[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
      */
@@ -371,6 +383,7 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["timeHcxBillingCycleEnd"] = state ? state.timeHcxBillingCycleEnd : undefined;
             resourceInputs["timeHcxLicenseStatusUpdated"] = state ? state.timeHcxLicenseStatusUpdated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["upgradeLicenses"] = state ? state.upgradeLicenses : undefined;
             resourceInputs["vcenterFqdn"] = state ? state.vcenterFqdn : undefined;
             resourceInputs["vcenterInitialPassword"] = state ? state.vcenterInitialPassword : undefined;
             resourceInputs["vcenterPrivateIpId"] = state ? state.vcenterPrivateIpId : undefined;
@@ -378,6 +391,8 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["vmotionVlanId"] = state ? state.vmotionVlanId : undefined;
             resourceInputs["vmwareSoftwareVersion"] = state ? state.vmwareSoftwareVersion : undefined;
             resourceInputs["vsanVlanId"] = state ? state.vsanVlanId : undefined;
+            resourceInputs["vsphereUpgradeGuide"] = state ? state.vsphereUpgradeGuide : undefined;
+            resourceInputs["vsphereUpgradeObjects"] = state ? state.vsphereUpgradeObjects : undefined;
             resourceInputs["vsphereVlanId"] = state ? state.vsphereVlanId : undefined;
             resourceInputs["workloadNetworkCidr"] = state ? state.workloadNetworkCidr : undefined;
         } else {
@@ -471,10 +486,13 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["timeHcxBillingCycleEnd"] = undefined /*out*/;
             resourceInputs["timeHcxLicenseStatusUpdated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
+            resourceInputs["upgradeLicenses"] = undefined /*out*/;
             resourceInputs["vcenterFqdn"] = undefined /*out*/;
             resourceInputs["vcenterInitialPassword"] = undefined /*out*/;
             resourceInputs["vcenterPrivateIpId"] = undefined /*out*/;
             resourceInputs["vcenterUsername"] = undefined /*out*/;
+            resourceInputs["vsphereUpgradeGuide"] = undefined /*out*/;
+            resourceInputs["vsphereUpgradeObjects"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Sddc.__pulumiType, name, resourceInputs, opts);
@@ -666,6 +684,10 @@ export interface SddcState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
+     * The vSphere licenses to be used when upgrade SDDC.
+     */
+    upgradeLicenses?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcUpgradeLicense>[]>;
+    /**
      * The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      */
     vcenterFqdn?: pulumi.Input<string>;
@@ -693,6 +715,14 @@ export interface SddcState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
      */
     vsanVlanId?: pulumi.Input<string>;
+    /**
+     * The link of guidance to upgrade vSphere.
+     */
+    vsphereUpgradeGuide?: pulumi.Input<string>;
+    /**
+     * The links of binary objects needed for upgrade vSphere.
+     */
+    vsphereUpgradeObjects?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcVsphereUpgradeObject>[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
      */

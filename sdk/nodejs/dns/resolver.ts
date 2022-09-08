@@ -8,23 +8,17 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
  *
- * Updates the specified resolver with your new information. Requires a `PRIVATE` scope query parameter.
+ * Updates the specified resolver with your new information.
  *
  * Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
  * Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
  *
  * ## Import
  *
- * For legacy Resolvers that were created without using `scope`, these Resolvers can be imported using the `id`, e.g.
+ * Resolvers can be imported using their OCID, e.g.
  *
  * ```sh
  *  $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
- * ```
- *
- *  For Resolvers created using `scope`, these Resolvers can be imported using the `id`, e.g.
- *
- * ```sh
- *  $ pulumi import oci:Dns/resolver:Resolver test_resolver "resolverId/{resolverId}/scope/{scope}"
  * ```
  */
 export class Resolver extends pulumi.CustomResource {
@@ -100,9 +94,9 @@ export class Resolver extends pulumi.CustomResource {
      */
     public readonly rules!: pulumi.Output<outputs.Dns.ResolverRule[] | undefined>;
     /**
-     * Value must be `PRIVATE` when creating private name resolvers.
+     * If specified, must be `PRIVATE` when creating private name resolvers.
      */
-    public readonly scope!: pulumi.Output<string>;
+    public readonly scope!: pulumi.Output<string | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
@@ -153,9 +147,6 @@ export class Resolver extends pulumi.CustomResource {
             const args = argsOrState as ResolverArgs | undefined;
             if ((!args || args.resolverId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'resolverId'");
-            }
-            if ((!args || args.scope === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'scope'");
             }
             resourceInputs["attachedViews"] = args ? args.attachedViews : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
@@ -228,7 +219,7 @@ export interface ResolverState {
      */
     rules?: pulumi.Input<pulumi.Input<inputs.Dns.ResolverRule>[]>;
     /**
-     * Value must be `PRIVATE` when creating private name resolvers.
+     * If specified, must be `PRIVATE` when creating private name resolvers.
      */
     scope?: pulumi.Input<string>;
     /**
@@ -282,7 +273,7 @@ export interface ResolverArgs {
      */
     rules?: pulumi.Input<pulumi.Input<inputs.Dns.ResolverRule>[]>;
     /**
-     * Value must be `PRIVATE` when creating private name resolvers.
+     * If specified, must be `PRIVATE` when creating private name resolvers.
      */
-    scope: pulumi.Input<string>;
+    scope?: pulumi.Input<string>;
 }

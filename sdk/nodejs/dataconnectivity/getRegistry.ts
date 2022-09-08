@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
  *
- * Gets a Data Connectivity Management Registry by identifier
+ * Retrieves a Data Connectivity Management registry using the specified identifier.
  *
  * ## Example Usage
  *
@@ -36,7 +36,7 @@ export function getRegistry(args: GetRegistryArgs, opts?: pulumi.InvokeOptions):
  */
 export interface GetRegistryArgs {
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: string;
 }
@@ -58,20 +58,20 @@ export interface GetRegistryResult {
      */
     readonly description: string;
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * Data Connectivity Management registry display name; registries can be renamed.
      */
     readonly displayName: string;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier that is immutable on creation.
      */
     readonly id: string;
     readonly registryId: string;
     /**
-     * Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+     * Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
      */
     readonly state: string;
     /**
@@ -79,15 +79,15 @@ export interface GetRegistryResult {
      */
     readonly stateMessage: string;
     /**
-     * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
      */
     readonly timeCreated: string;
     /**
-     * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
      */
     readonly timeUpdated: string;
     /**
-     * Name of the user who updated the DCMS Registry.
+     * Name of the user who updated the DCMS registry.
      */
     readonly updatedBy: string;
 }
@@ -101,7 +101,7 @@ export function getRegistryOutput(args: GetRegistryOutputArgs, opts?: pulumi.Inv
  */
 export interface GetRegistryOutputArgs {
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
 }

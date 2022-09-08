@@ -66,7 +66,7 @@ export interface GetViewsArgs {
     /**
      * Value must be `PRIVATE` when listing private views.
      */
-    scope: string;
+    scope?: string;
     /**
      * The state of a resource.
      */
@@ -90,7 +90,7 @@ export interface GetViewsResult {
      * The OCID of the view.
      */
     readonly id?: string;
-    readonly scope: string;
+    readonly scope?: string;
     /**
      * The current state of the resource.
      */
@@ -125,7 +125,7 @@ export interface GetViewsOutputArgs {
     /**
      * Value must be `PRIVATE` when listing private views.
      */
-    scope: pulumi.Input<string>;
+    scope?: pulumi.Input<string>;
     /**
      * The state of a resource.
      */

@@ -31,6 +31,10 @@ import * as utilities from "../utilities";
  *
  * const testVolume = new oci.core.Volume("testVolume", {
  *     compartmentId: _var.compartment_id,
+ *     autotunePolicies: [{
+ *         autotuneType: _var.volume_autotune_policies_autotune_type,
+ *         maxVpusPerGb: _var.volume_autotune_policies_max_vpus_per_gb,
+ *     }],
  *     availabilityDomain: _var.volume_availability_domain,
  *     backupPolicyId: data.oci_core_volume_backup_policies.test_volume_backup_policies.volume_backup_policies[0].id,
  *     blockVolumeReplicas: [{
@@ -94,9 +98,13 @@ export class Volume extends pulumi.CustomResource {
     }
 
     /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+     * The number of Volume Performance Units per GB that this volume is effectively tuned to.
      */
     public /*out*/ readonly autoTunedVpusPerGb!: pulumi.Output<string>;
+    /**
+     * (Updatable) The list of autotune policies to be enabled for this volume.
+     */
+    public readonly autotunePolicies!: pulumi.Output<outputs.Core.VolumeAutotunePolicy[]>;
     /**
      * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      */
@@ -129,7 +137,7 @@ export class Volume extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
     public readonly isAutoTuneEnabled!: pulumi.Output<boolean>;
     /**
@@ -190,6 +198,7 @@ export class Volume extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as VolumeState | undefined;
             resourceInputs["autoTunedVpusPerGb"] = state ? state.autoTunedVpusPerGb : undefined;
+            resourceInputs["autotunePolicies"] = state ? state.autotunePolicies : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["backupPolicyId"] = state ? state.backupPolicyId : undefined;
             resourceInputs["blockVolumeReplicas"] = state ? state.blockVolumeReplicas : undefined;
@@ -218,6 +227,7 @@ export class Volume extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            resourceInputs["autotunePolicies"] = args ? args.autotunePolicies : undefined;
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
             resourceInputs["backupPolicyId"] = args ? args.backupPolicyId : undefined;
             resourceInputs["blockVolumeReplicas"] = args ? args.blockVolumeReplicas : undefined;
@@ -250,9 +260,13 @@ export class Volume extends pulumi.CustomResource {
  */
 export interface VolumeState {
     /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+     * The number of Volume Performance Units per GB that this volume is effectively tuned to.
      */
     autoTunedVpusPerGb?: pulumi.Input<string>;
+    /**
+     * (Updatable) The list of autotune policies to be enabled for this volume.
+     */
+    autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.VolumeAutotunePolicy>[]>;
     /**
      * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      */
@@ -285,7 +299,7 @@ export interface VolumeState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
     isAutoTuneEnabled?: pulumi.Input<boolean>;
     /**
@@ -338,6 +352,10 @@ export interface VolumeState {
  */
 export interface VolumeArgs {
     /**
+     * (Updatable) The list of autotune policies to be enabled for this volume.
+     */
+    autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.VolumeAutotunePolicy>[]>;
+    /**
      * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      */
     availabilityDomain: pulumi.Input<string>;
@@ -369,7 +387,7 @@ export interface VolumeArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
     isAutoTuneEnabled?: pulumi.Input<boolean>;
     /**

@@ -11,6 +11,25 @@ export * from "./getApplication";
 export * from "./getApplications";
 export * from "./getFunction";
 export * from "./getFunctions";
+export * from "./getFusionEnvironment";
+export * from "./getFusionEnvironmentAdminUser";
+export * from "./getFusionEnvironmentAdminUsers";
+export * from "./getFusionEnvironmentDataMaskingActivities";
+export * from "./getFusionEnvironmentDataMaskingActivity";
+export * from "./getFusionEnvironmentFamilies";
+export * from "./getFusionEnvironmentFamily";
+export * from "./getFusionEnvironmentFamilyLimitsAndUsage";
+export * from "./getFusionEnvironmentFamilySubscriptionDetail";
+export * from "./getFusionEnvironmentRefreshActivities";
+export * from "./getFusionEnvironmentRefreshActivity";
+export * from "./getFusionEnvironmentScheduledActivities";
+export * from "./getFusionEnvironmentScheduledActivity";
+export * from "./getFusionEnvironmentServiceAttachment";
+export * from "./getFusionEnvironmentServiceAttachments";
+export * from "./getFusionEnvironmentStatus";
+export * from "./getFusionEnvironmentTimeAvailableForRefresh";
+export * from "./getFusionEnvironmentTimeAvailableForRefreshs";
+export * from "./getFusionEnvironments";
 export * from "./invokeFunction";
 
 // Import resources to register:

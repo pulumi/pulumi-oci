@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
  *
- * Adds the list of redeemable user email IDs for a subscription ID.
+ * Adds the list of redeemable user summary for a subscription ID.
  *
  * ## Example Usage
  *
@@ -21,6 +21,8 @@ import * as utilities from "../utilities";
  *     tenancyId: oci_identity_tenancy.test_tenancy.id,
  *     items: [{
  *         emailId: oci_usage_proxy_email.test_email.id,
+ *         firstName: _var.subscription_redeemable_user_items_first_name,
+ *         lastName: _var.subscription_redeemable_user_items_last_name,
  *     }],
  *     userId: oci_identity_user.test_user.id,
  * });
@@ -63,7 +65,7 @@ export class SubscriptionRedeemableUser extends pulumi.CustomResource {
     }
 
     /**
-     * The list of email IDs to be added to the list of users that can redeem rewards.
+     * The list of new user to be added to the list of user that can redeem rewards.
      */
     public readonly items!: pulumi.Output<outputs.UsageProxy.SubscriptionRedeemableUserItem[]>;
     /**
@@ -122,7 +124,7 @@ export class SubscriptionRedeemableUser extends pulumi.CustomResource {
  */
 export interface SubscriptionRedeemableUserState {
     /**
-     * The list of email IDs to be added to the list of users that can redeem rewards.
+     * The list of new user to be added to the list of user that can redeem rewards.
      */
     items?: pulumi.Input<pulumi.Input<inputs.UsageProxy.SubscriptionRedeemableUserItem>[]>;
     /**
@@ -144,7 +146,7 @@ export interface SubscriptionRedeemableUserState {
  */
 export interface SubscriptionRedeemableUserArgs {
     /**
-     * The list of email IDs to be added to the list of users that can redeem rewards.
+     * The list of new user to be added to the list of user that can redeem rewards.
      */
     items: pulumi.Input<pulumi.Input<inputs.UsageProxy.SubscriptionRedeemableUserItem>[]>;
     /**

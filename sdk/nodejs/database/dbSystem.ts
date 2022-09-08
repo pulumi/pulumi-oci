@@ -111,6 +111,10 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly cpuCoreCount!: pulumi.Output<number>;
     /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     */
+    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.DbSystemDataCollectionOptions>;
+    /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
      */
     public readonly dataStoragePercentage!: pulumi.Output<number>;
@@ -313,6 +317,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["clusterName"] = state ? state.clusterName : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
+            resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
             resourceInputs["dataStoragePercentage"] = state ? state.dataStoragePercentage : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["databaseEdition"] = state ? state.databaseEdition : undefined;
@@ -387,6 +392,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["clusterName"] = args ? args.clusterName : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
+            resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
             resourceInputs["dataStoragePercentage"] = args ? args.dataStoragePercentage : undefined;
             resourceInputs["dataStorageSizeInGb"] = args ? args.dataStorageSizeInGb : undefined;
             resourceInputs["databaseEdition"] = args ? args.databaseEdition : undefined;
@@ -476,6 +482,10 @@ export interface DbSystemState {
      * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
      */
     cpuCoreCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     */
+    dataCollectionOptions?: pulumi.Input<inputs.Database.DbSystemDataCollectionOptions>;
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
      */
@@ -699,6 +709,10 @@ export interface DbSystemArgs {
      * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
      */
     cpuCoreCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     */
+    dataCollectionOptions?: pulumi.Input<inputs.Database.DbSystemDataCollectionOptions>;
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
      */

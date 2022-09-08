@@ -71,9 +71,12 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
      */
     public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
     /**
-     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
     public /*out*/ readonly dataCollectionOptions!: pulumi.Output<outputs.Database.VmClusterAddVirtualNetworkDataCollectionOption[]>;
+    /**
+     * Size of the DATA disk group in GBs.
+     */
     public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number>;
     /**
      * Size, in terabytes, of the DATA disk group.
@@ -259,9 +262,12 @@ export interface VmClusterAddVirtualNetworkState {
      */
     cpusEnabled?: pulumi.Input<number>;
     /**
-     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
     dataCollectionOptions?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkDataCollectionOption>[]>;
+    /**
+     * Size of the DATA disk group in GBs.
+     */
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
      * Size, in terabytes, of the DATA disk group.

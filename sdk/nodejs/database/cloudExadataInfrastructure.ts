@@ -37,6 +37,7 @@ import * as utilities from "../utilities";
  *         }],
  *         hoursOfDays: _var.cloud_exadata_infrastructure_maintenance_window_hours_of_day,
  *         isCustomActionTimeoutEnabled: _var.cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
+ *         isMonthlyPatchingEnabled: _var.cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
  *         leadTimeInWeeks: _var.cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
  *         months: [{
  *             name: _var.cloud_exadata_infrastructure_maintenance_window_months_name,

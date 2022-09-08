@@ -37,6 +37,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isNotificationsPerMetricDimensionEnabled: _var.alarm_is_notifications_per_metric_dimension_enabled,
  *     messageFormat: _var.alarm_message_format,
  *     metricCompartmentIdInSubtree: _var.alarm_metric_compartment_id_in_subtree,
  *     pendingDuration: _var.alarm_pending_duration,
@@ -116,6 +117,10 @@ export class Alarm extends pulumi.CustomResource {
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
+     * (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+     */
+    public readonly isNotificationsPerMetricDimensionEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) The format to use for notification messages sent from this alarm. The formats are:
      */
     public readonly messageFormat!: pulumi.Output<string>;
@@ -192,6 +197,7 @@ export class Alarm extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
+            resourceInputs["isNotificationsPerMetricDimensionEnabled"] = state ? state.isNotificationsPerMetricDimensionEnabled : undefined;
             resourceInputs["messageFormat"] = state ? state.messageFormat : undefined;
             resourceInputs["metricCompartmentId"] = state ? state.metricCompartmentId : undefined;
             resourceInputs["metricCompartmentIdInSubtree"] = state ? state.metricCompartmentIdInSubtree : undefined;
@@ -239,6 +245,7 @@ export class Alarm extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
+            resourceInputs["isNotificationsPerMetricDimensionEnabled"] = args ? args.isNotificationsPerMetricDimensionEnabled : undefined;
             resourceInputs["messageFormat"] = args ? args.messageFormat : undefined;
             resourceInputs["metricCompartmentId"] = args ? args.metricCompartmentId : undefined;
             resourceInputs["metricCompartmentIdInSubtree"] = args ? args.metricCompartmentIdInSubtree : undefined;
@@ -291,6 +298,10 @@ export interface AlarmState {
      * (Updatable) Whether the alarm is enabled.  Example: `true`
      */
     isEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+     */
+    isNotificationsPerMetricDimensionEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The format to use for notification messages sent from this alarm. The formats are:
      */
@@ -381,6 +392,10 @@ export interface AlarmArgs {
      * (Updatable) Whether the alarm is enabled.  Example: `true`
      */
     isEnabled: pulumi.Input<boolean>;
+    /**
+     * (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+     */
+    isNotificationsPerMetricDimensionEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The format to use for notification messages sent from this alarm. The formats are:
      */

@@ -9,6 +9,8 @@ export * from "./getSubscriptionProduct";
 export * from "./getSubscriptionProducts";
 export * from "./getSubscriptionRedeemableUser";
 export * from "./getSubscriptionRedeemableUsers";
+export * from "./getSubscriptionRedemption";
+export * from "./getSubscriptionRedemptions";
 export * from "./getSubscriptionReward";
 export * from "./getSubscriptionRewards";
 export * from "./subscriptionRedeemableUser";

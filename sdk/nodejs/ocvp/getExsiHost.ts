@@ -107,6 +107,10 @@ export interface GetExsiHostResult {
      */
     readonly nextSku: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+     */
+    readonly nonUpgradedEsxiHostId: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      */
     readonly replacementEsxiHostId: string;
@@ -126,6 +130,14 @@ export interface GetExsiHostResult {
      * The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     readonly timeUpdated: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+     */
+    readonly upgradedReplacementEsxiHostId: string;
+    /**
+     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     */
+    readonly vmwareSoftwareVersion: string;
 }
 
 export function getExsiHostOutput(args: GetExsiHostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExsiHostResult> {

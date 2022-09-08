@@ -26,6 +26,8 @@ import * as utilities from "../utilities";
  *     vmClusterNetworkId: oci_database_vm_cluster_network.test_vm_cluster_network.id,
  *     dataCollectionOptions: {
  *         isDiagnosticsEventsEnabled: _var.vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+ *         isHealthMonitoringEnabled: _var.vm_cluster_data_collection_options_is_health_monitoring_enabled,
+ *         isIncidentLogsEnabled: _var.vm_cluster_data_collection_options_is_incident_logs_enabled,
  *     },
  *     dataStorageSizeInTbs: _var.vm_cluster_data_storage_size_in_tbs,
  *     dbNodeStorageSizeInGbs: _var.vm_cluster_db_node_storage_size_in_gbs,
@@ -88,9 +90,12 @@ export class VmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
     /**
-     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
     public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.VmClusterDataCollectionOptions>;
+    /**
+     * (Updatable) The data disk group size to be allocated in GBs.
+     */
     public readonly dataStorageSizeInGb!: pulumi.Output<number>;
     /**
      * (Updatable) The data disk group size to be allocated in TBs.
@@ -291,9 +296,12 @@ export interface VmClusterState {
      */
     cpusEnabled?: pulumi.Input<number>;
     /**
-     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
     dataCollectionOptions?: pulumi.Input<inputs.Database.VmClusterDataCollectionOptions>;
+    /**
+     * (Updatable) The data disk group size to be allocated in GBs.
+     */
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
      * (Updatable) The data disk group size to be allocated in TBs.
@@ -393,9 +401,12 @@ export interface VmClusterArgs {
     compartmentId: pulumi.Input<string>;
     cpuCoreCount: pulumi.Input<number>;
     /**
-     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
     dataCollectionOptions?: pulumi.Input<inputs.Database.VmClusterDataCollectionOptions>;
+    /**
+     * (Updatable) The data disk group size to be allocated in GBs.
+     */
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
      * (Updatable) The data disk group size to be allocated in TBs.

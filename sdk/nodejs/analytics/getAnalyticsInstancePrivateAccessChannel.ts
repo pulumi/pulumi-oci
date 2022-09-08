@@ -70,11 +70,19 @@ export interface GetAnalyticsInstancePrivateAccessChannelResult {
      * Private Access Channel unique identifier key.
      */
     readonly key: string;
+    /**
+     * Network Security Group OCIDs for an Analytics instance.
+     */
+    readonly networkSecurityGroupIds: string[];
     readonly privateAccessChannelKey: string;
     /**
      * List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      */
     readonly privateSourceDnsZones: outputs.Analytics.GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone[];
+    /**
+     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     */
+    readonly privateSourceScanHosts: outputs.Analytics.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost[];
     /**
      * OCID of the customer subnet connected to private access channel.
      */

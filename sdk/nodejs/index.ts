@@ -50,6 +50,7 @@ import * as emwarehouse from "./emwarehouse";
 import * as events from "./events";
 import * as filestorage from "./filestorage";
 import * as functions from "./functions";
+import * as fusionapps from "./fusionapps";
 import * as genericartifactscontent from "./genericartifactscontent";
 import * as goldengate from "./goldengate";
 import * as healthchecks from "./healthchecks";
@@ -149,6 +150,7 @@ export {
     events,
     filestorage,
     functions,
+    fusionapps,
     genericartifactscontent,
     goldengate,
     healthchecks,

@@ -69,7 +69,7 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
      */
     public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
     /**
-     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
     public /*out*/ readonly dataCollectionOptions!: pulumi.Output<outputs.Database.VmClusterRemoveVirtualMachineDataCollectionOption[]>;
     /**
@@ -251,7 +251,7 @@ export interface VmClusterRemoveVirtualMachineState {
      */
     cpusEnabled?: pulumi.Input<number>;
     /**
-     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
     dataCollectionOptions?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterRemoveVirtualMachineDataCollectionOption>[]>;
     /**

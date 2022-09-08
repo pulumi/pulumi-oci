@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
  *
- * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+ * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
  *
  * ## Example Usage
  *
@@ -45,11 +45,11 @@ export interface GetRegistryTypeArgs {
      */
     fields?: string[];
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: string;
     /**
-     * key of the a specefic Type.
+     * Key of the a specific type.
      */
     typeKey: string;
 }
@@ -59,11 +59,11 @@ export interface GetRegistryTypeArgs {
  */
 export interface GetRegistryTypeResult {
     /**
-     * Map of connectionType as key and List of attributes as value
+     * Mapping the connectionType as the key to the list of attributes as the value.
      */
     readonly connectionAttributes: {[key: string]: any};
     /**
-     * list of attributes for the dataAsset
+     * The list of attributes of the data asset.
      */
     readonly dataAssetAttributes: outputs.DataConnectivity.GetRegistryTypeDataAssetAttribute[];
     readonly fields?: string[];
@@ -88,11 +88,11 @@ export interface GetRegistryTypeOutputArgs {
      */
     fields?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
     /**
-     * key of the a specefic Type.
+     * Key of the a specific type.
      */
     typeKey: pulumi.Input<string>;
 }

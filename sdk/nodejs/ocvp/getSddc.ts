@@ -223,6 +223,10 @@ export interface GetSddcResult {
      */
     readonly timeUpdated: string;
     /**
+     * The vSphere licenses to be used when upgrade SDDC.
+     */
+    readonly upgradeLicenses: outputs.Ocvp.GetSddcUpgradeLicense[];
+    /**
      * The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      */
     readonly vcenterFqdn: string;
@@ -250,6 +254,14 @@ export interface GetSddcResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
      */
     readonly vsanVlanId: string;
+    /**
+     * The link of guidance to upgrade vSphere.
+     */
+    readonly vsphereUpgradeGuide: string;
+    /**
+     * The links of binary objects needed for upgrade vSphere.
+     */
+    readonly vsphereUpgradeObjects: outputs.Ocvp.GetSddcVsphereUpgradeObject[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
      */

@@ -52,7 +52,7 @@ export interface GetResolverEndpointArgs {
     /**
      * Value must be `PRIVATE` when listing private name resolver endpoints.
      */
-    scope: string;
+    scope?: string;
 }
 
 /**
@@ -94,7 +94,7 @@ export interface GetResolverEndpointResult {
     readonly nsgIds: string[];
     readonly resolverEndpointName: string;
     readonly resolverId: string;
-    readonly scope: string;
+    readonly scope?: string;
     /**
      * The canonical absolute URL of the resource.
      */
@@ -136,5 +136,5 @@ export interface GetResolverEndpointOutputArgs {
     /**
      * Value must be `PRIVATE` when listing private name resolver endpoints.
      */
-    scope: pulumi.Input<string>;
+    scope?: pulumi.Input<string>;
 }

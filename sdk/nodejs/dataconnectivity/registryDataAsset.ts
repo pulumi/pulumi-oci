@@ -249,7 +249,7 @@ export class RegistryDataAsset extends pulumi.CustomResource {
      */
     public readonly defaultConnection!: pulumi.Output<outputs.DataConnectivity.RegistryDataAssetDefaultConnection>;
     /**
-     * (Updatable) A user defined description for the object.
+     * (Updatable) A user-defined description for the object.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -257,11 +257,11 @@ export class RegistryDataAsset extends pulumi.CustomResource {
      */
     public readonly endPoints!: pulumi.Output<string[]>;
     /**
-     * (Updatable) The external key for the object.
+     * (Updatable) The external key of the object.
      */
     public readonly externalKey!: pulumi.Output<string>;
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      */
     public readonly identifier!: pulumi.Output<string>;
     /**
@@ -269,11 +269,11 @@ export class RegistryDataAsset extends pulumi.CustomResource {
      */
     public readonly key!: pulumi.Output<string>;
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      */
     public readonly metadata!: pulumi.Output<outputs.DataConnectivity.RegistryDataAssetMetadata>;
     /**
-     * (Updatable) The property which disciminates the subtypes.
+     * (Updatable) The property which differentiates the subtypes.
      */
     public readonly modelType!: pulumi.Output<string>;
     /**
@@ -281,7 +281,7 @@ export class RegistryDataAsset extends pulumi.CustomResource {
      */
     public readonly modelVersion!: pulumi.Output<string>;
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -301,7 +301,7 @@ export class RegistryDataAsset extends pulumi.CustomResource {
      */
     public readonly properties!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public readonly registryId!: pulumi.Output<string>;
     /**
@@ -398,7 +398,7 @@ export interface RegistryDataAssetState {
      */
     defaultConnection?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnection>;
     /**
-     * (Updatable) A user defined description for the object.
+     * (Updatable) A user-defined description for the object.
      */
     description?: pulumi.Input<string>;
     /**
@@ -406,11 +406,11 @@ export interface RegistryDataAssetState {
      */
     endPoints?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The external key for the object.
+     * (Updatable) The external key of the object.
      */
     externalKey?: pulumi.Input<string>;
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      */
     identifier?: pulumi.Input<string>;
     /**
@@ -418,11 +418,11 @@ export interface RegistryDataAssetState {
      */
     key?: pulumi.Input<string>;
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      */
     metadata?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetMetadata>;
     /**
-     * (Updatable) The property which disciminates the subtypes.
+     * (Updatable) The property which differentiates the subtypes.
      */
     modelType?: pulumi.Input<string>;
     /**
@@ -430,7 +430,7 @@ export interface RegistryDataAssetState {
      */
     modelVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     name?: pulumi.Input<string>;
     /**
@@ -450,7 +450,7 @@ export interface RegistryDataAssetState {
      */
     properties?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId?: pulumi.Input<string>;
     /**
@@ -476,7 +476,7 @@ export interface RegistryDataAssetArgs {
      */
     defaultConnection?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnection>;
     /**
-     * (Updatable) A user defined description for the object.
+     * (Updatable) A user-defined description for the object.
      */
     description?: pulumi.Input<string>;
     /**
@@ -484,11 +484,11 @@ export interface RegistryDataAssetArgs {
      */
     endPoints?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The external key for the object.
+     * (Updatable) The external key of the object.
      */
     externalKey?: pulumi.Input<string>;
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      */
     identifier: pulumi.Input<string>;
     /**
@@ -496,11 +496,11 @@ export interface RegistryDataAssetArgs {
      */
     key?: pulumi.Input<string>;
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      */
     metadata?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetMetadata>;
     /**
-     * (Updatable) The property which disciminates the subtypes.
+     * (Updatable) The property which differentiates the subtypes.
      */
     modelType: pulumi.Input<string>;
     /**
@@ -508,7 +508,7 @@ export interface RegistryDataAssetArgs {
      */
     modelVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     name?: pulumi.Input<string>;
     /**
@@ -528,7 +528,7 @@ export interface RegistryDataAssetArgs {
      */
     properties: pulumi.Input<{[key: string]: any}>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
     /**

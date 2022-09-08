@@ -103,7 +103,7 @@ export interface GetDetectorRecipesResult {
      */
     readonly detectorRecipeCollections: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollection[];
     /**
-     * Display name for DetectorRecipeDetectorRule.
+     * The display name of entity
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetDetectorRecipesFilter[];

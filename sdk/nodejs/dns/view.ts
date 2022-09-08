@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
  *
- * Creates a new view in the specified compartment. Requires a `PRIVATE` scope query parameter.
+ * Creates a new view in the specified compartment.
  *
  * ## Example Usage
  *
@@ -26,16 +26,10 @@ import * as utilities from "../utilities";
  *
  * ## Import
  *
- * For legacy Views that were created without using `scope`, these Views can be imported using the `id`, e.g.
+ * Views can be imported using their OCID, e.g.
  *
  * ```sh
  *  $ pulumi import oci:Dns/view:View test_view "id"
- * ```
- *
- *  For Views created using `scope`, these Views can be imported using the `id`, e.g.
- *
- * ```sh
- *  $ pulumi import oci:Dns/view:View test_view "viewId/{viewId}/scope/{scope}"
  * ```
  */
 export class View extends pulumi.CustomResource {
@@ -87,9 +81,9 @@ export class View extends pulumi.CustomResource {
      */
     public /*out*/ readonly isProtected!: pulumi.Output<boolean>;
     /**
-     * Value must be `PRIVATE` when creating a view for private zones.
+     * If specified, must be `PRIVATE` when creating a view for private zones.
      */
-    public readonly scope!: pulumi.Output<string>;
+    public readonly scope!: pulumi.Output<string | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
@@ -135,9 +129,6 @@ export class View extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'scope'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -179,7 +170,7 @@ export interface ViewState {
      */
     isProtected?: pulumi.Input<boolean>;
     /**
-     * Value must be `PRIVATE` when creating a view for private zones.
+     * If specified, must be `PRIVATE` when creating a view for private zones.
      */
     scope?: pulumi.Input<string>;
     /**
@@ -221,7 +212,7 @@ export interface ViewArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Value must be `PRIVATE` when creating a view for private zones.
+     * If specified, must be `PRIVATE` when creating a view for private zones.
      */
-    scope: pulumi.Input<string>;
+    scope?: pulumi.Input<string>;
 }

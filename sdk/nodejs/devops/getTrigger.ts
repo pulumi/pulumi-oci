@@ -54,6 +54,7 @@ export interface GetTriggerResult {
      * The OCID of the compartment that contains the trigger.
      */
     readonly compartmentId: string;
+    readonly connectionId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */

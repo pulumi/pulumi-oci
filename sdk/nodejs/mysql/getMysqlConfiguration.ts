@@ -68,9 +68,13 @@ export interface GetMysqlConfigurationResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The provider-assigned unique ID for this managed resource.
+     * The OCID of the Configuration.
      */
     readonly id: string;
+    /**
+     * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     */
+    readonly initVariables: outputs.Mysql.GetMysqlConfigurationInitVariable[];
     /**
      * The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
      */
@@ -96,7 +100,7 @@ export interface GetMysqlConfigurationResult {
      */
     readonly type: string;
     /**
-     * User controllable service variables.
+     * User-defined service variables.
      */
     readonly variables: outputs.Mysql.GetMysqlConfigurationVariable[];
 }

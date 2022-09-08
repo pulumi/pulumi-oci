@@ -50,6 +50,7 @@ import * as utilities from "../utilities";
  *         }],
  *         hoursOfDays: _var.autonomous_container_database_maintenance_window_details_hours_of_day,
  *         isCustomActionTimeoutEnabled: _var.autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled,
+ *         isMonthlyPatchingEnabled: _var.autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled,
  *         leadTimeInWeeks: _var.autonomous_container_database_maintenance_window_details_lead_time_in_weeks,
  *         months: [{
  *             name: _var.autonomous_container_database_maintenance_window_details_months_name,

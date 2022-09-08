@@ -109,7 +109,7 @@ export class ResolverEndpoint extends pulumi.CustomResource {
     /**
      * Value must be `PRIVATE` when creating private name resolver endpoints.
      */
-    public readonly scope!: pulumi.Output<string>;
+    public readonly scope!: pulumi.Output<string | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
@@ -169,9 +169,6 @@ export class ResolverEndpoint extends pulumi.CustomResource {
             }
             if ((!args || args.resolverId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'resolverId'");
-            }
-            if ((!args || args.scope === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'scope'");
             }
             if ((!args || args.subnetId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
@@ -302,7 +299,7 @@ export interface ResolverEndpointArgs {
     /**
      * Value must be `PRIVATE` when creating private name resolver endpoints.
      */
-    scope: pulumi.Input<string>;
+    scope?: pulumi.Input<string>;
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      */

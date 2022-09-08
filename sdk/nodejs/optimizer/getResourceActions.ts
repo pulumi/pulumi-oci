@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
  *
- * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+ * Lists the Cloud Advisor resource actions that are supported.
  *
  * ## Example Usage
  *
@@ -19,8 +19,11 @@ import * as utilities from "../utilities";
  * const testResourceActions = oci.Optimizer.getResourceActions({
  *     compartmentId: _var.compartment_id,
  *     compartmentIdInSubtree: _var.resource_action_compartment_id_in_subtree,
- *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
+ *     childTenancyIds: _var.resource_action_child_tenancy_ids,
+ *     includeOrganization: _var.resource_action_include_organization,
  *     name: _var.resource_action_name,
+ *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
+ *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
  *     resourceType: _var.resource_action_resource_type,
  *     state: _var.resource_action_state,
  *     status: _var.resource_action_status,
@@ -34,11 +37,14 @@ export function getResourceActions(args: GetResourceActionsArgs, opts?: pulumi.I
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("oci:Optimizer/getResourceActions:getResourceActions", {
+        "childTenancyIds": args.childTenancyIds,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
+        "includeOrganization": args.includeOrganization,
         "name": args.name,
         "recommendationId": args.recommendationId,
+        "recommendationName": args.recommendationName,
         "resourceType": args.resourceType,
         "state": args.state,
         "status": args.status,
@@ -50,6 +56,10 @@ export function getResourceActions(args: GetResourceActionsArgs, opts?: pulumi.I
  */
 export interface GetResourceActionsArgs {
     /**
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     */
+    childTenancyIds?: string[];
+    /**
      * The OCID of the compartment.
      */
     compartmentId: string;
@@ -59,13 +69,21 @@ export interface GetResourceActionsArgs {
     compartmentIdInSubtree: boolean;
     filters?: inputs.Optimizer.GetResourceActionsFilter[];
     /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     */
+    includeOrganization?: boolean;
+    /**
      * Optional. A filter that returns results that match the name specified.
      */
     name?: string;
     /**
      * The unique OCID associated with the recommendation.
      */
-    recommendationId: string;
+    recommendationId?: string;
+    /**
+     * Optional. A filter that returns results that match the recommendation name specified.
+     */
+    recommendationName?: string;
     /**
      * Optional. A filter that returns results that match the resource type specified.
      */
@@ -84,6 +102,7 @@ export interface GetResourceActionsArgs {
  * A collection of values returned by getResourceActions.
  */
 export interface GetResourceActionsResult {
+    readonly childTenancyIds?: string[];
     /**
      * The OCID of the compartment.
      */
@@ -94,6 +113,7 @@ export interface GetResourceActionsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly includeOrganization?: boolean;
     /**
      * The name assigned to the resource.
      */
@@ -101,7 +121,8 @@ export interface GetResourceActionsResult {
     /**
      * The unique OCID associated with the recommendation.
      */
-    readonly recommendationId: string;
+    readonly recommendationId?: string;
+    readonly recommendationName?: string;
     /**
      * The list of resource_action_collection.
      */
@@ -129,6 +150,10 @@ export function getResourceActionsOutput(args: GetResourceActionsOutputArgs, opt
  */
 export interface GetResourceActionsOutputArgs {
     /**
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     */
+    childTenancyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
@@ -138,13 +163,21 @@ export interface GetResourceActionsOutputArgs {
     compartmentIdInSubtree: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetResourceActionsFilterArgs>[]>;
     /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     */
+    includeOrganization?: pulumi.Input<boolean>;
+    /**
      * Optional. A filter that returns results that match the name specified.
      */
     name?: pulumi.Input<string>;
     /**
      * The unique OCID associated with the recommendation.
      */
-    recommendationId: pulumi.Input<string>;
+    recommendationId?: pulumi.Input<string>;
+    /**
+     * Optional. A filter that returns results that match the recommendation name specified.
+     */
+    recommendationName?: pulumi.Input<string>;
     /**
      * Optional. A filter that returns results that match the resource type specified.
      */

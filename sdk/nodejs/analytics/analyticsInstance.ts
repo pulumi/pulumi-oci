@@ -37,9 +37,11 @@ import * as utilities from "../utilities";
  *     kmsKeyId: oci_kms_key.test_key.id,
  *     networkEndpointDetails: {
  *         networkEndpointType: _var.analytics_instance_network_endpoint_details_network_endpoint_type,
+ *         networkSecurityGroupIds: _var.analytics_instance_network_endpoint_details_network_security_group_ids,
  *         subnetId: oci_core_subnet.test_subnet.id,
  *         vcnId: oci_core_vcn.test_vcn.id,
  *         whitelistedIps: _var.analytics_instance_network_endpoint_details_whitelisted_ips,
+ *         whitelistedServices: _var.analytics_instance_network_endpoint_details_whitelisted_services,
  *         whitelistedVcns: [{
  *             id: _var.analytics_instance_network_endpoint_details_whitelisted_vcns_id,
  *             whitelistedIps: _var.analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
